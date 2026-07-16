@@ -5,7 +5,7 @@ use IEEE.math_real.all;
 
 entity uart_rx is
     generic (
-        CLK_FREQ   : integer := 33_333_333;  -- ✅ Top ile uyumlu
+        CLK_FREQ   : integer := 33_333_333;  
         BAUD_RATE  : integer := 115_200;
         DATA_WIDTH : integer := 8
     );

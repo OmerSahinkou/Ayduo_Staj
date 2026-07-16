@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity top is
     Generic (
-        CLK_FREQ  : integer := 33_333_333; -- Ortak saat frekansı
+        CLK_FREQ  : integer := 33_333_333; 
         BAUD_RATE : integer := 115200
     );
     Port (
@@ -157,20 +157,15 @@ begin
             
         elsif rising_edge(clk_i) then
             
-            tx_start_sig <= '0';  -- Varsayılan olarak start pinini indir
+            tx_start_sig <= '0';  
             clk_out_last <= clk_out; 
 
-            -- 1. ADIM: RX'ten veri gelir gelmez tampona al (Asenkron veri yakalama)
             if rx_valid = '1' then
                 rx_buffer <= rx_data_sig;
             end if;
-
-            -- 2. ADIM: 50Hz (20ms) periyodu dolduğunda işlemleri yap
             if clk_out = '1' and clk_out_last = '0' then
                 
-                angle_reg <= unsigned(rx_buffer); -- Tampondaki en son okunan veriyi servoya ver
-                
-                -- UART TX meşgul değilse, gelen değeri geri gönder (Loopback / Echo)
+                angle_reg <= unsigned(rx_buffer); 
                 if tx_busy_sig = '0' then
                     tx_start_sig <= '1';
                 end if;
@@ -180,7 +175,6 @@ begin
         end if;
     end process;
     
-    -- Gönderilecek veriyi her zaman açı register'ına eşitle
     tx_data_sig <= std_logic_vector(angle_reg);
 
 end Behavioral;

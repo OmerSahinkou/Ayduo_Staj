@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 
 entity uart_tx is 
     generic(
-        CLK_FREQ    : integer := 50_000_000;
+        CLK_FREQ    : integer := 33_333_333;
         BAUD_RATE   : integer := 115_200;
         DATA_WIDTH  : integer := 8
     );
