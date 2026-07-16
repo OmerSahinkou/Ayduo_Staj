@@ -8,7 +8,9 @@
 
 # pin name	x	y	z
 # --------	----	----	---
+rx        	0	57	1
 tx        	0	60	0
-clk_c     	0	102	1
-rst_n     	78	102	1
-button    	78	145	1
+clk_i     	0	102	1
+pwm_out   	78	70	0
+rst_n_i   	78	102	1
+switch_in 	78	145	1

@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Tue Jul 14 16:13:52 2026
+Date: Thu Jul 16 14:14:44 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -12,13 +12,35 @@ Elapsed time for packing: 0 hours 0 minutes 0 seconds
 
 ---------- Resource Summary (begin) ----------
 Inputs: 3 / 96 (3.12%)
-Outputs: 1 / 223 (0.45%)
+Outputs: 2 / 223 (0.90%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 107 / 7384 (1.45%)
-	LE: LUTs/Adders: 92 / 7384 (1.25%)
-	LE: Registers: 63 / 5280 (1.19%)
+Logic Elements: 250 / 7384 (3.39%)
+	LE: LUTs/Adders: 201 / 7384 (2.72%)
+	LE: Registers: 125 / 5280 (2.37%)
 Memory Blocks: 0 / 24 (0.00%)
-Multipliers: 0 / 8 (0.00%)
+Multipliers: 1 / 8 (12.50%)
 ---------- Resource Summary (end) ----------
+
+
+---------- DSP Block Information (begin) ----------
+
++-----------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+|         NAME          | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
++-----------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+| Inst_pwm_servo/mult_3 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
++-----------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+
+----------- DSP Block Information (end) ----------
+
+
+---------- IO Interface Summary (begin) ----------
+
++------------------------+--------------+
+| Missing Interface Pins | Input/Output |
++------------------------+--------------+
+|       switch_in        |    Input     |
++------------------------+--------------+
+
+----------- IO Interface Summary (end) ----------
 
 Elapsed time for placement: 0 hours 0 minutes 1 seconds

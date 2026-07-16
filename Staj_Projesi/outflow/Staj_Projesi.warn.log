@@ -109,3 +109,439 @@
 [EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
 [EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:65)
 [EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:111)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:46:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:50:04
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:50:58
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:52:06
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:52:17
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:52:33
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:53:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:55:13
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:56:19
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:57:00
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:57:19
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_n_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:00:00
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:01:37
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_n_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:02:31
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_n_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:03:30
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_n_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:05:33
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_n_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:16:42
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_n_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:21:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:24:53
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:28:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:40:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:43:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:48:17
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:00:28
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:11:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:13:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:37:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:41:35
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:49:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:50:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:58:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:58:56
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:59:09
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:59:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:00:51
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:01:06
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:01:23
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_reg[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:122)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:13:46
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:14:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:15:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:15:28
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:15:44
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] latch inferred for net 'tx_data_sig[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:126)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:16:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:16:30
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:17:12
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] latch inferred for net 'tx_data_sig[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:126)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:18:22
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:21:10
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:22:48
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:23:52
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:24:34
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:25:54
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:26:31
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:27:15
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:35:32
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:35:57
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:36:06
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:36:20
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:37:58
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:40:38
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:43:53
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:45:37
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:53:20
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:54:02
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:01:08
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:01:58
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:04:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:14:40
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 20 truncated to fit in target size 19 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)

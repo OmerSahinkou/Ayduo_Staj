@@ -4,19 +4,19 @@ use ieee.math_real.all;
 use IEEE.numeric_std.all;
 
 entity uart_tx is 
-generic(
-    CLK_FREQ    : integer := 50_000_000;
-    BAUD_RATE   : integer := 115_200;
-    DATA_WIDTH  : integer := 8
-);
-Port(
-    clk_c       : in std_logic;
-    rst_n       : in std_logic;
-    tx_start    : in std_logic;
-    tx_data     : in std_logic_vector(DATA_WIDTH - 1 downto 0);
-    tx          : out std_logic;
-    tx_busy     : out std_logic
-);
+    generic(
+        CLK_FREQ    : integer := 50_000_000;
+        BAUD_RATE   : integer := 115_200;
+        DATA_WIDTH  : integer := 8
+    );
+    port(
+        clk_i       : in std_logic;
+        rst_n_i     : in std_logic;
+        tx_start    : in std_logic;
+        tx_data     : in std_logic_vector(DATA_WIDTH - 1 downto 0);
+        tx          : out std_logic;
+        tx_busy     : out std_logic
+    );
 end entity uart_tx; 
 
 architecture rtl of uart_tx is
@@ -32,16 +32,16 @@ architecture rtl of uart_tx is
     signal state : state_t := IDLE;
 begin
 
-    process(clk_c, rst_n)
+    process(clk_i, rst_n_i)
     begin
-        if rst_n = '0' then
+        if rst_n_i = '0' then
             state       <= IDLE;
             bit_idx     <= (others => '0');
             bitcounter  <= (others => '0');
             tx          <= '1';
             tx_busy     <= '0';
             data_buffer <= (others => '0');
-        elsif rising_edge(clk_c) then
+        elsif rising_edge(clk_i) then
             case state is 
                 when IDLE =>
                     if tx_start = '1' then

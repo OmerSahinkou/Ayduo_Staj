@@ -1,7 +1,7 @@
 
 # Efinity Pinout Report
 # Version: 2025.2.288.2.10
-# Date: 2026-07-14 16:13
+# Date: 2026-07-16 14:14
 
 # Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -31,13 +31,13 @@ B8,GPIOR_11,,Input,2A,3.3 V,,weak pullup,User IO
 B9,GPIOR_14,,Input,2A,3.3 V,,weak pullup,User IO
 C1,VCC,,Power,,,,,1.1 V VCC Power
 C2,GPIOL_16_CLK2,,Input,1B,3.3 V,,weak pullup,User IO/GCLK
-C3,GPIOL_20_PLLIN,clk_c,Input,1B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/PLL_CLKIN
+C3,GPIOL_20_PLLIN,clk_i,Input,1B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/PLL_CLKIN
 C4,TCK,,Input,1B,3.3 V,,,Configuration
-C5,GPIOR_02_RESERVED_OUT,button,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
+C5,GPIOR_02_RESERVED_OUT,switch_in,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 C6,GPIOR_06,,Input,2A,3.3 V,,weak pullup,User IO
 C7,GPIOR_07,,Input,2A,3.3 V,,weak pullup,User IO
 C8,GPIOR_12,,Input,2A,3.3 V,,weak pullup,User IO
-C9,GPIOR_15_CBUS0,rst_n,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/Configuration
+C9,GPIOR_15_CBUS0,rst_n_i,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/Configuration
 D1,GND,,Power,,,,,Ground
 D2,GPIOL_17_CLK3,,Input,1B,3.3 V,,weak pullup,User IO/GCLK
 D3,GPIOL_19_CTRL3,,Input,1B,3.3 V,,weak pullup,User IO/GCTRL
@@ -63,7 +63,7 @@ F4,GPIOL_04_CDI0,,Input,1A,3.3 V,,weak pullup,User IO/Configuration
 F5,GPIOR_25,,Input,2B,3.3 V,,weak pullup,User IO
 F6,GPIOR_24,,Input,2B,3.3 V,,weak pullup,User IO
 F7,GPIOR_22_CTRL5,,Input,2B,3.3 V,,weak pullup,User IO/GCTRL
-F8,GPIOR_20_CLK5,,Input,2B,3.3 V,,weak pullup,User IO/GCLK
+F8,GPIOR_20_CLK5,pwm_out,Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCLK
 F9,VCC,,Power,,,,,1.1 V VCC Power
 G1,GPIOL_12_CTRL0,,Input,1A,3.3 V,,weak pullup,User IO/GCTRL
 G2,GND,,Power,,,,,Ground
@@ -75,7 +75,7 @@ G7,GND,,Power,,,,,Ground
 G8,GPIOR_31,,Input,2B,3.3 V,,weak pullup,User IO
 G9,GPIOR_26_CBSEL0,,Input,2B,3.3 V,,weak pullup,User IO
 H1,GND,,Power,,,,,Ground
-H2,GPIOL_10_CDI7,,Input,1A,3.3 V,,weak pullup,User IO
+H2,GPIOL_10_CDI7,rx,Input,1A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 H3,GPIOL_06_CDI1,,Input,1A,3.3 V,,weak pullup,User IO/Configuration
 H4,GPIOL_02_CCK,,Input,1A,3.3 V,,weak pullup,User IO/Configuration
 H5,CDONE,,Bidirectional,1A,3.3 V,,,Configuration

@@ -189,3 +189,601 @@
 // Jul 14, 2026 16:13:48
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:46:52
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:36)
+[EFX-0010 VERI-ERROR] entity 'top' is not yet compiled (VHDL-1059) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:38)
+[EFX-0010 VERI-ERROR] 'clk_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:58)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:59)
+[EFX-0010 VERI-ERROR] 'pwm_out' with mode 'in' cannot be updated (VHDL-1358) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:61)
+[EFX-0010 VERI-ERROR] 'clk_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:72)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:73)
+[EFX-0010 VERI-ERROR] 'tx' with mode 'in' cannot be updated (VHDL-1358) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:76)
+[EFX-0010 VERI-ERROR] 'clk_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:86)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:87)
+[EFX-0010 VERI-ERROR] 'switch_in' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:88)
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:103)
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:104)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:107)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:110)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:50:04
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:36)
+[EFX-0010 VERI-ERROR] entity 'top' is not yet compiled (VHDL-1059) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:38)
+[EFX-0010 VERI-ERROR] 'clk_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:58)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:59)
+[EFX-0010 VERI-ERROR] 'clk_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:72)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:73)
+[EFX-0010 VERI-ERROR] 'clk_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:86)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:87)
+[EFX-0010 VERI-ERROR] 'switch_in' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:88)
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:103)
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:104)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:107)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:110)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:114)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:117)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:50:58
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:103)
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:104)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:107)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:110)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:114)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:117)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:116)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:52:06
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:102)
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:103)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:106)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:109)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:116)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:115)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:52:17
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:102)
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:103)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:106)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:109)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:116)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:115)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:52:33
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:102)
+[EFX-0010 VERI-ERROR] cannot convert type ' universal_integer' to type 'unsigned' (VHDL-1029) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:103)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:106)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:109)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:116)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:115)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:53:54
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type 'std_logic' does not match with the integer literal (VHDL-1278) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:46)
+[EFX-0010 VERI-ERROR] type 'std_logic' does not match with the integer literal (VHDL-1278) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:47)
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:102)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:106)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:109)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:116)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:115)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:55:13
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'type' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:91)
+[EFX-0010 VERI-ERROR] syntax error near ':=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'idle' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:92)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:102)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:106)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:109)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:116)
+[EFX-0010 VERI-ERROR] 'state' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:115)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:56:19
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal clk_i is not declared (VHDL-1084) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:73)
+[EFX-0010 VERI-ERROR] formal port 'clk_c' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:79)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:127)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:57:00
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal rst_n_i is not declared (VHDL-1084) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:74)
+[EFX-0010 VERI-ERROR] formal port 'rst_n' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:79)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:127)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 10:57:19
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:24)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:00:00
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'library' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:122)
+[EFX-0010 VERI-ERROR] type error near 'ieee'; expected type ' void' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:122)
+[EFX-0010 VERI-ERROR] syntax error near 'use' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:124)
+[EFX-0010 VERI-ERROR] syntax error near 'use' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+[EFX-0010 VERI-ERROR] syntax error near 'entity' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:127)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:229)
+[EFX-0010 VERI-ERROR] syntax error near 'tx_start' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:230)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:01:37
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:24)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:02:31
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:24)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:03:30
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:24)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:05:33
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:16:42
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:21:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:24:53
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:28:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:40:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:43:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 11:48:17
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:00:28
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:11:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:13:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:37:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:41:35
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:49:45
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'uart_tx' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0010 VERI-ERROR] 'uart_tx' is not a component (VHDL-1235) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:74)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:140)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:50:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:58:55
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near ')' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:94)
+[EFX-0010 VERI-ERROR] 'clk_divider' is not a component (VHDL-1235) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:85)
+[EFX-0010 VERI-ERROR] 'sweep_timer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:99)
+[EFX-0010 VERI-ERROR] 'sweep_dir' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:101)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:114)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:58:56
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near ')' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:94)
+[EFX-0010 VERI-ERROR] 'clk_divider' is not a component (VHDL-1235) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:85)
+[EFX-0010 VERI-ERROR] 'sweep_timer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:99)
+[EFX-0010 VERI-ERROR] 'sweep_dir' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:101)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:114)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:59:09
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'clk_divider' is not a component (VHDL-1235) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:85)
+[EFX-0010 VERI-ERROR] 'sweep_timer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:99)
+[EFX-0010 VERI-ERROR] 'sweep_dir' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:101)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:114)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 12:59:26
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'clk_divider' is not a component (VHDL-1235) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:85)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:00:51
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] semicolon after last interface declaration is only supported in VHDL 1076-2019 (VHDL-1854) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:54)
+[EFX-0010 VERI-ERROR] 'clk_divider' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:97)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:124)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:01:06
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'clk_divider' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:97)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:124)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:01:23
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:13:46
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type conversion of 'std_logic_vector' does not match with type 'unsigned' (VHDL-1153) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:119)
+[EFX-0010 VERI-ERROR] syntax error near 'if' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:121)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:128)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:14:49
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type conversion of 'std_logic_vector' does not match with type 'unsigned' (VHDL-1153) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:119)
+[EFX-0010 VERI-ERROR] syntax error near 'if' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:121)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:128)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:15:10
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'if' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:121)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:125)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:128)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:15:28
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'tx_busy' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:118)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:128)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:15:44
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:16:15
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type error near 'angle_reg'; expected type 'std_logic_vector' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:127)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:130)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:16:30
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type error near 'angle_reg'; expected type 'std_logic_vector' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:127)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:128)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:17:12
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'tx_data_sig[7]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:126)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:127)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:18:22
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:21:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:22:48
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:23:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:24:34
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:25:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:26:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:27:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:35:32
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'down' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:79)
+[EFX-0010 VERI-ERROR] type error near 'rx_data_sig'; expected type 'unsigned' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:156)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:158)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:165)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:35:57
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'down' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:79)
+[EFX-0010 VERI-ERROR] syntax error near 'end' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:158)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:165)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:36:06
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'down' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:79)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:165)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:36:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:37:58
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:40:38
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:43:53
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:45:37
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:53:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 13:54:02
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:01:08
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'signal' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:139)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:147)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:154)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:158)
+[EFX-0010 VERI-ERROR] type conversion expression type for 'unsigned' cannot be uniquely determined (VHDL-1155) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:158)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:169)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:01:58
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'signal' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:139)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:147)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:154)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:158)
+[EFX-0010 VERI-ERROR] type conversion expression type for 'unsigned' cannot be uniquely determined (VHDL-1155) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:158)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:169)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:04:20
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'signal' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:140)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:148)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is not a signal (VHDL-1236) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:156)
+[EFX-0010 VERI-ERROR] 'rx_buffer' is illegal in an expression (VHDL-1312) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:161)
+[EFX-0010 VERI-ERROR] type conversion expression type for 'unsigned' cannot be uniquely determined (VHDL-1155) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:161)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:174)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 14:14:40
+///////////////////////////////////
+
