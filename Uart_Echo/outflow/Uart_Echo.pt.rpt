@@ -1,0 +1,139 @@
+
+Efinity Interface Designer Report
+Version: 2025.2.288.2.10
+Date: 2026-07-14 15:50
+
+Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
+
+Device: T8F81
+Project: Uart_Echo
+
+Package: 81-ball FBGA (final)
+Timing Model: C2 (final)
+Configuration Mode: active (x1)
+
+---------- Table of Contents (begin) ----------
+   1. Periphery Usage Summary
+   2. Generated Output Files
+   3. I/O Banks Summary
+   4. Global Connection Summary
+   5. Clock Region Usage Summary
+   6. Dual-Function Configuration Pin Usage
+   7. GPIO Usage Summary
+   8. PLL Usage Summary
+   9. Oscillator Usage Summary
+   10. JTAG Usage Summary
+---------- Table of Contents (end) ------------
+
+---------- 1. Periphery Usage Summary (begin) ----------
+gpio: 4 / 55 (7.27%)
+jtag: 0 / 2 (0.0%)
+osc: 0 / 1 (0.0%)
+pll: 0 / 1 (0.0%)
+---------- Periphery Usage Summary (end) ----------
+
+---------- 2. Generated Output Files (begin) ----------
+Interface Configuration: Uart_Echo.interface.csv
+Peripheral Block Configuration: Uart_Echo.lpf
+Pinout Report: Uart_Echo.pinout.rpt
+Pinout CSV: Uart_Echo.pinout.csv
+Timing Report: Uart_Echo.pt_timing.rpt
+Timing SDC Template: Uart_Echo.pt.sdc
+Verilog Template: Uart_Echo_template.v
+---------- Generated Output Files (end) ----------
+
+---------- 3. I/O Banks Summary (begin) ----------
+
++----------+-------------+
+| I/O Bank | I/O Voltage |
++----------+-------------+
+|    1A    |    3.3 V    |
+|    1B    |    3.3 V    |
+|    1C    |    1.1 V    |
+|    2A    |    3.3 V    |
+|    2B    |    3.3 V    |
++----------+-------------+
+
+---------- I/O Banks Summary (end) ----------
+
+---------- 4. Global Connection Summary (begin) ----------
+
+No global connection was found in project.
+
+---------- Global Connection Summary (end) ----------
+
+---------- 5. Clock Region Usage Summary (begin) ----------
+
++--------------+----------------+
+| Clock Region | Used/Available |
++--------------+----------------+
+|      L0      |      0/4       |
+|      L1      |      0/4       |
+|      R0      |      0/4       |
+|      R1      |      0/4       |
++--------------+----------------+
+
+---------- Clock Region Usage Summary (end) ----------
+
+---------- 6. Dual-Function Configuration Pin Usage (begin) ----------
+
++---------------+----------+
+| Instance Name | Function |
++---------------+----------+
+|       rx      |   CDI7   |
+|       tx      |   CDI3   |
++---------------+----------+
+
+---------- Dual-Function Configuration Pin Usage (end) ----------
+
+---------- 7. GPIO Usage Summary (begin) ----------
+
+Global Unused Setting: input with weak pullup
+
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------------+-------------+
+| Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |        Pad Name       | Package Pin |
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------------+-------------+
+|     clk_c     | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |     GPIOL_20_PLLIN    |      C3     |
+|     rst_n     | GPIOR_02 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS | GPIOR_02_RESERVED_OUT |      C5     |
+|       rx      | GPIOL_10 | input  |          |              |    1A    | 3.3 V LVTTL / LVCMOS |     GPIOL_10_CDI7     |      H2     |
+|       tx      | GPIOL_11 | output |          |              |    1A    | 3.3 V LVTTL / LVCMOS |     GPIOL_11_CDI3     |      F3     |
++---------------+----------+--------+----------+--------------+----------+----------------------+-----------------------+-------------+
+
+
+Input GPIO Configuration:
+=========================
+
++---------------+-----------+---------------------+-----------------+--------------+-----------------+
+| Instance Name | Input Pin | Alternate Input Pin | Input Clock Pin | Pull Up/Down | Schmitt Trigger |
++---------------+-----------+---------------------+-----------------+--------------+-----------------+
+|     clk_c     |   clk_c   |                     |                 | weak pullup  |     Disable     |
+|     rst_n     |   rst_n   |                     |                 |     none     |     Disable     |
+|       rx      |     rx    |                     |                 |     none     |     Disable     |
++---------------+-----------+---------------------+-----------------+--------------+-----------------+
+
+Output GPIO Configuration:
+==========================
+
++---------------+------------+------------------+----------------+-----------+
+| Instance Name | Output Pin | Output Clock Pin | Drive Strength | Slew Rate |
++---------------+------------+------------------+----------------+-----------+
+|       tx      |     tx     |                  |       1        |  Disable  |
++---------------+------------+------------------+----------------+-----------+
+
+---------- GPIO Usage Summary (end) ----------
+
+---------- 8. PLL Usage Summary (begin) ----------
+
+No PLL was configured
+
+---------- 9. Oscillator Usage Summary (begin) ----------
+
+No Oscillator was configured
+
+---------- Oscillator Usage Summary (end) ----------
+
+---------- 10. JTAG Usage Summary (begin) ----------
+
+No JTAG was configured
+
+---------- JTAG Usage Summary (end) ----------

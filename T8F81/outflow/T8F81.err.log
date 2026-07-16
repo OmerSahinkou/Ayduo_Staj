@@ -1,0 +1,112 @@
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:07
+///////////////////////////////////
+
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:31
+///////////////////////////////////
+
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:50
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near ',' (VERI-1137) (/home/omer-ahin/STAJ/T8F81/top.v:23)
+[EFX-0010 VERI-ERROR] module 'top' is ignored due to previous errors (VERI-1072) (/home/omer-ahin/STAJ/T8F81/top.v:30)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:54
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near ',' (VERI-1137) (/home/omer-ahin/STAJ/T8F81/top.v:23)
+[EFX-0010 VERI-ERROR] module 'top' is ignored due to previous errors (VERI-1072) (/home/omer-ahin/STAJ/T8F81/top.v:30)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:29:12
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] concurrent assignment to a non-net 'clk_out' is not permitted (VERI-1195) (/home/omer-ahin/STAJ/T8F81/top.v:19)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:29:52
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] Post-synthesis netlist has only vcc and gnd nets because all logic is eliminated. Legal, but will cause router to crash. (VDB-9009) 
+[EFX-0010 VERI-ERROR] Found 1 errors in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:38:21
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] Post-synthesis netlist has only vcc and gnd nets because all logic is eliminated. Legal, but will cause router to crash. (VDB-9009) 
+[EFX-0010 VERI-ERROR] Found 1 errors in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:39:15
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] Post-synthesis netlist has only vcc and gnd nets because all logic is eliminated. Legal, but will cause router to crash. (VDB-9009) 
+[EFX-0010 VERI-ERROR] Found 1 errors in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:40:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:40:46
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 11:48:37
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'my_top_process' (VHDL-1261) (/home/omer-ahin/STAJ/T8F81/vhdl_test.vhd:31)
+[EFX-0010 VERI-ERROR] unit 'my_top_arch' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/T8F81/vhdl_test.vhd:39)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 11:49:48
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:15:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:18:44
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:19:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:20:45
+///////////////////////////////////
+

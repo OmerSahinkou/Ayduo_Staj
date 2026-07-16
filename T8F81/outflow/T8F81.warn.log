@@ -1,0 +1,123 @@
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:07
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:50
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:28:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:29:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:29:52
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] module instantiation should have an instance name (VERI-1229) (/home/omer-ahin/STAJ/T8F81/top.v:16)
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] net 'clk_in' does not have a driver (VDB-1002) (/home/omer-ahin/STAJ/T8F81/top.v:17)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'clk_in'. (/home/omer-ahin/STAJ/T8F81/top.v:17)
+[EFX-0011 VERI-WARNING] Input/inout port clk is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:3)
+[EFX-0011 VERI-WARNING] Input/inout port rst_n is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:4)
+[EFX-0011 VERI-WARNING] Found 2 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:38:21
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] module instantiation should have an instance name (VERI-1229) (/home/omer-ahin/STAJ/T8F81/top.v:16)
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] net 'clk_in' does not have a driver (VDB-1002) (/home/omer-ahin/STAJ/T8F81/top.v:17)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'clk_in'. (/home/omer-ahin/STAJ/T8F81/top.v:17)
+[EFX-0011 VERI-WARNING] Input/inout port clk is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:3)
+[EFX-0011 VERI-WARNING] Input/inout port rst_n is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:4)
+[EFX-0011 VERI-WARNING] Found 2 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:39:15
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] net 'clk_in' does not have a driver (VDB-1002) (/home/omer-ahin/STAJ/T8F81/top.v:17)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'clk_in'. (/home/omer-ahin/STAJ/T8F81/top.v:17)
+[EFX-0011 VERI-WARNING] Input/inout port clk is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:3)
+[EFX-0011 VERI-WARNING] Input/inout port rst_n is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:4)
+[EFX-0011 VERI-WARNING] Found 2 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:40:20
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 10:40:46
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 11:48:37
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 11:49:48
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:15:55
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:18:44
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:19:54
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:20:45
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)

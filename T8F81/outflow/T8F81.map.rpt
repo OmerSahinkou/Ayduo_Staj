@@ -1,0 +1,85 @@
+Efinity Synthesis report for project T8F81
+Version: 2025.2.288.2.10
+Generated at: Jul 14, 2026 10:20:45
+Copyright (C) 2013 - 2025  All rights reserved.
+
+Top-level Entity Name : top
+Top-level Architecture : vhdl_test
+
+family : Trion
+device : T8F81
+project : T8F81
+root : top
+I,include : /home/omer-ahin/STAJ/T8F81
+binary-db : /home/omer-ahin/STAJ/T8F81/outflow/T8F81.vdb
+insert-ios : 0
+max-carry-cascade : 160
+max_mult : -1
+max_ram : -1
+mode : speed
+arch : vhdl_test
+output-dir : /home/omer-ahin/STAJ/T8F81/outflow
+project : T8F81
+project-xml : /home/omer-ahin/STAJ/T8F81/T8F81.xml
+root : top
+work-dir : /home/omer-ahin/STAJ/T8F81/work_syn
+write-efx-verilog : /home/omer-ahin/STAJ/T8F81/outflow/T8F81.map.v
+write-premap-module : /home/omer-ahin/STAJ/T8F81/outflow/T8F81.elab.vdb
+
+File List:
+
+/home/omer-ahin/STAJ/T8F81/Led_Test.v
+/home/omer-ahin/STAJ/T8F81/top.v
+/home/omer-ahin/STAJ/T8F81/vhdl_test.vhd
+
+### ### Report Section Start ### ###
+
+
+### ### EFX_FF CE enables (begin) ### ### ###
+Total number of enable signals: 1
+Total number of FFs with enable signals: 1
+CE signal <clk_divider_i/n6>, number of controlling flip flops: 1
+### ### EFX_FF CE enables (end) ### ### ###
+
+### ### EFX_FF SR set/reset (begin) ### ### ###
+Total number of set/reset signals: 2
+Total number of FFs with set/reset signals: 41
+SR signal <clk_divider_i/n139>, number of controlling flip flops: 39
+SR signal <rst_n>, number of controlling flip flops: 2
+### ### EFX_FF SR set/reset (end) ### ### ###
+
+### ### Module Resource Usage Distribution Estimates (begin) ### ###
+
+**Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
+
+Module                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
+--------------------------------------------       ---      ----      ----      ---- ---------
+top:top                                          41(1)     23(0)     13(0)      0(0)      0(0)
+ +clk_divider_i:clk_divider(CLK_OUT_FREQ=5)     40(40)    23(23)    13(13)      0(0)      0(0)
+
+### ### Module Resource Usage Distribution Estimates (end) ### ###
+
+
+### ### Clock Load Distribution Report (begin) ### ###
+
+ Clock      Flip-Flops    Memory PortsMultipliers/DSPs
+ -----      ----------    ----------------------------
+   clk              41               0               0
+
+### ### Clock Load Distribution Report (end) ### ###
+
+### ### Resource Summary (begin) ### ### ### 
+INPUT  PORTS    : 	2
+OUTPUT PORTS    : 	1
+
+EFX_ADD         : 	23
+EFX_LUT4        : 	13
+   1-2  Inputs  : 	2
+   3    Inputs  : 	3
+   4    Inputs  : 	8
+EFX_FF          : 	41
+EFX_GBUFCE      : 	1
+### ### Resource Summary (end) ### ### ###
+
+Plain synthesis (without verilog dump and post-map checks) time : 0s
+Elapsed synthesis time : 0s

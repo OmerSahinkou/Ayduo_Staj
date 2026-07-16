@@ -1,0 +1,178 @@
+           
+           Efinix FPGA Placement and Routing.
+           Version: 2025.2.288.2.10 
+           Compiled: Dec 18 2025.
+           
+           Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
+
+           
+           The Tool Is Based on VPR of University of Toronto,
+           a free open source code under MIT license.
+           
+           
+INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
+           
+           ***** Beginning stage netlist pre-processing ... *****
+INFO     : Successfully read in VDB netlist file /home/omer-ahin/STAJ/T8F81/outflow/T8F81.vdb [DBMsg::VdbFileRead]
+INFO     : ***** Beginning VDB Netlist Checker ... *****
+INFO     : VDB Netlist Checker took 0.001130109 seconds [FlowMsg::StageDuration]
+INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 208.724 MB, end = 241.536 MB, delta = 32.812 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 124.188 MB, end = 124.708 MB, delta = 0.52 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending VDB Netlist Checker ... *****
+INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+INFO     : Found 0 constant generator nets [DBMsg::NetlistConstGeneratorCount]
+INFO     : Pass 0: Swept away 0 nets with no fanout [DBMsg::NetlistNetsSweptThisPass]
+INFO     : Pass 0: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSweptThisPass]
+INFO     : Swept away 0 nets and 0 blocks in total [DBMsg::NetlistTotalSwept]
+INFO     : Removed 0 LUT buffers [DBMsg::NetlistRemovedLUTBuffers]
+INFO     : Successfully read in VDB netlist file /home/omer-ahin/STAJ/T8F81/outflow/T8F81.vdb [DBMsg::VdbFileRead]
+INFO     : Netlist pre-processing took 0.002694386 seconds [FlowMsg::StageDuration]
+INFO     :     Netlist pre-processing took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Netlist pre-processing virtual memory usage: begin = 208.724 MB, end = 241.536 MB, delta = 32.812 MB [FlowMsg::VMUsage]
+INFO     : Netlist pre-processing resident set memory usage: begin = 123.312 MB, end = 125.036 MB, delta = 1.724 MB [FlowMsg::RSSUsage]
+INFO     :     Netlist pre-processing peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage netlist pre-processing *****
+           
+           ***** Beginning stage pre-packing ... *****
+           ***** Ending stage pre-packing *****
+           
+           ***** Beginning stage packing ... *****
+INFO     : Generate proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 0.000307 seconds
+INFO     : Creating IO constraints file '/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.io_place'
+INFO     : Packing took 0.00075213 seconds [FlowMsg::StageDuration]
+INFO     :     Packing took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packing virtual memory usage: begin = 241.536 MB, end = 241.536 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Packing resident set memory usage: begin = 126.12 MB, end = 126.676 MB, delta = 0.556 MB [FlowMsg::RSSUsage]
+INFO     :     Packing peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage packing *****
+           
+INFO     : Read proto netlist file /home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto
+INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 9.2e-05 seconds
+INFO     : Setup net and block data structure took 0.000668 seconds
+INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+           ***** Beginning stage packed netlist loading ... *****
+INFO     : Read proto netlist file /home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto
+INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 7.2e-05 seconds
+INFO     : Setup net and block data structure took 0.000571 seconds
+INFO     : Packed netlist loading took 0.000704076 seconds [FlowMsg::StageDuration]
+INFO     :     Packed netlist loading took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packed netlist loading virtual memory usage: begin = 241.536 MB, end = 241.536 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Packed netlist loading resident set memory usage: begin = 128.896 MB, end = 128.896 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Packed netlist loading peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage packed netlist loading *****
+           
+           ***** Beginning stage pre-placement ... *****
+           
+           ***** Ending stage pre-placement *****
+           
+INFO     : SDC file '/home/omer-ahin/STAJ/T8F81/T8F81.pt.sdc' is missing or does not contain any valid constraint
+INFO     : Using default timing constraint of 1 ns
+INFO     : SDC file '/home/omer-ahin/STAJ/T8F81/T8F81.pt.sdc' parsed successfully.
+           ***** Beginning stage initial placement ... *****
+INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
+INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
+INFO     : Writing IO placement constraints to "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.io" [DBMsg::IOPlacementConstraintsFileWriting]
+INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.io'.
+INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.io_place'.
+WARNING  : Clock source clk does not use a dedicated clock pad, so extra clock insertion delay is added
+           ***** Ending stage initial placement *****
+           
+           ***** Beginning stage placement ... *****
+INFO     : Chip::LoadDelayLookupTable
+INFO     : Starting Global Placer with 8 threads ...
+            ----------     -------  --------------     -------
+             Iteration       WHPWL Worst Slack (ps) Convergence
+            ----------     -------  --------------     -------
+INFO     :           1         283           -5270        74.0%
+INFO     :           2         280           -5270        76.3%
+INFO     :           3         278           -5155        76.3%
+INFO     :           4         290           -5155        76.3%
+INFO     :           5         288           -5155        76.3%
+INFO     :           6         281           -5270        76.9%
+INFO     :           7         281           -5155        76.9%
+INFO     :           8         283           -5408        76.9%
+INFO     :           9         277           -5270        77.3%
+INFO     :          10         271           -5270        78.1%
+INFO     :          11         273           -5270        78.1%
+INFO     :          12         273           -5408        83.2%
+INFO     :          13         284           -6990        86.2%
+INFO     :          14         284           -6942        95.2%
+INFO     :          15         276           -7093        95.2%
+INFO     :          16         276           -6942        98.7%
+INFO     :          17         276           -6990        99.5%
+INFO     :          18         276           -7093        99.5%
+INFO     :          19         276           -7093       100.0%
+INFO     :          20         276           -8484       100.0%
+INFO     :          21         276           -8484       100.0%
+INFO     : Starting Annealer
+            ----------     -------  --------------     -------
+             Iteration       WHPWL  Delay Max (ps)     R Limit
+            ----------     -------  --------------     -------
+INFO     :           0          16            9348        30.0
+INFO     :           1          10           10241        30.0
+INFO     :           2          24            6969        30.0
+INFO     :           3          21            6361        30.0
+INFO     :           4          26            6360        30.0
+INFO     :           5          26            6361        30.0
+INFO     :           6          26            6360        30.0
+INFO     :           7          24            6361        30.0
+INFO     :           8          27            6361        30.0
+INFO     :           9          29            6360        30.0
+INFO     :          10          25            6361        30.0
+INFO     :          11          22            6361        30.0
+INFO     :          12          26            6360        30.0
+INFO     :          13          23            6360        30.0
+INFO     :          14          22            6361        30.0
+INFO     :          15          20            6361        30.0
+INFO     :          16          20            6361        30.0
+INFO     :          17          20            6361        30.0
+INFO     :          18          22            6360        30.0
+INFO     :          19          25            6361        30.0
+INFO     :          20          20            6361        30.0
+INFO     :          21          19            6361        30.0
+INFO     :          22          24            6375        30.0
+INFO     :          23          23            6361        30.0
+INFO     :          24          20            6361        30.0
+INFO     :          25          18            6361        30.0
+INFO     :          26          22            6360        30.0
+INFO     :          27          22            6361        30.0
+INFO     :          28          20            6360        30.0
+INFO     :          29          19            6360        30.0
+INFO     :          30          19            6361        30.0
+INFO     :          31          19            6360        30.0
+INFO     :          32          18            6360        30.0
+INFO     :          33          16            6361        30.0
+INFO     :          34          15            6361        30.0
+INFO     :          35          15            6361        30.0
+INFO     :          36          18            6360        30.0
+INFO     :          37          20            6361        30.0
+INFO     :          38          19            6361        30.0
+INFO     :          39          17            6361        30.0
+INFO     :          40          19            6360        30.0
+INFO     :          41          18            6360        30.0
+INFO     :          42          16            6361        30.0
+INFO     :          43          16            6361        30.0
+INFO     :          44          21            6360        30.0
+INFO     :          45          26            6361        30.0
+INFO     :          46          26            6360        30.0
+INFO     :          47          20            6361        30.0
+INFO     : Placement successful: 45 cells are placed
+INFO     : Peak congestion smeared over 4x4 of the chip is 0.0810942 at 33,129
+INFO     : Peak congestion smeared over 1/16 of the chip is 0.0810942 at 33,129
+INFO     : Peak congestion smeared over 1/4 of the chip is 0.0150466 at 42,124
+INFO     : Congestion-weighted HPWL per net: 6.77971
+INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.qplace'.
+INFO     : Finished Realigning Types (4 blocks needed type change)
+INFO     : Completed placement consistency check successfully.
+INFO     : Successfully created FPGA place file '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.place'
+INFO     : Placement took 1.459599312 seconds [FlowMsg::StageDuration]
+INFO     :     Placement took 1.73 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Placement virtual memory usage: begin = 241.536 MB, end = 250.72 MB, delta = 9.184 MB [FlowMsg::VMUsage]
+INFO     : Placement resident set memory usage: begin = 130.156 MB, end = 134.148 MB, delta = 3.992 MB [FlowMsg::RSSUsage]
+INFO     :     Placement peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+           ***** Ending stage placement *****
+           

@@ -1,0 +1,26 @@
+
+Efinity Interface Designer Timing Report
+Version: 2025.2.288.2.10
+Date: 2026-07-14 15:50
+
+Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
+
+Device: T8F81
+Project: Uart_Echo
+Timing Model: C2 (final)
+
+---------- 1. GPIO Timing Report (begin) ----------
+
+Non-registered GPIO Configuration:
+===================================
+
++---------------+----------+-----------+----------+----------+
+| Instance Name | Pin Name | Parameter | Max (ns) | Min (ns) |
++---------------+----------+-----------+----------+----------+
+|     clk_c     |  clk_c   |  GPIO_IN  |  1.954   |  0.698   |
+|     rst_n     |  rst_n   |  GPIO_IN  |  1.954   |  0.698   |
+|       rx      |    rx    |  GPIO_IN  |  1.954   |  0.698   |
+|       tx      |    tx    |  GPIO_OUT |  5.361   |  1.915   |
++---------------+----------+-----------+----------+----------+
+
+---------- GPIO Timing Report (end) ----------

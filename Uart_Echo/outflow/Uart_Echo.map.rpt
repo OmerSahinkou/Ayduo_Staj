@@ -1,0 +1,102 @@
+Efinity Synthesis report for project Uart_Echo
+Version: 2025.2.288.2.10
+Generated at: Jul 14, 2026 15:50:01
+Copyright (C) 2013 - 2025  All rights reserved.
+
+Top-level Entity Name : uart_echo
+
+family : Trion
+device : T8F81
+project : Uart_Echo
+root : uart_echo
+I,include : /home/omer-ahin/STAJ/Uart_Echo
+binary-db : /home/omer-ahin/STAJ/Uart_Echo/outflow/Uart_Echo.vdb
+insert-ios : 0
+max-carry-cascade : 160
+max_mult : -1
+max_ram : -1
+mode : speed
+output-dir : /home/omer-ahin/STAJ/Uart_Echo/outflow
+project : Uart_Echo
+project-xml : /home/omer-ahin/STAJ/Uart_Echo/Uart_Echo.xml
+root : uart_echo
+work-dir : /home/omer-ahin/STAJ/Uart_Echo/work_syn
+write-efx-verilog : /home/omer-ahin/STAJ/Uart_Echo/outflow/Uart_Echo.map.v
+write-premap-module : /home/omer-ahin/STAJ/Uart_Echo/outflow/Uart_Echo.elab.vdb
+
+File List:
+
+/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd
+/home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl
+/home/omer-ahin/STAJ/Uart_Echo/uart_echo.vhdl
+
+### ### Report Section Start ### ###
+
+
+### ### EFX_FF CE enables (begin) ### ### ###
+Total number of enable signals: 21
+Total number of FFs with enable signals: 57
+CE signal <ceg_net1>, number of controlling flip flops: 1
+CE signal <ceg_net47>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n499>, number of controlling flip flops: 8
+CE signal <ceg_net74>, number of controlling flip flops: 2
+CE signal <ceg_net55>, number of controlling flip flops: 3
+CE signal <ceg_net34>, number of controlling flip flops: 9
+CE signal <ceg_net53>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n522>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n521>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n520>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n523>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n524>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n525>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n526>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n527>, number of controlling flip flops: 1
+CE signal <uart_tx_i/n404>, number of controlling flip flops: 8
+CE signal <ceg_net61>, number of controlling flip flops: 3
+CE signal <ceg_net75>, number of controlling flip flops: 2
+CE signal <ceg_net24>, number of controlling flip flops: 9
+CE signal <ceg_net58>, number of controlling flip flops: 1
+CE signal <ceg_net59>, number of controlling flip flops: 1
+### ### EFX_FF CE enables (end) ### ### ###
+
+### ### EFX_FF SR set/reset (begin) ### ### ###
+Total number of set/reset signals: 1
+Total number of FFs with set/reset signals: 57
+SR signal <rst_n>, number of controlling flip flops: 57
+### ### EFX_FF SR set/reset (end) ### ### ###
+
+### ### Module Resource Usage Distribution Estimates (begin) ### ###
+
+**Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
+
+Module                                        FFs      ADDs      LUTs      RAMs DSP/MULTs
+---------------------------------------       ---      ----      ----      ---- ---------
+uart_echo:uart_echo                         57(2)      0(0)     75(2)      0(0)      0(0)
+ +uart_rx_i:uart_rx(clk_freq=33333333)     31(31)      0(0)    38(38)      0(0)      0(0)
+ +uart_tx_i:uart_tx(clk_freq=33333333)     24(24)      0(0)    35(35)      0(0)      0(0)
+
+### ### Module Resource Usage Distribution Estimates (end) ### ###
+
+
+### ### Clock Load Distribution Report (begin) ### ###
+
+ Clock      Flip-Flops    Memory PortsMultipliers/DSPs
+ -----      ----------    ----------------------------
+ clk_c              57               0               0
+
+### ### Clock Load Distribution Report (end) ### ###
+
+### ### Resource Summary (begin) ### ### ### 
+INPUT  PORTS    : 	3
+OUTPUT PORTS    : 	1
+
+EFX_LUT4        : 	75
+   1-2  Inputs  : 	14
+   3    Inputs  : 	26
+   4    Inputs  : 	35
+EFX_FF          : 	57
+EFX_GBUFCE      : 	1
+### ### Resource Summary (end) ### ### ###
+
+Plain synthesis (without verilog dump and post-map checks) time : 1s
+Elapsed synthesis time : 1s

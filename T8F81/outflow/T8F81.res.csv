@@ -1,0 +1,9 @@
+sep=\t
+Module Resource Usage Distribution Estimates
+Generated at: Jul 14, 2026 10:20:45
+
+Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
+
+Module	       FFs	      ADDs	      LUTs	      RAMs	 DSP/MULTs
+top:top                                     	    41(1)	    23(0)	    13(0)	     0(0)	     0(0)	
+ +clk_divider_i:clk_divider(CLK_OUT_FREQ=5) 	   40(40)	   23(23)	   13(13)	     0(0)	     0(0)	

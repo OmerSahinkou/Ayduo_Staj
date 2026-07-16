@@ -1,0 +1,7 @@
+bir adet ADXL345 sensör 
+
+3 adet servo motor PWM kontrolü 
+
+ADXL345 den alınan verileregöre servo motor yön değiştiricek
+
+

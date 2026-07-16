@@ -1,0 +1,150 @@
+INFO     : Efinix FPGA Synthesis.
+INFO     : Version: 2025.2.288.2.10
+INFO     : Compiled: Dec 18 2025.
+INFO     : 
+INFO     : Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
+
+INFO     : Reading project database "/home/omer-ahin/STAJ/T8F81/T8F81.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v' [VERI-1482]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(8): compiling module 'EFX_IBUF' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(16): compiling module 'EFX_OBUF' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(23): compiling module 'EFX_IO_BUF' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(33): compiling module 'EFX_CLKOUT' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(41): compiling module 'EFX_IREG' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(51): compiling module 'EFX_OREG' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(60): compiling module 'EFX_IOREG' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(75): compiling module 'EFX_IDDIO' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(87): compiling module 'EFX_ODDIO' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(99): compiling module 'EFX_GPIO_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(124): compiling module 'EFX_GPIO_V2' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(149): compiling module 'EFX_GPIO_V3' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(186): compiling module 'EFX_PLL_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(205): compiling module 'EFX_PLL_V2' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(231): compiling module 'EFX_PLL_V3' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(279): compiling module 'EFX_OSC_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(285): compiling module 'EFX_OSC_V3' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(294): compiling module 'EFX_FPLL_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(348): compiling module 'EFX_JTAG_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(357): compiling module 'EFX_JTAG_CTRL' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(364): compiling module 'EFX_LVDS_RX_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(381): compiling module 'EFX_LVDS_TX_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(399): compiling module 'EFX_LVDS_RX_V2' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(426): compiling module 'EFX_LVDS_TX_V2' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(446): compiling module 'EFX_LVDS_BIDIR_V2' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(485): compiling module 'EFX_MIPI_TX_LN_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(508): compiling module 'EFX_MIPI_RX_LN_V1' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v(543): compiling module 'EFX_MIPI_RX_CLK_LN_V1' [VERI-1018]
+INFO     : Reading project database "/home/omer-ahin/STAJ/T8F81/T8F81.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : ***** Beginning Analysis ... *****
+INFO     : default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" [VHDL-1504]
+INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v' [VERI-1482]
+INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v' [VERI-1482]
+INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v' [VERI-1482]
+INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v' [VERI-1482]
+INFO     : Analyzing Verilog file '/home/omer-ahin/STAJ/T8F81/Led_Test.v' [VERI-1482]
+INFO     : Analyzing Verilog file '/home/omer-ahin/STAJ/T8F81/top.v' [VERI-1482]
+INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/T8F81/vhdl_test.vhd' [VHDL-1481]
+INFO     : Restoring VHDL unit 'ieee.std_logic_1164' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/ieee/std_logic_1164.vdb' [VHDL-1493]
+INFO     : Restoring VHDL unit 'std.standard' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/std/standard.vdb' [VHDL-1493]
+INFO     : Restoring VHDL unit 'std.textio' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/std/textio.vdb' [VHDL-1493]
+INFO     : Restoring VHDL unit 'ieee.numeric_std' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/ieee/numeric_std.vdb' [VHDL-1493]
+INFO     : /home/omer-ahin/STAJ/T8F81/vhdl_test.vhd(5): analyzing entity 'top_vhdl' [VHDL-1012]
+INFO     : /home/omer-ahin/STAJ/T8F81/vhdl_test.vhd(13): analyzing architecture 'my_top_arch' [VHDL-1010]
+INFO     : Restoring VHDL unit 'vl.vl_types' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/vl/vl_types.vdb' [VHDL-1493]
+INFO     : Analysis took 0.05347145 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.05 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 131.656 MB, end = 134.728 MB, delta = 3.072 MB [FlowMsg::VMUsage]
+INFO     : Analysis resident set memory usage: begin = 74.508 MB, end = 79.728 MB, delta = 5.22 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 284.38 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Analysis ... *****
+INFO     : ***** Beginning Elaboration ... *****
+INFO     : /home/omer-ahin/STAJ/T8F81/top.v(2): compiling module 'top' [VERI-1018]
+INFO     : /home/omer-ahin/STAJ/T8F81/Led_Test.v(23): compiling module 'clk_divider(CLK_OUT_FREQ=5)' [VERI-1018]
+WARNING  : /home/omer-ahin/STAJ/T8F81/Led_Test.v(44): expression size 25 truncated to fit in target size 24 [VERI-1209]
+INFO     : Elaboration took 0.002548882 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration virtual memory usage: begin = 134.728 MB, end = 134.728 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Elaboration resident set memory usage: begin = 79.728 MB, end = 80.32 MB, delta = 0.592 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 284.38 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Elaboration ... *****
+INFO     : ... Setting Synthesis Option: mode=speed
+INFO     : ***** Beginning Reading Mapping Library ... *****
+INFO     : /home/omer-ahin/STAJ/T8F81/vhdl_test.vhd(13): re-analyze unit 'my_top_arch' since unit 'clk_divider' is overwritten or removed [VHDL-1201]
+INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v' [VERI-1482]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(8): compiling module 'EFX_ADD' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(21): compiling module 'EFX_FF' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(38): compiling module 'EFX_COMB4' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(48): compiling module 'EFX_GBUFCE' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(57): compiling module 'EFX_LUT4' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(65): compiling module 'EFX_MULT' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(100): compiling module 'EFX_DSP48' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(156): compiling module 'EFX_DSP24' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(209): compiling module 'EFX_DSP12' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(262): compiling module 'EFX_RAM_4K' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(322): compiling module 'EFX_RAM_5K' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(394): compiling module 'EFX_DPRAM_5K' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(499): compiling module 'RAMB5' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(561): compiling module 'EFX_RAM_10K' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(653): compiling module 'EFX_RAM10' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(754): compiling module 'EFX_DPRAM10' [VERI-1018]
+INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(884): compiling module 'EFX_SRL8' [VERI-1018]
+INFO     : Reading Mapping Library took 0.015474475 seconds [FlowMsg::StageDuration]
+INFO     :     Reading Mapping Library took 0.02 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Reading Mapping Library virtual memory usage: begin = 138.304 MB, end = 138.304 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Reading Mapping Library resident set memory usage: begin = 82.512 MB, end = 82.512 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Reading Mapping Library peak resident set memory usage = 284.38 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Reading Mapping Library ... *****
+INFO     : ... Pre-synthesis checks begin
+INFO     : ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... NameSpace init begin
+INFO     : ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Mapping design "top"
+INFO     : ... Hierarchical pre-synthesis "clk_divider(CLK_OUT_FREQ=5)" begin
+INFO     : ... Hierarchical pre-synthesis "clk_divider(CLK_OUT_FREQ=5)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Hierarchical pre-synthesis "top" begin
+INFO     : ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Flat optimizations begin
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Flat synthesis begin
+INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Flat optimizations begin
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Check and break combinational loops begin
+INFO     : ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Sequential Optimization begin
+INFO     : ... Clock Network 'clk' with 26 loads will be considered for sequential optimization.
+INFO     : ... Sequential Optimization deduced 0 equivalent points.
+INFO     : ... Sequential Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Setup for logic synthesis begin
+INFO     : ... Setup for logic synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... LUT mapping begin
+INFO     : ... LS, strategy: 3, nd: 13, ed: 45, lv: 3, pw: 58.66
+INFO     : ... LUT mapping end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Post-synthesis Verific netlist creation begin
+INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 284380KB)
+INFO     : ... Postmap Retiming Optimization begin
+INFO     : ... Clock Network 'clk~clk' with 26 loads will be considered for retiming optimization.
+INFO     : ... Performed 5 retime moves.
+INFO     : ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 284380KB)
+INFO     : ***** Beginning VDB Netlist Checker ... *****
+INFO     : VDB Netlist Checker took 0.000264366 seconds [FlowMsg::StageDuration]
+INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 246.708 MB, end = 246.708 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 95.588 MB, end = 95.588 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 284.38 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending VDB Netlist Checker ... *****
+INFO     : Resource Summary 
+INFO     : =============================== 
+INFO     : EFX_ADD         : 	23
+INFO     : EFX_LUT4        : 	13
+INFO     : EFX_FF          : 	41
+INFO     : EFX_GBUFCE      : 	1
+INFO     : =============================== 
+INFO     : ... Post-Map Verilog Writer begin
+INFO     : Writing netlist 'top' to Verilog file '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.map.v' [VDB-1030]
+INFO     : ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 284380KB)
+INFO     : The entire flow of EFX_MAP took 1.56903969 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_MAP took 1.39 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.472 MB, end = 246.708 MB, delta = 152.236 MB [FlowMsg::VMUsage]
+INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.672 MB, end = 97.296 MB, delta = 67.624 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 284.38 MB [FlowMsg::RSSUsage::Peak]

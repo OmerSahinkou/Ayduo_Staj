@@ -1,0 +1,191 @@
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:18:37
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'state_t' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:36)
+[EFX-0010 VERI-ERROR] 'baud_rate' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:38)
+[EFX-0010 VERI-ERROR] syntax error near 'clk_divider_spi' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:45)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:61)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:62)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:63)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:70)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:71)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:75)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:77)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:79)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:80)
+[EFX-0010 VERI-ERROR] 'shift_reg' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:83)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:84)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:86)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:87)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:88)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:90)
+[EFX-0010 VERI-ERROR] 'shift_reg' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:93)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:19:14
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'state_t' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:36)
+[EFX-0010 VERI-ERROR] 'baud_rate' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:38)
+[EFX-0010 VERI-ERROR] syntax error near 'clk_divider_spi' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:45)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:61)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:62)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:63)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:70)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:71)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:75)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:77)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:79)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:80)
+[EFX-0010 VERI-ERROR] 'shift_reg' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:83)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:84)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:86)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:87)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:88)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:90)
+[EFX-0010 VERI-ERROR] 'shift_reg' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:93)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:21:07
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'baud_rate' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:38)
+[EFX-0010 VERI-ERROR] syntax error near 'clk_divider_spi' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:45)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:61)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:62)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:63)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:70)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:71)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:75)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:77)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:79)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:80)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:83)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:84)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:86)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:87)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:88)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:90)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:93)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:94)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:22:28
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'baud_rate' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:38)
+[EFX-0010 VERI-ERROR] syntax error near 'clk_divider_spi' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:45)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:61)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:62)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:63)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:70)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:71)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:75)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:77)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:79)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:80)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:83)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:84)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:86)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:87)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:88)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:90)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:93)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:94)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:23:25
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'baud_rate' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:38)
+[EFX-0010 VERI-ERROR] syntax error near 'clk_divider_spi' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:45)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:61)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:62)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:63)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:70)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:71)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:75)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:77)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:79)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:80)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:83)
+[EFX-0010 VERI-ERROR] 'bit_counter' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:84)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:86)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:87)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:88)
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:90)
+[EFX-0010 VERI-ERROR] 'data_buffer' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:93)
+[EFX-0010 VERI-ERROR] 'state' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Master.vhdl:94)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:48:39
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] semicolon after last interface declaration is only supported in VHDL 1076-2019 (VHDL-1854) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:16)
+[EFX-0010 VERI-ERROR] unit 'top' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:18)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:48:56
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] semicolon after last interface declaration is only supported in VHDL 1076-2019 (VHDL-1854) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:16)
+[EFX-0010 VERI-ERROR] unit 'top' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:18)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:49:23
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] semicolon after last interface declaration is only supported in VHDL 1076-2019 (VHDL-1854) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:16)
+[EFX-0010 VERI-ERROR] unit 'top' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:18)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:52:24
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:13:03
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:17:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:31:17
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:59:39
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 16:09:57
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 16:13:48
+///////////////////////////////////
+

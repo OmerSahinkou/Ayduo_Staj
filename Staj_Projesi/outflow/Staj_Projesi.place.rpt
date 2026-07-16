@@ -1,0 +1,24 @@
+
+Efinix FPGA Placement and Routing.
+Version: 2025.2.288.2.10 
+Date: Tue Jul 14 16:13:52 2026
+
+Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
+ 
+Family: Trion 
+Device: T8F81
+Top-level Entity Name: Staj_Projesi
+Elapsed time for packing: 0 hours 0 minutes 0 seconds
+
+---------- Resource Summary (begin) ----------
+Inputs: 3 / 96 (3.12%)
+Outputs: 1 / 223 (0.45%)
+Clocks: 1 / 16 (6.25%)
+Logic Elements: 107 / 7384 (1.45%)
+	LE: LUTs/Adders: 92 / 7384 (1.25%)
+	LE: Registers: 63 / 5280 (1.19%)
+Memory Blocks: 0 / 24 (0.00%)
+Multipliers: 0 / 8 (0.00%)
+---------- Resource Summary (end) ----------
+
+Elapsed time for placement: 0 hours 0 minutes 1 seconds

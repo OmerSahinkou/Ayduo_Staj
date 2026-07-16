@@ -1,0 +1,102 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.math_real.all;
+
+entity uart_rx is
+    generic (
+        CLK_FREQ   : integer := 50_000_000;
+        BAUD_RATE  : integer := 115_200;
+        DATA_WIDTH : integer := 8
+    );
+    port (
+        clk_c    : in  std_logic;
+        rst_n    : in  std_logic;
+        rx       : in  std_logic;
+        rx_data  : out std_logic_vector(DATA_WIDTH - 1 downto 0);
+        rx_valid : out std_logic
+    );
+end entity uart_rx;
+
+architecture rtl of uart_rx is
+
+    constant BIT_LIMIT         : integer := CLK_FREQ / BAUD_RATE;
+    
+    -- Verilog'daki $clog2 karşılıkları
+    constant BIT_COUNTER_WIDTH : integer := integer(ceil(log2(real(BIT_LIMIT))));
+    constant BIT_IDX_WIDTH     : integer := integer(ceil(log2(real(DATA_WIDTH))));
+
+    type state_t is (IDLE, START_BIT, DATA_BITS, STOP_BIT);
+    signal state : state_t := IDLE;
+
+    signal bitcounter  : unsigned(BIT_COUNTER_WIDTH - 1 downto 0) := (others => '0');
+    signal bit_idx     : unsigned(BIT_IDX_WIDTH - 1 downto 0)     := (others => '0');
+    signal data_buffer : std_logic_vector(DATA_WIDTH - 1 downto 0):= (others => '0');
+
+begin
+
+    process(clk_c)
+    begin
+        if rising_edge(clk_c) then
+            if rst_n = '0' then
+                state       <= IDLE;
+                bit_idx     <= (others => '0');
+                bitcounter  <= (others => '0');
+                rx_valid    <= '0';
+                rx_data     <= (others => '0');
+                data_buffer <= (others => '0');
+            else
+                case state is
+                    when IDLE =>
+                        rx_valid <= '0';
+                        if rx = '0' then
+                            bitcounter <= to_unsigned(BIT_LIMIT / 2, BIT_COUNTER_WIDTH);
+                            state      <= START_BIT;
+                            bit_idx    <= (others => '0');
+                        end if;
+                        
+                    when START_BIT =>
+                        if bitcounter < BIT_LIMIT - 1 then
+                            bitcounter <= bitcounter + 1;
+                        else
+                            bitcounter <= (others => '0');
+                            if rx = '0' then
+                                state <= DATA_BITS;
+                            else
+                                state <= IDLE;
+                            end if;
+                        end if;
+                        
+                    when DATA_BITS =>
+                        if bitcounter < BIT_LIMIT - 1 then
+                            bitcounter <= bitcounter + 1;
+                        else
+                            bitcounter <= (others => '0');
+                            
+                            data_buffer(to_integer(bit_idx)) <= rx;
+                            
+                            if bit_idx = DATA_WIDTH - 1 then
+                                state <= STOP_BIT;
+                            else
+                                bit_idx <= bit_idx + 1;
+                            end if;
+                        end if;
+                        
+                    when STOP_BIT =>
+                        if bitcounter < BIT_LIMIT - 1 then
+                            bitcounter <= bitcounter + 1;
+                        else
+                            bitcounter <= (others => '0');
+                            state      <= IDLE;
+                            rx_valid   <= '1';
+                            rx_data    <= data_buffer;
+                        end if;
+                        
+                    when others =>
+                        state <= IDLE;
+                end case;
+            end if;
+        end if;
+    end process;
+
+end architecture rtl;

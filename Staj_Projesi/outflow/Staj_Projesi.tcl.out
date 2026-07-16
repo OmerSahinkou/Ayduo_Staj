@@ -1,0 +1,2 @@
+INFO     : Reading project database "/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : Maximum concurrency has been set to 8 [FlowMsg::MaxThreads]

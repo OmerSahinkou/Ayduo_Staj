@@ -1,0 +1,65 @@
+Time resolution is 1 ps
+
+========================================
+    SPI Mode 3 Testbench (SystemVerilog)
+========================================
+CLK Frequency:  50 MHz
+SPI Frequency:  5 MHz
+Data Width:     8 bits
+Mode:           3 (CPOL=1, CPHA=1)
+========================================
+
+[0] Asserting reset...
+[400000] Reset complete
+
+--- Test 1 ---
+[400000] Sending: 0xbb, Expecting RX: 0xaa
+
+========================================
+    SPI Mode 3 Testbench (SystemVerilog)
+========================================
+CLK Frequency:  50 MHz
+SPI Frequency:  5 MHz
+Data Width:     8 bits
+Mode:           3 (CPOL=1, CPHA=1)
+========================================
+
+[0] Asserting reset...
+[400000] Reset complete
+
+--- Test 1 ---
+[400000] Sending: 0xbb, Expecting RX: 0xaa
+[2160000] ✓ PASS: RX Data = 0xaa (correct)
+[2160000] MOSI sent: 0xbb
+
+--- Test 2 ---
+[2660000] Sending: 0x55, Expecting RX: 0x33
+[4420000] ✓ PASS: RX Data = 0x33 (correct)
+[4420000] MOSI sent: 0x55
+
+--- Test 3 ---
+[4920000] Sending: 0xff, Expecting RX: 0xff
+[6680000] ✓ PASS: RX Data = 0xff (correct)
+[6680000] MOSI sent: 0xff
+
+--- Test 4 ---
+[7180000] Sending: 0x00, Expecting RX: 0x00
+[8940000] ✓ PASS: RX Data = 0x00 (correct)
+[8940000] MOSI sent: 0x00
+
+--- Test 5 ---
+[9440000] Sending: 0xaa, Expecting RX: 0x55
+[11200000] ✓ PASS: RX Data = 0x55 (correct)
+[11200000] MOSI sent: 0xaa
+
+
+========================================
+           FINAL TEST REPORT
+========================================
+Total Tests:  5
+Passed:       5
+Failed:       0
+Status:       ✓ ALL TESTS PASSED
+========================================
+
+$finish called at time : 12700 ns : File "/home/omer-ahin/STAJ/pwm/pwm.srcs/sim_1/new/tb_spi.sv" Line 187

@@ -1,0 +1,111 @@
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:18:37
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:19:14
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:21:07
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:22:28
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 16:23:25
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:48:39
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:48:56
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:49:23
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 14:52:24
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:60)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:13:03
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:60)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:96)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:17:26
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:63)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:109)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:31:17
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:66)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:113)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:59:39
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:66)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:112)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 16:09:57
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:66)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:115)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 16:13:48
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] expression size 23 truncated to fit in target size 22 (VERI-1209) (/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v:44)
+[EFX-0011 VERI-WARNING] 'rst_n' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:65)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:111)

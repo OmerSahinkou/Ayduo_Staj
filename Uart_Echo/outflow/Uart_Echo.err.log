@@ -1,0 +1,120 @@
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 14:28:49
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near '50000000' (VHDL-1261) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:9)
+[EFX-0010 VERI-ERROR] 'datawidth' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:17)
+[EFX-0010 VERI-ERROR] semicolon after last interface declaration is only supported in VHDL 1076-2019 (VHDL-1854) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:19)
+[EFX-0010 VERI-ERROR] constant 'tx' can only be of mode 'in' (VHDL-1330) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:18)
+[EFX-0010 VERI-ERROR] constant 'tx_busy' can only be of mode 'in' (VHDL-1330) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:19)
+[EFX-0010 VERI-ERROR] syntax error near 'architecture' (VHDL-1261) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:21)
+[EFX-0010 VERI-ERROR] 'clk_freq' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:22)
+[EFX-0010 VERI-ERROR] 'data_width' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:24)
+[EFX-0010 VERI-ERROR] type conversion expression type for 'real' cannot be uniquely determined (VHDL-1155) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:24)
+[EFX-0010 VERI-ERROR] 'data_width' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:28)
+[EFX-0010 VERI-ERROR] syntax error near 'begin' (VHDL-1261) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:32)
+[EFX-0010 VERI-ERROR] 'rst_n' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:33)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 14:29:31
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near '50000000' (VHDL-1261) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:9)
+[EFX-0010 VERI-ERROR] 'datawidth' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:17)
+[EFX-0010 VERI-ERROR] semicolon after last interface declaration is only supported in VHDL 1076-2019 (VHDL-1854) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:19)
+[EFX-0010 VERI-ERROR] constant 'tx' can only be of mode 'in' (VHDL-1330) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:18)
+[EFX-0010 VERI-ERROR] constant 'tx_busy' can only be of mode 'in' (VHDL-1330) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:19)
+[EFX-0010 VERI-ERROR] syntax error near 'architecture' (VHDL-1261) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:21)
+[EFX-0010 VERI-ERROR] 'clk_freq' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:22)
+[EFX-0010 VERI-ERROR] 'data_width' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:24)
+[EFX-0010 VERI-ERROR] type conversion expression type for 'real' cannot be uniquely determined (VHDL-1155) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:24)
+[EFX-0010 VERI-ERROR] 'data_width' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:28)
+[EFX-0010 VERI-ERROR] syntax error near 'begin' (VHDL-1261) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:32)
+[EFX-0010 VERI-ERROR] 'rst_n' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:33)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 14:30:28
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 14:38:05
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 14:52:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 15:30:42
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] character ''0'' is not in type 'std_logic_vector' (VHDL-1040) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:43)
+[EFX-0010 VERI-ERROR] unit 'my_top_arc' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:95)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 15:31:04
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] character ''0'' is not in type 'std_logic_vector' (VHDL-1040) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:43)
+[EFX-0010 VERI-ERROR] unit 'my_top_arc' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:95)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 15:31:23
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] character ''0'' is not in type 'std_logic_vector' (VHDL-1040) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:43)
+[EFX-0010 VERI-ERROR] unit 'my_top_arc' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd:95)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 13, 2026 15:32:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:22:11
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:23:29
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:27:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 10:29:11
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:48:35
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 14, 2026 15:50:01
+///////////////////////////////////
+
