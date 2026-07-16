@@ -841,3 +841,190 @@
 // Jul 16, 2026 15:15:08
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:37:57
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 40 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:38:14
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 40 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:38:25
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 40 elements; expected 20 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:39:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:42:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:44:40
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:45:25
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:45:58
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:46:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:48:09
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:49:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 15:50:48
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:04:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:18:04
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:18:36
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:20:05
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:22:41
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:24:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:30:50
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:37:24
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:39:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 16:48:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 17:06:09
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near ')' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:141)
+[EFX-0010 VERI-ERROR] 'clk_in' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:138)
+[EFX-0010 VERI-ERROR] 'rst_n' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:139)
+[EFX-0010 VERI-ERROR] formal clk_out is not declared (VHDL-1084) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:140)
+[EFX-0010 VERI-ERROR] formal port 'rx' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:141)
+[EFX-0010 VERI-ERROR] syntax error near '<=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:170)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 17:07:12
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal clk_in is not declared (VHDL-1084) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:138)
+[EFX-0010 VERI-ERROR] formal port 'clk_i' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:141)
+[EFX-0010 VERI-ERROR] syntax error near '<=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:170)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 17:08:06
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal clk_in is not declared (VHDL-1084) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:138)
+[EFX-0010 VERI-ERROR] formal port 'clk_i' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:141)
+[EFX-0010 VERI-ERROR] syntax error near '<=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:170)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 17:09:01
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near '<=' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 17:09:29
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 16, 2026 17:11:18
+///////////////////////////////////
+

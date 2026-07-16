@@ -18,6 +18,7 @@ end top;
 
 architecture Behavioral of top is
 
+    -- PWM Modülü
     component pwm_servo is
         Generic ( CLK_FREQ : integer := 33_333_333 );
         Port ( 
@@ -28,6 +29,7 @@ architecture Behavioral of top is
         );
     end component;
 
+    -- UART TX Modülü
     component uart_tx is 
         generic(
             CLK_FREQ    : integer := 33_333_333;
@@ -44,9 +46,10 @@ architecture Behavioral of top is
         );
     end component;
     
+    -- UART RX Modülü
     component uart_rx is
         generic (
-            CLK_FREQ   : integer := 50_000_000;
+            CLK_FREQ   : integer := 33_333_333;
             BAUD_RATE  : integer := 115_200;
             DATA_WIDTH : integer := 8
         );
@@ -57,46 +60,21 @@ architecture Behavioral of top is
             rx_data  : out std_logic_vector(DATA_WIDTH - 1 downto 0);
             rx_valid : out std_logic
         );
-    end component uart_rx;
-    
-    component clk_divider is 
-    generic(
-        CLK_IN_FREQ    : integer := 33_333_333;
-        CLK_OUT_FREQ   : integer := 50
-    );
-    port(
-        clk_in       : in std_logic;
-        rst_n        : in std_logic;
-        clk_out      : out std_logic
-    );
     end component;
-
-    -- =========================================================
-    -- Sinyal Tanımlamaları (Declarative Region)
-    -- =========================================================
+    
+    -- Sinyaller
     signal angle_reg    : unsigned(7 downto 0) := (others => '0');
-
     signal tx_start_sig : std_logic := '0';
     signal tx_data_sig  : std_logic_vector(7 downto 0) := (others => '0');
     signal tx_busy_sig  : std_logic;
-    
     signal rx_data_sig  : std_logic_vector(7 downto 0) := (others => '0');
     signal rx_valid     : std_logic;
-    
-    signal clk_out      : std_logic;
-    signal clk_out_last : std_logic := '0';
-    
-    signal rx_buffer    : std_logic_vector(7 downto 0) := (others => '0');
 
 begin
 
-    -- =========================================================
-    -- Modül Bağlantıları (Instantiation)
-    -- =========================================================
+    -- PWM Servo Bağlantısı
     Inst_pwm_servo: pwm_servo
-        generic map (
-            CLK_FREQ => CLK_FREQ
-        )
+        generic map ( CLK_FREQ => CLK_FREQ )
         port map (
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
@@ -104,6 +82,7 @@ begin
             pwm_out     => pwm_out
         );
 
+    -- UART TX Bağlantısı
     Inst_uart_tx: uart_tx
         generic map (
             CLK_FREQ   => CLK_FREQ,
@@ -119,6 +98,7 @@ begin
             tx_busy    => tx_busy_sig   
         );
         
+    -- UART RX Bağlantısı
     Inst_uart_rx: uart_rx
         generic map (
             CLK_FREQ   => CLK_FREQ,
@@ -126,52 +106,28 @@ begin
             DATA_WIDTH => 8
         )
         port map (
-            clk_c           => clk_i,
-            rst_n           => rst_n_i,
-            rx              => rx,
-            rx_data         => rx_data_sig,
-            rx_valid        => rx_valid
+            clk_c      => clk_i,
+            rst_n      => rst_n_i,
+            rx         => rx,
+            rx_data    => rx_data_sig,
+            rx_valid   => rx_valid
         ); 
-        
-     Inst_clk_divider:clk_divider
-        generic map (
-            CLK_IN_FREQ => CLK_FREQ,
-            CLK_OUT_FREQ => 50
-        )
-        port map(
-            clk_in      => clk_i ,
-            rst_n       => rst_n_i,
-            clk_out     => clk_out
-        );
 
-    -- =========================================================
-    -- Ana Kontrol Prosesi (RX Yakalama ve Açı Güncelleme)
-    -- =========================================================
+    -- Ana Kontrol Prosesi (RX'ten gelen veri anında PWM'e aktarılır)
     process(clk_i, rst_n_i)
     begin
         if rst_n_i = '0' then
             angle_reg    <= (others => '0');
             tx_start_sig <= '0';
-            clk_out_last <= '0';
-            rx_buffer    <= (others => '0');
-            
         elsif rising_edge(clk_i) then
-            
             tx_start_sig <= '0';  
-            clk_out_last <= clk_out; 
-
             if rx_valid = '1' then
-                rx_buffer <= rx_data_sig;
-            end if;
-            if clk_out = '1' and clk_out_last = '0' then
+                angle_reg <= unsigned(rx_data_sig); 
                 
-                angle_reg <= unsigned(rx_buffer); 
                 if tx_busy_sig = '0' then
                     tx_start_sig <= '1';
                 end if;
-                
             end if;
-            
         end if;
     end process;
     

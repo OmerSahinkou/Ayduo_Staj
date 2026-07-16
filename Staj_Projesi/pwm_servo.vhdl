@@ -21,12 +21,8 @@ architecture Behavioral of pwm_servo is
     
 begin
 
-    -- SG90 Servo: 50Hz (20ms)
-    -- CLK_FREQ=33.33MHz, 20ms period = 666,667 cycle
-    -- servo_angle: 0-255 → pulse_width: 1ms-2ms (33,333-66,666 cycle)
-    -- Division by 256 is replaced with shift_right by 8 bits for strict VHDL-93 syntax compliance
-    pulse_width <= to_unsigned(16_667, 20) + 
-                   resize(shift_right(unsigned(servo_angle) * to_unsigned(66_667, 17), 8), 20);
+
+    pulse_width <= to_unsigned(33_333, 20) + resize(unsigned(servo_angle) * to_unsigned(274, 10), 20);
 
     process (clk_i, rst_n_i)
     begin

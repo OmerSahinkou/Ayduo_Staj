@@ -1,7 +1,7 @@
 
 Efinix Static Timing Analysis Report
 Version: 2025.2.288.2.10
-Date: Thu Jul 16 15:15:15 2026
+Date: Thu Jul 16 17:11:25 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
 
@@ -31,9 +31,9 @@ User target constrained clocks
 
 Maximum possible analyzed clocks frequency
  Clock Name  Period (ns)  Frequency (MHz)     Edge
-   clk_i        16.005        62.480         (R-R)
+   clk_i        15.199        65.794         (R-R)
 
-Geomean max period: 16.005
+Geomean max period: 15.199
 
 ---------- Clock Frequency Summary (end) ---------------
 
@@ -41,7 +41,7 @@ Geomean max period: 16.005
 
 Setup (Max) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-     clk_i            clk_i            1.000           -15.005           (R-R)
+     clk_i            clk_i            1.000           -14.199           (R-R)
 
 Hold (Min) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
@@ -61,20 +61,20 @@ Path Detail Report (clk_i vs clk_i)
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_1|D                  
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -15.005 (required time - arrival time)
-Delay         : 12.261                                
+Slack         : -14.199 (required time - arrival time)
+Delay         : 11.455                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.865
++ Clock To Q + Data Path Delay : 15.059
 ---------------------------------------
-End-of-path arrival time       : 22.871
+End-of-path arrival time       : 22.065
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -91,66 +91,66 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
-           name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-=====================================================================================================
-Inst_pwm_servo/mult_3|O[11]  mult_18x18     3.220             3.220               3        (33,62)
-Inst_pwm_servo/n18           net            4.228             7.448               3        (33,62)
+           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================
+Inst_pwm_servo/mult_3|O[5]  mult_18x18     3.220             3.220              8         (33,62)
+Inst_pwm_servo/n15          net            4.907             8.127              8         (33,62)
    Routing elements:
-      Manhattan distance of X:3, Y:11
-LUT__678|in[0]               lut            0.000             7.448               3        (36,73)
-LUT__678|out                 lut            0.000             7.448              12        (36,73)
-n304                         net            2.962            10.410              12        (36,73)
-   Routing elements:
-      Manhattan distance of X:4, Y:1
-LUT__713|in[0]               lut            0.000            10.410              12        (40,72)
-LUT__713|out                 lut            0.000            10.410               8        (40,72)
-n339                         net            1.668            12.078               8        (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            12.078               8        (44,72)
-LUT__723|out                 lut            0.000            12.078               2        (44,72)
-n349                         net            3.403            15.481               2        (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[2]              lut            0.000             8.127              8         (36,68)
+LUT__537|out                lut            0.000             8.127              3         (36,68)
+n271                        net            2.686            10.813              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            15.481               2        (43,72)
-LUT__727|out                 lut            0.000            15.481               2        (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.865               2        (43,72)
+LUT__544|in[3]              lut            0.000            10.813              3         (35,68)
+LUT__544|out                lut            0.000            10.813              6         (35,68)
+n278                        net            1.672            12.485              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:4, Y:0
+LUT__548|in[0]              lut            0.000            12.485              6         (39,68)
+LUT__548|out                lut            0.000            12.485              2         (39,68)
+n282                        net            2.190            14.675              2         (39,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__549|in[3]              lut            0.000            14.675              2         (39,66)
+LUT__549|out                lut            0.000            14.675              2         (39,66)
+pwm_out_3~FF_brt_1|D        ff             0.384            15.059              2         (39,66)
 
 Capture Clock Path
-            name               model name   delay (ns)  cumulative delay (ns) pins on net    location
-=======================================================================================================
-clk_i                            inpad        0.000             0.000               0        (0,102)
-clk_i                            inpad        0.420             0.420               2        (0,102)
-clk_i                            net          3.268             3.688               2        (0,102)
+         name           model name   delay (ns)  cumulative delay (ns) pins on net    location
+================================================================================================
+clk_i                     inpad        0.000             0.000               0        (0,102)
+clk_i                     inpad        0.420             0.420               2        (0,102)
+clk_i                     net          3.268             3.688               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|I               gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O               gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                   net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_1|CLK    ff           0.000             7.006             101        (39,66)
 
 ++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_1|D                  
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.975 (required time - arrival time)
-Delay         : 12.231                                
+Slack         : -14.140 (required time - arrival time)
+Delay         : 11.396                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.835
++ Clock To Q + Data Path Delay : 15.000
 ---------------------------------------
-End-of-path arrival time       : 22.841
+End-of-path arrival time       : 22.006
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -167,66 +167,66 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
-           name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-=====================================================================================================
-Inst_pwm_servo/mult_3|O[18]  mult_18x18     3.220             3.220              4         (33,62)
-Inst_pwm_servo/n11           net            3.939             7.159              4         (33,62)
+           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================
+Inst_pwm_servo/mult_3|O[9]  mult_18x18     3.220             3.220              4         (33,62)
+Inst_pwm_servo/n11          net            4.848             8.068              4         (33,62)
    Routing elements:
-      Manhattan distance of X:10, Y:10
-LUT__712|in[1]               lut            0.000             7.159              4         (23,72)
-LUT__712|out                 lut            0.000             7.159              2         (23,72)
-n338                         net            3.221            10.380              2         (23,72)
-   Routing elements:
-      Manhattan distance of X:17, Y:0
-LUT__713|in[2]               lut            0.000            10.380              2         (40,72)
-LUT__713|out                 lut            0.000            10.380              8         (40,72)
-n339                         net            1.668            12.048              8         (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            12.048              8         (44,72)
-LUT__723|out                 lut            0.000            12.048              2         (44,72)
-n349                         net            3.403            15.451              2         (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[1]              lut            0.000             8.068              4         (36,68)
+LUT__537|out                lut            0.000             8.068              3         (36,68)
+n271                        net            2.686            10.754              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            15.451              2         (43,72)
-LUT__727|out                 lut            0.000            15.451              2         (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.835              2         (43,72)
+LUT__544|in[3]              lut            0.000            10.754              3         (35,68)
+LUT__544|out                lut            0.000            10.754              6         (35,68)
+n278                        net            1.672            12.426              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:4, Y:0
+LUT__548|in[0]              lut            0.000            12.426              6         (39,68)
+LUT__548|out                lut            0.000            12.426              2         (39,68)
+n282                        net            2.190            14.616              2         (39,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__549|in[3]              lut            0.000            14.616              2         (39,66)
+LUT__549|out                lut            0.000            14.616              2         (39,66)
+pwm_out_3~FF_brt_1|D        ff             0.384            15.000              2         (39,66)
 
 Capture Clock Path
-            name               model name   delay (ns)  cumulative delay (ns) pins on net    location
-=======================================================================================================
-clk_i                            inpad        0.000             0.000               0        (0,102)
-clk_i                            inpad        0.420             0.420               2        (0,102)
-clk_i                            net          3.268             3.688               2        (0,102)
+         name           model name   delay (ns)  cumulative delay (ns) pins on net    location
+================================================================================================
+clk_i                     inpad        0.000             0.000               0        (0,102)
+clk_i                     inpad        0.420             0.420               2        (0,102)
+clk_i                     net          3.268             3.688               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|I               gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O               gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                   net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_1|CLK    ff           0.000             7.006             101        (39,66)
 
 ++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_3_brt_15|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.841 (required time - arrival time)
-Delay         : 12.097                                
+Slack         : -13.807 (required time - arrival time)
+Delay         : 11.063                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.701
++ Clock To Q + Data Path Delay : 14.667
 ---------------------------------------
-End-of-path arrival time       : 22.707
+End-of-path arrival time       : 21.673
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -243,35 +243,35 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[19]  mult_18x18     3.220             3.220              3         (33,62)
-Inst_pwm_servo/n10           net            3.805             7.025              3         (33,62)
+Inst_pwm_servo/mult_3|O[5]   mult_18x18     3.220             3.220              8         (33,62)
+Inst_pwm_servo/n15           net            4.907             8.127              8         (33,62)
    Routing elements:
-      Manhattan distance of X:10, Y:10
-LUT__712|in[0]               lut            0.000             7.025              3         (23,72)
-LUT__712|out                 lut            0.000             7.025              2         (23,72)
-n338                         net            3.221            10.246              2         (23,72)
-   Routing elements:
-      Manhattan distance of X:17, Y:0
-LUT__713|in[2]               lut            0.000            10.246              2         (40,72)
-LUT__713|out                 lut            0.000            10.246              8         (40,72)
-n339                         net            1.668            11.914              8         (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            11.914              8         (44,72)
-LUT__723|out                 lut            0.000            11.914              2         (44,72)
-n349                         net            3.403            15.317              2         (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[2]               lut            0.000             8.127              8         (36,68)
+LUT__537|out                 lut            0.000             8.127              3         (36,68)
+n271                         net            2.686            10.813              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            15.317              2         (43,72)
-LUT__727|out                 lut            0.000            15.317              2         (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.701              2         (43,72)
+LUT__544|in[3]               lut            0.000            10.813              3         (35,68)
+LUT__544|out                 lut            0.000            10.813              6         (35,68)
+n278                         net            1.799            12.612              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:6
+LUT__553|in[1]               lut            0.000            12.612              6         (35,74)
+LUT__553|out                 lut            0.000            12.612              3         (35,74)
+n287                         net            1.671            14.283              3         (35,74)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__560|in[0]               lut            0.000            14.283              3         (35,76)
+LUT__560|out                 lut            0.000            14.283              2         (35,76)
+pwm_out_3~FF_brt_3_brt_15|D  ff             0.384            14.667              2         (35,76)
 
 Capture Clock Path
             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -282,27 +282,27 @@ clk_i                            net          3.268             3.688           
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_3_brt_15|CLK    ff           0.000             7.006             101        (35,76)
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_3_brt_15|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.805 (required time - arrival time)
-Delay         : 12.061                                
+Slack         : -13.748 (required time - arrival time)
+Delay         : 11.004                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.665
++ Clock To Q + Data Path Delay : 14.608
 ---------------------------------------
-End-of-path arrival time       : 22.671
+End-of-path arrival time       : 21.614
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -319,35 +319,35 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[17]  mult_18x18     3.220             3.220              4         (33,62)
-Inst_pwm_servo/n12           net            3.769             6.989              4         (33,62)
+Inst_pwm_servo/mult_3|O[9]   mult_18x18     3.220             3.220              4         (33,62)
+Inst_pwm_servo/n11           net            4.848             8.068              4         (33,62)
    Routing elements:
-      Manhattan distance of X:10, Y:10
-LUT__712|in[2]               lut            0.000             6.989              4         (23,72)
-LUT__712|out                 lut            0.000             6.989              2         (23,72)
-n338                         net            3.221            10.210              2         (23,72)
-   Routing elements:
-      Manhattan distance of X:17, Y:0
-LUT__713|in[2]               lut            0.000            10.210              2         (40,72)
-LUT__713|out                 lut            0.000            10.210              8         (40,72)
-n339                         net            1.668            11.878              8         (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            11.878              8         (44,72)
-LUT__723|out                 lut            0.000            11.878              2         (44,72)
-n349                         net            3.403            15.281              2         (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[1]               lut            0.000             8.068              4         (36,68)
+LUT__537|out                 lut            0.000             8.068              3         (36,68)
+n271                         net            2.686            10.754              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            15.281              2         (43,72)
-LUT__727|out                 lut            0.000            15.281              2         (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.665              2         (43,72)
+LUT__544|in[3]               lut            0.000            10.754              3         (35,68)
+LUT__544|out                 lut            0.000            10.754              6         (35,68)
+n278                         net            1.799            12.553              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:6
+LUT__553|in[1]               lut            0.000            12.553              6         (35,74)
+LUT__553|out                 lut            0.000            12.553              3         (35,74)
+n287                         net            1.671            14.224              3         (35,74)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__560|in[0]               lut            0.000            14.224              3         (35,76)
+LUT__560|out                 lut            0.000            14.224              2         (35,76)
+pwm_out_3~FF_brt_3_brt_15|D  ff             0.384            14.608              2         (35,76)
 
 Capture Clock Path
             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -358,27 +358,27 @@ clk_i                            net          3.268             3.688           
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_3_brt_15|CLK    ff           0.000             7.006             101        (35,76)
 
 ++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_2_brt_13|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.651 (required time - arrival time)
-Delay         : 11.907                                
+Slack         : -13.680 (required time - arrival time)
+Delay         : 10.936                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.511
++ Clock To Q + Data Path Delay : 14.540
 ---------------------------------------
-End-of-path arrival time       : 22.517
+End-of-path arrival time       : 21.546
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -395,35 +395,35 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[9]   mult_18x18     3.220             3.220               4        (33,62)
-Inst_pwm_servo/n20           net            3.874             7.094               4        (33,62)
-   Routing elements: feedthru(1)
-      Manhattan distance of X:3, Y:11
-LUT__678|in[3]               lut            0.000             7.094               4        (36,73)
-LUT__678|out                 lut            0.000             7.094              12        (36,73)
-n304                         net            2.962            10.056              12        (36,73)
+Inst_pwm_servo/mult_3|O[5]   mult_18x18     3.220             3.220              8         (33,62)
+Inst_pwm_servo/n15           net            4.907             8.127              8         (33,62)
    Routing elements:
-      Manhattan distance of X:4, Y:1
-LUT__713|in[0]               lut            0.000            10.056              12        (40,72)
-LUT__713|out                 lut            0.000            10.056               8        (40,72)
-n339                         net            1.668            11.724               8        (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            11.724               8        (44,72)
-LUT__723|out                 lut            0.000            11.724               2        (44,72)
-n349                         net            3.403            15.127               2        (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[2]               lut            0.000             8.127              8         (36,68)
+LUT__537|out                 lut            0.000             8.127              3         (36,68)
+n271                         net            2.686            10.813              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            15.127               2        (43,72)
-LUT__727|out                 lut            0.000            15.127               2        (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.511               2        (43,72)
+LUT__544|in[3]               lut            0.000            10.813              3         (35,68)
+LUT__544|out                 lut            0.000            10.813              6         (35,68)
+n278                         net            1.672            12.485              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:3
+LUT__555|in[0]               lut            0.000            12.485              6         (35,65)
+LUT__555|out                 lut            0.000            12.485              3         (35,65)
+n289                         net            1.671            14.156              3         (35,65)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__556|in[0]               lut            0.000            14.156              3         (35,67)
+LUT__556|out                 lut            0.000            14.156              2         (35,67)
+pwm_out_3~FF_brt_2_brt_13|D  ff             0.384            14.540              2         (35,67)
 
 Capture Clock Path
             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -434,27 +434,27 @@ clk_i                            net          3.268             3.688           
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_2_brt_13|CLK    ff           0.000             7.006             101        (35,67)
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_2_brt_13|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.536 (required time - arrival time)
-Delay         : 11.792                                
+Slack         : -13.621 (required time - arrival time)
+Delay         : 10.877                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.396
++ Clock To Q + Data Path Delay : 14.481
 ---------------------------------------
-End-of-path arrival time       : 22.402
+End-of-path arrival time       : 21.487
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -471,35 +471,35 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[8]   mult_18x18     3.220             3.220               4        (33,62)
-Inst_pwm_servo/n21           net            3.759             6.979               4        (33,62)
+Inst_pwm_servo/mult_3|O[9]   mult_18x18     3.220             3.220              4         (33,62)
+Inst_pwm_servo/n11           net            4.848             8.068              4         (33,62)
    Routing elements:
-      Manhattan distance of X:3, Y:11
-LUT__678|in[1]               lut            0.000             6.979               4        (36,73)
-LUT__678|out                 lut            0.000             6.979              12        (36,73)
-n304                         net            2.962             9.941              12        (36,73)
-   Routing elements:
-      Manhattan distance of X:4, Y:1
-LUT__713|in[0]               lut            0.000             9.941              12        (40,72)
-LUT__713|out                 lut            0.000             9.941               8        (40,72)
-n339                         net            1.668            11.609               8        (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            11.609               8        (44,72)
-LUT__723|out                 lut            0.000            11.609               2        (44,72)
-n349                         net            3.403            15.012               2        (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[1]               lut            0.000             8.068              4         (36,68)
+LUT__537|out                 lut            0.000             8.068              3         (36,68)
+n271                         net            2.686            10.754              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            15.012               2        (43,72)
-LUT__727|out                 lut            0.000            15.012               2        (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.396               2        (43,72)
+LUT__544|in[3]               lut            0.000            10.754              3         (35,68)
+LUT__544|out                 lut            0.000            10.754              6         (35,68)
+n278                         net            1.672            12.426              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:3
+LUT__555|in[0]               lut            0.000            12.426              6         (35,65)
+LUT__555|out                 lut            0.000            12.426              3         (35,65)
+n289                         net            1.671            14.097              3         (35,65)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__556|in[0]               lut            0.000            14.097              3         (35,67)
+LUT__556|out                 lut            0.000            14.097              2         (35,67)
+pwm_out_3~FF_brt_2_brt_13|D  ff             0.384            14.481              2         (35,67)
 
 Capture Clock Path
             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -510,27 +510,27 @@ clk_i                            net          3.268             3.688           
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_2_brt_13|CLK    ff           0.000             7.006             101        (35,67)
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_0_brt_6|D            
+Path End      : pwm_out_3~FF_brt_3_brt_14|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.342 (required time - arrival time)
-Delay         : 11.598                                
+Slack         : -13.572 (required time - arrival time)
+Delay         : 10.828                                
 
-Logic Level             : 3
-Non-global nets on path : 3
+Logic Level             : 4
+Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.202
++ Clock To Q + Data Path Delay : 14.432
 ---------------------------------------
-End-of-path arrival time       : 22.208
+End-of-path arrival time       : 21.438
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -547,61 +547,66 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[12]  mult_18x18     3.220             3.220              10        (33,62)
-Inst_pwm_servo/n17           net            5.950             9.170              10        (33,62)
+Inst_pwm_servo/mult_3|O[5]   mult_18x18     3.220             3.220              8         (33,62)
+Inst_pwm_servo/n15           net            4.907             8.127              8         (33,62)
    Routing elements:
-      Manhattan distance of X:1, Y:11
-LUT__686|in[1]               lut            0.000             9.170              10        (34,73)
-LUT__686|out                 lut            0.000             9.170               3        (34,73)
-n312                         net            3.976            13.146               3        (34,73)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[2]               lut            0.000             8.127              8         (36,68)
+LUT__537|out                 lut            0.000             8.127              3         (36,68)
+n271                         net            2.686            10.813              3         (36,68)
    Routing elements:
-      Manhattan distance of X:1, Y:3
-LUT__689|in[3]               lut            0.000            13.146               3        (35,76)
-LUT__689|out                 lut            0.000            13.146               2        (35,76)
-n315                         net            1.672            14.818               2        (35,76)
+      Manhattan distance of X:1, Y:0
+LUT__544|in[3]               lut            0.000            10.813              3         (35,68)
+LUT__544|out                 lut            0.000            10.813              6         (35,68)
+n278                         net            1.672            12.485              6         (35,68)
    Routing elements:
       Manhattan distance of X:0, Y:3
-LUT__695|in[0]               lut            0.000            14.818               2        (35,73)
-LUT__695|out                 lut            0.000            14.818               2        (35,73)
-pwm_out_3~FF_brt_0_brt_6|D   ff             0.384            15.202               2        (35,73)
+LUT__555|in[0]               lut            0.000            12.485              6         (35,65)
+LUT__555|out                 lut            0.000            12.485              3         (35,65)
+n289                         net            1.563            14.048              3         (35,65)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__559|in[1]               lut            0.000            14.048              3         (35,63)
+LUT__559|out                 lut            0.000            14.048              2         (35,63)
+pwm_out_3~FF_brt_3_brt_14|D  ff             0.384            14.432              2         (35,63)
 
 Capture Clock Path
-            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================
-clk_i                           inpad        0.000             0.000               0        (0,102)
-clk_i                           inpad        0.420             0.420               2        (0,102)
-clk_i                           net          3.268             3.688               2        (0,102)
+            name               model name   delay (ns)  cumulative delay (ns) pins on net    location
+=======================================================================================================
+clk_i                            inpad        0.000             0.000               0        (0,102)
+clk_i                            inpad        0.420             0.420               2        (0,102)
+clk_i                            net          3.268             3.688               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                     gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                     gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                         net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_0_brt_6|CLK    ff           0.000             7.006             132        (35,73)
+CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_3_brt_14|CLK    ff           0.000             7.006             101        (35,63)
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_1|D                  
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.195 (required time - arrival time)
-Delay         : 11.451                                
+Slack         : -13.572 (required time - arrival time)
+Delay         : 10.828                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.055
++ Clock To Q + Data Path Delay : 14.432
 ---------------------------------------
-End-of-path arrival time       : 22.061
+End-of-path arrival time       : 21.438
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -618,66 +623,66 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
-           name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-=====================================================================================================
-Inst_pwm_servo/mult_3|O[13]  mult_18x18     3.220             3.220              7         (33,62)
-Inst_pwm_servo/n16           net            4.722             7.942              7         (33,62)
+           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================
+Inst_pwm_servo/mult_3|O[5]  mult_18x18     3.220             3.220              8         (33,62)
+Inst_pwm_servo/n15          net            4.907             8.127              8         (33,62)
    Routing elements:
-      Manhattan distance of X:1, Y:10
-LUT__700|in[2]               lut            0.000             7.942              7         (32,72)
-LUT__700|out                 lut            0.000             7.942              4         (32,72)
-n326                         net            1.658             9.600              4         (32,72)
-   Routing elements:
-      Manhattan distance of X:8, Y:0
-LUT__713|in[3]               lut            0.000             9.600              4         (40,72)
-LUT__713|out                 lut            0.000             9.600              8         (40,72)
-n339                         net            1.668            11.268              8         (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            11.268              8         (44,72)
-LUT__723|out                 lut            0.000            11.268              2         (44,72)
-n349                         net            3.403            14.671              2         (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[2]              lut            0.000             8.127              8         (36,68)
+LUT__537|out                lut            0.000             8.127              3         (36,68)
+n271                        net            2.686            10.813              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            14.671              2         (43,72)
-LUT__727|out                 lut            0.000            14.671              2         (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.055              2         (43,72)
+LUT__544|in[3]              lut            0.000            10.813              3         (35,68)
+LUT__544|out                lut            0.000            10.813              6         (35,68)
+n278                        net            1.563            12.376              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:2
+LUT__545|in[1]              lut            0.000            12.376              6         (35,66)
+LUT__545|out                lut            0.000            12.376              3         (35,66)
+n279                        net            1.672            14.048              3         (35,66)
+   Routing elements:
+      Manhattan distance of X:4, Y:0
+LUT__549|in[0]              lut            0.000            14.048              3         (39,66)
+LUT__549|out                lut            0.000            14.048              2         (39,66)
+pwm_out_3~FF_brt_1|D        ff             0.384            14.432              2         (39,66)
 
 Capture Clock Path
-            name               model name   delay (ns)  cumulative delay (ns) pins on net    location
-=======================================================================================================
-clk_i                            inpad        0.000             0.000               0        (0,102)
-clk_i                            inpad        0.420             0.420               2        (0,102)
-clk_i                            net          3.268             3.688               2        (0,102)
+         name           model name   delay (ns)  cumulative delay (ns) pins on net    location
+================================================================================================
+clk_i                     inpad        0.000             0.000               0        (0,102)
+clk_i                     inpad        0.420             0.420               2        (0,102)
+clk_i                     net          3.268             3.688               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|I               gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O               gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                   net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_1|CLK    ff           0.000             7.006             101        (39,66)
 
 ++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_2_brt_12|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.192 (required time - arrival time)
-Delay         : 11.448                                
+Slack         : -13.565 (required time - arrival time)
+Delay         : 10.821                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.052
++ Clock To Q + Data Path Delay : 14.425
 ---------------------------------------
-End-of-path arrival time       : 22.058
+End-of-path arrival time       : 21.431
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -694,35 +699,35 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[12]  mult_18x18     3.220             3.220              10        (33,62)
-Inst_pwm_servo/n17           net            4.811             8.031              10        (33,62)
+Inst_pwm_servo/mult_3|O[5]   mult_18x18     3.220             3.220              8         (33,62)
+Inst_pwm_servo/n15           net            4.907             8.127              8         (33,62)
    Routing elements:
-      Manhattan distance of X:4, Y:10
-LUT__699|in[1]               lut            0.000             8.031              10        (37,72)
-LUT__699|out                 lut            0.000             8.031               4        (37,72)
-n325                         net            1.566             9.597               4        (37,72)
-   Routing elements:
-      Manhattan distance of X:3, Y:0
-LUT__713|in[1]               lut            0.000             9.597               4        (40,72)
-LUT__713|out                 lut            0.000             9.597               8        (40,72)
-n339                         net            1.668            11.265               8        (40,72)
-   Routing elements:
-      Manhattan distance of X:4, Y:0
-LUT__723|in[0]               lut            0.000            11.265               8        (44,72)
-LUT__723|out                 lut            0.000            11.265               2        (44,72)
-n349                         net            3.403            14.668               2        (44,72)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[2]               lut            0.000             8.127              8         (36,68)
+LUT__537|out                 lut            0.000             8.127              3         (36,68)
+n271                         net            2.686            10.813              3         (36,68)
    Routing elements:
       Manhattan distance of X:1, Y:0
-LUT__727|in[1]               lut            0.000            14.668               2        (43,72)
-LUT__727|out                 lut            0.000            14.668               2        (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.052               2        (43,72)
+LUT__544|in[3]               lut            0.000            10.813              3         (35,68)
+LUT__544|out                 lut            0.000            10.813              6         (35,68)
+n278                         net            1.799            12.612              6         (35,68)
+   Routing elements:
+      Manhattan distance of X:0, Y:6
+LUT__553|in[1]               lut            0.000            12.612              6         (35,74)
+LUT__553|out                 lut            0.000            12.612              3         (35,74)
+n287                         net            1.429            14.041              3         (35,74)
+   Routing elements:
+      Manhattan distance of X:0, Y:3
+LUT__554|in[2]               lut            0.000            14.041              3         (35,77)
+LUT__554|out                 lut            0.000            14.041              2         (35,77)
+pwm_out_3~FF_brt_2_brt_12|D  ff             0.384            14.425              2         (35,77)
 
 Capture Clock Path
             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -733,27 +738,27 @@ clk_i                            net          3.268             3.688           
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_2_brt_12|CLK    ff           0.000             7.006             101        (35,77)
 
 ++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_pwm_servo/mult_3|CLK             
-Path End      : pwm_out_3~FF_brt_2_brt_15|D           
+Path End      : pwm_out_3~FF_brt_3_brt_14|D           
 Launch Clock  : clk_i (RISE)                          
 Capture Clock : clk_i (RISE)                          
-Slack         : -14.168 (required time - arrival time)
-Delay         : 11.424                                
+Slack         : -13.513 (required time - arrival time)
+Delay         : 10.769                                
 
 Logic Level             : 4
 Non-global nets on path : 4
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 15.028
++ Clock To Q + Data Path Delay : 14.373
 ---------------------------------------
-End-of-path arrival time       : 22.034
+End-of-path arrival time       : 21.379
 
 Constraint                     : 1.000
 + Capture Clock Path Delay     : 7.006
@@ -770,35 +775,35 @@ clk_i                      net            3.268             3.688               
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                gbuf           3.318             7.006               2        (1,78) 
-CLKBUF__0|O                gbuf           0.000             7.006             132        (1,78) 
-clk_i~O                    net            0.000             7.006             132        (1,78) 
-Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             132        (33,62)
+CLKBUF__0|O                gbuf           0.000             7.006             101        (1,78) 
+clk_i~O                    net            0.000             7.006             101        (1,78) 
+Inst_pwm_servo/mult_3|CLK  mult_18x18     0.000             7.006             101        (33,62)
 
 Data Path
            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
 =====================================================================================================
-Inst_pwm_servo/mult_3|O[11]  mult_18x18     3.220             3.220               3        (33,62)
-Inst_pwm_servo/n18           net            4.228             7.448               3        (33,62)
+Inst_pwm_servo/mult_3|O[9]   mult_18x18     3.220             3.220              4         (33,62)
+Inst_pwm_servo/n11           net            4.848             8.068              4         (33,62)
    Routing elements:
-      Manhattan distance of X:3, Y:11
-LUT__678|in[0]               lut            0.000             7.448               3        (36,73)
-LUT__678|out                 lut            0.000             7.448              12        (36,73)
-n304                         net            2.962            10.410              12        (36,73)
+      Manhattan distance of X:3, Y:6
+LUT__537|in[1]               lut            0.000             8.068              4         (36,68)
+LUT__537|out                 lut            0.000             8.068              3         (36,68)
+n271                         net            2.686            10.754              3         (36,68)
    Routing elements:
-      Manhattan distance of X:4, Y:1
-LUT__713|in[0]               lut            0.000            10.410              12        (40,72)
-LUT__713|out                 lut            0.000            10.410               8        (40,72)
-n339                         net            1.565            11.975               8        (40,72)
+      Manhattan distance of X:1, Y:0
+LUT__544|in[3]               lut            0.000            10.754              3         (35,68)
+LUT__544|out                 lut            0.000            10.754              6         (35,68)
+n278                         net            1.672            12.426              6         (35,68)
    Routing elements:
-      Manhattan distance of X:0, Y:1
-LUT__714|in[1]               lut            0.000            11.975               8        (40,73)
-LUT__714|out                 lut            0.000            11.975               4        (40,73)
-n340                         net            2.669            14.644               4        (40,73)
+      Manhattan distance of X:0, Y:3
+LUT__555|in[0]               lut            0.000            12.426              6         (35,65)
+LUT__555|out                 lut            0.000            12.426              3         (35,65)
+n289                         net            1.563            13.989              3         (35,65)
    Routing elements:
-      Manhattan distance of X:3, Y:1
-LUT__727|in[3]               lut            0.000            14.644               4        (43,72)
-LUT__727|out                 lut            0.000            14.644               2        (43,72)
-pwm_out_3~FF_brt_2_brt_15|D  ff             0.384            15.028               2        (43,72)
+      Manhattan distance of X:0, Y:2
+LUT__559|in[1]               lut            0.000            13.989              3         (35,63)
+LUT__559|out                 lut            0.000            13.989              2         (35,63)
+pwm_out_3~FF_brt_3_brt_14|D  ff             0.384            14.373              2         (35,63)
 
 Capture Clock Path
             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -809,9 +814,9 @@ clk_i                            net          3.268             3.688           
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                      gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                      gbuf         0.000             7.006             132        (1,78) 
-clk_i~O                          net          0.000             7.006             132        (1,78) 
-pwm_out_3~FF_brt_2_brt_15|CLK    ff           0.000             7.006             132        (43,72)
+CLKBUF__0|O                      gbuf         0.000             7.006             101        (1,78) 
+clk_i~O                          net          0.000             7.006             101        (1,78) 
+pwm_out_3~FF_brt_3_brt_14|CLK    ff           0.000             7.006             101        (35,63)
 
 ---------- Path Details for Max Critical Paths (end) ---------------
 
@@ -823,6 +828,124 @@ Path Detail Report (clk_i vs clk_i)
 
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_uart_rx/bit_idx[0]~FF|CLK      
+Path End      : Inst_uart_rx/bit_idx[0]~FF|D        
+Launch Clock  : clk_i (RISE)                        
+Capture Clock : clk_i (RISE)                        
+Slack         : 0.643 (arrival time - required time)
+Delay         : 0.461                               
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
+========================================================================================================
+clk_i                             inpad        0.000             0.000               0        (0,102)
+clk_i                             inpad        0.150             0.150               2        (0,102)
+clk_i                             net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                       gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                       gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                           net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bit_idx[0]~FF|CLK    ff           0.000             2.502             101        (53,64)
+
+Data Path
+            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================
+Inst_uart_rx/bit_idx[0]~FF|Q     ff          0.232             0.232              7         (53,64)
+Inst_uart_rx/bit_idx[0]          net         0.461             0.693              7         (53,64)
+LUT__432|in[3]                   lut         0.000             0.693              7         (53,64)
+LUT__432|out                     lut         0.000             0.693              2         (53,64)
+Inst_uart_rx/bit_idx[0]~FF|D     ff          0.000             0.693              2         (53,64)
+
+Capture Clock Path
+             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
+========================================================================================================
+clk_i                             inpad        0.000             0.000               0        (0,102)
+clk_i                             inpad        0.150             0.150               2        (0,102)
+clk_i                             net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                       gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                       gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                           net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bit_idx[0]~FF|CLK    ff           0.000             2.502             101        (53,64)
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_uart_rx/bitcounter[7]~FF|CLK   
+Path End      : Inst_uart_rx/bitcounter[7]~FF|D     
+Launch Clock  : clk_i (RISE)                        
+Capture Clock : clk_i (RISE)                        
+Slack         : 0.643 (arrival time - required time)
+Delay         : 0.461                               
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
+===========================================================================================================
+clk_i                                inpad        0.000             0.000               0        (0,102)
+clk_i                                inpad        0.150             0.150               2        (0,102)
+clk_i                                net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[7]~FF|CLK    ff           0.000             2.502             101        (55,67)
+
+Data Path
+             name                model name   delay (ns)  cumulative delay (ns) pins on net    location
+=========================================================================================================
+Inst_uart_rx/bitcounter[7]~FF|Q     ff          0.232             0.232              4         (55,67)
+Inst_uart_rx/bitcounter[7]          net         0.461             0.693              4         (55,67)
+LUT__455|in[3]                      lut         0.000             0.693              4         (55,67)
+LUT__455|out                        lut         0.000             0.693              2         (55,67)
+Inst_uart_rx/bitcounter[7]~FF|D     ff          0.000             0.693              2         (55,67)
+
+Capture Clock Path
+              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
+===========================================================================================================
+clk_i                                inpad        0.000             0.000               0        (0,102)
+clk_i                                inpad        0.150             0.150               2        (0,102)
+clk_i                                net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[7]~FF|CLK    ff           0.000             2.502             101        (55,67)
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_uart_rx/bitcounter[2]~FF|CLK   
 Path End      : Inst_uart_rx/bitcounter[2]~FF|D     
@@ -855,18 +978,18 @@ clk_i                                net          1.167             1.317       
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[2]~FF|CLK    ff           0.000             2.502             132        (43,64)
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[2]~FF|CLK    ff           0.000             2.502             101        (61,65)
 
 Data Path
              name                model name   delay (ns)  cumulative delay (ns) pins on net    location
 =========================================================================================================
-Inst_uart_rx/bitcounter[2]~FF|Q     ff          0.232             0.232              4         (43,64)
-Inst_uart_rx/bitcounter[2]          net         0.461             0.693              4         (43,64)
-LUT__645|in[3]                      lut         0.000             0.693              4         (43,64)
-LUT__645|out                        lut         0.000             0.693              2         (43,64)
-Inst_uart_rx/bitcounter[2]~FF|D     ff          0.000             0.693              2         (43,64)
+Inst_uart_rx/bitcounter[2]~FF|Q     ff          0.232             0.232              4         (61,65)
+Inst_uart_rx/bitcounter[2]          net         0.461             0.693              4         (61,65)
+LUT__448|in[3]                      lut         0.000             0.693              4         (61,65)
+LUT__448|out                        lut         0.000             0.693              2         (61,65)
+Inst_uart_rx/bitcounter[2]~FF|D     ff          0.000             0.693              2         (61,65)
 
 Capture Clock Path
               name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -877,190 +1000,11 @@ clk_i                                net          1.167             1.317       
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[2]~FF|CLK    ff           0.000             2.502             132        (43,64)
-
-++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : Inst_uart_rx/bitcounter[0]~FF|CLK   
-Path End      : Inst_uart_rx/bitcounter[3]~FF|D     
-Launch Clock  : clk_i (RISE)                        
-Capture Clock : clk_i (RISE)                        
-Slack         : 0.643 (arrival time - required time)
-Delay         : 0.461                               
-
-Logic Level             : 1
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.693
---------------------------------------
-End-of-path arrival time       : 3.195
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================================
-clk_i                                inpad        0.000             0.000               0        (0,102)
-clk_i                                inpad        0.150             0.150               2        (0,102)
-clk_i                                net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[0]~FF|CLK    ff           0.000             2.502             132        (39,66)
-
-Data Path
-             name                model name   delay (ns)  cumulative delay (ns) pins on net    location
-=========================================================================================================
-Inst_uart_rx/bitcounter[0]~FF|Q     ff          0.232             0.232              6         (39,66)
-Inst_uart_rx/bitcounter[0]          net         0.461             0.693              6         (39,66)
-   Routing elements:
-      Manhattan distance of X:2, Y:0
-LUT__646|in[3]                      lut         0.000             0.693              6         (41,66)
-LUT__646|out                        lut         0.000             0.693              2         (41,66)
-Inst_uart_rx/bitcounter[3]~FF|D     ff          0.000             0.693              2         (41,66)
-
-Capture Clock Path
-              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================================
-clk_i                                inpad        0.000             0.000               0        (0,102)
-clk_i                                inpad        0.150             0.150               2        (0,102)
-clk_i                                net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[3]~FF|CLK    ff           0.000             2.502             132        (41,66)
-
-++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : Inst_uart_rx/bitcounter[4]~FF|CLK   
-Path End      : Inst_uart_rx/bitcounter[4]~FF|D     
-Launch Clock  : clk_i (RISE)                        
-Capture Clock : clk_i (RISE)                        
-Slack         : 0.643 (arrival time - required time)
-Delay         : 0.461                               
-
-Logic Level             : 1
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.693
---------------------------------------
-End-of-path arrival time       : 3.195
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================================
-clk_i                                inpad        0.000             0.000               0        (0,102)
-clk_i                                inpad        0.150             0.150               2        (0,102)
-clk_i                                net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[4]~FF|CLK    ff           0.000             2.502             132        (35,66)
-
-Data Path
-             name                model name   delay (ns)  cumulative delay (ns) pins on net    location
-=========================================================================================================
-Inst_uart_rx/bitcounter[4]~FF|Q     ff          0.232             0.232              6         (35,66)
-Inst_uart_rx/bitcounter[4]          net         0.461             0.693              6         (35,66)
-LUT__648|in[3]                      lut         0.000             0.693              6         (35,66)
-LUT__648|out                        lut         0.000             0.693              2         (35,66)
-Inst_uart_rx/bitcounter[4]~FF|D     ff          0.000             0.693              2         (35,66)
-
-Capture Clock Path
-              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================================
-clk_i                                inpad        0.000             0.000               0        (0,102)
-clk_i                                inpad        0.150             0.150               2        (0,102)
-clk_i                                net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[4]~FF|CLK    ff           0.000             2.502             132        (35,66)
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[2]~FF|CLK    ff           0.000             2.502             101        (61,65)
 
 ++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : Inst_uart_rx/bitcounter[1]~FF|CLK   
-Path End      : Inst_uart_rx/bitcounter[1]~FF|D     
-Launch Clock  : clk_i (RISE)                        
-Capture Clock : clk_i (RISE)                        
-Slack         : 0.643 (arrival time - required time)
-Delay         : 0.461                               
-
-Logic Level             : 1
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.693
---------------------------------------
-End-of-path arrival time       : 3.195
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================================
-clk_i                                inpad        0.000             0.000               0        (0,102)
-clk_i                                inpad        0.150             0.150               2        (0,102)
-clk_i                                net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[1]~FF|CLK    ff           0.000             2.502             132        (43,66)
-
-Data Path
-             name                model name   delay (ns)  cumulative delay (ns) pins on net    location
-=========================================================================================================
-Inst_uart_rx/bitcounter[1]~FF|Q     ff          0.232             0.232              5         (43,66)
-Inst_uart_rx/bitcounter[1]          net         0.461             0.693              5         (43,66)
-LUT__644|in[3]                      lut         0.000             0.693              5         (43,66)
-LUT__644|out                        lut         0.000             0.693              2         (43,66)
-Inst_uart_rx/bitcounter[1]~FF|D     ff          0.000             0.693              2         (43,66)
-
-Capture Clock Path
-              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================================
-clk_i                                inpad        0.000             0.000               0        (0,102)
-clk_i                                inpad        0.150             0.150               2        (0,102)
-clk_i                                net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[1]~FF|CLK    ff           0.000             2.502             132        (43,66)
-
-++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_uart_rx/bitcounter[5]~FF|CLK   
 Path End      : Inst_uart_rx/bitcounter[5]~FF|D     
@@ -1093,18 +1037,18 @@ clk_i                                net          1.167             1.317       
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[5]~FF|CLK    ff           0.000             2.502             132        (31,66)
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[5]~FF|CLK    ff           0.000             2.502             101        (55,65)
 
 Data Path
              name                model name   delay (ns)  cumulative delay (ns) pins on net    location
 =========================================================================================================
-Inst_uart_rx/bitcounter[5]~FF|Q     ff          0.232             0.232              5         (31,66)
-Inst_uart_rx/bitcounter[5]          net         0.461             0.693              5         (31,66)
-LUT__649|in[3]                      lut         0.000             0.693              5         (31,66)
-LUT__649|out                        lut         0.000             0.693              2         (31,66)
-Inst_uart_rx/bitcounter[5]~FF|D     ff          0.000             0.693              2         (31,66)
+Inst_uart_rx/bitcounter[5]~FF|Q     ff          0.232             0.232              5         (55,65)
+Inst_uart_rx/bitcounter[5]          net         0.461             0.693              5         (55,65)
+LUT__452|in[3]                      lut         0.000             0.693              5         (55,65)
+LUT__452|out                        lut         0.000             0.693              2         (55,65)
+Inst_uart_rx/bitcounter[5]~FF|D     ff          0.000             0.693              2         (55,65)
 
 Capture Clock Path
               name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -1115,20 +1059,81 @@ clk_i                                net          1.167             1.317       
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[5]~FF|CLK    ff           0.000             2.502             132        (31,66)
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[5]~FF|CLK    ff           0.000             2.502             101        (55,65)
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_uart_rx/bit_idx[0]~FF|CLK      
+Path End      : Inst_uart_rx/bit_idx[1]~FF|D        
+Launch Clock  : clk_i (RISE)                        
+Capture Clock : clk_i (RISE)                        
+Slack         : 0.643 (arrival time - required time)
+Delay         : 0.461                               
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
+========================================================================================================
+clk_i                             inpad        0.000             0.000               0        (0,102)
+clk_i                             inpad        0.150             0.150               2        (0,102)
+clk_i                             net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                       gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                       gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                           net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bit_idx[0]~FF|CLK    ff           0.000             2.502             101        (53,64)
+
+Data Path
+            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================
+Inst_uart_rx/bit_idx[0]~FF|Q     ff          0.232             0.232              7         (53,64)
+Inst_uart_rx/bit_idx[0]          net         0.461             0.693              7         (53,64)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__465|in[3]                   lut         0.000             0.693              7         (53,63)
+LUT__465|out                     lut         0.000             0.693              2         (53,63)
+Inst_uart_rx/bit_idx[1]~FF|D     ff          0.000             0.693              2         (53,63)
+
+Capture Clock Path
+             name               model name   delay (ns)  cumulative delay (ns) pins on net    location
+========================================================================================================
+clk_i                             inpad        0.000             0.000               0        (0,102)
+clk_i                             inpad        0.150             0.150               2        (0,102)
+clk_i                             net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                       gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                       gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                           net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bit_idx[1]~FF|CLK    ff           0.000             2.502             101        (53,63)
 
 ++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin    : Inst_uart_rx/data_buffer[0]~FF|CLK  
-Path End      : rx_data_sig[0]~FF|D                 
+Path Begin    : Inst_uart_tx/bitcounter[0]~FF|CLK   
+Path End      : Inst_uart_tx/bitcounter[0]~FF|D     
 Launch Clock  : clk_i (RISE)                        
 Capture Clock : clk_i (RISE)                        
 Slack         : 0.643 (arrival time - required time)
 Delay         : 0.461                               
 
-Logic Level             : 0
+Logic Level             : 1
 Non-global nets on path : 1
 Global nets on path     : 0
 
@@ -1144,50 +1149,50 @@ Constraint                     : 0.000
 End-of-path required time      : 2.552
 
 Launch Clock Path
-               name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
-============================================================================================================
-clk_i                                 inpad        0.000             0.000               0        (0,102)
-clk_i                                 inpad        0.150             0.150               2        (0,102)
-clk_i                                 net          1.167             1.317               2        (0,102)
+              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
+===========================================================================================================
+clk_i                                inpad        0.000             0.000               0        (0,102)
+clk_i                                inpad        0.150             0.150               2        (0,102)
+clk_i                                net          1.167             1.317               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                           gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                           gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                               net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/data_buffer[0]~FF|CLK    ff           0.000             2.502             132        (27,62)
+CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_tx/bitcounter[0]~FF|CLK    ff           0.000             2.502             101        (27,54)
 
 Data Path
-              name                model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================
-Inst_uart_rx/data_buffer[0]~FF|Q     ff          0.232             0.232              2         (27,62)
-Inst_uart_rx/data_buffer[0]          net         0.461             0.693              2         (27,62)
-   Routing elements:
-      Manhattan distance of X:0, Y:1
-rx_data_sig[0]~FF|D                  ff          0.000             0.693              2         (27,61)
+             name                model name   delay (ns)  cumulative delay (ns) pins on net    location
+=========================================================================================================
+Inst_uart_tx/bitcounter[0]~FF|Q     ff          0.232             0.232              4         (27,54)
+Inst_uart_tx/bitcounter[0]          net         0.461             0.693              4         (27,54)
+LUT__475|in[3]                      lut         0.000             0.693              4         (27,54)
+LUT__475|out                        lut         0.000             0.693              2         (27,54)
+Inst_uart_tx/bitcounter[0]~FF|D     ff          0.000             0.693              2         (27,54)
 
 Capture Clock Path
-        name           model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================
-clk_i                    inpad        0.000             0.000               0        (0,102)
-clk_i                    inpad        0.150             0.150               2        (0,102)
-clk_i                    net          1.167             1.317               2        (0,102)
+              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
+===========================================================================================================
+clk_i                                inpad        0.000             0.000               0        (0,102)
+clk_i                                inpad        0.150             0.150               2        (0,102)
+clk_i                                net          1.167             1.317               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I              gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O              gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                  net          0.000             2.502             132        (1,78) 
-rx_data_sig[0]~FF|CLK    ff           0.000             2.502             132        (27,61)
+CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_tx/bitcounter[0]~FF|CLK    ff           0.000             2.502             101        (27,54)
 
 ++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin    : Inst_uart_rx/state[0]~FF|CLK        
-Path End      : Inst_uart_rx/state[0]~FF|D          
+Path Begin    : Inst_uart_rx/bitcounter[8]~FF|CLK   
+Path End      : Inst_uart_rx/bitcounter[8]~FF|D     
 Launch Clock  : clk_i (RISE)                        
 Capture Clock : clk_i (RISE)                        
 Slack         : 0.643 (arrival time - required time)
 Delay         : 0.461                               
 
-Logic Level             : 0
+Logic Level             : 1
 Non-global nets on path : 1
 Global nets on path     : 0
 
@@ -1203,98 +1208,41 @@ Constraint                     : 0.000
 End-of-path required time      : 2.552
 
 Launch Clock Path
-            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================
-clk_i                           inpad        0.000             0.000               0        (0,102)
-clk_i                           inpad        0.150             0.150               2        (0,102)
-clk_i                           net          1.167             1.317               2        (0,102)
+              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
+===========================================================================================================
+clk_i                                inpad        0.000             0.000               0        (0,102)
+clk_i                                inpad        0.150             0.150               2        (0,102)
+clk_i                                net          1.167             1.317               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                     gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                         net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/state[0]~FF|CLK    ff           0.000             2.502             132        (37,65)
+CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[8]~FF|CLK    ff           0.000             2.502             101        (53,68)
 
 Data Path
-           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================
-Inst_uart_rx/state[0]~FF|Q     ff          0.232             0.232              12        (37,65)
-Inst_uart_rx/state[0]          net         0.461             0.693              12        (37,65)
-Inst_uart_rx/state[0]~FF|D     ff          0.000             0.693              12        (37,65)
+             name                model name   delay (ns)  cumulative delay (ns) pins on net    location
+=========================================================================================================
+Inst_uart_rx/bitcounter[8]~FF|Q     ff          0.232             0.232              3         (53,68)
+Inst_uart_rx/bitcounter[8]          net         0.461             0.693              3         (53,68)
+LUT__456|in[3]                      lut         0.000             0.693              3         (53,68)
+LUT__456|out                        lut         0.000             0.693              2         (53,68)
+Inst_uart_rx/bitcounter[8]~FF|D     ff          0.000             0.693              2         (53,68)
 
 Capture Clock Path
-            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================
-clk_i                           inpad        0.000             0.000               0        (0,102)
-clk_i                           inpad        0.150             0.150               2        (0,102)
-clk_i                           net          1.167             1.317               2        (0,102)
+              name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
+===========================================================================================================
+clk_i                                inpad        0.000             0.000               0        (0,102)
+clk_i                                inpad        0.150             0.150               2        (0,102)
+clk_i                                net          1.167             1.317               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                     gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                         net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/state[0]~FF|CLK    ff           0.000             2.502             132        (37,65)
+CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[8]~FF|CLK    ff           0.000             2.502             101        (53,68)
 
 ++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : Inst_uart_rx/rx_sync1~FF|CLK        
-Path End      : Inst_uart_rx/rx_sync2~FF|D          
-Launch Clock  : clk_i (RISE)                        
-Capture Clock : clk_i (RISE)                        
-Slack         : 0.643 (arrival time - required time)
-Delay         : 0.461                               
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.693
---------------------------------------
-End-of-path arrival time       : 3.195
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================
-clk_i                           inpad        0.000             0.000               0        (0,102)
-clk_i                           inpad        0.150             0.150               2        (0,102)
-clk_i                           net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                     gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                         net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/rx_sync1~FF|CLK    ff           0.000             2.502             132        (25,56)
-
-Data Path
-           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================
-Inst_uart_rx/rx_sync1~FF|Q     ff          0.232             0.232              2         (25,56)
-Inst_uart_rx/rx_sync1          net         0.461             0.693              2         (25,56)
-   Routing elements:
-      Manhattan distance of X:0, Y:1
-Inst_uart_rx/rx_sync2~FF|D     ff          0.000             0.693              2         (25,55)
-
-Capture Clock Path
-            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================
-clk_i                           inpad        0.000             0.000               0        (0,102)
-clk_i                           inpad        0.150             0.150               2        (0,102)
-clk_i                           net          1.167             1.317               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                     gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                         net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/rx_sync2~FF|CLK    ff           0.000             2.502             132        (25,55)
-
-++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_uart_rx/bitcounter[0]~FF|CLK   
 Path End      : Inst_uart_rx/bitcounter[0]~FF|D     
@@ -1327,16 +1275,16 @@ clk_i                                net          1.167             1.317       
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[0]~FF|CLK    ff           0.000             2.502             132        (39,66)
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[0]~FF|CLK    ff           0.000             2.502             101        (53,65)
 
 Data Path
              name                model name   delay (ns)  cumulative delay (ns) pins on net    location
 =========================================================================================================
-Inst_uart_rx/bitcounter[0]~FF|Q     ff          0.232             0.232              6         (39,66)
-Inst_uart_rx/bitcounter[0]          net         0.461             0.693              6         (39,66)
-Inst_uart_rx/bitcounter[0]~FF|D     ff          0.000             0.693              6         (39,66)
+Inst_uart_rx/bitcounter[0]~FF|Q     ff          0.232             0.232              6         (53,65)
+Inst_uart_rx/bitcounter[0]          net         0.461             0.693              6         (53,65)
+Inst_uart_rx/bitcounter[0]~FF|D     ff          0.000             0.693              6         (53,65)
 
 Capture Clock Path
               name                 model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -1347,14 +1295,14 @@ clk_i                                net          1.167             1.317       
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                          gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                          gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                              net          0.000             2.502             132        (1,78) 
-Inst_uart_rx/bitcounter[0]~FF|CLK    ff           0.000             2.502             132        (39,66)
+CLKBUF__0|O                          gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                              net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/bitcounter[0]~FF|CLK    ff           0.000             2.502             101        (53,65)
 
-++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin    : rx_buffer[0]~FF|CLK                 
-Path End      : angle_reg[0]~FF|D                   
+Path Begin    : Inst_uart_tx/state[0]~FF|CLK        
+Path End      : Inst_uart_tx/state[0]~FF|D          
 Launch Clock  : clk_i (RISE)                        
 Capture Clock : clk_i (RISE)                        
 Slack         : 0.643 (arrival time - required time)
@@ -1376,39 +1324,94 @@ Constraint                     : 0.000
 End-of-path required time      : 2.552
 
 Launch Clock Path
-       name          model name   delay (ns)  cumulative delay (ns) pins on net    location
-=============================================================================================
-clk_i                  inpad        0.000             0.000               0        (0,102)
-clk_i                  inpad        0.150             0.150               2        (0,102)
-clk_i                  net          1.167             1.317               2        (0,102)
+            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================
+clk_i                           inpad        0.000             0.000               0        (0,102)
+clk_i                           inpad        0.150             0.150               2        (0,102)
+clk_i                           net          1.167             1.317               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I            gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O            gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                net          0.000             2.502             132        (1,78) 
-rx_buffer[0]~FF|CLK    ff           0.000             2.502             132        (29,60)
+CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                     gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                         net          0.000             2.502             101        (1,78) 
+Inst_uart_tx/state[0]~FF|CLK    ff           0.000             2.502             101        (27,52)
 
 Data Path
-      name         model name   delay (ns)  cumulative delay (ns) pins on net    location
-===========================================================================================
-rx_buffer[0]~FF|Q     ff          0.232             0.232              3         (29,60)
-rx_buffer[0]          net         0.461             0.693              3         (29,60)
-   Routing elements:
-      Manhattan distance of X:0, Y:1
-angle_reg[0]~FF|D     ff          0.000             0.693              3         (29,59)
+           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================
+Inst_uart_tx/state[0]~FF|Q     ff          0.232             0.232              9         (27,52)
+Inst_uart_tx/state[0]          net         0.461             0.693              9         (27,52)
+Inst_uart_tx/state[0]~FF|D     ff          0.000             0.693              9         (27,52)
 
 Capture Clock Path
-       name          model name   delay (ns)  cumulative delay (ns) pins on net    location
-=============================================================================================
-clk_i                  inpad        0.000             0.000               0        (0,102)
-clk_i                  inpad        0.150             0.150               2        (0,102)
-clk_i                  net          1.167             1.317               2        (0,102)
+            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================
+clk_i                           inpad        0.000             0.000               0        (0,102)
+clk_i                           inpad        0.150             0.150               2        (0,102)
+clk_i                           net          1.167             1.317               2        (0,102)
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I            gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O            gbuf         0.000             2.502             132        (1,78) 
-clk_i~O                net          0.000             2.502             132        (1,78) 
-angle_reg[0]~FF|CLK    ff           0.000             2.502             132        (29,59)
+CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                     gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                         net          0.000             2.502             101        (1,78) 
+Inst_uart_tx/state[0]~FF|CLK    ff           0.000             2.502             101        (27,52)
+
+++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_uart_rx/state[0]~FF|CLK        
+Path End      : Inst_uart_rx/state[0]~FF|D          
+Launch Clock  : clk_i (RISE)                        
+Capture Clock : clk_i (RISE)                        
+Slack         : 0.643 (arrival time - required time)
+Delay         : 0.461                               
+
+Logic Level             : 0
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================
+clk_i                           inpad        0.000             0.000               0        (0,102)
+clk_i                           inpad        0.150             0.150               2        (0,102)
+clk_i                           net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                     gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                         net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/state[0]~FF|CLK    ff           0.000             2.502             101        (55,64)
+
+Data Path
+           name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================
+Inst_uart_rx/state[0]~FF|Q     ff          0.232             0.232              11        (55,64)
+Inst_uart_rx/state[0]          net         0.461             0.693              11        (55,64)
+Inst_uart_rx/state[0]~FF|D     ff          0.000             0.693              11        (55,64)
+
+Capture Clock Path
+            name              model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================
+clk_i                           inpad        0.000             0.000               0        (0,102)
+clk_i                           inpad        0.150             0.150               2        (0,102)
+clk_i                           net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                     gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                     gbuf         0.000             2.502             101        (1,78) 
+clk_i~O                         net          0.000             2.502             101        (1,78) 
+Inst_uart_rx/state[0]~FF|CLK    ff           0.000             2.502             101        (55,64)
 
 ---------- Path Details for Min Critical Paths (end) ---------------
 
