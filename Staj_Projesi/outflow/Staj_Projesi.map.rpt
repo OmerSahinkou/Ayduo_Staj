@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Jul 17, 2026 15:41:38
+Generated at: Jul 17, 2026 16:04:26
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top_servo
@@ -48,13 +48,13 @@ CE signal <ceg_net61>, number of controlling flip flops: 2
 CE signal <Inst_uart_rx/n495>, number of controlling flip flops: 8
 CE signal <ceg_net40>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n522>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n542>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n526>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n543>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n530>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n532>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n534>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n536>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n538>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n546>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n547>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n548>, number of controlling flip flops: 1
 CE signal <Inst_uart_tx/n406>, number of controlling flip flops: 8
 CE signal <ceg_net62>, number of controlling flip flops: 2
 CE signal <ceg_net11>, number of controlling flip flops: 9
@@ -65,9 +65,17 @@ CE signal <ceg_net44>, number of controlling flip flops: 1
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 Total number of set/reset signals: 1
-Total number of FFs with set/reset signals: 97
-SR signal <rst_n_i>, number of controlling flip flops: 97
+Total number of FFs with set/reset signals: 102
+SR signal <rst_n_i>, number of controlling flip flops: 102
 ### ### EFX_FF SR set/reset (end) ### ### ###
+
+### ### Sequential Elements Trimming Report (begin) ### ### ### 
+FF Output: Inst_pwm_servo/pulse_width[0](=0)
+FF Output: Inst_pwm_servo/pulse_width[17](=0)
+FF Output: Inst_pwm_servo/pulse_width[18](=0)
+FF Output: Inst_pwm_servo/pulse_width[19](=0)
+FF Output: Inst_pwm_servo/pulse_width[1](=0)
+### ### Sequential Elements Trimming Report (end) ### ### ### 
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
 
@@ -75,10 +83,10 @@ SR signal <rst_n_i>, number of controlling flip flops: 97
 
 Module                            FFs      ADDs      LUTs      RAMs DSP/MULTs
 ---------------------------       ---      ----      ----      ---- ---------
-top_servo:top_servo             97(9)     19(0)    164(1)      0(0)      1(0)
- +Inst_pwm_servo:pwm_servo     31(31)    19(19)    86(86)      0(0)      1(1)
+top_servo:top_servo            102(9)     33(0)    129(1)      0(0)      1(0)
+ +Inst_pwm_servo:pwm_servo     36(36)    33(33)    50(50)      0(0)      1(1)
  +Inst_uart_tx:uart_tx         24(24)      0(0)    34(34)      0(0)      0(0)
- +Inst_uart_rx:uart_rx         33(33)      0(0)    43(43)      0(0)      0(0)
+ +Inst_uart_rx:uart_rx         33(33)      0(0)    44(44)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -87,7 +95,7 @@ top_servo:top_servo             97(9)     19(0)    164(1)      0(0)      1(0)
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i              97               0               0
+ clk_i             102               0               1
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -95,15 +103,15 @@ top_servo:top_servo             97(9)     19(0)    164(1)      0(0)      1(0)
 INPUT  PORTS    : 	3
 OUTPUT PORTS    : 	2
 
-EFX_ADD         : 	19
-EFX_LUT4        : 	164
-   1-2  Inputs  : 	53
-   3    Inputs  : 	42
-   4    Inputs  : 	69
+EFX_ADD         : 	33
+EFX_LUT4        : 	129
+   1-2  Inputs  : 	41
+   3    Inputs  : 	30
+   4    Inputs  : 	58
 EFX_MULT        : 	1
-EFX_FF          : 	97
+EFX_FF          : 	102
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 1s
-Elapsed synthesis time : 1s
+Plain synthesis (without verilog dump and post-map checks) time : 0s
+Elapsed synthesis time : 0s
