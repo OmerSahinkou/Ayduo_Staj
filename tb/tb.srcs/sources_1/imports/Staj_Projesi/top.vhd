@@ -232,6 +232,7 @@ process(clk_i, rst_n_i)
             tx_start_sig <= '0';
             uart_state   <= IDLE;
             byte_idx     <= 0;
+            
         elsif rising_edge(clk_i) then
             
             tx_start_sig <= '0';

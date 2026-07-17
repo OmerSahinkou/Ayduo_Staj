@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<efxpt:design_db name="Staj_Projesi" device_def="T8F81" version="2025.2.288.2.10" db_version="20252999" last_change_date="Thu Jul 16 11:16:11 2026" xmlns:efxpt="http://www.efinixinc.com/peri_design_db" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/peri_design_db peri_design_db.xsd ">
+<efxpt:design_db name="Staj_Projesi" device_def="T8F81" version="2025.2.288.2.10" db_version="20252999" last_change_date="Thu Jul 16 13:37:34 2026" xmlns:efxpt="http://www.efinixinc.com/peri_design_db" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/peri_design_db peri_design_db.xsd ">
     <efxpt:device_info>
         <efxpt:iobank_info>
             <efxpt:iobank name="1A" iostd="3.3 V LVTTL / LVCMOS"/>
@@ -18,6 +18,9 @@
         </efxpt:gpio>
         <efxpt:gpio name="rst_n_i" gpio_def="GPIOR_15" mode="input" bus_name="" is_lvds_gpio="false" io_standard="3.3 V LVTTL / LVCMOS">
             <efxpt:input_config name="rst_n_i" name_ddio_lo="" conn_type="normal" is_register="false" clock_name="" is_clock_inverted="false" pull_option="none" is_schmitt_trigger="false" ddio_type="none"/>
+        </efxpt:gpio>
+        <efxpt:gpio name="rx" gpio_def="GPIOL_10" mode="input" bus_name="" is_lvds_gpio="false" io_standard="3.3 V LVTTL / LVCMOS">
+            <efxpt:input_config name="rx" name_ddio_lo="" conn_type="normal" is_register="false" clock_name="" is_clock_inverted="false" pull_option="none" is_schmitt_trigger="false" ddio_type="none"/>
         </efxpt:gpio>
         <efxpt:gpio name="switch_in" gpio_def="GPIOR_02" mode="input" bus_name="" is_lvds_gpio="false" io_standard="3.3 V LVTTL / LVCMOS">
             <efxpt:input_config name="switch_in" name_ddio_lo="" conn_type="normal" is_register="false" clock_name="" is_clock_inverted="false" pull_option="none" is_schmitt_trigger="false" ddio_type="none"/>

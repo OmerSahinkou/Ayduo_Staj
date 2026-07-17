@@ -42,3 +42,24 @@ INFO     : Elaboration virtual memory usage: begin = 659.58 MB, end = 659.58 MB,
 INFO     : Elaboration resident set memory usage: begin = 267.716 MB, end = 267.716 MB, delta = 0 MB [FlowMsg::RSSUsage]
 INFO     :     Elaboration peak resident set memory usage = 268.82 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Elaboration ... *****
+INFO     : ***** Beginning Analysis ... *****
+INFO     : Analysis took 0.105638871 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.15 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 604.252 MB, end = 604.636 MB, delta = 0.384 MB [FlowMsg::VMUsage]
+INFO     : Analysis resident set memory usage: begin = 268.984 MB, end = 270.136 MB, delta = 1.152 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 270.136 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Analysis ... *****
+INFO     : ***** Beginning Analysis ... *****
+INFO     : Analysis took 0.087161263 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.12 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 604.252 MB, end = 604.444 MB, delta = 0.192 MB [FlowMsg::VMUsage]
+INFO     : Analysis resident set memory usage: begin = 270.144 MB, end = 270.4 MB, delta = 0.256 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 270.796 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Analysis ... *****
+INFO     : ***** Beginning Elaboration ... *****
+INFO     : Elaboration took 0.022003111 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration virtual memory usage: begin = 604.444 MB, end = 604.444 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Elaboration resident set memory usage: begin = 270.4 MB, end = 270.4 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 270.796 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Elaboration ... *****
