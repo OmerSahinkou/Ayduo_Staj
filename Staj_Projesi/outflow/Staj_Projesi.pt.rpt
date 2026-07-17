@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Report
 Version: 2025.2.288.2.10
-Date: 2026-07-16 17:11
+Date: 2026-07-17 15:41
 
 Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -26,7 +26,7 @@ Configuration Mode: active (x1)
 ---------- Table of Contents (end) ------------
 
 ---------- 1. Periphery Usage Summary (begin) ----------
-gpio: 6 / 55 (10.91%)
+gpio: 10 / 55 (18.18%)
 jtag: 0 / 2 (0.0%)
 osc: 0 / 1 (0.0%)
 pll: 0 / 1 (0.0%)
@@ -95,9 +95,13 @@ Global Unused Setting: input with weak pullup
 | Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |        Pad Name       | Package Pin |
 +---------------+----------+--------+----------+--------------+----------+----------------------+-----------------------+-------------+
 |     clk_i     | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |     GPIOL_20_PLLIN    |      C3     |
+|     miso_i    | GPIOR_03 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_03       |      A6     |
+|     mosi_o    | GPIOR_05 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_05       |      B6     |
 |    pwm_out    | GPIOR_20 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_20_CLK5     |      F8     |
 |    rst_n_i    | GPIOR_15 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_15_CBUS0    |      C9     |
 |       rx      | GPIOL_10 | input  |          |              |    1A    | 3.3 V LVTTL / LVCMOS |     GPIOL_10_CDI7     |      H2     |
+|     sclk_o    | GPIOR_00 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_00       |      A5     |
+|   spi_cs_n_o  | GPIOR_01 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_01       |      B5     |
 |   switch_in   | GPIOR_02 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS | GPIOR_02_RESERVED_OUT |      C5     |
 |       tx      | GPIOL_11 | output |          |              |    1A    | 3.3 V LVTTL / LVCMOS |     GPIOL_11_CDI3     |      F3     |
 +---------------+----------+--------+----------+--------------+----------+----------------------+-----------------------+-------------+
@@ -110,6 +114,7 @@ Input GPIO Configuration:
 | Instance Name | Input Pin | Alternate Input Pin | Input Clock Pin | Pull Up/Down | Schmitt Trigger |
 +---------------+-----------+---------------------+-----------------+--------------+-----------------+
 |     clk_i     |   clk_i   |                     |                 |     none     |     Disable     |
+|     miso_i    |   miso_i  |                     |                 |     none     |     Disable     |
 |    rst_n_i    |  rst_n_i  |                     |                 |     none     |     Disable     |
 |       rx      |     rx    |                     |                 |     none     |     Disable     |
 |   switch_in   | switch_in |                     |                 |     none     |     Disable     |
@@ -121,7 +126,10 @@ Output GPIO Configuration:
 +---------------+------------+------------------+----------------+-----------+
 | Instance Name | Output Pin | Output Clock Pin | Drive Strength | Slew Rate |
 +---------------+------------+------------------+----------------+-----------+
+|     mosi_o    |   mosi_o   |                  |       1        |  Disable  |
 |    pwm_out    |  pwm_out   |                  |       1        |  Disable  |
+|     sclk_o    |   sclk_o   |                  |       1        |  Disable  |
+|   spi_cs_n_o  | spi_cs_n_o |                  |       1        |  Disable  |
 |       tx      |     tx     |                  |       1        |  Disable  |
 +---------------+------------+------------------+----------------+-----------+
 

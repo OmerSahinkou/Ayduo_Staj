@@ -1,14 +1,14 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Jul 16, 2026 17:11:18
+Generated at: Jul 17, 2026 15:41:38
 Copyright (C) 2013 - 2025  All rights reserved.
 
-Top-level Entity Name : top
+Top-level Entity Name : top_servo
 
 family : Trion
 device : T8F81
 project : Staj_Projesi
-root : top
+root : top_servo
 I,include : /home/omer-ahin/STAJ/Staj_Projesi
 binary-db : /home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.vdb
 insert-ios : 0
@@ -19,7 +19,7 @@ mode : speed
 output-dir : /home/omer-ahin/STAJ/Staj_Projesi/outflow
 project : Staj_Projesi
 project-xml : /home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml
-root : top
+root : top_servo
 work-dir : /home/omer-ahin/STAJ/Staj_Projesi/work_syn
 write-efx-verilog : /home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.map.v
 write-premap-module : /home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.elab.vdb
@@ -33,6 +33,8 @@ File List:
 /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl
 /home/omer-ahin/STAJ/Staj_Projesi/top.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd
+/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd
+/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd
 
 ### ### Report Section Start ### ###
 
@@ -42,19 +44,19 @@ Total number of enable signals: 19
 Total number of FFs with enable signals: 54
 CE signal <rx_valid>, number of controlling flip flops: 8
 CE signal <ceg_net36>, number of controlling flip flops: 3
-CE signal <ceg_net59>, number of controlling flip flops: 2
-CE signal <Inst_uart_rx/n500>, number of controlling flip flops: 8
+CE signal <ceg_net61>, number of controlling flip flops: 2
+CE signal <Inst_uart_rx/n495>, number of controlling flip flops: 8
 CE signal <ceg_net40>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n558>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n513>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n555>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n537>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n539>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n541>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n562>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n545>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n522>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n542>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n543>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n530>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n532>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n534>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n536>, number of controlling flip flops: 1
+CE signal <Inst_uart_rx/n538>, number of controlling flip flops: 1
 CE signal <Inst_uart_tx/n406>, number of controlling flip flops: 8
-CE signal <ceg_net60>, number of controlling flip flops: 2
+CE signal <ceg_net62>, number of controlling flip flops: 2
 CE signal <ceg_net11>, number of controlling flip flops: 9
 CE signal <ceg_net46>, number of controlling flip flops: 3
 CE signal <ceg_net43>, number of controlling flip flops: 1
@@ -62,10 +64,9 @@ CE signal <ceg_net44>, number of controlling flip flops: 1
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
-Total number of set/reset signals: 2
-Total number of FFs with set/reset signals: 99
-SR signal <rst_n_i>, number of controlling flip flops: 90
-SR signal <Inst_uart_rx/n533>, number of controlling flip flops: 9
+Total number of set/reset signals: 1
+Total number of FFs with set/reset signals: 97
+SR signal <rst_n_i>, number of controlling flip flops: 97
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
@@ -74,10 +75,10 @@ SR signal <Inst_uart_rx/n533>, number of controlling flip flops: 9
 
 Module                            FFs      ADDs      LUTs      RAMs DSP/MULTs
 ---------------------------       ---      ----      ----      ---- ---------
-top:top                         99(9)     19(0)    145(1)      0(0)      1(0)
- +Inst_pwm_servo:pwm_servo     33(33)    19(19)    74(74)      0(0)      1(1)
+top_servo:top_servo             97(9)     19(0)    164(1)      0(0)      1(0)
+ +Inst_pwm_servo:pwm_servo     31(31)    19(19)    86(86)      0(0)      1(1)
  +Inst_uart_tx:uart_tx         24(24)      0(0)    34(34)      0(0)      0(0)
- +Inst_uart_rx:uart_rx         33(33)      0(0)    36(36)      0(0)      0(0)
+ +Inst_uart_rx:uart_rx         33(33)      0(0)    43(43)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -86,7 +87,7 @@ top:top                         99(9)     19(0)    145(1)      0(0)      1(0)
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i              99               0               1
+ clk_i              97               0               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -95,14 +96,14 @@ INPUT  PORTS    : 	3
 OUTPUT PORTS    : 	2
 
 EFX_ADD         : 	19
-EFX_LUT4        : 	145
-   1-2  Inputs  : 	43
-   3    Inputs  : 	32
-   4    Inputs  : 	70
+EFX_LUT4        : 	164
+   1-2  Inputs  : 	53
+   3    Inputs  : 	42
+   4    Inputs  : 	69
 EFX_MULT        : 	1
-EFX_FF          : 	99
+EFX_FF          : 	97
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 2s
-Elapsed synthesis time : 2s
+Plain synthesis (without verilog dump and post-map checks) time : 1s
+Elapsed synthesis time : 1s

@@ -1,7 +1,11 @@
-import tkinter as tk
+import customtkinter as ctk
 from tkinter import messagebox
 import serial
 import time
+
+# Arayüz Teması Ayarları
+ctk.set_appearance_mode("Dark")  # "Light", "Dark" veya "System"
+ctk.set_default_color_theme("blue")  # "blue", "green", "dark-blue"
 
 # Seri port nesnesi
 ser = None
@@ -14,53 +18,75 @@ def baglan():
         ser = serial.Serial(port_adi, 115200, timeout=1)
         # Portun hazır olması için kısa bir bekleme
         time.sleep(2)
-        durum_label.config(text="Bağlandı!", fg="green")
-        slider.config(state="normal")
-        btn_baglan.config(state="disabled")
+        
+        durum_label.configure(text="Durum: Bağlantı Başarılı", text_color="#2ecc71") # Yeşil renk
+        slider.configure(state="normal")
+        btn_baglan.configure(state="disabled")
     except Exception as e:
-        messagebox.showerror("Bağlantı Hatası", f"Port açılamadı!\n{e}")
+        messagebox.showerror("Bağlantı Hatası", f"Port açılamadı!\nLütfen yetkileri kontrol edin (Örn: sudo chmod a+rw {port_adi})\n\nDetay: {e}")
 
 def aci_gonder(val):
     if ser and ser.is_open:
-        # Slider'dan gelen değeri 0-255 arası tam sayıya çevir
-        deger = int(val)
+        # CustomTkinter slider'dan float döndürür, tam sayıya çeviriyoruz
+        deger = int(float(val))
+        
+        # SG90 için 0-255 ham değerinin yaklaşık 0-180 dereceye dönüştürülmesi
+        aci_derece = int((deger / 255.0) * 180)
         
         # Arayüz güncellenmesi
-        lbl_aci.config(text=f"Gönderilen Ham Değer: {deger}")
+        lbl_aci.configure(text=f"Ham Değer: {deger}   |   Tahmini Açı: {aci_derece}°")
         
-        # KRİTİK: Veriyi bir liste içinde tek bir byte olarak ham (raw) gönderiyoruz
-        # Python'ın bytes([deger]) komutu, string dönüşümü yapmadan 
-        # doğrudan 8-bitlik veriyi (0x00 - 0xFF) UART hattına basar.
+        # Veriyi bir liste içinde tek bir byte olarak ham (raw) gönderiyoruz
         ser.write(bytes([deger]))
 
 def pencere_kapat():
     if ser and ser.is_open:
         ser.close()
-    pencere.destroy()
+    app.destroy()
 
-# Arayüz tasarımı
-pencere = tk.Tk()
-pencere.title("FPGA Servo Kontrol - Manuel")
-pencere.geometry("400x250")
-pencere.protocol("WM_DELETE_WINDOW", pencere_kapat)
+# Ana Pencere Tasarımı
+app = ctk.CTk()
+app.title("FPGA - SG90 Servo Kontrol Paneli")
+app.geometry("450x350")
+app.resizable(False, False)
+app.protocol("WM_DELETE_WINDOW", pencere_kapat)
 
-tk.Label(pencere, text="Port Adresi (Örn: /dev/ttyUSB2):").pack(pady=(15, 0))
+# --- Başlık ---
+title_font = ctk.CTkFont(family="Helvetica", size=20, weight="bold")
+lbl_title = ctk.CTkLabel(app, text="SG90 Manuel Kontrol", font=title_font)
+lbl_title.pack(pady=(20, 10))
 
-port_secim = tk.Entry(pencere, justify="center", width=20)
+# --- Bağlantı Çerçevesi (Frame) ---
+frame_conn = ctk.CTkFrame(app, corner_radius=10)
+frame_conn.pack(pady=10, padx=20, fill="x")
+
+lbl_port = ctk.CTkLabel(frame_conn, text="Port Adresi:", font=ctk.CTkFont(size=14))
+lbl_port.grid(row=0, column=0, padx=(15, 5), pady=15, sticky="w")
+
+port_secim = ctk.CTkEntry(frame_conn, width=140, justify="center")
 port_secim.insert(0, "/dev/ttyUSB2")
-port_secim.pack(pady=5)
+port_secim.grid(row=0, column=1, padx=5, pady=15)
 
-btn_baglan = tk.Button(pencere, text="Bağlan", command=baglan, width=15)
-btn_baglan.pack(pady=5)
+btn_baglan = ctk.CTkButton(frame_conn, text="Bağlan", command=baglan, width=90, font=ctk.CTkFont(weight="bold"))
+btn_baglan.grid(row=0, column=2, padx=(5, 15), pady=15)
 
-durum_label = tk.Label(pencere, text="Bağlı Değil", fg="red")
-durum_label.pack()
+durum_label = ctk.CTkLabel(frame_conn, text="Durum: Bağlı Değil", text_color="#e74c3c", font=ctk.CTkFont(weight="bold"))
+durum_label.grid(row=1, column=0, columnspan=3, pady=(0, 10))
 
-# Slider 0-255 arası
-slider = tk.Scale(pencere, from_=0, to=255, orient="horizontal", length=300, command=aci_gonder, state="disabled")
+# --- Kontrol Çerçevesi (Frame) ---
+frame_ctrl = ctk.CTkFrame(app, corner_radius=10)
+frame_ctrl.pack(pady=10, padx=20, fill="x")
+
+lbl_slider_title = ctk.CTkLabel(frame_ctrl, text="PWM Sinyal Genişliği (0 - 255)", font=ctk.CTkFont(weight="bold"))
+lbl_slider_title.pack(pady=(15, 5))
+
+# Slider nesnesi
+slider = ctk.CTkSlider(frame_ctrl, from_=0, to=255, command=aci_gonder, width=350, state="disabled")
+slider.set(0) # Başlangıç noktası
 slider.pack(pady=10)
 
-lbl_aci = tk.Label(pencere, text="Değer: Bekleniyor...", font=("Arial", 11))
-lbl_aci.pack()
+lbl_aci = ctk.CTkLabel(frame_ctrl, text="Ham Değer: 0   |   Tahmini Açı: 0°", font=ctk.CTkFont(size=14))
+lbl_aci.pack(pady=(5, 15))
 
-pencere.mainloop()
+# Uygulamayı başlat
+app.mainloop()

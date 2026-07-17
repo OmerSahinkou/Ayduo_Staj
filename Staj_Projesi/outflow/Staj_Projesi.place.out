@@ -15,11 +15,11 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
            ***** Beginning stage netlist pre-processing ... *****
 INFO     : Successfully read in VDB netlist file /home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.vdb [DBMsg::VdbFileRead]
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.001433742 seconds [FlowMsg::StageDuration]
-INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 208.728 MB, end = 241.54 MB, delta = 32.812 MB [FlowMsg::VMUsage]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 123.84 MB, end = 124.352 MB, delta = 0.512 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 392.348 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker took 0.001341186 seconds [FlowMsg::StageDuration]
+INFO     :     VDB Netlist Checker took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 208.724 MB, end = 241.536 MB, delta = 32.812 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 123.648 MB, end = 124.172 MB, delta = 0.524 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 332.588 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
@@ -29,40 +29,40 @@ INFO     : Pass 0: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSwept
 INFO     : Swept away 0 nets and 0 blocks in total [DBMsg::NetlistTotalSwept]
 INFO     : Removed 0 LUT buffers [DBMsg::NetlistRemovedLUTBuffers]
 INFO     : Successfully read in VDB netlist file /home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.vdb [DBMsg::VdbFileRead]
-INFO     : Netlist pre-processing took 0.004301588 seconds [FlowMsg::StageDuration]
+INFO     : Netlist pre-processing took 0.0045856 seconds [FlowMsg::StageDuration]
 INFO     :     Netlist pre-processing took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Netlist pre-processing virtual memory usage: begin = 208.728 MB, end = 241.54 MB, delta = 32.812 MB [FlowMsg::VMUsage]
-INFO     : Netlist pre-processing resident set memory usage: begin = 122.948 MB, end = 124.704 MB, delta = 1.756 MB [FlowMsg::RSSUsage]
-INFO     :     Netlist pre-processing peak resident set memory usage = 392.348 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Netlist pre-processing virtual memory usage: begin = 208.724 MB, end = 241.536 MB, delta = 32.812 MB [FlowMsg::VMUsage]
+INFO     : Netlist pre-processing resident set memory usage: begin = 122.776 MB, end = 124.524 MB, delta = 1.748 MB [FlowMsg::RSSUsage]
+INFO     :     Netlist pre-processing peak resident set memory usage = 332.588 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage netlist pre-processing *****
            
            ***** Beginning stage pre-packing ... *****
            ***** Ending stage pre-packing *****
            
            ***** Beginning stage packing ... *****
-INFO     : Generate proto netlist for file "/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto" took 0.000497 seconds
+INFO     : Generate proto netlist for file "/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto" took 0.000543 seconds
 INFO     : Creating IO constraints file '/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.io_place'
-INFO     : Packing took 0.001227411 seconds [FlowMsg::StageDuration]
+INFO     : Packing took 0.001291291 seconds [FlowMsg::StageDuration]
 INFO     :     Packing took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packing virtual memory usage: begin = 241.54 MB, end = 241.54 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Packing resident set memory usage: begin = 125.896 MB, end = 126.328 MB, delta = 0.432 MB [FlowMsg::RSSUsage]
-INFO     :     Packing peak resident set memory usage = 392.348 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Packing virtual memory usage: begin = 241.536 MB, end = 241.536 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Packing resident set memory usage: begin = 125.608 MB, end = 126.164 MB, delta = 0.556 MB [FlowMsg::RSSUsage]
+INFO     :     Packing peak resident set memory usage = 332.588 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packing *****
            
 INFO     : Read proto netlist file /home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto
-INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto" took 0.000171 seconds
-INFO     : Setup net and block data structure took 0.002093 seconds
+INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto" took 0.000224 seconds
+INFO     : Setup net and block data structure took 0.002446 seconds
 INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
            ***** Beginning stage packed netlist loading ... *****
 INFO     : Read proto netlist file /home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto
-INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto" took 0.000156 seconds
-INFO     : Setup net and block data structure took 0.00211 seconds
-INFO     : Packed netlist loading took 0.002397276 seconds [FlowMsg::StageDuration]
-INFO     :     Packed netlist loading took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packed netlist loading virtual memory usage: begin = 241.54 MB, end = 241.54 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Packed netlist loading resident set memory usage: begin = 128.636 MB, end = 128.636 MB, delta = 0 MB [FlowMsg::RSSUsage]
-INFO     :     Packed netlist loading peak resident set memory usage = 392.348 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.net_proto" took 0.000182 seconds
+INFO     : Setup net and block data structure took 0.002293 seconds
+INFO     : Packed netlist loading took 0.002579407 seconds [FlowMsg::StageDuration]
+INFO     :     Packed netlist loading took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packed netlist loading virtual memory usage: begin = 241.536 MB, end = 241.536 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Packed netlist loading resident set memory usage: begin = 128.28 MB, end = 128.28 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Packed netlist loading peak resident set memory usage = 332.588 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packed netlist loading *****
            
            ***** Beginning stage pre-placement ... *****
@@ -87,118 +87,120 @@ INFO     : Starting Global Placer with 8 threads ...
             ----------     -------  --------------     -------
              Iteration       WHPWL Worst Slack (ps) Convergence
             ----------     -------  --------------     -------
-INFO     :           1        6884           -8681        19.5%
-INFO     :           2        7535           -8559        19.9%
-INFO     :           3        7253           -8559        20.4%
-INFO     :           4        6994           -9054        20.4%
-INFO     :           5        5611           -9084        20.4%
-INFO     :           6        6646           -8945        20.4%
-INFO     :           7        5304           -9054        22.4%
-INFO     :           8        4869           -8820        24.9%
-INFO     :           9        4637           -8945        29.0%
-INFO     :          10        4555           -9953        33.8%
-INFO     :          11        4099          -10115        39.5%
-INFO     :          12        3808          -11293        46.4%
-INFO     :          13        3650          -15173        52.5%
-INFO     :          14        3430          -15214        56.6%
-INFO     :          15        3301          -15214        63.1%
-INFO     :          16        3371          -15159        63.1%
-INFO     :          17        3244          -15206        64.7%
-INFO     :          18        3248          -15206        65.8%
-INFO     :          19        3241          -15206        68.2%
-INFO     :          20        3212          -15206        69.0%
-INFO     :          21        3197          -15222        70.7%
-INFO     :          22        3310          -15222        71.1%
-INFO     :          23        3263          -15089        71.2%
-INFO     :          24        3310          -15768        71.2%
-INFO     :          25        3356          -14706        72.4%
-INFO     :          26        3015          -15073        73.2%
-INFO     :          27        2966          -15081        73.2%
-INFO     :          28        2977          -15214        74.4%
-INFO     :          29        2931          -14737        76.8%
-INFO     :          30        3065          -14737        79.8%
-INFO     :          31        3117          -14588        79.8%
-INFO     :          32        3162          -14596        80.1%
-INFO     :          33        3180          -14689        80.9%
-INFO     :          34        3122          -14631        83.2%
-INFO     :          35        3109          -15266        84.3%
-INFO     :          36        3147          -14864        84.4%
-INFO     :          37        3163          -14864        85.0%
-INFO     :          38        3263          -14864        85.0%
-INFO     :          39        3287          -14647        87.7%
-INFO     :          40        3321          -15041        87.7%
-INFO     :          41        3352          -13905        88.8%
-INFO     :          42        3104          -14497        89.1%
-INFO     :          43        2985          -15346        93.6%
-INFO     :          44        3008          -15526        93.6%
-INFO     :          45        3053          -15111        93.6%
-INFO     :          46        3080          -14690        93.9%
-INFO     :          47        3127          -14690        94.4%
-INFO     :          48        3120          -15518        95.1%
+INFO     :           1        7500          -14160        17.2%
+INFO     :           2        9523          -14160        17.2%
+INFO     :           3        9856          -14160        17.2%
+INFO     :           4       10000          -14464        17.2%
+INFO     :           5        6933          -14602        17.2%
+INFO     :           6        5924          -14464        17.2%
+INFO     :           7        5134          -14160        19.1%
+INFO     :           8        5202          -14704        21.4%
+INFO     :           9        4491          -16403        28.4%
+INFO     :          10        3657          -19547        41.6%
+INFO     :          11        3719          -19729        46.6%
+INFO     :          12        3663          -23205        51.1%
+INFO     :          13        3534          -24549        55.6%
+INFO     :          14        3560          -23970        57.7%
+INFO     :          15        3479          -23854        59.4%
+INFO     :          16        3461          -22644        60.3%
+INFO     :          17        3425          -23512        62.2%
+INFO     :          18        3496          -21106        62.2%
+INFO     :          19        3256          -23440        62.8%
+INFO     :          20        3344          -23099        63.5%
+INFO     :          21        3332          -22979        65.4%
+INFO     :          22        3361          -23117        67.1%
+INFO     :          23        3271          -24297        67.1%
+INFO     :          24        3308          -23083        69.1%
+INFO     :          25        3287          -24488        70.1%
+INFO     :          26        3355          -23219        70.4%
+INFO     :          27        3356          -26899        70.7%
+INFO     :          28        3370          -23340        70.7%
+INFO     :          29        3406          -24007        72.0%
+INFO     :          30        3364          -24570        73.4%
+INFO     :          31        3399          -24298        73.6%
+INFO     :          32        3123          -22982        73.6%
+INFO     :          33        2977          -24178        75.0%
+INFO     :          34        3003          -25660        78.6%
+INFO     :          35        2993          -24490        80.2%
+INFO     :          36        2804          -25754        81.7%
+INFO     :          37        2776          -26054        82.7%
+INFO     :          38        2732          -25634        84.7%
+INFO     :          39        2690          -24580        84.7%
+INFO     :          40        2677          -25735        87.5%
+INFO     :          41        2644          -24796        88.6%
+INFO     :          42        2664          -24796        88.9%
+INFO     :          43        2631          -27384        88.9%
+INFO     :          44        2644          -27133        90.4%
+INFO     :          45        2630          -26860        91.5%
+INFO     :          46        2645          -25479        91.5%
+INFO     :          47        2628          -25479        93.8%
+INFO     :          48        2635          -26247        93.8%
+INFO     :          49        2640          -25055        95.1%
 INFO     : Starting Annealer
             ----------     -------  --------------     -------
              Iteration       WHPWL  Delay Max (ps)     R Limit
             ----------     -------  --------------     -------
-INFO     :           0         703           16536        30.0
-INFO     :           1         376           15694        29.9
-INFO     :           2         219           14339        28.7
-INFO     :           3         274           14315        27.2
-INFO     :           4         251           14474        25.5
-INFO     :           5         255           13931        23.7
-INFO     :           6         274           13848        22.2
-INFO     :           7         240           13613        20.5
-INFO     :           8         252           13622        19.0
-INFO     :           9         253           14034        17.6
-INFO     :          10         244           13990        16.3
-INFO     :          11         246           13990        15.2
-INFO     :          12         250           13833        14.1
-INFO     :          13         241           13833        13.1
-INFO     :          14         265           13802        12.2
-INFO     :          15         251           13622        11.4
-INFO     :          16         245           13613        10.6
-INFO     :          17         245           13613         9.8
-INFO     :          18         227           14894         9.1
-INFO     :          19         232           13848         8.5
-INFO     :          20         216           13848         7.9
-INFO     :          21         208           13848         7.3
-INFO     :          22         210           13848         6.8
-INFO     :          23         205           15022         6.4
-INFO     :          24         203           14811         6.0
-INFO     :          25         199           13912         5.6
-INFO     :          26         197           13697         5.3
-INFO     :          27         194           13491         4.9
-INFO     :          28         186           13512         4.6
-INFO     :          29         195           13625         4.3
-INFO     :          30         199           12950         4.0
-INFO     :          31         202           13130         3.8
-INFO     :          32         202           13224         3.5
-INFO     :          33         206           13349         3.2
-INFO     :          34         208           12950         3.0
-INFO     :          35         207           13432         2.8
-INFO     :          36         202           13432         2.6
-INFO     :          37         197           13682         2.4
-INFO     :          38         197           13402         2.2
-INFO     :          39         189           13402         2.1
-INFO     :          40         188           13487         1.9
-INFO     :          41         187           12957         1.8
-INFO     :          42         191           12807         1.7
-INFO     :          43         195           13130         1.5
-INFO     :          44         194           13426         1.4
-INFO     :          45         187           13079         1.3
-INFO     :          46         187           13205         1.2
-INFO     : Placement successful: 207 cells are placed
-INFO     : Peak congestion smeared over 4x4 of the chip is 0.131361 at 37,69
-INFO     : Peak congestion smeared over 1/16 of the chip is 0.131361 at 37,69
-INFO     : Peak congestion smeared over 1/4 of the chip is 0.0362424 at 46,68
-INFO     : Congestion-weighted HPWL per net: 6.81757
+INFO     :           0         536           27843        30.0
+INFO     :           1         309           26080        29.9
+INFO     :           2         221           24250        29.8
+INFO     :           3         226           22552        29.3
+INFO     :           4         214           22087        28.5
+INFO     :           5         209           22056        27.4
+INFO     :           6         207           21158        26.6
+INFO     :           7         212           21196        25.4
+INFO     :           8         212           21254        24.4
+INFO     :           9         209           21296        23.1
+INFO     :          10         205           21441        22.0
+INFO     :          11         195           21265        21.0
+INFO     :          12         190           21265        20.0
+INFO     :          13         189           20503        18.9
+INFO     :          14         181           20051        17.9
+INFO     :          15         188           20193        16.8
+INFO     :          16         195           20847        15.8
+INFO     :          17         180           20576        14.9
+INFO     :          18         181           20238        14.0
+INFO     :          19         180           20138        13.1
+INFO     :          20         174           20138        12.3
+INFO     :          21         176           20733        11.5
+INFO     :          22         178           20056        10.7
+INFO     :          23         178           20056        10.0
+INFO     :          24         178           20261         9.3
+INFO     :          25         175           20377         8.7
+INFO     :          26         174           20138         8.0
+INFO     :          27         173           19876         7.5
+INFO     :          28         177           21023         6.9
+INFO     :          29         179           20634         6.4
+INFO     :          30         184           21136         6.0
+INFO     :          31         190           21585         5.6
+INFO     :          32         185           20299         5.2
+INFO     :          33         184           20299         4.8
+INFO     :          34         181           20916         4.5
+INFO     :          35         176           20526         4.1
+INFO     :          36         170           20299         3.8
+INFO     :          37         169           20299         3.5
+INFO     :          38         169           20915         3.2
+INFO     :          39         171           21011         3.0
+INFO     :          40         167           20605         2.8
+INFO     :          41         160           20604         2.6
+INFO     :          42         154           20265         2.4
+INFO     :          43         155           20505         2.2
+INFO     :          44         154           20239         2.1
+INFO     :          45         154           20361         1.9
+INFO     :          46         156           21250         1.7
+INFO     :          47         151           21498         1.6
+INFO     : Placement successful: 223 cells are placed
+INFO     : Peak congestion smeared over 4x4 of the chip is 0.121536 at 34,70
+INFO     : Peak congestion smeared over 1/16 of the chip is 0.121536 at 34,70
+INFO     : Peak congestion smeared over 1/4 of the chip is 0.0336739 at 42,65
+INFO     : Congestion-weighted HPWL per net: 6.06856
 INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.qplace'.
-INFO     : Finished Realigning Types (37 blocks needed type change)
+INFO     : Finished Realigning Types (39 blocks needed type change)
 INFO     : Completed placement consistency check successfully.
 INFO     : Successfully created FPGA place file '/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.place'
-INFO     : Placement took 1.504631352 seconds [FlowMsg::StageDuration]
-INFO     :     Placement took 2.13 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Placement virtual memory usage: begin = 241.54 MB, end = 289.788 MB, delta = 48.248 MB [FlowMsg::VMUsage]
-INFO     : Placement resident set memory usage: begin = 130.024 MB, end = 135.52 MB, delta = 5.496 MB [FlowMsg::RSSUsage]
-INFO     :     Placement peak resident set memory usage = 392.348 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Placement took 1.558478698 seconds [FlowMsg::StageDuration]
+INFO     :     Placement took 2.16 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Placement virtual memory usage: begin = 241.536 MB, end = 289.784 MB, delta = 48.248 MB [FlowMsg::VMUsage]
+INFO     : Placement resident set memory usage: begin = 129.796 MB, end = 136.156 MB, delta = 6.36 MB [FlowMsg::RSSUsage]
+INFO     :     Placement peak resident set memory usage = 332.588 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage placement *****
            

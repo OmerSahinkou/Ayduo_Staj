@@ -1,7 +1,7 @@
 
 # Efinity Pinout Report
 # Version: 2025.2.288.2.10
-# Date: 2026-07-16 17:11
+# Date: 2026-07-17 15:41
 
 # Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -19,8 +19,8 @@
 |     A2     |       --GND--       |          GND          |     Power     |                      |                  |      |             |            Ground           |
 |     A3     |       --TDI--       |          TDI          |     Input     |                      |      3.3 V       |  1B  |             |        Configuration        |
 |     A4     |       --TDO--       |          TDO          |     Output    |                      |      3.3 V       |  1B  |             |        Configuration        |
-|     A5     |      --UNUSED--     |        GPIOR_00       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
-|     A6     |      --UNUSED--     |        GPIOR_03       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
+|     A5     |        sclk_o       |        GPIOR_00       |     Output    | 3.3 V LVTTL / LVCMOS |      3.3 V       |  2A  |             |           User IO           |
+|     A6     |        miso_i       |        GPIOR_03       |     Input     | 3.3 V LVTTL / LVCMOS |      3.3 V       |  2A  |             |           User IO           |
 |     A7     |       --VCC--       |        VCCIO2A        |     Power     |                      |      3.3 V       |  2A  |             |         VCCIO Power         |
 |     A8     |      --UNUSED--     |        GPIOR_08       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
 |     A9     |      --UNUSED--     |        GPIOR_10       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
@@ -28,8 +28,8 @@
 |     B2     |       --VCC--       |        VCCIO1B        |     Power     |                      |      3.3 V       |  1B  |             |         VCCIO Power         |
 |     B3     |     --NSTATUS--     |    GPIOL_21_NSTATUS   |     Input     |                      |      3.3 V       |  1B  | weak pullup |    User IO/Configuration    |
 |     B4     |       --TMS--       |          TMS          |     Input     |                      |      3.3 V       |  1B  |             |        Configuration        |
-|     B5     |      --UNUSED--     |        GPIOR_01       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
-|     B6     |      --UNUSED--     |        GPIOR_05       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
+|     B5     |      spi_cs_n_o     |        GPIOR_01       |     Output    | 3.3 V LVTTL / LVCMOS |      3.3 V       |  2A  |             |           User IO           |
+|     B6     |        mosi_o       |        GPIOR_05       |     Output    | 3.3 V LVTTL / LVCMOS |      3.3 V       |  2A  |             |           User IO           |
 |     B7     |       --GND--       |          GND          |     Power     |                      |                  |      |             |            Ground           |
 |     B8     |      --UNUSED--     |        GPIOR_11       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |
 |     B9     |      --UNUSED--     |        GPIOR_14       |     Input     |                      |      3.3 V       |  2A  | weak pullup |           User IO           |

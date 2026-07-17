@@ -1,7 +1,7 @@
 
 # Efinity Pinout Report
 # Version: 2025.2.288.2.10
-# Date: 2026-07-16 17:11
+# Date: 2026-07-17 15:41
 
 # Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -15,8 +15,8 @@ A1,VCCA_PLL,,Power,1C,,,,1.1 V PLL Power
 A2,GND,,Power,,,,,Ground
 A3,TDI,,Input,1B,3.3 V,,,Configuration
 A4,TDO,,Output,1B,3.3 V,,,Configuration
-A5,GPIOR_00,,Input,2A,3.3 V,,weak pullup,User IO
-A6,GPIOR_03,,Input,2A,3.3 V,,weak pullup,User IO
+A5,GPIOR_00,sclk_o,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
+A6,GPIOR_03,miso_i,Input,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 A7,VCCIO2A,,Power,2A,3.3 V,,,VCCIO Power
 A8,GPIOR_08,,Input,2A,3.3 V,,weak pullup,User IO
 A9,GPIOR_10,,Input,2A,3.3 V,,weak pullup,User IO
@@ -24,8 +24,8 @@ B1,GNDA_PLL,,Power,,,,,PLL Ground
 B2,VCCIO1B,,Power,1B,3.3 V,,,VCCIO Power
 B3,GPIOL_21_NSTATUS,,Input,1B,3.3 V,,weak pullup,User IO/Configuration
 B4,TMS,,Input,1B,3.3 V,,,Configuration
-B5,GPIOR_01,,Input,2A,3.3 V,,weak pullup,User IO
-B6,GPIOR_05,,Input,2A,3.3 V,,weak pullup,User IO
+B5,GPIOR_01,spi_cs_n_o,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
+B6,GPIOR_05,mosi_o,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 B7,GND,,Power,,,,,Ground
 B8,GPIOR_11,,Input,2A,3.3 V,,weak pullup,User IO
 B9,GPIOR_14,,Input,2A,3.3 V,,weak pullup,User IO

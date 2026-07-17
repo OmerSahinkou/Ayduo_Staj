@@ -1,7 +1,7 @@
 
 // Efinity Top-level template
 // Version: 2025.2.288.2.10
-// Date: 2026-07-16 17:11
+// Date: 2026-07-17 15:41
 
 // Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -20,10 +20,14 @@
 module Staj_Projesi
 (
   (* syn_peri_port = 0 *) input clk_i,
+  (* syn_peri_port = 0 *) input miso_i,
   (* syn_peri_port = 0 *) input rst_n_i,
   (* syn_peri_port = 0 *) input rx,
   (* syn_peri_port = 0 *) input switch_in,
+  (* syn_peri_port = 0 *) output mosi_o,
   (* syn_peri_port = 0 *) output pwm_out,
+  (* syn_peri_port = 0 *) output sclk_o,
+  (* syn_peri_port = 0 *) output spi_cs_n_o,
   (* syn_peri_port = 0 *) output tx
 );
 

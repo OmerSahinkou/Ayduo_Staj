@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Timing Report
 Version: 2025.2.288.2.10
-Date: 2026-07-16 17:11
+Date: 2026-07-17 15:41
 
 Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -14,15 +14,19 @@ Timing Model: C2 (final)
 Non-registered GPIO Configuration:
 ===================================
 
-+---------------+-----------+-----------+----------+----------+
-| Instance Name |  Pin Name | Parameter | Max (ns) | Min (ns) |
-+---------------+-----------+-----------+----------+----------+
-|     clk_i     |   clk_i   |  GPIO_IN  |  1.954   |  0.698   |
-|    rst_n_i    |  rst_n_i  |  GPIO_IN  |  1.954   |  0.698   |
-|       rx      |     rx    |  GPIO_IN  |  1.954   |  0.698   |
-|   switch_in   | switch_in |  GPIO_IN  |  1.954   |  0.698   |
-|    pwm_out    |  pwm_out  |  GPIO_OUT |  5.361   |  1.915   |
-|       tx      |     tx    |  GPIO_OUT |  5.361   |  1.915   |
-+---------------+-----------+-----------+----------+----------+
++---------------+------------+-----------+----------+----------+
+| Instance Name |  Pin Name  | Parameter | Max (ns) | Min (ns) |
++---------------+------------+-----------+----------+----------+
+|     clk_i     |   clk_i    |  GPIO_IN  |  1.954   |  0.698   |
+|     miso_i    |   miso_i   |  GPIO_IN  |  1.954   |  0.698   |
+|    rst_n_i    |  rst_n_i   |  GPIO_IN  |  1.954   |  0.698   |
+|       rx      |     rx     |  GPIO_IN  |  1.954   |  0.698   |
+|   switch_in   | switch_in  |  GPIO_IN  |  1.954   |  0.698   |
+|     mosi_o    |   mosi_o   |  GPIO_OUT |  5.361   |  1.915   |
+|    pwm_out    |  pwm_out   |  GPIO_OUT |  5.361   |  1.915   |
+|     sclk_o    |   sclk_o   |  GPIO_OUT |  5.361   |  1.915   |
+|   spi_cs_n_o  | spi_cs_n_o |  GPIO_OUT |  5.361   |  1.915   |
+|       tx      |     tx     |  GPIO_OUT |  5.361   |  1.915   |
++---------------+------------+-----------+----------+----------+
 
 ---------- GPIO Timing Report (end) ----------

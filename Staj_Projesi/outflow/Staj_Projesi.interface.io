@@ -13,4 +13,8 @@ tx        	0	60	0
 clk_i     	0	102	1
 pwm_out   	78	70	0
 rst_n_i   	78	102	1
+mosi_o    	78	137	0
+miso_i    	78	142	1
 switch_in 	78	145	1
+spi_cs_n_o	78	152	0
+sclk_o    	78	155	0

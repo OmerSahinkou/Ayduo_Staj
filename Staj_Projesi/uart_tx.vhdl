@@ -75,9 +75,10 @@ begin
                         end if;
                         
                     when START_BIT =>
-                        if bitcounter = BIT_PERIOD - 1 then  -- ✅ Tam period
+                        -- Sinyalin ortasına hizalanmak için YARIM periyot bekle
+                        if bitcounter = (BIT_PERIOD / 2) - 1 then 
                             bitcounter <= (others => '0');
-                            if rx_sync2 = '0' then  
+                            if rx_sync2 = '0' then  -- Hala '0' ise gerçek bir start bitidir (gürültü değildir)
                                 state <= DATA_BITS;
                                 bit_idx <= (others => '0');
                             else
