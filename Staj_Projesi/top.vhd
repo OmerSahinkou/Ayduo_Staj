@@ -1,3 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 07/16/2026 11:37:36 AM
+-- Design Name: 
+-- Module Name: top - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -113,7 +133,6 @@ begin
             rx_valid   => rx_valid
         ); 
 
-    -- Ana Kontrol Prosesi (RX'ten gelen veri anında PWM'e aktarılır)
     process(clk_i, rst_n_i)
     begin
         if rst_n_i = '0' then

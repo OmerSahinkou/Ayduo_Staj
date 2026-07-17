@@ -43,12 +43,12 @@ entity Spi_Mode_3 is
 end Spi_Mode_3;
 
 architecture Behavioral of Spi_Mode_3 is
-    constant BIT_LIMIT         : integer := CLK_FREQ / (SPI_FREQ * 2); -- SCLK'nin inip çıkması için 2'ye bölmek daha sağlıklıdır
+    constant BIT_LIMIT         : integer := CLK_FREQ / (SPI_FREQ * 2); 
     constant BIT_COUNTER_WIDTH : integer := integer(ceil(log2(real(BIT_LIMIT))));
     constant BIT_IDX_WIDTH     : integer := integer(ceil(log2(real(DATA_WIDTH))));
     
     signal bitcounter  : unsigned(BIT_COUNTER_WIDTH - 1 downto 0) := (others => '0');
-    signal bit_idx     : unsigned(BIT_IDX_WIDTH downto 0)         := (others => '0'); -- Bir bit genişlettik ki underflow yapmasın
+    signal bit_idx     : unsigned(BIT_IDX_WIDTH downto 0)         := (others => '0'); 
     signal data_buffer : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
     
     type state_t is (IDLE, SHIFT, SAMPLE, DONE);
@@ -62,25 +62,24 @@ begin
             bitcounter  <= (others => '0' );
             state       <= IDLE                     ;
             data_valid  <= '0'                      ;
-            sclk_o      <= '1'; -- CPOL=1 Kuralı
+            sclk_o      <= '1'; 
             cs_o        <= '1'; 
             mosi_o      <= '0';
         elsif rising_edge(clk_i)then
             
-            data_valid <= '0'; -- Varsayılan olarak hep 0 yapıyoruz
+            data_valid <= '0'; 
             
             case state is
                 when IDLE =>
                     bit_idx     <= to_unsigned(7, bit_idx'length);
                     bitcounter  <= (others => '0' ) ;
-                    sclk_o      <= '1'              ; -- CPOL=1 Kuralı
+                    sclk_o      <= '1'              ; 
                     cs_o        <= '1'              ;
                     
                     if(start_trasfer_i = '1') then 
                         cs_o        <= '0'          ;
                         data_buffer <= data_buffer_i;
                         state       <= SHIFT        ;
-                        -- DİKKAT: sclk_o <= '0' BURADAN KALDIRILDI! Saati düşürmek için SHIFT state'ini beklemeliyiz.
                     end if;
                     
                 when SHIFT =>
@@ -89,7 +88,7 @@ begin
                     else
                         bitcounter  <= (others => '0' ) ;
                         state       <= SAMPLE           ;
-                        sclk_o      <= '0'              ; -- 1. Kenar (Düşen Kenar)
+                        sclk_o      <= '0'              ; 
                         mosi_o      <= data_buffer(to_integer(bit_idx));
                     end if;
                     
@@ -97,11 +96,10 @@ begin
                     if(bitcounter < BIT_LIMIT - 1 )then
                         bitcounter <= bitcounter + 1;
                     else
-                        sclk_o      <= '1'              ; -- 2. Kenar (Yükselen Kenar)
+                        sclk_o      <= '1'              ; 
                         bitcounter  <= (others => '0' ) ;
                         data_buffer(to_integer(bit_idx)) <= miso_i;
                         
-                        -- VHDL Sinyal Güncelleme Tuzağı Düzeltildi!
                         if (bit_idx = 0) then
                             state <= DONE;
                         else
@@ -115,8 +113,8 @@ begin
                         bitcounter <= bitcounter + 1;
                     else 
                         sclk_o          <= '1'          ;
-                        cs_o            <= '1'          ; -- DÜZELTİLDİ: İşlem bitti, CS 1 olmalı
-                        data_valid      <= '1'          ; -- 1 Vuruşluk sinyal
+                        cs_o            <= '1'          ; 
+                        data_valid      <= '1'          ; 
                         rx_data         <= data_buffer  ;
                         state           <= IDLE         ;
                     end if;

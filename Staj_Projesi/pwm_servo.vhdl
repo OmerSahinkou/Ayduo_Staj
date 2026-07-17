@@ -1,3 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company: Ayduo Electronic
+-- Engineer: Ömer Şahin
+-- 
+-- Create Date: 07/14/2026 11:37:36 AM
+-- Design Name: 
+-- Module Name: pwm_servo - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
@@ -31,14 +51,12 @@ begin
             counter <= (others => '0');
         elsif rising_edge(clk_i) then
             
-            -- 20ms period (50Hz) = 666,667 cycles @ 33.33MHz
             if counter >= 666_667 then
                 counter <= (others => '0');
             else
                 counter <= counter + 1;
             end if;
             
-            -- PWM output: high when counter < pulse_width
             if counter < pulse_width then
                 pwm_out <= '1';
             else

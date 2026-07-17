@@ -1,3 +1,23 @@
+----------------------------------------------------------------------------------
+-- Company: Ayduo Electronic
+-- Engineer: Ömer Şahin
+-- 
+-- Create Date: 07/14/2026 11:37:36 AM
+-- Design Name: 
+-- Module Name: uart_rx - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
@@ -27,7 +47,7 @@ architecture rtl of uart_rx is
     signal bitcounter  : unsigned(BIT_COUNTER_WIDTH - 1 downto 0) := (others => '0');
     signal bit_idx     : unsigned(3 downto 0) := (others => '0');
     signal data_buffer : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
-    signal rx_sync1, rx_sync2 : std_logic := '1';  -- ✅ Sync eklendi
+    signal rx_sync1, rx_sync2 : std_logic := '1';  
     
 begin
     process(clk_c)
@@ -43,7 +63,6 @@ begin
                 rx_sync1    <= '1';
                 rx_sync2    <= '1';
             else
-                -- ✅ Senkronizasyon (meta-stability için)
                 rx_sync1 <= rx;
                 rx_sync2 <= rx_sync1;
                 
@@ -58,7 +77,7 @@ begin
                     when START_BIT =>
                         if bitcounter = BIT_PERIOD - 1 then  -- ✅ Tam period
                             bitcounter <= (others => '0');
-                            if rx_sync2 = '0' then  -- ✅ Hala LOW?
+                            if rx_sync2 = '0' then  
                                 state <= DATA_BITS;
                                 bit_idx <= (others => '0');
                             else
@@ -71,7 +90,7 @@ begin
                     when DATA_BITS =>
                         if bitcounter = BIT_PERIOD - 1 then
                             bitcounter <= (others => '0');
-                            data_buffer(to_integer(bit_idx)) <= rx_sync2;  -- ✅ Bit ortasında oku
+                            data_buffer(to_integer(bit_idx)) <= rx_sync2;  
                             
                             if bit_idx = DATA_WIDTH - 1 then
                                 state <= STOP_BIT;
