@@ -1,11 +1,13 @@
 sep=\t
 Module Resource Usage Distribution Estimates
-Generated at: Jul 17, 2026 16:04:26
+Generated at: Jul 17, 2026 17:18:20
 
 Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
 Module	       FFs	      ADDs	      LUTs	      RAMs	 DSP/MULTs
-top_servo:top_servo        	   102(9)	    33(0)	   129(1)	     0(0)	     1(0)	
- +Inst_pwm_servo:pwm_servo 	   36(36)	   33(33)	   50(50)	     0(0)	     1(1)	
- +Inst_uart_tx:uart_tx     	   24(24)	     0(0)	   34(34)	     0(0)	     0(0)	
- +Inst_uart_rx:uart_rx     	   33(33)	     0(0)	   44(44)	     0(0)	     0(0)	
+top_servo:top_servo         	  178(17)	    63(0)	   217(2)	     0(0)	     3(0)	
+ +Inst0_pwm_servo:pwm_servo 	   36(36)	   33(33)	   51(51)	     0(0)	     1(1)	
+ +Inst1_pwm_servo:pwm_servo 	   34(34)	   15(15)	   42(42)	     0(0)	     1(1)	
+ +Inst2_pwm_servo:pwm_servo 	   34(34)	   15(15)	   43(43)	     0(0)	     1(1)	
+ +Inst_uart_tx:uart_tx      	   24(24)	     0(0)	   36(36)	     0(0)	     0(0)	
+ +Inst_uart_rx:uart_rx      	   33(33)	     0(0)	   43(43)	     0(0)	     0(0)	

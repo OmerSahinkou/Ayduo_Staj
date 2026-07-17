@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Fri Jul 17 16:04:29 2026
+Date: Fri Jul 17 17:18:24 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -12,23 +12,25 @@ Elapsed time for packing: 0 hours 0 minutes 0 seconds
 
 ---------- Resource Summary (begin) ----------
 Inputs: 3 / 96 (3.12%)
-Outputs: 2 / 223 (0.90%)
+Outputs: 4 / 223 (1.79%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 203 / 7384 (2.75%)
-	LE: LUTs/Adders: 164 / 7384 (2.22%)
-	LE: Registers: 102 / 5280 (1.93%)
+Logic Elements: 333 / 7384 (4.51%)
+	LE: LUTs/Adders: 282 / 7384 (3.82%)
+	LE: Registers: 178 / 5280 (3.37%)
 Memory Blocks: 0 / 24 (0.00%)
-Multipliers: 1 / 8 (12.50%)
+Multipliers: 3 / 8 (37.50%)
 ---------- Resource Summary (end) ----------
 
 
 ---------- DSP Block Information (begin) ----------
 
-+-----------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-|         NAME          | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
-+-----------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-| Inst_pwm_servo/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-+-----------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
++------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+|          NAME          | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
++------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+| Inst2_pwm_servo/mult_5 | true  | false | false |   true    |   false    |   false   |   false    |   false   |   false    |
+| Inst0_pwm_servo/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
+| Inst1_pwm_servo/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
++------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
 
 ----------- DSP Block Information (end) ----------
 

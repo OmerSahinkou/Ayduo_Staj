@@ -12,8 +12,8 @@ INFO     : 	spi_low_power_mode                       = on
 INFO     : 	oscillator_clock_divider                 = DIV8
 INFO     : 	io_weak_pullup                           = on
 INFO     : Finished generating "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.hex"
-INFO     : Efinix Bitstream Generator took 0.339662605 seconds [FlowMsg::StageDuration]
-INFO     :     Efinix Bitstream Generator took 0.32 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Efinix Bitstream Generator took 0.346519728 seconds [FlowMsg::StageDuration]
+INFO     :     Efinix Bitstream Generator took 0.33 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
 INFO     : Efinix Bitstream Generator virtual memory usage: begin = 35.716 MB, end = 68.62 MB, delta = 32.904 MB [FlowMsg::VMUsage]
-INFO     : Efinix Bitstream Generator resident set memory usage: begin = 15.14 MB, end = 54.292 MB, delta = 39.152 MB [FlowMsg::RSSUsage]
-INFO     :     Efinix Bitstream Generator peak resident set memory usage = 347.852 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Efinix Bitstream Generator resident set memory usage: begin = 15.244 MB, end = 54.152 MB, delta = 38.908 MB [FlowMsg::RSSUsage]
+INFO     :     Efinix Bitstream Generator peak resident set memory usage = 353.992 MB [FlowMsg::RSSUsage::Peak]

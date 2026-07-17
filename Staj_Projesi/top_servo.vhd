@@ -30,7 +30,9 @@ entity top_servo is
     Port (
         clk_i   : in  STD_LOGIC;
         rst_n_i : in  STD_LOGIC;
-        pwm_out : out STD_LOGIC;
+        pwm_out_0 : out STD_LOGIC;
+        pwm_out_1 : out STD_LOGIC;
+        pwm_out_2 : out STD_LOGIC;
         rx      : in  STD_LOGIC;
         tx      : out STD_LOGIC
     );
@@ -83,7 +85,9 @@ architecture Behavioral of top_servo is
     end component;
     
     -- Sinyaller
-    signal angle_reg    : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_0    : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_1    : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_2    : unsigned(7 downto 0) := (others => '0');
     signal tx_start_sig : std_logic := '0';
     signal tx_data_sig  : std_logic_vector(7 downto 0) := (others => '0');
     signal tx_busy_sig  : std_logic;
@@ -93,15 +97,31 @@ architecture Behavioral of top_servo is
 begin
 
     -- PWM Servo Bağlantısı
-    Inst_pwm_servo: pwm_servo
+    Inst0_pwm_servo: pwm_servo
         generic map ( CLK_FREQ => CLK_FREQ )
         port map (
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
-            servo_angle => std_logic_vector(angle_reg),
-            pwm_out     => pwm_out
+            servo_angle => std_logic_vector(angle_reg_0),
+            pwm_out     => pwm_out_0
         );
 
+    Inst1_pwm_servo: pwm_servo
+        generic map ( CLK_FREQ => CLK_FREQ )
+        port map (
+            clk_i       => clk_i,
+            rst_n_i     => rst_n_i,
+            servo_angle => std_logic_vector(angle_reg_1),
+            pwm_out     => pwm_out_1
+        );
+    Inst2_pwm_servo: pwm_servo
+        generic map ( CLK_FREQ => CLK_FREQ )
+        port map (
+            clk_i       => clk_i,
+            rst_n_i     => rst_n_i,
+            servo_angle => std_logic_vector(angle_reg_2),
+            pwm_out     => pwm_out_2
+        );
     -- UART TX Bağlantısı
     Inst_uart_tx: uart_tx
         generic map (
@@ -136,12 +156,15 @@ begin
     process(clk_i, rst_n_i)
     begin
         if rst_n_i = '0' then
-            angle_reg    <= (others => '0');
+            angle_reg_0    <= (others => '0');
+            angle_reg_1    <= (others => '0');
             tx_start_sig <= '0';
         elsif rising_edge(clk_i) then
             tx_start_sig <= '0';  
             if rx_valid = '1' then
-                angle_reg <= unsigned(rx_data_sig); 
+                angle_reg_0 <= unsigned(rx_data_sig); 
+                angle_reg_1 <= 255 - unsigned(rx_data_sig); 
+                angle_reg_2 <= unsigned(rx_data_sig); 
                 
                 if tx_busy_sig = '0' then
                     tx_start_sig <= '1';
@@ -150,6 +173,6 @@ begin
         end if;
     end process;
     
-    tx_data_sig <= std_logic_vector(angle_reg);
+    tx_data_sig <= std_logic_vector(angle_reg_0);
 
 end Behavioral;

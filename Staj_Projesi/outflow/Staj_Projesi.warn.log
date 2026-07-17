@@ -979,3 +979,107 @@
 [EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
 [EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
 [EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 17, 2026 17:05:00
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 17, 2026 17:07:08
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 17, 2026 17:10:35
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 17, 2026 17:18:20
+///////////////////////////////////
+
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)

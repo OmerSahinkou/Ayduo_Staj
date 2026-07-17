@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Report
 Version: 2025.2.288.2.10
-Date: 2026-07-17 16:04
+Date: 2026-07-17 17:18
 
 Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -26,7 +26,7 @@ Configuration Mode: active (x1)
 ---------- Table of Contents (end) ------------
 
 ---------- 1. Periphery Usage Summary (begin) ----------
-gpio: 10 / 55 (18.18%)
+gpio: 12 / 55 (21.82%)
 jtag: 0 / 2 (0.0%)
 osc: 0 / 1 (0.0%)
 pll: 0 / 1 (0.0%)
@@ -80,6 +80,7 @@ No global connection was found in project.
 +---------------+----------+
 | Instance Name | Function |
 +---------------+----------+
+|   pwm_out_1   |  CBSEL1  |
 |    rst_n_i    |  CBUS0   |
 |       rx      |   CDI7   |
 |       tx      |   CDI3   |
@@ -97,7 +98,9 @@ Global Unused Setting: input with weak pullup
 |     clk_i     | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |     GPIOL_20_PLLIN    |      C3     |
 |     miso_i    | GPIOR_03 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_03       |      A6     |
 |     mosi_o    | GPIOR_05 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_05       |      B6     |
-|    pwm_out    | GPIOR_20 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_20_CLK5     |      F8     |
+|   pwm_out_0   | GPIOR_20 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_20_CLK5     |      F8     |
+|   pwm_out_1   | GPIOR_21 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |  GPIOR_21_CLK4_CBSEL1 |      E7     |
+|   pwm_out_2   | GPIOR_22 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_22_CTRL5    |      F7     |
 |    rst_n_i    | GPIOR_15 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_15_CBUS0    |      C9     |
 |       rx      | GPIOL_10 | input  |          |              |    1A    | 3.3 V LVTTL / LVCMOS |     GPIOL_10_CDI7     |      H2     |
 |     sclk_o    | GPIOR_00 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_00       |      A5     |
@@ -127,7 +130,9 @@ Output GPIO Configuration:
 | Instance Name | Output Pin | Output Clock Pin | Drive Strength | Slew Rate |
 +---------------+------------+------------------+----------------+-----------+
 |     mosi_o    |   mosi_o   |                  |       1        |  Disable  |
-|    pwm_out    |  pwm_out   |                  |       1        |  Disable  |
+|   pwm_out_0   | pwm_out_0  |                  |       1        |  Disable  |
+|   pwm_out_1   | pwm_out_1  |                  |       1        |  Disable  |
+|   pwm_out_2   | pwm_out_2  |                  |       1        |  Disable  |
 |     sclk_o    |   sclk_o   |                  |       1        |  Disable  |
 |   spi_cs_n_o  | spi_cs_n_o |                  |       1        |  Disable  |
 |       tx      |     tx     |                  |       1        |  Disable  |
