@@ -5,3 +5,24 @@ bir adet ADXL345 sensör
 ADXL345 den alınan verileregöre servo motor yön değiştiricek
 
 
+Servo Bağlantıları
+
+servo 1 -> GPIOR_20
+
+servo 2 -> GPIOR_21
+
+servo 3 -> GPIOR_22
+
+
+MPU6500 bağlantıları
+
+MOSI (SDA) sarı  -> GPIOR_05
+
+MISO (EDA) yeşil -> GPIOR_03
+
+CS   (ncs) mor 	 -> GPIOR_01
+
+SCLK (scl) mavi  -> GPIOR_00
+
+
+

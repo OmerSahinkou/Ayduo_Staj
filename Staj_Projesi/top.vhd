@@ -84,8 +84,8 @@ architecture Behavioral of top is
     
     component Spi_Mode_3 is
         generic(
-            CLK_FREQ   : integer := 50_000_000;
-            SPI_FREQ   : integer := 5_000_000;
+            CLK_FREQ   : integer := 33_333_333;
+            SPI_FREQ   : integer := 1_000_000;
             DATA_WIDTH : integer := 8         
         );
         Port ( 
