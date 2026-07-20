@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<efx:project name="Staj_Projesi" description="" last_change="1784534217" sw_version="2025.2.288.2.10" last_run_state="pass" last_run_flow="bitstream" config_result_in_sync="true" design_ood="sync" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
+<efx:project name="Staj_Projesi" description="" last_change="1784544181" sw_version="2025.2.288.2.10" last_run_state="pass" last_run_flow="bitstream" config_result_in_sync="true" design_ood="sync" place_ood="sync" route_ood="sync" xmlns:efx="http://www.efinixinc.com/enf_proj" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/enf_proj enf_proj.xsd">
     <efx:device_info>
         <efx:family name="Trion"/>
         <efx:device name="T8F81"/>
         <efx:timing_model name="C2"/>
     </efx:device_info>
     <efx:design_info def_veri_version="verilog_2k" def_vhdl_version="vhdl_2008" unified_flow="false">
-        <efx:top_module name="top"/>
+        <efx:top_module name="top_MPU_Servo"/>
         <efx:design_file name="uart_tx.vhdl" version="default" library="default"/>
         <efx:design_file name="uart_rx.vhd" version="default" library="default"/>
         <efx:design_file name="Led_Test.v" version="default" library="default"/>
@@ -16,6 +16,7 @@
         <efx:design_file name="Debounce.vhd" version="default" library="default"/>
         <efx:design_file name="MPU6500.vhd" version="default" library="default"/>
         <efx:design_file name="top_servo.vhd" version="default" library="default"/>
+        <efx:design_file name="top_MPU_Servo.vhd" version="default" library="default"/>
         <efx:top_vhdl_arch name=""/>
     </efx:design_info>
     <efx:constraint_info>

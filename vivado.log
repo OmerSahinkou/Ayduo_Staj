@@ -1,0 +1,36 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 07-sep-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Mon Jul 20 13:17:58 2026
+# Process ID         : 19323
+# Current directory  : /home/omer-ahin/STAJ
+# Command line       : vivado
+# Log file           : /home/omer-ahin/STAJ/vivado.log
+# Journal file       : /home/omer-ahin/STAJ/vivado.jou
+# Running On         : omer-ahin-ASUS
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 6800H with Radeon Graphics
+# CPU Frequency      : 3071.804 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 32851 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41441 MB
+# Available Virtual  : 33640 MB
+#-----------------------------------------------------------
+start_gui
+open_project {/home/omer-ahin/Vivado_Project/Smart DSP Pipeline/Smart DSP Pipeline.xpr}
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/omer-ahin/Vivado_Project/Smart DSP Pipeline/Smart DSP Pipeline.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2026.1/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 20 13:47:04 2026...

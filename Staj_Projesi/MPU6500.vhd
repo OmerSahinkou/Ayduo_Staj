@@ -15,7 +15,7 @@ entity MPU6500_Controller is
     Port ( 
         clk_i            : in STD_LOGIC;
         rst_i            : in STD_LOGIC;
-        
+        switch_out       : in STD_LOGIC;
         data_valid_i     : in STD_LOGIC;
         rx_data_i        : in STD_LOGIC_VECTOR(7 downto 0);
         start_transfer_o : out STD_LOGIC;
@@ -125,11 +125,13 @@ begin
                 -- IDLE STATE - Başlangıç durumu
                 -- =============================================
                 when IDLE =>
-                    spi_cs_n_o <= '1';
-                    config_idx <= 0;
-                    byte_cntr  <= 0;
-                    delay_cntr <= 0;
-                    state      <= POWER_ON_WAIT;
+                    if(switch_out = '0') then 
+                        spi_cs_n_o <= '1';
+                        config_idx <= 0;
+                        byte_cntr  <= 0;
+                        delay_cntr <= 0;
+                        state      <= POWER_ON_WAIT;
+                    end if;
                     
                 -- =============================================
                 -- POWER_ON_WAIT - Sensör güç stabilizasyonu (100ms)

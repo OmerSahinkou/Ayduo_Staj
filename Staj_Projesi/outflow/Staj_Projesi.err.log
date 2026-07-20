@@ -1210,3 +1210,180 @@
 // Jul 20, 2026 10:56:47
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 11:41:04
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'when' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:279)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:283)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 11:45:44
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal port 'switch_out' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:18)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 11:46:59
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:05:34
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'ofsetli_veri_2' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:293)
+[EFX-0010 VERI-ERROR] syntax error near 'elsif' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:295)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:309)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:06:32
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'pwm_servo_0' remains a black box since it has no binding entity (VHDL-1250) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:44)
+[EFX-0021 ERROR] Elaboration of module 'top_MPU_Servo' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:13:15
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'pwm_servo' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:46)
+[EFX-0010 VERI-ERROR] 'pwm_servo' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:56)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:309)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:13:22
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'pwm_servo' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:46)
+[EFX-0010 VERI-ERROR] 'pwm_servo' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:56)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:309)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:13:44
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:14:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:16:42
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:21:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:24:40
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:28:16
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:31:52
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 9 elements; expected 8 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:272)
+[EFX-0021 ERROR] Elaboration of module 'top_MPU_Servo' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:32:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:34:00
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:40:46
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 12:41:24
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:05:53
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:10:17
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:12:29
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:15:23
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:16:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:41:28
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:290)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:294)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:41:57
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 0 definitions of operator "+" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:290)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:294)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 20, 2026 13:42:53
+///////////////////////////////////
+
