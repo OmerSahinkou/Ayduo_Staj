@@ -1,13 +1,12 @@
 sep=\t
 Module Resource Usage Distribution Estimates
-Generated at: Jul 17, 2026 17:18:20
+Generated at: Jul 20, 2026 10:56:47
 
 Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
 Module	       FFs	      ADDs	      LUTs	      RAMs	 DSP/MULTs
-top_servo:top_servo         	  178(17)	    63(0)	   217(2)	     0(0)	     3(0)	
- +Inst0_pwm_servo:pwm_servo 	   36(36)	   33(33)	   51(51)	     0(0)	     1(1)	
- +Inst1_pwm_servo:pwm_servo 	   34(34)	   15(15)	   42(42)	     0(0)	     1(1)	
- +Inst2_pwm_servo:pwm_servo 	   34(34)	   15(15)	   43(43)	     0(0)	     1(1)	
- +Inst_uart_tx:uart_tx      	   24(24)	     0(0)	   36(36)	     0(0)	     0(0)	
- +Inst_uart_rx:uart_rx      	   33(33)	     0(0)	   43(43)	     0(0)	     0(0)	
+top:top                                                     	  324(16)	    19(0)	  355(91)	     0(0)	     0(0)	
+ +Inst_pwm_servo:pwm_servo                                  	   21(21)	   19(19)	   34(34)	     0(0)	     0(0)	
+ +Inst_uart_tx:uart_tx                                      	   24(24)	     0(0)	   34(34)	     0(0)	     0(0)	
+ +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)	   28(28)	     0(0)	   42(42)	     0(0)	     0(0)	
+ +Inst_MPU6500_Controller:MPU6500_Controller                	 235(235)	     0(0)	 154(154)	     0(0)	     0(0)	

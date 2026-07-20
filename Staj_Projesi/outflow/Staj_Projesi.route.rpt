@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Fri Jul 17 17:18:25 2026
+Date: Mon Jul 20 10:56:54 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -9,4 +9,4 @@ Family: Trion
 Device: T8F81
 Top-level Entity Name: Staj_Projesi
 Elapsed time for routing: 0 hours 0 minutes 0 seconds
-Elapsed time for Latest PnR Run: 0 hours 0 minutes 2 seconds
+Elapsed time for Latest PnR Run: 0 hours 0 minutes 4 seconds

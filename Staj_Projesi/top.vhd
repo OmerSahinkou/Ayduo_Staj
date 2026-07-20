@@ -5,10 +5,9 @@
 -- Create Date: 07/17/2026 12:37:36 AM
 -- Design Name: 
 -- Module Name: top - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: MPU6500, SPI, UART ve Servo Entegrasyonu
+-- Project Name: MPU6500, SPI, UART ve Servo Entegrasyonu
+--
+-- DÜZELTME: Frame synchronization marker (0xAA) eklendi
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -18,7 +17,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity top is
     Generic (
         CLK_FREQ  : integer := 33_333_333; 
-        BAUD_RATE : integer := 115200
+        BAUD_RATE : integer := 115_200
     );
     Port (
         clk_i       : in  STD_LOGIC;
@@ -143,10 +142,14 @@ architecture Behavioral of top is
     signal accel_x, accel_y, accel_z : std_logic_vector(15 downto 0);
     signal gyro_x, gyro_y, gyro_z    : std_logic_vector(15 downto 0);
 
-    -- UART Gönderim State Machine (FSM) Sinyalleri
-    type uart_state_t is (IDLE, LOAD_DATA, SEND_PULSE, WAIT_BUSY_HIGH, WAIT_BUSY_LOW);
+    -- =========================================================
+    -- UART GÖNDERIM STATE MACHINE (FSM) - FRAME SYNC MARKERİ İLE
+    -- =========================================================
+    -- YENİ STATE: SEND_MARKER
+    type uart_state_t is (IDLE, SEND_MARKER, LOAD_DATA, SEND_PULSE, WAIT_BUSY_HIGH, WAIT_BUSY_LOW);
     signal uart_state : uart_state_t := IDLE;
-    signal byte_idx   : integer range 0 to 13 := 0;
+    signal byte_idx   : integer range 0 to 15 := 0;  -- 0-14 = 15 byte (marker + 14 veri)
+    
 begin
 
     -- =========================================================
@@ -194,7 +197,7 @@ begin
     Inst_Spi_Mode_3: Spi_Mode_3
         generic map (
             CLK_FREQ    => CLK_FREQ,
-            SPI_FREQ    => 5_000_000,
+            SPI_FREQ    => 1_000_000,
             DATA_WIDTH  => 8
         )
         port map (
@@ -226,7 +229,16 @@ begin
             gz_o             => gyro_z
         );
 
-process(clk_i, rst_n_i)
+    -- =========================================================
+    -- UART GÖNDERIM STATE MACHINE
+    -- =========================================================
+    -- FRAME FORMATÜ:
+    -- [0xAA] [AX_H] [AX_L] [AY_H] [AY_L] [AZ_H] [AZ_L] 
+    -- [GX_H] [GX_L] [GY_H] [GY_L] [GZ_H] [GZ_L] [CR] [LF]
+    -- Toplam: 15 byte
+    -- =========================================================
+    
+    process(clk_i, rst_n_i)
     begin
         if rst_n_i = '0' then
             tx_start_sig <= '0';
@@ -234,55 +246,80 @@ process(clk_i, rst_n_i)
             byte_idx     <= 0;
         elsif rising_edge(clk_i) then
             
-            tx_start_sig <= '0';
+            tx_start_sig <= '0';  -- One-cycle pulse
 
             case uart_state is
+            
+                -- =====================================================
+                -- STATE 1: IDLE - UART'ın boş olmasını bekle
+                -- =====================================================
                 when IDLE =>
                     if tx_busy_sig = '0' then
-                        uart_state <= LOAD_DATA;
+                        uart_state <= LOAD_DATA; -- SEND_MARKER yerine doğrudan LOAD_DATA
+                        byte_idx   <= 0;
                     end if;
 
+                -- =====================================================
+                -- STATE 2: SEND_MARKER - 0xAA (frame sync) gönder
+                -- =====================================================
+                when SEND_MARKER =>
+                    tx_data_sig  <= x"AA";  -- ← FRAME SYNC MARKER
+                    uart_state   <= SEND_PULSE;
+
+                -- =====================================================
+                -- STATE 3: LOAD_DATA - Byte'ı seç ve hazırla
+                -- =====================================================
                 when LOAD_DATA =>
                     case byte_idx is
-                        when 0  => tx_data_sig <= accel_x(15 downto 8); 
-                        when 1  => tx_data_sig <= accel_x(7 downto 0);  
-                        when 2  => tx_data_sig <= accel_y(15 downto 8); 
-                        when 3  => tx_data_sig <= accel_y(7 downto 0);  
-                        when 4  => tx_data_sig <= accel_z(15 downto 8); 
-                        when 5  => tx_data_sig <= accel_z(7 downto 0);  
+                        when 0  => tx_data_sig <= x"AA";                  -- MARKER
+                        when 1  => tx_data_sig <= accel_x(15 downto 8);   -- AX_H
+                        when 2  => tx_data_sig <= accel_x(7 downto 0);    -- AX_L
+                        when 3  => tx_data_sig <= accel_y(15 downto 8);   -- AY_H
+                        when 4  => tx_data_sig <= accel_y(7 downto 0);    -- AY_L
+                        when 5  => tx_data_sig <= accel_z(15 downto 8);   -- AZ_H
+                        when 6  => tx_data_sig <= accel_z(7 downto 0);    -- AZ_L
                         
-                        when 6  => tx_data_sig <= gyro_x(15 downto 8);  
-                        when 7  => tx_data_sig <= gyro_x(7 downto 0);   
-                        when 8  => tx_data_sig <= gyro_y(15 downto 8);  
-                        when 9  => tx_data_sig <= gyro_y(7 downto 0);   
-                        when 10 => tx_data_sig <= gyro_z(15 downto 8);  
-                        when 11 => tx_data_sig <= gyro_z(7 downto 0);   
+                        when 7  => tx_data_sig <= gyro_x(15 downto 8);    -- GX_H
+                        when 8  => tx_data_sig <= gyro_x(7 downto 0);     -- GX_L
+                        when 9  => tx_data_sig <= gyro_y(15 downto 8);    -- GY_H
+                        when 10 => tx_data_sig <= gyro_y(7 downto 0);     -- GY_L
+                        when 11 => tx_data_sig <= gyro_z(15 downto 8);    -- GZ_H
+                        when 12 => tx_data_sig <= gyro_z(7 downto 0);     -- GZ_L
                         
-                        when 12 => tx_data_sig <= x"0D";
-                        when 13 => tx_data_sig <= x"0A";
+                        when 13 => tx_data_sig <= x"0D";  -- CR (Carriage Return)
+                        when 14 => tx_data_sig <= x"0A";  -- LF (Line Feed)
                         
                         when others => tx_data_sig <= x"00";
                     end case;
-                    
                     uart_state <= SEND_PULSE;
 
+                -- =====================================================
+                -- STATE 4: SEND_PULSE - TX'i başlat (1 cycle pulse)
+                -- =====================================================
                 when SEND_PULSE =>
                     tx_start_sig <= '1';
                     uart_state   <= WAIT_BUSY_HIGH;
 
+                -- =====================================================
+                -- STATE 5: WAIT_BUSY_HIGH - TX busy olmasını bekle
+                -- =====================================================
                 when WAIT_BUSY_HIGH =>
                     if tx_busy_sig = '1' then
                         uart_state <= WAIT_BUSY_LOW;
                     end if;
 
+                -- =====================================================
+                -- STATE 6: WAIT_BUSY_LOW - TX tamamlanmasını bekle
+                -- =====================================================
                 when WAIT_BUSY_LOW =>
                     if tx_busy_sig = '0' then
-                        if byte_idx = 13 then
-                            byte_idx <= 0;
+                        if byte_idx = 14 then  -- Toplam 15 byte (0'dan 14'e)
+                            byte_idx   <= 0;
+                            uart_state <= IDLE;
                         else
-                            byte_idx <= byte_idx + 1;
+                            byte_idx   <= byte_idx + 1;
+                            uart_state <= LOAD_DATA;
                         end if;
-                        uart_state <= IDLE;
                     end if;
 
                 when others =>
