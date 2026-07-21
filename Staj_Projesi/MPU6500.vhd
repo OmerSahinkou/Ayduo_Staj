@@ -105,6 +105,7 @@ begin
     spi_read_addr <= "1" & ADDR_ACCEL_XOUT_H(6 downto 0);
 
     process (clk_i, rst_i)
+        variable temp : std_logic_vector(15 downto 0);
     begin
         if (rst_i = '0') then
             state            <= IDLE;
@@ -245,13 +246,23 @@ begin
                     -- Byte 10-11: GYRO_YOUT_H, GYRO_YOUT_L
                     -- Byte 12-13: GYRO_ZOUT_H, GYRO_ZOUT_L
                     
-                    ax_o <= raw_data(0) & raw_data(1);   -- ACCEL_X
-                    ay_o <= raw_data(2) & raw_data(3);   -- ACCEL_Y
-                    az_o <= raw_data(4) & raw_data(5);   -- ACCEL_Z
-                    
-                    gx_o <= raw_data(8) & raw_data(9);   -- GYRO_X
-                    gy_o <= raw_data(10) & raw_data(11); -- GYRO_Y
-                    gz_o <= raw_data(12) & raw_data(13); -- GYRO_Z
+                    temp := raw_data(0) & raw_data(1);
+                    ax_o <= std_logic_vector(signed(temp) + to_signed(690,16));
+
+                    temp := raw_data(2) & raw_data(3);
+                    ay_o <= std_logic_vector(signed(temp) - to_signed(21,16));
+
+                    temp := raw_data(4) & raw_data(5);
+                    az_o <= std_logic_vector(signed(temp) - to_signed(484,16));
+
+                    temp := raw_data(8) & raw_data(9);
+                    gx_o <= std_logic_vector(signed(temp) - to_signed(70,16));
+
+                    temp := raw_data(10) & raw_data(11);
+                    gy_o <= std_logic_vector(signed(temp) - to_signed(22,16));
+
+                    temp := raw_data(12) & raw_data(13);
+                    gz_o <= std_logic_vector(signed(temp) + to_signed(7,16));
                     
                     state <= MEASURE_DELAY;
 

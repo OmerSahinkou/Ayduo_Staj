@@ -122,49 +122,33 @@ architecture Behavioral of top_MPU_Servo is
         );
     end component;
 
-    component Cordic is
-        Port ( 
-            clk         : in STD_LOGIC;
-            reset_n     : in STD_LOGIC;
-            i_call      : in STD_LOGIC;
-            i_x         : in STD_LOGIC_VECTOR(31 downto 0);
-            i_y         : in STD_LOGIC_VECTOR(31 downto 0);
-            o_done      : out STD_LOGIC;
-            o_arctan    : out STD_LOGIC_VECTOR(31 downto 0);
-            o_deg       : out STD_LOGIC_VECTOR(31 downto 0);
-            o_y         : out STD_LOGIC_VECTOR(31 downto 0);
-            o_x         : out STD_LOGIC_VECTOR(31 downto 0)
-        );
+    component AccelRom is
+    Port (
+        clk_i      : in  STD_LOGIC;
+        lut_addr : in  STD_LOGIC_VECTOR(6 downto 0); 
+        pwm_val  : out STD_LOGIC_VECTOR(7 downto 0)  
+    );
+    end component;
+
+    component AccelToServo is
+    Port (
+        accel_x : in  STD_LOGIC_VECTOR(15 downto 0); 
+        lut_addr: out STD_LOGIC_VECTOR(6 downto 0)   
+    );
     end component;
     -- =========================================================
     -- SİNYAL TANIMLAMALARI 
     -- =========================================================
     
-    --Cordic Sinyaller
-
-    signal i_call     : STD_LOGIC;
-
-    signal x_done     : STD_LOGIC;
-    signal y_done     : STD_LOGIC;
-
-    signal o_arctan   : STD_LOGIC_VECTOR(31 downto 0);
-
-    signal cordic_ax  : STD_LOGIC_VECTOR(31 downto 0);
-    signal cordic_ay  : STD_LOGIC_VECTOR(31 downto 0);
-    signal cordic_az  : STD_LOGIC_VECTOR(31 downto 0);
-
-    signal o_arctan_x : STD_LOGIC_VECTOR(31 downto 0);
-    signal o_arctan_y : STD_LOGIC_VECTOR(31 downto 0);
-    --Cordic Servo Kontrolü
-    signal angle_deg_signed : signed(15 downto 0);
-    
-    signal servo_duty_cycle : unsigned(31 downto 0);
     -- Servo Sinyalleri
     signal angle_reg_0       : unsigned(7 downto 0) := (others => '0');
     signal angle_reg_1       : unsigned(7 downto 0) := (others => '0');
     signal angle_reg_2       : unsigned(7 downto 0) := (others => '0');
 
-    
+    signal rom_out_0         : std_logic_vector(7 downto 0);
+    signal rom_out_1         : std_logic_vector(7 downto 0);
+    signal rom_out_2         : std_logic_vector(7 downto 0);
+
     -- UART Sinyalleri
     signal tx_start_sig    : std_logic := '0';
     signal tx_data_sig     : std_logic_vector(7 downto 0) := (others => '0');
@@ -185,10 +169,10 @@ architecture Behavioral of top_MPU_Servo is
     --button çıkış sinyali
     signal switch_out       : std_logic := '0';
 
-    --gyro veri dönüşümleri 
-    signal sensor_isaretli_0 : SIGNED(15 downto 0);
-    signal sensor_isaretli_1 : SIGNED(15 downto 0);
-    signal sensor_isaretli_2 : SIGNED(15 downto 0);
+    signal lut_addr_0: STD_LOGIC_VECTOR(6 downto 0)  ;
+    signal lut_addr_1: STD_LOGIC_VECTOR(6 downto 0)  ;
+    signal lut_addr_2: STD_LOGIC_VECTOR(6 downto 0)  ;
+
 
     --State Machine Table
     type state_t is (IDLE, Start_Measure, Control_Servo);
@@ -298,68 +282,60 @@ begin
             gy_o             => gyro_y,
             gz_o             => gyro_z
         );
+    Inst_AccelRom_0:AccelRom
+        port map(
+        clk_i                => clk_i,
+        lut_addr             => lut_addr_0,
+        pwm_val              => rom_out_0
+    );
+    Inst_AccelRom_1:AccelRom
+        port map(
+        clk_i                => clk_i,
+        lut_addr             => lut_addr_1,
+        pwm_val              => rom_out_1
+    );
+    --Inst_AccelRom_2:AccelRom
+    --    port map(
+    --    clk_i                => clk_i,
+    --    lut_addr             => lut_addr_2,
+    --    pwm_val              => rom_out_2
+    --);
+    Inst_AccelToServo_0:AccelToServo
+        port map (
+        accel_x     => accel_x,
+        lut_addr    => lut_addr_0
+    );
 
-    Inst_Cordic_x: Cordic
-        Port map( 
-            clk        => clk_i,
-            reset_n    => rst_n_i,
-            i_call     => i_call,
-            i_x        => cordic_ax,
-            i_y        => cordic_az,
-            o_done     => x_done,
-            o_arctan   => o_arctan_x,
-            o_deg      => open,
-            o_y        => open,
-            o_x        => open
-        );
+    Inst_AccelToServo_1:AccelToServo
+        port map (
+        accel_x     => accel_y,
+        lut_addr    => lut_addr_1
+    );
 
-    Inst_Cordic_y: Cordic
-        Port map( 
-            clk        => clk_i,
-            reset_n    => rst_n_i,
-            i_call     => i_call,
-            i_x        => cordic_ay,
-            i_y        => cordic_az,
-            o_done     => y_done,
-            o_arctan   => o_arctan_y,
-            o_deg      => open,
-            o_y        => open,
-            o_x        => open
-        );
-    process (clk_i)
-        variable temp_angle_x : integer;
-        variable temp_angle_y : integer;
-    begin
+    --Inst_AccelToServo_2:AccelToServo
+    --    port map (
+    --    accel_x     => accel_z,
+    --    lut_addr    => lut_addr_2
+    --);
+    process (clk_i, rst_n_i) begin 
         if (rst_n_i = '0') then 
-            tx_start_sig    <= '0' ;
-            state           <= IDLE;
-            angle_reg_0 <= (others => '0');
-            angle_reg_1 <= (others => '0');
-            angle_reg_2 <= (others => '0');
-            temp_angle_x := 0;
-            temp_angle_y := 0;
-        elsif rising_edge(clk_i) then
-            if x_done = '1' then 
-                temp_angle_x := to_integer(signed(o_arctan_x(31 downto 16)));
-                
-                if temp_angle_x > 90 then 
-                    temp_angle_x := 90; 
-                elsif temp_angle_x < -90 then 
-                    temp_angle_x := -90; 
-                end if;
-                angle_reg_0 <= to_unsigned( ((temp_angle_x + 90) * 255) / 180, 8 );
-            end if;
-
-            if y_done = '1' then 
-                temp_angle_y := to_integer(signed(o_arctan_y(31 downto 16)));
-                
-                if temp_angle_y > 90 then 
-                    temp_angle_y := 90; 
-                elsif temp_angle_y < -90 then 
-                    temp_angle_y := -90; 
-                end if;
-                angle_reg_1 <= to_unsigned( ((temp_angle_y + 90) * 255) / 180, 8 );
-            end if;
-        end if;
+            tx_start_sig  <= '0'; 
+            tx_data_sig   <= (others => '0');
+            state         <= IDLE; 
+            angle_reg_0   <= (others => '0'); 
+            angle_reg_1   <= (others => '0'); 
+            angle_reg_2   <= (others => '0'); 
+        elsif rising_edge(clk_i) then 
+            tx_start_sig <= '0';
+            
+            angle_reg_0 <= unsigned(rom_out_0); 
+            angle_reg_1 <= unsigned(rom_out_1); 
+            angle_reg_2 <= unsigned(rom_out_2); 
+            
+            if (tx_busy_sig = '0') then 
+                tx_start_sig <= '1'; 
+                tx_data_sig  <= rom_out_0; 
+            end if; 
+        end if; 
     end process;
 end Behavioral;
