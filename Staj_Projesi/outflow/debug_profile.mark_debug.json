@@ -9,7 +9,7 @@
 
             ],
             "src": "elaborate",
-            "top_module": "top_MPU_Servo"
+            "top_module": "top"
         }
     }
 }

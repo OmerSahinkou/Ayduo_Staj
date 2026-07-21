@@ -122,10 +122,43 @@ architecture Behavioral of top_MPU_Servo is
         );
     end component;
 
+    component Cordic is
+        Port ( 
+            clk         : in STD_LOGIC;
+            reset_n     : in STD_LOGIC;
+            i_call      : in STD_LOGIC;
+            i_x         : in STD_LOGIC_VECTOR(31 downto 0);
+            i_y         : in STD_LOGIC_VECTOR(31 downto 0);
+            o_done      : out STD_LOGIC;
+            o_arctan    : out STD_LOGIC_VECTOR(31 downto 0);
+            o_deg       : out STD_LOGIC_VECTOR(31 downto 0);
+            o_y         : out STD_LOGIC_VECTOR(31 downto 0);
+            o_x         : out STD_LOGIC_VECTOR(31 downto 0)
+        );
+    end component;
     -- =========================================================
-    -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
+    -- SİNYAL TANIMLAMALARI 
     -- =========================================================
     
+    --Cordic Sinyaller
+
+    signal i_call     : STD_LOGIC;
+
+    signal x_done     : STD_LOGIC;
+    signal y_done     : STD_LOGIC;
+
+    signal o_arctan   : STD_LOGIC_VECTOR(31 downto 0);
+
+    signal cordic_ax  : STD_LOGIC_VECTOR(31 downto 0);
+    signal cordic_ay  : STD_LOGIC_VECTOR(31 downto 0);
+    signal cordic_az  : STD_LOGIC_VECTOR(31 downto 0);
+
+    signal o_arctan_x : STD_LOGIC_VECTOR(31 downto 0);
+    signal o_arctan_y : STD_LOGIC_VECTOR(31 downto 0);
+    --Cordic Servo Kontrolü
+    signal angle_deg_signed : signed(15 downto 0);
+    
+    signal servo_duty_cycle : unsigned(31 downto 0);
     -- Servo Sinyalleri
     signal angle_reg_0       : unsigned(7 downto 0) := (others => '0');
     signal angle_reg_1       : unsigned(7 downto 0) := (others => '0');
@@ -163,7 +196,7 @@ architecture Behavioral of top_MPU_Servo is
 begin
 
     -- =========================================================
-    -- COMPONENT BAĞLANTILARI (Kabloları Takıyoruz)
+    -- COMPONENT BAĞLANTILARI 
     -- =========================================================
 
     Inst_pwm_servo_0: pwm_servo
@@ -265,7 +298,37 @@ begin
             gy_o             => gyro_y,
             gz_o             => gyro_z
         );
+
+    Inst_Cordic_x: Cordic
+        Port map( 
+            clk        => clk_i,
+            reset_n    => rst_n_i,
+            i_call     => i_call,
+            i_x        => cordic_ax,
+            i_y        => cordic_az,
+            o_done     => x_done,
+            o_arctan   => o_arctan_x,
+            o_deg      => open,
+            o_y        => open,
+            o_x        => open
+        );
+
+    Inst_Cordic_y: Cordic
+        Port map( 
+            clk        => clk_i,
+            reset_n    => rst_n_i,
+            i_call     => i_call,
+            i_x        => cordic_ay,
+            i_y        => cordic_az,
+            o_done     => y_done,
+            o_arctan   => o_arctan_y,
+            o_deg      => open,
+            o_y        => open,
+            o_x        => open
+        );
     process (clk_i)
+        variable temp_angle_x : integer;
+        variable temp_angle_y : integer;
     begin
         if (rst_n_i = '0') then 
             tx_start_sig    <= '0' ;
@@ -273,19 +336,30 @@ begin
             angle_reg_0 <= (others => '0');
             angle_reg_1 <= (others => '0');
             angle_reg_2 <= (others => '0');
+            temp_angle_x := 0;
+            temp_angle_y := 0;
         elsif rising_edge(clk_i) then
-            -- X Ekseni
-            sensor_isaretli_0 <= signed(accel_x);
-            angle_reg_0       <= unsigned((not sensor_isaretli_0(12)) & sensor_isaretli_0(11 downto 5));
+            if x_done = '1' then 
+                temp_angle_x := to_integer(signed(o_arctan_x(31 downto 16)));
+                
+                if temp_angle_x > 90 then 
+                    temp_angle_x := 90; 
+                elsif temp_angle_x < -90 then 
+                    temp_angle_x := -90; 
+                end if;
+                angle_reg_0 <= to_unsigned( ((temp_angle_x + 90) * 255) / 180, 8 );
+            end if;
 
-            -- Y Ekseni
-            sensor_isaretli_1 <= signed(accel_y);
-            angle_reg_1       <= unsigned((not sensor_isaretli_1(12)) & sensor_isaretli_1(11 downto 5));
-
-            -- Z Ekseni
-            sensor_isaretli_2 <= signed(accel_z);
-            angle_reg_2       <= unsigned((not sensor_isaretli_2(12)) & sensor_isaretli_2(11 downto 5));
-            
+            if y_done = '1' then 
+                temp_angle_y := to_integer(signed(o_arctan_y(31 downto 16)));
+                
+                if temp_angle_y > 90 then 
+                    temp_angle_y := 90; 
+                elsif temp_angle_y < -90 then 
+                    temp_angle_y := -90; 
+                end if;
+                angle_reg_1 <= to_unsigned( ((temp_angle_y + 90) * 255) / 180, 8 );
+            end if;
         end if;
     end process;
 end Behavioral;

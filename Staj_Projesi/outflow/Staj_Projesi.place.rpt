@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Mon Jul 20 13:42:57 2026
+Date: Tue Jul 21 10:44:33 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -12,27 +12,14 @@ Elapsed time for packing: 0 hours 0 minutes 0 seconds
 
 ---------- Resource Summary (begin) ----------
 Inputs: 4 / 96 (4.17%)
-Outputs: 7 / 223 (3.14%)
+Outputs: 5 / 223 (2.24%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 554 / 7384 (7.50%)
-	LE: LUTs/Adders: 439 / 7384 (5.95%)
-	LE: Registers: 294 / 5280 (5.57%)
+Logic Elements: 635 / 7384 (8.60%)
+	LE: LUTs/Adders: 421 / 7384 (5.70%)
+	LE: Registers: 347 / 5280 (6.57%)
 Memory Blocks: 0 / 24 (0.00%)
-Multipliers: 3 / 8 (37.50%)
+Multipliers: 0 / 8 (0.00%)
 ---------- Resource Summary (end) ----------
-
-
----------- DSP Block Information (begin) ----------
-
-+-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-|          NAME           | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
-+-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-| Inst_pwm_servo_0/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-| Inst_pwm_servo_1/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-| Inst_pwm_servo_2/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-+-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-
------------ DSP Block Information (end) ----------
 
 
 ---------- IO Interface Summary (begin) ----------
@@ -41,8 +28,22 @@ Multipliers: 3 / 8 (37.50%)
 | Missing Interface Pins | Input/Output |
 +------------------------+--------------+
 |           rx           |    Input     |
+|       pwm_out_2        |    Output    |
+|       pwm_out_1        |    Output    |
+|       pwm_out_0        |    Output    |
 +------------------------+--------------+
 
 ----------- IO Interface Summary (end) ----------
+
+
+---------- IO Placement Summary (begin) ----------
+
++----------------------+--------------+
+| Unassigned Core Pins | Input/Output |
++----------------------+--------------+
+|       pwm_out        |    Output    |
++----------------------+--------------+
+
+----------- IO Placement Summary (end) ----------
 
 Elapsed time for placement: 0 hours 0 minutes 1 seconds
