@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import serial
 import csv
 import time
@@ -11,29 +10,19 @@ def bytes_to_int16(high_byte, low_byte):
         value -= 65536
     return value
 
-
 # ===================== AYARLAR =====================
-
 PORT = "/dev/ttyUSB2"
-BAUD = 115200
+BAUD = 1000000
 TIMEOUT = 1
-
-# Kaç örnek alınacak
-SAMPLE_COUNT = 10000
-
-# Kayıt yolu
-CSV_PATH = "/home/omer-ahin/STAJ/mpu_raw_data.csv"
-
+SAMPLE_COUNT = 1000000  # Kaç örnek alınacak
+CSV_PATH = "/home/omer-ahin/STAJ/mpu_raw_data.csv"  # Kayıt yolu
 # ===================================================
 
-
 def main():
-
     try:
         ser = serial.Serial(PORT, BAUD, timeout=TIMEOUT)
         print(f"✓ Seri port açıldı: {PORT}")
         time.sleep(2)
-
     except Exception as e:
         print(f"Seri port açılamadı: {e}")
         return
@@ -41,47 +30,32 @@ def main():
     ax_sum = 0
     ay_sum = 0
     az_sum = 0
-
     gx_sum = 0
     gy_sum = 0
     gz_sum = 0
-
     frame = 0
 
     csv_file = open(CSV_PATH, "w", newline="")
     writer = csv.writer(csv_file)
+    writer.writerow(["Frame", "AX", "AY", "AZ", "GX", "GY", "GZ"])
 
-    writer.writerow([
-        "Frame",
-        "AX",
-        "AY",
-        "AZ",
-        "GX",
-        "GY",
-        "GZ"
-    ])
-
-    print()
-    print(f"{SAMPLE_COUNT} adet örnek toplanıyor...")
+    print(f"\n{SAMPLE_COUNT} adet örnek toplanıyor...")
     print("Sensöre dokunmayın!\n")
+    print(f"{'Frame':<8} | {'AX':<6} {'AY':<6} {'AZ':<6} | {'GX':<6} {'GY':<6} {'GZ':<6}")
+    print("-" * 60)
 
     try:
-
         while frame < SAMPLE_COUNT:
-
             # -------- Marker Ara --------
             while True:
                 b = ser.read(1)
-
                 if len(b) == 0:
                     continue
-
                 if b[0] == 0xAA:
                     break
 
             # -------- Kalan 14 Byte --------
             data = ser.read(14)
-
             if len(data) != 14:
                 continue
 
@@ -93,39 +67,27 @@ def main():
             ax = bytes_to_int16(data[0], data[1])
             ay = bytes_to_int16(data[2], data[3])
             az = bytes_to_int16(data[4], data[5])
-
             gx = bytes_to_int16(data[6], data[7])
             gy = bytes_to_int16(data[8], data[9])
             gz = bytes_to_int16(data[10], data[11])
 
             # CSV'ye yaz
-            writer.writerow([
-                frame,
-                ax,
-                ay,
-                az,
-                gx,
-                gy,
-                gz
-            ])
+            writer.writerow([frame, ax, ay, az, gx, gy, gz])
+
+            # Anlık veriyi hizalı biçimde terminale yazdır
+            print(f"{frame:<8} | {ax:<6} {ay:<6} {az:<6} | {gx:<6} {gy:<6} {gz:<6}")
 
             # Ortalama için topla
             ax_sum += ax
             ay_sum += ay
             az_sum += az
-
             gx_sum += gx
             gy_sum += gy
             gz_sum += gz
-
             frame += 1
-
-            if frame % 500 == 0:
-                print(f"{frame}/{SAMPLE_COUNT} örnek alındı...")
 
     except KeyboardInterrupt:
         print("\nKullanıcı tarafından durduruldu.")
-
     finally:
         csv_file.close()
         ser.close()
@@ -137,15 +99,13 @@ def main():
     ax_avg = ax_sum / frame
     ay_avg = ay_sum / frame
     az_avg = az_sum / frame
-
     gx_avg = gx_sum / frame
     gy_avg = gy_sum / frame
     gz_avg = gz_sum / frame
 
     print("\n========================================")
-    print("          KALİBRASYON SONUCU")
+    print("KALİBRASYON SONUCU")
     print("========================================")
-
     print(f"Toplam Örnek : {frame}")
 
     print("\nAccelerometer Ortalama")
@@ -159,11 +119,9 @@ def main():
     print(f"GZ : {gz_avg:.3f}")
 
     print("\nFPGA'da kullanabileceğin offsetler:")
-
     print(f"AX_OFFSET = {round(ax_avg)}")
     print(f"AY_OFFSET = {round(ay_avg)}")
     print(f"AZ_OFFSET = {round(az_avg)}")
-
     print(f"GX_OFFSET = {round(gx_avg)}")
     print(f"GY_OFFSET = {round(gy_avg)}")
     print(f"GZ_OFFSET = {round(gz_avg)}")
@@ -174,9 +132,7 @@ def main():
     print("Kart düz duruyorsa FPGA'da genellikle:")
     print("AZ_DUZELTILMIS = AZ - AZ_OFFSET")
     print("şeklinde kullanabilirsin.")
-
     print(f"\nHam veriler kaydedildi:\n{CSV_PATH}")
-
 
 if __name__ == "__main__":
     main()

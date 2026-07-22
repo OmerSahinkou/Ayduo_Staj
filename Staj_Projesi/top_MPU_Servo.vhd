@@ -113,6 +113,7 @@ architecture Behavioral of top_MPU_Servo is
             start_transfer_o : out STD_LOGIC;
             mosi_data_o      : out STD_LOGIC_VECTOR(7 downto 0);
             spi_cs_n_o       : out STD_LOGIC;
+            data_valid_out   : out STD_LOGIC;
             ax_o             : out STD_LOGIC_VECTOR(15 downto 0);
             ay_o             : out STD_LOGIC_VECTOR(15 downto 0);
             az_o             : out STD_LOGIC_VECTOR(15 downto 0);
@@ -134,6 +135,17 @@ architecture Behavioral of top_MPU_Servo is
     Port (
         accel_x : in  STD_LOGIC_VECTOR(15 downto 0); 
         lut_addr: out STD_LOGIC_VECTOR(6 downto 0)   
+    );
+    end component;
+
+    component GyroComplementaryFilter is
+    Port (
+        clk_i       : in  STD_LOGIC;
+        data_valid_out : in STD_LOGIC;
+        gz_i        : in  STD_LOGIC_VECTOR(15 downto 0);  -- gyro Z (derecelik/sn)
+        accel_x_i   : in  STD_LOGIC_VECTOR(15 downto 0);  -- X accel (stabilizasyon için)
+        accel_y_i   : in  STD_LOGIC_VECTOR(15 downto 0);  -- Y accel (stabilizasyon için)
+        yaw_o       : out STD_LOGIC_VECTOR(15 downto 0)   -- filtrelenmiş yaw
     );
     end component;
     -- =========================================================
@@ -173,7 +185,9 @@ architecture Behavioral of top_MPU_Servo is
     signal lut_addr_1: STD_LOGIC_VECTOR(6 downto 0)  ;
     signal lut_addr_2: STD_LOGIC_VECTOR(6 downto 0)  ;
 
+    signal yaw_wire : STD_LOGIC_VECTOR(15 downto 0);
 
+    signal data_valid_out: std_logic;
     --State Machine Table
     type state_t is (IDLE, Start_Measure, Control_Servo);
     signal state : state_t := IDLE;
@@ -275,6 +289,7 @@ begin
             start_transfer_o => spi_start,
             mosi_data_o      => mpu_to_spi_data, 
             spi_cs_n_o       => spi_cs_n_o,
+            data_valid_out   => data_valid_out,
             ax_o             => accel_x,
             ay_o             => accel_y,
             az_o             => accel_z,
@@ -294,12 +309,7 @@ begin
         lut_addr             => lut_addr_1,
         pwm_val              => rom_out_1
     );
-    --Inst_AccelRom_2:AccelRom
-    --    port map(
-    --    clk_i                => clk_i,
-    --    lut_addr             => lut_addr_2,
-    --    pwm_val              => rom_out_2
-    --);
+
     Inst_AccelToServo_0:AccelToServo
         port map (
         accel_x     => accel_x,
@@ -311,12 +321,15 @@ begin
         accel_x     => accel_y,
         lut_addr    => lut_addr_1
     );
-
-    --Inst_AccelToServo_2:AccelToServo
-    --    port map (
-    --    accel_x     => accel_z,
-    --    lut_addr    => lut_addr_2
-    --);
+    Inst_GyroComplementaryFilter:GyroComplementaryFilter
+        port map (
+        clk_i           => clk_i,
+        data_valid_out  => data_valid_out,
+        gz_i            => gyro_z,
+        accel_x_i       => accel_x,
+        accel_y_i       => accel_y,
+        yaw_o           => yaw_wire
+    );
     process (clk_i, rst_n_i) begin 
         if (rst_n_i = '0') then 
             tx_start_sig  <= '0'; 
@@ -329,12 +342,11 @@ begin
             tx_start_sig <= '0';
             
             angle_reg_0 <= unsigned(rom_out_0); 
-            angle_reg_1 <= unsigned(rom_out_1); 
-            angle_reg_2 <= unsigned(rom_out_2); 
-            
+            angle_reg_1 <= unsigned(rom_out_1);
+            angle_reg_2 <= unsigned(yaw_wire(15 downto 8));
             if (tx_busy_sig = '0') then 
                 tx_start_sig <= '1'; 
-                tx_data_sig  <= rom_out_0; 
+                tx_data_sig  <= yaw_wire(15 downto 8); 
             end if; 
         end if; 
     end process;

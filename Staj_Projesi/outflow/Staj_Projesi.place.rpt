@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Tue Jul 21 17:25:45 2026
+Date: Wed Jul 22 13:57:04 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -11,14 +11,14 @@ Top-level Entity Name: Staj_Projesi
 Elapsed time for packing: 0 hours 0 minutes 0 seconds
 
 ---------- Resource Summary (begin) ----------
-Inputs: 4 / 96 (4.17%)
+Inputs: 5 / 96 (5.21%)
 Outputs: 7 / 223 (3.14%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 561 / 7384 (7.60%)
-	LE: LUTs/Adders: 495 / 7384 (6.70%)
-	LE: Registers: 262 / 5280 (4.96%)
-Memory Blocks: 2 / 24 (8.33%)
-Multipliers: 2 / 8 (25.00%)
+Logic Elements: 890 / 7384 (12.05%)
+	LE: LUTs/Adders: 735 / 7384 (9.95%)
+	LE: Registers: 467 / 5280 (8.84%)
+Memory Blocks: 0 / 24 (0.00%)
+Multipliers: 3 / 8 (37.50%)
 ---------- Resource Summary (end) ----------
 
 
@@ -27,33 +27,11 @@ Multipliers: 2 / 8 (25.00%)
 +-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
 |          NAME           | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
 +-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-| Inst_pwm_servo_0/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
+| Inst_pwm_servo_2/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
 | Inst_pwm_servo_1/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
+| Inst_pwm_servo_0/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
 +-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
 
 ----------- DSP Block Information (end) ----------
 
-
----------- Memory Block Information (begin) ----------
-
-+-----------------------+------+------------+-------------+--------------+------------+
-|         NAME          | MODE | READ_WIDTH | WRITE_WIDTH |  WRITE_MODE  | OUTPUT_REG |
-+-----------------------+------+------------+-------------+--------------+------------+
-| Inst_AccelRom_0/mux_4 | SDP  |     8      |      8      | READ_UNKNOWN |   false    |
-| Inst_AccelRom_1/mux_4 | SDP  |     8      |      8      | READ_UNKNOWN |   false    |
-+-----------------------+------+------------+-------------+--------------+------------+
-
------------ Memory Block Information (end) ----------
-
-
----------- IO Interface Summary (begin) ----------
-
-+------------------------+--------------+
-| Missing Interface Pins | Input/Output |
-+------------------------+--------------+
-|           rx           |    Input     |
-+------------------------+--------------+
-
------------ IO Interface Summary (end) ----------
-
-Elapsed time for placement: 0 hours 0 minutes 2 seconds
+Elapsed time for placement: 0 hours 0 minutes 1 seconds

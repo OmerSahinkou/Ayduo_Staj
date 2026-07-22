@@ -17,14 +17,16 @@ use IEEE.NUMERIC_STD.ALL;
 entity top is
     Generic (
         CLK_FREQ  : integer := 33_333_333; 
-        BAUD_RATE : integer := 115_200
+        BAUD_RATE : integer := 1_000_000
     );
     Port (
         clk_i       : in  STD_LOGIC;
         rst_n_i     : in  STD_LOGIC;
         switch_in   : in  STD_LOGIC;
         -- Servo
-        pwm_out     : out STD_LOGIC;
+        pwm_out_0   : out STD_LOGIC;
+        pwm_out_1   : out STD_LOGIC;
+        pwm_out_2   : out STD_LOGIC;
         -- UART 
         rx          : in  STD_LOGIC;
         tx          : out STD_LOGIC;
@@ -54,7 +56,7 @@ architecture Behavioral of top is
     component uart_tx is 
         generic(
             CLK_FREQ    : integer := 33_333_333;
-            BAUD_RATE   : integer := 115_200;
+            BAUD_RATE   : integer := 1_000_000;
             DATA_WIDTH  : integer := 8
         );
         port(
@@ -70,7 +72,7 @@ architecture Behavioral of top is
     component uart_rx is
         generic (
             CLK_FREQ   : integer := 33_333_333;
-            BAUD_RATE  : integer := 115_200;
+            BAUD_RATE  : integer := 1_000_000;
             DATA_WIDTH : integer := 8
         );
         port (
@@ -135,7 +137,9 @@ architecture Behavioral of top is
     -- =========================================================
     
     -- Servo Sinyalleri
-    signal angle_reg       : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_0       : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_1       : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_2       : unsigned(7 downto 0) := (others => '0');
     
     -- UART Sinyalleri
     signal tx_start_sig    : std_logic := '0';
@@ -163,19 +167,39 @@ architecture Behavioral of top is
     signal uart_state : uart_state_t := IDLE;
     signal byte_idx   : integer range 0 to 15 := 0;  -- 0-14 = 15 byte (marker + 14 veri)
     
+    --rx counter 
+    signal byte_idx_uart   : integer range 0 to 4  := 0 ;
 begin
 
     -- =========================================================
     -- COMPONENT BAĞLANTILARI (Kabloları Takıyoruz)
     -- =========================================================
 
-    Inst_pwm_servo: pwm_servo
+    Inst_pwm_servo_0: pwm_servo
         generic map ( CLK_FREQ => CLK_FREQ )
         port map (
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
-            servo_angle => std_logic_vector(angle_reg),
-            pwm_out     => pwm_out
+            servo_angle => std_logic_vector(angle_reg_0),
+            pwm_out     => pwm_out_0
+        );
+
+    Inst_pwm_servo_1: pwm_servo
+        generic map ( CLK_FREQ => CLK_FREQ )
+        port map (
+            clk_i       => clk_i,
+            rst_n_i     => rst_n_i,
+            servo_angle => std_logic_vector(angle_reg_1),
+            pwm_out     => pwm_out_1
+        );
+
+    Inst_pwm_servo_2: pwm_servo
+        generic map ( CLK_FREQ => CLK_FREQ )
+        port map (
+            clk_i       => clk_i,
+            rst_n_i     => rst_n_i,
+            servo_angle => std_logic_vector(angle_reg_2),
+            pwm_out     => pwm_out_2
         );
 
     Inst_uart_tx: uart_tx
@@ -192,6 +216,7 @@ begin
             tx         => tx,      
             tx_busy    => tx_busy_sig   
         );
+    
     
     Inst_debounce: debounce
         generic map ( DEBOUNCE_LIMIT => 1000000 )
@@ -261,7 +286,7 @@ begin
     -- Toplam: 15 byte
     -- =========================================================
     
-    process(clk_i, rst_n_i)
+    send_data:process(clk_i, rst_n_i)
     begin
         if rst_n_i = '0' then
             tx_start_sig <= '0';
@@ -344,11 +369,42 @@ begin
                             uart_state <= LOAD_DATA;
                         end if;
                     end if;
-
                 when others =>
                     uart_state <= IDLE;
             end case;
         end if;
-    end process;
+    end process send_data;
 
+Control_Servo : process (clk_i, rst_n_i)
+begin
+    if rst_n_i = '0' then 
+        angle_reg_0   <= (others => '0'); 
+        angle_reg_1   <= (others => '0'); 
+        angle_reg_2   <= (others => '0');
+        byte_idx_uart <= 0;
+    elsif rising_edge(clk_i) then
+        if (rx_valid = '1') then 
+            if (rx_data_sig = X"BB") then 
+                byte_idx_uart <= 1;
+            elsif (rx_data_sig = X"66") then
+                byte_idx_uart <= 0;
+            else
+                case byte_idx_uart is
+                    when 1 =>
+                        angle_reg_0   <= unsigned(rx_data_sig);
+                        byte_idx_uart <= 2;
+                    when 2 =>
+                        angle_reg_1   <= unsigned(rx_data_sig);
+                        byte_idx_uart <= 3;
+                    when 3 =>
+                        angle_reg_2   <= unsigned(rx_data_sig);
+                        byte_idx_uart <= 0; 
+                    when others =>
+                        byte_idx_uart <= 0;
+                end case;
+            end if;
+            
+        end if;
+    end if;
+end process Control_Servo;
 end Behavioral;

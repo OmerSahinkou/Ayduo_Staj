@@ -23,6 +23,7 @@ entity MPU6500_Controller is
         
         spi_cs_n_o       : out STD_LOGIC;
         
+        data_valid_out   : out STD_LOGIC;
         ax_o             : out STD_LOGIC_VECTOR(15 downto 0);
         ay_o             : out STD_LOGIC_VECTOR(15 downto 0);
         az_o             : out STD_LOGIC_VECTOR(15 downto 0);
@@ -117,7 +118,7 @@ begin
             raw_data         <= (others => (others => '0'));
             
         elsif rising_edge(clk_i) then
-            
+            data_valid_out   <= '0';
             start_transfer_o <= '0';  -- Pulse komutu
             
             case state is 
@@ -263,6 +264,8 @@ begin
 
                     temp := raw_data(12) & raw_data(13);
                     gz_o <= std_logic_vector(signed(temp) + to_signed(7,16));
+
+                    data_valid_out   <= '1';
                     
                     state <= MEASURE_DELAY;
 

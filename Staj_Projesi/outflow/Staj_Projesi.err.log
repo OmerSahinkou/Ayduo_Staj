@@ -1543,3 +1543,136 @@
 // Jul 21, 2026 17:25:40
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:00:05
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] output designator 'yaw_o' cannot contain an actual type-conversion (VHDL-1406) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:326)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:348)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:04:17
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 0 definitions of operator "*" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:36)
+[EFX-0010 VERI-ERROR] 0 definitions of operator "*" match here (VHDL-1052) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:38)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:48)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:05:47
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type error near 'to_unsigned'; expected type 'signed' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:22)
+[EFX-0010 VERI-ERROR] could not find a match for subprogram 'to_unsigned' (VHDL-1773) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:22)
+[EFX-0010 VERI-ERROR] type error near 'to_unsigned'; expected type 'signed' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:23)
+[EFX-0010 VERI-ERROR] could not find a match for subprogram 'to_unsigned' (VHDL-1773) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:23)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:48)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:06:49
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] type error near 'to_unsigned'; expected type 'signed' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:22)
+[EFX-0010 VERI-ERROR] could not find a match for subprogram 'to_unsigned' (VHDL-1773) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:22)
+[EFX-0010 VERI-ERROR] type error near 'to_unsigned'; expected type 'signed' (VHDL-1272) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:23)
+[EFX-0010 VERI-ERROR] could not find a match for subprogram 'to_unsigned' (VHDL-1773) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:23)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:47)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:07:45
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 40 elements; expected 32 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:35)
+[EFX-0021 ERROR] Elaboration of module 'top_MPU_Servo' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:08:55
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 40 elements; expected 48 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:35)
+[EFX-0021 ERROR] Elaboration of module 'top_MPU_Servo' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:10:36
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:21:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:29:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:35:14
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 10:42:19
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 11:13:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 11:28:29
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 12:01:22
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 12:05:59
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 12:10:39
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 12:16:05
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 13:06:56
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 22, 2026 13:56:59
+///////////////////////////////////
+
