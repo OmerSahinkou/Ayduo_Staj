@@ -80,10 +80,10 @@ INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd(13): analyzing archite
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd' [VHDL-1481]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd(5): analyzing entity 'acceltoservo' [VHDL-1012]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd(12): analyzing architecture 'behavioral' [VHDL-1010]
-INFO     : Analysis took 0.032597876 seconds [FlowMsg::StageDuration]
-INFO     :     Analysis took 0.04 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis took 0.070465827 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.06 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
 INFO     : Analysis virtual memory usage: begin = 131.664 MB, end = 134.736 MB, delta = 3.072 MB [FlowMsg::VMUsage]
-INFO     : Analysis resident set memory usage: begin = 74.28 MB, end = 79.724 MB, delta = 5.444 MB [FlowMsg::RSSUsage]
+INFO     : Analysis resident set memory usage: begin = 74.056 MB, end = 79.576 MB, delta = 5.52 MB [FlowMsg::RSSUsage]
 INFO     :     Analysis peak resident set memory usage = 402.076 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Analysis ... *****
 INFO     : ***** Beginning Elaboration ... *****
@@ -104,10 +104,10 @@ INFO     : /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(281): 'others' clause i
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd(5): processing 'AccelRom(Behavioral)' [VHDL-1067]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd(5): processing 'AccelToServo(Behavioral)' [VHDL-1067]
 WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd(340): latch inferred for net 'state[1]' [VHDL-1840]
-INFO     : Elaboration took 0.02469129 seconds [FlowMsg::StageDuration]
-INFO     :     Elaboration took 0.02 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration took 0.039160946 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
 INFO     : Elaboration virtual memory usage: begin = 134.736 MB, end = 139.856 MB, delta = 5.12 MB [FlowMsg::VMUsage]
-INFO     : Elaboration resident set memory usage: begin = 79.724 MB, end = 85.436 MB, delta = 5.712 MB [FlowMsg::RSSUsage]
+INFO     : Elaboration resident set memory usage: begin = 79.576 MB, end = 85.312 MB, delta = 5.736 MB [FlowMsg::RSSUsage]
 INFO     :     Elaboration peak resident set memory usage = 402.076 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Elaboration ... *****
 INFO     : ... Setting Synthesis Option: mode=speed
@@ -130,10 +130,10 @@ INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_map
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(653): compiling module 'EFX_RAM10' [VERI-1018]
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(754): compiling module 'EFX_DPRAM10' [VERI-1018]
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(884): compiling module 'EFX_SRL8' [VERI-1018]
-INFO     : Reading Mapping Library took 0.007642327 seconds [FlowMsg::StageDuration]
-INFO     :     Reading Mapping Library took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Reading Mapping Library took 0.015291959 seconds [FlowMsg::StageDuration]
+INFO     :     Reading Mapping Library took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
 INFO     : Reading Mapping Library virtual memory usage: begin = 144.456 MB, end = 144.456 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Reading Mapping Library resident set memory usage: begin = 88.916 MB, end = 88.916 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     : Reading Mapping Library resident set memory usage: begin = 88.84 MB, end = 88.84 MB, delta = 0 MB [FlowMsg::RSSUsage]
 INFO     :     Reading Mapping Library peak resident set memory usage = 402.076 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Reading Mapping Library ... *****
 INFO     : ... Pre-synthesis checks begin
@@ -173,21 +173,21 @@ INFO     : ... Hierarchical pre-synthesis "uart_rx" end (Real time : 0s CPU user
 INFO     : ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
 INFO     : ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Hierarchical pre-synthesis "MPU6500_Controller" begin
-INFO     : ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Hierarchical pre-synthesis "AccelRom" begin
 INFO     : ... Wide MUX mapping to ram-net, output: 'n5' select size : 7 output width: 8
-INFO     : ... Hierarchical pre-synthesis "AccelRom" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Hierarchical pre-synthesis "AccelRom" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Hierarchical pre-synthesis "AccelToServo" begin
-INFO     : ... Hierarchical pre-synthesis "AccelToServo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Hierarchical pre-synthesis "AccelToServo" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Hierarchical pre-synthesis "top_MPU_Servo" begin
 INFO     : ... Clock Enable Synthesis Performed on 248 flops.
-INFO     : ... Hierarchical pre-synthesis "top_MPU_Servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Hierarchical pre-synthesis "top_MPU_Servo" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Flat optimizations begin
-INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Flat synthesis begin
-INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Flat optimizations begin
-INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Check and break combinational loops begin
 INFO     : ... Check and break combinational loops end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Sequential Optimization begin
@@ -197,8 +197,8 @@ INFO     : ... Sequential Optimization end (Real time : 0s CPU user time : 1s CP
 INFO     : ... Setup for logic synthesis begin
 INFO     : ... Setup for logic synthesis end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... LUT mapping begin
-INFO     : ... LS, strategy: 3, nd: 419, ed: 1445, lv: 5, pw: 854.63
-INFO     : ... LUT mapping end (Real time : 2s CPU user time : 2s CPU sys time : 0s MEM : 402076KB)
+INFO     : ... LS, strategy: 3, nd: 440, ed: 1359, lv: 5, pw: 833.05
+INFO     : ... LUT mapping end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Post-synthesis Verific netlist creation begin
 INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 402076KB)
 INFO     : ... Postmap Retiming Optimization begin
@@ -208,16 +208,16 @@ INFO     : ... Postmap Retiming Optimization end (Real time : 0s CPU user time :
 INFO     : ***** Beginning VDB Netlist Checker ... *****
 WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd(19): Input/inout port rx is unconnected. Place and route may remove this unconnected port. [VDB-8003]
 WARNING  : Found 1 warnings in the post-synthesis netlist.
-INFO     : VDB Netlist Checker took 0.001314408 seconds [FlowMsg::StageDuration]
+INFO     : VDB Netlist Checker took 0.000908165 seconds [FlowMsg::StageDuration]
 INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 260.488 MB, end = 260.488 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 109.44 MB, end = 109.44 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 267.16 MB, end = 267.16 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 109.768 MB, end = 109.896 MB, delta = 0.128 MB [FlowMsg::RSSUsage]
 INFO     :     VDB Netlist Checker peak resident set memory usage = 402.076 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Resource Summary 
 INFO     : =============================== 
 INFO     : EFX_ADD         : 	67
-INFO     : EFX_LUT4        : 	405
+INFO     : EFX_LUT4        : 	426
 INFO     : EFX_MULT        : 	2
 INFO     : EFX_FF          : 	262
 INFO     : EFX_RAM_5K      : 	2
@@ -226,8 +226,8 @@ INFO     : ===============================
 INFO     : ... Post-Map Verilog Writer begin
 INFO     : Writing netlist 'top_MPU_Servo' to Verilog file '/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.map.v' [VDB-1030]
 INFO     : ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 402076KB)
-INFO     : The entire flow of EFX_MAP took 2.475349045 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_MAP took 2.57 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.48 MB, end = 260.488 MB, delta = 166.008 MB [FlowMsg::VMUsage]
-INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.656 MB, end = 115.456 MB, delta = 85.8 MB [FlowMsg::RSSUsage]
+INFO     : The entire flow of EFX_MAP took 2.718571703 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_MAP took 2.75 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.48 MB, end = 267.16 MB, delta = 172.68 MB [FlowMsg::VMUsage]
+INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.384 MB, end = 116.296 MB, delta = 86.912 MB [FlowMsg::RSSUsage]
 INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 402.076 MB [FlowMsg::RSSUsage::Peak]

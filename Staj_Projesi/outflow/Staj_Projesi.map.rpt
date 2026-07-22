@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Jul 21, 2026 14:28:34
+Generated at: Jul 21, 2026 17:25:41
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top_MPU_Servo
@@ -48,15 +48,15 @@ Total number of FFs with enable signals: 151
 CE signal <tx_busy_sig>, number of controlling flip flops: 8
 CE signal <ceg_net313>, number of controlling flip flops: 4
 CE signal <ceg_net279>, number of controlling flip flops: 3
-CE signal <Inst_MPU6500_Controller/n6142>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6140>, number of controlling flip flops: 8
 CE signal <ceg_net299>, number of controlling flip flops: 22
 CE signal <ceg_net300>, number of controlling flip flops: 2
-CE signal <Inst_MPU6500_Controller/n6156>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6163>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6154>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6161>, number of controlling flip flops: 8
 CE signal <ceg_net308>, number of controlling flip flops: 5
 CE signal <ceg_net302>, number of controlling flip flops: 1
-CE signal <Inst_MPU6500_Controller/n5116>, number of controlling flip flops: 18
-CE signal <Inst_MPU6500_Controller/n6149>, number of controlling flip flops: 7
+CE signal <Inst_MPU6500_Controller/n5114>, number of controlling flip flops: 18
+CE signal <Inst_MPU6500_Controller/n6147>, number of controlling flip flops: 7
 CE signal <ceg_net309>, number of controlling flip flops: 3
 CE signal <ceg_net314>, number of controlling flip flops: 1
 CE signal <ceg_net315>, number of controlling flip flops: 1
@@ -155,16 +155,16 @@ FF instance: Inst_pwm_servo_2/counter[1]~FF(unreachable)
 
 Module                                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
 ------------------------------------------------------------       ---      ----      ----      ---- ---------
-top_MPU_Servo:top_MPU_Servo                                     262(9)     67(0)    405(0)      2(0)      2(0)
- +Inst_pwm_servo_0:pwm_servo                                    36(36)    33(33)    50(50)      0(0)      1(1)
- +Inst_pwm_servo_1:pwm_servo                                    34(34)    15(15)    40(40)      0(0)      1(1)
- +Inst_pwm_servo_2:pwm_servo                                    16(16)      0(0)    21(21)      0(0)      0(0)
+top_MPU_Servo:top_MPU_Servo                                     262(9)     67(0)    426(0)      2(0)      2(0)
+ +Inst_pwm_servo_0:pwm_servo                                    36(36)    33(33)    43(43)      0(0)      1(1)
+ +Inst_pwm_servo_1:pwm_servo                                    34(34)    15(15)    41(41)      0(0)      1(1)
+ +Inst_pwm_servo_2:pwm_servo                                    16(16)      0(0)    29(29)      0(0)      0(0)
  +Inst_debounce:debounce                                        23(23)    19(19)      7(7)      0(0)      0(0)
  +Inst_uart_tx:uart_tx                                          24(24)      0(0)    34(34)      0(0)      0(0)
- +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...    28(28)      0(0)    42(42)      0(0)      0(0)
- +Inst_MPU6500_Controller:MPU6500_Controller                    92(92)      0(0)  197(197)      0(0)      0(0)
- +Inst_AccelRom_0:AccelRom                                        0(0)      0(0)      7(7)      1(1)      0(0)
- +Inst_AccelRom_1:AccelRom                                        0(0)      0(0)      7(7)      1(1)      0(0)
+ +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...    28(28)      0(0)    43(43)      0(0)      0(0)
+ +Inst_MPU6500_Controller:MPU6500_Controller                    92(92)      0(0)  213(213)      0(0)      0(0)
+ +Inst_AccelRom_0:AccelRom                                        0(0)      0(0)      8(8)      1(1)      0(0)
+ +Inst_AccelRom_1:AccelRom                                        0(0)      0(0)      8(8)      1(1)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -192,15 +192,15 @@ INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	7
 
 EFX_ADD         : 	67
-EFX_LUT4        : 	405
-   1-2  Inputs  : 	57
-   3    Inputs  : 	101
-   4    Inputs  : 	247
+EFX_LUT4        : 	426
+   1-2  Inputs  : 	143
+   3    Inputs  : 	94
+   4    Inputs  : 	189
 EFX_MULT        : 	2
 EFX_FF          : 	262
 EFX_RAM_5K      : 	2
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 2s
+Plain synthesis (without verilog dump and post-map checks) time : 1s
 Elapsed synthesis time : 2s

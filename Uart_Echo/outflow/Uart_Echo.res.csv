@@ -1,10 +1,10 @@
 sep=\t
 Module Resource Usage Distribution Estimates
-Generated at: Jul 14, 2026 15:50:01
+Generated at: Jul 22, 2026 09:40:32
 
 Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
 Module	       FFs	      ADDs	      LUTs	      RAMs	 DSP/MULTs
-uart_echo:uart_echo                    	    57(2)	     0(0)	    75(2)	     0(0)	     0(0)	
- +uart_rx_i:uart_rx(clk_freq=33333333) 	   31(31)	     0(0)	   38(38)	     0(0)	     0(0)	
- +uart_tx_i:uart_tx(clk_freq=33333333) 	   24(24)	     0(0)	   35(35)	     0(0)	     0(0)	
+uart_echo:uart_echo                    	    59(2)	     0(0)	    86(2)	     0(0)	     0(0)	
+ +uart_rx_i:uart_rx                    	   33(33)	     0(0)	   50(50)	     0(0)	     0(0)	
+ +uart_tx_i:uart_tx(clk_freq=33333333) 	   24(24)	     0(0)	   34(34)	     0(0)	     0(0)	

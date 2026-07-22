@@ -61,7 +61,7 @@ architecture Behavioral of MPU6500_Controller is
         x"10",  -- USER_CTRL: I2C_MST_EN = 0, SPI_EN = 1
         x"10",  -- GYRO_CONFIG: ±1000 dps
         x"08",  -- ACCEL_CONFIG: ±4g
-        x"03"   -- CONFIG: DLPF_CFG = 3 (Bandwidth = 44 Hz)
+        x"04"   -- CONFIG: DLPF_CFG = 3 (Bandwidth = 44 Hz)
     );
     
     signal config_idx : integer range 0 to 4 := 0;

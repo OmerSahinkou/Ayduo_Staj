@@ -50,28 +50,28 @@ INFO     : Restoring VHDL unit 'ieee.numeric_std' from file '/home/omer-ahin/Dow
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd(6): analyzing entity 'uart_tx' [VHDL-1012]
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd(22): analyzing architecture 'rtl' [VHDL-1010]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl' [VHDL-1481]
-INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(6): analyzing entity 'uart_rx' [VHDL-1012]
-INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(21): analyzing architecture 'rtl' [VHDL-1010]
+INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(26): analyzing entity 'uart_rx' [VHDL-1012]
+INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(41): analyzing architecture 'rtl' [VHDL-1010]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Uart_Echo/uart_echo.vhdl' [VHDL-1481]
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_echo.vhdl(5): analyzing entity 'uart_echo' [VHDL-1012]
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_echo.vhdl(20): analyzing architecture 'rtl' [VHDL-1010]
-INFO     : Analysis took 0.025305749 seconds [FlowMsg::StageDuration]
-INFO     :     Analysis took 0.02 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Analysis virtual memory usage: begin = 131.656 MB, end = 134.728 MB, delta = 3.072 MB [FlowMsg::VMUsage]
-INFO     : Analysis resident set memory usage: begin = 74.464 MB, end = 79.652 MB, delta = 5.188 MB [FlowMsg::RSSUsage]
-INFO     :     Analysis peak resident set memory usage = 370.048 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Analysis took 0.065014295 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.05 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 131.66 MB, end = 134.732 MB, delta = 3.072 MB [FlowMsg::VMUsage]
+INFO     : Analysis resident set memory usage: begin = 73.46 MB, end = 78.892 MB, delta = 5.432 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 294.284 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Analysis ... *****
 INFO     : ***** Beginning Elaboration ... *****
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_echo.vhdl(5): processing 'uart_echo(rtl)' [VHDL-1067]
-INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(6): processing 'uart_rx(clk_freq=33333333)(rtl)' [VHDL-1067]
-INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(96): 'others' clause is never selected [VHDL-1172]
+INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(26): processing 'uart_rx(rtl)' [VHDL-1067]
+INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_tx.vhdl(116): 'others' clause is never selected [VHDL-1172]
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd(6): processing 'uart_tx(clk_freq=33333333)(rtl)' [VHDL-1067]
 INFO     : /home/omer-ahin/STAJ/Uart_Echo/uart_rx.vhd(95): 'others' clause is never selected [VHDL-1172]
-INFO     : Elaboration took 0.004052255 seconds [FlowMsg::StageDuration]
-INFO     :     Elaboration took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Elaboration virtual memory usage: begin = 134.728 MB, end = 135.752 MB, delta = 1.024 MB [FlowMsg::VMUsage]
-INFO     : Elaboration resident set memory usage: begin = 79.8 MB, end = 81.12 MB, delta = 1.32 MB [FlowMsg::RSSUsage]
-INFO     :     Elaboration peak resident set memory usage = 370.048 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Elaboration took 0.0109416 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration virtual memory usage: begin = 134.732 MB, end = 135.756 MB, delta = 1.024 MB [FlowMsg::VMUsage]
+INFO     : Elaboration resident set memory usage: begin = 78.892 MB, end = 80.516 MB, delta = 1.624 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 294.284 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Elaboration ... *****
 INFO     : ... Setting Synthesis Option: mode=speed
 INFO     : ***** Beginning Reading Mapping Library ... *****
@@ -93,65 +93,65 @@ INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_map
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(653): compiling module 'EFX_RAM10' [VERI-1018]
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(754): compiling module 'EFX_DPRAM10' [VERI-1018]
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(884): compiling module 'EFX_SRL8' [VERI-1018]
-INFO     : Reading Mapping Library took 0.007115406 seconds [FlowMsg::StageDuration]
-INFO     :     Reading Mapping Library took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Reading Mapping Library virtual memory usage: begin = 139.328 MB, end = 139.328 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Reading Mapping Library resident set memory usage: begin = 83.44 MB, end = 83.44 MB, delta = 0 MB [FlowMsg::RSSUsage]
-INFO     :     Reading Mapping Library peak resident set memory usage = 370.048 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Reading Mapping Library took 0.015299455 seconds [FlowMsg::StageDuration]
+INFO     :     Reading Mapping Library took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Reading Mapping Library virtual memory usage: begin = 139.332 MB, end = 139.332 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Reading Mapping Library resident set memory usage: begin = 82.784 MB, end = 82.784 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Reading Mapping Library peak resident set memory usage = 294.284 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Reading Mapping Library ... *****
 INFO     : ... Pre-synthesis checks begin
-INFO     : ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... NameSpace init begin
-INFO     : ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Mapping design "uart_echo"
-INFO     : ... Hierarchical pre-synthesis "uart_rx(clk_freq=33333333)" begin
-INFO     : ... Hierarchical pre-synthesis "uart_rx(clk_freq=33333333)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Hierarchical pre-synthesis "uart_rx" begin
+INFO     : ... Hierarchical pre-synthesis "uart_rx" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Hierarchical pre-synthesis "uart_tx(clk_freq=33333333)" begin
-INFO     : ... Hierarchical pre-synthesis "uart_tx(clk_freq=33333333)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Hierarchical pre-synthesis "uart_tx(clk_freq=33333333)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Hierarchical pre-synthesis "uart_echo" begin
-INFO     : ... Clock Enable Synthesis Performed on 55 flops.
-INFO     : ... Hierarchical pre-synthesis "uart_echo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Clock Enable Synthesis Performed on 48 flops.
+INFO     : ... Hierarchical pre-synthesis "uart_echo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Flat optimizations begin
-INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Flat synthesis begin
-INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Flat optimizations begin
-INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Check and break combinational loops begin
-INFO     : ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Sequential Optimization begin
-INFO     : ... Clock Network 'clk_c' with 57 loads will be considered for sequential optimization.
-INFO     : ... Sequential Optimization deduced 4 equivalent points.
-INFO     : ... Sequential Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Clock Network 'clk_c' with 60 loads will be considered for sequential optimization.
+INFO     : ... Sequential Optimization deduced 21 equivalent points.
+INFO     : ... Sequential Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Setup for logic synthesis begin
-INFO     : ... Setup for logic synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Setup for logic synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... LUT mapping begin
-INFO     : ... LS, strategy: 3, nd: 75, ed: 246, lv: 3, pw: 147.57
-INFO     : ... LUT mapping end (Real time : 1s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... LS, strategy: 3, nd: 86, ed: 281, lv: 3, pw: 157.22
+INFO     : ... LUT mapping end (Real time : 1s CPU user time : 1s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Post-synthesis Verific netlist creation begin
-INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294284KB)
 INFO     : ... Postmap Retiming Optimization begin
-INFO     : ... Clock Network 'clk_c~clk_c' with 57 loads will be considered for retiming optimization.
+INFO     : ... Clock Network 'clk_c~clk_c' with 59 loads will be considered for retiming optimization.
 INFO     : ... Performed 0 retime moves.
-INFO     : ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
+INFO     : ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294284KB)
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.000250033 seconds [FlowMsg::StageDuration]
+INFO     : VDB Netlist Checker took 0.000729878 seconds [FlowMsg::StageDuration]
 INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 248.212 MB, end = 248.212 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 96.572 MB, end = 96.736 MB, delta = 0.164 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 370.048 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 248.22 MB, end = 248.22 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 96.268 MB, end = 96.268 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 294.284 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Resource Summary 
 INFO     : =============================== 
-INFO     : EFX_LUT4        : 	75
-INFO     : EFX_FF          : 	57
+INFO     : EFX_LUT4        : 	86
+INFO     : EFX_FF          : 	59
 INFO     : EFX_GBUFCE      : 	1
 INFO     : =============================== 
 INFO     : ... Post-Map Verilog Writer begin
 INFO     : Writing netlist 'uart_echo' to Verilog file '/home/omer-ahin/STAJ/Uart_Echo/outflow/Uart_Echo.map.v' [VDB-1030]
-INFO     : ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 370048KB)
-INFO     : The entire flow of EFX_MAP took 1.051063574 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_MAP took 0.92 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.472 MB, end = 248.212 MB, delta = 153.74 MB [FlowMsg::VMUsage]
-INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.744 MB, end = 99.296 MB, delta = 69.552 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 370.048 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294284KB)
+INFO     : The entire flow of EFX_MAP took 1.876455714 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_MAP took 1.68 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.476 MB, end = 248.22 MB, delta = 153.744 MB [FlowMsg::VMUsage]
+INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.468 MB, end = 99.104 MB, delta = 69.636 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 294.284 MB [FlowMsg::RSSUsage::Peak]

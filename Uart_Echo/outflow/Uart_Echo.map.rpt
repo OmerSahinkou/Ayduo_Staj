@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Uart_Echo
 Version: 2025.2.288.2.10
-Generated at: Jul 14, 2026 15:50:01
+Generated at: Jul 22, 2026 09:40:32
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : uart_echo
@@ -34,35 +34,34 @@ File List:
 
 
 ### ### EFX_FF CE enables (begin) ### ### ###
-Total number of enable signals: 21
-Total number of FFs with enable signals: 57
+Total number of enable signals: 20
+Total number of FFs with enable signals: 48
 CE signal <ceg_net1>, number of controlling flip flops: 1
-CE signal <ceg_net47>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n499>, number of controlling flip flops: 8
-CE signal <ceg_net74>, number of controlling flip flops: 2
-CE signal <ceg_net55>, number of controlling flip flops: 3
-CE signal <ceg_net34>, number of controlling flip flops: 9
-CE signal <ceg_net53>, number of controlling flip flops: 1
+CE signal <ceg_net39>, number of controlling flip flops: 1
+CE signal <ceg_net41>, number of controlling flip flops: 3
+CE signal <ceg_net66>, number of controlling flip flops: 2
+CE signal <uart_rx_i/n495>, number of controlling flip flops: 8
+CE signal <ceg_net45>, number of controlling flip flops: 1
 CE signal <uart_rx_i/n522>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n521>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n520>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n523>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n524>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n525>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n526>, number of controlling flip flops: 1
-CE signal <uart_rx_i/n527>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n542>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n530>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n532>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n534>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n536>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n547>, number of controlling flip flops: 1
+CE signal <uart_rx_i/n548>, number of controlling flip flops: 1
 CE signal <uart_tx_i/n404>, number of controlling flip flops: 8
-CE signal <ceg_net61>, number of controlling flip flops: 3
-CE signal <ceg_net75>, number of controlling flip flops: 2
-CE signal <ceg_net24>, number of controlling flip flops: 9
-CE signal <ceg_net58>, number of controlling flip flops: 1
-CE signal <ceg_net59>, number of controlling flip flops: 1
+CE signal <ceg_net67>, number of controlling flip flops: 2
+CE signal <ceg_net15>, number of controlling flip flops: 9
+CE signal <ceg_net51>, number of controlling flip flops: 3
+CE signal <ceg_net48>, number of controlling flip flops: 1
+CE signal <ceg_net49>, number of controlling flip flops: 1
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 Total number of set/reset signals: 1
-Total number of FFs with set/reset signals: 57
-SR signal <rst_n>, number of controlling flip flops: 57
+Total number of FFs with set/reset signals: 59
+SR signal <rst_n>, number of controlling flip flops: 59
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
@@ -71,9 +70,9 @@ SR signal <rst_n>, number of controlling flip flops: 57
 
 Module                                        FFs      ADDs      LUTs      RAMs DSP/MULTs
 ---------------------------------------       ---      ----      ----      ---- ---------
-uart_echo:uart_echo                         57(2)      0(0)     75(2)      0(0)      0(0)
- +uart_rx_i:uart_rx(clk_freq=33333333)     31(31)      0(0)    38(38)      0(0)      0(0)
- +uart_tx_i:uart_tx(clk_freq=33333333)     24(24)      0(0)    35(35)      0(0)      0(0)
+uart_echo:uart_echo                         59(2)      0(0)     86(2)      0(0)      0(0)
+ +uart_rx_i:uart_rx                        33(33)      0(0)    50(50)      0(0)      0(0)
+ +uart_tx_i:uart_tx(clk_freq=33333333)     24(24)      0(0)    34(34)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -82,7 +81,7 @@ uart_echo:uart_echo                         57(2)      0(0)     75(2)      0(0) 
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_c              57               0               0
+ clk_c              59               0               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -90,11 +89,11 @@ uart_echo:uart_echo                         57(2)      0(0)     75(2)      0(0) 
 INPUT  PORTS    : 	3
 OUTPUT PORTS    : 	1
 
-EFX_LUT4        : 	75
-   1-2  Inputs  : 	14
-   3    Inputs  : 	26
-   4    Inputs  : 	35
-EFX_FF          : 	57
+EFX_LUT4        : 	86
+   1-2  Inputs  : 	18
+   3    Inputs  : 	27
+   4    Inputs  : 	41
+EFX_FF          : 	59
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
