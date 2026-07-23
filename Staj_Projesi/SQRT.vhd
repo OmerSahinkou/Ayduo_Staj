@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity SquareRoot is
     Generic (
-        N : integer := 16  -- Giriş veri genişliği (Daima çift sayı olmalıdır, örn: 8, 16, 32)
+        N : integer := 34  -- Giriş veri genişliği (Daima çift sayı olmalıdır)
     );
     Port (
         clk      : in  std_logic;
@@ -14,41 +14,76 @@ entity SquareRoot is
 end SquareRoot;
 
 architecture Behavioral of SquareRoot is
+
+    -- FSM Durumları
+    type state_type is (IDLE, CALC, DONE);
+    signal state : state_type := IDLE;
+
+    -- Register (Yazmaç) Tanımlamaları
+    signal a_reg : unsigned(N-1 downto 0) := (others => '0');
+    signal q_reg : unsigned((N/2)-1 downto 0) := (others => '0');
+    signal r_reg : unsigned((N/2)+1 downto 0) := (others => '0');
+    
+    -- Sayaç (N=34 için 17'den geriye sayacak)
+    signal count : integer range 0 to N/2 := 0;
+
 begin
+
     process(clk)
-        variable a   : unsigned(N-1 downto 0);
-        variable q   : unsigned((N/2)-1 downto 0);
-        variable r   : unsigned((N/2)+1 downto 0);
-        variable tmp : unsigned((N/2)+1 downto 0);
+        variable r_temp : unsigned((N/2)+1 downto 0);
+        variable tmp    : unsigned((N/2)+1 downto 0);
     begin
         if rising_edge(clk) then
-            -- Giriş verisi değişkene atanır ve geçici değişkenler sıfırlanır
-            a := unsigned(data_in);
-            q := (others => '0');
-            r := (others => '0');
-
-            -- En anlamlı bitten (MSB) en anlamsız bite (LSB) doğru iterasyon
-            for i in (N/2)-1 downto 0 loop
-                
-                -- 'r' (kalan) değerini 2 bit sola kaydır ve girişin sıradaki 2 bitini ekle
-                r := r((N/2)-1 downto 0) & a(i*2+1 downto i*2);
-                
-                -- Karşılaştırma için 'tmp' değerini oluştur (Mevcut q'nun sonuna "01" ekle)
-                tmp := q & "01";
-                
-                -- Eğer kalan değer, deneme değerinden (tmp) büyük veya eşitse
-                if r >= tmp then
-                    r := r - tmp;               -- Kalandan tmp değerini çıkar
-                    q := shift_left(q, 1);      -- Bölüm (sonuç) değerini 1 bit sola kaydır
-                    q(0) := '1';                -- En sağdaki bite '1' yaz
-                else
-                    q := shift_left(q, 1);      -- Çıkarma yapılamıyorsa sadece sola kaydır (0 eklemiş olursun)
-                end if;
-                
-            end loop;
+            case state is
             
-            -- Bulunan sonucu çıkışa aktar
-            data_out <= std_logic_vector(q);
+                -- =====================================================
+                -- ADIM 1: Veriyi al ve değişkenleri sıfırla
+                -- =====================================================
+                when IDLE =>
+                    a_reg <= unsigned(data_in);
+                    q_reg <= (others => '0');
+                    r_reg <= (others => '0');
+                    count <= N/2;
+                    state <= CALC;
+
+                -- =====================================================
+                -- ADIM 2: Her vuruşta 1 adım hesapla (Max fMAX için)
+                -- =====================================================
+                when CALC =>
+                    if count > 0 then
+                        -- r_reg'i 2 bit sola kaydır ve a_reg'in en üst 2 bitini ekle
+                        r_temp := r_reg((N/2)-1 downto 0) & a_reg(N-1 downto N-2);
+                        
+                        -- Karşılaştırma değeri (q_reg'in sonuna "01" ekle)
+                        tmp := q_reg & "01";
+                        
+                        -- Çıkarma ve Sonuç (Bölüm) Ataması
+                        if r_temp >= tmp then
+                            r_reg <= r_temp - tmp;
+                            q_reg <= q_reg((N/2)-2 downto 0) & '1'; -- Sola kaydır, LSB'ye 1 yaz
+                        else
+                            r_reg <= r_temp;
+                            q_reg <= q_reg((N/2)-2 downto 0) & '0'; -- Sadece sola kaydır
+                        end if;
+                        
+                        -- Sonraki adım için a_reg'i 2 bit sola kaydır
+                        a_reg <= a_reg(N-3 downto 0) & "00";
+                        
+                        -- Döngüyü bir azalt
+                        count <= count - 1;
+                    else
+                        state <= DONE;
+                    end if;
+
+                -- =====================================================
+                -- ADIM 3: Sonucu çıkışa aktar ve başa dön
+                -- =====================================================
+                when DONE =>
+                    data_out <= std_logic_vector(q_reg);
+                    state    <= IDLE; -- Sürekli veri akışı için beklemeden yeni veriyi al
+                    
+            end case;
         end if;
     end process;
+
 end Behavioral;

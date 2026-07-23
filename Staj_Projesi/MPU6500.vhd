@@ -248,22 +248,22 @@ begin
                     -- Byte 12-13: GYRO_ZOUT_H, GYRO_ZOUT_L
                     
                     temp := raw_data(0) & raw_data(1);
-                    ax_o <= std_logic_vector((signed(temp) + to_signed(690,16))/8192);
+                    ax_o <= std_logic_vector((signed(temp) + to_signed(690,16)));
 
                     temp := raw_data(2) & raw_data(3);
-                    ay_o <= std_logic_vector((signed(temp) - to_signed(21,16))/8192);
+                    ay_o <= std_logic_vector((signed(temp) - to_signed(21,16)));
 
                     temp := raw_data(4) & raw_data(5);
-                    az_o <= std_logic_vector((signed(temp) - to_signed(484,16))/8192);
+                    az_o <= std_logic_vector((signed(temp) - to_signed(484,16)));
 
                     temp := raw_data(8) & raw_data(9);
-                    gx_o <= std_logic_vector((signed(temp) - to_signed(70,16))/8192);
+                    gx_o <= std_logic_vector((signed(temp) - to_signed(70,16)));
 
                     temp := raw_data(10) & raw_data(11);
-                    gy_o <= std_logic_vector((signed(temp) - to_signed(22,16))/8192);
+                    gy_o <= std_logic_vector((signed(temp) - to_signed(22,16)));
 
                     temp := raw_data(12) & raw_data(13);
-                    gz_o <= std_logic_vector((signed(temp) + to_signed(7,16))/8192);
+                    gz_o <= std_logic_vector((signed(temp) + to_signed(7,16)));
 
                     data_valid_out   <= '1';
                     

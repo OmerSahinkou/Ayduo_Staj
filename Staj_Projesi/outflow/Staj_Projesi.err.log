@@ -1910,3 +1910,118 @@
 // Jul 23, 2026 15:39:50
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:22:32
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 35 elements; formal 'data_in' expects 34 (VHDL-1549) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:361)
+[EFX-0010 VERI-ERROR] formal port 'data_in' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:157)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:23:23
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; formal 'data_out' expects 17 (VHDL-1549) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:362)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:23:48
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 34 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:516)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:25:22
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:28:06
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:28:59
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:29:39
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:32:48
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:33:51
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:555)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:37:07
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:44:23
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:49:23
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:54:38
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:56:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:57:57
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:59:32
+///////////////////////////////////
+

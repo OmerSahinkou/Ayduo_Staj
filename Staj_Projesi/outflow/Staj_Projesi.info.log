@@ -23387,3 +23387,1537 @@
 [EFX-0000 INFO] =============================== 
 [EFX-0000 INFO] ... Post-Map Verilog Writer begin
 [EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 3s CPU sys time : 0s MEM : 342704KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:22:32
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0010 VERI-ERROR] expression has 35 elements; formal 'data_in' expects 34 (VHDL-1549) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:361)
+[EFX-0010 VERI-ERROR] formal port 'data_in' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:157)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] processing of entity 'squareroot' failed (VHDL-1068) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:23:23
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0010 VERI-ERROR] expression has 16 elements; formal 'data_out' expects 17 (VHDL-1549) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:362)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] processing of entity 'squareroot' failed (VHDL-1068) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:23:48
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 34 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:516)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:25:22
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0011 VERI-WARNING] case statement choice 16 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:559)
+[EFX-0011 VERI-WARNING] case statement choice 17 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:560)
+[EFX-0011 VERI-WARNING] case statement choice 18 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:562)
+[EFX-0011 VERI-WARNING] case statement choice 19 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:563)
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:565)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:598)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:28:06
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0011 VERI-WARNING] case statement choice 16 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:559)
+[EFX-0011 VERI-WARNING] case statement choice 17 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:560)
+[EFX-0011 VERI-WARNING] case statement choice 18 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:562)
+[EFX-0011 VERI-WARNING] case statement choice 19 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:563)
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:565)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:598)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:28:59
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0011 VERI-WARNING] case statement choice 16 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:559)
+[EFX-0011 VERI-WARNING] case statement choice 17 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:560)
+[EFX-0011 VERI-WARNING] case statement choice 18 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:562)
+[EFX-0011 VERI-WARNING] case statement choice 19 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:563)
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:565)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:598)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:29:39
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0011 VERI-WARNING] case statement choice 16 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:560)
+[EFX-0011 VERI-WARNING] case statement choice 17 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:561)
+[EFX-0011 VERI-WARNING] case statement choice 18 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:563)
+[EFX-0011 VERI-WARNING] case statement choice 19 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:564)
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:566)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:599)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:32:48
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0011 VERI-WARNING] case statement choice 16 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:561)
+[EFX-0011 VERI-WARNING] case statement choice 17 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:562)
+[EFX-0011 VERI-WARNING] case statement choice 18 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:564)
+[EFX-0011 VERI-WARNING] case statement choice 19 is outside the range of valid selections (VHDL-1458) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:565)
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:556)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:567)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:600)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:33:51
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:555)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:597)
+[EFX-0012 VERI-INFO] netlist 'top(Behavioral)' remains a black box due to errors in its contents (VHDL-1156) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:37:07
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:597)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot(n=34)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot(n=34)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:235)
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:244)
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 283 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 317 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 371 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 1s CPU user time : 1s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 662, ed: 2094, lv: 29, pw: 1287.04
+[EFX-0000 INFO] ... LUT mapping end (Real time : 3s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 155 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 4 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	38
+[EFX-0000 INFO] EFX_LUT4        : 	285
+[EFX-0000 INFO] EFX_FF          : 	158
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:44:23
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(n=34)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:597)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot(n=34)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot(n=34)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:235)
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:244)
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 285 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 317 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 310 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 735, ed: 2368, lv: 30, pw: 1436.37
+[EFX-0000 INFO] ... LUT mapping end (Real time : 3s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 316 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 4 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	287
+[EFX-0000 INFO] EFX_LUT4        : 	735
+[EFX-0000 INFO] EFX_MULT        : 	2
+[EFX-0000 INFO] EFX_FF          : 	365
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 350372KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:49:23
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:597)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:235)
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:244)
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 359 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 392 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 91 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 518, ed: 1680, lv: 5, pw: 1040.30
+[EFX-0000 INFO] ... LUT mapping end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 391 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	94
+[EFX-0000 INFO] EFX_LUT4        : 	518
+[EFX-0000 INFO] EFX_MULT        : 	2
+[EFX-0000 INFO] EFX_FF          : 	391
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:54:38
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'data_in' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:204)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:463)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 383 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 408 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 167 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 576, ed: 1834, lv: 5, pw: 1070.90
+[EFX-0000 INFO] ... LUT mapping end (Real time : 2s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 402 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	82
+[EFX-0000 INFO] EFX_LUT4        : 	576
+[EFX-0000 INFO] EFX_MULT        : 	3
+[EFX-0000 INFO] EFX_FF          : 	386
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:56:21
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'data_in' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:204)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:463)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 1s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 383 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 490 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 162 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 669, ed: 2132, lv: 5, pw: 1260.30
+[EFX-0000 INFO] ... LUT mapping end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 484 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	82
+[EFX-0000 INFO] EFX_LUT4        : 	668
+[EFX-0000 INFO] EFX_MULT        : 	3
+[EFX-0000 INFO] EFX_FF          : 	468
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:57:57
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:597)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 1s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:235)
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:244)
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 359 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 470 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 88 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 621, ed: 1992, lv: 5, pw: 1247.15
+[EFX-0000 INFO] ... LUT mapping end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 469 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	94
+[EFX-0000 INFO] EFX_LUT4        : 	621
+[EFX-0000 INFO] EFX_MULT        : 	2
+[EFX-0000 INFO] EFX_FF          : 	469
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 16:59:32
+///////////////////////////////////
+
+[EFX-0012 VERI-INFO] default VHDL library search path is now "/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008" (VHDL-1504) 
+[EFX-0012 VERI-INFO] analyzing entity 'spi_mode_3' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:44)
+[EFX-0012 VERI-INFO] analyzing entity 'pwm_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:17)
+[EFX-0012 VERI-INFO] analyzing entity 'top' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'debounce' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:19)
+[EFX-0012 VERI-INFO] analyzing entity 'mpu6500_controller' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:36)
+[EFX-0012 VERI-INFO] analyzing entity 'top_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:25)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd:41)
+[EFX-0012 VERI-INFO] analyzing entity 'top_mpu_servo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd:31)
+[EFX-0012 VERI-INFO] analyzing entity 'accelrom' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd:13)
+[EFX-0012 VERI-INFO] analyzing entity 'acceltoservo' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd:12)
+[EFX-0012 VERI-INFO] analyzing entity 'gyrocomplementaryfilter' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd:16)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_tx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:42)
+[EFX-0012 VERI-INFO] analyzing entity 'uart_rx' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] analyzing architecture 'rtl' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:41)
+[EFX-0012 VERI-INFO] analyzing entity 'squareroot' (VHDL-1012) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] analyzing architecture 'behavioral' (VHDL-1010) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:16)
+[EFX-0012 VERI-INFO] processing 'top(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:17)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:166)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0012 VERI-INFO] processing 'pwm_servo(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:5)
+[EFX-0012 VERI-INFO] processing 'uart_tx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd:113)
+[EFX-0012 VERI-INFO] processing 'debounce(RTL)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd:5)
+[EFX-0012 VERI-INFO] processing 'uart_rx(baud_rate=1000000)(rtl)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:26)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl:116)
+[EFX-0012 VERI-INFO] processing 'Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:27)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:118)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0012 VERI-INFO] processing 'MPU6500_Controller(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:14)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:284)
+[EFX-0012 VERI-INFO] processing 'SquareRoot(Behavioral)' (VHDL-1067) (/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd:5)
+[EFX-0012 VERI-INFO] 'others' clause is never selected (VHDL-1172) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:597)
+[EFX-0000 INFO] ... Setting Synthesis Option: mode=speed
+[EFX-0012 VERI-INFO] compiling module 'EFX_ADD' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:8)
+[EFX-0012 VERI-INFO] compiling module 'EFX_FF' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:21)
+[EFX-0012 VERI-INFO] compiling module 'EFX_COMB4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:38)
+[EFX-0012 VERI-INFO] compiling module 'EFX_GBUFCE' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:48)
+[EFX-0012 VERI-INFO] compiling module 'EFX_LUT4' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:57)
+[EFX-0012 VERI-INFO] compiling module 'EFX_MULT' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:65)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP48' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:100)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP24' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:156)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DSP12' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:209)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_4K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:262)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:322)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM_5K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:394)
+[EFX-0012 VERI-INFO] compiling module 'RAMB5' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:499)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM_10K' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:561)
+[EFX-0012 VERI-INFO] compiling module 'EFX_RAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:653)
+[EFX-0012 VERI-INFO] compiling module 'EFX_DPRAM10' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:754)
+[EFX-0012 VERI-INFO] compiling module 'EFX_SRL8' (VERI-1018) (/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v:884)
+[EFX-0000 INFO] ... Pre-synthesis checks begin
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0000 INFO] ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... NameSpace init begin
+[EFX-0000 INFO] ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Mapping design "top"
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" begin
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "SquareRoot" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" begin
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:235)
+[EFX-0673 INFO] Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:244)
+[EFX-0000 INFO] ... Clock Enable Synthesis Performed on 359 flops.
+[EFX-0000 INFO] ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat synthesis begin
+[EFX-0000 INFO] ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Flat optimizations begin
+[EFX-0000 INFO] ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Check and break combinational loops begin
+[EFX-0000 INFO] ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Sequential Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i' with 470 loads will be considered for sequential optimization.
+[EFX-0000 INFO] ... Sequential Optimization deduced 88 equivalent points.
+[EFX-0000 INFO] ... Sequential Optimization end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Setup for logic synthesis begin
+[EFX-0000 INFO] ... Setup for logic synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... LUT mapping begin
+[EFX-0000 INFO] ... LS, strategy: 3, nd: 621, ed: 1992, lv: 5, pw: 1247.14
+[EFX-0000 INFO] ... LUT mapping end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation begin
+[EFX-0000 INFO] ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0000 INFO] ... Postmap Retiming Optimization begin
+[EFX-0000 INFO] ... Clock Network 'clk_i~clk_i' with 469 loads will be considered for retiming optimization.
+[EFX-0000 INFO] ... Performed 0 retime moves.
+[EFX-0000 INFO] ... Postmap Retiming Optimization end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+[EFX-0000 INFO] Resource Summary 
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] EFX_ADD         : 	94
+[EFX-0000 INFO] EFX_LUT4        : 	621
+[EFX-0000 INFO] EFX_MULT        : 	2
+[EFX-0000 INFO] EFX_FF          : 	469
+[EFX-0000 INFO] EFX_GBUFCE      : 	1
+[EFX-0000 INFO] =============================== 
+[EFX-0000 INFO] ... Post-Map Verilog Writer begin
+[EFX-0000 INFO] ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 419120KB)

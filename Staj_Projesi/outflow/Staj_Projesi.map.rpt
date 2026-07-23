@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Jul 23, 2026 15:39:51
+Generated at: Jul 23, 2026 16:59:32
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top
@@ -42,450 +42,116 @@ File List:
 /home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl
+/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd
 
 ### ### Report Section Start ### ###
 
+"MOD|OPT-0673" : Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:235)
+"MOD|OPT-0673" : Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:244)
 
 ### ### EFX_FF CE enables (begin) ### ### ###
-Total number of enable signals: 59
-Total number of FFs with enable signals: 248
-CE signal <ceg_net330>, number of controlling flip flops: 4
-CE signal <rx_valid>, number of controlling flip flops: 2
-CE signal <ceg_net120>, number of controlling flip flops: 8
-CE signal <ceg_net207>, number of controlling flip flops: 6
-CE signal <ceg_net300>, number of controlling flip flops: 3
+Total number of enable signals: 49
+Total number of FFs with enable signals: 422
+CE signal <rst_n_i>, number of controlling flip flops: 32
 CE signal <ceg_net323>, number of controlling flip flops: 3
-CE signal <Inst_MPU6500_Controller/n5680>, number of controlling flip flops: 18
-CE signal <Inst_MPU6500_Controller/n6303>, number of controlling flip flops: 8
-CE signal <ceg_net346>, number of controlling flip flops: 22
-CE signal <ceg_net361>, number of controlling flip flops: 4
-CE signal <ceg_net348>, number of controlling flip flops: 2
-CE signal <Inst_MPU6500_Controller/n6310>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6317>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6324>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6331>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6338>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6359>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6366>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6373>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6380>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6387>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6394>, number of controlling flip flops: 8
-CE signal <ceg_net356>, number of controlling flip flops: 5
-CE signal <ceg_net350>, number of controlling flip flops: 1
-CE signal <ceg_net357>, number of controlling flip flops: 3
-CE signal <ceg_net362>, number of controlling flip flops: 1
+CE signal <ceg_net331>, number of controlling flip flops: 5
+CE signal <ceg_net206>, number of controlling flip flops: 8
+CE signal <ceg_net301>, number of controlling flip flops: 3
+CE signal <Inst_MPU6500_Controller/n5015>, number of controlling flip flops: 96
+CE signal <Inst_MPU6500_Controller/n6149>, number of controlling flip flops: 8
+CE signal <ceg_net347>, number of controlling flip flops: 22
+CE signal <ceg_net362>, number of controlling flip flops: 4
+CE signal <ceg_net349>, number of controlling flip flops: 2
+CE signal <Inst_MPU6500_Controller/n6156>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6131>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6132>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6133>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6134>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6205>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6212>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6219>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6226>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6233>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6240>, number of controlling flip flops: 8
+CE signal <ceg_net350>, number of controlling flip flops: 5
+CE signal <ceg_net351>, number of controlling flip flops: 1
+CE signal <ceg_net354>, number of controlling flip flops: 3
 CE signal <ceg_net363>, number of controlling flip flops: 1
-CE signal <ceg_net365>, number of controlling flip flops: 2
-CE signal <Inst_uart_rx/n439>, number of controlling flip flops: 8
-CE signal <ceg_net234>, number of controlling flip flops: 3
-CE signal <ceg_net236>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n464>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n462>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n484>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n458>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n456>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n481>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n480>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n479>, number of controlling flip flops: 1
+CE signal <ceg_net364>, number of controlling flip flops: 1
+CE signal <ceg_net136>, number of controlling flip flops: 73
+CE signal <~ceg_net65>, number of controlling flip flops: 1
+CE signal <Inst_SquareRoot/state[1]>, number of controlling flip flops: 17
 CE signal <ceg_net75>, number of controlling flip flops: 12
-CE signal <ceg_net366>, number of controlling flip flops: 2
+CE signal <ceg_net367>, number of controlling flip flops: 2
+CE signal <ceg_net236>, number of controlling flip flops: 1
+CE signal <ceg_net237>, number of controlling flip flops: 3
 CE signal <ceg_net238>, number of controlling flip flops: 1
-CE signal <ceg_net239>, number of controlling flip flops: 3
-CE signal <ceg_net240>, number of controlling flip flops: 1
 CE signal <Inst_Spi_Mode_3/n466>, number of controlling flip flops: 1
+CE signal <ceg_net239>, number of controlling flip flops: 1
+CE signal <ceg_net240>, number of controlling flip flops: 1
 CE signal <ceg_net241>, number of controlling flip flops: 1
 CE signal <ceg_net242>, number of controlling flip flops: 1
 CE signal <ceg_net243>, number of controlling flip flops: 1
 CE signal <ceg_net244>, number of controlling flip flops: 1
 CE signal <ceg_net245>, number of controlling flip flops: 1
-CE signal <ceg_net246>, number of controlling flip flops: 1
-CE signal <ceg_net247>, number of controlling flip flops: 1
-CE signal <Inst_uart_tx/n333>, number of controlling flip flops: 6
 CE signal <ceg_net106>, number of controlling flip flops: 6
-CE signal <ceg_net367>, number of controlling flip flops: 2
-CE signal <ceg_net253>, number of controlling flip flops: 3
-CE signal <ceg_net250>, number of controlling flip flops: 1
-CE signal <ceg_net251>, number of controlling flip flops: 1
+CE signal <ceg_net368>, number of controlling flip flops: 2
+CE signal <ceg_net251>, number of controlling flip flops: 3
+CE signal <Inst_uart_tx/n335>, number of controlling flip flops: 8
+CE signal <ceg_net248>, number of controlling flip flops: 1
+CE signal <ceg_net249>, number of controlling flip flops: 1
 CE signal <Inst_debounce/n149>, number of controlling flip flops: 1
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
-Total number of set/reset signals: 2
-Total number of FFs with set/reset signals: 345
-SR signal <rst_n_i>, number of controlling flip flops: 325
+Total number of set/reset signals: 3
+Total number of FFs with set/reset signals: 226
+SR signal <rst_n_i>, number of controlling flip flops: 205
+SR signal <Inst_SquareRoot/state[1]>, number of controlling flip flops: 1
 SR signal <Inst_debounce/n151>, number of controlling flip flops: 20
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
 ### ### Sequential Elements Trimming Report (begin) ### ### ### 
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i16
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i16
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i16
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i16
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i16
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i16
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i15
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i15
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i15
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i15
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i15
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i15
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i14
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i14
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i14
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i14
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i14
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i14
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i13
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i13
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i13
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i13
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i13
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i13
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i4
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i12
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i4
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i12
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i4
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i12
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i4
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i12
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i4
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i12
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i4
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i12
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i3
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i11
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i3
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i11
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i3
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i11
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i3
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i11
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i3
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i11
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i3
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i11
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_178/i9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_178/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_176/i9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_176/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_174/i9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_174/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_172/i9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_172/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_170/i9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_170/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" removed instance : Inst_MPU6500_Controller/dff_168/i9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd (287)" representative instance : Inst_MPU6500_Controller/dff_168/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (448)" removed instance : dff_27/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (448)" representative instance : dff_27/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd (115)" removed instance : Inst_uart_tx/dff_45/i6
-@ "/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd (115)" representative instance : Inst_uart_tx/dff_45/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (448)" removed instance : dff_27/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (448)" representative instance : dff_27/i7
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd (115)" removed instance : Inst_uart_tx/dff_45/i5
-@ "/home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd (115)" representative instance : Inst_uart_tx/dff_45/i7
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[0](=0)
-FF Output: Inst_Cordic_x/o_y[0](=0)
-FF Output: Inst_Cordic_x/o_x[0](=0)
-FF Output: o_arctan[0](=0)
-FF Output: o_done_sig(=0)
-FF Output: Inst_Cordic_x/o_y[1](=0)
-FF Output: Inst_Cordic_x/o_y[2](=0)
-FF Output: Inst_Cordic_x/o_y[3](=0)
-FF Output: Inst_Cordic_x/o_y[4](=0)
-FF Output: Inst_Cordic_x/o_y[5](=0)
-FF Output: Inst_Cordic_x/o_y[6](=0)
-FF Output: Inst_Cordic_x/o_y[7](=0)
-FF Output: Inst_Cordic_x/o_y[8](=0)
-FF Output: Inst_Cordic_x/o_y[9](=0)
-FF Output: Inst_Cordic_x/o_y[10](=0)
-FF Output: Inst_Cordic_x/o_y[11](=0)
-FF Output: Inst_Cordic_x/o_y[12](=0)
-FF Output: Inst_Cordic_x/o_y[13](=0)
-FF Output: Inst_Cordic_x/o_y[14](=0)
-FF Output: Inst_Cordic_x/o_y[15](=0)
-FF Output: Inst_Cordic_x/o_y[16](=0)
-FF Output: Inst_Cordic_x/o_y[17](=0)
-FF Output: Inst_Cordic_x/o_y[18](=0)
-FF Output: Inst_Cordic_x/o_y[19](=0)
-FF Output: Inst_Cordic_x/o_y[20](=0)
-FF Output: Inst_Cordic_x/o_y[21](=0)
-FF Output: Inst_Cordic_x/o_y[22](=0)
-FF Output: Inst_Cordic_x/o_y[23](=0)
-FF Output: Inst_Cordic_x/o_y[24](=0)
-FF Output: Inst_Cordic_x/o_y[25](=0)
-FF Output: Inst_Cordic_x/o_y[26](=0)
-FF Output: Inst_Cordic_x/o_y[27](=0)
-FF Output: Inst_Cordic_x/o_y[28](=0)
-FF Output: Inst_Cordic_x/o_y[29](=0)
-FF Output: Inst_Cordic_x/o_y[30](=0)
-FF Output: Inst_Cordic_x/o_y[31](=0)
-FF Output: Inst_Cordic_x/o_x[1](=0)
-FF Output: Inst_Cordic_x/o_x[2](=0)
-FF Output: Inst_Cordic_x/o_x[3](=0)
-FF Output: Inst_Cordic_x/o_x[4](=0)
-FF Output: Inst_Cordic_x/o_x[5](=0)
-FF Output: Inst_Cordic_x/o_x[6](=0)
-FF Output: Inst_Cordic_x/o_x[7](=0)
-FF Output: Inst_Cordic_x/o_x[8](=0)
-FF Output: Inst_Cordic_x/o_x[9](=0)
-FF Output: Inst_Cordic_x/o_x[10](=0)
-FF Output: Inst_Cordic_x/o_x[11](=0)
-FF Output: Inst_Cordic_x/o_x[12](=0)
-FF Output: Inst_Cordic_x/o_x[13](=0)
-FF Output: Inst_Cordic_x/o_x[14](=0)
-FF Output: Inst_Cordic_x/o_x[15](=0)
-FF Output: Inst_Cordic_x/o_x[16](=0)
-FF Output: Inst_Cordic_x/o_x[17](=0)
-FF Output: Inst_Cordic_x/o_x[18](=0)
-FF Output: Inst_Cordic_x/o_x[19](=0)
-FF Output: Inst_Cordic_x/o_x[20](=0)
-FF Output: Inst_Cordic_x/o_x[21](=0)
-FF Output: Inst_Cordic_x/o_x[22](=0)
-FF Output: Inst_Cordic_x/o_x[23](=0)
-FF Output: Inst_Cordic_x/o_x[24](=0)
-FF Output: Inst_Cordic_x/o_x[25](=0)
-FF Output: Inst_Cordic_x/o_x[26](=0)
-FF Output: Inst_Cordic_x/o_x[27](=0)
-FF Output: Inst_Cordic_x/o_x[28](=0)
-FF Output: Inst_Cordic_x/o_x[29](=0)
-FF Output: Inst_Cordic_x/o_x[30](=0)
-FF Output: Inst_Cordic_x/o_x[31](=0)
-FF Output: o_arctan[1](=0)
-FF Output: o_arctan[2](=0)
-FF Output: o_arctan[3](=0)
-FF Output: o_arctan[4](=0)
-FF Output: o_arctan[5](=0)
-FF Output: o_arctan[6](=0)
-FF Output: o_arctan[7](=0)
-FF Output: o_arctan[8](=0)
-FF Output: o_arctan[9](=0)
-FF Output: o_arctan[10](=0)
-FF Output: o_arctan[11](=0)
-FF Output: o_arctan[12](=0)
-FF Output: o_arctan[13](=0)
-FF Output: o_arctan[14](=0)
-FF Output: o_arctan[15](=0)
-FF Output: o_arctan[16](=0)
-FF Output: o_arctan[17](=0)
-FF Output: o_arctan[18](=0)
-FF Output: o_arctan[19](=0)
-FF Output: o_arctan[20](=0)
-FF Output: o_arctan[21](=0)
-FF Output: o_arctan[22](=0)
-FF Output: o_arctan[23](=0)
-FF Output: o_arctan[24](=0)
-FF Output: o_arctan[25](=0)
-FF Output: o_arctan[26](=0)
-FF Output: o_arctan[27](=0)
-FF Output: o_arctan[28](=0)
-FF Output: o_arctan[29](=0)
-FF Output: o_arctan[30](=0)
-FF Output: o_arctan[31](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[1](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[2](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[3](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[4](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[5](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[6](=0)
-FF Output: Inst_Cordic_x/u_efx_cordic/genblk1.u_arctan/i[7](=0)
+@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (600)" removed instance : dff_33/i32
+@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (600)" representative instance : dff_33/i33
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (600)" removed instance : dff_33/i34
+@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (600)" representative instance : dff_33/i33
 FF Output: Inst_pwm_servo_0/pulse_width[0](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[1](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[2](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[3](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[4](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[5](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[6](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[7](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[8](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[9](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[10](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[11](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[12](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[13](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[14](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[15](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[16](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[17](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[18](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[19](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[0](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[17](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[18](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[19](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[0](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[17](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[18](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[19](=0)
-FF Output: byte_idx_uart[2](=0)
-FF Output: byte_idx_uart[3](=0)
-FF Output: Inst_pwm_servo_0/pulse_width[1](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[1](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
+FF instance: Inst_uart_rx/dff_54/i1(unreachable)
+FF instance: Inst_uart_rx/dff_55/i1(unreachable)
+FF instance: Inst_uart_rx/dff_56/i1(unreachable)
+FF instance: Inst_uart_rx/i61(unreachable)
+FF instance: Inst_uart_rx/i62(unreachable)
+FF instance: Inst_uart_rx/dff_56/i2(unreachable)
+FF instance: Inst_uart_rx/dff_56/i3(unreachable)
+FF instance: Inst_uart_rx/dff_56/i4(unreachable)
+FF instance: Inst_uart_rx/dff_56/i5(unreachable)
+FF instance: Inst_uart_rx/dff_56/i6(unreachable)
+FF instance: Inst_uart_rx/dff_55/i2(unreachable)
+FF instance: Inst_uart_rx/dff_55/i3(unreachable)
+FF instance: Inst_uart_rx/dff_55/i4(unreachable)
+FF instance: Inst_uart_rx/dff_54/i2(unreachable)
 ### ### Sequential Elements Trimming Report (end) ### ### ### 
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
@@ -494,15 +160,13 @@ FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 
 Module                                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
 ------------------------------------------------------------       ---      ----      ----      ---- ---------
-top:top                                                        385(24)     82(0)   561(70)      0(0)      3(0)
- +Inst_pwm_servo_0:pwm_servo                                    36(36)    33(33)    44(44)      0(0)      1(1)
- +Inst_pwm_servo_1:pwm_servo                                    34(34)    15(15)    42(42)      0(0)      1(1)
- +Inst_pwm_servo_2:pwm_servo                                    34(34)    15(15)    48(48)      0(0)      1(1)
- +Inst_uart_tx:uart_tx(baud_rate=1000000)                       19(19)      0(0)    28(28)      0(0)      0(0)
+top:top                                                        469(49)    94(32)  621(106)      0(0)      2(2)
+ +Inst_pwm_servo_0:pwm_servo                                    21(21)    19(19)    33(33)      0(0)      0(0)
+ +Inst_uart_tx:uart_tx(baud_rate=1000000)                       21(21)      0(0)    28(28)      0(0)      0(0)
  +Inst_debounce:debounce                                        23(23)    19(19)      7(7)      0(0)      0(0)
- +Inst_uart_rx:uart_rx(baud_rate=1000000)                       30(30)      0(0)    36(36)      0(0)      0(0)
  +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...    28(28)      0(0)    43(43)      0(0)      0(0)
- +Inst_MPU6500_Controller:MPU6500_Controller                  157(157)      0(0)  243(243)      0(0)      0(0)
+ +Inst_MPU6500_Controller:MPU6500_Controller                  235(235)      0(0)  299(299)      0(0)      0(0)
+ +Inst_SquareRoot:SquareRoot                                    92(92)    24(24)  105(105)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -511,7 +175,7 @@ top:top                                                        385(24)     82(0)
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i             385               0               3
+ clk_i             469               0               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -519,15 +183,15 @@ top:top                                                        385(24)     82(0)
 INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	7
 
-EFX_ADD         : 	82
-EFX_LUT4        : 	561
-   1-2  Inputs  : 	157
-   3    Inputs  : 	138
-   4    Inputs  : 	266
-EFX_MULT        : 	3
-EFX_FF          : 	385
+EFX_ADD         : 	94
+EFX_LUT4        : 	621
+   1-2  Inputs  : 	158
+   3    Inputs  : 	176
+   4    Inputs  : 	287
+EFX_MULT        : 	2
+EFX_FF          : 	469
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
 Plain synthesis (without verilog dump and post-map checks) time : 2s
-Elapsed synthesis time : 3s
+Elapsed synthesis time : 2s
