@@ -1,0 +1,32 @@
+{
+    "args": [
+        "-o",
+        "sqrt",
+        "--base_path",
+        "/home/omer-ahin/STAJ/Staj_Projesi/ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "arithmetic",
+            "name": "efx_integer_square_root",
+            "version": "5.3"
+        }
+    ],
+    "conf": {
+        "MODE_C": "\"SINGLE\"",
+        "PIPELINENUM_C": "17",
+        "DATAWIDTH_C": "33",
+        "ALUNUMBER": "1"
+    },
+    "output": {
+        "external_source_source": [
+            "sqrt/sqrt_tmpl.vhd",
+            "sqrt/sqrt_tmpl.v",
+            "sqrt/sqrt_define.vh",
+            "sqrt/sqrt.v"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288.2.10",
+    "generated_date": "2026-07-23T09:06:26.896129+00:00"
+}

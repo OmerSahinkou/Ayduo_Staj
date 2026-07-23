@@ -1676,3 +1676,237 @@
 // Jul 22, 2026 13:56:59
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 09:51:47
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 11:43:21
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'o_done_sig' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:177)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:300)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 11:44:06
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'o_done_sig' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:177)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:300)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 11:45:51
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:45:37
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 33 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:391)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:50:05
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] value 5 is out of target constraint range 0 to 4 (VHDL-1291) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:568)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:50:38
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'o_done_sig' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:333)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:347)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:51:13
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'din1[32]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:393)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:582)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:56:29
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'calcend' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:361)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:374)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:56:40
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'calcend' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:361)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:374)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:57:08
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'calcend' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:361)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:374)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 12:57:44
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:01:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:05:08
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:09:47
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'calcen' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:605)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:540)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:10:02
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:12:57
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:13:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:15:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:17:31
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:22:35
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] left bound of slice is outside its index type range (VHDL-1132) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:572)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:22:45
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 1 elements; expected 8 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:572)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:23:24
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] argument of operator "&" cannot be an 'others' aggregate (VHDL-1678) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:572)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:608)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:24:38
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 9 elements; expected 8 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:572)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:24:46
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:35:14
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:39:06
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 13:55:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 14:03:09
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 14:04:59
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 14:06:08
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 14:32:22
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 23, 2026 15:39:50
+///////////////////////////////////
+

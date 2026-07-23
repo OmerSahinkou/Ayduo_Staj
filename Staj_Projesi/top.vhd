@@ -132,6 +132,34 @@ architecture Behavioral of top is
         );
     end component;
 
+    component Cordic is
+        port (
+            clk     : in std_logic                      ;
+            reset_n : in std_logic                      ;
+            i_call  : in STD_LOGIC                      ;
+            i_x     : in STD_LOGIC_VECTOR(31 downto 0)  ;
+            i_y     : in STD_LOGIC_VECTOR(31 downto 0)  ;
+            o_done  : out STD_LOGIC                     ;
+            o_arctan: out STD_LOGIC_VECTOR(31 downto 0) ;
+            o_deg   : out STD_LOGIC_VECTOR(31 downto 0) ;
+            o_y     : out STD_LOGIC_VECTOR(31 downto 0) ;
+            o_x     : out STD_LOGIC_VECTOR(31 downto 0)
+        );
+    end component;
+
+    component sqrt is
+        port (
+            sysclk      : in std_logic;
+            reset_n     : in std_logic;
+            din         : in STD_LOGIC_VECTOR(32 downto 0);
+            calcen      : in STD_LOGIC;
+            clken       : in STD_LOGIC;
+            vout        : out STD_LOGIC_VECTOR(15 downto 0);
+            rout        : out STD_LOGIC_VECTOR(16 downto 0);
+            calcend     : out STD_LOGIC;
+            sqrtidle    : out STD_LOGIC
+        );
+    end component;
     -- =========================================================
     -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
     -- =========================================================
@@ -158,7 +186,21 @@ architecture Behavioral of top is
     signal accel_x, accel_y, accel_z : std_logic_vector(15 downto 0);
     signal gyro_x, gyro_y, gyro_z    : std_logic_vector(15 downto 0);
 
+    --cordic
+    signal i_call_sig   : STD_LOGIC := '0' ;
+    signal o_done_sig   : STD_LOGIC  ;
+    signal i_x_sig      : STD_LOGIC_VECTOR(31 downto 0);
+    signal i_y_sig      : STD_LOGIC_VECTOR(31 downto 0);
+    signal o_arctan     : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+    
+
     signal switch_out      : STD_LOGIC := '1';
+
+    --root
+    signal root_x : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+    signal root_y : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+    signal root_z : STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+
     -- =========================================================
     -- UART GÖNDERIM STATE MACHINE (FSM) - FRAME SYNC MARKERİ İLE
     -- =========================================================
@@ -168,7 +210,10 @@ architecture Behavioral of top is
     signal byte_idx   : integer range 0 to 15 := 0;  -- 0-14 = 15 byte (marker + 14 veri)
     
     --rx counter 
-    signal byte_idx_uart   : integer range 0 to 4  := 0 ;
+    signal byte_idx_uart   : integer range 0 to 10  := 0 ;
+
+    type t_state is (IDLE, WAIT_CALC, SEND_UART);
+    signal state : t_state := IDLE;
 begin
 
     -- =========================================================
@@ -261,30 +306,58 @@ begin
 
     Inst_MPU6500_Controller: MPU6500_Controller
         port map (
-            clk_i            => clk_i,
-            rst_i            => rst_n_i,
-            switch_out       => switch_out,
-            data_valid_i     => spi_data_valid,
-            rx_data_i        => spi_to_mpu_data,
-            start_transfer_o => spi_start,
-            mosi_data_o      => mpu_to_spi_data, 
-            spi_cs_n_o       => spi_cs_n_o,
-            ax_o             => accel_x,
-            ay_o             => accel_y,
-            az_o             => accel_z,
-            gx_o             => gyro_x,
-            gy_o             => gyro_y,
-            gz_o             => gyro_z
+            clk_i           => clk_i,
+            rst_i           => rst_n_i,
+            switch_out      => switch_out,
+            data_valid_i    => spi_data_valid,
+            rx_data_i       => spi_to_mpu_data,
+            start_transfer_o=> spi_start,
+            mosi_data_o     => mpu_to_spi_data, 
+            spi_cs_n_o      => spi_cs_n_o,
+            ax_o            => accel_x,
+            ay_o            => accel_y,
+            az_o            => accel_z,
+            gx_o            => gyro_x,
+            gy_o            => gyro_y,
+            gz_o            => gyro_z
+        );
+    Inst_Cordic_x: Cordic
+        port map(
+            clk             => clk_i,
+            reset_n         => rst_n_i,
+            i_call          => i_call_sig,
+            i_x             => i_x_sig,
+            i_y             => i_y_sig,
+            o_done          => o_done_sig,
+            o_arctan        => o_arctan,
+            o_deg           => open,
+            o_y             => open,
+            o_x             => open
         );
 
-    -- =========================================================
-    -- UART GÖNDERIM STATE MACHINE
-    -- =========================================================
-    -- FRAME FORMATÜ:
-    -- [0xAA] [AX_H] [AX_L] [AY_H] [AY_L] [AZ_H] [AZ_L] 
-    -- [GX_H] [GX_L] [GY_H] [GY_L] [GZ_H] [GZ_L] [CR] [LF]
-    -- Toplam: 15 byte
-    -- =========================================================
+    -- Inst_Cordic_y: Cordic
+    --     port map(
+    --         clk             => clk_i,
+    --         reset_n         => rst_n_i,
+    --         i_call          => i_call_sig,
+    --         i_x             => i_x_sig,
+    --         i_y             => i_y_sig,
+    --         o_done          => o_done_sig,
+    --         o_arctan        => o_arctan,
+    --         o_deg           => open,
+    --         o_y             => open,
+    --         o_x             => open
+    --     );
+
+
+    --=========================================================
+    --UART GÖNDERIM STATE MACHINE
+    --=========================================================
+    --FRAME FORMATÜ:
+    --[0xAA] [AX_H] [AX_L] [AY_H] [AY_L] [AZ_H] [AZ_L] 
+    --[GX_H] [GX_L] [GY_H] [GY_L] [GZ_H] [GZ_L] [CR] [LF]
+    --Toplam: 15 byte
+    --=========================================================
     
     send_data:process(clk_i, rst_n_i)
     begin
@@ -375,36 +448,56 @@ begin
         end if;
     end process send_data;
 
-Control_Servo : process (clk_i, rst_n_i)
-begin
-    if rst_n_i = '0' then 
-        angle_reg_0   <= (others => '0'); 
-        angle_reg_1   <= (others => '0'); 
-        angle_reg_2   <= (others => '0');
-        byte_idx_uart <= 0;
-    elsif rising_edge(clk_i) then
-        if (rx_valid = '1') then 
-            if (rx_data_sig = X"BB") then 
-                byte_idx_uart <= 1;
-            elsif (rx_data_sig = X"66") then
-                byte_idx_uart <= 0;
-            else
-                case byte_idx_uart is
-                    when 1 =>
-                        angle_reg_0   <= unsigned(rx_data_sig);
-                        byte_idx_uart <= 2;
-                    when 2 =>
-                        angle_reg_1   <= unsigned(rx_data_sig);
-                        byte_idx_uart <= 3;
-                    when 3 =>
-                        angle_reg_2   <= unsigned(rx_data_sig);
-                        byte_idx_uart <= 0; 
-                    when others =>
-                        byte_idx_uart <= 0;
-                end case;
+    --=========================================================
+    --Servo  Control STATE MACHINE
+    --=========================================================
+    Control_Servo : process (clk_i, rst_n_i)
+    begin
+        if rst_n_i = '0' then 
+            angle_reg_0   <= (others => '0'); 
+            angle_reg_1   <= (others => '0'); 
+            angle_reg_2   <= (others => '0');
+            byte_idx_uart <= 0;
+        elsif rising_edge(clk_i) then
+            if (rx_valid = '1') then 
+                if (rx_data_sig = X"BB") then 
+                    byte_idx_uart <= 1;
+                elsif (rx_data_sig = X"66") then
+                    byte_idx_uart <= 0;
+                else
+                    case byte_idx_uart is
+                        when 1 =>
+                            angle_reg_0   <= unsigned(rx_data_sig);
+                            byte_idx_uart <= 2;
+                        when 2 =>
+                            angle_reg_1   <= unsigned(rx_data_sig);
+                            byte_idx_uart <= 3;
+                        when 3 =>
+                            angle_reg_2   <= unsigned(rx_data_sig);
+                            byte_idx_uart <= 0; 
+                        when others =>
+                            byte_idx_uart <= 0;
+                    end case;
+                end if;
+                
             end if;
-            
         end if;
-    end if;
-end process Control_Servo;
+    end process Control_Servo;
+
+-- Process dışında bir yere eklemelisin:
+-- clken <= '1'; 
+
+-- =========================================================
+-- Cordic Test STATE MACHINE
+-- =========================================================
+
+-- cordic_test : process(clk_i, rst_n_i)
+-- begin
+--     if rst_n_i = '0' then
+--         tx_start_sig <= '0';
+--         uart_state   <= IDLE;
+--         byte_idx     <= 0;
+--     elsif rising_edge(clk_i) then
+--     end if;
+-- end process cordic_test;
 end Behavioral;

@@ -17,14 +17,14 @@
     },
     "output": {
         "external_source_source": [
-            "Cordic/Cordic_tmpl.v",
-            "Cordic/Cordic.v",
+            "Cordic/Cordic_tmpl.vhd",
             "Cordic/Cordic_define.vh",
-            "Cordic/Cordic_tmpl.vhd"
+            "Cordic/Cordic_tmpl.v",
+            "Cordic/Cordic.v"
         ],
         "external_script_generator": []
     },
     "ooc_synthesis": {},
     "sw_version": "2025.2.288.2.10",
-    "generated_date": "2026-07-21T06:56:06.756145+00:00"
+    "generated_date": "2026-07-23T08:22:35.100171+00:00"
 }
