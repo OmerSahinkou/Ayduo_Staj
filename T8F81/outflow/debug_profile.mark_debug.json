@@ -9,7 +9,7 @@
 
             ],
             "src": "elaborate",
-            "top_module": "top"
+            "top_module": "top_soc"
         }
     }
 }

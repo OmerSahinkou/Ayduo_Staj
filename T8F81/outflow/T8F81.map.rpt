@@ -1,16 +1,18 @@
 Efinity Synthesis report for project T8F81
 Version: 2025.2.288.2.10
-Generated at: Jul 14, 2026 10:20:45
+Generated at: Jul 24, 2026 10:06:25
 Copyright (C) 2013 - 2025  All rights reserved.
 
-Top-level Entity Name : top
+Top-level Entity Name : top_soc
 Top-level Architecture : vhdl_test
 
 family : Trion
 device : T8F81
 project : T8F81
-root : top
+root : top_soc
 I,include : /home/omer-ahin/STAJ/T8F81
+I,include : /home/omer-ahin/STAJ/T8F81/ip/soc
+I,include : ip/soc
 binary-db : /home/omer-ahin/STAJ/T8F81/outflow/T8F81.vdb
 insert-ios : 0
 max-carry-cascade : 160
@@ -21,65 +23,483 @@ arch : vhdl_test
 output-dir : /home/omer-ahin/STAJ/T8F81/outflow
 project : T8F81
 project-xml : /home/omer-ahin/STAJ/T8F81/T8F81.xml
-root : top
+root : top_soc
 work-dir : /home/omer-ahin/STAJ/T8F81/work_syn
 write-efx-verilog : /home/omer-ahin/STAJ/T8F81/outflow/T8F81.map.v
 write-premap-module : /home/omer-ahin/STAJ/T8F81/outflow/T8F81.elab.vdb
 
 File List:
 
-/home/omer-ahin/STAJ/T8F81/Led_Test.v
+/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v
 /home/omer-ahin/STAJ/T8F81/top.v
-/home/omer-ahin/STAJ/T8F81/vhdl_test.vhd
 
 ### ### Report Section Start ### ###
 
+"MEM|SYN-0677" : ... Memory 'RegFilePlugin_regFile' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:7028)
+"MEM|SYN-0677" : ... Memory 'logic_ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:11492)
+"MEM|SYN-0677" : ... Memory 'logic_ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:10675)
+"MEM|SYN-0677" : ... Memory 'logic_ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:10504)
 
 ### ### EFX_FF CE enables (begin) ### ### ###
-Total number of enable signals: 1
-Total number of FFs with enable signals: 1
-CE signal <clk_divider_i/n6>, number of controlling flip flops: 1
+Total number of enable signals: 159
+Total number of FFs with enable signals: 2189
+CE signal <soc_inst/u_EfxSapphireSoc/when_ClockDomainGenerator_l222_1>, number of controlling flip flops: 6
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_dBus_cmd_rValidN>, number of controlling flip flops: 70
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_rspJoin_rspBuffer_c/fifo/logic_ptr_doPush>, number of controlling flip flops: 2
+CE signal <ceg_net2>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21701>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_rspJoin_rspBuffer_c/fifo/n499>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_rspJoin_rspBuffer_c/fifo/n498>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_rspJoin_rspBuffer_c/fifo/logic_pop_addressGen_fire>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_cmd_rValid>, number of controlling flip flops: 28
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_cmd_rValid>, number of controlling flip flops: 26
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_cmd_rValid>, number of controlling flip flops: 60
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_dBus_cmd_s2mPipe_ready>, number of controlling flip flops: 71
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_rValidN>, number of controlling flip flops: 31
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_s2mPipe_ready>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/_zz_system_bmbPeripheral_bmb_rsp_valid_1>, number of controlling flip flops: 35
+CE signal <soc_inst/u_EfxSapphireSoc/_zz_system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_rsp_valid_1>, number of controlling flip flops: 30
+CE signal <soc_inst/u_EfxSapphireSoc/when_ClockDomainGenerator_l222>, number of controlling flip flops: 12
+CE signal <soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bus_rsp_ready_1>, number of controlling flip flops: 12
+CE signal <soc_inst/u_EfxSapphireSoc/n6985>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu_dBus_cmd_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu_iBus_cmd_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_bridge_bmb_decoder_io_outputs_1_cmd_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder_io_input_rsp_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder_io_outputs_2_cmd_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_rsp_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_interrupt_plic_gateway_waitCompletion>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_interrupt_plic_gateway_waitCompletion>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder_io_outputs_3_cmd_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_interrupts_0_plic_gateway_waitCompletion>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_interrupts_1_plic_gateway_waitCompletion>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/n6986>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/n6987>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/n6988>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/n6989>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/n6990>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/n6883>, number of controlling flip flops: 5
+CE signal <~ceg_net104>, number of controlling flip flops: 34
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21759>, number of controlling flip flops: 30
+CE signal <ceg_net108>, number of controlling flip flops: 1
+CE signal <ceg_net110>, number of controlling flip flops: 2
+CE signal <ceg_net112>, number of controlling flip flops: 1
+CE signal <ceg_net177>, number of controlling flip flops: 3
+CE signal <ceg_net116>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21727>, number of controlling flip flops: 3
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21710>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21712>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/CsrPlugin_pipelineLiberator_active>, number of controlling flip flops: 1
+CE signal <ceg_net118>, number of controlling flip flops: 1
+CE signal <ceg_net120>, number of controlling flip flops: 1
+CE signal <ceg_net37>, number of controlling flip flops: 32
+CE signal <ceg_net41>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n22093>, number of controlling flip flops: 5
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/execute_arbitration_isStuck>, number of controlling flip flops: 226
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/CsrPlugin_hadException>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21757>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/memory_arbitration_haltItself>, number of controlling flip flops: 313
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/equal_1263/n11>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21761>, number of controlling flip flops: 32
+CE signal <ceg_net44>, number of controlling flip flops: 32
+CE signal <ceg_net123>, number of controlling flip flops: 1
+CE signal <ceg_net125>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21770>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/when_DebugPlugin_l240>, number of controlling flip flops: 1
+CE signal <ceg_net127>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/bmbDecoder_4_io_outputs_0_cmd_valid>, number of controlling flip flops: 1
+CE signal <ceg_net130>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/when_Fetcher_l160>, number of controlling flip flops: 30
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_iBusRsp_stages_2_output_ready>, number of controlling flip flops: 30
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/decode_arbitration_isStuck>, number of controlling flip flops: 30
+CE signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_writeBack>, number of controlling flip flops: 30
+CE signal <~ceg_net5>, number of controlling flip flops: 1
+CE signal <ceg_net132>, number of controlling flip flops: 3
+CE signal <ceg_net106>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_cmd_ready>, number of controlling flip flops: 24
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n853>, number of controlling flip flops: 12
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl/n474>, number of controlling flip flops: 3
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n795>, number of controlling flip flops: 4
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability_io_pop_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl/when_SpiXdrMasterCtrl_l783>, number of controlling flip flops: 12
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n792>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n793>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability_io_pop_rValidN>, number of controlling flip flops: 11
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n854>, number of controlling flip flops: 12
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n855>, number of controlling flip flops: 12
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/n856>, number of controlling flip flops: 12
+CE signal <ceg_net173>, number of controlling flip flops: 1
+CE signal <ceg_net142>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability/logic_pop_sync_readArbitation_fire>, number of controlling flip flops: 9
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability/logic_pop_addressGen_fire>, number of controlling flip flops: 9
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability/io_push_fire>, number of controlling flip flops: 9
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability/logic_pop_addressGen_ready>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl_io_rsp_queueWithOccupancy/logic_pop_addressGen_fire>, number of controlling flip flops: 9
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl_io_rsp_queueWithOccupancy/io_push_fire>, number of controlling flip flops: 9
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl_io_rsp_queueWithOccupancy/logic_pop_sync_readArbitation_fire>, number of controlling flip flops: 9
+CE signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl_io_rsp_queueWithOccupancy/logic_pop_addressGen_ready>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_cmd_ready>, number of controlling flip flops: 31
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/n692>, number of controlling flip flops: 20
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/clockDivider_tickReg>, number of controlling flip flops: 4
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/sampler_tick>, number of controlling flip flops: 3
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/n704>, number of controlling flip flops: 6
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/n690>, number of controlling flip flops: 2
+CE signal <ceg_net144>, number of controlling flip flops: 1
+CE signal <ceg_net146>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/when_UartCtrl_l155>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/n687>, number of controlling flip flops: 1
+CE signal <ceg_net79>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/when_UartCtrlRx_l69>, number of controlling flip flops: 7
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n522>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n531>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n532>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n533>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n534>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n535>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n536>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n537>, number of controlling flip flops: 1
+CE signal <~soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/tx/clockDivider_counter_willOverflow>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/bridge_write_streamUnbuffered_queueWithOccupancy/logic_pop_addressGen_fire>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/bridge_write_streamUnbuffered_queueWithOccupancy/io_push_fire>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/bridge_write_streamUnbuffered_queueWithOccupancy/logic_pop_sync_readArbitation_fire>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/bridge_write_streamUnbuffered_queueWithOccupancy/logic_pop_addressGen_ready>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1_io_read_queueWithOccupancy/logic_pop_addressGen_fire>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1_io_read_queueWithOccupancy/io_push_fire>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1_io_read_queueWithOccupancy/logic_pop_sync_readArbitation_fire>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1_io_read_queueWithOccupancy/logic_pop_addressGen_ready>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder/io_input_cmd_rValid>, number of controlling flip flops: 57
+CE signal <ceg_net148>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_cmd_halfPipe_fire>, number of controlling flip flops: 7
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder/when_BmbDecoder_l56>, number of controlling flip flops: 6
+CE signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder/logic_input_fire>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_clint_logic_io_bus_cmd_ready>, number of controlling flip flops: 36
+CE signal <soc_inst/u_EfxSapphireSoc/system_clint_logic/n994>, number of controlling flip flops: 32
+CE signal <soc_inst/u_EfxSapphireSoc/system_clint_logic/n993>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_clint_logic/n995>, number of controlling flip flops: 32
+CE signal <ceg_net150>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_bridge_bmb_decoder/when_BmbDecoder_l56>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_bridge_bmb_decoder/logic_input_fire>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_cmd_ready>, number of controlling flip flops: 7
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic/n447>, number of controlling flip flops: 4
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic/n450>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic/n452>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic/n454>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic/n456>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic/n459>, number of controlling flip flops: 4
+CE signal <soc_inst/u_EfxSapphireSoc/bmbDecoder_4/sub_52/n8>, number of controlling flip flops: 33
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/n391>, number of controlling flip flops: 2
+CE signal <ceg_net91>, number of controlling flip flops: 34
+CE signal <ceg_net152>, number of controlling flip flops: 1
+CE signal <ceg_net154>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge_io_remote_cmd_valid>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/jtag_writeArea_valid>, number of controlling flip flops: 3
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/flowCCUnsafeByToggle_1/outputArea_flow_valid>, number of controlling flip flops: 2
+CE signal <soc_inst/u_EfxSapphireSoc/system_bridge_bmb_arbiter_io_output_cmd_valid>, number of controlling flip flops: 3
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_debugger/n557>, number of controlling flip flops: 65
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_debugger/n551>, number of controlling flip flops: 1
+CE signal <ceg_net157>, number of controlling flip flops: 3
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_debugger/n555>, number of controlling flip flops: 8
+CE signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_debugger/n552>, number of controlling flip flops: 1
+CE signal <ceg_net159>, number of controlling flip flops: 1
+CE signal <soc_inst/u_EfxSapphireSoc/bmbDecoder_4/when_BmbDecoder_l56>, number of controlling flip flops: 1
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
-Total number of set/reset signals: 2
-Total number of FFs with set/reset signals: 41
-SR signal <clk_divider_i/n139>, number of controlling flip flops: 39
-SR signal <rst_n>, number of controlling flip flops: 2
+Total number of set/reset signals: 45
+Total number of FFs with set/reset signals: 504
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_debugReset>, number of controlling flip flops: 2
+SR signal <soc_inst/u_EfxSapphireSoc/systemCd_logic_inputResetTrigger>, number of controlling flip flops: 6
+SR signal <n7>, number of controlling flip flops: 2
+SR signal <soc_inst/u_EfxSapphireSoc/systemCd_logic_outputReset>, number of controlling flip flops: 357
+SR signal <soc_inst/u_EfxSapphireSoc/debugCd_logic_outputReset>, number of controlling flip flops: 21
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21746>, number of controlling flip flops: 6
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/memory_arbitration_haltItself>, number of controlling flip flops: 33
+SR signal <soc_inst/u_EfxSapphireSoc/io_asyncReset_asyncAssertSyncDeassert_buffercc_io_dataOut>, number of controlling flip flops: 12
+SR signal <soc_inst/u_EfxSapphireSoc/n6888>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6891>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6892>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6893>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6894>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6895>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6896>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6897>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6898>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6899>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6900>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6901>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6902>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6903>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/n6904>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/BranchPlugin_branchExceptionPort_valid>, number of controlling flip flops: 3
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21732>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21739>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21742>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21743>, number of controlling flip flops: 3
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n25450>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/when_MulPlugin_l70>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n21779>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/n22097>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl/timer_reset>, number of controlling flip flops: 12
+SR signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl/n477>, number of controlling flip flops: 5
+SR signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl/n484>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl/n483>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/select_110/Select_0/n5>, number of controlling flip flops: 3
+SR signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/n694>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/n695>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/n482>, number of controlling flip flops: 7
+SR signal <soc_inst/u_EfxSapphireSoc/system_bmbPeripheral_bmb_decoder/n958>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/bmbDecoder_4/sub_52/n8>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_bridge_bmb_arbiter/memory_arbiter/n123>, number of controlling flip flops: 1
+SR signal <soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_debugger/n553>, number of controlling flip flops: 2
+SR signal <soc_inst/u_EfxSapphireSoc/system_bridge_bmb_arbiter/memory_arbiter_io_chosenOH[0]>, number of controlling flip flops: 1
 ### ### EFX_FF SR set/reset (end) ### ### ###
+
+### ### Sequential Elements Trimming Report (begin) ### ### ### 
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2192/i2
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2160/i13
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/i2191
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/i2192
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2141/i1
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2141/i2
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2140/i2
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2140/i1
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/i2177
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2160/i6
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (9988)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_1816/i1
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (9988)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_1816/i2
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (2502)" removed instance : soc_inst/u_EfxSapphireSoc/i752
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (2502)" representative instance : soc_inst/u_EfxSapphireSoc/i747
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" removed instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2140/i1
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (10321)" representative instance : soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/dff_2141/i2
+FF|OPT : Flip-flop optimization by equivalence checking
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (2502)" removed instance : soc_inst/u_EfxSapphireSoc/i759
+@ "/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v (2502)" representative instance : soc_inst/u_EfxSapphireSoc/i754
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_fetchPc_pcReg[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_rData_fragment_address[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_rData_fragment_opcode[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/execute_to_memory_BRANCH_CALC[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/IBusSimplePlugin_fetchPc_pcReg[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/_zz_IBusSimplePlugin_iBusRsp_stages_1_output_m2sPipe_payload[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/_zz_IBusSimplePlugin_injector_decodeInput_payload_pc[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/decode_to_execute_PC[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/execute_to_memory_PC[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/memory_to_writeBack_PC[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/CsrPlugin_exceptionPortCtrl_exceptionContext_code[2](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[10](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[11](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[12](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[13](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[14](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[15](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[25](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[26](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[27](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[28](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[29](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic_io_ctrl_rsp_payload_fragment_data[30](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_rsp_payload_fragment_data[10](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_rsp_payload_fragment_data[11](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_rsp_payload_fragment_data[12](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_rsp_payload_fragment_data[13](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic_io_bus_rsp_payload_fragment_data[14](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[23](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[22](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[21](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[20](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[19](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[18](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[17](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[16](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[15](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[14](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[13](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[12](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[11](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[10](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[24](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[25](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[9](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[8](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[7](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[6](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[5](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[4](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[31](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[30](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[26](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[29](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[28](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_gpio_0_io_logic_io_bus_rsp_payload_fragment_data[27](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[29](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[28](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[27](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[26](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[25](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[24](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[23](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[22](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[21](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[20](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[19](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[18](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[17](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[16](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[15](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[14](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[13](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[12](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[11](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[10](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[9](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[8](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[7](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[6](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[5](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[30](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[31](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[4](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[3](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[2](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_payload_fragment_data[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic_io_input_rsp_valid(=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_rData_fragment_address[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_rsp_payload_fragment_data[10](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_rsp_payload_fragment_data[11](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_rsp_payload_fragment_data[12](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_rsp_payload_fragment_data[13](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_uart_0_io_ctrl_slaveModel_arbiterGen_oneToOne_arbiter_rsp_payload_fragment_data[14](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[5](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[6](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[7](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[8](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[9](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[10](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[11](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[14](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[15](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[17](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[18](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[19](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[20](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[21](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[22](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[23](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[24](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[25](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[26](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[27](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[28](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[29](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[30](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/_zz_system_plic_logic_bmb_rsp_payload_fragment_data[31](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_externalInterrupt_plic_target_bestRequest_id[1](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/_zz_IBusSimplePlugin_iBusRsp_stages_1_output_m2sPipe_payload[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_s2mPipe_rData_fragment_address[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_s2mPipe_rData_fragment_opcode[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/_zz_IBusSimplePlugin_injector_decodeInput_payload_pc[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/decode_to_execute_PC[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/execute_to_memory_PC[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/memory_to_writeBack_PC[0](=0)
+FF Output: soc_inst/u_EfxSapphireSoc/system_cores_0_iBus_cmd_s2mPipe_rData_fragment_address[1](=0)
+FF instance: soc_inst/u_EfxSapphireSoc/io_apbSlave_0_logic/i56(unreachable)
+### ### Sequential Elements Trimming Report (end) ### ### ### 
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
 
 **Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
-Module                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
---------------------------------------------       ---      ----      ----      ---- ---------
-top:top                                          41(1)     23(0)     13(0)      0(0)      0(0)
- +clk_divider_i:clk_divider(CLK_OUT_FREQ=5)     40(40)    23(23)    13(13)      0(0)      0(0)
+Module                                                              FFs      ADDs       LUTs      RAMs DSP/MULTs
+------------------------------------------------------------        ---      ----       ----      ---- ---------
+top_soc:top_soc                                                 2614(0)    589(0)    3129(1)     16(0)      4(0)
+ +soc_inst:soc                                                  2614(0)    589(0)    3128(0)     16(0)      4(0)
+  +u_EfxSapphireSoc:EfxSapphireSoc_d2361a03f8b148a586ba24...  2614(457)   589(16)  3128(211)     16(0)      4(0)
+   +io_asyncReset_asyncAssertSyncDeassert_buffercc:Buffer...       2(2)      0(0)       0(0)      0(0)      0(0)
+   +debugCd_logic_outputReset_asyncAssertSyncDeassert_buf...       2(2)      0(0)       0(0)      0(0)      0(0)
+   +system_cores_0_logic_cpu:VexRiscv_d2361a03f8b148a586b... 1313(1245)  335(335) 2009(1810)      4(4)      4(4)
+    +IBusSimplePlugin_rspJoin_rspBuffer_c:StreamFifoLowLa...      68(0)      0(0)      11(0)      0(0)      0(0)
+     +fifo:StreamFifo_d2361a03f8b148a586ba240a89df7322           68(68)      0(0)     11(11)      0(0)      0(0)
+    +EfxCPUSp2_inst:EfxCPUSp2_d2361a03f8b148a586ba240a89d...       0(0)      0(0)   188(188)      0(0)      0(0)
+   +system_hardJtag_debug_logic_jtagBridge:JtagBridgeNoTa...     83(74)      0(0)     46(45)      0(0)      0(0)
+    +flowCCUnsafeByToggle_1:FlowCCUnsafeByToggle_d2361a03...       9(7)      0(0)       1(1)      0(0)      0(0)
+     +inputArea_target_buffercc:BufferCC_d2361a03f8b148a5...       2(2)      0(0)       0(0)      0(0)      0(0)
+   +system_hardJtag_debug_logic_debugger:SystemDebugger_d...     78(78)      0(0)     14(14)      0(0)      0(0)
+   +system_cores_0_debugReset_asyncAssertSyncDeassert_buf...       2(2)      0(0)       0(0)      0(0)      0(0)
+   +system_bridge_bmb_arbiter:BmbArbiter_d2361a03f8b148a5...       3(0)      0(0)      62(0)      0(0)      0(0)
+    +memory_arbiter:StreamArbiter_d2361a03f8b148a586ba240...       3(3)      0(0)     62(62)      0(0)      0(0)
+   +system_bridge_bmb_decoder:BmbDecoder_1_d2361a03f8b148...     11(11)    15(15)     62(62)      0(0)      0(0)
+   +bmbDecoder_4:BmbDecoder_2_d2361a03f8b148a586ba240a89d...       9(9)    15(15)     18(18)      0(0)      0(0)
+   +system_ramA_logic:BmbOnChipRam_d2361a03f8b148a586ba24...       3(3)      0(0)       5(5)      8(8)      0(0)
+   +system_bmbPeripheral_bmb_decoder:BmbDecoder_3_d2361a0...     78(78)      0(0)   131(131)      0(0)      0(0)
+   +system_clint_logic:BmbClint_d2361a03f8b148a586ba240a8...   166(166)    63(63)   144(144)      0(0)      0(0)
+   +system_uart_0_io_logic:BmbUartCtrl_d2361a03f8b148a586...    180(64)     82(9)    191(58)      2(0)      0(0)
+    +uartCtrl_1:UartCtrl_d2361a03f8b148a586ba240a89df7322        66(21)    27(21)    109(27)      0(0)      0(0)
+     +tx:UartCtrlTx_d2361a03f8b148a586ba240a89df7322             11(11)      0(0)     35(35)      0(0)      0(0)
+     +rx:UartCtrlRx_d2361a03f8b148a586ba240a89df7322             34(32)      6(6)     47(47)      0(0)      0(0)
+      +io_rxd_buffercc:BufferCC_1_d2361a03f8b148a586ba240...       2(2)      0(0)       0(0)      0(0)      0(0)
+    +bridge_write_streamUnbuffered_queueWithOccupancy:Str...     25(25)    23(23)     14(14)      1(1)      0(0)
+    +uartCtrl_1_io_read_queueWithOccupancy:StreamFifo_1_d...     25(25)    23(23)     10(10)      1(1)      0(0)
+   +system_spi_0_io_logic:BmbSpiXdrMasterCtrl_d2361a03f8b...   191(103)     63(0)    200(72)      2(0)      0(0)
+    +ctrl:TopLevel_d2361a03f8b148a586ba240a89df7322              32(32)    11(11)     79(79)      0(0)      0(0)
+    +mapping_cmdLogic_streamUnbuffered_queueWithAvailabil...     28(28)    26(26)     21(21)      1(1)      0(0)
+    +ctrl_io_rsp_queueWithOccupancy:StreamFifo_4_d2361a03...     28(28)    26(26)     28(28)      1(1)      0(0)
+   +system_gpio_0_io_logic:BmbGpio2_d2361a03f8b148a586ba2...     33(33)      0(0)     35(35)      0(0)      0(0)
+   +io_apbSlave_0_logic:BmbToApb3Bridge_d2361a03f8b148a58...       3(3)      0(0)       0(0)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
 
 ### ### Clock Load Distribution Report (begin) ### ###
 
- Clock      Flip-Flops    Memory PortsMultipliers/DSPs
- -----      ----------    ----------------------------
-   clk              41               0               0
+          Clock      Flip-Flops    Memory PortsMultipliers/DSPs
+          -----      ----------    ----------------------------
+   io_systemClk            2571              32               4
+ jtag_inst1_TCK              43               0               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
-### ### Resource Summary (begin) ### ### ### 
-INPUT  PORTS    : 	2
-OUTPUT PORTS    : 	1
+### ### Memory Mapping Report (begin) ### ### ###
 
-EFX_ADD         : 	23
-EFX_LUT4        : 	13
-   1-2  Inputs  : 	2
-   3    Inputs  : 	3
-   4    Inputs  : 	8
-EFX_FF          : 	41
-EFX_GBUFCE      : 	1
+1. soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol2 (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:4883):
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol2__D$2
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol2__D$1
+
+2. soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol0 (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:4881):
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol0__D$1
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol0__D$2
+
+3. soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol1 (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:4882):
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol1__D$2
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol1__D$1
+
+4. soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol3 (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:4884):
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol3__D$2
+	EFX_RAM_5K: soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol3__D$1
+
+### ### Memory Mapping Report (end) ### ### ###
+
+### ### Resource Summary (begin) ### ### ### 
+INPUT  PORTS    : 	19
+OUTPUT PORTS    : 	25
+
+EFX_ADD         : 	589
+EFX_LUT4        : 	3129
+   1-2  Inputs  : 	562
+   3    Inputs  : 	1384
+   4    Inputs  : 	1183
+EFX_MULT        : 	4
+EFX_FF          : 	2614
+EFX_RAM_5K      : 	16
+EFX_GBUFCE      : 	2
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 0s
-Elapsed synthesis time : 0s
+Plain synthesis (without verilog dump and post-map checks) time : 8s
+Elapsed synthesis time : 9s

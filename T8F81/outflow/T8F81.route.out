@@ -16,23 +16,23 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
 INFO     : Read ipin pattern from /home/omer-ahin/Downloads/efinity/2025.2/arch/./routing/ipin_oph.xml
 INFO     : Finished parsing ipin pattern file '/home/omer-ahin/Downloads/efinity/2025.2/arch/./routing/ipin_oph.xdb'.
 INFO     : Finished parsing switch_block file '/home/omer-ahin/Downloads/efinity/2025.2/arch/./routing/sb_connectivity_subset.xdb'.
-INFO     : BuildGraph process took 0.455615471 seconds [FlowMsg::StageDuration]
-INFO     :     BuildGraph process took 0.45 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : BuildGraph process virtual memory usage: begin = 250.72 MB, end = 291.088 MB, delta = 40.368 MB [FlowMsg::VMUsage]
-INFO     : BuildGraph process resident set memory usage: begin = 135.016 MB, end = 178 MB, delta = 42.984 MB [FlowMsg::RSSUsage]
-INFO     :     BuildGraph process peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
-INFO     : check rr_graph process took 0.029785448 seconds [FlowMsg::StageDuration]
+INFO     : BuildGraph process took 0.46030122 seconds [FlowMsg::StageDuration]
+INFO     :     BuildGraph process took 0.46 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : BuildGraph process virtual memory usage: begin = 328.852 MB, end = 369.364 MB, delta = 40.512 MB [FlowMsg::VMUsage]
+INFO     : BuildGraph process resident set memory usage: begin = 190.608 MB, end = 222.16 MB, delta = 31.552 MB [FlowMsg::RSSUsage]
+INFO     :     BuildGraph process peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
+INFO     : check rr_graph process took 0.030799898 seconds [FlowMsg::StageDuration]
 INFO     :     check rr_graph process took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : check rr_graph process virtual memory usage: begin = 291.088 MB, end = 291.088 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : check rr_graph process resident set memory usage: begin = 178 MB, end = 178 MB, delta = 0 MB [FlowMsg::RSSUsage]
-INFO     :     check rr_graph process peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
-INFO     : Generated 397465 RR nodes and 1462110 RR edges [DBMsg::DatabaseRoutingGraphStats]
+INFO     : check rr_graph process virtual memory usage: begin = 369.364 MB, end = 369.364 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : check rr_graph process resident set memory usage: begin = 222.16 MB, end = 223.696 MB, delta = 1.536 MB [FlowMsg::RSSUsage]
+INFO     :     check rr_graph process peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Generated 398820 RR nodes and 1461329 RR edges [DBMsg::DatabaseRoutingGraphStats]
 INFO     : This design has 0 global control net(s). See /home/omer-ahin/STAJ/T8F81/outflow/T8F81.route.rpt for details.
-INFO     : Routing graph took 0.501912842 seconds [FlowMsg::StageDuration]
-INFO     :     Routing graph took 0.49 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing graph virtual memory usage: begin = 250.72 MB, end = 291.088 MB, delta = 40.368 MB [FlowMsg::VMUsage]
-INFO     : Routing graph resident set memory usage: begin = 134.148 MB, end = 178.18 MB, delta = 44.032 MB [FlowMsg::RSSUsage]
-INFO     :     Routing graph peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Routing graph took 0.511529725 seconds [FlowMsg::StageDuration]
+INFO     :     Routing graph took 0.5 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing graph virtual memory usage: begin = 328.852 MB, end = 369.364 MB, delta = 40.512 MB [FlowMsg::VMUsage]
+INFO     : Routing graph resident set memory usage: begin = 189.992 MB, end = 223.956 MB, delta = 33.964 MB [FlowMsg::RSSUsage]
+INFO     :     Routing graph peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage Routing graph generation *****
            
            ***** Beginning stage routing ... *****
@@ -42,30 +42,33 @@ INFO     : SDC file '/home/omer-ahin/STAJ/T8F81/T8F81.pt.sdc' parsed successfull
 INFO     :  ---------      -------     --------------      -------------
 INFO     :  Iteration      Overuse     Crit Path (ns)      Calc Time (s)
 INFO     :  ---------      -------     --------------      -------------
-INFO     :          1           55              7.341            0.00894
-INFO     :          2           13              7.341            0.00649
-INFO     :          3            6              7.349            0.00671
-INFO     :          4            3              7.349            0.00611
-INFO     :          5            1              7.349            0.00521
-INFO     :          6            2              7.349            0.00491
-INFO     :          7            1              7.556            0.00527
-INFO     :          8            1              7.824            0.00512
-INFO     :          9            1              7.349            0.00503
-INFO     :         10            0              7.556            0.00491
+INFO     :          1        16736              26.25               1.12
+INFO     :          2         3621              25.57               1.55
+INFO     :          3         1909              25.57               1.65
+INFO     :          4          714              25.57               1.94
+INFO     :          5          319              25.57               1.33
+INFO     :          6          155              25.88               1.81
+INFO     :          7          100              26.09                1.5
+INFO     :          8           38              25.91               1.34
+INFO     :          9           20              25.97               2.39
+INFO     :         10            5              26.09              0.167
+INFO     :         11            3              26.03              0.154
+INFO     :         12            2              26.14              0.137
+INFO     :         13            0              26.38              0.125
            
-INFO     : Successfully routed netlist after 10 routing iterations and 50577 heapops
+INFO     : Successfully routed netlist after 13 routing iterations and 67244187 heapops
 INFO     : Completed net delay value cross check successfully.
            ***** Beginning stage routing check ... *****
            ***** Ending stage routing check *****
            
-INFO     : Serial number (magic cookie) for the routing is: 53328532
+INFO     : Serial number (magic cookie) for the routing is: 1504051146
 INFO     : Netlist fully routed.
 INFO     : Successfully created FPGA route file '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.route'
-INFO     : Routing took 0.124294182 seconds [FlowMsg::StageDuration]
-INFO     :     Routing took 0.14 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing virtual memory usage: begin = 291.088 MB, end = 301.968 MB, delta = 10.88 MB [FlowMsg::VMUsage]
-INFO     : Routing resident set memory usage: begin = 178.18 MB, end = 188.36 MB, delta = 10.18 MB [FlowMsg::RSSUsage]
-INFO     :     Routing peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Routing took 15.617098796 seconds [FlowMsg::StageDuration]
+INFO     :     Routing took 15.78 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing virtual memory usage: begin = 369.364 MB, end = 383.788 MB, delta = 14.424 MB [FlowMsg::VMUsage]
+INFO     : Routing resident set memory usage: begin = 223.956 MB, end = 267.068 MB, delta = 43.112 MB [FlowMsg::RSSUsage]
+INFO     :     Routing peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage routing *****
            
            ***** Beginning stage final timing analysis ... *****
@@ -73,39 +76,49 @@ INFO     : SDC file '/home/omer-ahin/STAJ/T8F81/T8F81.pt.sdc' is missing or does
 INFO     : Using default timing constraint of 1 ns
 INFO     : SDC file '/home/omer-ahin/STAJ/T8F81/T8F81.pt.sdc' parsed successfully.
 Maximum possible analyzed clocks frequency
- Clock Name  Period (ns)  Frequency (MHz)     Edge
-    clk         7.696        129.938         (R-R)
+  Clock Name   Period (ns)  Frequency (MHz)     Edge
+io_systemClk      26.524        37.702         (R-R)
+jtag_inst1_TCK    11.050        90.498         (R-R)
 
-Geomean max period: 7.696
+Geomean max period: 17.120
 
 Setup (Max) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-      clk              clk             1.000            -6.696           (R-R)
+ io_systemClk     io_systemClk         1.000           -25.524           (R-R)
+ io_systemClk     jtag_inst1_TCK       1.000            -3.977           (R-R)
+ jtag_inst1_TCK   io_systemClk         1.000            -1.845           (R-R)
+ jtag_inst1_TCK   jtag_inst1_TCK       1.000           -10.050           (R-R)
 
 Hold (Min) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-      clk              clk             0.000            0.643            (R-R)
+ io_systemClk     io_systemClk         0.000            0.622            (R-R)
+ io_systemClk     jtag_inst1_TCK       0.000            0.643            (R-R)
+ jtag_inst1_TCK   io_systemClk         0.000            0.693            (R-R)
+ jtag_inst1_TCK   jtag_inst1_TCK       0.000            0.642            (R-R)
 
-WARNING  : Clock domain between clk (rising) and clk (rising) may not meet (slack: -6.696 ns) the setup (max) timing requirement
+WARNING  : Clock domain between io_systemClk (rising) and io_systemClk (rising) may not meet (slack: -25.524 ns) the setup (max) timing requirement
+WARNING  : Clock domain between io_systemClk (rising) and jtag_inst1_TCK (rising) may not meet (slack: -3.977 ns) the setup (max) timing requirement
+WARNING  : Clock domain between jtag_inst1_TCK (rising) and io_systemClk (rising) may not meet (slack: -1.845 ns) the setup (max) timing requirement
+WARNING  : Clock domain between jtag_inst1_TCK (rising) and jtag_inst1_TCK (rising) may not meet (slack: -10.050 ns) the setup (max) timing requirement
 INFO     : Write Timing Report to "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.timing.rpt" ...
-INFO     : final timing analysis took 0.035543433 seconds [FlowMsg::StageDuration]
-INFO     :     final timing analysis took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : final timing analysis virtual memory usage: begin = 301.968 MB, end = 301.968 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : final timing analysis resident set memory usage: begin = 188.36 MB, end = 188.656 MB, delta = 0.296 MB [FlowMsg::RSSUsage]
-INFO     :     final timing analysis peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : final timing analysis took 0.221010014 seconds [FlowMsg::StageDuration]
+INFO     :     final timing analysis took 0.24 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : final timing analysis virtual memory usage: begin = 383.788 MB, end = 383.788 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : final timing analysis resident set memory usage: begin = 267.068 MB, end = 267.516 MB, delta = 0.448 MB [FlowMsg::RSSUsage]
+INFO     :     final timing analysis peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage final timing analysis *****
            
            ***** Beginning stage bitstream generation ... *****
 INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
 INFO     : Finished writing bitstream file /home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.lbf.
-INFO     : Bitstream generation took 0.103671173 seconds [FlowMsg::StageDuration]
+INFO     : Bitstream generation took 0.119281373 seconds [FlowMsg::StageDuration]
 INFO     :     Bitstream generation took 0.11 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Bitstream generation virtual memory usage: begin = 301.968 MB, end = 301.968 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Bitstream generation resident set memory usage: begin = 188.656 MB, end = 189.448 MB, delta = 0.792 MB [FlowMsg::RSSUsage]
-INFO     :     Bitstream generation peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
-INFO     : The entire flow of EFX_PNR took 2.742116561 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_PNR took 2.98 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 127.776 MB, end = 301.968 MB, delta = 174.192 MB [FlowMsg::VMUsage]
-INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 40.34 MB, end = 189.448 MB, delta = 149.108 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Bitstream generation virtual memory usage: begin = 383.788 MB, end = 383.788 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Bitstream generation resident set memory usage: begin = 267.516 MB, end = 268.292 MB, delta = 0.776 MB [FlowMsg::RSSUsage]
+INFO     :     Bitstream generation peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
+INFO     : The entire flow of EFX_PNR took 25.436493019 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_PNR took 35.35 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 127.78 MB, end = 383.788 MB, delta = 256.008 MB [FlowMsg::VMUsage]
+INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 39.78 MB, end = 268.292 MB, delta = 228.512 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]

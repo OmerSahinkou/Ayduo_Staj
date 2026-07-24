@@ -15,57 +15,72 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
            ***** Beginning stage netlist pre-processing ... *****
 INFO     : Successfully read in VDB netlist file /home/omer-ahin/STAJ/T8F81/outflow/T8F81.vdb [DBMsg::VdbFileRead]
 INFO     : ***** Beginning VDB Netlist Checker ... *****
-INFO     : VDB Netlist Checker took 0.001130109 seconds [FlowMsg::StageDuration]
-INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 208.724 MB, end = 241.536 MB, delta = 32.812 MB [FlowMsg::VMUsage]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 124.188 MB, end = 124.708 MB, delta = 0.52 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+WARNING  : /home/omer-ahin/STAJ/T8F81/top.v(47): Input/inout port system_gpio_0_io_read[7] is unconnected. Place and route may remove this unconnected port. [VDB-8003]
+WARNING  : Found 4 warnings in the post-synthesis netlist.
+INFO     : VDB Netlist Checker took 0.006802702 seconds [FlowMsg::StageDuration]
+INFO     :     VDB Netlist Checker took 0.01 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 208.728 MB, end = 241.54 MB, delta = 32.812 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 123.76 MB, end = 124.4 MB, delta = 0.64 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
 INFO     : Found 0 constant generator nets [DBMsg::NetlistConstGeneratorCount]
 INFO     : Pass 0: Swept away 0 nets with no fanout [DBMsg::NetlistNetsSweptThisPass]
-INFO     : Pass 0: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSweptThisPass]
-INFO     : Swept away 0 nets and 0 blocks in total [DBMsg::NetlistTotalSwept]
+WARNING  : logical_block 36 #system_gpio_0_io_read[7] has no fanout [DBMsg::NetlistLogicalBlockNoFanout]
+INFO     : Removing input [DBMsg::NetlistRemovingInput]
+WARNING  : logical_block 37 #system_gpio_0_io_read[6] has no fanout [DBMsg::NetlistLogicalBlockNoFanout]
+INFO     : Removing input [DBMsg::NetlistRemovingInput]
+WARNING  : logical_block 38 #system_gpio_0_io_read[5] has no fanout [DBMsg::NetlistLogicalBlockNoFanout]
+INFO     : Removing input [DBMsg::NetlistRemovingInput]
+WARNING  : logical_block 39 #system_gpio_0_io_read[4] has no fanout [DBMsg::NetlistLogicalBlockNoFanout]
+INFO     : Removing input [DBMsg::NetlistRemovingInput]
+INFO     : Pass 0: Swept away 4 blocks with no fanout [DBMsg::NetlistBlocksSweptThisPass]
+INFO     : Pass 1: Swept away 0 nets with no fanout [DBMsg::NetlistNetsSweptThisPass]
+INFO     : Pass 1: Swept away 0 blocks with no fanout [DBMsg::NetlistBlocksSweptThisPass]
+INFO     : Swept away 0 nets and 4 blocks in total [DBMsg::NetlistTotalSwept]
 INFO     : Removed 0 LUT buffers [DBMsg::NetlistRemovedLUTBuffers]
+INFO     : Sweept away 4 nodes [DBMsg::NetlistSweptNodes]
 INFO     : Successfully read in VDB netlist file /home/omer-ahin/STAJ/T8F81/outflow/T8F81.vdb [DBMsg::VdbFileRead]
-INFO     : Netlist pre-processing took 0.002694386 seconds [FlowMsg::StageDuration]
-INFO     :     Netlist pre-processing took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Netlist pre-processing virtual memory usage: begin = 208.724 MB, end = 241.536 MB, delta = 32.812 MB [FlowMsg::VMUsage]
-INFO     : Netlist pre-processing resident set memory usage: begin = 123.312 MB, end = 125.036 MB, delta = 1.724 MB [FlowMsg::RSSUsage]
-INFO     :     Netlist pre-processing peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Netlist pre-processing took 0.063473663 seconds [FlowMsg::StageDuration]
+INFO     :     Netlist pre-processing took 0.07 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Netlist pre-processing virtual memory usage: begin = 208.728 MB, end = 241.54 MB, delta = 32.812 MB [FlowMsg::VMUsage]
+INFO     : Netlist pre-processing resident set memory usage: begin = 122.616 MB, end = 124.712 MB, delta = 2.096 MB [FlowMsg::RSSUsage]
+INFO     :     Netlist pre-processing peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage netlist pre-processing *****
            
            ***** Beginning stage pre-packing ... *****
            ***** Ending stage pre-packing *****
            
            ***** Beginning stage packing ... *****
-INFO     : Generate proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 0.000307 seconds
+INFO     : Generate proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 0.007067 seconds
 INFO     : Creating IO constraints file '/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.io_place'
-INFO     : Packing took 0.00075213 seconds [FlowMsg::StageDuration]
-INFO     :     Packing took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packing virtual memory usage: begin = 241.536 MB, end = 241.536 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Packing resident set memory usage: begin = 126.12 MB, end = 126.676 MB, delta = 0.556 MB [FlowMsg::RSSUsage]
-INFO     :     Packing peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Packing took 0.020502271 seconds [FlowMsg::StageDuration]
+INFO     :     Packing took 0.02 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packing virtual memory usage: begin = 241.54 MB, end = 241.54 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Packing resident set memory usage: begin = 125.456 MB, end = 126.092 MB, delta = 0.636 MB [FlowMsg::RSSUsage]
+INFO     :     Packing peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packing *****
            
 INFO     : Read proto netlist file /home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto
-INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 9.2e-05 seconds
-INFO     : Setup net and block data structure took 0.000668 seconds
+INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 0.004524 seconds
+INFO     : Setup net and block data structure took 0.078414 seconds
+WARNING  : Found 4 warnings in the post-synthesis netlist.
 INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
            ***** Beginning stage packed netlist loading ... *****
 INFO     : Read proto netlist file /home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto
-INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 7.2e-05 seconds
-INFO     : Setup net and block data structure took 0.000571 seconds
-INFO     : Packed netlist loading took 0.000704076 seconds [FlowMsg::StageDuration]
-INFO     :     Packed netlist loading took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Packed netlist loading virtual memory usage: begin = 241.536 MB, end = 241.536 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Packed netlist loading resident set memory usage: begin = 128.896 MB, end = 128.896 MB, delta = 0 MB [FlowMsg::RSSUsage]
-INFO     :     Packed netlist loading peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Read proto netlist for file "/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.net_proto" took 0.004819 seconds
+INFO     : Setup net and block data structure took 0.079015 seconds
+INFO     : Packed netlist loading took 0.08520598 seconds [FlowMsg::StageDuration]
+INFO     :     Packed netlist loading took 0.09 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Packed netlist loading virtual memory usage: begin = 241.54 MB, end = 241.54 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Packed netlist loading resident set memory usage: begin = 128.524 MB, end = 128.524 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Packed netlist loading peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage packed netlist loading *****
            
            ***** Beginning stage pre-placement ... *****
+INFO     : High resource utilization found. Software will optimize placement for routability [FlowMsg::FlowReportUtilizationNearlyExceedLimits]
            
            ***** Ending stage pre-placement *****
            
@@ -78,101 +93,256 @@ INFO     : Successfully read core interface constraints file "/home/omer-ahin/ST
 INFO     : Writing IO placement constraints to "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.io" [DBMsg::IOPlacementConstraintsFileWriting]
 INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.interface.io'.
 INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/T8F81/work_pnr/T8F81.io_place'.
-WARNING  : Clock source clk does not use a dedicated clock pad, so extra clock insertion delay is added
+WARNING  : jtag_inst1_TCK has no assigned placement; it will be placed randomly.
+WARNING  : jtag_inst1_TDI has no assigned placement; it will be placed randomly.
+WARNING  : jtag_inst1_TDO has no assigned placement; it will be placed randomly.
+WARNING  : jtag_inst1_SEL has no assigned placement; it will be placed randomly.
+WARNING  : jtag_inst1_CAPTURE has no assigned placement; it will be placed randomly.
+WARNING  : jtag_inst1_SHIFT has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_sclk_write has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_data_0_writeEnable has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_data_0_read has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_data_0_write has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_data_1_writeEnable has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_data_1_read has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_data_1_write has no assigned placement; it will be placed randomly.
+WARNING  : system_spi_0_io_ss has no assigned placement; it will be placed randomly.
+WARNING  : system_uart_0_io_txd has no assigned placement; it will be placed randomly.
+WARNING  : system_uart_0_io_rxd has no assigned placement; it will be placed randomly.
+WARNING  : my_pll_rstn has no assigned placement; it will be placed randomly.
+WARNING  : my_pll_locked has no assigned placement; it will be placed randomly.
+WARNING  : io_systemClk has no assigned placement; it will be placed randomly.
+WARNING  : io_asyncResetn has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[7] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[6] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[5] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[4] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[3] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[2] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[1] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_writeEnable[0] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[7] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[6] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[5] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[4] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[3] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[2] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[1] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_write[0] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_read[3] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_read[2] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_read[1] has no assigned placement; it will be placed randomly.
+WARNING  : system_gpio_0_io_read[0] has no assigned placement; it will be placed randomly.
+INFO     : 40 IOs will have random placement.
            ***** Ending stage initial placement *****
            
            ***** Beginning stage placement ... *****
+INFO     : Found 41 synchronizers as follows: [DBMsg::DatabaseSynchronizers]
+INFO     :     Synchronizer 0: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/debugCd_logic_outputReset_asyncAssertSyncDeassert_buffercc/buffers_0~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     soc_inst/u_EfxSapphireSoc/debugCd_logic_outputReset_asyncAssertSyncDeassert_buffercc_io_dataOut~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 1: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/io_asyncReset_asyncAssertSyncDeassert_buffercc/buffers_0~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     soc_inst/u_EfxSapphireSoc/io_asyncReset_asyncAssertSyncDeassert_buffercc_io_dataOut~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 2: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge_io_remote_cmd_payload_fragment[0]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 3: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_cores_0_debugReset_asyncAssertSyncDeassert_buffercc/buffers_0~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_cores_0_debugReset_asyncAssertSyncDeassert_buffercc_io_dataOut~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 4: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge_io_remote_cmd_payload_last~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 5: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[27]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 6: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[26]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 7: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[25]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 8: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[24]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 9: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[23]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 10: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[22]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 11: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[20]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 12: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/flowCCUnsafeByToggle_1/inputArea_target_buffercc/buffers_0~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/flowCCUnsafeByToggle_1/inputArea_target_buffercc_io_dataOut~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 13: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[28]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 14: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[3]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 15: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[5]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 16: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[12]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 17: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[29]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 18: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[2]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 19: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[4]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 20: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[31]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 21: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[6]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 22: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[15]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 23: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/io_rxd_buffercc/buffers_0~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1/rx/io_rxd_buffercc_io_dataOut~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 24: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[0]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 25: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[8]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 26: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[16]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 27: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[30]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 28: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[21]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 29: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[14]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 30: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_error~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 31: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[1]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 32: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[9]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 33: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_valid~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 34: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[10]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 35: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[11]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 36: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[13]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 37: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[7]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 38: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[17]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 39: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[18]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
+INFO     :     Synchronizer 40: [DBMsg::DatabaseSynchronizers::SynchronizerID]
+INFO     :     soc_inst/u_EfxSapphireSoc/system_hardJtag_debug_logic_jtagBridge/system_rsp_payload_data[19]~FF: [DBMsg::DatabaseSynchronizers::SynchronizerFF]
 INFO     : Chip::LoadDelayLookupTable
 INFO     : Starting Global Placer with 8 threads ...
             ----------     -------  --------------     -------
              Iteration       WHPWL Worst Slack (ps) Convergence
             ----------     -------  --------------     -------
-INFO     :           1         283           -5270        74.0%
-INFO     :           2         280           -5270        76.3%
-INFO     :           3         278           -5155        76.3%
-INFO     :           4         290           -5155        76.3%
-INFO     :           5         288           -5155        76.3%
-INFO     :           6         281           -5270        76.9%
-INFO     :           7         281           -5155        76.9%
-INFO     :           8         283           -5408        76.9%
-INFO     :           9         277           -5270        77.3%
-INFO     :          10         271           -5270        78.1%
-INFO     :          11         273           -5270        78.1%
-INFO     :          12         273           -5408        83.2%
-INFO     :          13         284           -6990        86.2%
-INFO     :          14         284           -6942        95.2%
-INFO     :          15         276           -7093        95.2%
-INFO     :          16         276           -6942        98.7%
-INFO     :          17         276           -6990        99.5%
-INFO     :          18         276           -7093        99.5%
-INFO     :          19         276           -7093       100.0%
-INFO     :          20         276           -8484       100.0%
-INFO     :          21         276           -8484       100.0%
+INFO     :           1     7460339          -22011         4.4%
+INFO     :           2     7807939          -20746         4.4%
+INFO     :           3     5824730          -22465         4.7%
+INFO     :           4     5952348          -23137         5.3%
+INFO     :           5     2852479          -22465         6.3%
+INFO     :           6     1435678          -20222         9.8%
+INFO     :           7      777055          -22464        16.7%
+INFO     :           8      448231          -25509        26.7%
+INFO     :           9      316768          -29535        42.1%
+INFO     :          10      286371          -35805        58.5%
+INFO     :          11      256922          -37274        62.2%
+INFO     :          12      265583          -36765        70.7%
+INFO     :          13      249347          -36041        70.7%
+INFO     :          14      260704          -34231        71.5%
+INFO     :          15      255046          -36771        71.5%
+INFO     :          16      254442          -37782        71.6%
+INFO     :          17      238557          -37756        71.6%
+INFO     :          18      246310          -39266        74.9%
+INFO     :          19      238412          -38615        74.9%
+INFO     :          20      243148          -36258        75.7%
+INFO     :          21      232862          -33871        75.7%
+INFO     :          22      239999          -33991        77.7%
+INFO     :          23      233807          -34886        77.7%
+INFO     :          24      242405          -33711        78.0%
+INFO     :          25      228132          -33083        78.0%
+INFO     :          26      236687          -34670        81.8%
+INFO     :          27      234683          -31328        81.8%
+INFO     :          28      244505          -32788        81.8%
+INFO     :          29      236852          -32912        81.8%
+INFO     :          30      244933          -34163        83.2%
+INFO     :          31      237899          -36301        83.2%
+INFO     :          32      236908          -34788        83.4%
+INFO     :          33      234588          -36344        83.4%
+INFO     :          34      239006          -33364        85.5%
+INFO     :          35      233911          -31743        85.5%
+INFO     :          36      237488          -32830        86.4%
+INFO     :          37      233253          -35345        86.4%
+INFO     :          38      232060          -35409        87.8%
+INFO     :          39      233160          -33002        87.8%
+INFO     :          40      235875          -34995        87.8%
+INFO     :          41      235021          -33047        87.8%
+INFO     :          42      237447          -32310        89.1%
+INFO     :          43      236510          -33794        89.1%
+INFO     :          44      240252          -33997        89.5%
+INFO     :          45      237796          -33559        89.5%
+INFO     :          46      240868          -34539        91.0%
+INFO     :          47      238940          -34962        91.0%
+INFO     :          48      242688          -33855        91.4%
+INFO     :          49      238451          -34646        91.4%
+INFO     :          50      240934          -35363        92.1%
+INFO     :          51      241588          -35392        92.1%
 INFO     : Starting Annealer
             ----------     -------  --------------     -------
              Iteration       WHPWL  Delay Max (ps)     R Limit
             ----------     -------  --------------     -------
-INFO     :           0          16            9348        30.0
-INFO     :           1          10           10241        30.0
-INFO     :           2          24            6969        30.0
-INFO     :           3          21            6361        30.0
-INFO     :           4          26            6360        30.0
-INFO     :           5          26            6361        30.0
-INFO     :           6          26            6360        30.0
-INFO     :           7          24            6361        30.0
-INFO     :           8          27            6361        30.0
-INFO     :           9          29            6360        30.0
-INFO     :          10          25            6361        30.0
-INFO     :          11          22            6361        30.0
-INFO     :          12          26            6360        30.0
-INFO     :          13          23            6360        30.0
-INFO     :          14          22            6361        30.0
-INFO     :          15          20            6361        30.0
-INFO     :          16          20            6361        30.0
-INFO     :          17          20            6361        30.0
-INFO     :          18          22            6360        30.0
-INFO     :          19          25            6361        30.0
-INFO     :          20          20            6361        30.0
-INFO     :          21          19            6361        30.0
-INFO     :          22          24            6375        30.0
-INFO     :          23          23            6361        30.0
-INFO     :          24          20            6361        30.0
-INFO     :          25          18            6361        30.0
-INFO     :          26          22            6360        30.0
-INFO     :          27          22            6361        30.0
-INFO     :          28          20            6360        30.0
-INFO     :          29          19            6360        30.0
-INFO     :          30          19            6361        30.0
-INFO     :          31          19            6360        30.0
-INFO     :          32          18            6360        30.0
-INFO     :          33          16            6361        30.0
-INFO     :          34          15            6361        30.0
-INFO     :          35          15            6361        30.0
-INFO     :          36          18            6360        30.0
-INFO     :          37          20            6361        30.0
-INFO     :          38          19            6361        30.0
-INFO     :          39          17            6361        30.0
-INFO     :          40          19            6360        30.0
-INFO     :          41          18            6360        30.0
-INFO     :          42          16            6361        30.0
-INFO     :          43          16            6361        30.0
-INFO     :          44          21            6360        30.0
-INFO     :          45          26            6361        30.0
-INFO     :          46          26            6360        30.0
-INFO     :          47          20            6361        30.0
-INFO     : Placement successful: 45 cells are placed
-INFO     : Peak congestion smeared over 4x4 of the chip is 0.0810942 at 33,129
-INFO     : Peak congestion smeared over 1/16 of the chip is 0.0810942 at 33,129
-INFO     : Peak congestion smeared over 1/4 of the chip is 0.0150466 at 42,124
-INFO     : Congestion-weighted HPWL per net: 6.77971
+INFO     :           0      116755           35826        30.0
+INFO     :           1      108139           33347        29.3
+INFO     :           2      108272           33735        28.4
+INFO     :           3      106695           32672        27.0
+INFO     :           4      105820           31709        25.7
+INFO     :           5      105620           31409        24.3
+INFO     :           6      103958           31292        23.0
+INFO     :           7      104091           31431        21.6
+INFO     :           8      102624           29836        20.2
+INFO     :           9      102552           29811        18.9
+INFO     :          10      101757           32001        17.6
+INFO     :          11       99161           28311        16.4
+INFO     :          12       97804           26812        15.2
+INFO     :          13       98888           27743        14.1
+INFO     :          14       99441           26649        13.0
+INFO     :          15       98354           26579        12.1
+INFO     :          16       99678           25936        11.3
+INFO     :          17       98945           25795        10.5
+INFO     :          18       98950           27664         9.8
+INFO     :          19       98812           27994         9.1
+INFO     :          20       99241           25903         8.4
+INFO     :          21       98572           28504         7.8
+INFO     :          22       97899           26080         7.2
+INFO     :          23       96640           25553         6.7
+INFO     :          24       95552           24714         6.1
+INFO     :          25       95699           25748         5.7
+INFO     :          26       95694           24875         5.2
+INFO     :          27       95614           25992         4.8
+INFO     :          28       94764           24875         4.5
+INFO     :          29       94608           25277         4.1
+INFO     :          30       94136           25634         3.8
+INFO     :          31       94220           23960         3.5
+INFO     :          32       93935           25149         3.2
+INFO     :          33       93831           23644         3.0
+INFO     :          34       94162           24453         2.8
+INFO     :          35       93950           25047         2.5
+INFO     :          36       93405           25599         2.3
+INFO     :          37       92619           25003         2.1
+INFO     :          38       91818           24712         2.0
+INFO     :          39       91400           27199         1.8
+INFO     :          40       91519           24620         1.6
+INFO     :          41       91591           26842         1.5
+INFO     :          42       91304           26359         1.4
+INFO     :          43       90587           28074         1.3
+INFO     :          44       89031           28123         1.2
+INFO     : Placement successful: 4944 cells are placed
+INFO     : Peak congestion smeared over 4x4 of the chip is 1.01804 at 29,77
+INFO     : Peak congestion smeared over 1/16 of the chip is 1.01804 at 29,77
+INFO     : Peak congestion smeared over 1/4 of the chip is 0.750035 at 36,88
+INFO     : Congestion-weighted HPWL per net: 31.1373
 INFO     : Reading placement constraints from '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.qplace'.
-INFO     : Finished Realigning Types (4 blocks needed type change)
+INFO     : Finished Realigning Types (586 blocks needed type change)
 INFO     : Completed placement consistency check successfully.
 INFO     : Successfully created FPGA place file '/home/omer-ahin/STAJ/T8F81/outflow/T8F81.place'
-INFO     : Placement took 1.459599312 seconds [FlowMsg::StageDuration]
-INFO     :     Placement took 1.73 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Placement virtual memory usage: begin = 241.536 MB, end = 250.72 MB, delta = 9.184 MB [FlowMsg::VMUsage]
-INFO     : Placement resident set memory usage: begin = 130.156 MB, end = 134.148 MB, delta = 3.992 MB [FlowMsg::RSSUsage]
-INFO     :     Placement peak resident set memory usage = 284.704 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Placement took 7.780517008 seconds [FlowMsg::StageDuration]
+INFO     :     Placement took 17.41 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Placement virtual memory usage: begin = 241.54 MB, end = 328.852 MB, delta = 87.312 MB [FlowMsg::VMUsage]
+INFO     : Placement resident set memory usage: begin = 129.74 MB, end = 189.992 MB, delta = 60.252 MB [FlowMsg::RSSUsage]
+INFO     :     Placement peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage placement *****
            

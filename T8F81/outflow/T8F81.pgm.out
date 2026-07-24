@@ -12,8 +12,8 @@ INFO     : 	spi_low_power_mode                       = on
 INFO     : 	oscillator_clock_divider                 = DIV8
 INFO     : 	io_weak_pullup                           = on
 INFO     : Finished generating "/home/omer-ahin/STAJ/T8F81/outflow/T8F81.hex"
-INFO     : Efinix Bitstream Generator took 0.33718744 seconds [FlowMsg::StageDuration]
-INFO     :     Efinix Bitstream Generator took 0.32 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Efinix Bitstream Generator virtual memory usage: begin = 35.716 MB, end = 68.62 MB, delta = 32.904 MB [FlowMsg::VMUsage]
-INFO     : Efinix Bitstream Generator resident set memory usage: begin = 15.032 MB, end = 54.12 MB, delta = 39.088 MB [FlowMsg::RSSUsage]
-INFO     :     Efinix Bitstream Generator peak resident set memory usage = 284.72 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Efinix Bitstream Generator took 0.332127399 seconds [FlowMsg::StageDuration]
+INFO     :     Efinix Bitstream Generator took 0.31 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Efinix Bitstream Generator virtual memory usage: begin = 35.712 MB, end = 68.616 MB, delta = 32.904 MB [FlowMsg::VMUsage]
+INFO     : Efinix Bitstream Generator resident set memory usage: begin = 15.276 MB, end = 54.332 MB, delta = 39.056 MB [FlowMsg::RSSUsage]
+INFO     :     Efinix Bitstream Generator peak resident set memory usage = 295.604 MB [FlowMsg::RSSUsage::Peak]

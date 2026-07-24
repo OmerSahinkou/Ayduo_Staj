@@ -121,3 +121,59 @@
 ///////////////////////////////////
 
 [EFX-0011 VERI-WARNING] expression size 25 truncated to fit in target size 24 (VERI-1209) (/home/omer-ahin/STAJ/T8F81/Led_Test.v:44)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 10:06:05
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 10:06:25
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] port 'userInterruptA' is not connected on this instance (VERI-2435) (/home/omer-ahin/STAJ/T8F81/top.v:107)
+[EFX-0011 VERI-WARNING] port 'io_apbSlave_0_PADDR' remains unconnected for this instance (VERI-1927) (/home/omer-ahin/STAJ/T8F81/top.v:107)
+[EFX-0011 VERI-WARNING] net 'IBusSimplePlugin_rspJoin_fetchRsp_isRvc' does not have a driver (VDB-1002) (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:6514)
+[EFX-0011 VERI-WARNING] net 'CsrPlugin_mtvec_mode[1]' does not have a driver (VDB-1002) (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:6603)
+[EFX-0011 VERI-WARNING] system function call 'urandom' is not supported (VERI-1141) (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:11857)
+[EFX-0011 VERI-WARNING] system function call 'urandom' is not supported (VERI-1141) (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:11858)
+[EFX-0011 VERI-WARNING] system function call 'urandom' is not supported (VERI-1141) (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12489)
+[EFX-0011 VERI-WARNING] system function call 'urandom' is not supported (VERI-1141) (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12490)
+[EFX-0011 VERI-WARNING] actual bit length 8 differs from formal bit length 4 for port 'system_gpio_0_io_writeEnable' (VERI-1330) (/home/omer-ahin/STAJ/T8F81/top.v:103)
+[EFX-0011 VERI-WARNING] actual bit length 8 differs from formal bit length 4 for port 'system_gpio_0_io_write' (VERI-1330) (/home/omer-ahin/STAJ/T8F81/top.v:104)
+[EFX-0011 VERI-WARNING] actual bit length 8 differs from formal bit length 4 for port 'system_gpio_0_io_read' (VERI-1330) (/home/omer-ahin/STAJ/T8F81/top.v:105)
+[EFX-0011 VERI-WARNING] input port 'jtagCtrl_update' remains unconnected for this instance (VDB-1053) (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0200 WARNING] Removing redundant signal : src2[31]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[30]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[29]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[28]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[27]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[26]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[25]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[24]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[23]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[22]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[21]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[20]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[19]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[18]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[17]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[16]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[15]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[14]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[13]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0200 WARNING] Removing redundant signal : src2[12]. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:12761)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'IBusSimplePlugin_rspJoin_fetchRsp_isRvc'. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:6514)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'CsrPlugin_mtvec_mode[1]'. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:6603)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'CsrPlugin_mtvec_mode[0]'. (/home/omer-ahin/STAJ/T8F81/ip/soc/soc.v:6603)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.jtagCtrl_update'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.jtagCtrl_reset'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.system_spi_0_io_data_2_read'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.system_spi_0_io_data_3_read'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.userInterruptA'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.io_apbSlave_0_PRDATA[31]'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0201 WARNING] Re-wiring to GND non-driven net 'soc_inst.io_apbSlave_0_PRDATA[30]'. (/home/omer-ahin/STAJ/T8F81/top.v:72)
+[EFX-0011 VERI-WARNING] Input/inout port system_gpio_0_io_read[7] is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/T8F81/top.v:47)
+[EFX-0011 VERI-WARNING] Found 4 warnings in the post-synthesis netlist. 

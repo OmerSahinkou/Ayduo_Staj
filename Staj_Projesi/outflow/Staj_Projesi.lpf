@@ -2,7 +2,7 @@
 <efxpt:periphery design="Staj_Projesi" device="T8F81" xmlns:efxpt="http://www.efinixinc.com/peri_device_db" xmlns:efxutil="http://www.efinixinc.com/peri_tool" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.efinixinc.com/peri_device_db lpf.xsd" checksum="1b667963">
   <!-- Efinity Logical Peripheral File -->
   <!-- Version: 2025.2.288.2.10 -->
-  <!-- Date: 2026-07-23 16:59 -->
+  <!-- Date: 2026-07-24 12:06 -->
   <!-- Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved. -->
   <efxpt:sequence size="61">
     <efxpt:instance id="GPIOL_00" index="0" type="gpio"/>

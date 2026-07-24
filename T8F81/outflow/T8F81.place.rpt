@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Tue Jul 14 10:20:49 2026
+Date: Fri Jul 24 10:06:37 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -11,14 +11,117 @@ Top-level Entity Name: T8F81
 Elapsed time for packing: 0 hours 0 minutes 0 seconds
 
 ---------- Resource Summary (begin) ----------
-Inputs: 2 / 96 (2.08%)
-Outputs: 1 / 223 (0.45%)
-Clocks: 1 / 16 (6.25%)
-Logic Elements: 45 / 7384 (0.61%)
-	LE: LUTs/Adders: 38 / 7384 (0.51%)
-	LE: Registers: 41 / 5280 (0.78%)
-Memory Blocks: 0 / 24 (0.00%)
-Multipliers: 0 / 8 (0.00%)
+Inputs: 15 / 96 (15.62%)
+Outputs: 25 / 223 (11.21%)
+Clocks: 2 / 16 (12.50%)
+Logic Elements: 4924 / 7384 (66.68%)
+	LE: LUTs/Adders: 3720 / 7384 (50.38%)
+	LE: Registers: 2614 / 5280 (49.51%)
+Memory Blocks: 16 / 24 (66.67%)
+Multipliers: 4 / 8 (50.00%)
 ---------- Resource Summary (end) ----------
 
-Elapsed time for placement: 0 hours 0 minutes 1 seconds
+
+---------- DSP Block Information (begin) ----------
+
++--------------------------------------------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+|                             NAME                             | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
++--------------------------------------------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+| soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/mult_1876 | true  | true  | true  |   true    |   false    |   true    |   false    |   true    |   false    |
+| soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/mult_1877 | true  | false | true  |   true    |   false    |   false   |   false    |   true    |   false    |
+| soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/mult_1878 | false | true  | true  |   false   |   false    |   true    |   false    |   true    |   false    |
+| soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/mult_1879 | false | false | true  |   false   |   false    |   false   |   false    |   true    |   false    |
++--------------------------------------------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
+
+----------- DSP Block Information (end) ----------
+
+
+---------- Memory Block Information (begin) ----------
+
++-------------------------------------------------------------------------------------------------------------------+------+------------+-------------+------------+------------+
+|                                                       NAME                                                        | MODE | READ_WIDTH | WRITE_WIDTH | WRITE_MODE | OUTPUT_REG |
++-------------------------------------------------------------------------------------------------------------------+------+------------+-------------+------------+------------+
+|                  soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/RegFilePlugin_regFile_2__D$1                  | SDP  |     16     |     16      | READ_FIRST |   false    |
+|                   soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/RegFilePlugin_regFile__D$1                   | SDP  |     16     |     16      | READ_FIRST |   false    |
+|                  soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/RegFilePlugin_regFile_2__D$2                  | SDP  |     16     |     16      | READ_FIRST |   false    |
+|                   soc_inst/u_EfxSapphireSoc/system_cores_0_logic_cpu/RegFilePlugin_regFile__D$2                   | SDP  |     16     |     16      | READ_FIRST |   false    |
+|             soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/ctrl_io_rsp_queueWithOccupancy/logic_ram              | SDP  |     8      |      8      | READ_FIRST |   false    |
+| soc_inst/u_EfxSapphireSoc/system_spi_0_io_logic/mapping_cmdLogic_streamUnbuffered_queueWithAvailability/logic_ram | SDP  |     16     |     16      | READ_FIRST |   false    |
+|    soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/bridge_write_streamUnbuffered_queueWithOccupancy/logic_ram    | SDP  |     8      |      8      | READ_FIRST |   false    |
+|         soc_inst/u_EfxSapphireSoc/system_uart_0_io_logic/uartCtrl_1_io_read_queueWithOccupancy/logic_ram          | SDP  |     8      |      8      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol0__D$1                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol2__D$2                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol3__D$2                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol3__D$1                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol1__D$1                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol2__D$1                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol1__D$2                            | SDP  |     4      |      4      | READ_FIRST |   false    |
+|                           soc_inst/u_EfxSapphireSoc/system_ramA_logic/ram_symbol0__D$2                            | SDP  |     4      |      4      | READ_FIRST |   false    |
++-------------------------------------------------------------------------------------------------------------------+------+------------+-------------+------------+------------+
+
+----------- Memory Block Information (end) ----------
+
+
+---------- IO Interface Summary (begin) ----------
+
++------------------------+--------------+
+| Missing Interface Pins | Input/Output |
++------------------------+--------------+
+|          clk           |    Input     |
+|          led1          |    Output    |
+|         rst_n          |    Input     |
++------------------------+--------------+
+
+----------- IO Interface Summary (end) ----------
+
+
+---------- IO Placement Summary (begin) ----------
+
++------------------------------------+--------------+
+|        Unassigned Core Pins        | Input/Output |
++------------------------------------+--------------+
+|           jtag_inst1_TCK           |    Input     |
+|           jtag_inst1_TDI           |    Input     |
+|           jtag_inst1_TDO           |    Output    |
+|           jtag_inst1_SEL           |    Input     |
+|         jtag_inst1_CAPTURE         |    Input     |
+|          jtag_inst1_SHIFT          |    Input     |
+|     system_spi_0_io_sclk_write     |    Output    |
+| system_spi_0_io_data_0_writeEnable |    Output    |
+|    system_spi_0_io_data_0_read     |    Input     |
+|    system_spi_0_io_data_0_write    |    Output    |
+| system_spi_0_io_data_1_writeEnable |    Output    |
+|    system_spi_0_io_data_1_read     |    Input     |
+|    system_spi_0_io_data_1_write    |    Output    |
+|         system_spi_0_io_ss         |    Output    |
+|        system_uart_0_io_txd        |    Output    |
+|        system_uart_0_io_rxd        |    Input     |
+|            my_pll_rstn             |    Output    |
+|           my_pll_locked            |    Input     |
+|            io_systemClk            |    Input     |
+|           io_asyncResetn           |    Input     |
+|  system_gpio_0_io_writeEnable[7]   |    Output    |
+|  system_gpio_0_io_writeEnable[6]   |    Output    |
+|  system_gpio_0_io_writeEnable[5]   |    Output    |
+|  system_gpio_0_io_writeEnable[4]   |    Output    |
+|  system_gpio_0_io_writeEnable[3]   |    Output    |
+|  system_gpio_0_io_writeEnable[2]   |    Output    |
+|  system_gpio_0_io_writeEnable[1]   |    Output    |
+|  system_gpio_0_io_writeEnable[0]   |    Output    |
+|     system_gpio_0_io_write[7]      |    Output    |
+|     system_gpio_0_io_write[6]      |    Output    |
+|     system_gpio_0_io_write[5]      |    Output    |
+|     system_gpio_0_io_write[4]      |    Output    |
+|     system_gpio_0_io_write[3]      |    Output    |
+|     system_gpio_0_io_write[2]      |    Output    |
+|     system_gpio_0_io_write[1]      |    Output    |
+|     system_gpio_0_io_write[0]      |    Output    |
+|      system_gpio_0_io_read[3]      |    Input     |
+|      system_gpio_0_io_read[2]      |    Input     |
+|      system_gpio_0_io_read[1]      |    Input     |
+|      system_gpio_0_io_read[0]      |    Input     |
++------------------------------------+--------------+
+
+----------- IO Placement Summary (end) ----------
+
+Elapsed time for placement: 0 hours 0 minutes 7 seconds
