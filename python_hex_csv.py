@@ -4,7 +4,7 @@ import serial
 
 # Port ve baglanti ayarlari
 PORT = "/dev/ttyUSB2"
-BAUD_RATE = 1000000
+BAUD_RATE = 1000
 CSV_DOSYA = "veriler.csv"
 
 try:
@@ -24,7 +24,7 @@ except Exception as e:
 # CSV dosyasini baslat ve baslik ekle
 with open(CSV_DOSYA, mode="w", newline="", encoding="utf-8") as f:
   writer = csv.writer(f)
-  writer.writerow(["Zaman", "Hex_Veri", "Decimal_Veri"])
+  writer.writerow(["Zaman", "Hex_Veri", "Decimal_Veri", "Angle"])
 
   print("Veri dinleniyor... Çıkış için CTRL+C tuşlarına basın.")
   try:
@@ -36,11 +36,11 @@ with open(CSV_DOSYA, mode="w", newline="", encoding="utf-8") as f:
         # Hex ve Decimal donusumu
         hex_veri = veri_byte.hex().upper()
         dec_veri = int.from_bytes(veri_byte, "big")
-
+        Angle = (dec_veri*180)/255
         # Ekrana yaz ve CSV'ye kaydet
-        writer.writerow([zaman, hex_veri, dec_veri])
+        writer.writerow([zaman, hex_veri, dec_veri, Angle])
         f.flush()  # Anında diske yaz
-        print(f"[{zaman}] Hex: {hex_veri} | Dec: {dec_veri}")
+        print(f"[{zaman}] Hex: {hex_veri} | Dec: {dec_veri} | Ang: {Angle}")
 
   except KeyboardInterrupt:
     print("\nKayıt durduruldu.")

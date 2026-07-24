@@ -18,7 +18,7 @@ entity top is
     Generic (
         SQRT_DATA : integer := 34;
         CLK_FREQ  : integer := 33_333_333; 
-        BAUD_RATE : integer := 1_000_000
+        BAUD_RATE : integer := 1_000
     );
     Port (
         clk_i       : in  STD_LOGIC;
@@ -210,7 +210,7 @@ architecture Behavioral of top is
     -- YENİ STATE: SEND_MARKER
     type uart_state_t is (IDLE, SEND_MARKER, LOAD_DATA, SEND_PULSE, WAIT_BUSY_HIGH, WAIT_BUSY_LOW);
     signal uart_state : uart_state_t := IDLE;
-    signal byte_idx   : integer range 0 to 20 := 0;  -- 0-14 = 15 byte (marker + 14 veri)
+    signal byte_idx   : integer range 0 to 14 := 0;  -- 0-14 = 15 byte (marker + 14 veri)
     
     --rx counter 
     signal byte_idx_uart   : integer range 0 to 10  := 0 ;
@@ -622,9 +622,14 @@ begin
     --     end if;
     -- end process SQRT_Test;
 
+
+        -- =========================================================
+        -- PD Test STATE MACHINE
+        -- =========================================================
+
 hesap_temp_x <= to_signed(127, 16) + shift_right(signed(accel_x), 6) - shift_right(signed(gyro_x), 8);
 hesap_temp_y <= to_signed(127, 16) + shift_right(signed(accel_y), 6) - shift_right(signed(gyro_y), 8);
-hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 14), 16) - shift_right(signed(gyro_z), 8);
+hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 13), 16) - shift_right(signed(gyro_z), 8);
 
 -- 2. ADIM: Güvenli Process Bloğu
 PD_Test : process (clk_i, rst_n_i)
@@ -641,9 +646,7 @@ begin
     elsif rising_edge(clk_i) then
         tx_start_sig <= '0';
 
-                -- 'data_valid' SPI'dan okuma bittiğinde 1 olan sinyal olmalı
         if spi_data_valid = '1' then 
-            -- ÖLÜ BÖLGE: Ufak titreşimleri (-15 ile +15 arası) havuza alma
             if to_integer(abs(signed(gyro_z))) > 15 then 
                 angle_pool <= angle_pool + signed(gyro_z);
             end if;
@@ -689,7 +692,7 @@ begin
             uart_timer <= 0;
             if tx_busy_sig = '0' then
                 tx_start_sig <= '1';
-                tx_data_sig  <= std_logic_vector(angle_raw_z); 
+                tx_data_sig  <= std_logic_vector(angle_reg_2); 
             end if;
         end if;
 
@@ -701,4 +704,103 @@ angle_reg_1 <= angle_filtered_y;
 angle_reg_2 <= angle_raw_z;
 
 
+-- =========================================================
+-- filter  Test STATE MACHINE
+-- =========================================================
+
+-- hesap_temp_x <= signed(resize(angle_filtered_x, 16));
+-- hesap_temp_y <= signed(resize(angle_filtered_y, 16));
+
+-- process (clk_i,rst_n_i)
+-- begin
+--     if rst_n_i = '0' then 
+--         tx_data_sig <= (others => '0');
+--         tx_start_sig <= '0';
+--     elsif rising_edge(clk_i) then
+--                     angle_filtered_x <= unsigned(
+--                         resize((resize(signed(angle_filtered_x), 17) * 3 + resize(signed(accel_x), 17)) / 4, 16)
+--                     );
+--                     angle_filtered_y <= unsigned(
+--                         resize((resize(signed(angle_filtered_y), 17) * 3 + resize(signed(accel_y), 17)) / 4, 16)
+--                     );
+--             tx_start_sig <= '0';
+--             data_in <= std_logic_vector(resize(signed(root_y) + signed(root_z), SQRT_DATA));
+--             --if(tx_busy_sig = '0') then 
+--                 case uart_state is
+                
+--                     -- =====================================================
+--                     -- STATE 1: IDLE - UART'ın boş olmasını bekle
+--                     -- =====================================================
+--                     when IDLE =>
+--                         if tx_busy_sig = '0' then
+--                             uart_state <= LOAD_DATA; -- SEND_MARKER yerine doğrudan LOAD_DATA
+--                             byte_idx   <= 0;
+--                         end if;
+
+--                     -- =====================================================
+--                     -- STATE 2: SEND_MARKER - 0xAA (frame sync) gönder
+--                     -- =====================================================
+--                     when SEND_MARKER =>
+--                         tx_data_sig  <= x"AA";  -- ← FRAME SYNC MARKER
+--                         uart_state   <= SEND_PULSE;
+
+--                     -- =====================================================
+--                     -- STATE 3: LOAD_DATA - Byte'ı seç ve hazırla
+--                     -- =====================================================
+--                     when LOAD_DATA =>
+--                         case byte_idx is
+--                             when 0  => tx_data_sig <= x"AA";                  -- MARKER
+--                             when 1 => tx_data_sig <= STD_LOGIC_VECTOR(hesap_temp_x(15 downto 8)); -- AX_H
+--                             when 2 => tx_data_sig <= STD_LOGIC_VECTOR(hesap_temp_x(7 downto 0));  -- AX_L
+--                             when 3 => tx_data_sig <= STD_LOGIC_VECTOR(hesap_temp_y(15 downto 8)); -- AY_H
+--                             when 4 => tx_data_sig <= STD_LOGIC_VECTOR(hesap_temp_y(7 downto 0));  -- AY_L
+--                             when 5  => tx_data_sig <= accel_z(15 downto 8);    -- AZ_H
+--                             when 6  => tx_data_sig <= accel_z(7 downto 0);    -- AZ_L
+                            
+--                             when 7  => tx_data_sig <= gyro_x(15 downto 8);    -- GX_H
+--                             when 8  => tx_data_sig <= gyro_x(7 downto 0);     -- GX_L
+--                             when 9  => tx_data_sig <= gyro_y(15 downto 8);    -- GY_H
+--                             when 10 => tx_data_sig <= gyro_y(7 downto 0);     -- GY_L
+--                             when 11 => tx_data_sig <= gyro_z(15 downto 8);    -- GZ_H
+--                             when 12 => tx_data_sig <= gyro_z(7 downto 0);     -- GZ_L
+--                             when 13 => tx_data_sig <= x"0D";  -- CR (Carriage Return)
+--                             when 14 => tx_data_sig <= x"0A";  -- LF (Line Feed)
+                            
+--                             when others => tx_data_sig <= x"00";
+--                         end case;
+--                         uart_state <= SEND_PULSE;
+
+--                     -- =====================================================
+--                     -- STATE 4: SEND_PULSE - TX'i başlat (1 cycle pulse)
+--                     -- =====================================================
+--                     when SEND_PULSE =>
+--                         tx_start_sig <= '1';
+--                         uart_state   <= WAIT_BUSY_HIGH;
+
+--                     -- =====================================================
+--                     -- STATE 5: WAIT_BUSY_HIGH - TX busy olmasını bekle
+--                     -- =====================================================
+--                     when WAIT_BUSY_HIGH =>
+--                         if tx_busy_sig = '1' then
+--                             uart_state <= WAIT_BUSY_LOW;
+--                         end if;
+
+--                     -- =====================================================
+--                     -- STATE 6: WAIT_BUSY_LOW - TX tamamlanmasını bekle
+--                     -- =====================================================
+--                     when WAIT_BUSY_LOW =>
+--                         if tx_busy_sig = '0' then
+--                             if byte_idx = 14 then  -- Toplam 15 byte (0'dan 14'e)
+--                                 byte_idx   <= 0;
+--                                 uart_state <= IDLE;
+--                             else
+--                                 byte_idx   <= byte_idx + 1;
+--                                 uart_state <= LOAD_DATA;
+--                             end if;
+--                         end if;
+--                     when others =>
+--                         uart_state <= IDLE;
+--                 end case;
+--     end if;
+-- end process;
 end Behavioral;

@@ -2185,3 +2185,176 @@
 // Jul 24, 2026 12:06:00
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 15:46:36
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 15:48:30
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 15:48:56
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 15:49:34
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 15:51:07
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 15:58:33
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:01:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:05:42
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 8 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:713)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:09:30
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] cannot index the result of a type conversion (VHDL-1451) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:755)
+[EFX-0010 VERI-ERROR] cannot index the result of a type conversion (VHDL-1451) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:756)
+[EFX-0010 VERI-ERROR] cannot index the result of a type conversion (VHDL-1451) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:757)
+[EFX-0010 VERI-ERROR] cannot index the result of a type conversion (VHDL-1451) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:758)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:808)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:11:12
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 8 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:713)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:12:18
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 8 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:723)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:13:03
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:14:09
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:16:53
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:19:32
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:21:17
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 8 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:722)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:21:37
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 8 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:223)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:26:24
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 8 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:223)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:27:16
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:40:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:42:06
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:43:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:50:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:51:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:56:28
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 24, 2026 16:58:38
+///////////////////////////////////
+
