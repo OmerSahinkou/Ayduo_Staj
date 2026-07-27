@@ -14,7 +14,7 @@ def bytes_to_int16(high_byte, low_byte):
 PORT = "/dev/ttyUSB2"
 BAUD = 1000000
 TIMEOUT = 1
-SAMPLE_COUNT = 1000000  # Kaç örnek alınacak
+SAMPLE_COUNT = 1000  # Kaç örnek alınacak
 CSV_PATH = "/home/omer-ahin/STAJ/mpu_raw_data.csv"  # Kayıt yolu
 # ===================================================
 

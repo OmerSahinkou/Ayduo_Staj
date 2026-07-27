@@ -18,7 +18,7 @@ entity top is
     Generic (
         SQRT_DATA : integer := 34;
         CLK_FREQ  : integer := 33_333_333; 
-        BAUD_RATE : integer := 1_000
+        BAUD_RATE : integer := 1_000_000
     );
     Port (
         clk_i       : in  STD_LOGIC;
@@ -370,15 +370,15 @@ begin
     --         o_x             => open
     --     );
 
-    Inst_SquareRoot: SquareRoot
-        generic map (
-            N               =>34
-        )
-        port map(
-            clk             => clk_i,
-            data_in         => data_in,
-            data_out        => data_out
-        );
+    -- Inst_SquareRoot: SquareRoot
+    --     generic map (
+    --         N               =>34
+    --     )
+    --     port map(
+    --         clk             => clk_i,
+    --         data_in         => data_in,
+    --         data_out        => data_out
+    --     );
 
 
     --=========================================================
@@ -398,130 +398,130 @@ begin
     --Toplam: 15 byte
     --=========================================================
     
-    -- send_data:process(clk_i, rst_n_i)
-    -- begin
-    --     if rst_n_i = '0' then
-    --         tx_start_sig <= '0';
-    --         uart_state   <= IDLE;
-    --         byte_idx     <= 0;
-    --     elsif rising_edge(clk_i) then
+    send_data:process(clk_i, rst_n_i)
+    begin
+        if rst_n_i = '0' then
+            tx_start_sig <= '0';
+            uart_state   <= IDLE;
+            byte_idx     <= 0;
+        elsif rising_edge(clk_i) then
             
-    --         tx_start_sig <= '0';  -- One-cycle pulse
+            tx_start_sig <= '0';  -- One-cycle pulse
 
-    --         case uart_state is
+            case uart_state is
             
-    --             -- =====================================================
-    --             -- STATE 1: IDLE - UART'ın boş olmasını bekle
-    --             -- =====================================================
-    --             when IDLE =>
-    --                 if tx_busy_sig = '0' then
-    --                     uart_state <= LOAD_DATA; -- SEND_MARKER yerine doğrudan LOAD_DATA
-    --                     byte_idx   <= 0;
-    --                 end if;
+                -- =====================================================
+                -- STATE 1: IDLE - UART'ın boş olmasını bekle
+                -- =====================================================
+                when IDLE =>
+                    if tx_busy_sig = '0' then
+                        uart_state <= LOAD_DATA; -- SEND_MARKER yerine doğrudan LOAD_DATA
+                        byte_idx   <= 0;
+                    end if;
 
-    --             -- =====================================================
-    --             -- STATE 2: SEND_MARKER - 0xAA (frame sync) gönder
-    --             -- =====================================================
-    --             when SEND_MARKER =>
-    --                 tx_data_sig  <= x"AA";  -- ← FRAME SYNC MARKER
-    --                 uart_state   <= SEND_PULSE;
+                -- =====================================================
+                -- STATE 2: SEND_MARKER - 0xAA (frame sync) gönder
+                -- =====================================================
+                when SEND_MARKER =>
+                    tx_data_sig  <= x"AA";  -- ← FRAME SYNC MARKER
+                    uart_state   <= SEND_PULSE;
 
-    --             -- =====================================================
-    --             -- STATE 3: LOAD_DATA - Byte'ı seç ve hazırla
-    --             -- =====================================================
-    --             when LOAD_DATA =>
-    --                 case byte_idx is
-    --                     when 0  => tx_data_sig <= x"AA";                  -- MARKER
-    --                     when 1  => tx_data_sig <= accel_x(15 downto 8);   -- AX_H
-    --                     when 2  => tx_data_sig <= accel_x(7 downto 0);    -- AX_L
-    --                     when 3  => tx_data_sig <= accel_y(15 downto 8);   -- AY_H
-    --                     when 4  => tx_data_sig <= accel_y(7 downto 0);    -- AY_L
-    --                     when 5  => tx_data_sig <= accel_z(15 downto 8);   -- AZ_H
-    --                     when 6  => tx_data_sig <= accel_z(7 downto 0);    -- AZ_L
+                -- =====================================================
+                -- STATE 3: LOAD_DATA - Byte'ı seç ve hazırla
+                -- =====================================================
+                when LOAD_DATA =>
+                    case byte_idx is
+                        when 0  => tx_data_sig <= x"AA";                  -- MARKER
+                        when 1  => tx_data_sig <= accel_x(15 downto 8);   -- AX_H
+                        when 2  => tx_data_sig <= accel_x(7 downto 0);    -- AX_L
+                        when 3  => tx_data_sig <= accel_y(15 downto 8);   -- AY_H
+                        when 4  => tx_data_sig <= accel_y(7 downto 0);    -- AY_L
+                        when 5  => tx_data_sig <= accel_z(15 downto 8);   -- AZ_H
+                        when 6  => tx_data_sig <= accel_z(7 downto 0);    -- AZ_L
                         
-    --                     when 7  => tx_data_sig <= gyro_x(15 downto 8);    -- GX_H
-    --                     when 8  => tx_data_sig <= gyro_x(7 downto 0);     -- GX_L
-    --                     when 9  => tx_data_sig <= gyro_y(15 downto 8);    -- GY_H
-    --                     when 10 => tx_data_sig <= gyro_y(7 downto 0);     -- GY_L
-    --                     when 11 => tx_data_sig <= gyro_z(15 downto 8);    -- GZ_H
-    --                     when 12 => tx_data_sig <= gyro_z(7 downto 0);     -- GZ_L
+                        when 7  => tx_data_sig <= gyro_x(15 downto 8);    -- GX_H
+                        when 8  => tx_data_sig <= gyro_x(7 downto 0);     -- GX_L
+                        when 9  => tx_data_sig <= gyro_y(15 downto 8);    -- GY_H
+                        when 10 => tx_data_sig <= gyro_y(7 downto 0);     -- GY_L
+                        when 11 => tx_data_sig <= gyro_z(15 downto 8);    -- GZ_H
+                        when 12 => tx_data_sig <= gyro_z(7 downto 0);     -- GZ_L
                         
-    --                     when 13 => tx_data_sig <= x"0D";  -- CR (Carriage Return)
-    --                     when 14 => tx_data_sig <= x"0A";  -- LF (Line Feed)
+                        when 13 => tx_data_sig <= x"0D";  -- CR (Carriage Return)
+                        when 14 => tx_data_sig <= x"0A";  -- LF (Line Feed)
                         
-    --                     when others => tx_data_sig <= x"00";
-    --                 end case;
-    --                 uart_state <= SEND_PULSE;
+                        when others => tx_data_sig <= x"00";
+                    end case;
+                    uart_state <= SEND_PULSE;
 
-    --             -- =====================================================
-    --             -- STATE 4: SEND_PULSE - TX'i başlat (1 cycle pulse)
-    --             -- =====================================================
-    --             when SEND_PULSE =>
-    --                 tx_start_sig <= '1';
-    --                 uart_state   <= WAIT_BUSY_HIGH;
+                -- =====================================================
+                -- STATE 4: SEND_PULSE - TX'i başlat (1 cycle pulse)
+                -- =====================================================
+                when SEND_PULSE =>
+                    tx_start_sig <= '1';
+                    uart_state   <= WAIT_BUSY_HIGH;
 
-    --             -- =====================================================
-    --             -- STATE 5: WAIT_BUSY_HIGH - TX busy olmasını bekle
-    --             -- =====================================================
-    --             when WAIT_BUSY_HIGH =>
-    --                 if tx_busy_sig = '1' then
-    --                     uart_state <= WAIT_BUSY_LOW;
-    --                 end if;
+                -- =====================================================
+                -- STATE 5: WAIT_BUSY_HIGH - TX busy olmasını bekle
+                -- =====================================================
+                when WAIT_BUSY_HIGH =>
+                    if tx_busy_sig = '1' then
+                        uart_state <= WAIT_BUSY_LOW;
+                    end if;
 
-    --             -- =====================================================
-    --             -- STATE 6: WAIT_BUSY_LOW - TX tamamlanmasını bekle
-    --             -- =====================================================
-    --             when WAIT_BUSY_LOW =>
-    --                 if tx_busy_sig = '0' then
-    --                     if byte_idx = 14 then  -- Toplam 15 byte (0'dan 14'e)
-    --                         byte_idx   <= 0;
-    --                         uart_state <= IDLE;
-    --                     else
-    --                         byte_idx   <= byte_idx + 1;
-    --                         uart_state <= LOAD_DATA;
-    --                     end if;
-    --                 end if;
-    --             when others =>
-    --                 uart_state <= IDLE;
-    --         end case;
-    --     end if;
-    -- end process send_data;
+                -- =====================================================
+                -- STATE 6: WAIT_BUSY_LOW - TX tamamlanmasını bekle
+                -- =====================================================
+                when WAIT_BUSY_LOW =>
+                    if tx_busy_sig = '0' then
+                        if byte_idx = 14 then  -- Toplam 15 byte (0'dan 14'e)
+                            byte_idx   <= 0;
+                            uart_state <= IDLE;
+                        else
+                            byte_idx   <= byte_idx + 1;
+                            uart_state <= LOAD_DATA;
+                        end if;
+                    end if;
+                when others =>
+                    uart_state <= IDLE;
+            end case;
+        end if;
+    end process send_data;
 
     -- --=========================================================
     -- --Servo  Control STATE MACHINE
     -- --=========================================================
-    -- Control_Servo : process (clk_i, rst_n_i)
-    -- begin
-    --     if rst_n_i = '0' then 
-    --         angle_reg_0   <= (others => '0'); 
-    --         angle_reg_1   <= (others => '0'); 
-    --         angle_reg_2   <= (others => '0');
-    --         byte_idx_uart <= 0;
-    --     elsif rising_edge(clk_i) then
-    --         if (rx_valid = '1') then 
-    --             if (rx_data_sig = X"BB") then 
-    --                 byte_idx_uart <= 1;
-    --             elsif (rx_data_sig = X"66") then
-    --                 byte_idx_uart <= 0;
-    --             else
-    --                 case byte_idx_uart is
-    --                     when 1 =>
-    --                         angle_reg_0   <= unsigned(rx_data_sig);
-    --                         byte_idx_uart <= 2;
-    --                     when 2 =>
-    --                         angle_reg_1   <= unsigned(rx_data_sig);
-    --                         byte_idx_uart <= 3;
-    --                     when 3 =>
-    --                         angle_reg_2   <= unsigned(rx_data_sig);
-    --                         byte_idx_uart <= 0; 
-    --                     when others =>
-    --                         byte_idx_uart <= 0;
-    --                 end case;
-    --             end if;
+    Control_Servo : process (clk_i, rst_n_i)
+    begin
+        if rst_n_i = '0' then 
+            angle_reg_0   <= (others => '0'); 
+            angle_reg_1   <= (others => '0'); 
+            angle_reg_2   <= (others => '0');
+            byte_idx_uart <= 0;
+        elsif rising_edge(clk_i) then
+            if (rx_valid = '1') then 
+                if (rx_data_sig = X"BB") then 
+                    byte_idx_uart <= 1;
+                elsif (rx_data_sig = X"66") then
+                    byte_idx_uart <= 0;
+                else
+                    case byte_idx_uart is
+                        when 1 =>
+                            angle_reg_0   <= unsigned(rx_data_sig);
+                            byte_idx_uart <= 2;
+                        when 2 =>
+                            angle_reg_1   <= unsigned(rx_data_sig);
+                            byte_idx_uart <= 3;
+                        when 3 =>
+                            angle_reg_2   <= unsigned(rx_data_sig);
+                            byte_idx_uart <= 0; 
+                        when others =>
+                            byte_idx_uart <= 0;
+                    end case;
+                end if;
                 
-    --         end if;
-    --     end if;
-    -- end process Control_Servo;
+            end if;
+        end if;
+    end process Control_Servo;
 
 -- =========================================================
 -- SQRT Test STATE MACHINE
@@ -627,81 +627,84 @@ begin
         -- PD Test STATE MACHINE
         -- =========================================================
 
-hesap_temp_x <= to_signed(127, 16) + shift_right(signed(accel_x), 6) - shift_right(signed(gyro_x), 8);
-hesap_temp_y <= to_signed(127, 16) + shift_right(signed(accel_y), 6) - shift_right(signed(gyro_y), 8);
-hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 13), 16) - shift_right(signed(gyro_z), 8);
+-- hesap_temp_x <= to_signed(127, 16) + shift_right(signed(accel_x), 6) - shift_right(signed(gyro_x), 8);
+-- hesap_temp_y <= to_signed(127, 16) + shift_right(signed(accel_y), 6) - shift_right(signed(gyro_y), 8);
+-- hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 14), 16) - shift_right(signed(gyro_z), 8);
 
--- 2. ADIM: Güvenli Process Bloğu
-PD_Test : process (clk_i, rst_n_i)
-begin
-    if rst_n_i = '0' then 
-        angle_filtered_x <= to_unsigned(127, 8);
-        angle_filtered_y <= to_unsigned(127, 8);
-        angle_filtered_z <= to_unsigned(127, 8);
-        angle_raw_x      <= to_unsigned(127, 8);
-        angle_raw_y      <= to_unsigned(127, 8);
-        angle_raw_z      <= to_unsigned(127, 8);
-        tx_start_sig     <= '0';
-        uart_timer       <= 0;
-    elsif rising_edge(clk_i) then
-        tx_start_sig <= '0';
+-- -- 2. ADIM: Güvenli Process Bloğu
+-- PD_Test : process (clk_i, rst_n_i)
+-- begin
+--     if rst_n_i = '0' then 
+--         angle_filtered_x <= to_unsigned(127, 8);
+--         angle_filtered_y <= to_unsigned(127, 8);
+--         angle_filtered_z <= to_unsigned(127, 8);
+--         angle_raw_x      <= to_unsigned(127, 8);
+--         angle_raw_y      <= to_unsigned(127, 8);
+--         angle_raw_z      <= to_unsigned(127, 8);
+--         tx_start_sig     <= '0';
+--         uart_timer       <= 0;
+--     elsif rising_edge(clk_i) then
+--         tx_start_sig <= '0';
 
-        if spi_data_valid = '1' then 
-            if to_integer(abs(signed(gyro_z))) > 15 then 
-                angle_pool <= angle_pool + signed(gyro_z);
-            end if;
-        end if;
+--         if spi_data_valid = '1' then 
+--             if to_integer(abs(signed(gyro_z))) > 15 then 
+--                 angle_pool <= angle_pool + signed(gyro_z);
+--             end if;
+--         end if;
 
-        -- X Ekseni Koruması
-        if hesap_temp_x > 255 then
-            angle_raw_x <= to_unsigned(255, 8);
-        elsif hesap_temp_x < 0 then
-            angle_raw_x <= to_unsigned(0, 8);
-        else
-            angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
-        end if;
+--         -- X Ekseni Koruması
+--         if hesap_temp_x > 255 then
+--             angle_raw_x <= to_unsigned(255, 8);
+--         elsif hesap_temp_x < 0 then
+--             angle_raw_x <= to_unsigned(0, 8);
+--         else
+--             angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
+--         end if;
 
-        -- Y Ekseni Koruması
-        if hesap_temp_y > 255 then
-            angle_raw_y <= to_unsigned(255, 8);
-        elsif hesap_temp_y < 0 then
-            angle_raw_y <= to_unsigned(0, 8);
-        else
-            angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
-        end if;
+--         -- Y Ekseni Koruması
+--         if hesap_temp_y > 255 then
+--             angle_raw_y <= to_unsigned(255, 8);
+--         elsif hesap_temp_y < 0 then
+--             angle_raw_y <= to_unsigned(0, 8);
+--         else
+--             angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
+--         end if;
 
-        if hesap_temp_z > 255 then
-            angle_raw_z <= to_unsigned(255, 8);
-        elsif hesap_temp_z < 0 then 
-            angle_raw_z <= to_unsigned(0, 8);  
-        else 
-            angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
-        end if;
+--         if hesap_temp_z > 255 then
+--             angle_raw_z <= to_unsigned(255, 8);
+--         elsif hesap_temp_z < 0 then 
+--             angle_raw_z <= to_unsigned(0, 8);  
+--         else 
+--             angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
+--         end if;
 
-        if abs(to_integer(angle_raw_x) - to_integer(angle_filtered_x)) > 2 then
-            angle_filtered_x <= resize(shift_right(resize(angle_filtered_x, 10) * 3 + resize(angle_raw_x, 10), 2), 8);
-        end if;
+--         if abs(to_integer(angle_raw_x) - to_integer(angle_filtered_x)) > 2 then
+--             angle_filtered_x <= resize(shift_right(resize(angle_filtered_x, 10) * 3 + resize(angle_raw_x, 10), 2), 8);
+--         end if;
 
-        if abs(to_integer(angle_raw_y) - to_integer(angle_filtered_y)) > 2 then
-            angle_filtered_y <= resize(shift_right(resize(angle_filtered_y, 10) * 3 + resize(angle_raw_y, 10), 2), 8);
-        end if;
+--         if abs(to_integer(angle_raw_y) - to_integer(angle_filtered_y)) > 2 then
+--             angle_filtered_y <= resize(shift_right(resize(angle_filtered_y, 10) * 3 + resize(angle_raw_y, 10), 2), 8);
+--         end if;
         
-        if uart_timer < 3333333 then
-            uart_timer <= uart_timer + 1;
-        else
-            uart_timer <= 0;
-            if tx_busy_sig = '0' then
-                tx_start_sig <= '1';
-                tx_data_sig  <= std_logic_vector(angle_reg_2); 
-            end if;
-        end if;
+--         --if abs(to_integer(angle_raw_z) - to_integer(angle_filtered_z)) > 2 then
+--         --    angle_filtered_z <= resize(shift_right(resize(angle_filtered_z, 10) * 3 + resize(angle_raw_z, 10), 2), 8);
+--         --end if;
 
-    end if;
-end process;
+--         if uart_timer < 3333333 then
+--             uart_timer <= uart_timer + 1;
+--         else
+--             uart_timer <= 0;
+--             if tx_busy_sig = '0' then
+--                 tx_start_sig <= '1';
+--                 tx_data_sig  <= std_logic_vector(angle_reg_2); 
+--             end if;
+--         end if;
+--     end if;
+-- end process;
 
-angle_reg_0 <= angle_filtered_x;
-angle_reg_1 <= angle_filtered_y;
-angle_reg_2 <= angle_raw_z;
+-- angle_reg_0 <= angle_filtered_x;
+-- angle_reg_1 <= angle_filtered_y;
+-- angle_reg_2 <= angle_raw_z;
 
 
 -- =========================================================

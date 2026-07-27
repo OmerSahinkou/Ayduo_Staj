@@ -248,7 +248,7 @@ begin
                     -- Byte 12-13: GYRO_ZOUT_H, GYRO_ZOUT_L
                     
                     temp := raw_data(0) & raw_data(1);
-                    ax_o <= std_logic_vector((signed(temp) - to_signed(-694,16)));  -- - (-694) = + 694
+                    ax_o <= std_logic_vector((signed(temp) - to_signed(0,16)));  -- - (-694) = + 694
 
                     temp := raw_data(2) & raw_data(3);
                     ay_o <= std_logic_vector((signed(temp) - to_signed(18,16)));
