@@ -750,8 +750,8 @@ begin
     end if;
 end process;
 
-angle_reg_0 <= angle_filtered_x;
-angle_reg_1 <= angle_filtered_y;
+angle_reg_0 <= angle_raw_x;
+angle_reg_1 <= angle_raw_y;
 angle_reg_2 <= angle_raw_z;
 
 

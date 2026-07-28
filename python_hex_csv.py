@@ -4,7 +4,7 @@ import serial
 
 # Port ve baglanti ayarlari
 PORT = "/dev/ttyUSB2"
-BAUD_RATE = 1000
+BAUD_RATE = 1000000
 CSV_DOSYA = "veriler.csv"
 
 try:
