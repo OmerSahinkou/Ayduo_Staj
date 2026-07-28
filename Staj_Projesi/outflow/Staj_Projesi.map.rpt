@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Jul 27, 2026 16:52:57
+Generated at: Jul 28, 2026 16:46:03
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top
@@ -37,84 +37,56 @@ File List:
 /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/top_servo.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/top_MPU_Servo.vhd
-/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd
-/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd
-/home/omer-ahin/STAJ/Staj_Projesi/gyro_z_filter.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl
-/home/omer-ahin/STAJ/Staj_Projesi/SQRT.vhd
 
 ### ### Report Section Start ### ###
 
+"MOD|OPT-0673" : Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:290)
 
 ### ### EFX_FF CE enables (begin) ### ### ###
-Total number of enable signals: 59
-Total number of FFs with enable signals: 330
-CE signal <ceg_net328>, number of controlling flip flops: 4
-CE signal <rx_valid>, number of controlling flip flops: 2
-CE signal <ceg_net120>, number of controlling flip flops: 8
-CE signal <ceg_net205>, number of controlling flip flops: 8
-CE signal <ceg_net298>, number of controlling flip flops: 3
-CE signal <ceg_net321>, number of controlling flip flops: 3
-CE signal <Inst_MPU6500_Controller/n5566>, number of controlling flip flops: 96
-CE signal <Inst_MPU6500_Controller/n6189>, number of controlling flip flops: 8
-CE signal <ceg_net344>, number of controlling flip flops: 22
-CE signal <ceg_net359>, number of controlling flip flops: 4
-CE signal <ceg_net346>, number of controlling flip flops: 2
-CE signal <Inst_MPU6500_Controller/n6196>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6203>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6210>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6217>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6224>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6245>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6252>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6259>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6266>, number of controlling flip flops: 8
+Total number of enable signals: 34
+Total number of FFs with enable signals: 163
 CE signal <Inst_MPU6500_Controller/n6273>, number of controlling flip flops: 8
+CE signal <n1516>, number of controlling flip flops: 32
+CE signal <ceg_net298>, number of controlling flip flops: 2
+CE signal <ceg_net313>, number of controlling flip flops: 4
+CE signal <ceg_net300>, number of controlling flip flops: 22
+CE signal <ceg_net279>, number of controlling flip flops: 3
+CE signal <n1526>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6280>, number of controlling flip flops: 8
-CE signal <ceg_net354>, number of controlling flip flops: 5
-CE signal <ceg_net348>, number of controlling flip flops: 1
-CE signal <ceg_net355>, number of controlling flip flops: 3
-CE signal <ceg_net360>, number of controlling flip flops: 1
-CE signal <ceg_net361>, number of controlling flip flops: 1
-CE signal <ceg_net363>, number of controlling flip flops: 2
-CE signal <Inst_uart_rx/n439>, number of controlling flip flops: 8
-CE signal <ceg_net232>, number of controlling flip flops: 3
-CE signal <ceg_net234>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n464>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n462>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n484>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n458>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n456>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n481>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n480>, number of controlling flip flops: 1
-CE signal <Inst_uart_rx/n479>, number of controlling flip flops: 1
-CE signal <ceg_net75>, number of controlling flip flops: 12
-CE signal <ceg_net364>, number of controlling flip flops: 2
-CE signal <ceg_net236>, number of controlling flip flops: 1
-CE signal <ceg_net237>, number of controlling flip flops: 3
-CE signal <ceg_net238>, number of controlling flip flops: 1
+CE signal <ceg_net308>, number of controlling flip flops: 5
+CE signal <Inst_MPU6500_Controller/n5614>, number of controlling flip flops: 16
+CE signal <ceg_net302>, number of controlling flip flops: 1
+CE signal <ceg_net309>, number of controlling flip flops: 3
+CE signal <ceg_net314>, number of controlling flip flops: 1
+CE signal <ceg_net315>, number of controlling flip flops: 1
+CE signal <ceg_net61>, number of controlling flip flops: 12
+CE signal <ceg_net318>, number of controlling flip flops: 2
+CE signal <ceg_net207>, number of controlling flip flops: 1
+CE signal <ceg_net208>, number of controlling flip flops: 3
+CE signal <ceg_net209>, number of controlling flip flops: 1
 CE signal <Inst_Spi_Mode_3/n466>, number of controlling flip flops: 1
-CE signal <ceg_net239>, number of controlling flip flops: 1
-CE signal <ceg_net240>, number of controlling flip flops: 1
-CE signal <ceg_net241>, number of controlling flip flops: 1
-CE signal <ceg_net242>, number of controlling flip flops: 1
-CE signal <ceg_net243>, number of controlling flip flops: 1
-CE signal <ceg_net244>, number of controlling flip flops: 1
-CE signal <ceg_net245>, number of controlling flip flops: 1
+CE signal <ceg_net210>, number of controlling flip flops: 1
+CE signal <ceg_net211>, number of controlling flip flops: 1
+CE signal <ceg_net212>, number of controlling flip flops: 1
+CE signal <ceg_net213>, number of controlling flip flops: 1
+CE signal <ceg_net214>, number of controlling flip flops: 1
+CE signal <ceg_net215>, number of controlling flip flops: 1
+CE signal <ceg_net216>, number of controlling flip flops: 1
 CE signal <Inst_uart_tx/n333>, number of controlling flip flops: 8
-CE signal <ceg_net106>, number of controlling flip flops: 6
-CE signal <ceg_net365>, number of controlling flip flops: 2
-CE signal <ceg_net251>, number of controlling flip flops: 3
-CE signal <ceg_net248>, number of controlling flip flops: 1
-CE signal <ceg_net249>, number of controlling flip flops: 1
+CE signal <ceg_net92>, number of controlling flip flops: 6
+CE signal <ceg_net319>, number of controlling flip flops: 2
+CE signal <ceg_net222>, number of controlling flip flops: 3
+CE signal <ceg_net219>, number of controlling flip flops: 1
+CE signal <ceg_net220>, number of controlling flip flops: 1
 CE signal <Inst_debounce/n149>, number of controlling flip flops: 1
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 Total number of set/reset signals: 2
-Total number of FFs with set/reset signals: 347
-SR signal <rst_n_i>, number of controlling flip flops: 327
+Total number of FFs with set/reset signals: 216
+SR signal <rst_n_i>, number of controlling flip flops: 196
 SR signal <Inst_debounce/n151>, number of controlling flip flops: 20
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
@@ -123,18 +95,134 @@ FF Output: Inst_pwm_servo_0/pulse_width[0](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[17](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[18](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[19](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[0](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[17](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[18](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[19](=0)
 FF Output: Inst_pwm_servo_2/pulse_width[0](=0)
 FF Output: Inst_pwm_servo_2/pulse_width[17](=0)
 FF Output: Inst_pwm_servo_2/pulse_width[18](=0)
 FF Output: Inst_pwm_servo_2/pulse_width[19](=0)
-FF Output: byte_idx_uart[2](=0)
-FF Output: byte_idx_uart[3](=0)
+FF instance: Inst_MPU6500_Controller/dff_126/i1(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i1(unreachable)
+FF instance: dff_114/i1(unreachable)
+FF instance: dff_116/i1(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i7(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i8(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i9(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i10(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i11(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i12(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i13(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i14(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i15(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_142/i16(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i7(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i8(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i9(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i10(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i11(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i12(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i13(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i14(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i15(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_144/i16(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i2(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i3(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i4(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i5(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i6(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i7(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_124/i8(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_125/i7(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_125/i8(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i2(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i3(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i4(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i5(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i6(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i7(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_126/i8(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i2(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i3(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i4(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i5(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i6(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i7(unreachable)
+FF instance: Inst_MPU6500_Controller/dff_127/i8(unreachable)
+FF instance: Inst_uart_rx/dff_54/i1(unreachable)
+FF instance: Inst_uart_rx/dff_55/i1(unreachable)
+FF instance: Inst_uart_rx/dff_56/i1(unreachable)
+FF instance: Inst_uart_rx/i61(unreachable)
+FF instance: Inst_uart_rx/i62(unreachable)
+FF instance: Inst_uart_rx/dff_56/i2(unreachable)
+FF instance: Inst_uart_rx/dff_56/i3(unreachable)
+FF instance: Inst_uart_rx/dff_56/i4(unreachable)
+FF instance: Inst_uart_rx/dff_56/i5(unreachable)
+FF instance: Inst_uart_rx/dff_56/i6(unreachable)
+FF instance: Inst_uart_rx/dff_55/i2(unreachable)
+FF instance: Inst_uart_rx/dff_55/i3(unreachable)
+FF instance: Inst_uart_rx/dff_55/i4(unreachable)
+FF instance: Inst_uart_rx/dff_54/i2(unreachable)
+FF instance: dff_114/i2(unreachable)
+FF instance: dff_114/i3(unreachable)
+FF instance: dff_114/i4(unreachable)
+FF instance: dff_114/i5(unreachable)
+FF instance: dff_114/i6(unreachable)
+FF instance: dff_114/i7(unreachable)
+FF instance: dff_114/i8(unreachable)
+FF instance: dff_114/i9(unreachable)
+FF instance: dff_114/i10(unreachable)
+FF instance: dff_114/i11(unreachable)
+FF instance: dff_114/i12(unreachable)
+FF instance: dff_114/i13(unreachable)
+FF instance: dff_114/i14(unreachable)
+FF instance: dff_114/i15(unreachable)
+FF instance: dff_114/i16(unreachable)
+FF instance: dff_114/i17(unreachable)
+FF instance: dff_114/i18(unreachable)
+FF instance: dff_114/i19(unreachable)
+FF instance: dff_114/i20(unreachable)
+FF instance: dff_114/i21(unreachable)
+FF instance: dff_114/i22(unreachable)
+FF instance: dff_114/i23(unreachable)
+FF instance: dff_114/i24(unreachable)
+FF instance: dff_114/i25(unreachable)
+FF instance: dff_114/i26(unreachable)
+FF instance: dff_114/i27(unreachable)
+FF instance: dff_114/i28(unreachable)
+FF instance: dff_114/i29(unreachable)
+FF instance: dff_114/i30(unreachable)
+FF instance: dff_114/i31(unreachable)
+FF instance: dff_114/i32(unreachable)
+FF instance: dff_116/i2(unreachable)
+FF instance: dff_116/i3(unreachable)
+FF instance: dff_116/i4(unreachable)
+FF instance: dff_116/i5(unreachable)
+FF instance: dff_116/i6(unreachable)
+FF instance: dff_116/i7(unreachable)
+FF instance: dff_116/i8(unreachable)
+FF instance: dff_116/i9(unreachable)
+FF instance: dff_116/i10(unreachable)
+FF instance: dff_116/i11(unreachable)
+FF instance: dff_116/i12(unreachable)
+FF instance: dff_116/i13(unreachable)
+FF instance: dff_116/i14(unreachable)
+FF instance: dff_116/i15(unreachable)
+FF instance: dff_116/i16(unreachable)
+FF instance: dff_116/i17(unreachable)
+FF instance: dff_116/i18(unreachable)
+FF instance: dff_116/i19(unreachable)
+FF instance: dff_116/i20(unreachable)
+FF instance: dff_116/i21(unreachable)
+FF instance: dff_116/i22(unreachable)
+FF instance: dff_116/i23(unreachable)
+FF instance: dff_116/i24(unreachable)
+FF instance: dff_116/i25(unreachable)
+FF instance: dff_116/i26(unreachable)
+FF instance: dff_116/i27(unreachable)
+FF instance: dff_116/i28(unreachable)
+FF instance: dff_116/i29(unreachable)
+FF instance: dff_116/i30(unreachable)
+FF instance: dff_116/i31(unreachable)
+FF instance: dff_116/i32(unreachable)
 FF Output: Inst_pwm_servo_0/pulse_width[1](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[1](=0)
 FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 ### ### Sequential Elements Trimming Report (end) ### ### ### 
 
@@ -144,15 +232,13 @@ FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 
 Module                                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
 ------------------------------------------------------------       ---      ----      ----      ---- ---------
-top:top                                                        467(26)     82(0)  640(112)      0(0)      3(0)
- +Inst_pwm_servo_0:pwm_servo                                    36(36)    33(33)    51(51)      0(0)      1(1)
- +Inst_pwm_servo_1:pwm_servo                                    34(34)    15(15)    40(40)      0(0)      1(1)
- +Inst_pwm_servo_2:pwm_servo                                    34(34)    15(15)    43(43)      0(0)      1(1)
+top:top                                                        288(71)   120(53)   409(55)      0(0)      2(0)
+ +Inst_pwm_servo_0:pwm_servo                                    36(36)    33(33)    52(52)      0(0)      1(1)
+ +Inst_pwm_servo_2:pwm_servo                                    34(34)    15(15)    42(42)      0(0)      1(1)
  +Inst_uart_tx:uart_tx(baud_rate=1000000)                       21(21)      0(0)    29(29)      0(0)      0(0)
  +Inst_debounce:debounce                                        23(23)    19(19)      7(7)      0(0)      0(0)
- +Inst_uart_rx:uart_rx(baud_rate=1000000)                       30(30)      0(0)    35(35)      0(0)      0(0)
  +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...    28(28)      0(0)    42(42)      0(0)      0(0)
- +Inst_MPU6500_Controller:MPU6500_Controller                  235(235)      0(0)  281(281)      0(0)      0(0)
+ +Inst_MPU6500_Controller:MPU6500_Controller                    75(75)      0(0)  182(182)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -161,7 +247,7 @@ top:top                                                        467(26)     82(0)
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i             467               0               3
+ clk_i             288               0               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -169,13 +255,13 @@ top:top                                                        467(26)     82(0)
 INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	7
 
-EFX_ADD         : 	82
-EFX_LUT4        : 	640
-   1-2  Inputs  : 	92
-   3    Inputs  : 	165
-   4    Inputs  : 	383
-EFX_MULT        : 	3
-EFX_FF          : 	467
+EFX_ADD         : 	120
+EFX_LUT4        : 	409
+   1-2  Inputs  : 	83
+   3    Inputs  : 	108
+   4    Inputs  : 	218
+EFX_MULT        : 	2
+EFX_FF          : 	288
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 

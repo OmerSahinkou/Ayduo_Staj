@@ -2430,3 +2430,176 @@
 // Jul 27, 2026 16:52:57
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 11:00:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 11:26:03
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 11:32:34
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 12:03:51
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 12:07:42
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:14:49
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'angle_from_gyro_y' is already declared in this region (VHDL-1223) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:248)
+[EFX-0010 VERI-ERROR] syntax error near 'Inst_pwm_servo_0' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:254)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:830)
+[EFX-0010 VERI-ERROR] 'tx_data_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:831)
+[EFX-0010 VERI-ERROR] 'tx_start_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:832)
+[EFX-0010 VERI-ERROR] syntax error near 'elsif' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:833)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:15:11
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] syntax error near 'Inst_pwm_servo_0' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:253)
+[EFX-0010 VERI-ERROR] syntax error near 'then' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:829)
+[EFX-0010 VERI-ERROR] 'tx_data_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:830)
+[EFX-0010 VERI-ERROR] 'tx_start_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:831)
+[EFX-0010 VERI-ERROR] syntax error near 'elsif' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:832)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:46:08
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'c_0_95' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:842)
+[EFX-0010 VERI-ERROR] type conversion expression type for 'signed' cannot be uniquely determined (VHDL-1155) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:842)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:853)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:46:23
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 17 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:251)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:12:15
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 31 elements; expected 32 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:247)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:12:41
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:858)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:17:12
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:909)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:43:14
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:858)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:44:14
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:909)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:45:12
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:55:23
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'angle_from_accel_x[15]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:852)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:958)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:55:56
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:04:48
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:12:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:18:24
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:20:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:25:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:26:26
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:46:03
+///////////////////////////////////
+

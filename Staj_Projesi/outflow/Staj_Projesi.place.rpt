@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Mon Jul 27 16:53:02 2026
+Date: Tue Jul 28 16:46:08 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -11,14 +11,14 @@ Top-level Entity Name: Staj_Projesi
 Elapsed time for packing: 0 hours 0 minutes 0 seconds
 
 ---------- Resource Summary (begin) ----------
-Inputs: 5 / 96 (5.21%)
+Inputs: 4 / 96 (4.17%)
 Outputs: 7 / 223 (3.14%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 892 / 7384 (12.08%)
-	LE: LUTs/Adders: 724 / 7384 (9.80%)
-	LE: Registers: 467 / 5280 (8.84%)
+Logic Elements: 582 / 7384 (7.88%)
+	LE: LUTs/Adders: 531 / 7384 (7.19%)
+	LE: Registers: 288 / 5280 (5.45%)
 Memory Blocks: 0 / 24 (0.00%)
-Multipliers: 3 / 8 (37.50%)
+Multipliers: 2 / 8 (25.00%)
 ---------- Resource Summary (end) ----------
 
 
@@ -27,11 +27,21 @@ Multipliers: 3 / 8 (37.50%)
 +-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
 |          NAME           | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
 +-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-| Inst_pwm_servo_2/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-| Inst_pwm_servo_1/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-| Inst_pwm_servo_0/mult_5 | true  | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
+| Inst_pwm_servo_2/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
+| Inst_pwm_servo_0/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
 +-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
 
 ----------- DSP Block Information (end) ----------
+
+
+---------- IO Interface Summary (begin) ----------
+
++------------------------+--------------+
+| Missing Interface Pins | Input/Output |
++------------------------+--------------+
+|           rx           |    Input     |
++------------------------+--------------+
+
+----------- IO Interface Summary (end) ----------
 
 Elapsed time for placement: 0 hours 0 minutes 1 seconds

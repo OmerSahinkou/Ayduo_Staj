@@ -6872,3 +6872,526 @@
 [EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
 [EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
 [EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 11:00:20
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 11:26:03
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 11:32:34
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 12:03:51
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'hesap_temp_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:232)
+[EFX-0011 VERI-WARNING] using initial value for 'hesap_temp_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:233)
+[EFX-0011 VERI-WARNING] using initial value for 'hesap_temp_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:234)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_z[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:703)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 12:07:42
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_z[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:703)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:32)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:14:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:15:11
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:46:08
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 14:46:23
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_0' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:167)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_1' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:168)
+[EFX-0011 VERI-WARNING] using initial value for 'angle_reg_2' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:169)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:12:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:12:41
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:17:12
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:43:14
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:44:14
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:45:12
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'tx_data_sig[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:938)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:55:23
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'tx_data_sig[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:958)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 15:55:56
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_x' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:256)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_y' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:257)
+[EFX-0011 VERI-WARNING] using initial value for 'setpoint_z' since it is never assigned (VHDL-1794) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:258)
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'tx_data_sig[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:955)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:04:48
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_z[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:738)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:12:45
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_z[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:740)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:18:24
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_x[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:740)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:20:55
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_z[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:740)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:25:21
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_z[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:751)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:26:26
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_x[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:751)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 16:46:03
+///////////////////////////////////
+
+[EFX-0011 VERI-WARNING] 'rst_i' should be on the sensitivity list of the process (VHDL-1251) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:58)
+[EFX-0011 VERI-WARNING] incomplete sensitivity list specified; assuming completeness (VHDL-1613) (/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd:121)
+[EFX-0011 VERI-WARNING] latch inferred for net 'angle_filtered_x[7]' (VHDL-1840) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:751)
+[EFX-0200 WARNING] Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0200 WARNING] Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29)
+[EFX-0011 VERI-WARNING] Input/inout port rx is unconnected. Place and route may remove this unconnected port. (VDB-8003) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:33)
+[EFX-0011 VERI-WARNING] Found 1 warnings in the post-synthesis netlist. 

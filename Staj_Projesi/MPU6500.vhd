@@ -135,23 +135,16 @@ begin
                         state      <= POWER_ON_WAIT;
                     end if;
                     
-                -- =============================================
-                -- POWER_ON_WAIT - Sensör güç stabilizasyonu (100ms)
-                -- =============================================
                 when POWER_ON_WAIT =>
-                    if (delay_cntr = 3_333_333) then  -- ~100ms @ 33.33MHz
+                    if (delay_cntr = 3_333_333) then  
                         state      <= CONF_SEND_ADDR;
                         delay_cntr <= 0;
                     else
                         delay_cntr <= delay_cntr + 1;
                     end if;
-
-                -- =============================================
-                -- KONFIGÜRASYON YAZMA - ADRES GÖNDER
-                -- =============================================
                 when CONF_SEND_ADDR =>
                     spi_cs_n_o       <= '0';
-                    mosi_data_o      <= spi_write_addr;  -- 0x80 | register_addr
+                    mosi_data_o      <= spi_write_addr;  
                     start_transfer_o <= '1';
                     state            <= CONF_WAIT_ADDR;
 
@@ -160,9 +153,7 @@ begin
                         state <= CONF_SEND_DATA;
                     end if;
 
-                -- =============================================
-                -- KONFIGÜRASYON YAZMA - DATA GÖNDER
-                -- =============================================
+                
                 when CONF_SEND_DATA =>
                     mosi_data_o      <= MPU_CONFIG_DATA(config_idx);
                     start_transfer_o <= '1';
@@ -175,9 +166,6 @@ begin
                         state      <= CS_HIGH_WAIT;
                     end if;
                     
-                -- =============================================
-                -- CS yükseldikten sonra bekleme (Tsu setup time)
-                -- =============================================
                 when CS_HIGH_WAIT =>
                     if (delay_cntr = 100) then  -- ~3us
                         state <= CONF_NEXT;
@@ -186,24 +174,19 @@ begin
                         delay_cntr <= delay_cntr + 1;
                     end if;
 
-                -- =============================================
-                -- CONF_NEXT - Sonraki konfigürasyona geç veya MEASURE'a başla
-                -- =============================================
+                
                 when CONF_NEXT =>
-                    if (config_idx = 4) then  -- 5 config tamamlandı (0-4)
+                    if (config_idx = 4) then  
                         state <= MEASURE_START;
                     else
                         config_idx <= config_idx + 1;
                         state      <= CONF_SEND_ADDR;
                     end if;
 
-                -- =============================================
-                -- ÖLÇÜM - BURST READ BAŞLAT (0x3B adresinden)
-                -- =============================================
                 when MEASURE_START =>
                     spi_cs_n_o       <= '0';
                     byte_cntr        <= 0;
-                    mosi_data_o      <= spi_read_addr;  -- 0x3B (read mode)
+                    mosi_data_o      <= spi_read_addr;  
                     start_transfer_o <= '1';
                     state            <= MEASURE_START_WAIT;
 
@@ -212,11 +195,9 @@ begin
                         state <= MEASURE_READ;
                     end if;
 
-                -- =============================================
-                -- ÖLÇÜM - DATA OKU (14 BYTE)
-                -- =============================================
+                
                 when MEASURE_READ =>
-                    mosi_data_o      <= x"00";  -- Dummy byte
+                    mosi_data_o      <= x"00";  
                     start_transfer_o <= '1';
                     state            <= MEASURE_READ_WAIT;
 
@@ -224,7 +205,7 @@ begin
                     if (data_valid_i = '1') then
                         raw_data(byte_cntr) <= rx_data_i;
                         
-                        if (byte_cntr = 13) then  -- 14 byte (0-13)
+                        if (byte_cntr = 13) then  
                             spi_cs_n_o <= '1';
                             delay_cntr <= 0;
                             state      <= MEASURE_DONE;
@@ -234,21 +215,9 @@ begin
                         end if;
                     end if;
 
-                -- =============================================
-                -- MEASURE_DONE - Verileri OUTPUT'a MAPLE
-                -- =============================================
                 when MEASURE_DONE =>
-                    -- BURST READ FORMATÜ (0x3B adresinden başlayan):
-                    -- Byte 0-1:   ACCEL_XOUT_H, ACCEL_XOUT_L
-                    -- Byte 2-3:   ACCEL_YOUT_H, ACCEL_YOUT_L
-                    -- Byte 4-5:   ACCEL_ZOUT_H, ACCEL_ZOUT_L
-                    -- Byte 6-7:   TEMP_OUT_H, TEMP_OUT_L (TEMP - YOKSAY)
-                    -- Byte 8-9:   GYRO_XOUT_H, GYRO_XOUT_L
-                    -- Byte 10-11: GYRO_YOUT_H, GYRO_YOUT_L
-                    -- Byte 12-13: GYRO_ZOUT_H, GYRO_ZOUT_L
-                    
                     temp := raw_data(0) & raw_data(1);
-                    ax_o <= std_logic_vector((signed(temp) - to_signed(0,16)));  -- - (-694) = + 694
+                    ax_o <= std_logic_vector((signed(temp) - to_signed(0,16)));  
 
                     temp := raw_data(2) & raw_data(3);
                     ay_o <= std_logic_vector((signed(temp) - to_signed(18,16)));
@@ -263,17 +232,13 @@ begin
                     gy_o <= std_logic_vector((signed(temp) - to_signed(22,16)));
 
                     temp := raw_data(12) & raw_data(13);
-                    gz_o <= std_logic_vector((signed(temp) - to_signed(-7,16)));   -- - (-7) = + 7
+                    gz_o <= std_logic_vector((signed(temp) - to_signed(-7,16)));   
 
                     data_valid_out   <= '1';
                     
                     state <= MEASURE_DELAY;
-
-                -- =============================================
-                -- ÖLÇÜMLER ARASINDA BEKLEME
-                -- =============================================
                 when MEASURE_DELAY =>
-                    if (delay_cntr = 333_333) then  -- ~10ms (ölçüm hızı ~100Hz)
+                    if (delay_cntr = 333_333) then  
                         state <= MEASURE_START;
                         delay_cntr <= 0;
                     else
