@@ -125,6 +125,7 @@ architecture Behavioral of top is
             start_transfer_o : out STD_LOGIC;
             mosi_data_o      : out STD_LOGIC_VECTOR(7 downto 0);
             spi_cs_n_o       : out STD_LOGIC;
+            data_valid_out   : out STD_LOGIC;
             ax_o             : out STD_LOGIC_VECTOR(15 downto 0);
             ay_o             : out STD_LOGIC_VECTOR(15 downto 0);
             az_o             : out STD_LOGIC_VECTOR(15 downto 0);
@@ -163,6 +164,7 @@ architecture Behavioral of top is
     -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
     -- =========================================================
     
+    signal data_valid_out    : STD_LOGIC := '0' ;
     -- Servo Sinyalleri
     signal angle_reg_0       : unsigned(7 downto 0) := (others => '0');
     signal angle_reg_1       : unsigned(7 downto 0) := (others => '0');
@@ -372,6 +374,7 @@ begin
             start_transfer_o=> spi_start,
             mosi_data_o     => mpu_to_spi_data, 
             spi_cs_n_o      => spi_cs_n_o,
+            data_valid_out  => data_valid_out,
             ax_o            => accel_x,
             ay_o            => accel_y,
             az_o            => accel_z,
@@ -668,6 +671,8 @@ begin
     hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool,   12), 16);
 -- -- 2. ADIM: Güvenli Process Bloğu
 PD_Test : process (clk_i, rst_n_i)
+    variable v_angle_x : SIGNED(31 downto 0) := (others => '0');
+    variable v_angle_y : SIGNED(31 downto 0) := (others => '0');
 begin
     if rst_n_i = '0' then 
         angle_filtered_x <= to_unsigned(127, 8);
@@ -680,22 +685,23 @@ begin
         uart_timer       <= 0;
     elsif rising_edge(clk_i) then
         tx_start_sig <= '0';
-
-        if spi_data_valid = '1' then 
+        v_angle_x := angle_pool_x ;
+        v_angle_y := angle_pool_y ;
+        if data_valid_out = '1' then 
             if to_integer(abs(signed(gyro_z))) > 15 then 
                 angle_pool <= angle_pool + signed(gyro_z);
             end if;
 
             if to_integer(abs(signed(gyro_x))) > 15 then 
-                angle_pool_x <= angle_pool_x + signed(gyro_x); 
+                v_angle_x := v_angle_x + signed(gyro_x); 
             end if;
 
-            angle_pool_x <= angle_pool_x - shift_right(angle_pool_x, 6) + shift_right(signed(accel_x), 6);
+            angle_pool_x <= v_angle_x - shift_right(v_angle_x, 6) + shift_right(signed(accel_x), 6);
 
             if to_integer(abs(signed(gyro_y))) > 15 then 
-                angle_pool_y <= angle_pool_y + signed(gyro_y);
+                v_angle_y := v_angle_y + signed(gyro_y);
             end if;
-            angle_pool_y <= angle_pool_y - shift_right(angle_pool_y, 6) + shift_right(signed(accel_y), 6);
+            angle_pool_y <= v_angle_y - shift_right(v_angle_y, 6) + shift_right(signed(accel_y), 6);
         end if;
 
         -- X Ekseni Koruması

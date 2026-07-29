@@ -2615,3 +2615,23 @@
 // Jul 28, 2026 17:10:20
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 23:11:41
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 32 elements; expected 16 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:685)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 23:12:13
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 28, 2026 23:21:49
+///////////////////////////////////
+

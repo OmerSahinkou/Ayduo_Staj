@@ -16,7 +16,6 @@ end entity pwm_servo;
 
 architecture Behavioral of pwm_servo is
 
-    -- 20 ms periyot için maksimum sayaç sınırı
     constant PERIOD_MAX : unsigned(19 downto 0) := to_unsigned(666_666, 20);
     
     signal counter     : unsigned(19 downto 0) := (others => '0');

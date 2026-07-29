@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Tue Jul 28 17:10:25 2026
+Date: Tue Jul 28 23:22:00 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -14,9 +14,9 @@ Elapsed time for packing: 0 hours 0 minutes 0 seconds
 Inputs: 4 / 96 (4.17%)
 Outputs: 7 / 223 (3.14%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 796 / 7384 (10.78%)
-	LE: LUTs/Adders: 705 / 7384 (9.55%)
-	LE: Registers: 422 / 5280 (7.99%)
+Logic Elements: 1088 / 7384 (14.73%)
+	LE: LUTs/Adders: 963 / 7384 (13.04%)
+	LE: Registers: 520 / 5280 (9.85%)
 Memory Blocks: 0 / 24 (0.00%)
 Multipliers: 3 / 8 (37.50%)
 ---------- Resource Summary (end) ----------
@@ -45,4 +45,4 @@ Multipliers: 3 / 8 (37.50%)
 
 ----------- IO Interface Summary (end) ----------
 
-Elapsed time for placement: 0 hours 0 minutes 1 seconds
+Elapsed time for placement: 0 hours 0 minutes 2 seconds
