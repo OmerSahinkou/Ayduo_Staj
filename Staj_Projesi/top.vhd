@@ -507,7 +507,7 @@ begin
                 wdata       => fifo_wr_data_o,
                 rst_busy    => fifo_rst_busys,
                 rdata       => rdata,
-                a_rst_i     => rst_n_i,
+                a_rst_i     => not(rst_n_i),
                 datacount_o => OPEN,
                 underflow_o => OPEN,
                 overflow_o  => OPEN
