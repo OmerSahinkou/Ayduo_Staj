@@ -10,7 +10,8 @@ entity pwm_servo is
         clk_i       : in  STD_LOGIC;
         rst_n_i     : in  STD_LOGIC;
         servo_angle : in  STD_LOGIC_VECTOR (7 downto 0);
-        pwm_out     : out STD_LOGIC
+        pwm_out     : out STD_LOGIC;
+        pwm_valid   : out STD_LOGIC
     );
 end entity pwm_servo;
 
@@ -32,7 +33,7 @@ begin
             pwm_out <= '0';
             pulse_width <= to_unsigned(16_666, 20);
         elsif rising_edge(clk_i) then
-            
+            pwm_valid <= '0' ;
             current_val := to_integer(unsigned(servo_angle));
             
             pw_calc := 16666 + (current_val * 244);
@@ -40,6 +41,7 @@ begin
             
             if counter >= PERIOD_MAX then
                 counter <= (others => '0');
+                pwm_valid <= '1' ;
             else
                 counter <= counter + 1;
             end if;

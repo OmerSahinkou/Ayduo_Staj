@@ -1,0 +1,198 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Wed Jul 29 10:34:26 2026
+# Process ID         : 9867
+# Current directory  : /home/omer-ahin/STAJ
+# Command line       : vivado
+# Log file           : /home/omer-ahin/STAJ/vivado.log
+# Journal file       : /home/omer-ahin/STAJ/vivado.jou
+# Running On         : omer-ahin-ASUS
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 6800H with Radeon Graphics
+# CPU Frequency      : 3110.731 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 32851 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41441 MB
+# Available Virtual  : 34956 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/omer-ahin/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+close [ open /home/omer-ahin/project_1/project_1.srcs/sources_1/new/pwm_serv.vhd w ]
+add_files /home/omer-ahin/project_1/project_1.srcs/sources_1/new/pwm_serv.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv w ]
+add_files -fileset sim_1 /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_pwm_servo [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tb_pwm_servo.tcl
+reestart
+resta
+run -all
+close_sim
+launch_simulation
+source tb_pwm_servo.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tb_pwm_servo.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tb_pwm_servo.tcl
+restart
+run -all
+run -all
+close_sim
+launch_simulation
+source tb_pwm_servo.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tb_pwm_servo.tcl
+restart
+run -all
+close_sim
+close [ open /home/omer-ahin/project_1/project_1.srcs/sources_1/new/tx.vhd w ]
+add_files /home/omer-ahin/project_1/project_1.srcs/sources_1/new/tx.vhd
+close [ open /home/omer-ahin/project_1/project_1.srcs/sources_1/new/rx.vhd w ]
+add_files /home/omer-ahin/project_1/project_1.srcs/sources_1/new/rx.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv w ]
+add_files -fileset sim_1 /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv
+close [ open /home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v w ]
+add_files -fileset sim_1 /home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tx_tb.tcl
+close_sim
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+current_wave_config {Untitled 10}
+add_wave {{/tx_tb/uart_tx_ins/data_buffer}} 
+restart
+run -all
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top rx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+close_sim
+launch_simulation
+source rx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source rx_tb.tcl
+restat
+restart
+run  -all
+close_sim
+launch_simulation
+source rx_tb.tcl
+restart
+run -all
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tx_tb.tcl
+restat
+restart
+run -all
+close_sim
+launch_simulation
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source tx_tb.tcl
+restart
+run -all
+close_sim
+set_property file_type SystemVerilog [get_files  /home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top rx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source rx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source rx_tb.tcl
+restart
+run -all
+close_sim
+launch_simulation
+source rx_tb.tcl
+restart
+run -all
+close_sim

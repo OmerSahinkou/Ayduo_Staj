@@ -41,7 +41,7 @@ INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_
 INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v' [VERI-1482]
 INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v' [VERI-1482]
 INFO     : Analyzing Verilog file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_peri_lib.v' [VERI-1482]
-INFO     : Analyzing Verilog file '/home/omer-ahin/STAJ/Staj_Projesi/ip/Cordic/Cordic.v' [VERI-1482]
+INFO     : Analyzing Verilog file '/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv' [VERI-1482]
 INFO     : Analyzing Verilog file '/home/omer-ahin/STAJ/Staj_Projesi/Led_Test.v' [VERI-1482]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd' [VHDL-1481]
 INFO     : Restoring VHDL unit 'ieee.std_logic_1164' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/ieee/std_logic_1164.vdb' [VHDL-1493]
@@ -53,7 +53,7 @@ INFO     : /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(27): analyzing entit
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(44): analyzing architecture 'behavioral' [VHDL-1010]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl' [VHDL-1481]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(5): analyzing entity 'pwm_servo' [VHDL-1012]
-INFO     : /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(17): analyzing architecture 'behavioral' [VHDL-1010]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(18): analyzing architecture 'behavioral' [VHDL-1010]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/top.vhd' [VHDL-1481]
 INFO     : Restoring VHDL unit 'ieee.fixed_pkg' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/ieee/fixed_pkg.vdb' [VHDL-1493]
 INFO     : Restoring VHDL unit 'ieee.fixed_float_types' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/ieee/fixed_float_types.vdb' [VHDL-1493]
@@ -78,20 +78,26 @@ INFO     : /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(42): analyzing architec
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl' [VHDL-1481]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(26): analyzing entity 'uart_rx' [VHDL-1012]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(41): analyzing architecture 'rtl' [VHDL-1010]
+INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd' [VHDL-1481]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(6): analyzing entity 'fifo_controller' [VHDL-1012]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(44): analyzing architecture 'rtl' [VHDL-1010]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd' [VHDL-1481]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd(5): analyzing entity 'accelrom' [VHDL-1012]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelRom.vhd(13): analyzing architecture 'behavioral' [VHDL-1010]
 INFO     : Analyzing VHDL file '/home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd' [VHDL-1481]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd(5): analyzing entity 'acceltoservo' [VHDL-1012]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/AccelToServo.vhd(12): analyzing architecture 'behavioral' [VHDL-1010]
-INFO     : Analysis took 0.16160504 seconds [FlowMsg::StageDuration]
-INFO     :     Analysis took 0.14 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Analysis virtual memory usage: begin = 131.664 MB, end = 140.88 MB, delta = 9.216 MB [FlowMsg::VMUsage]
-INFO     : Analysis resident set memory usage: begin = 74.216 MB, end = 85.352 MB, delta = 11.136 MB [FlowMsg::RSSUsage]
-INFO     :     Analysis peak resident set memory usage = 294.56 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Analysis took 0.054012628 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.05 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 131.66 MB, end = 140.876 MB, delta = 9.216 MB [FlowMsg::VMUsage]
+INFO     : Analysis resident set memory usage: begin = 74.472 MB, end = 85.864 MB, delta = 11.392 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Analysis ... *****
 INFO     : ***** Beginning Elaboration ... *****
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(18): processing 'top(Behavioral)' [VHDL-1067]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(210): using initial value for 'angle_reg_0' since it is never assigned [VHDL-1794]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(211): using initial value for 'angle_reg_1' since it is never assigned [VHDL-1794]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(212): using initial value for 'angle_reg_2' since it is never assigned [VHDL-1794]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(5): processing 'pwm_servo(Behavioral)' [VHDL-1067]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(26): processing 'uart_tx(baud_rate=1000000)(rtl)' [VHDL-1067]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(113): 'others' clause is never selected [VHDL-1172]
@@ -104,12 +110,31 @@ INFO     : /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(118): 'others' claus
 WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(121): incomplete sensitivity list specified; assuming completeness [VHDL-1613]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(14): processing 'MPU6500_Controller(Behavioral)' [VHDL-1067]
 INFO     : /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(249): 'others' clause is never selected [VHDL-1172]
-WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(757): latch inferred for net 'angle_filtered_x[7]' [VHDL-1840]
-INFO     : Elaboration took 0.067690568 seconds [FlowMsg::StageDuration]
-INFO     :     Elaboration took 0.06 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Elaboration virtual memory usage: begin = 140.88 MB, end = 148.048 MB, delta = 7.168 MB [FlowMsg::VMUsage]
-INFO     : Elaboration resident set memory usage: begin = 85.524 MB, end = 93.624 MB, delta = 8.1 MB [FlowMsg::RSSUsage]
-INFO     :     Elaboration peak resident set memory usage = 294.56 MB [FlowMsg::RSSUsage::Peak]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(6): processing 'FIFO_CONTROLLER(rtl)' [VHDL-1067]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(91): 'angle_x' should be on the sensitivity list of the process [VHDL-1251]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(92): 'angle_y' should be on the sensitivity list of the process [VHDL-1251]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(93): 'angle_z' should be on the sensitivity list of the process [VHDL-1251]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(244): 'others' clause is never selected [VHDL-1172]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(248): incomplete sensitivity list specified; assuming completeness [VHDL-1613]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(248): latch inferred for net 'reg_angle_x[7]' [VHDL-1840]
+INFO     : Restoring VHDL unit 'vl.vl_types' from file '/home/omer-ahin/Downloads/efinity/2025.2/sim_models/vhdl/packages/vhdl_2008/vl/vl_types.vdb' [VHDL-1493]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(514): switching to Verilog mode to elaborate module 'FIFO' [VHDL-1399]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(104): port 'a_wr_rst_i' remains unconnected for this instance [VERI-1927]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(49): compiling module 'FIFO' [VERI-1018]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(304): compiling module 'efx_fifo_top_312a81e5ee264b53bcc6aeade6aa5df8(SYNC_CLK=1,DATA_WIDTH=8,PIPELINE_REG=0,OPTIONAL_FLAGS=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,PROGRAMMABLE_EMPTY="NONE",PROG_EMPTY_ASSERT=0,PROG_EMPTY_NEGATE=0)' [VERI-1018]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1364): compiling module 'efx_resetsync_312a81e5ee264b53bcc6aeade6aa5df8(ACTIVE_LOW=0)' [VERI-1018]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1409): compiling module 'efx_asyncreg_312a81e5ee264b53bcc6aeade6aa5df8(WIDTH=1,ACTIVE_LOW=0,RST_VALUE=1)' [VERI-1018]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(624): compiling module 'efx_fifo_ram_312a81e5ee264b53bcc6aeade6aa5df8(OUTPUT_REG=0,RAM_MUX_RATIO=1)' [VERI-1018]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(661): extracting RAM for identifier 'ram' [VERI-2571]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(936): compiling module 'efx_fifo_ctl_312a81e5ee264b53bcc6aeade6aa5df8(PIPELINE_REG=0,ALMOST_FLAG=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,HANDSHAKE_FLAG=0,OVERFLOW_PROTECT=1,UNDERFLOW_PROTECT=1)' [VERI-1018]
+WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(89): input port 'a_wr_rst_i' is not connected on this instance [VDB-1013]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(514): returning to VHDL mode to continue with elaboration [VHDL-1400]
+INFO     : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(876): 'others' clause is never selected [VHDL-1172]
+INFO     : Elaboration took 0.030346459 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration virtual memory usage: begin = 140.876 MB, end = 150.092 MB, delta = 9.216 MB [FlowMsg::VMUsage]
+INFO     : Elaboration resident set memory usage: begin = 86.008 MB, end = 95.744 MB, delta = 9.736 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Elaboration ... *****
 INFO     : ... Setting Synthesis Option: mode=speed
 INFO     : ***** Beginning Reading Mapping Library ... *****
@@ -131,98 +156,119 @@ INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_map
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(653): compiling module 'EFX_RAM10' [VERI-1018]
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(754): compiling module 'EFX_DPRAM10' [VERI-1018]
 INFO     : /home/omer-ahin/Downloads/efinity/2025.2/sim_models/maplib/efinix_maplib.v(884): compiling module 'EFX_SRL8' [VERI-1018]
-INFO     : Reading Mapping Library took 0.021767603 seconds [FlowMsg::StageDuration]
-INFO     :     Reading Mapping Library took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Reading Mapping Library virtual memory usage: begin = 151.624 MB, end = 151.624 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Reading Mapping Library resident set memory usage: begin = 96.456 MB, end = 96.456 MB, delta = 0 MB [FlowMsg::RSSUsage]
-INFO     :     Reading Mapping Library peak resident set memory usage = 294.56 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Reading Mapping Library took 0.006957542 seconds [FlowMsg::StageDuration]
+INFO     :     Reading Mapping Library took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Reading Mapping Library virtual memory usage: begin = 153.668 MB, end = 153.668 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Reading Mapping Library resident set memory usage: begin = 99.116 MB, end = 99.116 MB, delta = 0 MB [FlowMsg::RSSUsage]
+INFO     :     Reading Mapping Library peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending Reading Mapping Library ... *****
 INFO     : ... Pre-synthesis checks begin
-WARNING  : Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:27) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
-WARNING  : Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[4]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[3]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[2]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[1]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : current_val[0]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:28) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[16]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[15]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[14]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[13]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[12]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[11]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[10]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[9]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[8]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[7]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[6]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
+WARNING  : Removing redundant signal : pw_calc[5]. (/home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl:29) [EFX-0200]
 WARNING  : (The above message was generated too many times, subsequent similar messages will be muted.) [EFX-0200]
-INFO     : ... Pre-synthesis checks end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : Module Instance 'active_high.efx_resetsync_active_high' input pin 'd_i[0]' is tied to constant (=0). [EFX-0266]
+INFO     : ... Memory 'ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:661) [EFX-0677]
+WARNING  : Re-wiring to GND non-driven net 'u_efx_fifo_top.a_wr_rst_i'. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:89) [EFX-0201]
+WARNING  : Re-wiring to GND non-driven net 'u_efx_fifo_top.a_rd_rst_i'. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:89) [EFX-0201]
+WARNING  : Re-wiring to GND non-driven net 'u_efx_fifo_top.wr_clk_i'. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:89) [EFX-0201]
+WARNING  : Re-wiring to GND non-driven net 'u_efx_fifo_top.rd_clk_i'. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:89) [EFX-0201]
+INFO     : ... Pre-synthesis checks end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... NameSpace init begin
-INFO     : ... NameSpace init end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... NameSpace init end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Mapping design "top"
 INFO     : ... Hierarchical pre-synthesis "pwm_servo" begin
-INFO     : ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Hierarchical pre-synthesis "pwm_servo" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" begin
-INFO     : ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Hierarchical pre-synthesis "uart_tx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Hierarchical pre-synthesis "debounce" begin
-INFO     : ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Hierarchical pre-synthesis "debounce" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" begin
-INFO     : ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Hierarchical pre-synthesis "uart_rx(baud_rate=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" begin
-INFO     : ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Hierarchical pre-synthesis "Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Hierarchical pre-synthesis "MPU6500_Controller" begin
-INFO     : ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Hierarchical pre-synthesis "MPU6500_Controller" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "FIFO_CONTROLLER" begin
+INFO     : ... Hierarchical pre-synthesis "FIFO_CONTROLLER" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "efx_asyncreg_312a81e5ee264b53bcc6aeade6aa5df8(WIDTH=1,ACTIVE_LOW=0,RST_VALUE=1)" begin
+INFO     : ... Hierarchical pre-synthesis "efx_asyncreg_312a81e5ee264b53bcc6aeade6aa5df8(WIDTH=1,ACTIVE_LOW=0,RST_VALUE=1)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "efx_resetsync_312a81e5ee264b53bcc6aeade6aa5df8(ACTIVE_LOW=0)" begin
+INFO     : ... Hierarchical pre-synthesis "efx_resetsync_312a81e5ee264b53bcc6aeade6aa5df8(ACTIVE_LOW=0)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "efx_fifo_ram_312a81e5ee264b53bcc6aeade6aa5df8(OUTPUT_REG=0,RAM_MUX_RATIO=1)" begin
+INFO     : ... Hierarchical pre-synthesis "efx_fifo_ram_312a81e5ee264b53bcc6aeade6aa5df8(OUTPUT_REG=0,RAM_MUX_RATIO=1)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "efx_fifo_ctl_312a81e5ee264b53bcc6aeade6aa5df8(PIPELINE_REG=0,ALMOST_FLAG=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,HANDSHAKE_FLAG=0,OVERFLOW_PROTECT=1,UNDERFLOW_PROTECT=1)" begin
+INFO     : ... Hierarchical pre-synthesis "efx_fifo_ctl_312a81e5ee264b53bcc6aeade6aa5df8(PIPELINE_REG=0,ALMOST_FLAG=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,HANDSHAKE_FLAG=0,OVERFLOW_PROTECT=1,UNDERFLOW_PROTECT=1)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "efx_fifo_top_312a81e5ee264b53bcc6aeade6aa5df8(SYNC_CLK=1,DATA_WIDTH=8,PIPELINE_REG=0,OPTIONAL_FLAGS=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,PROGRAMMABLE_EMPTY="NONE",PROG_EMPTY_ASSERT=0,PROG_EMPTY_NEGATE=0)" begin
+INFO     : ... Hierarchical pre-synthesis "efx_fifo_top_312a81e5ee264b53bcc6aeade6aa5df8(SYNC_CLK=1,DATA_WIDTH=8,PIPELINE_REG=0,OPTIONAL_FLAGS=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,PROGRAMMABLE_EMPTY="NONE",PROG_EMPTY_ASSERT=0,PROG_EMPTY_NEGATE=0)" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
+INFO     : ... Hierarchical pre-synthesis "FIFO" begin
+INFO     : ... Hierarchical pre-synthesis "FIFO" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Hierarchical pre-synthesis "top" begin
-INFO     : ... Clock Enable Synthesis Performed on 245 flops.
-INFO     : ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 294560KB)
+INFO     : Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:346) [EFX-0673]
+INFO     : Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:356) [EFX-0673]
+INFO     : ... Clock Enable Synthesis Performed on 501 flops.
+INFO     : ... Hierarchical pre-synthesis "top" end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Flat optimizations begin
-INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Flat synthesis begin
-INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Flat synthesis end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Flat optimizations begin
-INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Flat optimizations end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Check and break combinational loops begin
-INFO     : ... Check and break combinational loops end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Check and break combinational loops end (Real time : 0s CPU user time : 0s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Sequential Optimization begin
-INFO     : ... Clock Network 'clk_i' with 517 loads will be considered for sequential optimization.
-INFO     : ... Sequential Optimization deduced 141 equivalent points.
-INFO     : ... Sequential Optimization end (Real time : 1s CPU user time : 4s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Clock Network 'clk_i' with 474 loads will be considered for sequential optimization.
+INFO     : ... Sequential Optimization deduced 861 equivalent points.
+INFO     : ... Sequential Optimization end (Real time : 0s CPU user time : 1s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Setup for logic synthesis begin
-INFO     : ... Setup for logic synthesis end (Real time : 0s CPU user time : 4s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Setup for logic synthesis end (Real time : 1s CPU user time : 1s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... LUT mapping begin
-INFO     : ... LS, strategy: 3, nd: 632, ed: 1963, lv: 5, pw: 1494.71
-INFO     : ... LUT mapping end (Real time : 4s CPU user time : 8s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... LS, strategy: 3, nd: 240, ed: 773, lv: 5, pw: 433.99
+INFO     : ... LUT mapping end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Post-synthesis Verific netlist creation begin
-INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 8s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Post-synthesis Verific netlist creation end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 258400KB)
 INFO     : ... Postmap Retiming Optimization begin
-INFO     : ... Clock Network 'clk_i~clk_i' with 512 loads will be considered for retiming optimization.
-INFO     : ... Performed 4 retime moves.
-INFO     : ... Postmap Retiming Optimization end (Real time : 0s CPU user time : 9s CPU sys time : 0s MEM : 294560KB)
+INFO     : ... Clock Network 'clk_i~clk_i' with 108 loads will be considered for retiming optimization.
+INFO     : ... Performed 0 retime moves.
+INFO     : ... Postmap Retiming Optimization end (Real time : 1s CPU user time : 2s CPU sys time : 0s MEM : 258400KB)
 INFO     : ***** Beginning VDB Netlist Checker ... *****
 WARNING  : /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(33): Input/inout port rx is unconnected. Place and route may remove this unconnected port. [VDB-8003]
 WARNING  : Found 1 warnings in the post-synthesis netlist.
-INFO     : VDB Netlist Checker took 0.002355596 seconds [FlowMsg::StageDuration]
+INFO     : VDB Netlist Checker took 0.000631651 seconds [FlowMsg::StageDuration]
 INFO     :     VDB Netlist Checker took 0 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : VDB Netlist Checker virtual memory usage: begin = 291.228 MB, end = 291.228 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : VDB Netlist Checker resident set memory usage: begin = 127.172 MB, end = 127.172 MB, delta = 0 MB [FlowMsg::RSSUsage]
-INFO     :     VDB Netlist Checker peak resident set memory usage = 294.56 MB [FlowMsg::RSSUsage::Peak]
+INFO     : VDB Netlist Checker virtual memory usage: begin = 266.124 MB, end = 266.124 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : VDB Netlist Checker resident set memory usage: begin = 115.152 MB, end = 115.3 MB, delta = 0.148 MB [FlowMsg::RSSUsage]
+INFO     :     VDB Netlist Checker peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]
 INFO     : ***** Ending VDB Netlist Checker ... *****
 INFO     : Resource Summary 
 INFO     : =============================== 
-INFO     : EFX_ADD         : 	329
-INFO     : EFX_LUT4        : 	632
-INFO     : EFX_MULT        : 	3
-INFO     : EFX_FF          : 	520
+INFO     : EFX_ADD         : 	38
+INFO     : EFX_LUT4        : 	240
+INFO     : EFX_FF          : 	107
 INFO     : EFX_GBUFCE      : 	1
 INFO     : =============================== 
 INFO     : ... Post-Map Verilog Writer begin
 INFO     : Writing netlist 'top' to Verilog file '/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.map.v' [VDB-1030]
-INFO     : ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 9s CPU sys time : 0s MEM : 294560KB)
-INFO     : The entire flow of EFX_MAP took 8.471565218 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_MAP took 9.2 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.48 MB, end = 291.228 MB, delta = 196.748 MB [FlowMsg::VMUsage]
-INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.492 MB, end = 132.292 MB, delta = 102.8 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 294.56 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ... Post-Map Verilog Writer end (Real time : 0s CPU user time : 2s CPU sys time : 0s MEM : 258400KB)
+INFO     : The entire flow of EFX_MAP took 2.1401981 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_MAP took 2.1 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_MAP virtual memory usage: begin = 94.476 MB, end = 266.124 MB, delta = 171.648 MB [FlowMsg::VMUsage]
+INFO     : The entire flow of EFX_MAP resident set memory usage: begin = 29.688 MB, end = 118.756 MB, delta = 89.068 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_MAP peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]

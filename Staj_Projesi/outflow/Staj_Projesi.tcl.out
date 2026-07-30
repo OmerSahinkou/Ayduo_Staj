@@ -1,2 +1,27 @@
 INFO     : Reading project database "/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml" [FlowMsg::ProjectDatabaseReading]
 INFO     : Maximum concurrency has been set to 8 [FlowMsg::MaxThreads]
+INFO     : Reading project database "/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : Maximum concurrency has been set to 8 [FlowMsg::MaxThreads]
+INFO     : Deleting any pre-existing troute trace files [DBMsg::DatabaseRoutingEraseTrouteTrace]
+INFO     : Deleting any pre-existing troute trace files [DBMsg::DatabaseRoutingEraseTrouteTrace]
+INFO     : Deleting any pre-existing troute trace files [DBMsg::DatabaseRoutingEraseTrouteTrace]
+INFO     : Reading project database "/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : Maximum concurrency has been set to 8 [FlowMsg::MaxThreads]
+INFO     : Reading project database "/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : Maximum concurrency has been set to 8 [FlowMsg::MaxThreads]
+INFO     : Reading project database "/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.xml" [FlowMsg::ProjectDatabaseReading]
+INFO     : Maximum concurrency has been set to 8 [FlowMsg::MaxThreads]
+INFO     : ***** Beginning Analysis ... *****
+INFO     : Analysis took 0.067489707 seconds [FlowMsg::StageDuration]
+INFO     :     Analysis took 0.07 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Analysis virtual memory usage: begin = 685.276 MB, end = 685.66 MB, delta = 0.384 MB [FlowMsg::VMUsage]
+INFO     : Analysis resident set memory usage: begin = 209.688 MB, end = 219.78 MB, delta = 10.092 MB [FlowMsg::RSSUsage]
+INFO     :     Analysis peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Analysis ... *****
+INFO     : ***** Beginning Elaboration ... *****
+INFO     : Elaboration took 0.027144365 seconds [FlowMsg::StageDuration]
+INFO     :     Elaboration took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Elaboration virtual memory usage: begin = 685.66 MB, end = 685.66 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Elaboration resident set memory usage: begin = 219.78 MB, end = 225.34 MB, delta = 5.56 MB [FlowMsg::RSSUsage]
+INFO     :     Elaboration peak resident set memory usage = 258.4 MB [FlowMsg::RSSUsage::Peak]
+INFO     : ***** Ending Elaboration ... *****

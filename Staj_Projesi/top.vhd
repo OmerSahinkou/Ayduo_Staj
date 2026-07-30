@@ -51,7 +51,8 @@ architecture Behavioral of top is
             clk_i       : in STD_LOGIC;
             rst_n_i     : in STD_LOGIC;
             servo_angle : in STD_LOGIC_VECTOR (7 downto 0);
-            pwm_out     : out STD_LOGIC
+            pwm_out     : out STD_LOGIC;
+            pwm_valid   : out STD_LOGIC
         );
     end component;
 
@@ -160,16 +161,59 @@ architecture Behavioral of top is
             data_out : out std_logic_vector ((N/2)-1 downto 0)
         );
     end component;
+
+    component FIFO is
+        port (
+            prog_full_o : out std_logic;
+            full_o : out std_logic;
+            empty_o : out std_logic;
+            clk_i : in std_logic;
+            wr_en_i : in std_logic;
+            rd_en_i : in std_logic;
+            wdata : in std_logic_vector(7 downto 0);
+            rst_busy : out std_logic;
+            rdata : out std_logic_vector(7 downto 0);
+            a_rst_i : in std_logic;
+            datacount_o : out std_logic_vector(9 downto 0);
+            underflow_o : out std_logic;
+            overflow_o : out std_logic
+        );
+    end component FIFO;
+
+    component FIFO_CONTROLLER is
+        port (
+            clk_i           : in std_logic;
+            rst_n_i         : in std_logic;
+            data_valid_i    : in STD_LOGIC;
+            ax_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            ay_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            az_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            gx_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            gy_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            gz_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            angle_x         : in STD_LOGIC_VECTOR(7 downto 0);
+            angle_y         : in STD_LOGIC_VECTOR(7 downto 0);
+            angle_z         : in STD_LOGIC_VECTOR(7 downto 0);
+            fifo_full_i     : in  STD_LOGIC;
+            fifo_rst_busys  : in  STD_LOGIC;
+            fifo_wr_en_o    : out std_logic;
+            fifo_wr_data_o  : out std_logic_vector(7 downto 0)
+        );
+    end component FIFO_CONTROLLER;
+
     -- =========================================================
     -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
     -- =========================================================
     
-    signal data_valid_out    : STD_LOGIC := '0' ;
+    signal data_valid_out  : STD_LOGIC := '0' ;
     -- Servo Sinyalleri
-    signal angle_reg_0       : unsigned(7 downto 0) := (others => '0');
-    signal angle_reg_1       : unsigned(7 downto 0) := (others => '0');
-    signal angle_reg_2       : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_0     : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_1     : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_2     : unsigned(7 downto 0) := (others => '0');
     
+    signal pwm_valid_x     :  STD_LOGIC := '0' ;
+    signal pwm_valid_y     :  STD_LOGIC := '0' ;
+    signal pwm_valid_z     :  STD_LOGIC := '0' ;
     -- UART Sinyalleri
     signal tx_start_sig    : std_logic := '0';
     signal tx_data_sig     : std_logic_vector(7 downto 0) := (others => '0');
@@ -215,6 +259,9 @@ architecture Behavioral of top is
     signal uart_state : uart_state_t := IDLE;
     signal byte_idx   : integer range 0 to 14 := 0;  -- 0-14 = 15 byte (marker + 14 veri)
     
+    type t_uart_read_state is (ST_CHECK_FIFO,ST_WAIT_FIFO,ST_START_UART,ST_WAIT_UART);
+    signal uart_read_state : t_uart_read_state := ST_CHECK_FIFO;
+
     --rx counter 
     signal byte_idx_uart   : integer range 0 to 10  := 0 ;
 
@@ -237,11 +284,17 @@ architecture Behavioral of top is
     signal hesap_temp_z : signed(15 downto 0);
 
     signal angle_pool   : signed(31 downto 0);
-    signal angle_pool_x : signed(31 downto 0) := (others => '0');
-    signal angle_pool_y : signed(31 downto 0) := (others => '0');
     signal uart_timer   : integer range 0 to 3333333 := 0;
 
+    --FIFO controller
+    signal fifo_full_i  : STD_LOGIC := '0';
+    signal fifo_rst_busys  : STD_LOGIC := '0';
+    signal fifo_wr_en_o  : STD_LOGIC := '0';
+    signal fifo_wr_data_o  : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
 
+    signal empty_o  : STD_LOGIC := '0';
+    signal rd_en_i  : STD_LOGIC := '0';
+    signal rdata    : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
 
     -- --------PID signals------------
     -- signal angle_from_accel_x   : SIGNED(15 downto 0 )  := TO_SIGNED(0,16);
@@ -286,7 +339,8 @@ begin
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
             servo_angle => std_logic_vector(angle_reg_0),
-            pwm_out     => pwm_out_0
+            pwm_out     => pwm_out_0,
+            pwm_valid   => pwm_valid_x
         );
 
     Inst_pwm_servo_1: pwm_servo
@@ -295,7 +349,8 @@ begin
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
             servo_angle => std_logic_vector(angle_reg_1),
-            pwm_out     => pwm_out_1
+            pwm_out     => pwm_out_1,
+            pwm_valid   => pwm_valid_y
         );
 
     Inst_pwm_servo_2: pwm_servo
@@ -304,7 +359,9 @@ begin
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
             servo_angle => std_logic_vector(angle_reg_2),
-            pwm_out     => pwm_out_2
+            pwm_out     => pwm_out_2,
+            pwm_valid   => pwm_valid_z
+
         );
 
     Inst_uart_tx: uart_tx
@@ -420,6 +477,41 @@ begin
     --         data_out        => data_out
     --     );
 
+    Inst_FIFO_CONTROLLER: FIFO_CONTROLLER
+            port map (
+                clk_i           => clk_i,
+                rst_n_i         => rst_n_i,
+                data_valid_i    => data_valid_out,
+                ax_i            => accel_x,
+                ay_i            => accel_y,
+                az_i            => accel_z,
+                gx_i            => gyro_x ,
+                gy_i            => gyro_y , 
+                gz_i            => gyro_z ,
+                angle_x         => STD_LOGIC_VECTOR(angle_reg_0),
+                angle_y         => STD_LOGIC_VECTOR(angle_reg_1),
+                angle_z         => STD_LOGIC_VECTOR(angle_reg_2),
+                fifo_full_i     => fifo_full_i,
+                fifo_rst_busys  => fifo_rst_busys,
+                fifo_wr_en_o    => fifo_wr_en_o,
+                fifo_wr_data_o  => fifo_wr_data_o
+            );
+    u_FIFO : FIFO
+            port map (
+                prog_full_o => OPEN,
+                full_o      => fifo_full_i,
+                empty_o     => empty_o,
+                clk_i       => clk_i,
+                wr_en_i     => fifo_wr_en_o,
+                rd_en_i     => rd_en_i,
+                wdata       => fifo_wr_data_o,
+                rst_busy    => fifo_rst_busys,
+                rdata       => rdata,
+                a_rst_i     => rst_n_i,
+                datacount_o => OPEN,
+                underflow_o => OPEN,
+                overflow_o  => OPEN
+            );
 
     --=========================================================
     --ROOT Hesaplama
@@ -666,101 +758,125 @@ begin
     -- =========================================================
     -- PD Test STATE MACHINE
     -- =========================================================
-    hesap_temp_x <= to_signed(127, 16) + resize(shift_right(angle_pool_x, 14), 16);
-    hesap_temp_y <= to_signed(127, 16) + resize(shift_right(angle_pool_y, 12), 16);
-    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool,   12), 16);
+-- hesap_temp_x <= to_signed(127, 16) + shift_right(signed(accel_x), 6) - shift_right(signed(gyro_x), 8);
+-- hesap_temp_y <= to_signed(127, 16) + shift_right(signed(accel_y), 7) - shift_right(signed(gyro_y), 8);
+-- hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 14), 16) - shift_right(signed(gyro_z), 8);
+
 -- -- 2. ADIM: Güvenli Process Bloğu
-PD_Test : process (clk_i, rst_n_i)
-    variable v_angle_x : SIGNED(31 downto 0) := (others => '0');
-    variable v_angle_y : SIGNED(31 downto 0) := (others => '0');
+-- PD_Test : process (clk_i, rst_n_i)
+-- begin
+--     if rst_n_i = '0' then 
+--         angle_filtered_x <= to_unsigned(127, 8);
+--         angle_filtered_y <= to_unsigned(127, 8);
+--         angle_filtered_z <= to_unsigned(127, 8);
+--         angle_raw_x      <= to_unsigned(127, 8);
+--         angle_raw_y      <= to_unsigned(127, 8);
+--         angle_raw_z      <= to_unsigned(127, 8);
+--         tx_start_sig     <= '0';
+--         uart_timer       <= 0;
+--     elsif rising_edge(clk_i) then
+--         tx_start_sig <= '0';
+--         --  Servo Atamaları  --
+--         if pwm_valid_x = '1' then
+--             angle_reg_0 <= angle_filtered_x;
+--         end if;
+        
+--         if pwm_valid_y = '1' then
+--             angle_reg_1 <= angle_filtered_y;
+--         end if;
+        
+--         if pwm_valid_z = '1' then
+--             angle_reg_2 <= angle_raw_z;
+--         end if;
+
+--         if spi_data_valid = '1' then 
+--             if to_integer(abs(signed(gyro_z))) > 15 then 
+--                 angle_pool <= angle_pool + signed(gyro_z);
+--             end if;
+--         end if;
+
+--         -- X Ekseni Koruması
+--         if hesap_temp_x > 255 then
+--             angle_raw_x <= to_unsigned(255, 8);
+--         elsif hesap_temp_x < 0 then
+--             angle_raw_x <= to_unsigned(0, 8);
+--         else
+--             angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
+--         end if;
+
+--         -- Y Ekseni Koruması
+--         if hesap_temp_y > 255 then
+--             angle_raw_y <= to_unsigned(255, 8);
+--         elsif hesap_temp_y < 0 then
+--             angle_raw_y <= to_unsigned(0, 8);
+--         else
+--             angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
+--         end if;
+
+--         if hesap_temp_z > 255 then
+--             angle_raw_z <= to_unsigned(255, 8);
+--         elsif hesap_temp_z < 0 then 
+--             angle_raw_z <= to_unsigned(0, 8);  
+--         else 
+--             angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
+--         end if;
+
+--         if abs(to_integer(angle_raw_x) - to_integer(angle_filtered_x)) > 2 then
+--             angle_filtered_x <= resize(shift_right(resize(angle_filtered_x, 10) * 3 + resize(angle_raw_x, 10), 2), 8);
+--         end if;
+
+--         if abs(to_integer(angle_raw_y) - to_integer(angle_filtered_y)) > 2 then
+--             angle_filtered_y <= resize(shift_right(resize(angle_filtered_y, 10) * 3 + resize(angle_raw_y, 10), 2), 8);
+--         end if;
+
+--         if uart_timer < 3333333 then
+--             uart_timer <= uart_timer + 1;
+--         else
+--             uart_timer <= 0;
+--             if tx_busy_sig = '0' then
+--                 tx_start_sig <= '1';
+--                 tx_data_sig  <= std_logic_vector(angle_reg_2);
+--             end if;
+--         end if;
+
+--     end if;
+-- end process;
+
+-- =========================================================
+-- FIFO   Test STATE MACHINE
+-- =========================================================
+
+fifo_test : process (rst_n_i , clk_i)
 begin
     if rst_n_i = '0' then 
-        angle_filtered_x <= to_unsigned(127, 8);
-        angle_filtered_y <= to_unsigned(127, 8);
-        angle_filtered_z <= to_unsigned(127, 8);
-        angle_raw_x      <= to_unsigned(127, 8);
-        angle_raw_y      <= to_unsigned(127, 8);
-        angle_raw_z      <= to_unsigned(127, 8);
-        tx_start_sig     <= '0';
-        uart_timer       <= 0;
-    elsif rising_edge(clk_i) then
-        tx_start_sig <= '0';
-        v_angle_x := angle_pool_x ;
-        v_angle_y := angle_pool_y ;
-        if data_valid_out = '1' then 
-            if to_integer(abs(signed(gyro_z))) > 15 then 
-                angle_pool <= angle_pool + signed(gyro_z);
-            end if;
+        tx_start_sig    <= '0';
+        tx_data_sig     <= (others => '0'); 
+        uart_read_state <= ST_CHECK_FIFO;
+    elsif rising_edge(clk_i) then 
 
-            if to_integer(abs(signed(gyro_x))) > 15 then 
-                v_angle_x := v_angle_x + signed(gyro_x); 
-            end if;
-
-            angle_pool_x <= v_angle_x - shift_right(v_angle_x, 6) + shift_right(signed(accel_x), 6);
-
-            if to_integer(abs(signed(gyro_y))) > 15 then 
-                v_angle_y := v_angle_y + signed(gyro_y);
-            end if;
-            angle_pool_y <= v_angle_y - shift_right(v_angle_y, 6) + shift_right(signed(accel_y), 6);
-        end if;
-
-        -- X Ekseni Koruması
-        if hesap_temp_x > 255 then
-            angle_raw_x <= to_unsigned(255, 8);
-        elsif hesap_temp_x < 0 then
-            angle_raw_x <= to_unsigned(0, 8);
-        else
-            angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
-        end if;
-
-        -- Y Ekseni Koruması
-        if hesap_temp_y > 255 then
-            angle_raw_y <= to_unsigned(255, 8);
-        elsif hesap_temp_y < 0 then
-            angle_raw_y <= to_unsigned(0, 8);
-        else
-            angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
-        end if;
-        -- Z Ekseni Koruması
-        if hesap_temp_z > 255 then
-            angle_raw_z <= to_unsigned(255, 8);
-        elsif hesap_temp_z < 0 then 
-            angle_raw_z <= to_unsigned(0, 8);  
-        else 
-            angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
-        end if;
-
-        -- -- X ekseni Filter
-        -- if abs(to_integer(angle_raw_x) - to_integer(angle_filtered_x)) > 2 then
-        --     angle_filtered_x <= resize(shift_right(resize(angle_filtered_x, 10) * 3 + resize(angle_raw_x, 10), 2), 8);
-        -- end if;
-        -- -- Y ekseni Filter
-
-        -- if abs(to_integer(angle_raw_y) - to_integer(angle_filtered_y)) > 2 then
-        --     angle_filtered_y <= resize(shift_right(resize(angle_filtered_y, 10) * 3 + resize(angle_raw_y, 10), 2), 8);
-        -- end if;
-        ---- Z ekseni Filter
-        --if abs(to_integer(angle_raw_z) - to_integer(angle_filtered_z)) > 2 then
-        --    angle_filtered_z <= resize(shift_right(resize(angle_filtered_z, 10) * 3 + resize(angle_raw_z, 10), 2), 8);
-        --end if;
-
-        if uart_timer < 3333333 then
-            uart_timer <= uart_timer + 1;
-        else
-            uart_timer <= 0;
-            if tx_busy_sig = '0' then
+        tx_start_sig    <= '0';
+        rd_en_i         <= '0';
+        case uart_read_state is
+            when ST_CHECK_FIFO  => 
+                if(tx_busy_sig ='0' and empty_o = '0') then 
+                    rd_en_i  <= '1';
+                    uart_read_state <= ST_WAIT_FIFO;
+                end if;
+            when ST_WAIT_FIFO   =>
+                uart_read_state <= ST_START_UART ;
+            when ST_START_UART  =>
                 tx_start_sig <= '1';
-                tx_data_sig  <= std_logic_vector(angle_reg_2); 
-            end if;
-        end if;
+                tx_data_sig  <= rdata ;
+                uart_read_state <= ST_WAIT_UART;
+            when ST_WAIT_UART   =>
+                if(tx_busy_sig = '1') then 
+                    uart_read_state <= ST_CHECK_FIFO ;
+                end if;
+            when others => uart_read_state <= ST_CHECK_FIFO;
+                null;
+        end case;
     end if;
-end process;
-
-angle_reg_0 <= angle_raw_x;
-angle_reg_1 <= angle_raw_y;
-angle_reg_2 <= angle_raw_z;
-
-
+end process fifo_test;
 -- =========================================================
 -- filter  Test STATE MACHINE
 -- =========================================================

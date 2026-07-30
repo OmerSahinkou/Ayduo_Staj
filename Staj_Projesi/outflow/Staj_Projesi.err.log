@@ -2635,3 +2635,75 @@
 // Jul 28, 2026 23:21:49
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 09:48:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 09:54:36
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 10:01:26
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'hesap_temp_z[15]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:669)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:670)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 10:01:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 10:03:14
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 10:03:50
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 10:13:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 10:14:29
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 29, 2026 15:12:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 30, 2026 15:31:51
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] signal cannot be unconstrained (VHDL-1221) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:297)
+[EFX-0010 VERI-ERROR] illegal aggregate choice 'others' for an unconstrained target (VHDL-1174) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:297)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Jul 30, 2026 15:32:47
+///////////////////////////////////
+

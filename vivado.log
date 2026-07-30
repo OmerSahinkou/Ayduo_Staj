@@ -1,0 +1,2932 @@
+INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 07-sep-2026.
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Wed Jul 29 10:34:26 2026
+# Process ID         : 9867
+# Current directory  : /home/omer-ahin/STAJ
+# Command line       : vivado
+# Log file           : /home/omer-ahin/STAJ/vivado.log
+# Journal file       : /home/omer-ahin/STAJ/vivado.jou
+# Running On         : omer-ahin-ASUS
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.4 LTS
+# Processor Detail   : AMD Ryzen 7 6800H with Radeon Graphics
+# CPU Frequency      : 3110.731 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 32851 MB
+# Swap memory        : 8589 MB
+# Total Virtual      : 41441 MB
+# Available Virtual  : 34956 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/omer-ahin/project_1/project_1.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/omer-ahin/project_1/project_1.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-5713] Board part '' set for the project  is not found. BoardPart property will be unset. Please select board from latest repo build 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2026.1/data/ip'.
+update_compile_order -fileset sources_1
+close [ open /home/omer-ahin/project_1/project_1.srcs/sources_1/new/pwm_serv.vhd w ]
+add_files /home/omer-ahin/project_1/project_1.srcs/sources_1/new/pwm_serv.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv w ]
+add_files -fileset sim_1 /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv
+update_compile_order -fileset sim_1
+set_property top tb_pwm_servo [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:12:07 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_pwm_servo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pwm_servo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_pwm_servo_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pwm_servo
+xvhdl --incr --relax -prj tb_pwm_servo_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omer-ahin/project_1/project_1.srcs/sources_1/new/pwm_serv.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm_serv'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-9380] size mismatch in mixed-language port association of VHDL port 'servo_angle' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:33]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm_serv [pwm_serv_default]
+Compiling module xil_defaultlib.tb_pwm_servo
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_pwm_servo_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pwm_servo_behav -key {Behavioral:sim_1:Functional:tb_pwm_servo} -tclbatch {tb_pwm_servo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_pwm_servo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pwm_servo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 10388.434 ; gain = 88.203 ; free physical = 18192 ; free virtual = 31994
+reestart
+invalid command name "reestart"
+resta
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289100 KB (Peak: 346632 KB), Simulation CPU Usage: 2810 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:16:42 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_pwm_servo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pwm_servo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_pwm_servo_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pwm_servo
+xvhdl --incr --relax -prj tb_pwm_servo_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omer-ahin/project_1/project_1.srcs/sources_1/new/pwm_serv.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pwm_serv'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm_serv [pwm_serv_default]
+Compiling module xil_defaultlib.tb_pwm_servo
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_pwm_servo_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pwm_servo_behav -key {Behavioral:sim_1:Functional:tb_pwm_servo} -tclbatch {tb_pwm_servo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_pwm_servo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pwm_servo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10426.312 ; gain = 37.879 ; free physical = 18168 ; free virtual = 31977
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289100 KB (Peak: 346632 KB), Simulation CPU Usage: 4390 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:19:44 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_pwm_servo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pwm_servo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_pwm_servo_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pwm_servo
+xvhdl --incr --relax -prj tb_pwm_servo_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm_serv [pwm_serv_default]
+Compiling module xil_defaultlib.tb_pwm_servo
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_pwm_servo_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pwm_servo_behav -key {Behavioral:sim_1:Functional:tb_pwm_servo} -tclbatch {tb_pwm_servo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_pwm_servo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pwm_servo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10524.977 ; gain = 36.789 ; free physical = 17910 ; free virtual = 31724
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10524.977 ; gain = 0.000 ; free physical = 17840 ; free virtual = 31794
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289100 KB (Peak: 346632 KB), Simulation CPU Usage: 5310 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:20:26 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_pwm_servo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pwm_servo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_pwm_servo_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pwm_servo
+xvhdl --incr --relax -prj tb_pwm_servo_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm_serv [pwm_serv_default]
+Compiling module xil_defaultlib.tb_pwm_servo
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_pwm_servo_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pwm_servo_behav -key {Behavioral:sim_1:Functional:tb_pwm_servo} -tclbatch {tb_pwm_servo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_pwm_servo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pwm_servo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10532.973 ; gain = 7.996 ; free physical = 17938 ; free virtual = 31752
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+run -all
+$finish called at time : 620000385 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" Line 42
+run: Time (s): cpu = 00:00:26 ; elapsed = 00:00:25 . Memory (MB): peak = 10586.996 ; gain = 0.000 ; free physical = 17120 ; free virtual = 31623
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354632 KB (Peak: 420168 KB), Simulation CPU Usage: 23610 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:22:35 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_pwm_servo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pwm_servo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_pwm_servo_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pwm_servo
+xvhdl --incr --relax -prj tb_pwm_servo_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.pwm_serv [pwm_serv_default]
+Compiling module xil_defaultlib.tb_pwm_servo
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_pwm_servo_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pwm_servo_behav -key {Behavioral:sim_1:Functional:tb_pwm_servo} -tclbatch {tb_pwm_servo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_pwm_servo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pwm_servo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10591.977 ; gain = 4.980 ; free physical = 17866 ; free virtual = 31694
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+00
+
+08
+
+10
+
+18
+
+20
+
+28
+
+30
+
+38
+
+40
+
+48
+
+50
+
+58
+
+60
+
+68
+
+70
+
+78
+
+80
+
+88
+
+90
+
+98
+
+a0
+
+a8
+
+b0
+
+b8
+
+c0
+
+c8
+
+d0
+
+d8
+
+e0
+
+e8
+
+f0
+
+$finish called at time : 620000385 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" Line 43
+run: Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 10591.977 ; gain = 0.000 ; free physical = 17307 ; free virtual = 31810
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354636 KB (Peak: 420172 KB), Simulation CPU Usage: 23730 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:24:50 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tb_pwm_servo'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pwm_servo' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tb_pwm_servo_vlog.prj
+xvhdl --incr --relax -prj tb_pwm_servo_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pwm_servo_behav xil_defaultlib.tb_pwm_servo xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pwm_servo_behav -key {Behavioral:sim_1:Functional:tb_pwm_servo} -tclbatch {tb_pwm_servo.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_pwm_servo.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pwm_servo_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 10591.977 ; gain = 0.000 ; free physical = 18151 ; free virtual = 31968
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+00
+
+08
+
+10
+
+18
+
+20
+
+28
+
+30
+
+38
+
+40
+
+48
+
+50
+
+58
+
+60
+
+68
+
+70
+
+78
+
+80
+
+88
+
+90
+
+98
+
+a0
+
+a8
+
+b0
+
+b8
+
+c0
+
+c8
+
+d0
+
+d8
+
+e0
+
+e8
+
+f0
+
+$finish called at time : 620000385 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv" Line 43
+run: Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 10591.977 ; gain = 0.000 ; free physical = 17423 ; free virtual = 31923
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354632 KB (Peak: 420168 KB), Simulation CPU Usage: 23820 ms
+INFO: [Simtcl 6-16] Simulation closed
+close [ open /home/omer-ahin/project_1/project_1.srcs/sources_1/new/tx.vhd w ]
+add_files /home/omer-ahin/project_1/project_1.srcs/sources_1/new/tx.vhd
+close [ open /home/omer-ahin/project_1/project_1.srcs/sources_1/new/rx.vhd w ]
+add_files /home/omer-ahin/project_1/project_1.srcs/sources_1/new/rx.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv w ]
+add_files -fileset sim_1 /home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv
+close [ open /home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v w ]
+add_files -fileset sim_1 /home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v
+update_compile_order -fileset sim_1
+set_property top tx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:46:26 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omer-ahin/project_1/project_1.srcs/sources_1/new/tx.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart_tx'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.tx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10736.145 ; gain = 73.789 ; free physical = 17621 ; free virtual = 31758
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 10743.012 ; gain = 6.867 ; free physical = 17519 ; free virtual = 31860
+INFO: [Common 17-344] 'run' was cancelled
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289108 KB (Peak: 346640 KB), Simulation CPU Usage: 4680 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:47:11 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.tx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10780.016 ; gain = 18.965 ; free physical = 17728 ; free virtual = 31861
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289108 KB (Peak: 346640 KB), Simulation CPU Usage: 740 ms
+INFO: [Simtcl 6-16] Simulation closed
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:50:54 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.tx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10839.027 ; gain = 59.012 ; free physical = 17587 ; free virtual = 31742
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f0 olmali
+$finish called at time : 2935 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 77
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289108 KB (Peak: 346640 KB), Simulation CPU Usage: 760 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 11:52:03 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.tx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10843.027 ; gain = 4.000 ; free physical = 17522 ; free virtual = 31693
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 2935 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 77
+current_wave_config {Untitled 10}
+Untitled 10
+add_wave {{/tx_tb/uart_tx_ins/data_buffer}} 
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 2935 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 77
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tb_pwm_servo.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+set_property top rx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:01:10 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/omer-ahin/project_1/project_1.srcs/sources_1/new/rx.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart_rx'
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+ERROR: [VRFC 10-8333] binding VHDL entity '\uart_tx(baud_rate=1000000)\' does not have port 'clk_c' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:51]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354644 KB (Peak: 420180 KB), Simulation CPU Usage: 770 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:01:49 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture rtl of entity xil_defaultlib.uart_rx [\uart_rx(baud_rate=1000000)\]
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.rx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot rx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "rx_tb_behav -key {Behavioral:sim_1:Functional:rx_tb} -tclbatch {rx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source rx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'rx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10874.039 ; gain = 17.832 ; free physical = 17523 ; free virtual = 31687
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354652 KB (Peak: 420188 KB), Simulation CPU Usage: 2250 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:06:05 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture rtl of entity xil_defaultlib.uart_rx [\uart_rx(baud_rate=1000000)\]
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.rx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot rx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "rx_tb_behav -key {Behavioral:sim_1:Functional:rx_tb} -tclbatch {rx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source rx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'rx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 10893.043 ; gain = 19.004 ; free physical = 17585 ; free virtual = 31745
+restat
+invalid command name "restat"
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run  -all
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289108 KB (Peak: 346640 KB), Simulation CPU Usage: 2300 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:13:30 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture rtl of entity xil_defaultlib.uart_rx [\uart_rx(baud_rate=1000000)\]
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.rx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot rx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "rx_tb_behav -key {Behavioral:sim_1:Functional:rx_tb} -tclbatch {rx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source rx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'rx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10919.051 ; gain = 26.008 ; free physical = 17242 ; free virtual = 31434
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+$finish called at time : 13015 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" Line 87
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289116 KB (Peak: 346648 KB), Simulation CPU Usage: 750 ms
+INFO: [Simtcl 6-16] Simulation closed
+set_property top tx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:16:10 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.tx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10996.059 ; gain = 58.973 ; free physical = 17135 ; free virtual = 31348
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 150535 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 79
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289108 KB (Peak: 346640 KB), Simulation CPU Usage: 750 ms
+INFO: [Simtcl 6-16] Simulation closed
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:17:49 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 11034.059 ; gain = 27.965 ; free physical = 17063 ; free virtual = 31277
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 150535 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 79
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 289104 KB (Peak: 346636 KB), Simulation CPU Usage: 760 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:19:54 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 11039.066 ; gain = 5.008 ; free physical = 17108 ; free virtual = 31325
+restat
+invalid command name "restat"
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 150535 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 79
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354640 KB (Peak: 420176 KB), Simulation CPU Usage: 760 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:23:03 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+ERROR: [VRFC 10-4982] syntax error near 'module' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:82]
+ERROR: [VRFC 10-8549] SystemVerilog 2017 keyword 'module' used in incorrect context [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:82]
+ERROR: [VRFC 10-4982] syntax error near 'clk_c' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:84]
+ERROR: [VRFC 10-4982] syntax error near 'rst_n' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:85]
+ERROR: [VRFC 10-4982] syntax error near 'tx_start' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:90]
+ERROR: [VRFC 10-4982] syntax error near '[' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:91]
+ERROR: [VRFC 10-4982] syntax error near '[' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:96]
+ERROR: [VRFC 10-4982] syntax error near 'uart_rx_inst' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:102]
+ERROR: [VRFC 10-4982] syntax error near 'uart_tx_ins' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:114]
+ERROR: [VRFC 10-4982] syntax error near 'initial' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:123]
+ERROR: [VRFC 10-8549] SystemVerilog 2017 keyword 'initial' used in incorrect context [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:123]
+ERROR: [VRFC 10-4982] syntax error near 'initial' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:131]
+ERROR: [VRFC 10-8549] SystemVerilog 2017 keyword 'initial' used in incorrect context [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:131]
+ERROR: [VRFC 10-4982] syntax error near 'endmodule' [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:162]
+ERROR: [VRFC 10-8549] SystemVerilog 2017 keyword 'endmodule' used in incorrect context [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:162]
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 11040.066 ; gain = 0.000 ; free physical = 17110 ; free virtual = 31332
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 12:25:40 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_tb
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.math_real
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(baud_rate=1000000)\]
+Compiling module xil_defaultlib.tx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 11116.078 ; gain = 61.793 ; free physical = 16995 ; free virtual = 31215
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 309025 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 94
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354640 KB (Peak: 420176 KB), Simulation CPU Usage: 780 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 14:11:51 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'tx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj tx_tb_vlog.prj
+xvhdl --incr --relax -prj tx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_tb_behav xil_defaultlib.tx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tx_tb_behav -key {Behavioral:sim_1:Functional:tx_tb} -tclbatch {tx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 11132.078 ; gain = 15.000 ; free physical = 16350 ; free virtual = 31155
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek byte = 00 
+
+gönderilecek byte = 08 
+
+gönderilecek byte = 10 
+
+gönderilecek byte = 18 
+
+gönderilecek byte = 20 
+
+gönderilecek byte = 28 
+
+gönderilecek byte = 30 
+
+gönderilecek byte = 38 
+
+gönderilecek byte = 40 
+
+gönderilecek byte = 48 
+
+gönderilecek byte = 50 
+
+gönderilecek byte = 58 
+
+gönderilecek byte = 60 
+
+gönderilecek byte = 68 
+
+gönderilecek byte = 70 
+
+gönderilecek byte = 78 
+
+gönderilecek byte = 80 
+
+gönderilecek byte = 88 
+
+gönderilecek byte = 90 
+
+gönderilecek byte = 98 
+
+gönderilecek byte = a0 
+
+gönderilecek byte = a8 
+
+gönderilecek byte = b0 
+
+gönderilecek byte = b8 
+
+gönderilecek byte = c0 
+
+gönderilecek byte = c8 
+
+gönderilecek byte = d0 
+
+gönderilecek byte = d8 
+
+gönderilecek byte = e0 
+
+gönderilecek byte = e8 
+
+gönderilecek byte = f0 
+
+son veri 0x f8 olmali
+$finish called at time : 309025 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv" Line 94
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354640 KB (Peak: 420176 KB), Simulation CPU Usage: 750 ms
+INFO: [Simtcl 6-16] Simulation closed
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+set_property file_type SystemVerilog [get_files  /home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+set_property top rx_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+update_compile_order -fileset sim_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 14:34:39 2026
+
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 14:34:45 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture rtl of entity xil_defaultlib.uart_rx [\uart_rx(clk_freq=50000000,baud_...]
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(clk_freq=50000000,baud_...]
+Compiling module xil_defaultlib.rx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot rx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "rx_tb_behav -key {Behavioral:sim_1:Functional:rx_tb} -tclbatch {rx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source rx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'rx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 11224.102 ; gain = 63.789 ; free physical = 16475 ; free virtual = 31243
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek veri : 00 
+
+Rx gelen beri : 00 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 08 
+
+Rx gelen beri : 08 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 10 
+
+Rx gelen beri : 10 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 18 
+
+Rx gelen beri : 18 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 20 
+
+Rx gelen beri : 20 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 28 
+
+Rx gelen beri : 28 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 30 
+
+Rx gelen beri : 30 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 38 
+
+Rx gelen beri : 38 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 40 
+
+Rx gelen beri : 40 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 48 
+
+Rx gelen beri : 48 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 50 
+
+Rx gelen beri : 50 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 58 
+
+Rx gelen beri : 58 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 60 
+
+Rx gelen beri : 60 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 68 
+
+Rx gelen beri : 68 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 70 
+
+Rx gelen beri : 70 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 78 
+
+Rx gelen beri : 78 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 80 
+
+Rx gelen beri : 80 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 88 
+
+Rx gelen beri : 88 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 90 
+
+Rx gelen beri : 90 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : 98 
+
+Rx gelen beri : 98 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : a0 
+
+Rx gelen beri : a0 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : a8 
+
+Rx gelen beri : a8 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : b0 
+
+Rx gelen beri : b0 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : b8 
+
+Rx gelen beri : b8 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : c0 
+
+Rx gelen beri : c0 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : c8 
+
+Rx gelen beri : c8 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : d0 
+
+Rx gelen beri : d0 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : d8 
+
+Rx gelen beri : d8 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : e0 
+
+Rx gelen beri : e0 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : e8 
+
+Rx gelen beri : e8 
+ 
+İki Veri farkli sonuç Failed
+gönderilecek veri : f0 
+
+Rx gelen beri : f0 
+ 
+İki Veri farkli sonuç Failed
+$finish called at time : 312170 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" Line 96
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354656 KB (Peak: 420192 KB), Simulation CPU Usage: 780 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 14:41:49 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture rtl of entity xil_defaultlib.uart_rx [\uart_rx(clk_freq=50000000,baud_...]
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(clk_freq=50000000,baud_...]
+Compiling module xil_defaultlib.rx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot rx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "rx_tb_behav -key {Behavioral:sim_1:Functional:rx_tb} -tclbatch {rx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source rx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'rx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 11239.105 ; gain = 15.004 ; free physical = 16210 ; free virtual = 30985
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek veri : 00
+Rx gelen veri : 00
+SUCCESS
+gönderilecek veri : 08
+Rx gelen veri : 08
+SUCCESS
+gönderilecek veri : 10
+Rx gelen veri : 10
+SUCCESS
+gönderilecek veri : 18
+Rx gelen veri : 18
+SUCCESS
+gönderilecek veri : 20
+Rx gelen veri : 20
+SUCCESS
+gönderilecek veri : 28
+Rx gelen veri : 28
+SUCCESS
+gönderilecek veri : 30
+Rx gelen veri : 30
+SUCCESS
+gönderilecek veri : 38
+Rx gelen veri : 38
+SUCCESS
+gönderilecek veri : 40
+Rx gelen veri : 40
+SUCCESS
+gönderilecek veri : 48
+Rx gelen veri : 48
+SUCCESS
+gönderilecek veri : 50
+Rx gelen veri : 50
+SUCCESS
+gönderilecek veri : 58
+Rx gelen veri : 58
+SUCCESS
+gönderilecek veri : 60
+Rx gelen veri : 60
+SUCCESS
+gönderilecek veri : 68
+Rx gelen veri : 68
+SUCCESS
+gönderilecek veri : 70
+Rx gelen veri : 70
+SUCCESS
+gönderilecek veri : 78
+Rx gelen veri : 78
+SUCCESS
+gönderilecek veri : 80
+Rx gelen veri : 80
+SUCCESS
+gönderilecek veri : 88
+Rx gelen veri : 88
+SUCCESS
+gönderilecek veri : 90
+Rx gelen veri : 90
+SUCCESS
+gönderilecek veri : 98
+Rx gelen veri : 98
+SUCCESS
+gönderilecek veri : a0
+Rx gelen veri : a0
+SUCCESS
+gönderilecek veri : a8
+Rx gelen veri : a8
+SUCCESS
+gönderilecek veri : b0
+Rx gelen veri : b0
+SUCCESS
+gönderilecek veri : b8
+Rx gelen veri : b8
+SUCCESS
+gönderilecek veri : c0
+Rx gelen veri : c0
+SUCCESS
+gönderilecek veri : c8
+Rx gelen veri : c8
+SUCCESS
+gönderilecek veri : d0
+Rx gelen veri : d0
+SUCCESS
+gönderilecek veri : d8
+Rx gelen veri : d8
+SUCCESS
+gönderilecek veri : e0
+Rx gelen veri : e0
+SUCCESS
+gönderilecek veri : e8
+Rx gelen veri : e8
+SUCCESS
+gönderilecek veri : f0
+Rx gelen veri : f0
+SUCCESS
+$finish called at time : 312170 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" Line 97
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/tx_tb.sv:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v:]
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354652 KB (Peak: 420188 KB), Simulation CPU Usage: 780 ms
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-25911] Executing simulation for 'XSim' simulator
+INFO: [Project 1-5737] Running on host omer-ahin-ASUS (64) - Ubuntu 24.04.4 LTS
+INFO: [Vivado 12-28535] Process started - Wed Jul 29 14:44:14 2026
+
+INFO: [Vivado 12-12493] Simulation top is 'rx_tb'
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from '/tools/Xilinx/2026.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'rx_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xvlog --incr --relax -L uvm -prj rx_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_tb
+xvhdl --incr --relax -prj rx_tb_vhdl.prj
+Waiting for jobs to finish...
+No pending jobs, compilation finished.
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /tools/Xilinx/2026.1/Vivado/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot rx_tb_behav xil_defaultlib.rx_tb xil_defaultlib.glbl -log elaborate.log 
+INFO: [XSIM 43-3493] Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling architecture rtl of entity xil_defaultlib.uart_rx [\uart_rx(clk_freq=50000000,baud_...]
+Compiling architecture rtl of entity xil_defaultlib.uart_tx [\uart_tx(clk_freq=50000000,baud_...]
+Compiling module xil_defaultlib.rx_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot rx_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/omer-ahin/project_1/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "rx_tb_behav -key {Behavioral:sim_1:Functional:rx_tb} -tclbatch {rx_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source rx_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'rx_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 11247.109 ; gain = 7.004 ; free physical = 16330 ; free virtual = 31104
+restart
+INFO: [Wavedata 42-604] Simulation restarted
+run -all
+gönderilecek veri : 00
+Rx gelen veri : 00
+SUCCESS
+gönderilecek veri : 08
+Rx gelen veri : 08
+SUCCESS
+gönderilecek veri : 10
+Rx gelen veri : 10
+SUCCESS
+gönderilecek veri : 18
+Rx gelen veri : 18
+SUCCESS
+gönderilecek veri : 20
+Rx gelen veri : 20
+SUCCESS
+gönderilecek veri : 28
+Rx gelen veri : 28
+SUCCESS
+gönderilecek veri : 30
+Rx gelen veri : 30
+SUCCESS
+gönderilecek veri : 38
+Rx gelen veri : 38
+SUCCESS
+gönderilecek veri : 40
+Rx gelen veri : 40
+SUCCESS
+gönderilecek veri : 48
+Rx gelen veri : 48
+SUCCESS
+gönderilecek veri : 50
+Rx gelen veri : 50
+SUCCESS
+gönderilecek veri : 58
+Rx gelen veri : 58
+SUCCESS
+gönderilecek veri : 60
+Rx gelen veri : 60
+SUCCESS
+gönderilecek veri : 68
+Rx gelen veri : 68
+SUCCESS
+gönderilecek veri : 70
+Rx gelen veri : 70
+SUCCESS
+gönderilecek veri : 78
+Rx gelen veri : 78
+SUCCESS
+gönderilecek veri : 80
+Rx gelen veri : 80
+SUCCESS
+gönderilecek veri : 88
+Rx gelen veri : 88
+SUCCESS
+gönderilecek veri : 90
+Rx gelen veri : 90
+SUCCESS
+gönderilecek veri : 98
+Rx gelen veri : 98
+SUCCESS
+gönderilecek veri : a0
+Rx gelen veri : a0
+SUCCESS
+gönderilecek veri : a8
+Rx gelen veri : a8
+SUCCESS
+gönderilecek veri : b0
+Rx gelen veri : b0
+SUCCESS
+gönderilecek veri : b8
+Rx gelen veri : b8
+SUCCESS
+gönderilecek veri : c0
+Rx gelen veri : c0
+SUCCESS
+gönderilecek veri : c8
+Rx gelen veri : c8
+SUCCESS
+gönderilecek veri : d0
+Rx gelen veri : d0
+SUCCESS
+gönderilecek veri : d8
+Rx gelen veri : d8
+SUCCESS
+gönderilecek veri : e0
+Rx gelen veri : e0
+SUCCESS
+gönderilecek veri : e8
+Rx gelen veri : e8
+SUCCESS
+gönderilecek veri : f0
+Rx gelen veri : f0
+SUCCESS
+$finish called at time : 312170 ns : File "/home/omer-ahin/project_1/project_1.srcs/sim_1/new/rx_tb.v" Line 98
+close_sim
+INFO: xsimkernel Simulation Memory Usage: 354648 KB (Peak: 420184 KB), Simulation CPU Usage: 760 ms
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 29 17:18:55 2026...
