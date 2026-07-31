@@ -191,6 +191,12 @@ architecture Behavioral of top is
             gx_i            : in STD_LOGIC_VECTOR(15 downto 0);
             gy_i            : in STD_LOGIC_VECTOR(15 downto 0);
             gz_i            : in STD_LOGIC_VECTOR(15 downto 0);
+            f_ax_i          : in STD_LOGIC_VECTOR(15 downto 0);
+            f_ay_i          : in STD_LOGIC_VECTOR(15 downto 0);
+            f_az_i          : in STD_LOGIC_VECTOR(15 downto 0);
+            f_gx_i          : in STD_LOGIC_VECTOR(15 downto 0);
+            f_gy_i          : in STD_LOGIC_VECTOR(15 downto 0);
+            f_gz_i          : in STD_LOGIC_VECTOR(15 downto 0);
             angle_x         : in STD_LOGIC_VECTOR(7 downto 0);
             angle_y         : in STD_LOGIC_VECTOR(7 downto 0);
             angle_z         : in STD_LOGIC_VECTOR(7 downto 0);
@@ -231,6 +237,12 @@ architecture Behavioral of top is
     signal accel_x, accel_y, accel_z : std_logic_vector(15 downto 0);
     signal gyro_x, gyro_y, gyro_z    : std_logic_vector(15 downto 0);
 
+    signal f_axi_i : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_ayi_i : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_azi_i : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_gxi_i : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_gyi_i : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_gzi_i : STD_LOGIC_VECTOR(15 downto 0);
     -- --cordic
     -- signal i_call_sig   : STD_LOGIC := '0' ;
     -- signal o_done_sig   : STD_LOGIC  ;
@@ -283,7 +295,12 @@ architecture Behavioral of top is
     signal hesap_temp_y : signed(15 downto 0);
     signal hesap_temp_z : signed(15 downto 0);
 
+    signal accel_target_x : signed(31 downto 0);
+    signal accel_target_y : signed(31 downto 0);
     signal angle_pool   : signed(31 downto 0);
+    signal angle_pool_y : signed(31 downto 0);
+    signal angle_pool_x : signed(31 downto 0);
+
     signal uart_timer   : integer range 0 to 3333333 := 0;
 
     --FIFO controller
@@ -441,7 +458,7 @@ begin
         );
     -- Inst_Cordic_x: Cordic
     --     port map(
-    --         clk             => clk_i,
+    --         clk             => clk_i,spi_data_valid
     --         reset_n         => rst_n_i,
     --         i_call          => i_call_sig,
     --         i_x             => i_x_sig,
@@ -488,6 +505,12 @@ begin
                 gx_i            => gyro_x ,
                 gy_i            => gyro_y , 
                 gz_i            => gyro_z ,
+                f_ax_i          => f_axi_i,
+                f_ay_i          => f_ayi_i,
+                f_az_i          => f_azi_i,
+                f_gx_i          => f_gxi_i,
+                f_gy_i          => f_gyi_i,
+                f_gz_i          => f_gzi_i,
                 angle_x         => STD_LOGIC_VECTOR(angle_reg_0),
                 angle_y         => STD_LOGIC_VECTOR(angle_reg_1),
                 angle_z         => STD_LOGIC_VECTOR(angle_reg_2),
@@ -751,96 +774,115 @@ begin
     --                     uart_state <= IDLE;
     --             end case;
     --         --end if;
-    --     end if;
+    --     end if;   
     -- end process SQRT_Test;
 
 
     -- =========================================================
     -- PD Test STATE MACHINE
     -- =========================================================
--- hesap_temp_x <= to_signed(127, 16) + shift_right(signed(accel_x), 6) - shift_right(signed(gyro_x), 8);
--- hesap_temp_y <= to_signed(127, 16) + shift_right(signed(accel_y), 7) - shift_right(signed(gyro_y), 8);
--- hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 14), 16) - shift_right(signed(gyro_z), 8);
+-- =========================================================
+    -- PD Test STATE MACHINE (TAMAMLAYICI FİLTRE VE CLAMP EKLENMİŞ HALİ)
+    -- =========================================================
 
--- -- 2. ADIM: Güvenli Process Bloğu
--- PD_Test : process (clk_i, rst_n_i)
--- begin
---     if rst_n_i = '0' then 
---         angle_filtered_x <= to_unsigned(127, 8);
---         angle_filtered_y <= to_unsigned(127, 8);
---         angle_filtered_z <= to_unsigned(127, 8);
---         angle_raw_x      <= to_unsigned(127, 8);
---         angle_raw_y      <= to_unsigned(127, 8);
---         angle_raw_z      <= to_unsigned(127, 8);
---         tx_start_sig     <= '0';
---         uart_timer       <= 0;
---     elsif rising_edge(clk_i) then
---         tx_start_sig <= '0';
---         --  Servo Atamaları  --
---         if pwm_valid_x = '1' then
---             angle_reg_0 <= angle_filtered_x;
---         end if;
-        
---         if pwm_valid_y = '1' then
---             angle_reg_1 <= angle_filtered_y;
---         end if;
-        
---         if pwm_valid_z = '1' then
---             angle_reg_2 <= angle_raw_z;
---         end if;
+    accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(accel_x), 32), 2);
+    accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(accel_y), 32), 2);
 
---         if spi_data_valid = '1' then 
---             if to_integer(abs(signed(gyro_z))) > 15 then 
---                 angle_pool <= angle_pool + signed(gyro_z);
---             end if;
---         end if;
+    hesap_temp_x <= resize(shift_right(angle_pool_x, 8), 16);
+    hesap_temp_y <= resize(shift_right(angle_pool_y, 8), 16);
+    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 12), 16); 
 
---         -- X Ekseni Koruması
---         if hesap_temp_x > 255 then
---             angle_raw_x <= to_unsigned(255, 8);
---         elsif hesap_temp_x < 0 then
---             angle_raw_x <= to_unsigned(0, 8);
---         else
---             angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
---         end if;
+    -- 3. ADIM: Güvenli Process Bloğu
+    PD_Test : process (clk_i, rst_n_i)
+    begin
+        if rst_n_i = '0' then 
+            angle_pool_x <= to_signed(32512, 32); 
+            angle_pool_y <= to_signed(32512, 32);
+            angle_pool   <= (others => '0');
+            angle_raw_x  <= to_unsigned(127, 8);
+            angle_raw_y  <= to_unsigned(127, 8);
+            angle_raw_z  <= to_unsigned(127, 8);
+        elsif rising_edge(clk_i) then
 
---         -- Y Ekseni Koruması
---         if hesap_temp_y > 255 then
---             angle_raw_y <= to_unsigned(255, 8);
---         elsif hesap_temp_y < 0 then
---             angle_raw_y <= to_unsigned(0, 8);
---         else
---             angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
---         end if;
+            if data_valid_out = '1' then 
+                
+                -- ================= Z EKSENİ =================
+                if to_integer(abs(signed(gyro_z))) > 15 then 
+                    angle_pool <= angle_pool + signed(gyro_z); 
+                end if;
+                -- Z Clamp (Alt ve Üst Sınır)
+                if angle_pool < to_signed(-524288, 32) then
+                    angle_pool <= to_signed(-524288, 32);
+                elsif angle_pool > to_signed(520192, 32) then
+                    angle_pool <= to_signed(520192, 32);
+                end if;
 
---         if hesap_temp_z > 255 then
---             angle_raw_z <= to_unsigned(255, 8);
---         elsif hesap_temp_z < 0 then 
---             angle_raw_z <= to_unsigned(0, 8);  
---         else 
---             angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
---         end if;
+                -- ================= X EKSENİ =================
+                if to_integer(abs(signed(gyro_x))) > 15 then 
+                    angle_pool_x <= angle_pool_x + shift_right(signed(gyro_x), 4) + shift_right(accel_target_x - angle_pool_x, 5);
+                else
+                    angle_pool_x <= angle_pool_x + shift_right(accel_target_x - angle_pool_x, 5);
+                end if;
+                if angle_pool_x < 0 then
+                    angle_pool_x <= (others => '0');
+                elsif angle_pool_x > 65280 then 
+                    angle_pool_x <= to_signed(65280, 32);
+                end if;
 
---         if abs(to_integer(angle_raw_x) - to_integer(angle_filtered_x)) > 2 then
---             angle_filtered_x <= resize(shift_right(resize(angle_filtered_x, 10) * 3 + resize(angle_raw_x, 10), 2), 8);
---         end if;
+                -- ================= Y EKSENİ =================
+                if to_integer(abs(signed(gyro_y))) > 15 then 
+                    angle_pool_y <= angle_pool_y + shift_right(signed(gyro_y), 4) + shift_right(accel_target_y - angle_pool_y, 5);
+                else
+                    angle_pool_y <= angle_pool_y + shift_right(accel_target_y - angle_pool_y, 5);
+                end if;
+                if angle_pool_y < 0 then
+                    angle_pool_y <= (others => '0');
+                elsif angle_pool_y > 65280 then
+                    angle_pool_y <= to_signed(65280, 32);
+                end if;
 
---         if abs(to_integer(angle_raw_y) - to_integer(angle_filtered_y)) > 2 then
---             angle_filtered_y <= resize(shift_right(resize(angle_filtered_y, 10) * 3 + resize(angle_raw_y, 10), 2), 8);
---         end if;
+            end if;
 
---         if uart_timer < 3333333 then
---             uart_timer <= uart_timer + 1;
---         else
---             uart_timer <= 0;
---             if tx_busy_sig = '0' then
---                 tx_start_sig <= '1';
---                 tx_data_sig  <= std_logic_vector(angle_reg_2);
---             end if;
---         end if;
+            -- ================= SERVO 0-255 KORUMASI =================
+            if hesap_temp_x > 255 then
+                angle_raw_x <= to_unsigned(255, 8);
+            elsif hesap_temp_x < 0 then
+                angle_raw_x <= to_unsigned(0, 8);
+            else
+                angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
+            end if;
 
---     end if;
--- end process;
+            if hesap_temp_y > 255 then
+                angle_raw_y <= to_unsigned(255, 8);
+            elsif hesap_temp_y < 0 then
+                angle_raw_y <= to_unsigned(0, 8);
+            else
+                angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
+            end if;
+
+            if hesap_temp_z > 255 then
+                angle_raw_z <= to_unsigned(255, 8);
+            elsif hesap_temp_z < 0 then 
+                angle_raw_z <= to_unsigned(0, 8);  
+            else 
+                angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
+            end if;
+
+            if(data_valid_out = '1') then
+                f_axi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_axi_i) * 3, 18) + resize(signed(accel_x), 18), 2), 16));
+                f_ayi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_ayi_i) * 3, 18) + resize(signed(accel_y), 18), 2), 16));
+                f_azi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_azi_i) * 3, 18) + resize(signed(accel_z), 18), 2), 16));
+
+                f_gxi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gxi_i) * 3, 18) + resize(signed(gyro_x), 18), 2), 16));
+                f_gyi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gyi_i) * 3, 18) + resize(signed(gyro_y), 18), 2), 16));
+                f_gzi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gzi_i) * 3, 18) + resize(signed(gyro_z), 18), 2), 16));
+            end if;
+        end if;
+    end process;
+
+    angle_reg_0 <= angle_raw_x;
+    angle_reg_1 <= angle_raw_y;
+    angle_reg_2 <= angle_raw_z;
 
 -- =========================================================
 -- FIFO   Test STATE MACHINE

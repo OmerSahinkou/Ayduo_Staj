@@ -224,31 +224,23 @@ begin
 
                 when MEASURE_DONE =>
                     temp := raw_data(0) & raw_data(1);
-
-                    prod_sum_x_a <= (signed(temp) * 1) + (signed(ax_o) * 3);
-                    ax_o     <= std_logic_vector(resize(shift_right(prod_sum_x_a, 2), 16) - to_signed(-60,16));
-                    --ax_o <= std_logic_vector((signed(temp) - to_signed(0,16)));  
+                    ax_o <= std_logic_vector((signed(temp) - to_signed(0,16)));  
 
                     temp := raw_data(2) & raw_data(3);
-                    --ay_o <= std_logic_vector((signed(temp) - to_signed(18,16)));
-                    prod_sum_y_a <= (signed(temp) * 1) + (signed(ay_o) * 3);
-                    ay_o     <= std_logic_vector(resize(shift_right(prod_sum_y_a, 2), 16) - to_signed(0,16));
+                    ay_o <= std_logic_vector((signed(temp) - to_signed(18,16)));
+                    
                     temp := raw_data(4) & raw_data(5);
-                    --az_o <= std_logic_vector((signed(temp) - to_signed(485,16)));
-                    prod_sum_z_a <= (signed(temp) * 1) + (signed(az_o) * 3);
-                    az_o     <= std_logic_vector(resize(shift_right(prod_sum_z_a, 2), 16) - to_signed(485,16));
+                    az_o <= std_logic_vector((signed(temp) - to_signed(485,16)));
+                    
                     temp := raw_data(8) & raw_data(9);
-                    --gx_o <= std_logic_vector((signed(temp) - to_signed(70,16)));
-                    prod_sum_x_g <= (signed(temp) * 1) + (signed(gx_o) * 3);
-                    gx_o     <= std_logic_vector(resize(shift_right(prod_sum_x_g, 2), 16) - to_signed(70,16));
+                    gx_o <= std_logic_vector((signed(temp) - to_signed(70,16)));
+                    
                     temp := raw_data(10) & raw_data(11);
-                    --gy_o <= std_logic_vector((signed(temp) - to_signed(22,16)));
-                    prod_sum_y_g <= (signed(temp) * 1) + (signed(gy_o) * 3);
-                    gy_o     <= std_logic_vector(resize(shift_right(prod_sum_y_g, 2), 16) - to_signed(42,16));
+                    gy_o <= std_logic_vector((signed(temp) - to_signed(22,16)));
+                    
                     temp := raw_data(12) & raw_data(13);
-                    --gz_o <= std_logic_vector((signed(temp) - to_signed(-7,16)));   
-                    prod_sum_z_g <= (signed(temp) * 1) + (signed(gz_o) * 3);
-                    gz_o     <= std_logic_vector(resize(shift_right(prod_sum_z_g, 2), 16) - to_signed(-7,16));
+                    gz_o <= std_logic_vector((signed(temp) - to_signed(-7,16)));
+                    
                     data_valid_out   <= '1';
                     
                     state <= MEASURE_DELAY;

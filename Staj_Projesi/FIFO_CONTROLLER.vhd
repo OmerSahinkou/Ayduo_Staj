@@ -22,6 +22,14 @@ entity FIFO_CONTROLLER is
         gy_i            : in STD_LOGIC_VECTOR(15 downto 0);
         gz_i            : in STD_LOGIC_VECTOR(15 downto 0);
 
+        --filtered mpu6500 signals
+        f_ax_i            : in STD_LOGIC_VECTOR(15 downto 0);
+        f_ay_i            : in STD_LOGIC_VECTOR(15 downto 0);
+        f_az_i            : in STD_LOGIC_VECTOR(15 downto 0);
+        f_gx_i            : in STD_LOGIC_VECTOR(15 downto 0);
+        f_gy_i            : in STD_LOGIC_VECTOR(15 downto 0);
+        f_gz_i            : in STD_LOGIC_VECTOR(15 downto 0);
+
         --Calculation signals
 
         angle_x         : in STD_LOGIC_VECTOR(7 downto 0);
@@ -52,6 +60,13 @@ architecture rtl of FIFO_CONTROLLER is
     signal reg_gyro_y   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
     signal reg_gyro_z   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
 
+    signal reg_f_accel_x  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_accel_y  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_accel_z  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_gyro_x   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_gyro_y   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_gyro_z   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+
     signal reg_angle_x  : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0') ;
     signal reg_angle_y  : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0') ;
     signal reg_angle_z  : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0') ;
@@ -59,13 +74,19 @@ architecture rtl of FIFO_CONTROLLER is
     type FIFO_state_t is (
         IDLE,
         S_HEADER_1, S_HEADER_2, 
-        ACC_X_H, ACC_X_L, 
-        ACC_Y_H, ACC_Y_L, 
-        ACC_Z_H, ACC_Z_L, 
-        GYRO_X_H, GYRO_X_L, 
-        GYRO_Y_H, GYRO_Y_L,  
-        GYRO_Z_H, GYRO_Z_L, 
-        T_ANGLE_X, T_ANGLE_Y, T_ANGLE_Z, 
+        ACC_X_H,    ACC_X_L, 
+        ACC_Y_H,    ACC_Y_L, 
+        ACC_Z_H,    ACC_Z_L, 
+        GYRO_X_H,   GYRO_X_L, 
+        GYRO_Y_H,   GYRO_Y_L,  
+        GYRO_Z_H,   GYRO_Z_L, 
+        T_ANGLE_X,  T_ANGLE_Y, T_ANGLE_Z,
+        f_ACC_X_H,  f_ACC_X_L,
+        f_ACC_Y_H,  f_ACC_Y_L ,
+        f_ACC_Z_H,  f_ACC_Z_L,
+        f_GYRO_X_H, f_GYRO_X_L,
+        f_GYRO_Y_H, f_GYRO_Y_L,
+        f_GYRO_Z_H, f_GYRO_Z_L,
         DONE_1,DONE_2
     );
     signal FIFO_state : FIFO_state_t := IDLE;
@@ -87,6 +108,14 @@ begin
             reg_gyro_x  <= (others => '0');
             reg_gyro_y  <= (others => '0');
             reg_gyro_z  <= (others => '0');
+            
+            reg_f_accel_x <= (others => '0');
+            reg_f_accel_y <= (others => '0');
+            reg_f_accel_z <= (others => '0');
+            --gyro tampon
+            reg_f_gyro_x  <= (others => '0');
+            reg_f_gyro_y  <= (others => '0');
+            reg_f_gyro_z  <= (others => '0');
             -- angle tampon
             reg_angle_x <= angle_x ;
             reg_angle_y <= angle_y ;
@@ -112,6 +141,14 @@ begin
                             reg_gyro_x <= gx_i;
                             reg_gyro_y <= gy_i;
                             reg_gyro_z <= gz_i;
+
+                            reg_f_accel_x <= f_ax_i;
+                            reg_f_accel_y <= f_ay_i;
+                            reg_f_accel_z <= f_az_i;
+
+                            reg_f_gyro_x <= f_gx_i;
+                            reg_f_gyro_y <= f_gy_i;
+                            reg_f_gyro_z <= f_gz_i;
 
                             FIFO_state <= S_HEADER_1;
                         end if;
@@ -225,6 +262,79 @@ begin
                     WHEN T_ANGLE_Z  =>
                         if fifo_full_i ='0' then
                             fifo_wr_data_o  <= angle_z  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_ACC_X_H   ;
+                        end if;
+                    -- Filtrelenmiş Veriler
+                    when f_ACC_X_H =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_accel_x(15 downto 8) ;  
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_ACC_X_L   ;
+                        end if;
+                    when f_ACC_X_L =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_accel_x(7 downto 0) ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_ACC_Y_H   ;
+                        end if;
+                    when f_ACC_Y_H =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_accel_y(15 downto 8) ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_ACC_Y_L   ;
+                        end if;
+                    when f_ACC_Y_L =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_accel_y(7 downto 0) ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_ACC_Z_H   ;
+                        end if;
+                    when f_ACC_Z_H =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_accel_z(15 downto 8) ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_ACC_Z_L   ;
+                        end if;
+                    when f_ACC_Z_L =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_accel_z(7 downto 0)  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_GYRO_X_H   ;
+                        end if;
+                    when f_GYRO_X_H =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_gyro_x(15 downto 8)  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_GYRO_X_L   ;
+                        end if;
+                    when f_GYRO_X_L =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_gyro_x(7 downto 0)  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_GYRO_Y_H   ;
+                        end if;
+                    when f_GYRO_Y_H =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_gyro_y(15 downto 8)  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_GYRO_Y_L   ;
+                        end if;
+                    when f_GYRO_Y_L =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_gyro_y(7 downto 0)  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_GYRO_Z_H   ;
+                        end if;
+                    when f_GYRO_Z_H =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_gyro_z(15 downto 8)  ;
+                            fifo_wr_en_o    <= '1'      ;
+                            FIFO_state      <= f_GYRO_Z_L   ;
+                        end if;
+                    when f_GYRO_Z_L =>
+                        if fifo_full_i ='0' then
+                            fifo_wr_data_o  <= reg_f_gyro_z(7 downto 0)  ;
                             fifo_wr_en_o    <= '1'      ;
                             FIFO_state      <= DONE_1   ;
                         end if;
