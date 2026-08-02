@@ -778,147 +778,145 @@ begin
     -- end process SQRT_Test;
 
 
-    -- =========================================================
-    -- PD Test STATE MACHINE
-    -- =========================================================
+                --**************************************************************************************************
 -- =========================================================
     -- PD Test STATE MACHINE (TAMAMLAYICI FİLTRE VE CLAMP EKLENMİŞ HALİ)
     -- =========================================================
 
-    accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(accel_x), 32), 2);
-    accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(accel_y), 32), 2);
+--     accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(accel_x), 32), 2);
+--     accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(accel_y), 32), 2);
 
-    hesap_temp_x <= resize(shift_right(angle_pool_x, 8), 16);
-    hesap_temp_y <= resize(shift_right(angle_pool_y, 8), 16);
-    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 12), 16); 
+--     hesap_temp_x <= resize(shift_right(angle_pool_x, 8), 16);
+--     hesap_temp_y <= resize(shift_right(angle_pool_y, 8), 16);
+--     hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 12), 16); 
 
-    -- 3. ADIM: Güvenli Process Bloğu
-    PD_Test : process (clk_i, rst_n_i)
-    begin
-        if rst_n_i = '0' then 
-            angle_pool_x <= to_signed(32512, 32); 
-            angle_pool_y <= to_signed(32512, 32);
-            angle_pool   <= (others => '0');
-            angle_raw_x  <= to_unsigned(127, 8);
-            angle_raw_y  <= to_unsigned(127, 8);
-            angle_raw_z  <= to_unsigned(127, 8);
-        elsif rising_edge(clk_i) then
+--     -- 3. ADIM: Güvenli Process Bloğu
+--     PD_Test : process (clk_i, rst_n_i)
+--     begin
+--         if rst_n_i = '0' then 
+--             angle_pool_x <= to_signed(32512, 32); 
+--             angle_pool_y <= to_signed(32512, 32);
+--             angle_pool   <= (others => '0');
+--             angle_raw_x  <= to_unsigned(127, 8);
+--             angle_raw_y  <= to_unsigned(127, 8);
+--             angle_raw_z  <= to_unsigned(127, 8);
+--         elsif rising_edge(clk_i) then
 
-            if data_valid_out = '1' then 
+--             if data_valid_out = '1' then 
                 
-                -- ================= Z EKSENİ =================
-                if to_integer(abs(signed(gyro_z))) > 15 then 
-                    angle_pool <= angle_pool + signed(gyro_z); 
-                end if;
-                -- Z Clamp (Alt ve Üst Sınır)
-                if angle_pool < to_signed(-524288, 32) then
-                    angle_pool <= to_signed(-524288, 32);
-                elsif angle_pool > to_signed(520192, 32) then
-                    angle_pool <= to_signed(520192, 32);
-                end if;
+--                 -- ================= Z EKSENİ =================
+--                 if to_integer(abs(signed(gyro_z))) > 15 then 
+--                     angle_pool <= angle_pool + signed(gyro_z); 
+--                 end if;
+--                 -- Z Clamp (Alt ve Üst Sınır)
+--                 if angle_pool < to_signed(-524288, 32) then
+--                     angle_pool <= to_signed(-524288, 32);
+--                 elsif angle_pool > to_signed(520192, 32) then
+--                     angle_pool <= to_signed(520192, 32);
+--                 end if;
 
-                -- ================= X EKSENİ =================
-                if to_integer(abs(signed(gyro_x))) > 15 then 
-                    angle_pool_x <= angle_pool_x + shift_right(signed(gyro_x), 4) + shift_right(accel_target_x - angle_pool_x, 5);
-                else
-                    angle_pool_x <= angle_pool_x + shift_right(accel_target_x - angle_pool_x, 5);
-                end if;
-                if angle_pool_x < 0 then
-                    angle_pool_x <= (others => '0');
-                elsif angle_pool_x > 65280 then 
-                    angle_pool_x <= to_signed(65280, 32);
-                end if;
+--                 -- ================= X EKSENİ =================
+--                 if to_integer(abs(signed(gyro_x))) > 5 then 
+--                     angle_pool_x <= angle_pool_x + shift_right(signed(gyro_x), 2) + shift_right(accel_target_x - angle_pool_x, 3);
+--                 else
+--                     angle_pool_x <= angle_pool_x + shift_right(accel_target_x - angle_pool_x, 3);
+--                 end if;
+--                 if angle_pool_x < 0 then
+--                     angle_pool_x <= (others => '0');
+--                 elsif angle_pool_x > 65280 then 
+--                     angle_pool_x <= to_signed(65280, 32);
+--                 end if;
 
-                -- ================= Y EKSENİ =================
-                if to_integer(abs(signed(gyro_y))) > 15 then 
-                    angle_pool_y <= angle_pool_y + shift_right(signed(gyro_y), 4) + shift_right(accel_target_y - angle_pool_y, 5);
-                else
-                    angle_pool_y <= angle_pool_y + shift_right(accel_target_y - angle_pool_y, 5);
-                end if;
-                if angle_pool_y < 0 then
-                    angle_pool_y <= (others => '0');
-                elsif angle_pool_y > 65280 then
-                    angle_pool_y <= to_signed(65280, 32);
-                end if;
+--                 -- ================= Y EKSENİ =================
+--                 if to_integer(abs(signed(gyro_y))) > 15 then 
+--                     angle_pool_y <= angle_pool_y + shift_right(signed(gyro_y), 4) + shift_right(accel_target_y - angle_pool_y, 5);
+--                 else
+--                     angle_pool_y <= angle_pool_y + shift_right(accel_target_y - angle_pool_y, 5);
+--                 end if;
+--                 if angle_pool_y < 0 then
+--                     angle_pool_y <= (others => '0');
+--                 elsif angle_pool_y > 65280 then
+--                     angle_pool_y <= to_signed(65280, 32);
+--                 end if;
 
-            end if;
+--             end if;
 
-            -- ================= SERVO 0-255 KORUMASI =================
-            if hesap_temp_x > 255 then
-                angle_raw_x <= to_unsigned(255, 8);
-            elsif hesap_temp_x < 0 then
-                angle_raw_x <= to_unsigned(0, 8);
-            else
-                angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
-            end if;
+--             -- ================= SERVO 0-255 KORUMASI =================
+--             if hesap_temp_x > 255 then
+--                 angle_raw_x <= to_unsigned(255, 8);
+--             elsif hesap_temp_x < 0 then
+--                 angle_raw_x <= to_unsigned(0, 8);
+--             else
+--                 angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
+--             end if;
 
-            if hesap_temp_y > 255 then
-                angle_raw_y <= to_unsigned(255, 8);
-            elsif hesap_temp_y < 0 then
-                angle_raw_y <= to_unsigned(0, 8);
-            else
-                angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
-            end if;
+--             if hesap_temp_y > 255 then
+--                 angle_raw_y <= to_unsigned(255, 8);
+--             elsif hesap_temp_y < 0 then
+--                 angle_raw_y <= to_unsigned(0, 8);
+--             else
+--                 angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
+--             end if;
 
-            if hesap_temp_z > 255 then
-                angle_raw_z <= to_unsigned(255, 8);
-            elsif hesap_temp_z < 0 then 
-                angle_raw_z <= to_unsigned(0, 8);  
-            else 
-                angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
-            end if;
+--             if hesap_temp_z > 255 then
+--                 angle_raw_z <= to_unsigned(255, 8);
+--             elsif hesap_temp_z < 0 then 
+--                 angle_raw_z <= to_unsigned(0, 8);  
+--             else 
+--                 angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
+--             end if;
 
-            if(data_valid_out = '1') then
-                f_axi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_axi_i) * 3, 18) + resize(signed(accel_x), 18), 2), 16));
-                f_ayi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_ayi_i) * 3, 18) + resize(signed(accel_y), 18), 2), 16));
-                f_azi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_azi_i) * 3, 18) + resize(signed(accel_z), 18), 2), 16));
+--             if(data_valid_out = '1') then
+--                 f_axi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_axi_i) * 3, 18) + resize(signed(accel_x), 18), 2), 16));
+--                 f_ayi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_ayi_i) * 3, 18) + resize(signed(accel_y), 18), 2), 16));
+--                 f_azi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_azi_i) * 3, 18) + resize(signed(accel_z), 18), 2), 16));
 
-                f_gxi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gxi_i) * 3, 18) + resize(signed(gyro_x), 18), 2), 16));
-                f_gyi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gyi_i) * 3, 18) + resize(signed(gyro_y), 18), 2), 16));
-                f_gzi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gzi_i) * 3, 18) + resize(signed(gyro_z), 18), 2), 16));
-            end if;
-        end if;
-    end process;
+--                 f_gxi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gxi_i) * 3, 18) + resize(signed(gyro_x), 18), 2), 16));
+--                 f_gyi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gyi_i) * 3, 18) + resize(signed(gyro_y), 18), 2), 16));
+--                 f_gzi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gzi_i) * 3, 18) + resize(signed(gyro_z), 18), 2), 16));
+--             end if;
+--         end if;
+--     end process;
 
-    angle_reg_0 <= angle_raw_x;
-    angle_reg_1 <= angle_raw_y;
-    angle_reg_2 <= angle_raw_z;
+--     angle_reg_0 <= angle_raw_x;
+--     angle_reg_1 <= angle_raw_y;
+--     angle_reg_2 <= angle_raw_z;
 
--- =========================================================
--- FIFO   Test STATE MACHINE
--- =========================================================
+-- -- =========================================================
+-- -- FIFO   Test STATE MACHINE
+-- -- =========================================================
 
-fifo_test : process (rst_n_i , clk_i)
-begin
-    if rst_n_i = '0' then 
-        tx_start_sig    <= '0';
-        tx_data_sig     <= (others => '0'); 
-        uart_read_state <= ST_CHECK_FIFO;
-    elsif rising_edge(clk_i) then 
+-- fifo_test : process (rst_n_i , clk_i)
+-- begin
+--     if rst_n_i = '0' then 
+--         tx_start_sig    <= '0';
+--         tx_data_sig     <= (others => '0'); 
+--         uart_read_state <= ST_CHECK_FIFO;
+--     elsif rising_edge(clk_i) then 
 
-        tx_start_sig    <= '0';
-        rd_en_i         <= '0';
-        case uart_read_state is
-            when ST_CHECK_FIFO  => 
-                if(tx_busy_sig ='0' and empty_o = '0') then 
-                    rd_en_i  <= '1';
-                    uart_read_state <= ST_WAIT_FIFO;
-                end if;
-            when ST_WAIT_FIFO   =>
-                uart_read_state <= ST_START_UART ;
-            when ST_START_UART  =>
-                tx_start_sig <= '1';
-                tx_data_sig  <= rdata ;
-                uart_read_state <= ST_WAIT_UART;
-            when ST_WAIT_UART   =>
-                if(tx_busy_sig = '1') then 
-                    uart_read_state <= ST_CHECK_FIFO ;
-                end if;
-            when others => uart_read_state <= ST_CHECK_FIFO;
-                null;
-        end case;
-    end if;
-end process fifo_test;
+--         tx_start_sig    <= '0';
+--         rd_en_i         <= '0';
+--         case uart_read_state is
+--             when ST_CHECK_FIFO  => 
+--                 if(tx_busy_sig ='0' and empty_o = '0') then 
+--                     rd_en_i  <= '1';
+--                     uart_read_state <= ST_WAIT_FIFO;
+--                 end if;
+--             when ST_WAIT_FIFO   =>
+--                 uart_read_state <= ST_START_UART ;
+--             when ST_START_UART  =>
+--                 tx_start_sig <= '1';
+--                 tx_data_sig  <= rdata ;
+--                 uart_read_state <= ST_WAIT_UART;
+--             when ST_WAIT_UART   =>
+--                 if(tx_busy_sig = '1') then 
+--                     uart_read_state <= ST_CHECK_FIFO ;
+--                 end if;
+--             when others => uart_read_state <= ST_CHECK_FIFO;
+--                 null;
+--         end case;
+--     end if;
+-- end process fifo_test;
 -- =========================================================
 -- filter  Test STATE MACHINE
 -- =========================================================
