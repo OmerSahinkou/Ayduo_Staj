@@ -6,7 +6,7 @@ entity debounce is
     generic (
         -- Set this limit based on your clock speed. 
         -- Example: 100 MHz clock and a 10 ms debounce time = 1,000,000 cycles.
-        DEBOUNCE_LIMIT : integer := 1000000 
+        DEBOUNCE_LIMIT : integer := 333_000 
     );
     port (
         clk_i       : in std_logic;  -- System clock

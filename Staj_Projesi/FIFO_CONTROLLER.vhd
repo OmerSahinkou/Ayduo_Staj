@@ -109,13 +109,15 @@ begin
             reg_gyro_y  <= (others => '0');
             reg_gyro_z  <= (others => '0');
             
+            --filtreli accel tampon
             reg_f_accel_x <= (others => '0');
             reg_f_accel_y <= (others => '0');
             reg_f_accel_z <= (others => '0');
-            --gyro tampon
+            --filtreli gyro tampon
             reg_f_gyro_x  <= (others => '0');
             reg_f_gyro_y  <= (others => '0');
             reg_f_gyro_z  <= (others => '0');
+            
             -- angle tampon
             reg_angle_x <= angle_x ;
             reg_angle_y <= angle_y ;

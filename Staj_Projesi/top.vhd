@@ -88,7 +88,7 @@ architecture Behavioral of top is
     end component;
     
     component debounce is
-        Generic ( DEBOUNCE_LIMIT : integer := 1000000 );
+        Generic ( DEBOUNCE_LIMIT : integer := 333_000 );
         Port ( 
             clk_i       : in STD_LOGIC;
             rst_n_i     : in STD_LOGIC;
@@ -207,6 +207,37 @@ architecture Behavioral of top is
         );
     end component FIFO_CONTROLLER;
 
+    component IIR_filtre is
+    port (
+        clk_i           : in std_logic                      ;
+        rst_n_i         : in std_logic                      ;
+
+
+        --accel girişler
+        accel_x         : in STD_LOGIC_VECTOR(15 downto 0)  ;
+        accel_y         : in STD_LOGIC_VECTOR(15 downto 0)  ;
+        accel_z         : in STD_LOGIC_VECTOR(15 downto 0)  ;
+
+        --gyrpo çıkışlar
+        gyro_x          : in STD_LOGIC_VECTOR(15 downto 0)  ;
+        gyro_y          : in STD_LOGIC_VECTOR(15 downto 0)  ;
+        gyro_z          : in STD_LOGIC_VECTOR(15 downto 0)  ;
+
+
+        --data valid  ok
+        data_valid_out  : in STD_LOGIC                      ;
+
+        --filtre çıkış accel
+        f_accel_x       : out STD_LOGIC_VECTOR(15 downto 0) ;
+        f_accel_y       : out STD_LOGIC_VECTOR(15 downto 0) ;
+        f_accel_z       : out STD_LOGIC_VECTOR(15 downto 0) ;
+
+        --filtre çıkış gyro
+        f_gyro_x        : out STD_LOGIC_VECTOR(15 downto 0) ;
+        f_gyro_y        : out STD_LOGIC_VECTOR(15 downto 0) ;
+        f_gyro_z        : out STD_LOGIC_VECTOR(15 downto 0)
+    );
+    end component IIR_filtre;
     -- =========================================================
     -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
     -- =========================================================
@@ -536,6 +567,28 @@ begin
                 overflow_o  => OPEN
             );
 
+    u_IIR_filtre : IIR_filtre
+            port map (
+                clk_i           => clk_i            ,
+                rst_n_i         => rst_n_i          ,
+
+                data_valid_out  => data_valid_out   ,
+                --saf veriler giriş
+                accel_x         => accel_x          ,
+                accel_y         => accel_y          ,
+                accel_z         => accel_z          ,
+                gyro_x          => gyro_x           ,
+                gyro_y          => gyro_y           ,
+                gyro_z          => gyro_z           ,
+
+                --filtreli veriler çıkış
+                f_accel_x       => f_axi_i          ,
+                f_accel_y       => f_ayi_i          ,
+                f_accel_z       => f_azi_i          ,
+                f_gyro_x        => f_gxi_i          ,
+                f_gyro_y        => f_gyi_i          ,
+                f_gyro_z        => f_gzi_i  
+            );
     --=========================================================
     --ROOT Hesaplama
     --=========================================================
@@ -783,8 +836,8 @@ begin
     -- PD Test STATE MACHINE (TAMAMLAYICI FİLTRE VE CLAMP EKLENMİŞ HALİ)
     -- =========================================================
 
---     accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(accel_x), 32), 2);
---     accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(accel_y), 32), 2);
+--     accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(f_axi_i), 32), 2);
+--     accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(f_ayi_i), 32), 2);
 
 --     hesap_temp_x <= resize(shift_right(angle_pool_x, 8), 16);
 --     hesap_temp_y <= resize(shift_right(angle_pool_y, 8), 16);
@@ -806,7 +859,7 @@ begin
                 
 --                 -- ================= Z EKSENİ =================
 --                 if to_integer(abs(signed(gyro_z))) > 15 then 
---                     angle_pool <= angle_pool + signed(gyro_z); 
+--                     angle_pool <= angle_pool + signed(f_gzi_i); 
 --                 end if;
 --                 -- Z Clamp (Alt ve Üst Sınır)
 --                 if angle_pool < to_signed(-524288, 32) then
@@ -817,7 +870,7 @@ begin
 
 --                 -- ================= X EKSENİ =================
 --                 if to_integer(abs(signed(gyro_x))) > 5 then 
---                     angle_pool_x <= angle_pool_x + shift_right(signed(gyro_x), 2) + shift_right(accel_target_x - angle_pool_x, 3);
+--                     angle_pool_x <= angle_pool_x + shift_right(signed(f_gxi_i), 2) + shift_right(accel_target_x - angle_pool_x, 3);
 --                 else
 --                     angle_pool_x <= angle_pool_x + shift_right(accel_target_x - angle_pool_x, 3);
 --                 end if;
@@ -829,7 +882,7 @@ begin
 
 --                 -- ================= Y EKSENİ =================
 --                 if to_integer(abs(signed(gyro_y))) > 15 then 
---                     angle_pool_y <= angle_pool_y + shift_right(signed(gyro_y), 4) + shift_right(accel_target_y - angle_pool_y, 5);
+--                     angle_pool_y <= angle_pool_y + shift_right(signed(f_gyi_i), 4) + shift_right(accel_target_y - angle_pool_y, 5);
 --                 else
 --                     angle_pool_y <= angle_pool_y + shift_right(accel_target_y - angle_pool_y, 5);
 --                 end if;
@@ -882,9 +935,9 @@ begin
 --     angle_reg_1 <= angle_raw_y;
 --     angle_reg_2 <= angle_raw_z;
 
--- -- =========================================================
--- -- FIFO   Test STATE MACHINE
--- -- =========================================================
+-- -- -- =========================================================
+-- -- -- FIFO   Test STATE MACHINE
+-- -- -- =========================================================
 
 -- fifo_test : process (rst_n_i , clk_i)
 -- begin
@@ -1128,4 +1181,120 @@ begin
     --         end if;
     --     end if;
     -- end process PID;
+
+
+
+
+    --PID kontrolcü
+    -- =========================================================
+-- FİLTRELENMİŞ VERİLERLE ÇALIŞAN BAĞIMSIZ PID KONTROLCÜSÜ
+-- =========================================================
+-- PID_Filtered_Process : process(clk_i, rst_n_i)
+--     variable error_x, error_y, error_z          : integer;
+--     variable deriv_x, deriv_y, deriv_z          : integer;
+--     variable integral_x, integral_y, integral_z : integer;
+--     variable pid_x, pid_y, pid_z                : integer;
+--     variable target_x, target_y, target_z       : integer;
+
+--     -- Katsayılar (İhtiyaca göre ayarlanabilir)
+--     constant KP      : integer := 3;
+--     constant KI      : integer := 1;
+--     constant KD      : integer := 1;
+--     constant I_SCALE : integer := 64; 
+--     constant I_CLAMP : integer := 2048;
+--     constant CENTER  : integer := 127;
+-- begin
+--     if rst_n_i = '0' then
+--         angle_reg_0 <= to_unsigned(127, 8);
+--         angle_reg_1 <= to_unsigned(127, 8);
+--         angle_reg_2 <= to_unsigned(127, 8);
+--         integral_x := 0;
+--         integral_y := 0;
+--         integral_z := 0;
+--     elsif rising_edge(clk_i) then
+--         if data_valid_out = '1' then
+
+--             error_x := to_integer(signed(f_axi_i(15 downto 8)));
+--             deriv_x := to_integer(signed(f_gxi_i(15 downto 8)));
+
+--             integral_x := integral_x + error_x;
+--             if integral_x > I_CLAMP then integral_x := I_CLAMP;
+--             elsif integral_x < -I_CLAMP then integral_x := -I_CLAMP;
+--             end if;
+
+--             pid_x := (KP * error_x) + (KD * deriv_x) + ((KI * integral_x) / I_SCALE);
+--             target_x := CENTER + pid_x;
+
+--             if target_x > 255 then angle_reg_0 <= to_unsigned(255, 8);
+--             elsif target_x < 0 then angle_reg_0 <= to_unsigned(0, 8);
+--             else angle_reg_0 <= to_unsigned(target_x, 8);
+--             end if;
+
+--             error_y := to_integer(signed(f_ayi_i(15 downto 8)));
+--             deriv_y := to_integer(signed(f_gyi_i(15 downto 8)));
+
+--             integral_y := integral_y + error_y;
+--             if integral_y > I_CLAMP then integral_y := I_CLAMP;
+--             elsif integral_y < -I_CLAMP then integral_y := -I_CLAMP;
+--             end if;
+
+--             pid_y := (KP * error_y) + (KD * deriv_y) + ((KI * integral_y) / I_SCALE);
+--             target_y := CENTER + pid_y;
+
+--             if target_y > 255 then angle_reg_1 <= to_unsigned(255, 8);
+--             elsif target_y < 0 then angle_reg_1 <= to_unsigned(0, 8);
+--             else angle_reg_1 <= to_unsigned(target_y, 8);
+--             end if;
+
+--             error_z := to_integer(signed(f_azi_i(15 downto 8)));
+--             deriv_z := to_integer(signed(f_gzi_i(15 downto 8)));
+
+--             integral_z := integral_z + error_z;
+--             if integral_z > I_CLAMP then integral_z := I_CLAMP;
+--             elsif integral_z < -I_CLAMP then integral_z := -I_CLAMP;
+--             end if;
+
+--             pid_z := (KP * error_z) + (KD * deriv_z) + ((KI * integral_z) / I_SCALE);
+--             target_z := CENTER + pid_z;
+
+--             if target_z > 255 then angle_reg_2 <= to_unsigned(255, 8);
+--             elsif target_z < 0 then angle_reg_2 <= to_unsigned(0, 8);
+--             else angle_reg_2 <= to_unsigned(target_z, 8);
+--             end if;
+
+--         end if;
+--     end if;
+-- end process PID_Filtered_Process;
+
+fifo_test : process (rst_n_i , clk_i)
+begin
+    if rst_n_i = '0' then 
+        tx_start_sig    <= '0';
+        tx_data_sig     <= (others => '0'); 
+        uart_read_state <= ST_CHECK_FIFO;
+    elsif rising_edge(clk_i) then 
+
+        tx_start_sig    <= '0';
+        rd_en_i         <= '0';
+        case uart_read_state is
+            when ST_CHECK_FIFO  => 
+                if(tx_busy_sig ='0' and empty_o = '0') then 
+                    rd_en_i  <= '1';
+                    uart_read_state <= ST_WAIT_FIFO;
+                end if;
+            when ST_WAIT_FIFO   =>
+                uart_read_state <= ST_START_UART ;
+            when ST_START_UART  =>
+                tx_start_sig <= '1';
+                tx_data_sig  <= rdata ;
+                uart_read_state <= ST_WAIT_UART;
+            when ST_WAIT_UART   =>
+                if(tx_busy_sig = '1') then 
+                    uart_read_state <= ST_CHECK_FIFO ;
+                end if;
+            when others => uart_read_state <= ST_CHECK_FIFO;
+                null;
+        end case;
+    end if;
+end process fifo_test;
 end Behavioral;

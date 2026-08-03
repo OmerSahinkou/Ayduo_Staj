@@ -1,7 +1,7 @@
 
 Efinix FPGA Placement and Routing.
 Version: 2025.2.288.2.10 
-Date: Fri Jul 31 16:24:27 2026
+Date: Mon Aug  3 11:52:27 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
  
@@ -14,25 +14,12 @@ Elapsed time for packing: 0 hours 0 minutes 0 seconds
 Inputs: 4 / 96 (4.17%)
 Outputs: 7 / 223 (3.14%)
 Clocks: 1 / 16 (6.25%)
-Logic Elements: 1821 / 7384 (24.66%)
-	LE: LUTs/Adders: 1467 / 7384 (19.87%)
-	LE: Registers: 861 / 5280 (16.31%)
+Logic Elements: 1351 / 7384 (18.30%)
+	LE: LUTs/Adders: 908 / 7384 (12.30%)
+	LE: Registers: 763 / 5280 (14.45%)
 Memory Blocks: 1 / 24 (4.17%)
-Multipliers: 3 / 8 (37.50%)
+Multipliers: 0 / 8 (0.00%)
 ---------- Resource Summary (end) ----------
-
-
----------- DSP Block Information (begin) ----------
-
-+-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-|          NAME           | A_REG | B_REG | O_REG | RSTA_SYNC | RSTA_VALUE | RSTB_SYNC | RSTB_VALUE | RSTO_SYNC | RSTO_VALUE |
-+-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-| Inst_pwm_servo_0/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-| Inst_pwm_servo_1/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-| Inst_pwm_servo_2/mult_5 | false | false | false |   false   |   false    |   false   |   false    |   false   |   false    |
-+-------------------------+-------+-------+-------+-----------+------------+-----------+------------+-----------+------------+
-
------------ DSP Block Information (end) ----------
 
 
 ---------- Memory Block Information (begin) ----------

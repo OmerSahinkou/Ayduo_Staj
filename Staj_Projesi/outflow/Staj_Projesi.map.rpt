@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Jul 31, 2026 16:24:21
+Generated at: Aug 03, 2026 11:52:22
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top
@@ -40,125 +40,103 @@ File List:
 /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl
 /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd
+/home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd
 
 ### ### Report Section Start ### ###
 
 "MEM|SYN-0677" : ... Memory 'ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:661)
+"MOD|OPT-0673" : Instance 'Inst_pwm_servo_1' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:394)
+"MOD|OPT-0673" : Instance 'Inst_pwm_servo_2' is equivalent to 'Inst_pwm_servo_0', it will be optimized. (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:404)
 
 ### ### EFX_FF CE enables (begin) ### ### ###
 Total number of enable signals: 55
-Total number of FFs with enable signals: 695
-CE signal <data_valid_out>, number of controlling flip flops: 64
+Total number of FFs with enable signals: 704
 CE signal <u_FIFO/u_efx_fifo_top/wr_en_int>, number of controlling flip flops: 10
-CE signal <ceg_net148>, number of controlling flip flops: 21
-CE signal <ceg_net149>, number of controlling flip flops: 8
-CE signal <n2546_2>, number of controlling flip flops: 96
-CE signal <ceg_net260>, number of controlling flip flops: 2
+CE signal <ceg_net256>, number of controlling flip flops: 2
+CE signal <ceg_net147>, number of controlling flip flops: 8
 CE signal <rst_n_i>, number of controlling flip flops: 2
-CE signal <ceg_net382>, number of controlling flip flops: 3
-CE signal <~Inst_MPU6500_Controller/n5435>, number of controlling flip flops: 100
+CE signal <ceg_net378>, number of controlling flip flops: 3
+CE signal <~Inst_MPU6500_Controller/n5073>, number of controlling flip flops: 96
 CE signal <Inst_MPU6500_Controller/n6171>, number of controlling flip flops: 8
-CE signal <ceg_net422>, number of controlling flip flops: 22
-CE signal <ceg_net437>, number of controlling flip flops: 4
-CE signal <ceg_net424>, number of controlling flip flops: 2
+CE signal <ceg_net418>, number of controlling flip flops: 22
+CE signal <ceg_net433>, number of controlling flip flops: 4
+CE signal <ceg_net420>, number of controlling flip flops: 2
 CE signal <Inst_MPU6500_Controller/n6172>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6173>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6174>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6175>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6176>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6247>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6254>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6261>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6268>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6179>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6180>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6181>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6182>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6183>, number of controlling flip flops: 8
 CE signal <Inst_MPU6500_Controller/n6184>, number of controlling flip flops: 8
-CE signal <ceg_net432>, number of controlling flip flops: 5
-CE signal <ceg_net426>, number of controlling flip flops: 1
-CE signal <ceg_net433>, number of controlling flip flops: 3
+CE signal <ceg_net421>, number of controlling flip flops: 5
+CE signal <ceg_net422>, number of controlling flip flops: 1
+CE signal <ceg_net425>, number of controlling flip flops: 3
+CE signal <ceg_net434>, number of controlling flip flops: 1
+CE signal <ceg_net435>, number of controlling flip flops: 1
+CE signal <Inst_FIFO_CONTROLLER/n4138>, number of controlling flip flops: 192
+CE signal <ceg_net436>, number of controlling flip flops: 8
+CE signal <ceg_net437>, number of controlling flip flops: 2
 CE signal <ceg_net438>, number of controlling flip flops: 1
 CE signal <ceg_net439>, number of controlling flip flops: 1
-CE signal <Inst_FIFO_CONTROLLER/n4138>, number of controlling flip flops: 192
-CE signal <ceg_net440>, number of controlling flip flops: 8
-CE signal <ceg_net441>, number of controlling flip flops: 2
-CE signal <ceg_net442>, number of controlling flip flops: 1
-CE signal <ceg_net443>, number of controlling flip flops: 1
-CE signal <ceg_net444>, number of controlling flip flops: 1
-CE signal <ceg_net102>, number of controlling flip flops: 12
-CE signal <ceg_net447>, number of controlling flip flops: 2
-CE signal <ceg_net295>, number of controlling flip flops: 1
-CE signal <ceg_net296>, number of controlling flip flops: 3
-CE signal <ceg_net297>, number of controlling flip flops: 1
+CE signal <ceg_net440>, number of controlling flip flops: 1
+CE signal <ceg_net92>, number of controlling flip flops: 2
+CE signal <u_IIR_filtre/n2092>, number of controlling flip flops: 96
+CE signal <u_IIR_filtre/n1916>, number of controlling flip flops: 96
+CE signal <ceg_net106>, number of controlling flip flops: 12
+CE signal <ceg_net443>, number of controlling flip flops: 2
+CE signal <ceg_net291>, number of controlling flip flops: 1
+CE signal <ceg_net292>, number of controlling flip flops: 3
+CE signal <ceg_net293>, number of controlling flip flops: 1
 CE signal <Inst_Spi_Mode_3/n466>, number of controlling flip flops: 1
+CE signal <ceg_net294>, number of controlling flip flops: 1
+CE signal <ceg_net295>, number of controlling flip flops: 1
+CE signal <ceg_net296>, number of controlling flip flops: 1
+CE signal <ceg_net297>, number of controlling flip flops: 1
 CE signal <ceg_net298>, number of controlling flip flops: 1
 CE signal <ceg_net299>, number of controlling flip flops: 1
 CE signal <ceg_net300>, number of controlling flip flops: 1
-CE signal <ceg_net301>, number of controlling flip flops: 1
-CE signal <ceg_net302>, number of controlling flip flops: 1
+CE signal <Inst_uart_tx/n333>, number of controlling flip flops: 8
+CE signal <ceg_net137>, number of controlling flip flops: 6
+CE signal <ceg_net444>, number of controlling flip flops: 2
+CE signal <ceg_net306>, number of controlling flip flops: 3
 CE signal <ceg_net303>, number of controlling flip flops: 1
 CE signal <ceg_net304>, number of controlling flip flops: 1
-CE signal <Inst_uart_tx/n333>, number of controlling flip flops: 8
-CE signal <ceg_net133>, number of controlling flip flops: 6
-CE signal <ceg_net448>, number of controlling flip flops: 2
-CE signal <ceg_net310>, number of controlling flip flops: 3
-CE signal <ceg_net307>, number of controlling flip flops: 1
-CE signal <ceg_net308>, number of controlling flip flops: 1
 CE signal <Inst_debounce/n149>, number of controlling flip flops: 1
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 Total number of set/reset signals: 3
-Total number of FFs with set/reset signals: 647
-SR signal <rst_n_i>, number of controlling flip flops: 607
+Total number of FFs with set/reset signals: 553
 SR signal <fifo_rst_busys>, number of controlling flip flops: 20
+SR signal <rst_n_i>, number of controlling flip flops: 513
 SR signal <Inst_debounce/n151>, number of controlling flip flops: 20
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
 ### ### Sequential Elements Trimming Report (begin) ### ### ### 
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i22
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i23
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i24
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i25
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i26
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i27
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i28
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i29
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i30
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i31
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" removed instance : dff_167/i32
-@ "/home/omer-ahin/STAJ/Staj_Projesi/top.vhd (880)" representative instance : dff_167/i21
 FF Output: Inst_pwm_servo_0/pulse_width[0](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[1](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[2](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[3](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[4](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[5](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[6](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[7](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[8](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[9](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[10](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[11](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[12](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[13](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[14](=1)
+FF Output: Inst_pwm_servo_0/pulse_width[15](=0)
+FF Output: Inst_pwm_servo_0/pulse_width[16](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[17](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[18](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[19](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[0](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[17](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[18](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[19](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[0](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[17](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[18](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[19](=0)
 FF instance: Inst_uart_rx/dff_54/i1(unreachable)
 FF instance: Inst_uart_rx/dff_55/i1(unreachable)
 FF instance: Inst_uart_rx/dff_56/i1(unreachable)
@@ -173,9 +151,6 @@ FF instance: Inst_uart_rx/dff_55/i2(unreachable)
 FF instance: Inst_uart_rx/dff_55/i3(unreachable)
 FF instance: Inst_uart_rx/dff_55/i4(unreachable)
 FF instance: Inst_uart_rx/dff_54/i2(unreachable)
-FF Output: Inst_pwm_servo_0/pulse_width[1](=0)
-FF Output: Inst_pwm_servo_1/pulse_width[1](=0)
-FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 ### ### Sequential Elements Trimming Report (end) ### ### ### 
 
 ### ### Module Resource Usage Distribution Estimates (begin) ### ###
@@ -184,21 +159,20 @@ FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 
 Module                                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
 ------------------------------------------------------------       ---      ----      ----      ---- ---------
-top:top                                                       861(217)  543(442)  922(205)      1(0)      3(0)
- +Inst_pwm_servo_0:pwm_servo                                    36(36)    33(33)    50(50)      0(0)      1(1)
- +Inst_pwm_servo_1:pwm_servo                                    34(34)    15(15)    39(39)      0(0)      1(1)
- +Inst_pwm_servo_2:pwm_servo                                    34(34)    15(15)    40(40)      0(0)      1(1)
+top:top                                                        763(12)    261(0)    645(4)      1(0)      0(0)
+ +Inst_pwm_servo_0:pwm_servo                                    21(21)    19(19)    33(33)      0(0)      0(0)
  +Inst_uart_tx:uart_tx(baud_rate=1000000)                       21(21)      0(0)    30(30)      0(0)      0(0)
- +Inst_debounce:debounce                                        23(23)    19(19)      7(7)      0(0)      0(0)
+ +Inst_debounce:debounce(debounce_limit=1000000)                23(23)    19(19)      7(7)      0(0)      0(0)
  +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...    28(28)      0(0)    42(42)      0(0)      0(0)
- +Inst_MPU6500_Controller:MPU6500_Controller                  240(240)      0(0)  271(271)      0(0)      0(0)
- +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                        206(206)      0(0)  236(236)      0(0)      0(0)
- +u_FIFO:FIFO                                                    22(0)     19(0)      2(0)      1(0)      0(0)
-  +u_efx_fifo_top:efx_fifo_top_312a81e5ee264b53bcc6aeade6...     22(0)     19(0)      2(0)      1(0)      0(0)
+ +Inst_MPU6500_Controller:MPU6500_Controller                  236(236)      0(0)  278(278)      0(0)      0(0)
+ +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                        206(206)      0(0)  243(243)      0(0)      0(0)
+ +u_FIFO:FIFO                                                    22(0)     19(0)      4(0)      1(0)      0(0)
+  +u_efx_fifo_top:efx_fifo_top_312a81e5ee264b53bcc6aeade6...     22(0)     19(0)      4(0)      1(0)      0(0)
    +genblk2.efx_resetsync_a_rst:efx_resetsync_312a81e5ee2...      2(0)      0(0)      0(0)      0(0)      0(0)
     +active_high.efx_resetsync_active_high:efx_asyncreg_3...      2(2)      0(0)      0(0)      0(0)      0(0)
    +xefx_fifo_ram:efx_fifo_ram_312a81e5ee264b53bcc6aeade6...      0(0)      0(0)      0(0)      1(1)      0(0)
-   +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6...    20(20)    19(19)      2(2)      0(0)      0(0)
+   +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6...    20(20)    19(19)      4(4)      0(0)      0(0)
+ +u_IIR_filtre:IIR_filtre                                     194(194)  204(204)      4(4)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -207,7 +181,7 @@ top:top                                                       861(217)  543(442)
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i             861               2               0
+ clk_i             763               2               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -215,16 +189,15 @@ top:top                                                       861(217)  543(442)
 INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	7
 
-EFX_ADD         : 	543
-EFX_LUT4        : 	922
-   1-2  Inputs  : 	159
-   3    Inputs  : 	197
-   4    Inputs  : 	566
-EFX_MULT        : 	3
-EFX_FF          : 	861
+EFX_ADD         : 	261
+EFX_LUT4        : 	645
+   1-2  Inputs  : 	122
+   3    Inputs  : 	194
+   4    Inputs  : 	329
+EFX_FF          : 	763
 EFX_RAM_5K      : 	1
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
 Plain synthesis (without verilog dump and post-map checks) time : 3s
-Elapsed synthesis time : 3s
+Elapsed synthesis time : 4s
