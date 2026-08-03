@@ -2,9 +2,9 @@
 -- Company: Ayduo Electronic
 -- Engineer: Ömer Şahin
 -- 
--- Create Date: 07/17/2026 11:37:36 AM
--- Module Name: MPU6500 - Behavioral
--- FIXED VERSION FOR MODE 3 SPI
+-- Create Date: 08/03/2026 10:37:36 AM
+-- Module Name: IIR_filtre - rtl
+-- First Version
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -28,7 +28,6 @@ entity IIR_filtre is
         gyro_x          : in STD_LOGIC_VECTOR(15 downto 0)  ;
         gyro_y          : in STD_LOGIC_VECTOR(15 downto 0)  ;
         gyro_z          : in STD_LOGIC_VECTOR(15 downto 0)  ;
-
 
         --data valid  ok
         data_valid_out  : in STD_LOGIC                      ;

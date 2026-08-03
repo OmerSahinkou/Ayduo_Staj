@@ -1,0 +1,479 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+                              build/C/embedded_sw_new/sapphire/software/standalone/common/start.o (__libc_init_array)
+
+Discarded input sections
+
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x760 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x11e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x22 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x8e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x51 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x103 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x6a build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x1df build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0xc4 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x10 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x1c build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x76 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x46 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x58 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x19 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x52 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x10e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x8d build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x43 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x10 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x52 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x182 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x339 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x29 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000      0x1a9 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x35 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0x22 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000000000       0xb2 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .group         0x0000000000000000        0xc build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x760 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x58 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x22 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x8e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x51 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x103 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x6a build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x1df build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x11e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0xc4 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x10 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x1c build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x76 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x46 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x19 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x52 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x10e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x8d build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x43 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x10 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x52 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x182 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x339 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x29 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000      0x1a9 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x35 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_macro   0x0000000000000000       0x22 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x00000000f9000000 0x0000000000008000 axwl !r
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+LOAD build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+LOAD build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+LOAD build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32im/ilp32\libgcc.a
+                0x0000000000001000                __stack_size = DEFINED (__stack_size)?__stack_size:0x1000
+
+.init           0x00000000f9000000       0x64
+ *(SORT_NONE(.init))
+ .init          0x00000000f9000000       0x64 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+                0x00000000f9000000                _start
+                0x00000000f9000060                _init
+
+.text           0x00000000f9000064     0x1068
+ *(.text.Proc_1)
+ *(.text.Proc_2)
+ *(.text.Proc_3)
+ *(.text.Proc_4)
+ *(.text.Proc_5)
+ *(.text.Proc_6)
+ *(.text.Proc_7)
+ *(.text.Proc_8)
+ *(.text.Func_1)
+ *(.text.Func_2)
+ *(.text.Func_3)
+ *(.text.strcpy)
+ *libc.a:*(.text .text.*)
+ .text          0x00000000f9000064        0x0 c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x00000000f9000064       0x94 c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+                0x00000000f9000064                __libc_init_array
+ *(.text.main)
+ *(.text.unlikely .text.unlikely.*)
+ *(.text.startup .text.startup.*)
+ *(.text .text.*)
+ .text          0x00000000f90000f8      0x74c build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+                0x00000000f9000684                PatGen
+                0x00000000f9000720                StartRunning
+                0x00000000f9000794                clock_sel
+                0x00000000f90007b4                main
+ .text          0x00000000f9000844      0x758 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+                0x00000000f9000bc8                Phy_Rd
+                0x00000000f9000c1c                Phy_Wr
+                0x00000000f9000c6c                rtl8211_drv_rddata
+                0x00000000f9000c84                rtl8211_drv_wrdata
+                0x00000000f9000cb0                rtl8211_drv_setpage
+                0x00000000f9000ce8                rtl8211_drv_linkup
+                0x00000000f9000ee0                rtl8211_drv_init
+ .text          0x00000000f9000f9c      0x130 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+                0x00000000f9000fe8                Reg_Out32
+                0x00000000f9000ff0                Reg_In32
+                0x00000000f9000ff8                putchar
+                0x00000000f9001028                bsp_puts
+                0x00000000f9001068                print_hex
+ .text          0x00000000f90010cc        0x0 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+ *(.gnu.linkonce.t.*)
+ *(.note.gnu.build-id)
+
+.rela.dyn       0x00000000f90010cc        0x0
+ .rela.init     0x00000000f90010cc        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .rela.text.__libc_init_array
+                0x00000000f90010cc        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+                0x00000000f90010cc                . = ALIGN (0x4)
+
+.preinit_array  0x00000000f90010cc        0x0
+                0x00000000f90010cc                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                0x00000000f90010cc                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x00000000f90010cc        0x0
+                0x00000000f90010cc                PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                0x00000000f90010cc                PROVIDE (__init_array_end = .)
+
+.fini_array     0x00000000f90010cc        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.lalign         0x00000000f90010cc        0x0
+                0x00000000f90010cc                . = ALIGN (0x4)
+                0x00000000f90010cc                PROVIDE (_data_lma = .)
+
+.dalign         0x00000000f90010cc        0x0
+                0x00000000f90010cc                . = ALIGN (0x4)
+                0x00000000f90010cc                PROVIDE (_data = .)
+
+.data           0x00000000f90010cc      0x3ee
+ *(.rdata)
+ *(.rodata .rodata.*)
+ .rodata.str1.4
+                0x00000000f90010cc      0x26e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ *fill*         0x00000000f900133a        0x2 
+ .rodata.str1.4
+                0x00000000f900133c      0x170 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+                                        0x188 (size before relaxing)
+ .rodata.str1.4
+                0x00000000f90014ac       0x11 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ *(.gnu.linkonce.r.*)
+ *(.data .data.*)
+ .data          0x00000000f90014ac        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .data          0x00000000f90014ac        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .data          0x00000000f90014ac        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .data          0x00000000f90014ac        0x0 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+ .data          0x00000000f90014ac        0x0 c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+ *(.gnu.linkonce.d.*)
+                0x00000000f90014c0                . = ALIGN (0x8)
+ *fill*         0x00000000f90014ac        0x4 
+                0x00000000f9001ca0                PROVIDE (__global_pointer$ = (. + 0x7f0))
+ *(.sdata .sdata.*)
+ *(.gnu.linkonce.s.*)
+                0x00000000f90014b0                . = ALIGN (0x8)
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+                0x00000000f90014ba                . = (. + 0xa)
+ *fill*         0x00000000f90014b0        0xa 
+                0x00000000f90014bc                . = ALIGN (0x4)
+                0x00000000f90014bc                PROVIDE (_edata = .)
+                [!provide]                        PROVIDE (edata = .)
+                [!provide]                        PROVIDE (_fbss = .)
+                0x00000000f90014bc                PROVIDE (__bss_start = .)
+
+.bss            0x00000000f90014ba        0x2
+ *(.sbss*)
+ *(.gnu.linkonce.sb.*)
+ *(.bss .bss.*)
+ .bss           0x00000000f90014ba        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .bss           0x00000000f90014ba        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .bss           0x00000000f90014ba        0x0 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .bss           0x00000000f90014ba        0x0 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+ .bss           0x00000000f90014ba        0x0 c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a(lib_a-init.o)
+ *(.gnu.linkonce.b.*)
+ *(COMMON)
+                0x00000000f90014bc                . = ALIGN (0x4)
+ *fill*         0x00000000f90014ba        0x2 
+                0x00000000f90014c0                . = ALIGN (0x8)
+                0x00000000f90014c0                PROVIDE (_end = .)
+                [!provide]                        PROVIDE (end = .)
+
+.stack          0x00000000f90014c0     0x1000
+                [!provide]                        PROVIDE (_heap_end = .)
+                0x0000000000001000                . = __stack_size
+ *fill*         0x00000000f90014c0     0x1000 
+                0x00000000f90024c0                PROVIDE (_sp = .)
+                0x00000000f90024c0                __freertos_irq_stack_top = .
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libm.a
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32im/ilp32\libgcc.a
+START GROUP
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32im/ilp32\libgcc.a
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libg.a
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a
+END GROUP
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32im/ilp32\libgcc.a
+START GROUP
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/rv32im/ilp32\libgcc.a
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a
+LOAD c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libnosys.a
+END GROUP
+OUTPUT(build/tseDemo.elf elf32-littleriscv)
+
+.debug_info     0x0000000000000000     0x39c3
+ .debug_info    0x0000000000000000     0x1874 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_info    0x0000000000001874     0x1531 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_info    0x0000000000002da5      0xbf8 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_info    0x000000000000399d       0x26 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+
+.debug_abbrev   0x0000000000000000      0xaec
+ .debug_abbrev  0x0000000000000000      0x406 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_abbrev  0x0000000000000406      0x3a3 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_abbrev  0x00000000000007a9      0x32f build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_abbrev  0x0000000000000ad8       0x14 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+
+.debug_loc      0x0000000000000000     0x1141
+ .debug_loc     0x0000000000000000      0x9ff build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_loc     0x00000000000009ff      0x598 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_loc     0x0000000000000f97      0x1aa build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+
+.debug_aranges  0x0000000000000000       0x80
+ .debug_aranges
+                0x0000000000000000       0x20 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_aranges
+                0x0000000000000020       0x20 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_aranges
+                0x0000000000000040       0x20 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_aranges
+                0x0000000000000060       0x20 build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+
+.debug_macro    0x0000000000000000     0x2220
+ .debug_macro   0x0000000000000000      0x1d5 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000001d5      0x760 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000935       0x22 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000957       0x8e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000009e5       0x51 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000a36      0x103 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000b39       0x6a build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000ba3      0x1df build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000d82      0x11e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000ea0       0xc4 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000f64       0x10 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000f74       0x1c build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000f90       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000000fa6       0x76 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000101c       0xb2 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000010ce       0x46 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001114       0x58 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000116c       0x19 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001185       0x52 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000011d7       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000120b       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000123f       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001255      0x10e build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001363       0x8d build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000013f0       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001406       0x43 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001449       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000147d       0x10 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000148d       0x52 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000014df      0x182 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001661      0x339 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x000000000000199a       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000019b0       0x29 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x00000000000019d9      0x1a9 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001b82       0x16 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001b98       0x35 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001bcd       0x22 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_macro   0x0000000000001bef      0x1d9 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000001dc8      0x1b8 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000001f80       0xe2 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_macro   0x0000000000002062      0x1be build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+
+.debug_line     0x0000000000000000     0x220d
+ .debug_line    0x0000000000000000      0xfee build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_line    0x0000000000000fee      0xc25 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_line    0x0000000000001c13      0x540 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_line    0x0000000000002153       0xba build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+
+.debug_str      0x0000000000000000     0x8e37
+ .debug_str     0x0000000000000000     0x7d12 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+                                       0x7fda (size before relaxing)
+ .debug_str     0x0000000000007d12     0x10df build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+                                       0x9020 (size before relaxing)
+ .debug_str     0x0000000000008df1       0x28 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+                                       0x7c0c (size before relaxing)
+ .debug_str     0x0000000000008e19       0x1e build/C/embedded_sw_new/sapphire/software/standalone/common/start.o
+                                         0x56 (size before relaxing)
+
+.comment        0x0000000000000000       0x33
+ .comment       0x0000000000000000       0x33 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+                                         0x34 (size before relaxing)
+ .comment       0x0000000000000033       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .comment       0x0000000000000033       0x34 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+
+.debug_frame    0x0000000000000000      0x5bc
+ .debug_frame   0x0000000000000000      0x26c build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/main.o
+ .debug_frame   0x000000000000026c      0x24c build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/rtl8211fd_drv.o
+ .debug_frame   0x00000000000004b8       0xc8 build/C/embedded_sw_new/sapphire/software/standalone/tseDemo/src/common.o
+ .debug_frame   0x0000000000000580       0x3c c:/efinity/efinity-riscv-ide-2024.2/toolchain/bin/../lib/gcc/riscv-none-embed/8.3.0/../../../../riscv-none-embed/lib/rv32im/ilp32\libc.a(lib_a-init.o)

@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Report
 Version: 2025.2.288.2.10
-Date: 2026-08-03 11:52
+Date: 2026-08-03 15:04
 
 Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -80,7 +80,6 @@ No global connection was found in project.
 +---------------+----------+
 | Instance Name | Function |
 +---------------+----------+
-|   pwm_out_1   |  CBSEL1  |
 |    rst_n_i    |  CBUS0   |
 |       rx      |   CDI7   |
 |       tx      |   CDI3   |
@@ -99,7 +98,7 @@ Global Unused Setting: input with weak pullup
 |     miso_i    | GPIOR_03 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_03       |      A6     |
 |     mosi_o    | GPIOR_05 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_05       |      B6     |
 |   pwm_out_0   | GPIOR_20 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_20_CLK5     |      F8     |
-|   pwm_out_1   | GPIOR_21 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |  GPIOR_21_CLK4_CBSEL1 |      E7     |
+|   pwm_out_1   | GPIOR_23 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_23_CTRL4    |      E6     |
 |   pwm_out_2   | GPIOR_22 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_22_CTRL5    |      F7     |
 |    rst_n_i    | GPIOR_15 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |     GPIOR_15_CBUS0    |      C9     |
 |       rx      | GPIOL_10 | input  |          |              |    1A    | 3.3 V LVTTL / LVCMOS |     GPIOL_10_CDI7     |      H2     |

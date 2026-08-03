@@ -35,7 +35,7 @@ begin
     process(clk_i)
     begin
         if rising_edge(clk_i) then
-            if rst_n_i = '0' then  -- DÜZELTILDI: = '0' (active LOW reset)
+            if rst_n_i = '0' then  
                 sync_0    <= '0';
                 sync_1    <= '0';
                 state_reg <= '0';

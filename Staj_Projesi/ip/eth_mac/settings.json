@@ -1,0 +1,125 @@
+{
+    "args": [
+        "-o",
+        "eth_mac",
+        "--base_path",
+        "/home/omer-ahin/STAJ/Staj_Projesi/ip",
+        "--vlnv",
+        {
+            "vendor": "efinixinc.com",
+            "library": "ethernet",
+            "name": "efx_tsemac",
+            "version": "7.1"
+        }
+    ],
+    "conf": {
+        "VERSION": "16",
+        "TXFIFO_EN": "1'b1",
+        "RXFIFO_EN": "1'b1",
+        "TXFIFO_DTH": "2048",
+        "RXFIFO_DTH": "2048",
+        "PHY_INTF_MODE": "2",
+        "AXIS_DW": "8",
+        "RGMII_RXC_EDGE": "1'b1",
+        "RGMII_TXC_DLY": "1'b1",
+        "INTER_PACKET_GAP": "6'd12",
+        "MTU_FRAME_LENGTH": "16'd1518",
+        "MAC_SOURCE_ADDRESS": "48'd0",
+        "ENABLE_BROADCAST_FILTERING": "1'b1",
+        "LOOPBACK_EN": "1'b0",
+        "APBIF": "1'b0",
+        "ONCHIP_PHY": "1'b0"
+    },
+    "output": {
+        "external_testbench_modelsim": [
+            "eth_mac/Testbench/modelsim/eth_mac.sv"
+        ],
+        "external_source_source": [
+            "eth_mac/eth_mac_tmpl.vhd",
+            "eth_mac/eth_mac.sv",
+            "eth_mac/eth_mac_define.svh",
+            "eth_mac/eth_mac_tmpl.sv"
+        ],
+        "external_testbench_testbench": [
+            "eth_mac/Testbench/tb_header.v",
+            "eth_mac/Testbench/tb_top.v",
+            "eth_mac/Testbench/ODDR.v",
+            "eth_mac/Testbench/glbl.v",
+            "eth_mac/Testbench/apb3_2_axi4_lite.v",
+            "eth_mac/Testbench/axi4_st_mux.v",
+            "eth_mac/Testbench/mac_pat_gen.v",
+            "eth_mac/Testbench/mac_rx2tx.v",
+            "eth_mac/Testbench/reg_apb3.v",
+            "eth_mac/Testbench/rgmii_2_rmii.v",
+            "eth_mac/Testbench/udp_pat_gen.v",
+            "eth_mac/Testbench/DaulClkFifo.v",
+            "eth_mac/Testbench/temac_ex.v",
+            "eth_mac/Testbench/modelsim.do",
+            "eth_mac/Testbench/eth_mac.sv",
+            "eth_mac/Testbench/eth_mac_define.svh"
+        ],
+        "external_testbench_ncsim": [
+            "eth_mac/Testbench/ncsim/eth_mac.sv"
+        ],
+        "external_testbench_synopsys": [
+            "eth_mac/Testbench/synopsys/eth_mac.sv"
+        ],
+        "external_testbench_aldec": [
+            "eth_mac/Testbench/aldec/eth_mac.sv"
+        ],
+        "external_example_example": [
+            "eth_mac/T120F324_devkit/temac_ex.peri.xml",
+            "eth_mac/T120F324_devkit/temac_ex.xml",
+            "eth_mac/T120F324_devkit/timing.sdc",
+            "eth_mac/T120F324_devkit/apb3_2_axi4_lite.v",
+            "eth_mac/T120F324_devkit/axi4_st_mux.v",
+            "eth_mac/T120F324_devkit/header.v",
+            "eth_mac/T120F324_devkit/mac_pat_gen.v",
+            "eth_mac/T120F324_devkit/mac_rx2tx.v",
+            "eth_mac/T120F324_devkit/reg_apb3.v",
+            "eth_mac/T120F324_devkit/rgmii_2_rmii.v",
+            "eth_mac/T120F324_devkit/temac_ex.v",
+            "eth_mac/T120F324_devkit/udp_pat_gen.v",
+            "eth_mac/T120F324_devkit/DaulClkFifo.v",
+            "eth_mac/T120F324_devkit/eth_mac.sv",
+            "eth_mac/T120F324_devkit/eth_mac_define.svh"
+        ],
+        "external_example_2": [
+            "eth_mac/Ti60F225_devkit/temac_ex.peri.xml",
+            "eth_mac/Ti60F225_devkit/temac_ex.xml",
+            "eth_mac/Ti60F225_devkit/timing_Ti60.sdc",
+            "eth_mac/Ti60F225_devkit/apb3_2_axi4_lite.v",
+            "eth_mac/Ti60F225_devkit/axi4_st_mux.v",
+            "eth_mac/Ti60F225_devkit/header.v",
+            "eth_mac/Ti60F225_devkit/mac_pat_gen.v",
+            "eth_mac/Ti60F225_devkit/mac_rx2tx.v",
+            "eth_mac/Ti60F225_devkit/reg_apb3.v",
+            "eth_mac/Ti60F225_devkit/rgmii_2_rmii.v",
+            "eth_mac/Ti60F225_devkit/temac_ex.v",
+            "eth_mac/Ti60F225_devkit/udp_pat_gen.v",
+            "eth_mac/Ti60F225_devkit/DaulClkFifo.v",
+            "eth_mac/Ti60F225_devkit/eth_mac.sv",
+            "eth_mac/Ti60F225_devkit/eth_mac_define.svh"
+        ],
+        "external_example_example_serdes": [
+            "eth_mac/Ti375N1156_devkit/efx_ethernet_1g_exp.xml",
+            "eth_mac/Ti375N1156_devkit/efx_ethernet_1g_exp.peri.xml",
+            "eth_mac/Ti375N1156_devkit/debug_top.v",
+            "eth_mac/Ti375N1156_devkit/efx_asyncreg_assertions.vh",
+            "eth_mac/Ti375N1156_devkit/efx_asyncreg.v",
+            "eth_mac/Ti375N1156_devkit/efx_ethernet_1g_exp.sv",
+            "eth_mac/Ti375N1156_devkit/efx_mac1gbe_exp_checker.sv",
+            "eth_mac/Ti375N1156_devkit/efx_mac1gbe_exp_pat_gen.sv",
+            "eth_mac/Ti375N1156_devkit/efx_mac1gbe_exp_speed_ctrl.sv",
+            "eth_mac/Ti375N1156_devkit/efx_mac1gbe_exp_apb_master.sv",
+            "eth_mac/Ti375N1156_devkit/efx_mac1gbe_exp_apb_decoder.sv",
+            "eth_mac/Ti375N1156_devkit/debug_profile.json",
+            "eth_mac/Ti375N1156_devkit/timing_Ti375.sdc",
+            "eth_mac/Ti375N1156_devkit/eth_mac.sv",
+            "eth_mac/Ti375N1156_devkit/eth_mac_define.svh"
+        ]
+    },
+    "ooc_synthesis": {},
+    "sw_version": "2025.2.288.2.10",
+    "generated_date": "2026-08-03T12:10:41.272916+00:00"
+}

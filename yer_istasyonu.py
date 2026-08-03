@@ -215,7 +215,7 @@ class MainWindow(QMainWindow):
         grid_layout.addWidget(self.motor_view, 1, 1)
 
         # Seri Port Başlatma
-        self.serial_thread = SerialReader(port="/dev/ttyUSB2", baudrate=1000000)
+        self.serial_thread = SerialReader(port="/dev/ttyUSB2", baudrate=115_200)
         self.serial_thread.data_received.connect(self.update_data)
         self.serial_thread.start()
 

@@ -1,0 +1,146 @@
+{
+    "debug_cores": [
+        {
+            "name": "vio0",
+            "type": "vio",
+            "uuid": "149e8dfda3984b55a91e34ad29b651db",
+            "probes": [
+                {
+                    "name": "pma_cmn_ready",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l0_sync_status",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l3_sync_status",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l0_init_done",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l3_init_done",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "pll_locked",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l0_rx_signal_detect",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l3_rx_signal_detect",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l0_data_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l0_err_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l0_frame_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l0_bad_frame_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l3_data_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l3_err_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l3_frame_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "l3_bad_frame_cnt",
+                    "width": 8,
+                    "init": null
+                },
+                {
+                    "name": "usr_apb_start",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "usr_apb_write",
+                    "width": 1,
+                    "init": "0x0"
+                },
+                {
+                    "name": "usr_apb_addr",
+                    "width": 24,
+                    "init": "0x0"
+                },
+                {
+                    "name": "usr_apb_pwdata",
+                    "width": 32,
+                    "init": "0x0"
+                },
+                {
+                    "name": "ram_dout_a",
+                    "width": 24,
+                    "init": null
+                },
+                {
+                    "name": "ram_dout_d",
+                    "width": 32,
+                    "init": null
+                },
+                {
+                    "name": "l0_sgmii_speed",
+                    "width": 2,
+                    "init": null
+                },
+                {
+                    "name": "l0_speed_chg_active",
+                    "width": 1,
+                    "init": null
+                },
+                {
+                    "name": "l3_sgmii_speed",
+                    "width": 2,
+                    "init": null
+                },
+                {
+                    "name": "l3_speed_chg_active",
+                    "width": 1,
+                    "init": null
+                }
+            ]
+        }
+    ],
+    "session": {
+        "debug_widget": [],
+        "wizard": {}
+    },
+    "jtag_user": "USER1"
+}

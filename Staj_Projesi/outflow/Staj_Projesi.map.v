@@ -19,18 +19,9 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     output sclk_o /* verific EFX_ATTRIBUTE_PORT__IS_PRIMARY_OUTPUT=TRUE, EFX_ATTRIBUTE_PORT__IS_VHDL_PORT_NAME=TRUE */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(39)
     
     wire fifo_rst_busys /* verific async_reg="true" */ ;
-    wire n699;
-    wire [1:0]n700;
-    wire [18:0]\u_IIR_filtre/n153 ;
-    
-    wire \u_IIR_filtre/add_88/n4 ;
     wire [8:0]\u_FIFO/u_efx_fifo_top/waddr ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(377)
-    wire [1:0]uart_read_state;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(306)
-    wire [7:0]tx_data_sig;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(256)
-    
-    wire rd_en_i, tx_start_sig;
     wire [2:0]\Inst_MPU6500_Controller/config_idx ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(69)
-    wire [15:0]accel_x;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(268)
+    wire [15:0]accel_x;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(284)
     wire [7:0]\Inst_MPU6500_Controller/raw_data[0] ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(75)
     wire [21:0]\Inst_MPU6500_Controller/delay_cntr ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(99)
     wire [3:0]\Inst_MPU6500_Controller/byte_cntr ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(76)
@@ -48,18 +39,18 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [7:0]\Inst_MPU6500_Controller/raw_data[11] ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(75)
     wire [7:0]\Inst_MPU6500_Controller/raw_data[12] ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(75)
     wire [7:0]\Inst_MPU6500_Controller/raw_data[13] ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(75)
-    wire [7:0]mpu_to_spi_data;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(264)
+    wire [7:0]mpu_to_spi_data;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(280)
     
     wire data_valid_out;
-    wire [15:0]accel_y;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(268)
-    wire [15:0]accel_z;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(268)
-    wire [15:0]gyro_x;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(269)
-    wire [15:0]gyro_y;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(269)
-    wire [15:0]gyro_z;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(269)
+    wire [15:0]accel_y;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(284)
+    wire [15:0]accel_z;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(284)
+    wire [15:0]gyro_x;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(285)
+    wire [15:0]gyro_y;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(285)
+    wire [15:0]gyro_z;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(285)
     
     wire \clk_i~O ;
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_accel_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(56)
-    wire [7:0]fifo_wr_data_o;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(341)
+    wire [7:0]fifo_wr_data_o;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(357)
     wire [4:0]\Inst_FIFO_CONTROLLER/FIFO_state ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(92)
     
     wire fifo_wr_en_o;
@@ -74,8 +65,9 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_f_gyro_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(66)
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_f_gyro_y ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(67)
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_f_gyro_z ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(68)
+    wire [18:0]\u_IIR_filtre/n153 ;
     
-    wire \u_IIR_filtre/add_88/n6 , \u_IIR_filtre/add_15/n2 ;
+    wire \u_IIR_filtre/add_88/n4 , \u_IIR_filtre/add_15/n2 ;
     wire [18:0]\u_IIR_filtre/n195 ;
     
     wire \u_IIR_filtre/add_89/n4 , \u_IIR_filtre/add_19/n2 ;
@@ -91,20 +83,20 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [18:0]\u_IIR_filtre/n111 ;
     
     wire \u_IIR_filtre/add_87/n4 ;
-    wire [1:0]\u_IIR_filtre/IIR_filtre_state ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(65)
-    wire [15:0]f_axi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(271)
-    wire [15:0]f_ayi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(272)
-    wire [15:0]f_azi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(273)
-    wire [15:0]f_gxi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(274)
-    wire [15:0]f_gyi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(275)
-    wire [15:0]f_gzi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(276)
-    wire [15:0]\u_IIR_filtre/reg_accel_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(50)
-    wire [15:0]\u_IIR_filtre/reg_accel_y ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(51)
-    wire [15:0]\u_IIR_filtre/reg_accel_z ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(52)
-    wire [15:0]\u_IIR_filtre/reg_gyro_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(53)
-    wire [15:0]\u_IIR_filtre/reg_gyro_y ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(54)
-    wire [15:0]\u_IIR_filtre/reg_gyro_z ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(55)
-    wire [7:0]rdata;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(345)
+    wire [1:0]\u_IIR_filtre/IIR_filtre_state ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(64)
+    wire [15:0]f_axi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(287)
+    wire [15:0]f_ayi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(288)
+    wire [15:0]f_azi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(289)
+    wire [15:0]f_gxi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(290)
+    wire [15:0]f_gyi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(291)
+    wire [15:0]f_gzi_i;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(292)
+    wire [15:0]\u_IIR_filtre/reg_accel_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(49)
+    wire [15:0]\u_IIR_filtre/reg_accel_y ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(50)
+    wire [15:0]\u_IIR_filtre/reg_accel_z ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(51)
+    wire [15:0]\u_IIR_filtre/reg_gyro_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(52)
+    wire [15:0]\u_IIR_filtre/reg_gyro_y ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(53)
+    wire [15:0]\u_IIR_filtre/reg_gyro_z ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(54)
+    wire [7:0]rdata;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(361)
     wire [19:0]\Inst_debounce/n10 ;
     
     wire \Inst_debounce/add_30/n36 , \Inst_debounce/add_30/n34 , \Inst_debounce/add_30/n32 , 
@@ -161,89 +153,95 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     
     wire \u_IIR_filtre/add_27/n34 , \u_IIR_filtre/add_27/n32 , \u_IIR_filtre/add_27/n30 , 
         \u_IIR_filtre/add_27/n28 , \u_IIR_filtre/add_27/n26 , \u_IIR_filtre/add_27/n24 , 
-        \u_IIR_filtre/add_27/n22 , \u_IIR_filtre/add_27/n20 , \u_IIR_filtre/add_27/n18 , 
-        \u_IIR_filtre/add_27/n16 , \u_IIR_filtre/add_27/n14 , \u_IIR_filtre/add_27/n12 , 
-        \u_IIR_filtre/add_27/n10 , \u_IIR_filtre/add_27/n8 , \u_IIR_filtre/add_27/n6 , 
-        \u_IIR_filtre/add_27/n4 , \u_IIR_filtre/add_91/n30 , \u_IIR_filtre/add_91/n28 , 
-        \u_IIR_filtre/add_91/n26 , \u_IIR_filtre/add_91/n24 , \u_IIR_filtre/add_91/n22 , 
-        \u_IIR_filtre/add_88/n8 , \u_IIR_filtre/add_91/n20 , \u_IIR_filtre/add_91/n18 , 
-        \u_IIR_filtre/add_91/n16 , \u_IIR_filtre/add_91/n14 , \u_IIR_filtre/add_91/n12 ;
+        \u_IIR_filtre/add_88/n6 , \u_IIR_filtre/add_27/n22 , \u_IIR_filtre/add_27/n20 , 
+        \u_IIR_filtre/add_27/n18 , \u_IIR_filtre/add_27/n16 , \u_IIR_filtre/add_27/n14 ;
     wire [3:0]\Inst_Spi_Mode_3/bitcounter ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(49)
     
-    wire \u_IIR_filtre/add_91/n10 , \u_IIR_filtre/add_91/n8 , \u_IIR_filtre/add_91/n6 ;
+    wire \u_IIR_filtre/add_27/n12 , \u_IIR_filtre/add_27/n10 , \u_IIR_filtre/add_27/n8 , 
+        \u_IIR_filtre/add_27/n6 , \u_IIR_filtre/add_27/n4 , \u_IIR_filtre/add_91/n30 , 
+        \u_IIR_filtre/add_91/n28 , \u_IIR_filtre/add_91/n26 , \u_IIR_filtre/add_91/n24 ;
+    wire [1:0]\Inst_Spi_Mode_3/state ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(54)
+    wire [7:0]\Inst_Spi_Mode_3/data_buffer ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(51)
+    wire [7:0]spi_to_mpu_data;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(281)
+    wire [3:0]\Inst_Spi_Mode_3/bit_idx ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(50)
+    
+    wire spi_data_valid, n1926, n1927, \u_IIR_filtre/add_91/n22 , \u_IIR_filtre/add_91/n20 , 
+        \u_IIR_filtre/add_91/n18 , \u_IIR_filtre/add_91/n16 , \u_IIR_filtre/add_91/n14 , 
+        \u_IIR_filtre/add_91/n12 , \u_IIR_filtre/add_91/n10 , \u_IIR_filtre/add_91/n8 , 
+        \u_IIR_filtre/add_91/n6 ;
     wire [17:0]\u_IIR_filtre/n218 ;
     
     wire \u_IIR_filtre/add_23/n34 , \u_IIR_filtre/add_23/n32 , \u_IIR_filtre/add_23/n30 , 
         \u_IIR_filtre/add_23/n28 , \u_IIR_filtre/add_23/n26 , \u_IIR_filtre/add_23/n24 , 
-        \u_IIR_filtre/add_23/n22 , \u_IIR_filtre/add_23/n20 , \u_IIR_filtre/add_23/n18 ;
-    wire [1:0]\Inst_Spi_Mode_3/state ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(54)
-    wire [7:0]\Inst_Spi_Mode_3/data_buffer ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(51)
-    wire [7:0]spi_to_mpu_data;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(265)
-    wire [3:0]\Inst_Spi_Mode_3/bit_idx ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(50)
+        \u_IIR_filtre/add_23/n22 , \u_IIR_filtre/add_23/n20 , \u_IIR_filtre/add_23/n18 , 
+        \u_IIR_filtre/add_23/n16 , \u_IIR_filtre/add_23/n14 , \u_IIR_filtre/add_23/n12 , 
+        \u_IIR_filtre/add_23/n10 , \u_IIR_filtre/add_23/n8 , \u_IIR_filtre/add_23/n6 , 
+        \u_IIR_filtre/add_23/n4 ;
+    wire [8:0]\u_FIFO/u_efx_fifo_top/raddr ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(378)
     
-    wire spi_data_valid, n1930, n1931, \u_IIR_filtre/add_23/n16 , \u_IIR_filtre/add_23/n14 , 
-        \u_IIR_filtre/add_23/n12 , \u_IIR_filtre/add_23/n10 , \u_IIR_filtre/add_23/n8 , 
-        \u_IIR_filtre/add_23/n6 , \u_IIR_filtre/add_23/n4 , \u_IIR_filtre/add_90/n30 , 
+    wire \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] , \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n4 , 
+        \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_45/n2 , \Inst_pwm_servo_0/add_24/n2 , 
+        \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] , \u_IIR_filtre/add_90/n30 , 
         \u_IIR_filtre/add_90/n28 , \u_IIR_filtre/add_90/n26 , \u_IIR_filtre/add_90/n24 , 
         \u_IIR_filtre/add_90/n22 , \u_IIR_filtre/add_90/n20 , \u_IIR_filtre/add_90/n18 , 
         \u_IIR_filtre/add_90/n16 , \u_IIR_filtre/add_90/n14 , \u_IIR_filtre/add_90/n12 , 
-        \u_IIR_filtre/add_90/n10 , \u_IIR_filtre/add_90/n8 , \u_IIR_filtre/add_90/n6 ;
+        \u_IIR_filtre/add_90/n10 , \u_IIR_filtre/add_90/n8 , \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n2 , 
+        \u_IIR_filtre/add_90/n6 ;
     wire [17:0]\u_IIR_filtre/n176 ;
     
     wire \u_IIR_filtre/add_19/n34 , \u_IIR_filtre/add_19/n32 , \u_IIR_filtre/add_19/n30 , 
         \u_IIR_filtre/add_19/n28 , \u_IIR_filtre/add_19/n26 ;
-    wire [8:0]\u_FIFO/u_efx_fifo_top/raddr ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(378)
-    
-    wire \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] , \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n4 , 
-        \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_45/n2 , \u_IIR_filtre/add_19/n24 , 
-        \Inst_pwm_servo_0/add_24/n2 , \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] , 
-        \u_IIR_filtre/add_19/n22 , \u_IIR_filtre/add_19/n20 , \u_IIR_filtre/add_19/n18 , 
-        \u_IIR_filtre/add_19/n16 , \u_IIR_filtre/add_19/n14 , \u_IIR_filtre/add_19/n12 , 
-        \u_IIR_filtre/add_19/n10 , \u_IIR_filtre/add_19/n8 , \u_IIR_filtre/add_19/n6 , 
-        \u_IIR_filtre/add_19/n4 , \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n2 ;
-    wire [19:0]\Inst_pwm_servo_0/counter ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(22)
-    
-    wire \Inst_debounce/add_30/n2 , \u_IIR_filtre/add_88/n10 ;
-    wire [7:0]\Inst_uart_tx/data_buffer ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(49)
-    wire [5:0]\Inst_uart_tx/bitcounter ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(47)
-    
-    wire \u_IIR_filtre/add_89/n30 , \u_IIR_filtre/add_89/n28 , \u_IIR_filtre/add_89/n26 ;
     wire [1:0]\Inst_uart_tx/state ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(52)
     
-    wire \u_IIR_filtre/add_89/n24 , \u_IIR_filtre/add_89/n22 , \u_IIR_filtre/add_89/n20 , 
-        \u_IIR_filtre/add_89/n18 , \u_IIR_filtre/add_89/n16 , \u_IIR_filtre/add_89/n14 , 
-        \u_IIR_filtre/add_89/n12 , \u_IIR_filtre/add_89/n10 ;
+    wire \u_IIR_filtre/add_19/n24 , \u_IIR_filtre/add_19/n22 , \u_IIR_filtre/add_19/n20 , 
+        \u_IIR_filtre/add_88/n8 , \u_IIR_filtre/add_19/n18 ;
+    wire [8:0]\Inst_uart_tx/bitcounter ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(47)
+    
+    wire \u_IIR_filtre/add_19/n16 ;
+    wire [7:0]\Inst_uart_tx/data_buffer ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(49)
     wire [2:0]\Inst_uart_tx/bit_idx ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(48)
     
-    wire tx_busy_sig, \u_IIR_filtre/add_89/n8 , \u_IIR_filtre/add_89/n6 ;
-    wire [17:0]\u_IIR_filtre/n134 ;
+    wire tx_busy_sig, \u_IIR_filtre/add_19/n14 , \u_IIR_filtre/add_19/n12 , 
+        \u_IIR_filtre/add_19/n10 , \u_IIR_filtre/add_19/n8 , \u_IIR_filtre/add_19/n6 , 
+        \u_IIR_filtre/add_19/n4 , \u_IIR_filtre/add_89/n30 , \u_IIR_filtre/add_89/n28 , 
+        \u_IIR_filtre/add_89/n26 , \u_IIR_filtre/add_89/n24 , \u_IIR_filtre/add_89/n22 , 
+        \u_IIR_filtre/add_89/n20 , \u_IIR_filtre/add_89/n18 , \u_IIR_filtre/add_89/n16 , 
+        \u_IIR_filtre/add_89/n14 , \u_IIR_filtre/add_89/n12 ;
+    wire [19:0]\Inst_pwm_servo_0/counter ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(22)
     
-    wire \u_IIR_filtre/add_15/n34 , \u_IIR_filtre/add_15/n32 , \u_IIR_filtre/add_15/n30 , 
-        \u_IIR_filtre/add_15/n28 , \u_IIR_filtre/add_15/n26 , \u_IIR_filtre/add_15/n24 , 
-        \u_IIR_filtre/add_15/n22 , \u_IIR_filtre/add_15/n20 , \u_IIR_filtre/add_15/n18 , 
-        \u_IIR_filtre/add_15/n16 , \u_IIR_filtre/add_15/n14 , \u_IIR_filtre/add_15/n12 , 
-        \u_IIR_filtre/add_15/n10 , \u_IIR_filtre/add_15/n8 , \u_IIR_filtre/add_15/n6 , 
-        \u_IIR_filtre/add_15/n4 ;
+    wire \Inst_debounce/add_30/n2 ;
     wire [19:0]\Inst_debounce/count_reg ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(28)
     
-    wire \u_IIR_filtre/add_88/n30 , \Inst_debounce/sync_1 , switch_out, 
-        \Inst_debounce/sync_0 , \u_IIR_filtre/add_88/n28 , \u_IIR_filtre/add_88/n26 , 
-        \u_IIR_filtre/add_88/n24 , \u_IIR_filtre/add_88/n22 , \u_IIR_filtre/add_88/n20 , 
-        \u_IIR_filtre/add_88/n18 , \u_IIR_filtre/add_88/n16 , \u_IIR_filtre/add_88/n14 , 
-        \u_IIR_filtre/add_88/n12 , n1929, \u_FIFO/u_efx_fifo_top/wr_en_int , 
-        ceg_net256, n1928, ceg_net147;
+    wire \u_IIR_filtre/add_89/n10 , \u_IIR_filtre/add_89/n8 , \u_IIR_filtre/add_89/n6 ;
+    wire [17:0]\u_IIR_filtre/n134 ;
+    
+    wire \Inst_debounce/sync_1 , switch_out, \Inst_debounce/sync_0 , \u_IIR_filtre/add_15/n34 , 
+        \u_IIR_filtre/add_15/n32 , \u_IIR_filtre/add_15/n30 , \u_IIR_filtre/add_15/n28 , 
+        \u_IIR_filtre/add_15/n26 , \u_IIR_filtre/add_15/n24 , \u_IIR_filtre/add_15/n22 , 
+        \u_IIR_filtre/add_15/n20 , \u_IIR_filtre/add_15/n18 , \u_IIR_filtre/add_15/n16 , 
+        \u_IIR_filtre/add_15/n14 , \u_IIR_filtre/add_88/n10 , \u_IIR_filtre/add_15/n12 ;
+    wire [1:0]\u_uart_Send/uart_read_state ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(32)
+    
+    wire \u_IIR_filtre/add_15/n10 ;
+    wire [7:0]tx_data_sig;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(272)
+    
+    wire rd_en_i, tx_start_sig, \u_IIR_filtre/add_15/n8 , \u_IIR_filtre/add_15/n6 , 
+        \u_IIR_filtre/add_15/n4 , \u_IIR_filtre/add_88/n30 , \u_IIR_filtre/add_88/n28 , 
+        \u_IIR_filtre/add_88/n26 , \u_IIR_filtre/add_88/n24 , \u_IIR_filtre/add_88/n22 , 
+        \u_IIR_filtre/add_88/n20 , \u_IIR_filtre/add_88/n18 , \u_IIR_filtre/add_88/n16 , 
+        \u_IIR_filtre/add_88/n14 , \u_IIR_filtre/add_88/n12 , n1925, \u_FIFO/u_efx_fifo_top/wr_en_int ;
     wire [2:0]\Inst_MPU6500_Controller/n731 ;
     
-    wire ceg_net378, \Inst_MPU6500_Controller/n6171 ;
+    wire ceg_net377, n1924, \Inst_MPU6500_Controller/n6171 ;
     wire [21:0]\Inst_MPU6500_Controller/n740 ;
     
-    wire ceg_net418;
+    wire ceg_net417;
     wire [3:0]\Inst_MPU6500_Controller/n735 ;
     
-    wire ceg_net433, \Inst_MPU6500_Controller/n777 ;
+    wire ceg_net432, \Inst_MPU6500_Controller/n777 ;
     wire [3:0]\Inst_MPU6500_Controller/n763 ;
     
-    wire ceg_net420, \Inst_MPU6500_Controller/n6172 , \Inst_MPU6500_Controller/n6173 , 
+    wire ceg_net419, \Inst_MPU6500_Controller/n6172 , \Inst_MPU6500_Controller/n6173 , 
         \Inst_MPU6500_Controller/n6174 , \Inst_MPU6500_Controller/n6175 , 
         \Inst_MPU6500_Controller/n6176 , \Inst_MPU6500_Controller/n6179 , 
         \Inst_MPU6500_Controller/n6180 , \Inst_MPU6500_Controller/n6181 , 
@@ -251,8 +249,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         \Inst_MPU6500_Controller/n6184 ;
     wire [7:0]\Inst_MPU6500_Controller/n768 ;
     
-    wire ceg_net421, \~Inst_MPU6500_Controller/n5073 , \Inst_MPU6500_Controller/n730 , 
-        ceg_net422, \Inst_MPU6500_Controller/n4257 , \Inst_MPU6500_Controller/n4262 , 
+    wire ceg_net420, \~Inst_MPU6500_Controller/n5073 , \Inst_MPU6500_Controller/n730 , 
+        ceg_net421, \Inst_MPU6500_Controller/n4257 , \Inst_MPU6500_Controller/n4262 , 
         \Inst_MPU6500_Controller/n4267 , \Inst_MPU6500_Controller/n4272 , 
         \Inst_MPU6500_Controller/n4277 , \Inst_MPU6500_Controller/n4282 , 
         \Inst_MPU6500_Controller/n4287 , \Inst_MPU6500_Controller/n4292 , 
@@ -288,100 +286,102 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         \Inst_MPU6500_Controller/n4617 , \Inst_MPU6500_Controller/n4622 , 
         \Inst_MPU6500_Controller/n4627 , \Inst_MPU6500_Controller/n4632 , 
         \Inst_MPU6500_Controller/n4637 , \Inst_MPU6500_Controller/n4642 , 
-        ceg_net425, ceg_net434, ceg_net435, \Inst_FIFO_CONTROLLER/n4138 ;
+        ceg_net424, ceg_net433, ceg_net434, \Inst_FIFO_CONTROLLER/n4138 ;
     wire [7:0]\Inst_FIFO_CONTROLLER/n955 ;
     
-    wire ceg_net436;
+    wire ceg_net435;
     wire [4:0]\Inst_FIFO_CONTROLLER/n965 ;
     
-    wire ceg_net437, \Inst_FIFO_CONTROLLER/n1184 , ceg_net438, ceg_net439, 
-        ceg_net440, \u_IIR_filtre/n1801 , ceg_net92;
+    wire ceg_net436, \Inst_FIFO_CONTROLLER/n1184 , ceg_net437, ceg_net438, 
+        ceg_net439, \u_IIR_filtre/n1801 , ceg_net87;
     wire [1:0]\u_IIR_filtre/n465 ;
     
-    wire \u_IIR_filtre/n1916 , \u_FIFO/u_efx_fifo_top/rd_en_int , n1927;
+    wire \u_IIR_filtre/n1916 , \u_FIFO/u_efx_fifo_top/rd_en_int , n1923;
     wire [3:0]\Inst_Spi_Mode_3/n129 ;
     
-    wire ceg_net106, ceg_net443;
+    wire ceg_net101, ceg_net442;
     wire [7:0]\Inst_Spi_Mode_3/n135 ;
     
-    wire ceg_net291;
+    wire ceg_net289;
     wire [3:0]\Inst_Spi_Mode_3/n124 ;
     
-    wire ceg_net292, \~ceg_net114 , ceg_net293, \Inst_Spi_Mode_3/n25 , 
-        \Inst_Spi_Mode_3/n466 , ceg_net294, ceg_net295, ceg_net296, 
-        ceg_net297, ceg_net298, ceg_net299, ceg_net300;
+    wire ceg_net290, \~ceg_net109 , ceg_net291, \Inst_Spi_Mode_3/n25 , 
+        \Inst_Spi_Mode_3/n466 , ceg_net292, ceg_net293, ceg_net294, 
+        ceg_net295, ceg_net296, ceg_net297, ceg_net298;
     wire [1:0]\Inst_Spi_Mode_3/n144 ;
+    
+    wire ceg_net443;
+    wire [8:0]\Inst_uart_tx/n150 ;
+    
+    wire ceg_net130, \Inst_uart_tx/n404 ;
+    wire [2:0]\Inst_uart_tx/n160 ;
+    
+    wire ceg_net304, \Inst_uart_tx/n139 , ceg_net301, \Inst_uart_tx/n140 , 
+        ceg_net302;
+    wire [1:0]\Inst_uart_tx/n136 ;
     wire [19:0]\Inst_pwm_servo_0/n63 ;
     
-    wire \Inst_pwm_servo_0/n86 , \Inst_uart_tx/n333 ;
-    wire [5:0]\Inst_uart_tx/n129 ;
+    wire \Inst_pwm_servo_0/n86 , \Inst_debounce/n151 , \Inst_debounce/n149 , 
+        n1922, ceg_net305, \u_uart_Send/n16 , \~u_uart_Send/n101 ;
+    wire [1:0]\u_uart_Send/n17 ;
     
-    wire ceg_net137, ceg_net444;
-    wire [2:0]\Inst_uart_tx/n136 ;
-    
-    wire ceg_net306, \Inst_uart_tx/n118 , ceg_net303, \Inst_uart_tx/n119 , 
-        ceg_net304;
-    wire [1:0]\Inst_uart_tx/n115 ;
-    
-    wire \Inst_debounce/n151 , \Inst_debounce/n149 , n1926, n1519, n1520, 
-        n1521, n1522, n1523, n1524, n1525, n1526, n1527, n1528, 
-        n1529, n1530, n1531, n1532, n1533, n1534, n1535, n1536, 
-        n1537, n1538, n1539, n1540, n1541, n1542, n1543, n1544, 
-        n1545, n1546, n1547, n1548, n1549, n1550, n1551, n1552, 
-        n1553, n1554, n1555, n1556, n1557, n1558, n1559, n1560, 
-        n1561, n1562, n1563, n1564, n1565, n1566, n1567, n1568, 
-        n1569, n1570, n1571, n1572, n1573, n1574, n1575, n1576, 
-        n1577, n1578, n1579, n1580, n1581, n1582, n1583, n1584, 
-        n1585, n1586, n1587, n1588, n1589, n1590, n1591, n1592, 
-        n1593, n1594, n1595, n1596, n1597, n1598, n1599, n1600, 
-        n1601, n1602, n1603, n1604, n1605, n1606, n1607, n1608, 
-        n1609, n1610, n1611, n1612, n1613, n1614, n1615, n1616, 
-        n1617, n1618, n1619, n1620, n1621, n1622, n1623, n1624, 
-        n1625, n1626, n1627, n1628, n1629, n1630, n1631, n1632, 
-        n1633, n1634, n1635, n1636, n1637, n1638, n1639, n1640, 
-        n1641, n1642, n1643, n1644, n1645, n1646, n1647, n1648, 
-        n1649, n1650, n1651, n1652, n1653, n1654, n1655, n1656, 
-        n1657, n1658, n1659, n1660, n1661, n1662, n1663, n1664, 
-        n1665, n1666, n1667, n1668, n1669, n1670, n1671, n1672, 
-        n1673, n1674, n1675, n1676, n1677, n1678, n1679, n1680, 
-        n1681, n1682, n1683, n1684, n1685, n1686, n1687, n1688, 
-        n1689, n1690, n1691, n1692, n1693, n1694, n1695, n1696, 
-        n1697, n1698, n1699, n1700, n1701, n1702, n1703, n1704, 
-        n1705, n1706, n1707, n1708, n1709, n1710, n1711, n1712, 
-        n1713, n1714, n1715, n1716, n1717, n1718, n1719, n1720, 
-        n1721, n1722, n1723, n1724, n1725, n1726, n1727, n1728, 
-        n1729, n1730, n1731, n1732, n1733, n1734, n1735, n1736, 
-        n1737, n1738, n1739, n1740, n1741, n1742, n1743, n1744, 
-        n1745, n1746, n1747, n1748, n1749, n1750, n1751, n1752, 
-        n1753, n1754, n1755, n1756, n1757, n1758, n1759, n1760, 
-        n1761, n1762, n1763, n1764, n1765, n1766, n1767, n1768, 
-        n1769, n1770, n1771, n1772, n1773, n1774, n1775, n1776, 
-        n1777, n1778, n1779, n1780, n1781, n1782, n1783, n1784, 
-        n1785, n1786, n1787, n1788, n1789, n1790, n1791, n1792, 
-        n1793, n1794, n1795, n1796, n1797, n1798, n1799, n1801, 
-        n1802, n1803, n1804, n1805, n1806, n1807, n1808, n1809, 
-        n1810, n1811, n1812, n1813, n1814, n1815, n1816, n1817, 
-        n1818, n1819, n1820, n1821, n1822, n1823, n1824, n1825, 
-        n1826, n1827, n1828, n1829, n1830, n1831, n1832, n1833, 
-        n1834, n1835, n1836, n1837, n1838, n1839, n1840, n1841, 
-        n1842, n1843, n1844, n1845, n1846, n1847, n1848, n1849, 
-        n1850, n1851, n1852, n1853, n1854, n1855, n1856, n1857, 
-        n1858, n1859, n1860, n1861, n1862, n1863, n1864, n1865, 
-        n1866, n1867, n1868, n1869, n1870, n1871, n1872, n1873, 
-        n1874, n1875, n1876, n1877, n1878, n1879, n1880, n1881, 
-        n1882, n1883, n1884, n1885, n1886, n1887, n1888, n1889, 
-        n1890, n1891, n1892, n1893, n1894, n1895, n1896, n1897, 
-        n1898, n1899, n1900, n1901, n1902, n1903, n1904, n1905, 
-        n1906, n1907, n1908, n1909, n1910, n1911, n1912, n1913, 
-        n1914, n1915, n1916, n1917, n1918, n1919, n1920, n1921, 
-        n1922, n1923, n1924, n1925;
+    wire n1526, n1527, n1528, n1529, n1530, n1531, n1532, n1533, 
+        n1534, n1535, n1536, n1537, n1538, n1539, n1540, n1541, 
+        n1542, n1543, n1544, n1545, n1546, n1547, n1548, n1549, 
+        n1550, n1551, n1552, n1553, n1554, n1555, n1556, n1557, 
+        n1558, n1559, n1560, n1561, n1562, n1563, n1564, n1565, 
+        n1566, n1567, n1568, n1569, n1570, n1571, n1572, n1573, 
+        n1574, n1575, n1576, n1577, n1578, n1579, n1580, n1581, 
+        n1582, n1583, n1584, n1585, n1586, n1587, n1588, n1589, 
+        n1590, n1591, n1592, n1593, n1594, n1595, n1596, n1597, 
+        n1598, n1599, n1600, n1601, n1602, n1603, n1604, n1605, 
+        n1606, n1607, n1608, n1609, n1610, n1611, n1612, n1613, 
+        n1614, n1615, n1616, n1617, n1618, n1619, n1620, n1621, 
+        n1622, n1623, n1624, n1625, n1626, n1627, n1628, n1629, 
+        n1630, n1631, n1633, n1634, n1635, n1636, n1637, n1638, 
+        n1639, n1640, n1641, n1642, n1643, n1644, n1645, n1646, 
+        n1647, n1648, n1649, n1650, n1651, n1652, n1653, n1654, 
+        n1655, n1656, n1657, n1658, n1659, n1660, n1661, n1662, 
+        n1663, n1664, n1665, n1666, n1667, n1668, n1669, n1670, 
+        n1671, n1672, n1673, n1674, n1675, n1676, n1677, n1678, 
+        n1679, n1680, n1681, n1682, n1683, n1684, n1685, n1686, 
+        n1687, n1688, n1689, n1690, n1691, n1692, n1693, n1694, 
+        n1695, n1696, n1697, n1698, n1699, n1700, n1701, n1702, 
+        n1703, n1704, n1705, n1706, n1707, n1708, n1709, n1710, 
+        n1711, n1712, n1713, n1714, n1715, n1716, n1717, n1718, 
+        n1719, n1720, n1721, n1722, n1723, n1724, n1725, n1726, 
+        n1727, n1728, n1729, n1730, n1731, n1732, n1733, n1734, 
+        n1735, n1736, n1737, n1738, n1739, n1740, n1741, n1742, 
+        n1743, n1744, n1745, n1746, n1747, n1748, n1749, n1750, 
+        n1751, n1752, n1753, n1754, n1755, n1756, n1757, n1758, 
+        n1759, n1760, n1761, n1762, n1763, n1764, n1765, n1766, 
+        n1767, n1768, n1769, n1770, n1771, n1772, n1773, n1774, 
+        n1775, n1776, n1777, n1778, n1779, n1780, n1781, n1782, 
+        n1783, n1784, n1785, n1786, n1787, n1788, n1789, n1790, 
+        n1791, n1792, n1793, n1794, n1795, n1796, n1797, n1798, 
+        n1799, n1800, n1801, n1802, n1803, n1804, n1805, n1806, 
+        n1807, n1808, n1809, n1810, n1811, n1812, n1813, n1814, 
+        n1815, n1816, n1817, n1818, n1819, n1820, n1821, n1822, 
+        n1823, n1824, n1825, n1826, n1827, n1828, n1829, n1830, 
+        n1831, n1832, n1833, n1834, n1835, n1836, n1837, n1838, 
+        n1839, n1840, n1841, n1842, n1843, n1844, n1845, n1846, 
+        n1847, n1848, n1849, n1850, n1851, n1852, n1853, n1854, 
+        n1855, n1856, n1857, n1858, n1859, n1860, n1861, n1862, 
+        n1863, n1864, n1865, n1866, n1867, n1868, n1869, n1870, 
+        n1871, n1872, n1873, n1874, n1875, n1876, n1877, n1878, 
+        n1879, n1880, n1881, n1882, n1883, n1884, n1885, n1886, 
+        n1887, n1888, n1889, n1890, n1891, n1892, n1893, n1894, 
+        n1895, n1896, n1897, n1898, n1899, n1900, n1901, n1902, 
+        n1903, n1904, n1905, n1906, n1907, n1908, n1909, n1910, 
+        n1911, n1912, n1913, n1914, n1915, n1916, n1917, n1918, 
+        n1919, n1920, n1921;
     
     assign pwm_out_0 = pwm_out_1 /* verific EFX_ATTRIBUTE_PORT__IS_PRIMARY_OUTPUT=TRUE, EFX_ATTRIBUTE_PORT__IS_VHDL_PORT_NAME=TRUE */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(29)
     assign pwm_out_2 = pwm_out_1 /* verific EFX_ATTRIBUTE_PORT__IS_PRIMARY_OUTPUT=TRUE, EFX_ATTRIBUTE_PORT__IS_VHDL_PORT_NAME=TRUE */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(31)
-    EFX_LUT4 LUT__3672 (.I0(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] ), 
-            .I1(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] ), .I2(n1519), 
-            .O(n1520)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;
-    defparam LUT__3672.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__3682 (.I0(\u_FIFO/u_efx_fifo_top/raddr [4]), .I1(\u_FIFO/u_efx_fifo_top/waddr [4]), 
+            .I2(\u_FIFO/u_efx_fifo_top/waddr [5]), .I3(\u_FIFO/u_efx_fifo_top/raddr [5]), 
+            .O(n1527)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
+    defparam LUT__3682.LUTMASK = 16'h9009;
     EFX_FF \u_FIFO/u_efx_fifo_top/waddr[7]~FF  (.D(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/n96 [7]), 
            .CE(\u_FIFO/u_efx_fifo_top/wr_en_int ), .CLK(\clk_i~O ), .SR(fifo_rst_busys), 
            .Q(\u_FIFO/u_efx_fifo_top/waddr [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1250)
@@ -392,44 +392,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_FIFO/u_efx_fifo_top/waddr[7]~FF .SR_SYNC = 1'b0;
     defparam \u_FIFO/u_efx_fifo_top/waddr[7]~FF .SR_VALUE = 1'b0;
     defparam \u_FIFO/u_efx_fifo_top/waddr[7]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \uart_read_state[0]~FF  (.D(uart_read_state[0]), .CE(ceg_net256), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(uart_read_state[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
-    defparam \uart_read_state[0]~FF .CLK_POLARITY = 1'b1;
-    defparam \uart_read_state[0]~FF .CE_POLARITY = 1'b0;
-    defparam \uart_read_state[0]~FF .SR_POLARITY = 1'b0;
-    defparam \uart_read_state[0]~FF .D_POLARITY = 1'b0;
-    defparam \uart_read_state[0]~FF .SR_SYNC = 1'b0;
-    defparam \uart_read_state[0]~FF .SR_VALUE = 1'b0;
-    defparam \uart_read_state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[0]~FF  (.D(rdata[0]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
-    defparam \tx_data_sig[0]~FF .CLK_POLARITY = 1'b1;
-    defparam \tx_data_sig[0]~FF .CE_POLARITY = 1'b1;
-    defparam \tx_data_sig[0]~FF .SR_POLARITY = 1'b0;
-    defparam \tx_data_sig[0]~FF .D_POLARITY = 1'b1;
-    defparam \tx_data_sig[0]~FF .SR_SYNC = 1'b0;
-    defparam \tx_data_sig[0]~FF .SR_VALUE = 1'b0;
-    defparam \tx_data_sig[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \rd_en_i~FF  (.D(n699), .CE(rst_n_i), .CLK(\clk_i~O ), .SR(1'b0), 
-           .Q(rd_en_i)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
-    defparam \rd_en_i~FF .CLK_POLARITY = 1'b1;
-    defparam \rd_en_i~FF .CE_POLARITY = 1'b1;
-    defparam \rd_en_i~FF .SR_POLARITY = 1'b1;
-    defparam \rd_en_i~FF .D_POLARITY = 1'b1;
-    defparam \rd_en_i~FF .SR_SYNC = 1'b1;
-    defparam \rd_en_i~FF .SR_VALUE = 1'b0;
-    defparam \rd_en_i~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_start_sig~FF  (.D(ceg_net147), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_start_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
-    defparam \tx_start_sig~FF .CLK_POLARITY = 1'b1;
-    defparam \tx_start_sig~FF .CE_POLARITY = 1'b1;
-    defparam \tx_start_sig~FF .SR_POLARITY = 1'b0;
-    defparam \tx_start_sig~FF .D_POLARITY = 1'b1;
-    defparam \tx_start_sig~FF .SR_SYNC = 1'b0;
-    defparam \tx_start_sig~FF .SR_VALUE = 1'b0;
-    defparam \tx_start_sig~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/config_idx[0]~FF  (.D(\Inst_MPU6500_Controller/n731 [0]), 
-           .CE(ceg_net378), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net377), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .SR_POLARITY = 1'b0;
@@ -458,7 +422,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[0]~FF  (.D(\Inst_MPU6500_Controller/n740 [0]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .SR_POLARITY = 1'b0;
@@ -467,7 +431,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[0]~FF  (.D(\Inst_MPU6500_Controller/n735 [0]), 
-           .CE(ceg_net433), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net432), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .SR_POLARITY = 1'b0;
@@ -485,7 +449,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_start~FF .SR_VALUE = 1'b0;
     defparam \spi_start~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[0]~FF  (.D(\Inst_MPU6500_Controller/n763 [0]), 
-           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net419), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[0]~FF .SR_POLARITY = 1'b0;
@@ -604,7 +568,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[0]~FF  (.D(\Inst_MPU6500_Controller/n768 [0]), 
-           .CE(ceg_net421), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[0]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[0]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[0]~FF .SR_POLARITY = 1'b1;
@@ -670,7 +634,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \gyro_z[0]~FF .SR_SYNC = 1'b1;
     defparam \gyro_z[0]~FF .SR_VALUE = 1'b0;
     defparam \gyro_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \spi_cs_n_o~FF  (.D(\Inst_MPU6500_Controller/n730 ), .CE(ceg_net422), 
+    EFX_FF \spi_cs_n_o~FF  (.D(\Inst_MPU6500_Controller/n730 ), .CE(ceg_net421), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(spi_cs_n_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \spi_cs_n_o~FF .CLK_POLARITY = 1'b1;
     defparam \spi_cs_n_o~FF .CE_POLARITY = 1'b0;
@@ -680,7 +644,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_cs_n_o~FF .SR_VALUE = 1'b1;
     defparam \spi_cs_n_o~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[1]~FF  (.D(\Inst_MPU6500_Controller/n740 [1]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .SR_POLARITY = 1'b0;
@@ -689,7 +653,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[2]~FF  (.D(\Inst_MPU6500_Controller/n740 [2]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .SR_POLARITY = 1'b0;
@@ -698,7 +662,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[3]~FF  (.D(\Inst_MPU6500_Controller/n740 [3]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .SR_POLARITY = 1'b0;
@@ -707,7 +671,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[4]~FF  (.D(\Inst_MPU6500_Controller/n740 [4]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .SR_POLARITY = 1'b0;
@@ -716,7 +680,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[5]~FF  (.D(\Inst_MPU6500_Controller/n740 [5]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .SR_POLARITY = 1'b0;
@@ -725,7 +689,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[6]~FF  (.D(\Inst_MPU6500_Controller/n740 [6]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .SR_POLARITY = 1'b0;
@@ -734,7 +698,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[7]~FF  (.D(\Inst_MPU6500_Controller/n740 [7]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .SR_POLARITY = 1'b0;
@@ -743,7 +707,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[8]~FF  (.D(\Inst_MPU6500_Controller/n740 [8]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .SR_POLARITY = 1'b0;
@@ -752,7 +716,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[9]~FF  (.D(\Inst_MPU6500_Controller/n740 [9]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .SR_POLARITY = 1'b0;
@@ -761,7 +725,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[10]~FF  (.D(\Inst_MPU6500_Controller/n740 [10]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .SR_POLARITY = 1'b0;
@@ -770,7 +734,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[11]~FF  (.D(\Inst_MPU6500_Controller/n740 [11]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .SR_POLARITY = 1'b0;
@@ -779,7 +743,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[12]~FF  (.D(\Inst_MPU6500_Controller/n740 [12]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .SR_POLARITY = 1'b0;
@@ -788,7 +752,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[13]~FF  (.D(\Inst_MPU6500_Controller/n740 [13]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .SR_POLARITY = 1'b0;
@@ -797,7 +761,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[14]~FF  (.D(\Inst_MPU6500_Controller/n740 [14]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .SR_POLARITY = 1'b0;
@@ -806,7 +770,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[15]~FF  (.D(\Inst_MPU6500_Controller/n740 [15]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .SR_POLARITY = 1'b0;
@@ -815,7 +779,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[16]~FF  (.D(\Inst_MPU6500_Controller/n740 [16]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .SR_POLARITY = 1'b0;
@@ -824,7 +788,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[17]~FF  (.D(\Inst_MPU6500_Controller/n740 [17]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .SR_POLARITY = 1'b0;
@@ -833,7 +797,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[18]~FF  (.D(\Inst_MPU6500_Controller/n740 [18]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .SR_POLARITY = 1'b0;
@@ -842,7 +806,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[19]~FF  (.D(\Inst_MPU6500_Controller/n740 [19]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .SR_POLARITY = 1'b0;
@@ -851,7 +815,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[20]~FF  (.D(\Inst_MPU6500_Controller/n740 [20]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .SR_POLARITY = 1'b0;
@@ -860,7 +824,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[21]~FF  (.D(\Inst_MPU6500_Controller/n740 [21]), 
-           .CE(ceg_net418), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net417), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/delay_cntr[21]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[21]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[21]~FF .SR_POLARITY = 1'b0;
@@ -2536,7 +2500,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[1]~FF  (.D(\Inst_MPU6500_Controller/n768 [1]), 
-           .CE(ceg_net421), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[1]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[1]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[1]~FF .SR_POLARITY = 1'b1;
@@ -2545,7 +2509,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[1]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[2]~FF  (.D(\Inst_MPU6500_Controller/n768 [2]), 
-           .CE(ceg_net425), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net424), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[2]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[2]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[2]~FF .SR_POLARITY = 1'b1;
@@ -2554,7 +2518,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[2]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[3]~FF  (.D(\Inst_MPU6500_Controller/n768 [3]), 
-           .CE(ceg_net421), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[3]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[3]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[3]~FF .SR_POLARITY = 1'b1;
@@ -2563,7 +2527,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[3]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[4]~FF  (.D(\Inst_MPU6500_Controller/n768 [4]), 
-           .CE(ceg_net421), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[4]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[4]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[4]~FF .SR_POLARITY = 1'b1;
@@ -2572,7 +2536,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[4]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[5]~FF  (.D(\Inst_MPU6500_Controller/n768 [5]), 
-           .CE(ceg_net421), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[5]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[5]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[5]~FF .SR_POLARITY = 1'b1;
@@ -2581,7 +2545,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[5]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[6]~FF  (.D(\Inst_MPU6500_Controller/n768 [6]), 
-           .CE(ceg_net425), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net424), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[6]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[6]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[6]~FF .SR_POLARITY = 1'b1;
@@ -2590,7 +2554,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[6]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mpu_to_spi_data[7]~FF  (.D(\Inst_MPU6500_Controller/n768 [7]), 
-           .CE(ceg_net425), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net424), .CLK(\clk_i~O ), .SR(1'b0), .Q(mpu_to_spi_data[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \mpu_to_spi_data[7]~FF .CLK_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[7]~FF .CE_POLARITY = 1'b1;
     defparam \mpu_to_spi_data[7]~FF .SR_POLARITY = 1'b1;
@@ -2599,7 +2563,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[7]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[1]~FF  (.D(\Inst_MPU6500_Controller/n735 [1]), 
-           .CE(ceg_net433), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net432), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .SR_POLARITY = 1'b0;
@@ -2608,7 +2572,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[2]~FF  (.D(\Inst_MPU6500_Controller/n735 [2]), 
-           .CE(ceg_net433), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net432), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .SR_POLARITY = 1'b0;
@@ -2617,7 +2581,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[3]~FF  (.D(\Inst_MPU6500_Controller/n735 [3]), 
-           .CE(ceg_net433), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net432), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .SR_POLARITY = 1'b0;
@@ -2626,7 +2590,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[1]~FF  (.D(\Inst_MPU6500_Controller/n763 [1]), 
-           .CE(ceg_net420), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net419), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[1]~FF .SR_POLARITY = 1'b0;
@@ -2635,7 +2599,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[2]~FF  (.D(\Inst_MPU6500_Controller/n763 [2]), 
-           .CE(ceg_net434), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net433), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/state[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[2]~FF .SR_POLARITY = 1'b0;
@@ -2644,7 +2608,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[3]~FF  (.D(\Inst_MPU6500_Controller/n763 [3]), 
-           .CE(ceg_net435), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net434), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/state[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[3]~FF .SR_POLARITY = 1'b0;
@@ -2653,7 +2617,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/config_idx[1]~FF  (.D(\Inst_MPU6500_Controller/n731 [1]), 
-           .CE(ceg_net378), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net377), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .SR_POLARITY = 1'b0;
@@ -2662,7 +2626,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/config_idx[2]~FF  (.D(\Inst_MPU6500_Controller/n731 [2]), 
-           .CE(ceg_net378), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
+           .CE(ceg_net377), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(259)
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .SR_POLARITY = 1'b0;
@@ -2679,7 +2643,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .SR_SYNC = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[0]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [0]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[0]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [0]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[0]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[0]~FF .CE_POLARITY = 1'b0;
@@ -2689,7 +2653,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[0]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [0]), 
-           .CE(ceg_net437), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
+           .CE(ceg_net436), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .SR_POLARITY = 1'b0;
@@ -4425,7 +4389,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .SR_SYNC = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[1]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [1]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[1]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [1]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[1]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[1]~FF .CE_POLARITY = 1'b0;
@@ -4434,7 +4398,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[1]~FF .SR_SYNC = 1'b0;
     defparam \fifo_wr_data_o[1]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[2]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [2]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[2]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [2]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[2]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[2]~FF .CE_POLARITY = 1'b0;
@@ -4443,7 +4407,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[2]~FF .SR_SYNC = 1'b0;
     defparam \fifo_wr_data_o[2]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[2]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[3]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [3]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[3]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [3]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[3]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[3]~FF .CE_POLARITY = 1'b0;
@@ -4452,7 +4416,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[3]~FF .SR_SYNC = 1'b0;
     defparam \fifo_wr_data_o[3]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[3]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[4]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [4]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[4]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [4]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[4]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[4]~FF .CE_POLARITY = 1'b0;
@@ -4461,7 +4425,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[4]~FF .SR_SYNC = 1'b0;
     defparam \fifo_wr_data_o[4]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[4]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[5]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [5]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[5]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [5]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[5]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[5]~FF .CE_POLARITY = 1'b0;
@@ -4470,7 +4434,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[5]~FF .SR_SYNC = 1'b0;
     defparam \fifo_wr_data_o[5]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[5]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[6]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [6]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[6]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [6]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[6]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[6]~FF .CE_POLARITY = 1'b0;
@@ -4479,7 +4443,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[6]~FF .SR_SYNC = 1'b0;
     defparam \fifo_wr_data_o[6]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[6]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \fifo_wr_data_o[7]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [7]), .CE(ceg_net436), 
+    EFX_FF \fifo_wr_data_o[7]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [7]), .CE(ceg_net435), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \fifo_wr_data_o[7]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[7]~FF .CE_POLARITY = 1'b0;
@@ -4489,7 +4453,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[7]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [1]), 
-           .CE(ceg_net437), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
+           .CE(ceg_net436), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .SR_POLARITY = 1'b0;
@@ -4498,7 +4462,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [2]), 
-           .CE(ceg_net438), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
+           .CE(ceg_net437), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .SR_POLARITY = 1'b0;
@@ -4507,7 +4471,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [3]), 
-           .CE(ceg_net439), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
+           .CE(ceg_net438), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .SR_POLARITY = 1'b0;
@@ -4516,7 +4480,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [4]), 
-           .CE(ceg_net440), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
+           .CE(ceg_net439), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(359)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .SR_POLARITY = 1'b0;
@@ -4525,7 +4489,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/IIR_filtre_state[0]~FF  (.D(\u_IIR_filtre/n1801 ), 
-           .CE(ceg_net92), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_IIR_filtre/IIR_filtre_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CE(ceg_net87), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_IIR_filtre/IIR_filtre_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .CE_POLARITY = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .SR_POLARITY = 1'b0;
@@ -4534,7 +4498,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[0]~FF  (.D(\u_IIR_filtre/n134 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4543,7 +4507,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[0]~FF  (.D(\u_IIR_filtre/n176 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4552,7 +4516,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[0]~FF  (.D(\u_IIR_filtre/n218 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4561,7 +4525,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[0]~FF  (.D(\u_IIR_filtre/n260 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4570,7 +4534,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[0]~FF  (.D(\u_IIR_filtre/n302 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4579,7 +4543,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[0]~FF  (.D(\u_IIR_filtre/n344 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4588,7 +4552,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[0]~FF  (.D(accel_x[0]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[0]~FF .SR_POLARITY = 1'b1;
@@ -4597,7 +4561,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[0]~FF  (.D(accel_y[0]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[0]~FF .SR_POLARITY = 1'b1;
@@ -4606,7 +4570,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[0]~FF  (.D(accel_z[0]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[0]~FF .SR_POLARITY = 1'b1;
@@ -4615,7 +4579,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[0]~FF  (.D(gyro_x[0]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[0]~FF .SR_POLARITY = 1'b1;
@@ -4624,7 +4588,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[0]~FF  (.D(gyro_y[0]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[0]~FF .SR_POLARITY = 1'b1;
@@ -4633,7 +4597,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[0]~FF  (.D(gyro_z[0]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .SR_POLARITY = 1'b1;
@@ -4642,7 +4606,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[1]~FF  (.D(\u_IIR_filtre/n134 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -4651,7 +4615,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[2]~FF  (.D(\u_IIR_filtre/n134 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -4660,7 +4624,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[3]~FF  (.D(\u_IIR_filtre/n134 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -4669,7 +4633,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[4]~FF  (.D(\u_IIR_filtre/n134 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -4678,7 +4642,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[5]~FF  (.D(\u_IIR_filtre/n134 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -4687,7 +4651,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[6]~FF  (.D(\u_IIR_filtre/n134 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -4696,7 +4660,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[7]~FF  (.D(\u_IIR_filtre/n134 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -4705,7 +4669,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[8]~FF  (.D(\u_IIR_filtre/n134 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -4714,7 +4678,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[9]~FF  (.D(\u_IIR_filtre/n134 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -4723,7 +4687,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[10]~FF  (.D(\u_IIR_filtre/n134 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -4732,7 +4696,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[11]~FF  (.D(\u_IIR_filtre/n134 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -4741,7 +4705,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[12]~FF  (.D(\u_IIR_filtre/n134 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -4750,7 +4714,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[13]~FF  (.D(\u_IIR_filtre/n134 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -4759,7 +4723,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[14]~FF  (.D(\u_IIR_filtre/n134 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -4768,7 +4732,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[15]~FF  (.D(\u_IIR_filtre/n134 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_axi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -4777,7 +4741,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[1]~FF  (.D(\u_IIR_filtre/n176 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -4786,7 +4750,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[2]~FF  (.D(\u_IIR_filtre/n176 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -4795,7 +4759,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[3]~FF  (.D(\u_IIR_filtre/n176 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -4804,7 +4768,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[4]~FF  (.D(\u_IIR_filtre/n176 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -4813,7 +4777,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[5]~FF  (.D(\u_IIR_filtre/n176 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -4822,7 +4786,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[6]~FF  (.D(\u_IIR_filtre/n176 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -4831,7 +4795,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[7]~FF  (.D(\u_IIR_filtre/n176 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -4840,7 +4804,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[8]~FF  (.D(\u_IIR_filtre/n176 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -4849,7 +4813,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[9]~FF  (.D(\u_IIR_filtre/n176 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -4858,7 +4822,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[10]~FF  (.D(\u_IIR_filtre/n176 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -4867,7 +4831,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[11]~FF  (.D(\u_IIR_filtre/n176 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -4876,7 +4840,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[12]~FF  (.D(\u_IIR_filtre/n176 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -4885,7 +4849,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[13]~FF  (.D(\u_IIR_filtre/n176 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -4894,7 +4858,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[14]~FF  (.D(\u_IIR_filtre/n176 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -4903,7 +4867,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[15]~FF  (.D(\u_IIR_filtre/n176 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_ayi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -4912,7 +4876,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[1]~FF  (.D(\u_IIR_filtre/n218 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -4921,7 +4885,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[2]~FF  (.D(\u_IIR_filtre/n218 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -4930,7 +4894,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[3]~FF  (.D(\u_IIR_filtre/n218 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -4939,7 +4903,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[4]~FF  (.D(\u_IIR_filtre/n218 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -4948,7 +4912,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[5]~FF  (.D(\u_IIR_filtre/n218 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -4957,7 +4921,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[6]~FF  (.D(\u_IIR_filtre/n218 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -4966,7 +4930,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[7]~FF  (.D(\u_IIR_filtre/n218 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -4975,7 +4939,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[8]~FF  (.D(\u_IIR_filtre/n218 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -4984,7 +4948,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[9]~FF  (.D(\u_IIR_filtre/n218 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -4993,7 +4957,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[10]~FF  (.D(\u_IIR_filtre/n218 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5002,7 +4966,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[11]~FF  (.D(\u_IIR_filtre/n218 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5011,7 +4975,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[12]~FF  (.D(\u_IIR_filtre/n218 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5020,7 +4984,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[13]~FF  (.D(\u_IIR_filtre/n218 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5029,7 +4993,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[14]~FF  (.D(\u_IIR_filtre/n218 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5038,7 +5002,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[15]~FF  (.D(\u_IIR_filtre/n218 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_azi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5047,7 +5011,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[1]~FF  (.D(\u_IIR_filtre/n260 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5056,7 +5020,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[2]~FF  (.D(\u_IIR_filtre/n260 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5065,7 +5029,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[3]~FF  (.D(\u_IIR_filtre/n260 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5074,7 +5038,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[4]~FF  (.D(\u_IIR_filtre/n260 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5083,7 +5047,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[5]~FF  (.D(\u_IIR_filtre/n260 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5092,7 +5056,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[6]~FF  (.D(\u_IIR_filtre/n260 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5101,7 +5065,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[7]~FF  (.D(\u_IIR_filtre/n260 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5110,7 +5074,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[8]~FF  (.D(\u_IIR_filtre/n260 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5119,7 +5083,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[9]~FF  (.D(\u_IIR_filtre/n260 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5128,7 +5092,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[10]~FF  (.D(\u_IIR_filtre/n260 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5137,7 +5101,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[11]~FF  (.D(\u_IIR_filtre/n260 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5146,7 +5110,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[12]~FF  (.D(\u_IIR_filtre/n260 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5155,7 +5119,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[13]~FF  (.D(\u_IIR_filtre/n260 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5164,7 +5128,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[14]~FF  (.D(\u_IIR_filtre/n260 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5173,7 +5137,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[15]~FF  (.D(\u_IIR_filtre/n260 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gxi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5182,7 +5146,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[1]~FF  (.D(\u_IIR_filtre/n302 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5191,7 +5155,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[2]~FF  (.D(\u_IIR_filtre/n302 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5200,7 +5164,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[3]~FF  (.D(\u_IIR_filtre/n302 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5209,7 +5173,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[4]~FF  (.D(\u_IIR_filtre/n302 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5218,7 +5182,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[5]~FF  (.D(\u_IIR_filtre/n302 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5227,7 +5191,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[6]~FF  (.D(\u_IIR_filtre/n302 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5236,7 +5200,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[7]~FF  (.D(\u_IIR_filtre/n302 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5245,7 +5209,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[8]~FF  (.D(\u_IIR_filtre/n302 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5254,7 +5218,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[9]~FF  (.D(\u_IIR_filtre/n302 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5263,7 +5227,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[10]~FF  (.D(\u_IIR_filtre/n302 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5272,7 +5236,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[11]~FF  (.D(\u_IIR_filtre/n302 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5281,7 +5245,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[12]~FF  (.D(\u_IIR_filtre/n302 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5290,7 +5254,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[13]~FF  (.D(\u_IIR_filtre/n302 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5299,7 +5263,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[14]~FF  (.D(\u_IIR_filtre/n302 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5308,7 +5272,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[15]~FF  (.D(\u_IIR_filtre/n302 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gyi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5317,7 +5281,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[1]~FF  (.D(\u_IIR_filtre/n344 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5326,7 +5290,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[2]~FF  (.D(\u_IIR_filtre/n344 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5335,7 +5299,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[3]~FF  (.D(\u_IIR_filtre/n344 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5344,7 +5308,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[4]~FF  (.D(\u_IIR_filtre/n344 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5353,7 +5317,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[5]~FF  (.D(\u_IIR_filtre/n344 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5362,7 +5326,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[6]~FF  (.D(\u_IIR_filtre/n344 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5371,7 +5335,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[7]~FF  (.D(\u_IIR_filtre/n344 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5380,7 +5344,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[8]~FF  (.D(\u_IIR_filtre/n344 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5389,7 +5353,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[9]~FF  (.D(\u_IIR_filtre/n344 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5398,7 +5362,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[10]~FF  (.D(\u_IIR_filtre/n344 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5407,7 +5371,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[11]~FF  (.D(\u_IIR_filtre/n344 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5416,7 +5380,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[12]~FF  (.D(\u_IIR_filtre/n344 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5425,7 +5389,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[13]~FF  (.D(\u_IIR_filtre/n344 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5434,7 +5398,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[14]~FF  (.D(\u_IIR_filtre/n344 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5443,7 +5407,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[15]~FF  (.D(\u_IIR_filtre/n344 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \f_gzi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5452,7 +5416,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[1]~FF  (.D(accel_x[1]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[1]~FF .SR_POLARITY = 1'b1;
@@ -5461,7 +5425,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[2]~FF  (.D(accel_x[2]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[2]~FF .SR_POLARITY = 1'b1;
@@ -5470,7 +5434,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[2]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[3]~FF  (.D(accel_x[3]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[3]~FF .SR_POLARITY = 1'b1;
@@ -5479,7 +5443,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[3]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[4]~FF  (.D(accel_x[4]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[4]~FF .SR_POLARITY = 1'b1;
@@ -5488,7 +5452,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[4]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[5]~FF  (.D(accel_x[5]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[5]~FF .SR_POLARITY = 1'b1;
@@ -5497,7 +5461,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[5]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[6]~FF  (.D(accel_x[6]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[6]~FF .SR_POLARITY = 1'b1;
@@ -5506,7 +5470,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[6]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[7]~FF  (.D(accel_x[7]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[7]~FF .SR_POLARITY = 1'b1;
@@ -5515,7 +5479,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[7]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[8]~FF  (.D(accel_x[8]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[8]~FF .SR_POLARITY = 1'b1;
@@ -5524,7 +5488,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[8]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[9]~FF  (.D(accel_x[9]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[9]~FF .SR_POLARITY = 1'b1;
@@ -5533,7 +5497,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[9]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[10]~FF  (.D(accel_x[10]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[10]~FF .SR_POLARITY = 1'b1;
@@ -5542,7 +5506,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[10]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[11]~FF  (.D(accel_x[11]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[11]~FF .SR_POLARITY = 1'b1;
@@ -5551,7 +5515,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[11]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[12]~FF  (.D(accel_x[12]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[12]~FF .SR_POLARITY = 1'b1;
@@ -5560,7 +5524,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[12]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[13]~FF  (.D(accel_x[13]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[13]~FF .SR_POLARITY = 1'b1;
@@ -5569,7 +5533,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[13]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[14]~FF  (.D(accel_x[14]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[14]~FF .SR_POLARITY = 1'b1;
@@ -5578,7 +5542,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[14]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_x[15]~FF  (.D(accel_x[15]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_x[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_x[15]~FF .SR_POLARITY = 1'b1;
@@ -5587,7 +5551,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_x[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_x[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[1]~FF  (.D(accel_y[1]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[1]~FF .SR_POLARITY = 1'b1;
@@ -5596,7 +5560,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[2]~FF  (.D(accel_y[2]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[2]~FF .SR_POLARITY = 1'b1;
@@ -5605,7 +5569,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[2]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[3]~FF  (.D(accel_y[3]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[3]~FF .SR_POLARITY = 1'b1;
@@ -5614,7 +5578,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[3]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[4]~FF  (.D(accel_y[4]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[4]~FF .SR_POLARITY = 1'b1;
@@ -5623,7 +5587,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[4]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[5]~FF  (.D(accel_y[5]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[5]~FF .SR_POLARITY = 1'b1;
@@ -5632,7 +5596,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[5]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[6]~FF  (.D(accel_y[6]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[6]~FF .SR_POLARITY = 1'b1;
@@ -5641,7 +5605,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[6]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[7]~FF  (.D(accel_y[7]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[7]~FF .SR_POLARITY = 1'b1;
@@ -5650,7 +5614,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[7]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[8]~FF  (.D(accel_y[8]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[8]~FF .SR_POLARITY = 1'b1;
@@ -5659,7 +5623,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[8]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[9]~FF  (.D(accel_y[9]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[9]~FF .SR_POLARITY = 1'b1;
@@ -5668,7 +5632,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[9]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[10]~FF  (.D(accel_y[10]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[10]~FF .SR_POLARITY = 1'b1;
@@ -5677,7 +5641,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[10]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[11]~FF  (.D(accel_y[11]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[11]~FF .SR_POLARITY = 1'b1;
@@ -5686,7 +5650,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[11]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[12]~FF  (.D(accel_y[12]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[12]~FF .SR_POLARITY = 1'b1;
@@ -5695,7 +5659,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[12]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[13]~FF  (.D(accel_y[13]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[13]~FF .SR_POLARITY = 1'b1;
@@ -5704,7 +5668,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[13]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[14]~FF  (.D(accel_y[14]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[14]~FF .SR_POLARITY = 1'b1;
@@ -5713,7 +5677,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[14]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_y[15]~FF  (.D(accel_y[15]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_y[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_y[15]~FF .SR_POLARITY = 1'b1;
@@ -5722,7 +5686,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_y[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_y[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[1]~FF  (.D(accel_z[1]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[1]~FF .SR_POLARITY = 1'b1;
@@ -5731,7 +5695,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[2]~FF  (.D(accel_z[2]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[2]~FF .SR_POLARITY = 1'b1;
@@ -5740,7 +5704,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[2]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[3]~FF  (.D(accel_z[3]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[3]~FF .SR_POLARITY = 1'b1;
@@ -5749,7 +5713,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[3]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[4]~FF  (.D(accel_z[4]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[4]~FF .SR_POLARITY = 1'b1;
@@ -5758,7 +5722,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[4]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[5]~FF  (.D(accel_z[5]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[5]~FF .SR_POLARITY = 1'b1;
@@ -5767,7 +5731,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[5]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[6]~FF  (.D(accel_z[6]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[6]~FF .SR_POLARITY = 1'b1;
@@ -5776,7 +5740,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[6]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[7]~FF  (.D(accel_z[7]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[7]~FF .SR_POLARITY = 1'b1;
@@ -5785,7 +5749,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[7]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[8]~FF  (.D(accel_z[8]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[8]~FF .SR_POLARITY = 1'b1;
@@ -5794,7 +5758,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[8]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[9]~FF  (.D(accel_z[9]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[9]~FF .SR_POLARITY = 1'b1;
@@ -5803,7 +5767,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[9]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[10]~FF  (.D(accel_z[10]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[10]~FF .SR_POLARITY = 1'b1;
@@ -5812,7 +5776,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[10]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[11]~FF  (.D(accel_z[11]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[11]~FF .SR_POLARITY = 1'b1;
@@ -5821,7 +5785,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[11]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[12]~FF  (.D(accel_z[12]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[12]~FF .SR_POLARITY = 1'b1;
@@ -5830,7 +5794,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[12]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[13]~FF  (.D(accel_z[13]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[13]~FF .SR_POLARITY = 1'b1;
@@ -5839,7 +5803,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[13]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[14]~FF  (.D(accel_z[14]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[14]~FF .SR_POLARITY = 1'b1;
@@ -5848,7 +5812,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[14]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_accel_z[15]~FF  (.D(accel_z[15]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_accel_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_accel_z[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_accel_z[15]~FF .SR_POLARITY = 1'b1;
@@ -5857,7 +5821,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_accel_z[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_accel_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[1]~FF  (.D(gyro_x[1]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[1]~FF .SR_POLARITY = 1'b1;
@@ -5866,7 +5830,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[2]~FF  (.D(gyro_x[2]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[2]~FF .SR_POLARITY = 1'b1;
@@ -5875,7 +5839,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[2]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[3]~FF  (.D(gyro_x[3]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[3]~FF .SR_POLARITY = 1'b1;
@@ -5884,7 +5848,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[3]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[4]~FF  (.D(gyro_x[4]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[4]~FF .SR_POLARITY = 1'b1;
@@ -5893,7 +5857,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[4]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[5]~FF  (.D(gyro_x[5]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[5]~FF .SR_POLARITY = 1'b1;
@@ -5902,7 +5866,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[5]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[6]~FF  (.D(gyro_x[6]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[6]~FF .SR_POLARITY = 1'b1;
@@ -5911,7 +5875,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[6]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[7]~FF  (.D(gyro_x[7]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[7]~FF .SR_POLARITY = 1'b1;
@@ -5920,7 +5884,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[7]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[8]~FF  (.D(gyro_x[8]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[8]~FF .SR_POLARITY = 1'b1;
@@ -5929,7 +5893,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[8]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[9]~FF  (.D(gyro_x[9]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[9]~FF .SR_POLARITY = 1'b1;
@@ -5938,7 +5902,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[9]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[10]~FF  (.D(gyro_x[10]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[10]~FF .SR_POLARITY = 1'b1;
@@ -5947,7 +5911,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[10]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[11]~FF  (.D(gyro_x[11]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[11]~FF .SR_POLARITY = 1'b1;
@@ -5956,7 +5920,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[11]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[12]~FF  (.D(gyro_x[12]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[12]~FF .SR_POLARITY = 1'b1;
@@ -5965,7 +5929,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[12]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[13]~FF  (.D(gyro_x[13]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[13]~FF .SR_POLARITY = 1'b1;
@@ -5974,7 +5938,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[13]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[14]~FF  (.D(gyro_x[14]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[14]~FF .SR_POLARITY = 1'b1;
@@ -5983,7 +5947,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[14]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_x[15]~FF  (.D(gyro_x[15]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_x[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_x[15]~FF .SR_POLARITY = 1'b1;
@@ -5992,7 +5956,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_x[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_x[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[1]~FF  (.D(gyro_y[1]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[1]~FF .SR_POLARITY = 1'b1;
@@ -6001,7 +5965,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[2]~FF  (.D(gyro_y[2]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[2]~FF .SR_POLARITY = 1'b1;
@@ -6010,7 +5974,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[2]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[3]~FF  (.D(gyro_y[3]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[3]~FF .SR_POLARITY = 1'b1;
@@ -6019,7 +5983,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[3]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[4]~FF  (.D(gyro_y[4]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[4]~FF .SR_POLARITY = 1'b1;
@@ -6028,7 +5992,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[4]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[5]~FF  (.D(gyro_y[5]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[5]~FF .SR_POLARITY = 1'b1;
@@ -6037,7 +6001,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[5]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[6]~FF  (.D(gyro_y[6]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[6]~FF .SR_POLARITY = 1'b1;
@@ -6046,7 +6010,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[6]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[7]~FF  (.D(gyro_y[7]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[7]~FF .SR_POLARITY = 1'b1;
@@ -6055,7 +6019,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[7]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[8]~FF  (.D(gyro_y[8]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[8]~FF .SR_POLARITY = 1'b1;
@@ -6064,7 +6028,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[8]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[9]~FF  (.D(gyro_y[9]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[9]~FF .SR_POLARITY = 1'b1;
@@ -6073,7 +6037,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[9]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[10]~FF  (.D(gyro_y[10]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[10]~FF .SR_POLARITY = 1'b1;
@@ -6082,7 +6046,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[10]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[11]~FF  (.D(gyro_y[11]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[11]~FF .SR_POLARITY = 1'b1;
@@ -6091,7 +6055,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[11]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[12]~FF  (.D(gyro_y[12]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[12]~FF .SR_POLARITY = 1'b1;
@@ -6100,7 +6064,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[12]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[13]~FF  (.D(gyro_y[13]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[13]~FF .SR_POLARITY = 1'b1;
@@ -6109,7 +6073,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[13]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[14]~FF  (.D(gyro_y[14]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[14]~FF .SR_POLARITY = 1'b1;
@@ -6118,7 +6082,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[14]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_y[15]~FF  (.D(gyro_y[15]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_y[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_y[15]~FF .SR_POLARITY = 1'b1;
@@ -6127,7 +6091,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_y[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_y[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[1]~FF  (.D(gyro_z[1]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[1]~FF .SR_POLARITY = 1'b1;
@@ -6136,7 +6100,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[2]~FF  (.D(gyro_z[2]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[2]~FF .SR_POLARITY = 1'b1;
@@ -6145,7 +6109,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[2]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[3]~FF  (.D(gyro_z[3]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[3]~FF .SR_POLARITY = 1'b1;
@@ -6154,7 +6118,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[3]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[4]~FF  (.D(gyro_z[4]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[4]~FF .SR_POLARITY = 1'b1;
@@ -6163,7 +6127,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[4]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[5]~FF  (.D(gyro_z[5]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[5]~FF .SR_POLARITY = 1'b1;
@@ -6172,7 +6136,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[5]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[6]~FF  (.D(gyro_z[6]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[6]~FF .SR_POLARITY = 1'b1;
@@ -6181,7 +6145,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[6]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[7]~FF  (.D(gyro_z[7]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[7]~FF .SR_POLARITY = 1'b1;
@@ -6190,7 +6154,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[7]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[8]~FF  (.D(gyro_z[8]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[8]~FF .SR_POLARITY = 1'b1;
@@ -6199,7 +6163,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[8]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[9]~FF  (.D(gyro_z[9]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[9]~FF .SR_POLARITY = 1'b1;
@@ -6208,7 +6172,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[9]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[10]~FF  (.D(gyro_z[10]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[10]~FF .SR_POLARITY = 1'b1;
@@ -6217,7 +6181,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[10]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[11]~FF  (.D(gyro_z[11]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[11]~FF .SR_POLARITY = 1'b1;
@@ -6226,7 +6190,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[11]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[12]~FF  (.D(gyro_z[12]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[12]~FF .SR_POLARITY = 1'b1;
@@ -6235,7 +6199,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[12]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[13]~FF  (.D(gyro_z[13]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[13]~FF .SR_POLARITY = 1'b1;
@@ -6244,7 +6208,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[13]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[14]~FF  (.D(gyro_z[14]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[14]~FF .SR_POLARITY = 1'b1;
@@ -6253,7 +6217,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[14]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/reg_gyro_z[15]~FF  (.D(gyro_z[15]), .CE(\u_IIR_filtre/n1916 ), 
-           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CLK(\clk_i~O ), .SR(1'b0), .Q(\u_IIR_filtre/reg_gyro_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .SR_POLARITY = 1'b1;
@@ -6262,7 +6226,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/IIR_filtre_state[1]~FF  (.D(\u_IIR_filtre/n465 [1]), 
-           .CE(ceg_net92), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_IIR_filtre/IIR_filtre_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(105)
+           .CE(ceg_net87), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_IIR_filtre/IIR_filtre_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .CE_POLARITY = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .SR_POLARITY = 1'b0;
@@ -6271,7 +6235,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[0]~FF  (.D(\Inst_Spi_Mode_3/n129 [0]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .SR_POLARITY = 1'b0;
@@ -6280,7 +6244,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/state[0]~FF  (.D(\Inst_Spi_Mode_3/state [0]), 
-           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net442), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/state[0]~FF .SR_POLARITY = 1'b0;
@@ -6289,7 +6253,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/state[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[0]~FF  (.D(\Inst_Spi_Mode_3/n135 [0]), 
-           .CE(ceg_net291), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net289), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .SR_POLARITY = 1'b0;
@@ -6298,7 +6262,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[0]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [0]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[0]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[0]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[0]~FF .SR_POLARITY = 1'b1;
@@ -6307,7 +6271,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[0]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bit_idx[0]~FF  (.D(\Inst_Spi_Mode_3/n124 [0]), 
-           .CE(ceg_net292), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net290), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_POLARITY = 1'b0;
@@ -6315,7 +6279,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_SYNC = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_VALUE = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \spi_data_valid~FF  (.D(ceg_net106), .CE(1'b1), .CLK(\clk_i~O ), 
+    EFX_FF \spi_data_valid~FF  (.D(ceg_net101), .CE(1'b1), .CLK(\clk_i~O ), 
            .SR(rst_n_i), .Q(spi_data_valid)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_data_valid~FF .CLK_POLARITY = 1'b1;
     defparam \spi_data_valid~FF .CE_POLARITY = 1'b1;
@@ -6324,7 +6288,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_data_valid~FF .SR_SYNC = 1'b0;
     defparam \spi_data_valid~FF .SR_VALUE = 1'b0;
     defparam \spi_data_valid~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \sclk_o~FF  (.D(\~ceg_net114 ), .CE(ceg_net293), .CLK(\clk_i~O ), 
+    EFX_FF \sclk_o~FF  (.D(\~ceg_net109 ), .CE(ceg_net291), .CLK(\clk_i~O ), 
            .SR(rst_n_i), .Q(sclk_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \sclk_o~FF .CLK_POLARITY = 1'b1;
     defparam \sclk_o~FF .CE_POLARITY = 1'b0;
@@ -6343,7 +6307,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mosi_o~FF .SR_VALUE = 1'b0;
     defparam \mosi_o~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[1]~FF  (.D(\Inst_Spi_Mode_3/n135 [1]), 
-           .CE(ceg_net294), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net292), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .SR_POLARITY = 1'b0;
@@ -6352,7 +6316,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[2]~FF  (.D(\Inst_Spi_Mode_3/n135 [2]), 
-           .CE(ceg_net295), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net293), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .SR_POLARITY = 1'b0;
@@ -6361,7 +6325,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[3]~FF  (.D(\Inst_Spi_Mode_3/n135 [3]), 
-           .CE(ceg_net296), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net294), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .SR_POLARITY = 1'b0;
@@ -6370,7 +6334,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[4]~FF  (.D(\Inst_Spi_Mode_3/n135 [4]), 
-           .CE(ceg_net297), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net295), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .SR_POLARITY = 1'b0;
@@ -6379,7 +6343,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[5]~FF  (.D(\Inst_Spi_Mode_3/n135 [5]), 
-           .CE(ceg_net298), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net296), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .SR_POLARITY = 1'b0;
@@ -6388,7 +6352,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[6]~FF  (.D(\Inst_Spi_Mode_3/n135 [6]), 
-           .CE(ceg_net299), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net297), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .SR_POLARITY = 1'b0;
@@ -6397,7 +6361,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[7]~FF  (.D(\Inst_Spi_Mode_3/n135 [7]), 
-           .CE(ceg_net300), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net298), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .SR_POLARITY = 1'b0;
@@ -6406,7 +6370,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[1]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [1]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[1]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[1]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[1]~FF .SR_POLARITY = 1'b1;
@@ -6415,7 +6379,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[1]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[2]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [2]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[2]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[2]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[2]~FF .SR_POLARITY = 1'b1;
@@ -6424,7 +6388,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[2]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[3]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [3]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[3]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[3]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[3]~FF .SR_POLARITY = 1'b1;
@@ -6433,7 +6397,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[3]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[4]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [4]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[4]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[4]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[4]~FF .SR_POLARITY = 1'b1;
@@ -6442,7 +6406,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[4]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[5]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [5]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[5]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[5]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[5]~FF .SR_POLARITY = 1'b1;
@@ -6451,7 +6415,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[5]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[6]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [6]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[6]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[6]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[6]~FF .SR_POLARITY = 1'b1;
@@ -6460,7 +6424,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[6]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_to_mpu_data[7]~FF  (.D(\Inst_Spi_Mode_3/data_buffer [7]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(1'b0), .Q(spi_to_mpu_data[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \spi_to_mpu_data[7]~FF .CLK_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[7]~FF .CE_POLARITY = 1'b1;
     defparam \spi_to_mpu_data[7]~FF .SR_POLARITY = 1'b1;
@@ -6469,7 +6433,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[7]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[1]~FF  (.D(\Inst_Spi_Mode_3/n129 [1]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .SR_POLARITY = 1'b0;
@@ -6478,7 +6442,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[2]~FF  (.D(\Inst_Spi_Mode_3/n129 [2]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .SR_POLARITY = 1'b0;
@@ -6487,7 +6451,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[3]~FF  (.D(\Inst_Spi_Mode_3/n129 [3]), 
-           .CE(ceg_net106), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net101), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .SR_POLARITY = 1'b0;
@@ -6496,7 +6460,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bit_idx[1]~FF  (.D(\Inst_Spi_Mode_3/n124 [1]), 
-           .CE(ceg_net292), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net290), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .SR_POLARITY = 1'b0;
@@ -6505,7 +6469,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .SR_VALUE = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bit_idx[2]~FF  (.D(\Inst_Spi_Mode_3/n124 [2]), 
-           .CE(ceg_net292), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
+           .CE(ceg_net290), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_POLARITY = 1'b0;
@@ -6513,7 +6477,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_SYNC = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_VALUE = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_Spi_Mode_3/state[1]~FF  (.D(\Inst_Spi_Mode_3/n144 [1]), .CE(ceg_net443), 
+    EFX_FF \Inst_Spi_Mode_3/state[1]~FF  (.D(\Inst_Spi_Mode_3/n144 [1]), .CE(ceg_net442), 
            .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(120)
     defparam \Inst_Spi_Mode_3/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/state[1]~FF .CE_POLARITY = 1'b0;
@@ -6702,6 +6666,222 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9]~FF .SR_SYNC = 1'b0;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9]~FF .SR_VALUE = 1'b0;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/state[0]~FF  (.D(\Inst_uart_tx/state [0]), .CE(ceg_net443), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/state[0]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/state[0]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/state[0]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/state[0]~FF .D_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/state[0]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/state[0]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[0]~FF  (.D(\Inst_uart_tx/n150 [0]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[0]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[0]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[0]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[0]~FF  (.D(tx_data_sig[0]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[0]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[0]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[0]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bit_idx[0]~FF  (.D(\Inst_uart_tx/n160 [0]), .CE(ceg_net304), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bit_idx[0]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bit_idx[0]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[0]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \tx_busy_sig~FF  (.D(\Inst_uart_tx/n139 ), .CE(ceg_net301), .CLK(\clk_i~O ), 
+           .SR(rst_n_i), .Q(tx_busy_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \tx_busy_sig~FF .CLK_POLARITY = 1'b1;
+    defparam \tx_busy_sig~FF .CE_POLARITY = 1'b0;
+    defparam \tx_busy_sig~FF .SR_POLARITY = 1'b0;
+    defparam \tx_busy_sig~FF .D_POLARITY = 1'b1;
+    defparam \tx_busy_sig~FF .SR_SYNC = 1'b0;
+    defparam \tx_busy_sig~FF .SR_VALUE = 1'b0;
+    defparam \tx_busy_sig~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \tx~FF  (.D(\Inst_uart_tx/n140 ), .CE(ceg_net302), .CLK(\clk_i~O ), 
+           .SR(rst_n_i), .Q(tx)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \tx~FF .CLK_POLARITY = 1'b1;
+    defparam \tx~FF .CE_POLARITY = 1'b0;
+    defparam \tx~FF .SR_POLARITY = 1'b0;
+    defparam \tx~FF .D_POLARITY = 1'b1;
+    defparam \tx~FF .SR_SYNC = 1'b0;
+    defparam \tx~FF .SR_VALUE = 1'b1;
+    defparam \tx~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[1]~FF  (.D(\Inst_uart_tx/n150 [1]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[1]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[1]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[1]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[2]~FF  (.D(\Inst_uart_tx/n150 [2]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[2]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[2]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[2]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[3]~FF  (.D(\Inst_uart_tx/n150 [3]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[3]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[3]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[3]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[4]~FF  (.D(\Inst_uart_tx/n150 [4]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[4]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[4]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[4]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[5]~FF  (.D(\Inst_uart_tx/n150 [5]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[5]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[5]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[5]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[6]~FF  (.D(\Inst_uart_tx/n150 [6]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[6]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[6]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[6]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[6]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[6]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[6]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[6]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[7]~FF  (.D(\Inst_uart_tx/n150 [7]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[7]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[7]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[7]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[7]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[7]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[7]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[7]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bitcounter[8]~FF  (.D(\Inst_uart_tx/n150 [8]), .CE(ceg_net130), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bitcounter[8]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[8]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[8]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[8]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bitcounter[8]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[8]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bitcounter[8]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[1]~FF  (.D(tx_data_sig[1]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[1]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[1]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[1]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[2]~FF  (.D(tx_data_sig[2]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[2]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[2]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[2]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[3]~FF  (.D(tx_data_sig[3]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[3]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[3]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[3]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[4]~FF  (.D(tx_data_sig[4]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[4]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[4]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[4]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[5]~FF  (.D(tx_data_sig[5]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[5]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[5]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[5]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[6]~FF  (.D(tx_data_sig[6]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[6]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[6]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[6]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/data_buffer[7]~FF  (.D(tx_data_sig[7]), .CE(\Inst_uart_tx/n404 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/data_buffer[7]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[7]~FF .CE_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[7]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bit_idx[1]~FF  (.D(\Inst_uart_tx/n160 [1]), .CE(ceg_net304), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bit_idx[1]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bit_idx[1]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[1]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/bit_idx[2]~FF  (.D(\Inst_uart_tx/n160 [2]), .CE(ceg_net304), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/bit_idx[2]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bit_idx[2]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[2]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \Inst_uart_tx/state[1]~FF  (.D(\Inst_uart_tx/n136 [1]), .CE(ceg_net443), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
+    defparam \Inst_uart_tx/state[1]~FF .CLK_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/state[1]~FF .CE_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/state[1]~FF .SR_POLARITY = 1'b0;
+    defparam \Inst_uart_tx/state[1]~FF .D_POLARITY = 1'b1;
+    defparam \Inst_uart_tx/state[1]~FF .SR_SYNC = 1'b0;
+    defparam \Inst_uart_tx/state[1]~FF .SR_VALUE = 1'b0;
+    defparam \Inst_uart_tx/state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[5]~FF  (.D(\Inst_pwm_servo_0/n63 [5]), 
            .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(55)
     defparam \Inst_pwm_servo_0/counter[5]~FF .CLK_POLARITY = 1'b1;
@@ -6756,15 +6936,15 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[1]~FF .SR_SYNC = 1'b0;
     defparam \Inst_pwm_servo_0/counter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \pwm_out_2~FF  (.D(\Inst_pwm_servo_0/n86 ), .CE(1'b1), .CLK(\clk_i~O ), 
+    EFX_FF \pwm_out_0~FF  (.D(\Inst_pwm_servo_0/n86 ), .CE(1'b1), .CLK(\clk_i~O ), 
            .SR(rst_n_i), .Q(pwm_out_1)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(55)
-    defparam \pwm_out_2~FF .CLK_POLARITY = 1'b1;
-    defparam \pwm_out_2~FF .CE_POLARITY = 1'b1;
-    defparam \pwm_out_2~FF .SR_POLARITY = 1'b0;
-    defparam \pwm_out_2~FF .D_POLARITY = 1'b1;
-    defparam \pwm_out_2~FF .SR_SYNC = 1'b0;
-    defparam \pwm_out_2~FF .SR_VALUE = 1'b0;
-    defparam \pwm_out_2~FF .SR_SYNC_PRIORITY = 1'b1;
+    defparam \pwm_out_0~FF .CLK_POLARITY = 1'b1;
+    defparam \pwm_out_0~FF .CE_POLARITY = 1'b1;
+    defparam \pwm_out_0~FF .SR_POLARITY = 1'b0;
+    defparam \pwm_out_0~FF .D_POLARITY = 1'b1;
+    defparam \pwm_out_0~FF .SR_SYNC = 1'b0;
+    defparam \pwm_out_0~FF .SR_VALUE = 1'b0;
+    defparam \pwm_out_0~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[6]~FF  (.D(\Inst_pwm_servo_0/n63 [6]), 
            .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(55)
     defparam \Inst_pwm_servo_0/counter[6]~FF .CLK_POLARITY = 1'b1;
@@ -6891,195 +7071,6 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[19]~FF .SR_SYNC = 1'b0;
     defparam \Inst_pwm_servo_0/counter[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[19]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[4]~FF  (.D(tx_data_sig[4]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[4]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[4]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[4]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[4]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[3]~FF  (.D(tx_data_sig[3]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[3]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[3]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[3]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[3]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[2]~FF  (.D(tx_data_sig[2]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[2]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[2]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[2]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[2]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bitcounter[0]~FF  (.D(\Inst_uart_tx/n129 [0]), .CE(ceg_net137), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bitcounter[0]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[0]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[0]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[1]~FF  (.D(tx_data_sig[1]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[1]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[1]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[1]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/state[0]~FF  (.D(\Inst_uart_tx/state [0]), .CE(ceg_net444), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/state[0]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/state[0]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/state[0]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/state[0]~FF .D_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/state[0]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/state[0]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[0]~FF  (.D(tx_data_sig[0]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[0]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[0]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[0]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bit_idx[0]~FF  (.D(\Inst_uart_tx/n136 [0]), .CE(ceg_net306), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bit_idx[0]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bit_idx[0]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[0]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_busy_sig~FF  (.D(\Inst_uart_tx/n118 ), .CE(ceg_net303), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_busy_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \tx_busy_sig~FF .CLK_POLARITY = 1'b1;
-    defparam \tx_busy_sig~FF .CE_POLARITY = 1'b0;
-    defparam \tx_busy_sig~FF .SR_POLARITY = 1'b0;
-    defparam \tx_busy_sig~FF .D_POLARITY = 1'b1;
-    defparam \tx_busy_sig~FF .SR_SYNC = 1'b0;
-    defparam \tx_busy_sig~FF .SR_VALUE = 1'b0;
-    defparam \tx_busy_sig~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[5]~FF  (.D(tx_data_sig[5]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[5]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[5]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[5]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[5]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx~FF  (.D(\Inst_uart_tx/n119 ), .CE(ceg_net304), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \tx~FF .CLK_POLARITY = 1'b1;
-    defparam \tx~FF .CE_POLARITY = 1'b0;
-    defparam \tx~FF .SR_POLARITY = 1'b0;
-    defparam \tx~FF .D_POLARITY = 1'b1;
-    defparam \tx~FF .SR_SYNC = 1'b0;
-    defparam \tx~FF .SR_VALUE = 1'b1;
-    defparam \tx~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[6]~FF  (.D(tx_data_sig[6]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[6]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[6]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[6]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[6]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/data_buffer[7]~FF  (.D(tx_data_sig[7]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/data_buffer[7]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[7]~FF .CE_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[7]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/data_buffer[7]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bitcounter[1]~FF  (.D(\Inst_uart_tx/n129 [1]), .CE(ceg_net137), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bitcounter[1]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[1]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[1]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bitcounter[2]~FF  (.D(\Inst_uart_tx/n129 [2]), .CE(ceg_net137), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bitcounter[2]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[2]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[2]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bitcounter[3]~FF  (.D(\Inst_uart_tx/n129 [3]), .CE(ceg_net137), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bitcounter[3]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[3]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[3]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bitcounter[4]~FF  (.D(\Inst_uart_tx/n129 [4]), .CE(ceg_net137), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bitcounter[4]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[4]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[4]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bitcounter[5]~FF  (.D(\Inst_uart_tx/n129 [5]), .CE(ceg_net137), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bitcounter[5]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[5]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[5]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bitcounter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bit_idx[1]~FF  (.D(\Inst_uart_tx/n136 [1]), .CE(ceg_net306), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bit_idx[1]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bit_idx[1]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[1]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/bit_idx[2]~FF  (.D(\Inst_uart_tx/n136 [2]), .CE(ceg_net306), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/bit_idx[2]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bit_idx[2]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[2]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/bit_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_uart_tx/state[1]~FF  (.D(\Inst_uart_tx/n115 [1]), .CE(ceg_net444), 
-           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(115)
-    defparam \Inst_uart_tx/state[1]~FF .CLK_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/state[1]~FF .CE_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/state[1]~FF .SR_POLARITY = 1'b0;
-    defparam \Inst_uart_tx/state[1]~FF .D_POLARITY = 1'b1;
-    defparam \Inst_uart_tx/state[1]~FF .SR_SYNC = 1'b0;
-    defparam \Inst_uart_tx/state[1]~FF .SR_VALUE = 1'b0;
-    defparam \Inst_uart_tx/state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_debounce/count_reg[2]~FF  (.D(\Inst_debounce/n10 [2]), .CE(1'b1), 
            .CLK(\clk_i~O ), .SR(\Inst_debounce/n151 ), .Q(\Inst_debounce/count_reg [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
     defparam \Inst_debounce/count_reg[2]~FF .CLK_POLARITY = 1'b1;
@@ -7287,8 +7278,44 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_debounce/count_reg[19]~FF .SR_SYNC = 1'b1;
     defparam \Inst_debounce/count_reg[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_debounce/count_reg[19]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[1]~FF  (.D(rdata[1]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \u_uart_Send/uart_read_state[0]~FF  (.D(\u_uart_Send/uart_read_state [0]), 
+           .CE(ceg_net305), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_Send/uart_read_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+    defparam \u_uart_Send/uart_read_state[0]~FF .CLK_POLARITY = 1'b1;
+    defparam \u_uart_Send/uart_read_state[0]~FF .CE_POLARITY = 1'b0;
+    defparam \u_uart_Send/uart_read_state[0]~FF .SR_POLARITY = 1'b0;
+    defparam \u_uart_Send/uart_read_state[0]~FF .D_POLARITY = 1'b0;
+    defparam \u_uart_Send/uart_read_state[0]~FF .SR_SYNC = 1'b0;
+    defparam \u_uart_Send/uart_read_state[0]~FF .SR_VALUE = 1'b0;
+    defparam \u_uart_Send/uart_read_state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \tx_data_sig[0]~FF  (.D(rdata[0]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+    defparam \tx_data_sig[0]~FF .CLK_POLARITY = 1'b1;
+    defparam \tx_data_sig[0]~FF .CE_POLARITY = 1'b1;
+    defparam \tx_data_sig[0]~FF .SR_POLARITY = 1'b0;
+    defparam \tx_data_sig[0]~FF .D_POLARITY = 1'b1;
+    defparam \tx_data_sig[0]~FF .SR_SYNC = 1'b0;
+    defparam \tx_data_sig[0]~FF .SR_VALUE = 1'b0;
+    defparam \tx_data_sig[0]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \rd_en_i~FF  (.D(\u_uart_Send/n16 ), .CE(1'b1), .CLK(\clk_i~O ), 
+           .SR(rst_n_i), .Q(rd_en_i)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+    defparam \rd_en_i~FF .CLK_POLARITY = 1'b1;
+    defparam \rd_en_i~FF .CE_POLARITY = 1'b1;
+    defparam \rd_en_i~FF .SR_POLARITY = 1'b0;
+    defparam \rd_en_i~FF .D_POLARITY = 1'b1;
+    defparam \rd_en_i~FF .SR_SYNC = 1'b0;
+    defparam \rd_en_i~FF .SR_VALUE = 1'b0;
+    defparam \rd_en_i~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \tx_start_sig~FF  (.D(\~u_uart_Send/n101 ), .CE(1'b1), .CLK(\clk_i~O ), 
+           .SR(rst_n_i), .Q(tx_start_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+    defparam \tx_start_sig~FF .CLK_POLARITY = 1'b1;
+    defparam \tx_start_sig~FF .CE_POLARITY = 1'b1;
+    defparam \tx_start_sig~FF .SR_POLARITY = 1'b0;
+    defparam \tx_start_sig~FF .D_POLARITY = 1'b1;
+    defparam \tx_start_sig~FF .SR_SYNC = 1'b0;
+    defparam \tx_start_sig~FF .SR_VALUE = 1'b0;
+    defparam \tx_start_sig~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \tx_data_sig[1]~FF  (.D(rdata[1]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[1]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[1]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[1]~FF .SR_POLARITY = 1'b0;
@@ -7296,8 +7323,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[1]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[1]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[2]~FF  (.D(rdata[2]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \tx_data_sig[2]~FF  (.D(rdata[2]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[2]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[2]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[2]~FF .SR_POLARITY = 1'b0;
@@ -7305,8 +7332,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[2]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[2]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[2]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[3]~FF  (.D(rdata[3]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \tx_data_sig[3]~FF  (.D(rdata[3]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[3]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[3]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[3]~FF .SR_POLARITY = 1'b0;
@@ -7314,8 +7341,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[3]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[3]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[3]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[4]~FF  (.D(rdata[4]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \tx_data_sig[4]~FF  (.D(rdata[4]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[4]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[4]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[4]~FF .SR_POLARITY = 1'b0;
@@ -7323,8 +7350,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[4]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[4]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[4]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[5]~FF  (.D(rdata[5]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \tx_data_sig[5]~FF  (.D(rdata[5]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[5]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[5]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[5]~FF .SR_POLARITY = 1'b0;
@@ -7332,8 +7359,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[5]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[5]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[5]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[6]~FF  (.D(rdata[6]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \tx_data_sig[6]~FF  (.D(rdata[6]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[6]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[6]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[6]~FF .SR_POLARITY = 1'b0;
@@ -7341,8 +7368,8 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[6]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[6]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[6]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \tx_data_sig[7]~FF  (.D(rdata[7]), .CE(ceg_net147), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(tx_data_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
+    EFX_FF \tx_data_sig[7]~FF  (.D(rdata[7]), .CE(\~u_uart_Send/n101 ), 
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[7]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[7]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[7]~FF .SR_POLARITY = 1'b0;
@@ -7350,65 +7377,61 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[7]~FF .SR_SYNC = 1'b0;
     defparam \tx_data_sig[7]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[7]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \uart_read_state[1]~FF  (.D(n700[1]), .CE(ceg_net256), .CLK(\clk_i~O ), 
-           .SR(rst_n_i), .Q(uart_read_state[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1298)
-    defparam \uart_read_state[1]~FF .CLK_POLARITY = 1'b1;
-    defparam \uart_read_state[1]~FF .CE_POLARITY = 1'b0;
-    defparam \uart_read_state[1]~FF .SR_POLARITY = 1'b0;
-    defparam \uart_read_state[1]~FF .D_POLARITY = 1'b1;
-    defparam \uart_read_state[1]~FF .SR_SYNC = 1'b0;
-    defparam \uart_read_state[1]~FF .SR_VALUE = 1'b0;
-    defparam \uart_read_state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
+    EFX_FF \u_uart_Send/uart_read_state[1]~FF  (.D(\u_uart_Send/n17 [1]), 
+           .CE(ceg_net305), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_Send/uart_read_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+    defparam \u_uart_Send/uart_read_state[1]~FF .CLK_POLARITY = 1'b1;
+    defparam \u_uart_Send/uart_read_state[1]~FF .CE_POLARITY = 1'b0;
+    defparam \u_uart_Send/uart_read_state[1]~FF .SR_POLARITY = 1'b0;
+    defparam \u_uart_Send/uart_read_state[1]~FF .D_POLARITY = 1'b1;
+    defparam \u_uart_Send/uart_read_state[1]~FF .SR_SYNC = 1'b0;
+    defparam \u_uart_Send/uart_read_state[1]~FF .SR_VALUE = 1'b0;
+    defparam \u_uart_Send/uart_read_state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i2  (.I0(f_ayi_i[1]), .I1(f_ayi_i[0]), 
-            .CI(1'b0), .O(\u_IIR_filtre/n153 [1]), .CO(\u_IIR_filtre/add_88/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CI(1'b0), .O(\u_IIR_filtre/n153 [1]), .CO(\u_IIR_filtre/add_88/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i2 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_88/i3  (.I0(f_ayi_i[2]), .I1(f_ayi_i[1]), 
-            .CI(\u_IIR_filtre/add_88/n4 ), .O(\u_IIR_filtre/n153 [2]), .CO(\u_IIR_filtre/add_88/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_88/i3 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_88/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i1  (.I0(f_axi_i[0]), .I1(\u_IIR_filtre/reg_accel_x [0]), 
-            .CI(1'b0), .CO(\u_IIR_filtre/add_15/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(1'b0), .CO(\u_IIR_filtre/add_15/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i1 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i1 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_89/i2  (.I0(f_azi_i[1]), .I1(f_azi_i[0]), 
-            .CI(1'b0), .O(\u_IIR_filtre/n195 [1]), .CO(\u_IIR_filtre/add_89/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(1'b0), .O(\u_IIR_filtre/n195 [1]), .CO(\u_IIR_filtre/add_89/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_89/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_89/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_19/i1  (.I0(f_ayi_i[0]), .I1(\u_IIR_filtre/reg_accel_y [0]), 
-            .CI(1'b0), .CO(\u_IIR_filtre/add_19/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CI(1'b0), .CO(\u_IIR_filtre/add_19/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_19/i1 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_19/i1 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_90/i2  (.I0(f_gxi_i[1]), .I1(f_gxi_i[0]), 
-            .CI(1'b0), .O(\u_IIR_filtre/n237 [1]), .CO(\u_IIR_filtre/add_90/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(1'b0), .O(\u_IIR_filtre/n237 [1]), .CO(\u_IIR_filtre/add_90/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_90/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_90/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i1  (.I0(f_azi_i[0]), .I1(\u_IIR_filtre/reg_accel_z [0]), 
-            .CI(1'b0), .CO(\u_IIR_filtre/add_23/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(1'b0), .CO(\u_IIR_filtre/add_23/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i1 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i1 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i2  (.I0(f_gyi_i[1]), .I1(f_gyi_i[0]), 
-            .CI(1'b0), .O(\u_IIR_filtre/n279 [1]), .CO(\u_IIR_filtre/add_91/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(1'b0), .O(\u_IIR_filtre/n279 [1]), .CO(\u_IIR_filtre/add_91/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i1  (.I0(f_gxi_i[0]), .I1(\u_IIR_filtre/reg_gyro_x [0]), 
-            .CI(1'b0), .CO(\u_IIR_filtre/add_27/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(1'b0), .CO(\u_IIR_filtre/add_27/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i1 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i1 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i2  (.I0(f_gzi_i[1]), .I1(f_gzi_i[0]), 
-            .CI(1'b0), .O(\u_IIR_filtre/n321 [1]), .CO(\u_IIR_filtre/add_92/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(1'b0), .O(\u_IIR_filtre/n321 [1]), .CO(\u_IIR_filtre/add_92/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i1  (.I0(f_gyi_i[0]), .I1(\u_IIR_filtre/reg_gyro_y [0]), 
-            .CI(1'b0), .CO(\u_IIR_filtre/add_31/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(1'b0), .CO(\u_IIR_filtre/add_31/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i1 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i1 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i1  (.I0(f_gzi_i[0]), .I1(\u_IIR_filtre/reg_gyro_z [0]), 
-            .CI(1'b0), .CO(\u_IIR_filtre/add_35/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(1'b0), .CO(\u_IIR_filtre/add_35/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i1 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i1 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i2  (.I0(f_axi_i[1]), .I1(f_axi_i[0]), 
-            .CI(1'b0), .O(\u_IIR_filtre/n111 [1]), .CO(\u_IIR_filtre/add_87/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(1'b0), .O(\u_IIR_filtre/n111 [1]), .CO(\u_IIR_filtre/add_87/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \Inst_debounce/add_30/i19  (.I0(\Inst_debounce/count_reg [19]), 
@@ -7671,625 +7694,529 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i16  (.I0(f_axi_i[15]), .I1(f_axi_i[14]), 
             .CI(\u_IIR_filtre/add_87/n30 ), .O(\u_IIR_filtre/n111 [15]), 
-            .CO(n1926)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(n1922)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i15  (.I0(f_axi_i[14]), .I1(f_axi_i[13]), 
             .CI(\u_IIR_filtre/add_87/n28 ), .O(\u_IIR_filtre/n111 [14]), 
-            .CO(\u_IIR_filtre/add_87/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i14  (.I0(f_axi_i[13]), .I1(f_axi_i[12]), 
             .CI(\u_IIR_filtre/add_87/n26 ), .O(\u_IIR_filtre/n111 [13]), 
-            .CO(\u_IIR_filtre/add_87/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i13  (.I0(f_axi_i[12]), .I1(f_axi_i[11]), 
             .CI(\u_IIR_filtre/add_87/n24 ), .O(\u_IIR_filtre/n111 [12]), 
-            .CO(\u_IIR_filtre/add_87/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i12  (.I0(f_axi_i[11]), .I1(f_axi_i[10]), 
             .CI(\u_IIR_filtre/add_87/n22 ), .O(\u_IIR_filtre/n111 [11]), 
-            .CO(\u_IIR_filtre/add_87/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i11  (.I0(f_axi_i[10]), .I1(f_axi_i[9]), 
             .CI(\u_IIR_filtre/add_87/n20 ), .O(\u_IIR_filtre/n111 [10]), 
-            .CO(\u_IIR_filtre/add_87/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i10  (.I0(f_axi_i[9]), .I1(f_axi_i[8]), 
             .CI(\u_IIR_filtre/add_87/n18 ), .O(\u_IIR_filtre/n111 [9]), 
-            .CO(\u_IIR_filtre/add_87/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i9  (.I0(f_axi_i[8]), .I1(f_axi_i[7]), 
             .CI(\u_IIR_filtre/add_87/n16 ), .O(\u_IIR_filtre/n111 [8]), 
-            .CO(\u_IIR_filtre/add_87/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i8  (.I0(f_axi_i[7]), .I1(f_axi_i[6]), 
             .CI(\u_IIR_filtre/add_87/n14 ), .O(\u_IIR_filtre/n111 [7]), 
-            .CO(\u_IIR_filtre/add_87/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i7  (.I0(f_axi_i[6]), .I1(f_axi_i[5]), 
             .CI(\u_IIR_filtre/add_87/n12 ), .O(\u_IIR_filtre/n111 [6]), 
-            .CO(\u_IIR_filtre/add_87/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i6  (.I0(f_axi_i[5]), .I1(f_axi_i[4]), 
             .CI(\u_IIR_filtre/add_87/n10 ), .O(\u_IIR_filtre/n111 [5]), 
-            .CO(\u_IIR_filtre/add_87/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_87/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i5  (.I0(f_axi_i[4]), .I1(f_axi_i[3]), 
-            .CI(\u_IIR_filtre/add_87/n8 ), .O(\u_IIR_filtre/n111 [4]), .CO(\u_IIR_filtre/add_87/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_87/n8 ), .O(\u_IIR_filtre/n111 [4]), .CO(\u_IIR_filtre/add_87/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i4  (.I0(f_axi_i[3]), .I1(f_axi_i[2]), 
-            .CI(\u_IIR_filtre/add_87/n6 ), .O(\u_IIR_filtre/n111 [3]), .CO(\u_IIR_filtre/add_87/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_87/n6 ), .O(\u_IIR_filtre/n111 [3]), .CO(\u_IIR_filtre/add_87/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i3  (.I0(f_axi_i[2]), .I1(f_axi_i[1]), 
-            .CI(\u_IIR_filtre/add_87/n4 ), .O(\u_IIR_filtre/n111 [2]), .CO(\u_IIR_filtre/add_87/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_87/n4 ), .O(\u_IIR_filtre/n111 [2]), .CO(\u_IIR_filtre/add_87/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i18  (.I0(f_gzi_i[15]), .I1(\u_IIR_filtre/reg_gyro_z [15]), 
-            .CI(\u_IIR_filtre/add_35/n34 ), .O(\u_IIR_filtre/n344 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_35/n34 ), .O(\u_IIR_filtre/n344 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i18 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i18 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i17  (.I0(\u_IIR_filtre/n321 [16]), .I1(\u_IIR_filtre/reg_gyro_z [15]), 
             .CI(\u_IIR_filtre/add_35/n32 ), .O(\u_IIR_filtre/n344 [16]), 
-            .CO(\u_IIR_filtre/add_35/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i17 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i17 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i16  (.I0(\u_IIR_filtre/n321 [15]), .I1(\u_IIR_filtre/reg_gyro_z [15]), 
             .CI(\u_IIR_filtre/add_35/n30 ), .O(\u_IIR_filtre/n344 [15]), 
-            .CO(\u_IIR_filtre/add_35/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i15  (.I0(\u_IIR_filtre/n321 [14]), .I1(\u_IIR_filtre/reg_gyro_z [14]), 
             .CI(\u_IIR_filtre/add_35/n28 ), .O(\u_IIR_filtre/n344 [14]), 
-            .CO(\u_IIR_filtre/add_35/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i14  (.I0(\u_IIR_filtre/n321 [13]), .I1(\u_IIR_filtre/reg_gyro_z [13]), 
             .CI(\u_IIR_filtre/add_35/n26 ), .O(\u_IIR_filtre/n344 [13]), 
-            .CO(\u_IIR_filtre/add_35/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i13  (.I0(\u_IIR_filtre/n321 [12]), .I1(\u_IIR_filtre/reg_gyro_z [12]), 
             .CI(\u_IIR_filtre/add_35/n24 ), .O(\u_IIR_filtre/n344 [12]), 
-            .CO(\u_IIR_filtre/add_35/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i12  (.I0(\u_IIR_filtre/n321 [11]), .I1(\u_IIR_filtre/reg_gyro_z [11]), 
             .CI(\u_IIR_filtre/add_35/n22 ), .O(\u_IIR_filtre/n344 [11]), 
-            .CO(\u_IIR_filtre/add_35/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i11  (.I0(\u_IIR_filtre/n321 [10]), .I1(\u_IIR_filtre/reg_gyro_z [10]), 
             .CI(\u_IIR_filtre/add_35/n20 ), .O(\u_IIR_filtre/n344 [10]), 
-            .CO(\u_IIR_filtre/add_35/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i10  (.I0(\u_IIR_filtre/n321 [9]), .I1(\u_IIR_filtre/reg_gyro_z [9]), 
             .CI(\u_IIR_filtre/add_35/n18 ), .O(\u_IIR_filtre/n344 [9]), 
-            .CO(\u_IIR_filtre/add_35/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i9  (.I0(\u_IIR_filtre/n321 [8]), .I1(\u_IIR_filtre/reg_gyro_z [8]), 
             .CI(\u_IIR_filtre/add_35/n16 ), .O(\u_IIR_filtre/n344 [8]), 
-            .CO(\u_IIR_filtre/add_35/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i8  (.I0(\u_IIR_filtre/n321 [7]), .I1(\u_IIR_filtre/reg_gyro_z [7]), 
             .CI(\u_IIR_filtre/add_35/n14 ), .O(\u_IIR_filtre/n344 [7]), 
-            .CO(\u_IIR_filtre/add_35/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i7  (.I0(\u_IIR_filtre/n321 [6]), .I1(\u_IIR_filtre/reg_gyro_z [6]), 
             .CI(\u_IIR_filtre/add_35/n12 ), .O(\u_IIR_filtre/n344 [6]), 
-            .CO(\u_IIR_filtre/add_35/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i6  (.I0(\u_IIR_filtre/n321 [5]), .I1(\u_IIR_filtre/reg_gyro_z [5]), 
             .CI(\u_IIR_filtre/add_35/n10 ), .O(\u_IIR_filtre/n344 [5]), 
-            .CO(\u_IIR_filtre/add_35/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_35/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i5  (.I0(\u_IIR_filtre/n321 [4]), .I1(\u_IIR_filtre/reg_gyro_z [4]), 
-            .CI(\u_IIR_filtre/add_35/n8 ), .O(\u_IIR_filtre/n344 [4]), .CO(\u_IIR_filtre/add_35/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_35/n8 ), .O(\u_IIR_filtre/n344 [4]), .CO(\u_IIR_filtre/add_35/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i4  (.I0(\u_IIR_filtre/n321 [3]), .I1(\u_IIR_filtre/reg_gyro_z [3]), 
-            .CI(\u_IIR_filtre/add_35/n6 ), .O(\u_IIR_filtre/n344 [3]), .CO(\u_IIR_filtre/add_35/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_35/n6 ), .O(\u_IIR_filtre/n344 [3]), .CO(\u_IIR_filtre/add_35/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i3  (.I0(\u_IIR_filtre/n321 [2]), .I1(\u_IIR_filtre/reg_gyro_z [2]), 
-            .CI(\u_IIR_filtre/add_35/n4 ), .O(\u_IIR_filtre/n344 [2]), .CO(\u_IIR_filtre/add_35/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_35/n4 ), .O(\u_IIR_filtre/n344 [2]), .CO(\u_IIR_filtre/add_35/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_35/i2  (.I0(\u_IIR_filtre/n321 [1]), .I1(\u_IIR_filtre/reg_gyro_z [1]), 
-            .CI(\u_IIR_filtre/add_35/n2 ), .CO(\u_IIR_filtre/add_35/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_35/n2 ), .CO(\u_IIR_filtre/add_35/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_35/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_35/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i18  (.I0(f_gyi_i[15]), .I1(\u_IIR_filtre/reg_gyro_y [15]), 
-            .CI(\u_IIR_filtre/add_31/n34 ), .O(\u_IIR_filtre/n302 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_31/n34 ), .O(\u_IIR_filtre/n302 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i18 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i18 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i17  (.I0(\u_IIR_filtre/n279 [16]), .I1(\u_IIR_filtre/reg_gyro_y [15]), 
             .CI(\u_IIR_filtre/add_31/n32 ), .O(\u_IIR_filtre/n302 [16]), 
-            .CO(\u_IIR_filtre/add_31/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i17 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i17 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i16  (.I0(\u_IIR_filtre/n279 [15]), .I1(\u_IIR_filtre/reg_gyro_y [15]), 
             .CI(\u_IIR_filtre/add_31/n30 ), .O(\u_IIR_filtre/n302 [15]), 
-            .CO(\u_IIR_filtre/add_31/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i15  (.I0(\u_IIR_filtre/n279 [14]), .I1(\u_IIR_filtre/reg_gyro_y [14]), 
             .CI(\u_IIR_filtre/add_31/n28 ), .O(\u_IIR_filtre/n302 [14]), 
-            .CO(\u_IIR_filtre/add_31/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i14  (.I0(\u_IIR_filtre/n279 [13]), .I1(\u_IIR_filtre/reg_gyro_y [13]), 
             .CI(\u_IIR_filtre/add_31/n26 ), .O(\u_IIR_filtre/n302 [13]), 
-            .CO(\u_IIR_filtre/add_31/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i13  (.I0(\u_IIR_filtre/n279 [12]), .I1(\u_IIR_filtre/reg_gyro_y [12]), 
             .CI(\u_IIR_filtre/add_31/n24 ), .O(\u_IIR_filtre/n302 [12]), 
-            .CO(\u_IIR_filtre/add_31/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i12  (.I0(\u_IIR_filtre/n279 [11]), .I1(\u_IIR_filtre/reg_gyro_y [11]), 
             .CI(\u_IIR_filtre/add_31/n22 ), .O(\u_IIR_filtre/n302 [11]), 
-            .CO(\u_IIR_filtre/add_31/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i11  (.I0(\u_IIR_filtre/n279 [10]), .I1(\u_IIR_filtre/reg_gyro_y [10]), 
             .CI(\u_IIR_filtre/add_31/n20 ), .O(\u_IIR_filtre/n302 [10]), 
-            .CO(\u_IIR_filtre/add_31/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i10  (.I0(\u_IIR_filtre/n279 [9]), .I1(\u_IIR_filtre/reg_gyro_y [9]), 
             .CI(\u_IIR_filtre/add_31/n18 ), .O(\u_IIR_filtre/n302 [9]), 
-            .CO(\u_IIR_filtre/add_31/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i9  (.I0(\u_IIR_filtre/n279 [8]), .I1(\u_IIR_filtre/reg_gyro_y [8]), 
             .CI(\u_IIR_filtre/add_31/n16 ), .O(\u_IIR_filtre/n302 [8]), 
-            .CO(\u_IIR_filtre/add_31/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i8  (.I0(\u_IIR_filtre/n279 [7]), .I1(\u_IIR_filtre/reg_gyro_y [7]), 
             .CI(\u_IIR_filtre/add_31/n14 ), .O(\u_IIR_filtre/n302 [7]), 
-            .CO(\u_IIR_filtre/add_31/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i7  (.I0(\u_IIR_filtre/n279 [6]), .I1(\u_IIR_filtre/reg_gyro_y [6]), 
             .CI(\u_IIR_filtre/add_31/n12 ), .O(\u_IIR_filtre/n302 [6]), 
-            .CO(\u_IIR_filtre/add_31/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i6  (.I0(\u_IIR_filtre/n279 [5]), .I1(\u_IIR_filtre/reg_gyro_y [5]), 
             .CI(\u_IIR_filtre/add_31/n10 ), .O(\u_IIR_filtre/n302 [5]), 
-            .CO(\u_IIR_filtre/add_31/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_31/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i5  (.I0(\u_IIR_filtre/n279 [4]), .I1(\u_IIR_filtre/reg_gyro_y [4]), 
-            .CI(\u_IIR_filtre/add_31/n8 ), .O(\u_IIR_filtre/n302 [4]), .CO(\u_IIR_filtre/add_31/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_31/n8 ), .O(\u_IIR_filtre/n302 [4]), .CO(\u_IIR_filtre/add_31/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i4  (.I0(\u_IIR_filtre/n279 [3]), .I1(\u_IIR_filtre/reg_gyro_y [3]), 
-            .CI(\u_IIR_filtre/add_31/n6 ), .O(\u_IIR_filtre/n302 [3]), .CO(\u_IIR_filtre/add_31/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_31/n6 ), .O(\u_IIR_filtre/n302 [3]), .CO(\u_IIR_filtre/add_31/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i3  (.I0(\u_IIR_filtre/n279 [2]), .I1(\u_IIR_filtre/reg_gyro_y [2]), 
-            .CI(\u_IIR_filtre/add_31/n4 ), .O(\u_IIR_filtre/n302 [2]), .CO(\u_IIR_filtre/add_31/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_31/n4 ), .O(\u_IIR_filtre/n302 [2]), .CO(\u_IIR_filtre/add_31/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_31/i2  (.I0(\u_IIR_filtre/n279 [1]), .I1(\u_IIR_filtre/reg_gyro_y [1]), 
-            .CI(\u_IIR_filtre/add_31/n2 ), .CO(\u_IIR_filtre/add_31/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_31/n2 ), .CO(\u_IIR_filtre/add_31/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_31/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_31/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i16  (.I0(f_gzi_i[15]), .I1(f_gzi_i[14]), 
             .CI(\u_IIR_filtre/add_92/n30 ), .O(\u_IIR_filtre/n321 [15]), 
-            .CO(n1927)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(n1923)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i15  (.I0(f_gzi_i[14]), .I1(f_gzi_i[13]), 
             .CI(\u_IIR_filtre/add_92/n28 ), .O(\u_IIR_filtre/n321 [14]), 
-            .CO(\u_IIR_filtre/add_92/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i14  (.I0(f_gzi_i[13]), .I1(f_gzi_i[12]), 
             .CI(\u_IIR_filtre/add_92/n26 ), .O(\u_IIR_filtre/n321 [13]), 
-            .CO(\u_IIR_filtre/add_92/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i13  (.I0(f_gzi_i[12]), .I1(f_gzi_i[11]), 
             .CI(\u_IIR_filtre/add_92/n24 ), .O(\u_IIR_filtre/n321 [12]), 
-            .CO(\u_IIR_filtre/add_92/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i12  (.I0(f_gzi_i[11]), .I1(f_gzi_i[10]), 
             .CI(\u_IIR_filtre/add_92/n22 ), .O(\u_IIR_filtre/n321 [11]), 
-            .CO(\u_IIR_filtre/add_92/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i11  (.I0(f_gzi_i[10]), .I1(f_gzi_i[9]), 
             .CI(\u_IIR_filtre/add_92/n20 ), .O(\u_IIR_filtre/n321 [10]), 
-            .CO(\u_IIR_filtre/add_92/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i10  (.I0(f_gzi_i[9]), .I1(f_gzi_i[8]), 
             .CI(\u_IIR_filtre/add_92/n18 ), .O(\u_IIR_filtre/n321 [9]), 
-            .CO(\u_IIR_filtre/add_92/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i9  (.I0(f_gzi_i[8]), .I1(f_gzi_i[7]), 
             .CI(\u_IIR_filtre/add_92/n16 ), .O(\u_IIR_filtre/n321 [8]), 
-            .CO(\u_IIR_filtre/add_92/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i8  (.I0(f_gzi_i[7]), .I1(f_gzi_i[6]), 
             .CI(\u_IIR_filtre/add_92/n14 ), .O(\u_IIR_filtre/n321 [7]), 
-            .CO(\u_IIR_filtre/add_92/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i7  (.I0(f_gzi_i[6]), .I1(f_gzi_i[5]), 
             .CI(\u_IIR_filtre/add_92/n12 ), .O(\u_IIR_filtre/n321 [6]), 
-            .CO(\u_IIR_filtre/add_92/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i6  (.I0(f_gzi_i[5]), .I1(f_gzi_i[4]), 
             .CI(\u_IIR_filtre/add_92/n10 ), .O(\u_IIR_filtre/n321 [5]), 
-            .CO(\u_IIR_filtre/add_92/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CO(\u_IIR_filtre/add_92/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i5  (.I0(f_gzi_i[4]), .I1(f_gzi_i[3]), 
-            .CI(\u_IIR_filtre/add_92/n8 ), .O(\u_IIR_filtre/n321 [4]), .CO(\u_IIR_filtre/add_92/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_92/n8 ), .O(\u_IIR_filtre/n321 [4]), .CO(\u_IIR_filtre/add_92/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i4  (.I0(f_gzi_i[3]), .I1(f_gzi_i[2]), 
-            .CI(\u_IIR_filtre/add_92/n6 ), .O(\u_IIR_filtre/n321 [3]), .CO(\u_IIR_filtre/add_92/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_92/n6 ), .O(\u_IIR_filtre/n321 [3]), .CO(\u_IIR_filtre/add_92/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i3  (.I0(f_gzi_i[2]), .I1(f_gzi_i[1]), 
-            .CI(\u_IIR_filtre/add_92/n4 ), .O(\u_IIR_filtre/n321 [2]), .CO(\u_IIR_filtre/add_92/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(\u_IIR_filtre/add_92/n4 ), .O(\u_IIR_filtre/n321 [2]), .CO(\u_IIR_filtre/add_92/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i18  (.I0(f_gxi_i[15]), .I1(\u_IIR_filtre/reg_gyro_x [15]), 
-            .CI(\u_IIR_filtre/add_27/n34 ), .O(\u_IIR_filtre/n260 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(\u_IIR_filtre/add_27/n34 ), .O(\u_IIR_filtre/n260 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i18 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i18 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i17  (.I0(\u_IIR_filtre/n237 [16]), .I1(\u_IIR_filtre/reg_gyro_x [15]), 
             .CI(\u_IIR_filtre/add_27/n32 ), .O(\u_IIR_filtre/n260 [16]), 
-            .CO(\u_IIR_filtre/add_27/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i17 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i17 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i16  (.I0(\u_IIR_filtre/n237 [15]), .I1(\u_IIR_filtre/reg_gyro_x [15]), 
             .CI(\u_IIR_filtre/add_27/n30 ), .O(\u_IIR_filtre/n260 [15]), 
-            .CO(\u_IIR_filtre/add_27/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i15  (.I0(\u_IIR_filtre/n237 [14]), .I1(\u_IIR_filtre/reg_gyro_x [14]), 
             .CI(\u_IIR_filtre/add_27/n28 ), .O(\u_IIR_filtre/n260 [14]), 
-            .CO(\u_IIR_filtre/add_27/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i14  (.I0(\u_IIR_filtre/n237 [13]), .I1(\u_IIR_filtre/reg_gyro_x [13]), 
             .CI(\u_IIR_filtre/add_27/n26 ), .O(\u_IIR_filtre/n260 [13]), 
-            .CO(\u_IIR_filtre/add_27/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i13  (.I0(\u_IIR_filtre/n237 [12]), .I1(\u_IIR_filtre/reg_gyro_x [12]), 
             .CI(\u_IIR_filtre/add_27/n24 ), .O(\u_IIR_filtre/n260 [12]), 
-            .CO(\u_IIR_filtre/add_27/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i12  (.I0(\u_IIR_filtre/n237 [11]), .I1(\u_IIR_filtre/reg_gyro_x [11]), 
             .CI(\u_IIR_filtre/add_27/n22 ), .O(\u_IIR_filtre/n260 [11]), 
-            .CO(\u_IIR_filtre/add_27/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i12 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_88/i3  (.I0(f_ayi_i[2]), .I1(f_ayi_i[1]), 
+            .CI(\u_IIR_filtre/add_88/n4 ), .O(\u_IIR_filtre/n153 [2]), .CO(\u_IIR_filtre/add_88/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_88/i3 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_88/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i11  (.I0(\u_IIR_filtre/n237 [10]), .I1(\u_IIR_filtre/reg_gyro_x [10]), 
             .CI(\u_IIR_filtre/add_27/n20 ), .O(\u_IIR_filtre/n260 [10]), 
-            .CO(\u_IIR_filtre/add_27/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i10  (.I0(\u_IIR_filtre/n237 [9]), .I1(\u_IIR_filtre/reg_gyro_x [9]), 
             .CI(\u_IIR_filtre/add_27/n18 ), .O(\u_IIR_filtre/n260 [9]), 
-            .CO(\u_IIR_filtre/add_27/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i9  (.I0(\u_IIR_filtre/n237 [8]), .I1(\u_IIR_filtre/reg_gyro_x [8]), 
             .CI(\u_IIR_filtre/add_27/n16 ), .O(\u_IIR_filtre/n260 [8]), 
-            .CO(\u_IIR_filtre/add_27/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i8  (.I0(\u_IIR_filtre/n237 [7]), .I1(\u_IIR_filtre/reg_gyro_x [7]), 
             .CI(\u_IIR_filtre/add_27/n14 ), .O(\u_IIR_filtre/n260 [7]), 
-            .CO(\u_IIR_filtre/add_27/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i7  (.I0(\u_IIR_filtre/n237 [6]), .I1(\u_IIR_filtre/reg_gyro_x [6]), 
             .CI(\u_IIR_filtre/add_27/n12 ), .O(\u_IIR_filtre/n260 [6]), 
-            .CO(\u_IIR_filtre/add_27/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i6  (.I0(\u_IIR_filtre/n237 [5]), .I1(\u_IIR_filtre/reg_gyro_x [5]), 
             .CI(\u_IIR_filtre/add_27/n10 ), .O(\u_IIR_filtre/n260 [5]), 
-            .CO(\u_IIR_filtre/add_27/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CO(\u_IIR_filtre/add_27/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i5  (.I0(\u_IIR_filtre/n237 [4]), .I1(\u_IIR_filtre/reg_gyro_x [4]), 
-            .CI(\u_IIR_filtre/add_27/n8 ), .O(\u_IIR_filtre/n260 [4]), .CO(\u_IIR_filtre/add_27/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(\u_IIR_filtre/add_27/n8 ), .O(\u_IIR_filtre/n260 [4]), .CO(\u_IIR_filtre/add_27/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i4  (.I0(\u_IIR_filtre/n237 [3]), .I1(\u_IIR_filtre/reg_gyro_x [3]), 
-            .CI(\u_IIR_filtre/add_27/n6 ), .O(\u_IIR_filtre/n260 [3]), .CO(\u_IIR_filtre/add_27/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(\u_IIR_filtre/add_27/n6 ), .O(\u_IIR_filtre/n260 [3]), .CO(\u_IIR_filtre/add_27/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i3  (.I0(\u_IIR_filtre/n237 [2]), .I1(\u_IIR_filtre/reg_gyro_x [2]), 
-            .CI(\u_IIR_filtre/add_27/n4 ), .O(\u_IIR_filtre/n260 [2]), .CO(\u_IIR_filtre/add_27/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(\u_IIR_filtre/add_27/n4 ), .O(\u_IIR_filtre/n260 [2]), .CO(\u_IIR_filtre/add_27/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_27/i2  (.I0(\u_IIR_filtre/n237 [1]), .I1(\u_IIR_filtre/reg_gyro_x [1]), 
-            .CI(\u_IIR_filtre/add_27/n2 ), .CO(\u_IIR_filtre/add_27/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(\u_IIR_filtre/add_27/n2 ), .CO(\u_IIR_filtre/add_27/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_27/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i16  (.I0(f_gyi_i[15]), .I1(f_gyi_i[14]), 
             .CI(\u_IIR_filtre/add_91/n30 ), .O(\u_IIR_filtre/n279 [15]), 
-            .CO(n1928)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(n1924)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i15  (.I0(f_gyi_i[14]), .I1(f_gyi_i[13]), 
             .CI(\u_IIR_filtre/add_91/n28 ), .O(\u_IIR_filtre/n279 [14]), 
-            .CO(\u_IIR_filtre/add_91/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i14  (.I0(f_gyi_i[13]), .I1(f_gyi_i[12]), 
             .CI(\u_IIR_filtre/add_91/n26 ), .O(\u_IIR_filtre/n279 [13]), 
-            .CO(\u_IIR_filtre/add_91/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i13  (.I0(f_gyi_i[12]), .I1(f_gyi_i[11]), 
             .CI(\u_IIR_filtre/add_91/n24 ), .O(\u_IIR_filtre/n279 [12]), 
-            .CO(\u_IIR_filtre/add_91/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i12  (.I0(f_gyi_i[11]), .I1(f_gyi_i[10]), 
             .CI(\u_IIR_filtre/add_91/n22 ), .O(\u_IIR_filtre/n279 [11]), 
-            .CO(\u_IIR_filtre/add_91/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i11  (.I0(f_gyi_i[10]), .I1(f_gyi_i[9]), 
             .CI(\u_IIR_filtre/add_91/n20 ), .O(\u_IIR_filtre/n279 [10]), 
-            .CO(\u_IIR_filtre/add_91/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i11 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_88/i4  (.I0(f_ayi_i[3]), .I1(f_ayi_i[2]), 
-            .CI(\u_IIR_filtre/add_88/n6 ), .O(\u_IIR_filtre/n153 [3]), .CO(\u_IIR_filtre/add_88/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_88/i4 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_88/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i10  (.I0(f_gyi_i[9]), .I1(f_gyi_i[8]), 
             .CI(\u_IIR_filtre/add_91/n18 ), .O(\u_IIR_filtre/n279 [9]), 
-            .CO(\u_IIR_filtre/add_91/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i9  (.I0(f_gyi_i[8]), .I1(f_gyi_i[7]), 
             .CI(\u_IIR_filtre/add_91/n16 ), .O(\u_IIR_filtre/n279 [8]), 
-            .CO(\u_IIR_filtre/add_91/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i8  (.I0(f_gyi_i[7]), .I1(f_gyi_i[6]), 
             .CI(\u_IIR_filtre/add_91/n14 ), .O(\u_IIR_filtre/n279 [7]), 
-            .CO(\u_IIR_filtre/add_91/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i7  (.I0(f_gyi_i[6]), .I1(f_gyi_i[5]), 
             .CI(\u_IIR_filtre/add_91/n12 ), .O(\u_IIR_filtre/n279 [6]), 
-            .CO(\u_IIR_filtre/add_91/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i6  (.I0(f_gyi_i[5]), .I1(f_gyi_i[4]), 
             .CI(\u_IIR_filtre/add_91/n10 ), .O(\u_IIR_filtre/n279 [5]), 
-            .CO(\u_IIR_filtre/add_91/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CO(\u_IIR_filtre/add_91/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i5  (.I0(f_gyi_i[4]), .I1(f_gyi_i[3]), 
-            .CI(\u_IIR_filtre/add_91/n8 ), .O(\u_IIR_filtre/n279 [4]), .CO(\u_IIR_filtre/add_91/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_91/n8 ), .O(\u_IIR_filtre/n279 [4]), .CO(\u_IIR_filtre/add_91/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i4  (.I0(f_gyi_i[3]), .I1(f_gyi_i[2]), 
-            .CI(\u_IIR_filtre/add_91/n6 ), .O(\u_IIR_filtre/n279 [3]), .CO(\u_IIR_filtre/add_91/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_91/n6 ), .O(\u_IIR_filtre/n279 [3]), .CO(\u_IIR_filtre/add_91/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i3  (.I0(f_gyi_i[2]), .I1(f_gyi_i[1]), 
-            .CI(\u_IIR_filtre/add_91/n4 ), .O(\u_IIR_filtre/n279 [2]), .CO(\u_IIR_filtre/add_91/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(\u_IIR_filtre/add_91/n4 ), .O(\u_IIR_filtre/n279 [2]), .CO(\u_IIR_filtre/add_91/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i18  (.I0(f_azi_i[15]), .I1(\u_IIR_filtre/reg_accel_z [15]), 
-            .CI(\u_IIR_filtre/add_23/n34 ), .O(\u_IIR_filtre/n218 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_23/n34 ), .O(\u_IIR_filtre/n218 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i18 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i18 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i17  (.I0(\u_IIR_filtre/n195 [16]), .I1(\u_IIR_filtre/reg_accel_z [15]), 
             .CI(\u_IIR_filtre/add_23/n32 ), .O(\u_IIR_filtre/n218 [16]), 
-            .CO(\u_IIR_filtre/add_23/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i17 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i17 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i16  (.I0(\u_IIR_filtre/n195 [15]), .I1(\u_IIR_filtre/reg_accel_z [15]), 
             .CI(\u_IIR_filtre/add_23/n30 ), .O(\u_IIR_filtre/n218 [15]), 
-            .CO(\u_IIR_filtre/add_23/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i15  (.I0(\u_IIR_filtre/n195 [14]), .I1(\u_IIR_filtre/reg_accel_z [14]), 
             .CI(\u_IIR_filtre/add_23/n28 ), .O(\u_IIR_filtre/n218 [14]), 
-            .CO(\u_IIR_filtre/add_23/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i14  (.I0(\u_IIR_filtre/n195 [13]), .I1(\u_IIR_filtre/reg_accel_z [13]), 
             .CI(\u_IIR_filtre/add_23/n26 ), .O(\u_IIR_filtre/n218 [13]), 
-            .CO(\u_IIR_filtre/add_23/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i13  (.I0(\u_IIR_filtre/n195 [12]), .I1(\u_IIR_filtre/reg_accel_z [12]), 
             .CI(\u_IIR_filtre/add_23/n24 ), .O(\u_IIR_filtre/n218 [12]), 
-            .CO(\u_IIR_filtre/add_23/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i12  (.I0(\u_IIR_filtre/n195 [11]), .I1(\u_IIR_filtre/reg_accel_z [11]), 
             .CI(\u_IIR_filtre/add_23/n22 ), .O(\u_IIR_filtre/n218 [11]), 
-            .CO(\u_IIR_filtre/add_23/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i11  (.I0(\u_IIR_filtre/n195 [10]), .I1(\u_IIR_filtre/reg_accel_z [10]), 
             .CI(\u_IIR_filtre/add_23/n20 ), .O(\u_IIR_filtre/n218 [10]), 
-            .CO(\u_IIR_filtre/add_23/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i10  (.I0(\u_IIR_filtre/n195 [9]), .I1(\u_IIR_filtre/reg_accel_z [9]), 
             .CI(\u_IIR_filtre/add_23/n18 ), .O(\u_IIR_filtre/n218 [9]), 
-            .CO(\u_IIR_filtre/add_23/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i9  (.I0(\u_IIR_filtre/n195 [8]), .I1(\u_IIR_filtre/reg_accel_z [8]), 
             .CI(\u_IIR_filtre/add_23/n16 ), .O(\u_IIR_filtre/n218 [8]), 
-            .CO(\u_IIR_filtre/add_23/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i8  (.I0(\u_IIR_filtre/n195 [7]), .I1(\u_IIR_filtre/reg_accel_z [7]), 
             .CI(\u_IIR_filtre/add_23/n14 ), .O(\u_IIR_filtre/n218 [7]), 
-            .CO(\u_IIR_filtre/add_23/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i7  (.I0(\u_IIR_filtre/n195 [6]), .I1(\u_IIR_filtre/reg_accel_z [6]), 
             .CI(\u_IIR_filtre/add_23/n12 ), .O(\u_IIR_filtre/n218 [6]), 
-            .CO(\u_IIR_filtre/add_23/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i6  (.I0(\u_IIR_filtre/n195 [5]), .I1(\u_IIR_filtre/reg_accel_z [5]), 
             .CI(\u_IIR_filtre/add_23/n10 ), .O(\u_IIR_filtre/n218 [5]), 
-            .CO(\u_IIR_filtre/add_23/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CO(\u_IIR_filtre/add_23/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i5  (.I0(\u_IIR_filtre/n195 [4]), .I1(\u_IIR_filtre/reg_accel_z [4]), 
-            .CI(\u_IIR_filtre/add_23/n8 ), .O(\u_IIR_filtre/n218 [4]), .CO(\u_IIR_filtre/add_23/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_23/n8 ), .O(\u_IIR_filtre/n218 [4]), .CO(\u_IIR_filtre/add_23/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i4  (.I0(\u_IIR_filtre/n195 [3]), .I1(\u_IIR_filtre/reg_accel_z [3]), 
-            .CI(\u_IIR_filtre/add_23/n6 ), .O(\u_IIR_filtre/n218 [3]), .CO(\u_IIR_filtre/add_23/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_23/n6 ), .O(\u_IIR_filtre/n218 [3]), .CO(\u_IIR_filtre/add_23/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i3  (.I0(\u_IIR_filtre/n195 [2]), .I1(\u_IIR_filtre/reg_accel_z [2]), 
-            .CI(\u_IIR_filtre/add_23/n4 ), .O(\u_IIR_filtre/n218 [2]), .CO(\u_IIR_filtre/add_23/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_23/n4 ), .O(\u_IIR_filtre/n218 [2]), .CO(\u_IIR_filtre/add_23/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_23/i2  (.I0(\u_IIR_filtre/n195 [1]), .I1(\u_IIR_filtre/reg_accel_z [1]), 
-            .CI(\u_IIR_filtre/add_23/n2 ), .CO(\u_IIR_filtre/add_23/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_23/n2 ), .CO(\u_IIR_filtre/add_23/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_23/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_23/i2 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i16  (.I0(f_gxi_i[15]), .I1(f_gxi_i[14]), 
-            .CI(\u_IIR_filtre/add_90/n30 ), .O(\u_IIR_filtre/n237 [15]), 
-            .CO(n1929)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i16 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i16 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i15  (.I0(f_gxi_i[14]), .I1(f_gxi_i[13]), 
-            .CI(\u_IIR_filtre/add_90/n28 ), .O(\u_IIR_filtre/n237 [14]), 
-            .CO(\u_IIR_filtre/add_90/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i15 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i15 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i14  (.I0(f_gxi_i[13]), .I1(f_gxi_i[12]), 
-            .CI(\u_IIR_filtre/add_90/n26 ), .O(\u_IIR_filtre/n237 [13]), 
-            .CO(\u_IIR_filtre/add_90/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i14 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i14 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i13  (.I0(f_gxi_i[12]), .I1(f_gxi_i[11]), 
-            .CI(\u_IIR_filtre/add_90/n24 ), .O(\u_IIR_filtre/n237 [12]), 
-            .CO(\u_IIR_filtre/add_90/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i13 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i13 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i12  (.I0(f_gxi_i[11]), .I1(f_gxi_i[10]), 
-            .CI(\u_IIR_filtre/add_90/n22 ), .O(\u_IIR_filtre/n237 [11]), 
-            .CO(\u_IIR_filtre/add_90/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i12 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i12 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i11  (.I0(f_gxi_i[10]), .I1(f_gxi_i[9]), 
-            .CI(\u_IIR_filtre/add_90/n20 ), .O(\u_IIR_filtre/n237 [10]), 
-            .CO(\u_IIR_filtre/add_90/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i11 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i11 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i10  (.I0(f_gxi_i[9]), .I1(f_gxi_i[8]), 
-            .CI(\u_IIR_filtre/add_90/n18 ), .O(\u_IIR_filtre/n237 [9]), 
-            .CO(\u_IIR_filtre/add_90/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i10 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i10 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i9  (.I0(f_gxi_i[8]), .I1(f_gxi_i[7]), 
-            .CI(\u_IIR_filtre/add_90/n16 ), .O(\u_IIR_filtre/n237 [8]), 
-            .CO(\u_IIR_filtre/add_90/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i9 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i9 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i8  (.I0(f_gxi_i[7]), .I1(f_gxi_i[6]), 
-            .CI(\u_IIR_filtre/add_90/n14 ), .O(\u_IIR_filtre/n237 [7]), 
-            .CO(\u_IIR_filtre/add_90/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i8 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i8 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i7  (.I0(f_gxi_i[6]), .I1(f_gxi_i[5]), 
-            .CI(\u_IIR_filtre/add_90/n12 ), .O(\u_IIR_filtre/n237 [6]), 
-            .CO(\u_IIR_filtre/add_90/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i7 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i7 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i6  (.I0(f_gxi_i[5]), .I1(f_gxi_i[4]), 
-            .CI(\u_IIR_filtre/add_90/n10 ), .O(\u_IIR_filtre/n237 [5]), 
-            .CO(\u_IIR_filtre/add_90/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i6 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i6 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i5  (.I0(f_gxi_i[4]), .I1(f_gxi_i[3]), 
-            .CI(\u_IIR_filtre/add_90/n8 ), .O(\u_IIR_filtre/n237 [4]), .CO(\u_IIR_filtre/add_90/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i5 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i5 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i4  (.I0(f_gxi_i[3]), .I1(f_gxi_i[2]), 
-            .CI(\u_IIR_filtre/add_90/n6 ), .O(\u_IIR_filtre/n237 [3]), .CO(\u_IIR_filtre/add_90/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i4 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i4 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_90/i3  (.I0(f_gxi_i[2]), .I1(f_gxi_i[1]), 
-            .CI(\u_IIR_filtre/add_90/n4 ), .O(\u_IIR_filtre/n237 [2]), .CO(\u_IIR_filtre/add_90/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
-    defparam \u_IIR_filtre/add_90/i3 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_90/i3 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i18  (.I0(f_ayi_i[15]), .I1(\u_IIR_filtre/reg_accel_y [15]), 
-            .CI(\u_IIR_filtre/add_19/n34 ), .O(\u_IIR_filtre/n176 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i18 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i18 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i17  (.I0(\u_IIR_filtre/n153 [16]), .I1(\u_IIR_filtre/reg_accel_y [15]), 
-            .CI(\u_IIR_filtre/add_19/n32 ), .O(\u_IIR_filtre/n176 [16]), 
-            .CO(\u_IIR_filtre/add_19/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i17 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i17 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i16  (.I0(\u_IIR_filtre/n153 [15]), .I1(\u_IIR_filtre/reg_accel_y [15]), 
-            .CI(\u_IIR_filtre/add_19/n30 ), .O(\u_IIR_filtre/n176 [15]), 
-            .CO(\u_IIR_filtre/add_19/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i16 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i16 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i15  (.I0(\u_IIR_filtre/n153 [14]), .I1(\u_IIR_filtre/reg_accel_y [14]), 
-            .CI(\u_IIR_filtre/add_19/n28 ), .O(\u_IIR_filtre/n176 [14]), 
-            .CO(\u_IIR_filtre/add_19/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i15 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i15 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i14  (.I0(\u_IIR_filtre/n153 [13]), .I1(\u_IIR_filtre/reg_accel_y [13]), 
-            .CI(\u_IIR_filtre/add_19/n26 ), .O(\u_IIR_filtre/n176 [13]), 
-            .CO(\u_IIR_filtre/add_19/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i14 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i14 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i13  (.I0(\u_IIR_filtre/n153 [12]), .I1(\u_IIR_filtre/reg_accel_y [12]), 
-            .CI(\u_IIR_filtre/add_19/n24 ), .O(\u_IIR_filtre/n176 [12]), 
-            .CO(\u_IIR_filtre/add_19/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i13 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/i2  (.I0(\u_FIFO/u_efx_fifo_top/waddr [2]), 
             .I1(1'b0), .CI(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n2 ), 
             .O(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/n96 [2]), .CO(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1249)
@@ -8300,276 +8227,376 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CO(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_45/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1275)
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_45/i1 .I0_POLARITY = 1'b1;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_45/i1 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i12  (.I0(\u_IIR_filtre/n153 [11]), .I1(\u_IIR_filtre/reg_accel_y [11]), 
-            .CI(\u_IIR_filtre/add_19/n22 ), .O(\u_IIR_filtre/n176 [11]), 
-            .CO(\u_IIR_filtre/add_19/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i12 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \Inst_pwm_servo_0/add_24/i1  (.I0(\Inst_pwm_servo_0/counter [1]), 
             .I1(\Inst_pwm_servo_0/counter [0]), .CI(1'b0), .O(\Inst_pwm_servo_0/n42 [1]), 
             .CO(\Inst_pwm_servo_0/add_24/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
     defparam \Inst_pwm_servo_0/add_24/i1 .I0_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/add_24/i1 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i11  (.I0(\u_IIR_filtre/n153 [10]), .I1(\u_IIR_filtre/reg_accel_y [10]), 
-            .CI(\u_IIR_filtre/add_19/n20 ), .O(\u_IIR_filtre/n176 [10]), 
-            .CO(\u_IIR_filtre/add_19/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i11 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i11 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i10  (.I0(\u_IIR_filtre/n153 [9]), .I1(\u_IIR_filtre/reg_accel_y [9]), 
-            .CI(\u_IIR_filtre/add_19/n18 ), .O(\u_IIR_filtre/n176 [9]), 
-            .CO(\u_IIR_filtre/add_19/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i10 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i10 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i9  (.I0(\u_IIR_filtre/n153 [8]), .I1(\u_IIR_filtre/reg_accel_y [8]), 
-            .CI(\u_IIR_filtre/add_19/n16 ), .O(\u_IIR_filtre/n176 [8]), 
-            .CO(\u_IIR_filtre/add_19/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i9 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i9 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i8  (.I0(\u_IIR_filtre/n153 [7]), .I1(\u_IIR_filtre/reg_accel_y [7]), 
-            .CI(\u_IIR_filtre/add_19/n14 ), .O(\u_IIR_filtre/n176 [7]), 
-            .CO(\u_IIR_filtre/add_19/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i8 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i8 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i7  (.I0(\u_IIR_filtre/n153 [6]), .I1(\u_IIR_filtre/reg_accel_y [6]), 
-            .CI(\u_IIR_filtre/add_19/n12 ), .O(\u_IIR_filtre/n176 [6]), 
-            .CO(\u_IIR_filtre/add_19/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i7 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i7 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i6  (.I0(\u_IIR_filtre/n153 [5]), .I1(\u_IIR_filtre/reg_accel_y [5]), 
-            .CI(\u_IIR_filtre/add_19/n10 ), .O(\u_IIR_filtre/n176 [5]), 
-            .CO(\u_IIR_filtre/add_19/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i6 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i6 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i5  (.I0(\u_IIR_filtre/n153 [4]), .I1(\u_IIR_filtre/reg_accel_y [4]), 
-            .CI(\u_IIR_filtre/add_19/n8 ), .O(\u_IIR_filtre/n176 [4]), .CO(\u_IIR_filtre/add_19/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i5 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i5 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i4  (.I0(\u_IIR_filtre/n153 [3]), .I1(\u_IIR_filtre/reg_accel_y [3]), 
-            .CI(\u_IIR_filtre/add_19/n6 ), .O(\u_IIR_filtre/n176 [3]), .CO(\u_IIR_filtre/add_19/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i4 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i4 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i3  (.I0(\u_IIR_filtre/n153 [2]), .I1(\u_IIR_filtre/reg_accel_y [2]), 
-            .CI(\u_IIR_filtre/add_19/n4 ), .O(\u_IIR_filtre/n176 [2]), .CO(\u_IIR_filtre/add_19/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i3 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i3 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_19/i2  (.I0(\u_IIR_filtre/n153 [1]), .I1(\u_IIR_filtre/reg_accel_y [1]), 
-            .CI(\u_IIR_filtre/add_19/n2 ), .CO(\u_IIR_filtre/add_19/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_19/i2 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_19/i2 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i16  (.I0(f_gxi_i[15]), .I1(f_gxi_i[14]), 
+            .CI(\u_IIR_filtre/add_90/n30 ), .O(\u_IIR_filtre/n237 [15]), 
+            .CO(n1925)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i16 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i16 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i15  (.I0(f_gxi_i[14]), .I1(f_gxi_i[13]), 
+            .CI(\u_IIR_filtre/add_90/n28 ), .O(\u_IIR_filtre/n237 [14]), 
+            .CO(\u_IIR_filtre/add_90/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i15 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i15 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i14  (.I0(f_gxi_i[13]), .I1(f_gxi_i[12]), 
+            .CI(\u_IIR_filtre/add_90/n26 ), .O(\u_IIR_filtre/n237 [13]), 
+            .CO(\u_IIR_filtre/add_90/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i14 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i14 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i13  (.I0(f_gxi_i[12]), .I1(f_gxi_i[11]), 
+            .CI(\u_IIR_filtre/add_90/n24 ), .O(\u_IIR_filtre/n237 [12]), 
+            .CO(\u_IIR_filtre/add_90/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i13 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i13 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i12  (.I0(f_gxi_i[11]), .I1(f_gxi_i[10]), 
+            .CI(\u_IIR_filtre/add_90/n22 ), .O(\u_IIR_filtre/n237 [11]), 
+            .CO(\u_IIR_filtre/add_90/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i12 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i12 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i11  (.I0(f_gxi_i[10]), .I1(f_gxi_i[9]), 
+            .CI(\u_IIR_filtre/add_90/n20 ), .O(\u_IIR_filtre/n237 [10]), 
+            .CO(\u_IIR_filtre/add_90/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i11 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i11 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i10  (.I0(f_gxi_i[9]), .I1(f_gxi_i[8]), 
+            .CI(\u_IIR_filtre/add_90/n18 ), .O(\u_IIR_filtre/n237 [9]), 
+            .CO(\u_IIR_filtre/add_90/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i10 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i10 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i9  (.I0(f_gxi_i[8]), .I1(f_gxi_i[7]), 
+            .CI(\u_IIR_filtre/add_90/n16 ), .O(\u_IIR_filtre/n237 [8]), 
+            .CO(\u_IIR_filtre/add_90/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i9 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i9 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i8  (.I0(f_gxi_i[7]), .I1(f_gxi_i[6]), 
+            .CI(\u_IIR_filtre/add_90/n14 ), .O(\u_IIR_filtre/n237 [7]), 
+            .CO(\u_IIR_filtre/add_90/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i8 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i8 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i7  (.I0(f_gxi_i[6]), .I1(f_gxi_i[5]), 
+            .CI(\u_IIR_filtre/add_90/n12 ), .O(\u_IIR_filtre/n237 [6]), 
+            .CO(\u_IIR_filtre/add_90/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i7 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i7 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i6  (.I0(f_gxi_i[5]), .I1(f_gxi_i[4]), 
+            .CI(\u_IIR_filtre/add_90/n10 ), .O(\u_IIR_filtre/n237 [5]), 
+            .CO(\u_IIR_filtre/add_90/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i6 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i6 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i5  (.I0(f_gxi_i[4]), .I1(f_gxi_i[3]), 
+            .CI(\u_IIR_filtre/add_90/n8 ), .O(\u_IIR_filtre/n237 [4]), .CO(\u_IIR_filtre/add_90/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i5 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i5 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i4  (.I0(f_gxi_i[3]), .I1(f_gxi_i[2]), 
+            .CI(\u_IIR_filtre/add_90/n6 ), .O(\u_IIR_filtre/n237 [3]), .CO(\u_IIR_filtre/add_90/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i4 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/i1  (.I0(\u_FIFO/u_efx_fifo_top/waddr [1]), 
             .I1(\u_FIFO/u_efx_fifo_top/waddr [0]), .CI(1'b0), .O(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/n96 [1]), 
             .CO(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1249)
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/i1 .I0_POLARITY = 1'b1;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/add_58/i1 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_90/i3  (.I0(f_gxi_i[2]), .I1(f_gxi_i[1]), 
+            .CI(\u_IIR_filtre/add_90/n4 ), .O(\u_IIR_filtre/n237 [2]), .CO(\u_IIR_filtre/add_90/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_90/i3 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_90/i3 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i18  (.I0(f_ayi_i[15]), .I1(\u_IIR_filtre/reg_accel_y [15]), 
+            .CI(\u_IIR_filtre/add_19/n34 ), .O(\u_IIR_filtre/n176 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i18 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i18 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i17  (.I0(\u_IIR_filtre/n153 [16]), .I1(\u_IIR_filtre/reg_accel_y [15]), 
+            .CI(\u_IIR_filtre/add_19/n32 ), .O(\u_IIR_filtre/n176 [16]), 
+            .CO(\u_IIR_filtre/add_19/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i17 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i17 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i16  (.I0(\u_IIR_filtre/n153 [15]), .I1(\u_IIR_filtre/reg_accel_y [15]), 
+            .CI(\u_IIR_filtre/add_19/n30 ), .O(\u_IIR_filtre/n176 [15]), 
+            .CO(\u_IIR_filtre/add_19/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i16 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i16 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i15  (.I0(\u_IIR_filtre/n153 [14]), .I1(\u_IIR_filtre/reg_accel_y [14]), 
+            .CI(\u_IIR_filtre/add_19/n28 ), .O(\u_IIR_filtre/n176 [14]), 
+            .CO(\u_IIR_filtre/add_19/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i15 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i15 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i14  (.I0(\u_IIR_filtre/n153 [13]), .I1(\u_IIR_filtre/reg_accel_y [13]), 
+            .CI(\u_IIR_filtre/add_19/n26 ), .O(\u_IIR_filtre/n176 [13]), 
+            .CO(\u_IIR_filtre/add_19/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i14 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i14 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i13  (.I0(\u_IIR_filtre/n153 [12]), .I1(\u_IIR_filtre/reg_accel_y [12]), 
+            .CI(\u_IIR_filtre/add_19/n24 ), .O(\u_IIR_filtre/n176 [12]), 
+            .CO(\u_IIR_filtre/add_19/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i13 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i13 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i12  (.I0(\u_IIR_filtre/n153 [11]), .I1(\u_IIR_filtre/reg_accel_y [11]), 
+            .CI(\u_IIR_filtre/add_19/n22 ), .O(\u_IIR_filtre/n176 [11]), 
+            .CO(\u_IIR_filtre/add_19/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i12 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i12 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i11  (.I0(\u_IIR_filtre/n153 [10]), .I1(\u_IIR_filtre/reg_accel_y [10]), 
+            .CI(\u_IIR_filtre/add_19/n20 ), .O(\u_IIR_filtre/n176 [10]), 
+            .CO(\u_IIR_filtre/add_19/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i11 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i11 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i10  (.I0(\u_IIR_filtre/n153 [9]), .I1(\u_IIR_filtre/reg_accel_y [9]), 
+            .CI(\u_IIR_filtre/add_19/n18 ), .O(\u_IIR_filtre/n176 [9]), 
+            .CO(\u_IIR_filtre/add_19/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i10 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i10 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_88/i4  (.I0(f_ayi_i[3]), .I1(f_ayi_i[2]), 
+            .CI(\u_IIR_filtre/add_88/n6 ), .O(\u_IIR_filtre/n153 [3]), .CO(\u_IIR_filtre/add_88/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_88/i4 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_88/i4 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i9  (.I0(\u_IIR_filtre/n153 [8]), .I1(\u_IIR_filtre/reg_accel_y [8]), 
+            .CI(\u_IIR_filtre/add_19/n16 ), .O(\u_IIR_filtre/n176 [8]), 
+            .CO(\u_IIR_filtre/add_19/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i9 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i9 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i8  (.I0(\u_IIR_filtre/n153 [7]), .I1(\u_IIR_filtre/reg_accel_y [7]), 
+            .CI(\u_IIR_filtre/add_19/n14 ), .O(\u_IIR_filtre/n176 [7]), 
+            .CO(\u_IIR_filtre/add_19/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i8 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i8 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i7  (.I0(\u_IIR_filtre/n153 [6]), .I1(\u_IIR_filtre/reg_accel_y [6]), 
+            .CI(\u_IIR_filtre/add_19/n12 ), .O(\u_IIR_filtre/n176 [6]), 
+            .CO(\u_IIR_filtre/add_19/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i7 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i7 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i6  (.I0(\u_IIR_filtre/n153 [5]), .I1(\u_IIR_filtre/reg_accel_y [5]), 
+            .CI(\u_IIR_filtre/add_19/n10 ), .O(\u_IIR_filtre/n176 [5]), 
+            .CO(\u_IIR_filtre/add_19/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i6 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i6 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i5  (.I0(\u_IIR_filtre/n153 [4]), .I1(\u_IIR_filtre/reg_accel_y [4]), 
+            .CI(\u_IIR_filtre/add_19/n8 ), .O(\u_IIR_filtre/n176 [4]), .CO(\u_IIR_filtre/add_19/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i5 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i5 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i4  (.I0(\u_IIR_filtre/n153 [3]), .I1(\u_IIR_filtre/reg_accel_y [3]), 
+            .CI(\u_IIR_filtre/add_19/n6 ), .O(\u_IIR_filtre/n176 [3]), .CO(\u_IIR_filtre/add_19/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i4 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i4 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i3  (.I0(\u_IIR_filtre/n153 [2]), .I1(\u_IIR_filtre/reg_accel_y [2]), 
+            .CI(\u_IIR_filtre/add_19/n4 ), .O(\u_IIR_filtre/n176 [2]), .CO(\u_IIR_filtre/add_19/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i3 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i3 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_19/i2  (.I0(\u_IIR_filtre/n153 [1]), .I1(\u_IIR_filtre/reg_accel_y [1]), 
+            .CI(\u_IIR_filtre/add_19/n2 ), .CO(\u_IIR_filtre/add_19/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_19/i2 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_19/i2 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i16  (.I0(f_azi_i[15]), .I1(f_azi_i[14]), 
+            .CI(\u_IIR_filtre/add_89/n30 ), .O(\u_IIR_filtre/n195 [15]), 
+            .CO(n1926)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i16 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i16 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i15  (.I0(f_azi_i[14]), .I1(f_azi_i[13]), 
+            .CI(\u_IIR_filtre/add_89/n28 ), .O(\u_IIR_filtre/n195 [14]), 
+            .CO(\u_IIR_filtre/add_89/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i15 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i15 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i14  (.I0(f_azi_i[13]), .I1(f_azi_i[12]), 
+            .CI(\u_IIR_filtre/add_89/n26 ), .O(\u_IIR_filtre/n195 [13]), 
+            .CO(\u_IIR_filtre/add_89/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i14 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i14 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i13  (.I0(f_azi_i[12]), .I1(f_azi_i[11]), 
+            .CI(\u_IIR_filtre/add_89/n24 ), .O(\u_IIR_filtre/n195 [12]), 
+            .CO(\u_IIR_filtre/add_89/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i13 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i13 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i12  (.I0(f_azi_i[11]), .I1(f_azi_i[10]), 
+            .CI(\u_IIR_filtre/add_89/n22 ), .O(\u_IIR_filtre/n195 [11]), 
+            .CO(\u_IIR_filtre/add_89/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i12 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i12 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i11  (.I0(f_azi_i[10]), .I1(f_azi_i[9]), 
+            .CI(\u_IIR_filtre/add_89/n20 ), .O(\u_IIR_filtre/n195 [10]), 
+            .CO(\u_IIR_filtre/add_89/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i11 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i11 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i10  (.I0(f_azi_i[9]), .I1(f_azi_i[8]), 
+            .CI(\u_IIR_filtre/add_89/n18 ), .O(\u_IIR_filtre/n195 [9]), 
+            .CO(\u_IIR_filtre/add_89/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i10 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i10 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i9  (.I0(f_azi_i[8]), .I1(f_azi_i[7]), 
+            .CI(\u_IIR_filtre/add_89/n16 ), .O(\u_IIR_filtre/n195 [8]), 
+            .CO(\u_IIR_filtre/add_89/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i9 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i9 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i8  (.I0(f_azi_i[7]), .I1(f_azi_i[6]), 
+            .CI(\u_IIR_filtre/add_89/n14 ), .O(\u_IIR_filtre/n195 [7]), 
+            .CO(\u_IIR_filtre/add_89/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i8 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i8 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i7  (.I0(f_azi_i[6]), .I1(f_azi_i[5]), 
+            .CI(\u_IIR_filtre/add_89/n12 ), .O(\u_IIR_filtre/n195 [6]), 
+            .CO(\u_IIR_filtre/add_89/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i7 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i7 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_89/i6  (.I0(f_azi_i[5]), .I1(f_azi_i[4]), 
+            .CI(\u_IIR_filtre/add_89/n10 ), .O(\u_IIR_filtre/n195 [5]), 
+            .CO(\u_IIR_filtre/add_89/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+    defparam \u_IIR_filtre/add_89/i6 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_89/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \Inst_debounce/add_30/i1  (.I0(\Inst_debounce/count_reg [1]), 
             .I1(\Inst_debounce/count_reg [0]), .CI(1'b0), .O(\Inst_debounce/n10 [1]), 
             .CO(\Inst_debounce/add_30/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(51)
     defparam \Inst_debounce/add_30/i1 .I0_POLARITY = 1'b1;
     defparam \Inst_debounce/add_30/i1 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_88/i5  (.I0(f_ayi_i[4]), .I1(f_ayi_i[3]), 
-            .CI(\u_IIR_filtre/add_88/n8 ), .O(\u_IIR_filtre/n153 [4]), .CO(\u_IIR_filtre/add_88/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
-    defparam \u_IIR_filtre/add_88/i5 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_88/i5 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i16  (.I0(f_azi_i[15]), .I1(f_azi_i[14]), 
-            .CI(\u_IIR_filtre/add_89/n30 ), .O(\u_IIR_filtre/n195 [15]), 
-            .CO(n1930)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i16 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i16 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i15  (.I0(f_azi_i[14]), .I1(f_azi_i[13]), 
-            .CI(\u_IIR_filtre/add_89/n28 ), .O(\u_IIR_filtre/n195 [14]), 
-            .CO(\u_IIR_filtre/add_89/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i15 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i15 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i14  (.I0(f_azi_i[13]), .I1(f_azi_i[12]), 
-            .CI(\u_IIR_filtre/add_89/n26 ), .O(\u_IIR_filtre/n195 [13]), 
-            .CO(\u_IIR_filtre/add_89/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i14 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i14 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i13  (.I0(f_azi_i[12]), .I1(f_azi_i[11]), 
-            .CI(\u_IIR_filtre/add_89/n24 ), .O(\u_IIR_filtre/n195 [12]), 
-            .CO(\u_IIR_filtre/add_89/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i13 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i13 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i12  (.I0(f_azi_i[11]), .I1(f_azi_i[10]), 
-            .CI(\u_IIR_filtre/add_89/n22 ), .O(\u_IIR_filtre/n195 [11]), 
-            .CO(\u_IIR_filtre/add_89/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i12 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i12 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i11  (.I0(f_azi_i[10]), .I1(f_azi_i[9]), 
-            .CI(\u_IIR_filtre/add_89/n20 ), .O(\u_IIR_filtre/n195 [10]), 
-            .CO(\u_IIR_filtre/add_89/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i11 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i11 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i10  (.I0(f_azi_i[9]), .I1(f_azi_i[8]), 
-            .CI(\u_IIR_filtre/add_89/n18 ), .O(\u_IIR_filtre/n195 [9]), 
-            .CO(\u_IIR_filtre/add_89/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i10 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i10 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i9  (.I0(f_azi_i[8]), .I1(f_azi_i[7]), 
-            .CI(\u_IIR_filtre/add_89/n16 ), .O(\u_IIR_filtre/n195 [8]), 
-            .CO(\u_IIR_filtre/add_89/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i9 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i9 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i8  (.I0(f_azi_i[7]), .I1(f_azi_i[6]), 
-            .CI(\u_IIR_filtre/add_89/n14 ), .O(\u_IIR_filtre/n195 [7]), 
-            .CO(\u_IIR_filtre/add_89/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i8 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i8 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i7  (.I0(f_azi_i[6]), .I1(f_azi_i[5]), 
-            .CI(\u_IIR_filtre/add_89/n12 ), .O(\u_IIR_filtre/n195 [6]), 
-            .CO(\u_IIR_filtre/add_89/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i7 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i7 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_89/i6  (.I0(f_azi_i[5]), .I1(f_azi_i[4]), 
-            .CI(\u_IIR_filtre/add_89/n10 ), .O(\u_IIR_filtre/n195 [5]), 
-            .CO(\u_IIR_filtre/add_89/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
-    defparam \u_IIR_filtre/add_89/i6 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_89/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_89/i5  (.I0(f_azi_i[4]), .I1(f_azi_i[3]), 
-            .CI(\u_IIR_filtre/add_89/n8 ), .O(\u_IIR_filtre/n195 [4]), .CO(\u_IIR_filtre/add_89/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_89/n8 ), .O(\u_IIR_filtre/n195 [4]), .CO(\u_IIR_filtre/add_89/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_89/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_89/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_89/i4  (.I0(f_azi_i[3]), .I1(f_azi_i[2]), 
-            .CI(\u_IIR_filtre/add_89/n6 ), .O(\u_IIR_filtre/n195 [3]), .CO(\u_IIR_filtre/add_89/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_89/n6 ), .O(\u_IIR_filtre/n195 [3]), .CO(\u_IIR_filtre/add_89/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_89/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_89/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_89/i3  (.I0(f_azi_i[2]), .I1(f_azi_i[1]), 
-            .CI(\u_IIR_filtre/add_89/n4 ), .O(\u_IIR_filtre/n195 [2]), .CO(\u_IIR_filtre/add_89/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(\u_IIR_filtre/add_89/n4 ), .O(\u_IIR_filtre/n195 [2]), .CO(\u_IIR_filtre/add_89/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_89/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_89/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i18  (.I0(f_axi_i[15]), .I1(\u_IIR_filtre/reg_accel_x [15]), 
-            .CI(\u_IIR_filtre/add_15/n34 ), .O(\u_IIR_filtre/n134 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_15/n34 ), .O(\u_IIR_filtre/n134 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i18 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i18 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i17  (.I0(\u_IIR_filtre/n111 [16]), .I1(\u_IIR_filtre/reg_accel_x [15]), 
             .CI(\u_IIR_filtre/add_15/n32 ), .O(\u_IIR_filtre/n134 [16]), 
-            .CO(\u_IIR_filtre/add_15/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i17 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i17 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i16  (.I0(\u_IIR_filtre/n111 [15]), .I1(\u_IIR_filtre/reg_accel_x [15]), 
             .CI(\u_IIR_filtre/add_15/n30 ), .O(\u_IIR_filtre/n134 [15]), 
-            .CO(\u_IIR_filtre/add_15/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n32 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i15  (.I0(\u_IIR_filtre/n111 [14]), .I1(\u_IIR_filtre/reg_accel_x [14]), 
             .CI(\u_IIR_filtre/add_15/n28 ), .O(\u_IIR_filtre/n134 [14]), 
-            .CO(\u_IIR_filtre/add_15/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i14  (.I0(\u_IIR_filtre/n111 [13]), .I1(\u_IIR_filtre/reg_accel_x [13]), 
             .CI(\u_IIR_filtre/add_15/n26 ), .O(\u_IIR_filtre/n134 [13]), 
-            .CO(\u_IIR_filtre/add_15/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i13  (.I0(\u_IIR_filtre/n111 [12]), .I1(\u_IIR_filtre/reg_accel_x [12]), 
             .CI(\u_IIR_filtre/add_15/n24 ), .O(\u_IIR_filtre/n134 [12]), 
-            .CO(\u_IIR_filtre/add_15/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i12  (.I0(\u_IIR_filtre/n111 [11]), .I1(\u_IIR_filtre/reg_accel_x [11]), 
             .CI(\u_IIR_filtre/add_15/n22 ), .O(\u_IIR_filtre/n134 [11]), 
-            .CO(\u_IIR_filtre/add_15/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i11  (.I0(\u_IIR_filtre/n111 [10]), .I1(\u_IIR_filtre/reg_accel_x [10]), 
             .CI(\u_IIR_filtre/add_15/n20 ), .O(\u_IIR_filtre/n134 [10]), 
-            .CO(\u_IIR_filtre/add_15/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i10  (.I0(\u_IIR_filtre/n111 [9]), .I1(\u_IIR_filtre/reg_accel_x [9]), 
             .CI(\u_IIR_filtre/add_15/n18 ), .O(\u_IIR_filtre/n134 [9]), 
-            .CO(\u_IIR_filtre/add_15/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i9  (.I0(\u_IIR_filtre/n111 [8]), .I1(\u_IIR_filtre/reg_accel_x [8]), 
             .CI(\u_IIR_filtre/add_15/n16 ), .O(\u_IIR_filtre/n134 [8]), 
-            .CO(\u_IIR_filtre/add_15/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i8  (.I0(\u_IIR_filtre/n111 [7]), .I1(\u_IIR_filtre/reg_accel_x [7]), 
             .CI(\u_IIR_filtre/add_15/n14 ), .O(\u_IIR_filtre/n134 [7]), 
-            .CO(\u_IIR_filtre/add_15/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i7  (.I0(\u_IIR_filtre/n111 [6]), .I1(\u_IIR_filtre/reg_accel_x [6]), 
             .CI(\u_IIR_filtre/add_15/n12 ), .O(\u_IIR_filtre/n134 [6]), 
-            .CO(\u_IIR_filtre/add_15/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i7 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_88/i5  (.I0(f_ayi_i[4]), .I1(f_ayi_i[3]), 
+            .CI(\u_IIR_filtre/add_88/n8 ), .O(\u_IIR_filtre/n153 [4]), .CO(\u_IIR_filtre/add_88/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+    defparam \u_IIR_filtre/add_88/i5 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_88/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i6  (.I0(\u_IIR_filtre/n111 [5]), .I1(\u_IIR_filtre/reg_accel_x [5]), 
             .CI(\u_IIR_filtre/add_15/n10 ), .O(\u_IIR_filtre/n134 [5]), 
-            .CO(\u_IIR_filtre/add_15/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CO(\u_IIR_filtre/add_15/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i6 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i5  (.I0(\u_IIR_filtre/n111 [4]), .I1(\u_IIR_filtre/reg_accel_x [4]), 
-            .CI(\u_IIR_filtre/add_15/n8 ), .O(\u_IIR_filtre/n134 [4]), .CO(\u_IIR_filtre/add_15/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_15/n8 ), .O(\u_IIR_filtre/n134 [4]), .CO(\u_IIR_filtre/add_15/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i5 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i4  (.I0(\u_IIR_filtre/n111 [3]), .I1(\u_IIR_filtre/reg_accel_x [3]), 
-            .CI(\u_IIR_filtre/add_15/n6 ), .O(\u_IIR_filtre/n134 [3]), .CO(\u_IIR_filtre/add_15/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_15/n6 ), .O(\u_IIR_filtre/n134 [3]), .CO(\u_IIR_filtre/add_15/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i4 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i3  (.I0(\u_IIR_filtre/n111 [2]), .I1(\u_IIR_filtre/reg_accel_x [2]), 
-            .CI(\u_IIR_filtre/add_15/n4 ), .O(\u_IIR_filtre/n134 [2]), .CO(\u_IIR_filtre/add_15/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_15/n4 ), .O(\u_IIR_filtre/n134 [2]), .CO(\u_IIR_filtre/add_15/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i3 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i3 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i2  (.I0(\u_IIR_filtre/n111 [1]), .I1(\u_IIR_filtre/reg_accel_x [1]), 
-            .CI(\u_IIR_filtre/add_15/n2 ), .CO(\u_IIR_filtre/add_15/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(\u_IIR_filtre/add_15/n2 ), .CO(\u_IIR_filtre/add_15/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_15/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_15/i2 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i16  (.I0(f_ayi_i[15]), .I1(f_ayi_i[14]), 
             .CI(\u_IIR_filtre/add_88/n30 ), .O(\u_IIR_filtre/n153 [15]), 
-            .CO(n1931)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(n1927)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i16 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i16 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i15  (.I0(f_ayi_i[14]), .I1(f_ayi_i[13]), 
             .CI(\u_IIR_filtre/add_88/n28 ), .O(\u_IIR_filtre/n153 [14]), 
-            .CO(\u_IIR_filtre/add_88/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i15 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i14  (.I0(f_ayi_i[13]), .I1(f_ayi_i[12]), 
             .CI(\u_IIR_filtre/add_88/n26 ), .O(\u_IIR_filtre/n153 [13]), 
-            .CO(\u_IIR_filtre/add_88/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i14 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i13  (.I0(f_ayi_i[12]), .I1(f_ayi_i[11]), 
             .CI(\u_IIR_filtre/add_88/n24 ), .O(\u_IIR_filtre/n153 [12]), 
-            .CO(\u_IIR_filtre/add_88/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i13 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i12  (.I0(f_ayi_i[11]), .I1(f_ayi_i[10]), 
             .CI(\u_IIR_filtre/add_88/n22 ), .O(\u_IIR_filtre/n153 [11]), 
-            .CO(\u_IIR_filtre/add_88/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i12 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i12 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i11  (.I0(f_ayi_i[10]), .I1(f_ayi_i[9]), 
             .CI(\u_IIR_filtre/add_88/n20 ), .O(\u_IIR_filtre/n153 [10]), 
-            .CO(\u_IIR_filtre/add_88/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i11 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i10  (.I0(f_ayi_i[9]), .I1(f_ayi_i[8]), 
             .CI(\u_IIR_filtre/add_88/n18 ), .O(\u_IIR_filtre/n153 [9]), 
-            .CO(\u_IIR_filtre/add_88/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i10 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i10 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i9  (.I0(f_ayi_i[8]), .I1(f_ayi_i[7]), 
             .CI(\u_IIR_filtre/add_88/n16 ), .O(\u_IIR_filtre/n153 [8]), 
-            .CO(\u_IIR_filtre/add_88/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n18 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i9 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i9 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i8  (.I0(f_ayi_i[7]), .I1(f_ayi_i[6]), 
             .CI(\u_IIR_filtre/add_88/n14 ), .O(\u_IIR_filtre/n153 [7]), 
-            .CO(\u_IIR_filtre/add_88/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i8 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i7  (.I0(f_ayi_i[6]), .I1(f_ayi_i[5]), 
             .CI(\u_IIR_filtre/add_88/n12 ), .O(\u_IIR_filtre/n153 [6]), 
-            .CO(\u_IIR_filtre/add_88/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i7 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i7 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i6  (.I0(f_ayi_i[5]), .I1(f_ayi_i[4]), 
             .CI(\u_IIR_filtre/add_88/n10 ), .O(\u_IIR_filtre/n153 [5]), 
-            .CO(\u_IIR_filtre/add_88/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CO(\u_IIR_filtre/add_88/n12 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i6 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i6 .I1_POLARITY = 1'b1;
     EFX_RAM_5K \u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram  (.WCLK(\clk_i~O ), 
@@ -8606,2843 +8633,2429 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram .INIT_13 = 256'h0000000000000000000000000000000000000000000000000000000000000000;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram .OUTPUT_REG = 1'b0;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram .WRITE_MODE = "READ_FIRST";
-    EFX_LUT4 LUT__3673 (.I0(\u_FIFO/u_efx_fifo_top/waddr [8]), .I1(\u_FIFO/u_efx_fifo_top/raddr [8]), 
+    EFX_LUT4 LUT__3683 (.I0(n1526), .I1(n1527), .O(n1528)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3683.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3684 (.I0(\u_FIFO/u_efx_fifo_top/raddr [1]), .I1(\u_FIFO/u_efx_fifo_top/waddr [1]), 
             .I2(\u_FIFO/u_efx_fifo_top/raddr [0]), .I3(\u_FIFO/u_efx_fifo_top/waddr [0]), 
-            .O(n1521)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
-    defparam LUT__3673.LUTMASK = 16'h9009;
-    EFX_LUT4 LUT__3674 (.I0(\u_FIFO/u_efx_fifo_top/waddr [5]), .I1(\u_FIFO/u_efx_fifo_top/raddr [5]), 
-            .O(n1522)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;
-    defparam LUT__3674.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3675 (.I0(\u_FIFO/u_efx_fifo_top/waddr [6]), .I1(\u_FIFO/u_efx_fifo_top/raddr [6]), 
-            .I2(\u_FIFO/u_efx_fifo_top/waddr [1]), .I3(\u_FIFO/u_efx_fifo_top/raddr [1]), 
-            .O(n1523)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
-    defparam LUT__3675.LUTMASK = 16'h9009;
-    EFX_LUT4 LUT__3676 (.I0(\u_FIFO/u_efx_fifo_top/waddr [7]), .I1(\u_FIFO/u_efx_fifo_top/raddr [7]), 
-            .I2(\u_FIFO/u_efx_fifo_top/waddr [4]), .I3(\u_FIFO/u_efx_fifo_top/raddr [4]), 
-            .O(n1524)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
-    defparam LUT__3676.LUTMASK = 16'h9009;
-    EFX_LUT4 LUT__3677 (.I0(n1522), .I1(n1521), .I2(n1523), .I3(n1524), 
-            .O(n1525)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__3677.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3678 (.I0(n1520), .I1(n1525), .O(n1526)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3678.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3679 (.I0(n1526), .I1(fifo_wr_en_o), .O(\u_FIFO/u_efx_fifo_top/wr_en_int )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(999)
-    defparam LUT__3679.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3680 (.I0(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] ), 
-            .I1(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] ), .I2(n1525), 
-            .I3(n1519), .O(n1527)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9000 */ ;
-    defparam LUT__3680.LUTMASK = 16'h9000;
-    EFX_LUT4 LUT__3681 (.I0(n1527), .I1(tx_busy_sig), .I2(uart_read_state[0]), 
-            .I3(uart_read_state[1]), .O(ceg_net256)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h300e */ ;
-    defparam LUT__3681.LUTMASK = 16'h300e;
-    EFX_LUT4 LUT__3682 (.I0(uart_read_state[0]), .I1(uart_read_state[1]), 
-            .O(ceg_net147)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(306)
-    defparam LUT__3682.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3683 (.I0(n1527), .I1(uart_read_state[0]), .I2(tx_busy_sig), 
-            .I3(uart_read_state[1]), .O(n699)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1297)
-    defparam LUT__3683.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__3684 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .I2(\Inst_MPU6500_Controller/state [2]), .O(\Inst_MPU6500_Controller/n731 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3684.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3685 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1528)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3685.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3686 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .O(n1529)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3686.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3687 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/config_idx [1]), 
-            .I2(\Inst_MPU6500_Controller/config_idx [2]), .O(n1530)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__3687.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3688 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .O(n1531)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+            .O(n1529)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
+    defparam LUT__3684.LUTMASK = 16'h9009;
+    EFX_LUT4 LUT__3685 (.I0(\u_FIFO/u_efx_fifo_top/waddr [7]), .I1(\u_FIFO/u_efx_fifo_top/raddr [7]), 
+            .I2(\u_FIFO/u_efx_fifo_top/waddr [8]), .I3(\u_FIFO/u_efx_fifo_top/raddr [8]), 
+            .O(n1530)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
+    defparam LUT__3685.LUTMASK = 16'h9009;
+    EFX_LUT4 LUT__3686 (.I0(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] ), 
+            .I1(\u_FIFO/u_efx_fifo_top/waddr [6]), .I2(\u_FIFO/u_efx_fifo_top/raddr [6]), 
+            .I3(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] ), .O(n1531)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4182 */ ;
+    defparam LUT__3686.LUTMASK = 16'h4182;
+    EFX_LUT4 LUT__3687 (.I0(n1529), .I1(n1530), .I2(n1531), .O(n1532)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3687.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3688 (.I0(n1528), .I1(n1532), .O(n1533)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
     defparam LUT__3688.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3689 (.I0(n1530), .I1(\Inst_MPU6500_Controller/state [0]), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .I3(n1531), .O(n1532)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf400 */ ;
-    defparam LUT__3689.LUTMASK = 16'hf400;
-    EFX_LUT4 LUT__3690 (.I0(switch_out), .I1(n1529), .I2(n1528), .I3(n1532), 
-            .O(ceg_net378)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
-    defparam LUT__3690.LUTMASK = 16'h00bf;
-    EFX_LUT4 LUT__3691 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1533)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3691.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3692 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(n1533), 
-            .O(\~Inst_MPU6500_Controller/n5073 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3692.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3693 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .O(n1534)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3693.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3694 (.I0(\Inst_MPU6500_Controller/byte_cntr [3]), .I1(n1534), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .I3(spi_data_valid), 
-            .O(n1535)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__3694.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3695 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1535), .O(\Inst_MPU6500_Controller/n6171 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3695.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3696 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [10]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [11]), .I3(\Inst_MPU6500_Controller/delay_cntr [4]), 
-            .O(n1536)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__3696.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3697 (.I0(\Inst_MPU6500_Controller/delay_cntr [14]), .I1(\Inst_MPU6500_Controller/delay_cntr [15]), 
-            .O(n1537)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    EFX_LUT4 LUT__3689 (.I0(n1533), .I1(fifo_wr_en_o), .O(\u_FIFO/u_efx_fifo_top/wr_en_int )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(999)
+    defparam LUT__3689.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3690 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(\Inst_MPU6500_Controller/state [2]), .O(\Inst_MPU6500_Controller/n731 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3690.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3691 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/config_idx [1]), 
+            .I2(\Inst_MPU6500_Controller/config_idx [2]), .O(n1534)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__3691.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3692 (.I0(n1534), .I1(\Inst_MPU6500_Controller/state [0]), 
+            .I2(\Inst_MPU6500_Controller/state [3]), .O(n1535)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b0b */ ;
+    defparam LUT__3692.LUTMASK = 16'h0b0b;
+    EFX_LUT4 LUT__3693 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1536)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__3693.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__3694 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .I2(switch_out), .I3(n1536), .O(n1537)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3694.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3695 (.I0(n1535), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(n1537), .O(ceg_net377)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
+    defparam LUT__3695.LUTMASK = 16'h00bf;
+    EFX_LUT4 LUT__3696 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(\Inst_MPU6500_Controller/state [3]), .O(\~Inst_MPU6500_Controller/n5073 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__3696.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3697 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .O(n1538)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
     defparam LUT__3697.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3698 (.I0(n1536), .I1(n1537), .I2(\Inst_MPU6500_Controller/delay_cntr [7]), 
-            .I3(\Inst_MPU6500_Controller/delay_cntr [17]), .O(n1538)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3698.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3699 (.I0(\Inst_MPU6500_Controller/delay_cntr [5]), .I1(\Inst_MPU6500_Controller/delay_cntr [0]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [12]), .O(n1539)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3699.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3700 (.I0(\Inst_MPU6500_Controller/delay_cntr [19]), .I1(n1539), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [20]), .I3(\Inst_MPU6500_Controller/delay_cntr [21]), 
-            .O(n1540)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__3700.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3701 (.I0(\Inst_MPU6500_Controller/delay_cntr [9]), .I1(\Inst_MPU6500_Controller/delay_cntr [16]), 
+    EFX_LUT4 LUT__3698 (.I0(\Inst_MPU6500_Controller/byte_cntr [3]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(spi_data_valid), .I3(n1538), .O(n1539)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
+    defparam LUT__3698.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__3699 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1539), .O(\Inst_MPU6500_Controller/n6171 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3699.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3700 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [0]), 
+            .I2(\Inst_MPU6500_Controller/state [2]), .O(n1540)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
+    defparam LUT__3700.LUTMASK = 16'he0e0;
+    EFX_LUT4 LUT__3701 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(n1540), 
+            .O(n1541)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3701.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3702 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [17]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [19]), .I3(\Inst_MPU6500_Controller/delay_cntr [20]), 
+            .O(n1542)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__3702.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__3703 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [11]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [14]), .I3(\Inst_MPU6500_Controller/delay_cntr [15]), 
+            .O(n1543)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__3703.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__3704 (.I0(\Inst_MPU6500_Controller/delay_cntr [21]), .I1(n1542), 
+            .I2(n1543), .O(n1544)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__3704.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3705 (.I0(\Inst_MPU6500_Controller/delay_cntr [9]), .I1(\Inst_MPU6500_Controller/delay_cntr [16]), 
             .I2(\Inst_MPU6500_Controller/delay_cntr [18]), .I3(\Inst_MPU6500_Controller/delay_cntr [6]), 
-            .O(n1541)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
-    defparam LUT__3701.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3702 (.I0(\Inst_MPU6500_Controller/delay_cntr [1]), .I1(\Inst_MPU6500_Controller/delay_cntr [3]), 
+            .O(n1545)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3705.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3706 (.I0(\Inst_MPU6500_Controller/delay_cntr [1]), .I1(\Inst_MPU6500_Controller/delay_cntr [3]), 
             .I2(\Inst_MPU6500_Controller/delay_cntr [8]), .I3(\Inst_MPU6500_Controller/delay_cntr [2]), 
-            .O(n1542)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
-    defparam LUT__3702.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3703 (.I0(n1541), .I1(n1542), .O(n1543)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3703.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3704 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(\Inst_MPU6500_Controller/state [0]), 
-            .O(n1544)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3704.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3705 (.I0(n1540), .I1(n1543), .I2(n1538), .I3(n1544), 
-            .O(n1545)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
-    defparam LUT__3705.LUTMASK = 16'h7f00;
-    EFX_LUT4 LUT__3706 (.I0(\Inst_MPU6500_Controller/delay_cntr [4]), .I1(\Inst_MPU6500_Controller/delay_cntr [10]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [12]), .I3(\Inst_MPU6500_Controller/delay_cntr [5]), 
             .O(n1546)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
     defparam LUT__3706.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3707 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(n1546), 
-            .O(n1547)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3707.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3708 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [11]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [14]), .I3(\Inst_MPU6500_Controller/delay_cntr [15]), 
-            .O(n1548)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__3708.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__3709 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [17]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [19]), .I3(\Inst_MPU6500_Controller/delay_cntr [20]), 
-            .O(n1549)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__3709.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__3710 (.I0(\Inst_MPU6500_Controller/delay_cntr [21]), .I1(n1548), 
-            .I2(n1549), .O(n1550)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3710.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3711 (.I0(n1547), .I1(n1550), .I2(n1543), .I3(n1531), 
-            .O(n1551)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
-    defparam LUT__3711.LUTMASK = 16'h7f00;
-    EFX_LUT4 LUT__3712 (.I0(n1551), .I1(n1545), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1552)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;
-    defparam LUT__3712.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__3713 (.I0(n1529), .I1(n1533), .O(n1553)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3713.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3714 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/state [0]), 
-            .I2(spi_data_valid), .O(n1554)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3714.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3715 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [3]), .O(n1555)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3715.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3716 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .I2(\Inst_MPU6500_Controller/state [2]), .I3(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1556)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f00 */ ;
-    defparam LUT__3716.LUTMASK = 16'h1f00;
-    EFX_LUT4 LUT__3717 (.I0(n1555), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .I2(n1554), .I3(n1556), .O(n1557)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
-    defparam LUT__3717.LUTMASK = 16'h7f00;
-    EFX_LUT4 LUT__3718 (.I0(n1553), .I1(n1552), .I2(n1557), .I3(\Inst_MPU6500_Controller/delay_cntr [0]), 
-            .O(\Inst_MPU6500_Controller/n740 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0ee */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3718.LUTMASK = 16'hf0ee;
-    EFX_LUT4 LUT__3719 (.I0(spi_data_valid), .I1(switch_out), .I2(\Inst_MPU6500_Controller/state [0]), 
-            .I3(\Inst_MPU6500_Controller/state [2]), .O(n1558)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5f0c */ ;
-    defparam LUT__3719.LUTMASK = 16'h5f0c;
-    EFX_LUT4 LUT__3720 (.I0(n1531), .I1(\Inst_MPU6500_Controller/state [0]), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .O(n1559)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__3720.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__3721 (.I0(n1558), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .I2(n1559), .O(ceg_net418)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__3721.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__3722 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .O(n1560)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__3722.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__3723 (.I0(n1555), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
-            .I2(spi_data_valid), .I3(n1560), .O(\Inst_MPU6500_Controller/n735 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbc00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3723.LUTMASK = 16'hbc00;
-    EFX_LUT4 LUT__3724 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .O(n1561)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3724.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3725 (.I0(switch_out), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .I2(n1561), .I3(\Inst_MPU6500_Controller/state [1]), .O(ceg_net433)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf32f */ ;
-    defparam LUT__3725.LUTMASK = 16'hf32f;
-    EFX_LUT4 LUT__3726 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1562)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3726.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3727 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(n1562), 
-            .I2(\Inst_MPU6500_Controller/state [2]), .O(\Inst_MPU6500_Controller/n777 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4141 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3727.LUTMASK = 16'h4141;
-    EFX_LUT4 LUT__3728 (.I0(n1531), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .I2(\Inst_MPU6500_Controller/state [0]), .O(n1563)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
-    defparam LUT__3728.LUTMASK = 16'h0707;
-    EFX_LUT4 LUT__3729 (.I0(spi_data_valid), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .I2(n1544), .O(n1564)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3729.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3730 (.I0(\Inst_MPU6500_Controller/delay_cntr [6]), .I1(\Inst_MPU6500_Controller/delay_cntr [4]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [16]), .I3(\Inst_MPU6500_Controller/delay_cntr [18]), 
-            .O(n1565)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__3730.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3731 (.I0(\Inst_MPU6500_Controller/delay_cntr [9]), .I1(\Inst_MPU6500_Controller/delay_cntr [10]), 
-            .O(n1566)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3731.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3732 (.I0(n1542), .I1(n1539), .I2(n1565), .I3(n1566), 
-            .O(n1567)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3732.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3733 (.I0(n1550), .I1(n1567), .O(n1568)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3733.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3734 (.I0(n1568), .I1(n1533), .I2(\Inst_MPU6500_Controller/state [0]), 
-            .O(n1569)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3734.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3735 (.I0(n1551), .I1(n1563), .I2(n1564), .I3(n1569), 
-            .O(\Inst_MPU6500_Controller/n763 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfff4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3735.LUTMASK = 16'hfff4;
-    EFX_LUT4 LUT__3736 (.I0(spi_data_valid), .I1(switch_out), .I2(\Inst_MPU6500_Controller/state [0]), 
-            .I3(\Inst_MPU6500_Controller/state [2]), .O(n1570)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'haff3 */ ;
-    defparam LUT__3736.LUTMASK = 16'haff3;
-    EFX_LUT4 LUT__3737 (.I0(spi_data_valid), .I1(n1534), .I2(n1528), .O(n1571)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3737.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3738 (.I0(n1545), .I1(n1570), .I2(n1562), .I3(n1571), 
-            .O(ceg_net420)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hffb0 */ ;
-    defparam LUT__3738.LUTMASK = 16'hffb0;
-    EFX_LUT4 LUT__3739 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
-            .I2(n1535), .I3(\Inst_MPU6500_Controller/byte_cntr [0]), .O(\Inst_MPU6500_Controller/n6172 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3739.LUTMASK = 16'h1000;
-    EFX_LUT4 LUT__3740 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [1]), .I3(n1535), .O(\Inst_MPU6500_Controller/n6173 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3740.LUTMASK = 16'h1000;
-    EFX_LUT4 LUT__3741 (.I0(\Inst_MPU6500_Controller/byte_cntr [2]), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [1]), .I3(n1535), .O(\Inst_MPU6500_Controller/n6174 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3741.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3742 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
-            .I2(n1535), .I3(\Inst_MPU6500_Controller/byte_cntr [2]), .O(\Inst_MPU6500_Controller/n6175 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3742.LUTMASK = 16'h1000;
-    EFX_LUT4 LUT__3743 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
-            .I2(n1535), .I3(\Inst_MPU6500_Controller/byte_cntr [2]), .O(\Inst_MPU6500_Controller/n6176 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3743.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3744 (.I0(n1534), .I1(\Inst_MPU6500_Controller/byte_cntr [3]), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .I3(spi_data_valid), 
-            .O(n1572)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3744.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3745 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1572), .O(\Inst_MPU6500_Controller/n6179 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3745.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3746 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
-            .I2(n1572), .I3(\Inst_MPU6500_Controller/byte_cntr [0]), .O(\Inst_MPU6500_Controller/n6180 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3746.LUTMASK = 16'h1000;
-    EFX_LUT4 LUT__3747 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [1]), .I3(n1572), .O(\Inst_MPU6500_Controller/n6181 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3747.LUTMASK = 16'h1000;
-    EFX_LUT4 LUT__3748 (.I0(\Inst_MPU6500_Controller/byte_cntr [2]), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [1]), .I3(n1572), .O(\Inst_MPU6500_Controller/n6182 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3748.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3749 (.I0(n1534), .I1(n1555), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .I3(spi_data_valid), .O(n1573)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3749.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3750 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(n1573), 
-            .O(\Inst_MPU6500_Controller/n6183 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3750.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3751 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(spi_data_valid), 
-            .O(n1574)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3751.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3752 (.I0(n1555), .I1(n1574), .I2(\Inst_MPU6500_Controller/state [1]), 
-            .O(n1575)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3752.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3753 (.I0(n1575), .I1(\Inst_MPU6500_Controller/state [0]), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .O(\Inst_MPU6500_Controller/n6184 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3753.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3754 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1576)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3754.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3755 (.I0(mpu_to_spi_data[0]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(n1576), .O(n1577)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
-    defparam LUT__3755.LUTMASK = 16'hb0b0;
-    EFX_LUT4 LUT__3756 (.I0(\Inst_MPU6500_Controller/config_idx [2]), .I1(\Inst_MPU6500_Controller/config_idx [0]), 
-            .I2(n1528), .I3(n1577), .O(\Inst_MPU6500_Controller/n768 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hff10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3756.LUTMASK = 16'hff10;
-    EFX_LUT4 LUT__3757 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .I2(\Inst_MPU6500_Controller/state [0]), .I3(\Inst_MPU6500_Controller/state [2]), 
-            .O(ceg_net421)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(26)
-    defparam LUT__3757.LUTMASK = 16'hab0e;
-    EFX_LUT4 LUT__3758 (.I0(n1575), .I1(n1561), .I2(spi_cs_n_o), .O(n1578)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__3758.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__3759 (.I0(n1578), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [3]), 
-            .O(\Inst_MPU6500_Controller/n730 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h54cf */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3759.LUTMASK = 16'h54cf;
-    EFX_LUT4 LUT__3760 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(spi_data_valid), 
-            .O(n1579)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3760.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3761 (.I0(n1579), .I1(switch_out), .I2(n1561), .I3(\Inst_MPU6500_Controller/state [1]), 
-            .O(n1580)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0ba */ ;
-    defparam LUT__3761.LUTMASK = 16'hf0ba;
-    EFX_LUT4 LUT__3762 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(n1580), 
-            .I2(\Inst_MPU6500_Controller/state [1]), .I3(n1544), .O(ceg_net422)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f11 */ ;
-    defparam LUT__3762.LUTMASK = 16'h1f11;
-    EFX_LUT4 LUT__3763 (.I0(n1550), .I1(n1567), .I2(n1553), .O(n1581)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
-    defparam LUT__3763.LUTMASK = 16'h7070;
-    EFX_LUT4 LUT__3764 (.I0(n1575), .I1(n1544), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1582)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
-    defparam LUT__3764.LUTMASK = 16'h7070;
-    EFX_LUT4 LUT__3765 (.I0(n1581), .I1(\Inst_MPU6500_Controller/delay_cntr [0]), 
-            .I2(n1582), .I3(\Inst_MPU6500_Controller/delay_cntr [1]), .O(n1583)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8f77 */ ;
-    defparam LUT__3765.LUTMASK = 16'h8f77;
-    EFX_LUT4 LUT__3766 (.I0(n1583), .I1(\Inst_MPU6500_Controller/delay_cntr [0]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [1]), .I3(n1552), .O(\Inst_MPU6500_Controller/n740 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7d55 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3766.LUTMASK = 16'h7d55;
-    EFX_LUT4 LUT__3767 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(\Inst_MPU6500_Controller/delay_cntr [1]), 
-            .O(n1584)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3767.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3768 (.I0(n1556), .I1(n1584), .O(n1585)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3768.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3769 (.I0(n1551), .I1(n1545), .I2(n1585), .I3(n1582), 
-            .O(n1586)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h001f */ ;
-    defparam LUT__3769.LUTMASK = 16'h001f;
-    EFX_LUT4 LUT__3770 (.I0(n1551), .I1(n1545), .I2(n1556), .I3(n1584), 
-            .O(n1587)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__3770.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__3771 (.I0(n1568), .I1(n1584), .I2(n1553), .O(n1588)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__3771.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__3772 (.I0(n1586), .I1(n1587), .I2(n1588), .I3(\Inst_MPU6500_Controller/delay_cntr [2]), 
-            .O(\Inst_MPU6500_Controller/n740 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h05fc */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3772.LUTMASK = 16'h05fc;
-    EFX_LUT4 LUT__3773 (.I0(n1556), .I1(n1584), .I2(\Inst_MPU6500_Controller/delay_cntr [2]), 
-            .O(n1589)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3773.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3774 (.I0(n1552), .I1(n1582), .I2(n1589), .I3(\Inst_MPU6500_Controller/delay_cntr [3]), 
-            .O(\Inst_MPU6500_Controller/n740 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0ee0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3774.LUTMASK = 16'h0ee0;
-    EFX_LUT4 LUT__3775 (.I0(n1551), .I1(n1545), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .I3(n1581), .O(n1590)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f1 */ ;
-    defparam LUT__3775.LUTMASK = 16'h00f1;
-    EFX_LUT4 LUT__3776 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(\Inst_MPU6500_Controller/delay_cntr [1]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [2]), .I3(\Inst_MPU6500_Controller/delay_cntr [3]), 
-            .O(n1591)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3776.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3777 (.I0(n1557), .I1(n1590), .I2(n1591), .I3(\Inst_MPU6500_Controller/delay_cntr [4]), 
-            .O(\Inst_MPU6500_Controller/n740 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3777.LUTMASK = 16'hab30;
-    EFX_LUT4 LUT__3778 (.I0(n1556), .I1(n1591), .I2(\Inst_MPU6500_Controller/delay_cntr [4]), 
-            .O(n1592)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3778.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3779 (.I0(n1552), .I1(n1582), .I2(n1592), .I3(\Inst_MPU6500_Controller/delay_cntr [5]), 
-            .O(\Inst_MPU6500_Controller/n740 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0ee0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3779.LUTMASK = 16'h0ee0;
-    EFX_LUT4 LUT__3780 (.I0(n1592), .I1(\Inst_MPU6500_Controller/delay_cntr [5]), 
-            .O(n1593)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3780.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3781 (.I0(n1552), .I1(n1582), .I2(n1593), .I3(\Inst_MPU6500_Controller/delay_cntr [6]), 
-            .O(\Inst_MPU6500_Controller/n740 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0ee0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3781.LUTMASK = 16'h0ee0;
-    EFX_LUT4 LUT__3782 (.I0(n1575), .I1(n1544), .O(n1594)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3782.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3783 (.I0(\Inst_MPU6500_Controller/delay_cntr [4]), .I1(\Inst_MPU6500_Controller/delay_cntr [5]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [6]), .O(n1595)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3783.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3784 (.I0(n1591), .I1(n1595), .O(n1596)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3784.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3785 (.I0(n1529), .I1(n1596), .I2(\Inst_MPU6500_Controller/state [2]), 
-            .O(n1597)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3785.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3786 (.I0(n1594), .I1(n1597), .I2(\Inst_MPU6500_Controller/delay_cntr [7]), 
-            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1598)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
-    defparam LUT__3786.LUTMASK = 16'h1c00;
-    EFX_LUT4 LUT__3787 (.I0(n1598), .I1(n1596), .I2(\Inst_MPU6500_Controller/delay_cntr [7]), 
-            .I3(n1552), .O(\Inst_MPU6500_Controller/n740 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3787.LUTMASK = 16'hbeaa;
-    EFX_LUT4 LUT__3788 (.I0(n1556), .I1(n1596), .I2(\Inst_MPU6500_Controller/delay_cntr [7]), 
-            .I3(\Inst_MPU6500_Controller/delay_cntr [8]), .O(n1599)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h40bf */ ;
-    defparam LUT__3788.LUTMASK = 16'h40bf;
-    EFX_LUT4 LUT__3789 (.I0(n1552), .I1(n1582), .I2(n1599), .O(\Inst_MPU6500_Controller/n740 [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3789.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__3790 (.I0(n1551), .I1(n1545), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1600)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;
-    defparam LUT__3790.LUTMASK = 16'h0101;
-    EFX_LUT4 LUT__3791 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [8]), 
-            .O(n1601)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3791.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3792 (.I0(n1591), .I1(n1595), .I2(n1601), .O(n1602)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3792.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3793 (.I0(n1602), .I1(n1556), .I2(n1582), .I3(\Inst_MPU6500_Controller/delay_cntr [9]), 
-            .O(n1603)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__3793.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__3794 (.I0(n1550), .I1(n1567), .I2(n1602), .I3(n1556), 
-            .O(n1604)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f8 */ ;
-    defparam LUT__3794.LUTMASK = 16'h00f8;
-    EFX_LUT4 LUT__3795 (.I0(n1533), .I1(n1604), .I2(\Inst_MPU6500_Controller/delay_cntr [9]), 
-            .O(n1605)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7c7c */ ;
-    defparam LUT__3795.LUTMASK = 16'h7c7c;
-    EFX_LUT4 LUT__3796 (.I0(n1600), .I1(n1603), .I2(n1605), .O(\Inst_MPU6500_Controller/n740 [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3796.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3797 (.I0(n1602), .I1(\Inst_MPU6500_Controller/delay_cntr [9]), 
-            .O(n1606)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3797.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3798 (.I0(n1557), .I1(n1590), .I2(n1606), .I3(\Inst_MPU6500_Controller/delay_cntr [10]), 
-            .O(\Inst_MPU6500_Controller/n740 [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3798.LUTMASK = 16'hab30;
-    EFX_LUT4 LUT__3799 (.I0(n1556), .I1(n1602), .I2(n1566), .I3(\Inst_MPU6500_Controller/delay_cntr [11]), 
-            .O(n1607)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h40bf */ ;
-    defparam LUT__3799.LUTMASK = 16'h40bf;
-    EFX_LUT4 LUT__3800 (.I0(n1552), .I1(n1582), .I2(n1607), .O(\Inst_MPU6500_Controller/n740 [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3800.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__3801 (.I0(n1557), .I1(n1529), .I2(n1533), .I3(\Inst_MPU6500_Controller/delay_cntr [12]), 
-            .O(n1608)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
-    defparam LUT__3801.LUTMASK = 16'hca00;
-    EFX_LUT4 LUT__3802 (.I0(n1551), .I1(n1545), .I2(n1568), .I3(n1533), 
-            .O(n1609)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0fee */ ;
-    defparam LUT__3802.LUTMASK = 16'h0fee;
-    EFX_LUT4 LUT__3803 (.I0(n1566), .I1(n1601), .I2(\Inst_MPU6500_Controller/delay_cntr [11]), 
-            .O(n1610)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3803.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3804 (.I0(n1596), .I1(n1610), .I2(n1556), .I3(\Inst_MPU6500_Controller/delay_cntr [12]), 
-            .O(n1611)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0708 */ ;
-    defparam LUT__3804.LUTMASK = 16'h0708;
-    EFX_LUT4 LUT__3805 (.I0(n1609), .I1(n1611), .I2(n1608), .O(\Inst_MPU6500_Controller/n740 [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf8f8 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3805.LUTMASK = 16'hf8f8;
-    EFX_LUT4 LUT__3806 (.I0(\Inst_MPU6500_Controller/delay_cntr [9]), .I1(\Inst_MPU6500_Controller/delay_cntr [10]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [11]), .I3(\Inst_MPU6500_Controller/delay_cntr [12]), 
-            .O(n1612)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3806.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3807 (.I0(n1591), .I1(n1595), .I2(n1601), .I3(n1612), 
-            .O(n1613)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3807.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3808 (.I0(n1529), .I1(n1613), .I2(\Inst_MPU6500_Controller/state [2]), 
-            .O(n1614)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3808.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3809 (.I0(n1594), .I1(n1614), .I2(\Inst_MPU6500_Controller/delay_cntr [13]), 
-            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1615)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
-    defparam LUT__3809.LUTMASK = 16'h1c00;
-    EFX_LUT4 LUT__3810 (.I0(n1615), .I1(n1613), .I2(\Inst_MPU6500_Controller/delay_cntr [13]), 
-            .I3(n1552), .O(\Inst_MPU6500_Controller/n740 [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3810.LUTMASK = 16'hbeaa;
-    EFX_LUT4 LUT__3811 (.I0(n1556), .I1(n1613), .I2(\Inst_MPU6500_Controller/delay_cntr [13]), 
-            .O(n1616)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3811.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3812 (.I0(n1552), .I1(n1582), .I2(n1616), .I3(\Inst_MPU6500_Controller/delay_cntr [14]), 
-            .O(\Inst_MPU6500_Controller/n740 [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0ee0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3812.LUTMASK = 16'h0ee0;
-    EFX_LUT4 LUT__3813 (.I0(n1616), .I1(\Inst_MPU6500_Controller/delay_cntr [14]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [15]), .O(n1617)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;
-    defparam LUT__3813.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3814 (.I0(n1552), .I1(n1582), .I2(n1617), .O(\Inst_MPU6500_Controller/n740 [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3814.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__3815 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [14]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [15]), .O(n1618)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3815.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3816 (.I0(n1613), .I1(n1618), .O(n1619)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3816.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3817 (.I0(n1557), .I1(n1590), .I2(n1619), .I3(\Inst_MPU6500_Controller/delay_cntr [16]), 
-            .O(\Inst_MPU6500_Controller/n740 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3817.LUTMASK = 16'hab30;
-    EFX_LUT4 LUT__3818 (.I0(n1616), .I1(n1537), .I2(\Inst_MPU6500_Controller/delay_cntr [16]), 
-            .I3(\Inst_MPU6500_Controller/delay_cntr [17]), .O(n1620)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h807f */ ;
-    defparam LUT__3818.LUTMASK = 16'h807f;
-    EFX_LUT4 LUT__3819 (.I0(n1552), .I1(n1582), .I2(n1620), .O(\Inst_MPU6500_Controller/n740 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3819.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__3820 (.I0(n1613), .I1(n1618), .I2(\Inst_MPU6500_Controller/delay_cntr [16]), 
-            .I3(\Inst_MPU6500_Controller/delay_cntr [17]), .O(n1621)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3820.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3821 (.I0(n1568), .I1(n1556), .I2(n1621), .I3(\Inst_MPU6500_Controller/delay_cntr [18]), 
-            .O(n1622)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h32cf */ ;
-    defparam LUT__3821.LUTMASK = 16'h32cf;
-    EFX_LUT4 LUT__3822 (.I0(n1565), .I1(n1582), .I2(n1622), .I3(n1552), 
-            .O(\Inst_MPU6500_Controller/n740 [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'haf0c */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3822.LUTMASK = 16'haf0c;
-    EFX_LUT4 LUT__3823 (.I0(n1618), .I1(\Inst_MPU6500_Controller/delay_cntr [16]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [17]), .I3(\Inst_MPU6500_Controller/delay_cntr [18]), 
-            .O(n1623)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3823.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3824 (.I0(n1529), .I1(n1623), .I2(n1613), .I3(\Inst_MPU6500_Controller/state [2]), 
-            .O(n1624)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__3824.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__3825 (.I0(n1594), .I1(n1624), .I2(\Inst_MPU6500_Controller/delay_cntr [19]), 
-            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1625)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
-    defparam LUT__3825.LUTMASK = 16'h1c00;
-    EFX_LUT4 LUT__3826 (.I0(n1613), .I1(n1623), .O(n1626)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3826.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3827 (.I0(n1625), .I1(n1626), .I2(\Inst_MPU6500_Controller/delay_cntr [19]), 
-            .I3(n1552), .O(\Inst_MPU6500_Controller/n740 [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3827.LUTMASK = 16'hbeaa;
-    EFX_LUT4 LUT__3828 (.I0(n1529), .I1(\Inst_MPU6500_Controller/delay_cntr [19]), 
-            .I2(\Inst_MPU6500_Controller/state [2]), .O(n1627)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3828.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3829 (.I0(n1613), .I1(n1623), .I2(n1627), .O(n1628)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3829.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3830 (.I0(n1594), .I1(n1628), .I2(\Inst_MPU6500_Controller/delay_cntr [20]), 
-            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1629)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
-    defparam LUT__3830.LUTMASK = 16'h1c00;
-    EFX_LUT4 LUT__3831 (.I0(n1626), .I1(\Inst_MPU6500_Controller/delay_cntr [19]), 
-            .O(n1630)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3831.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3832 (.I0(n1629), .I1(n1630), .I2(\Inst_MPU6500_Controller/delay_cntr [20]), 
-            .I3(n1552), .O(\Inst_MPU6500_Controller/n740 [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3832.LUTMASK = 16'hbeaa;
-    EFX_LUT4 LUT__3833 (.I0(n1613), .I1(n1623), .I2(n1627), .I3(\Inst_MPU6500_Controller/delay_cntr [20]), 
-            .O(n1631)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3833.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3834 (.I0(n1594), .I1(n1631), .I2(\Inst_MPU6500_Controller/delay_cntr [21]), 
-            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1632)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
-    defparam LUT__3834.LUTMASK = 16'h1c00;
-    EFX_LUT4 LUT__3835 (.I0(n1626), .I1(\Inst_MPU6500_Controller/delay_cntr [19]), 
-            .I2(\Inst_MPU6500_Controller/delay_cntr [20]), .O(n1633)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3835.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3836 (.I0(n1632), .I1(n1633), .I2(\Inst_MPU6500_Controller/delay_cntr [21]), 
-            .I3(n1552), .O(\Inst_MPU6500_Controller/n740 [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3836.LUTMASK = 16'hbeaa;
-    EFX_LUT4 LUT__3837 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
-            .O(\Inst_MPU6500_Controller/n4257 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3837.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3838 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[3] [3]), .O(\Inst_MPU6500_Controller/n4262 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3838.LUTMASK = 16'he1e1;
-    EFX_LUT4 LUT__3839 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[3] [3]), .I3(\Inst_MPU6500_Controller/raw_data[3] [4]), 
-            .O(\Inst_MPU6500_Controller/n4267 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h01fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3839.LUTMASK = 16'h01fe;
-    EFX_LUT4 LUT__3840 (.I0(\Inst_MPU6500_Controller/raw_data[3] [3]), .I1(\Inst_MPU6500_Controller/raw_data[3] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[3] [2]), .I3(\Inst_MPU6500_Controller/raw_data[3] [4]), 
-            .O(n1634)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
-    defparam LUT__3840.LUTMASK = 16'hfe00;
-    EFX_LUT4 LUT__3841 (.I0(n1634), .I1(\Inst_MPU6500_Controller/raw_data[3] [5]), 
-            .O(\Inst_MPU6500_Controller/n4272 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3841.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3842 (.I0(n1634), .I1(\Inst_MPU6500_Controller/raw_data[3] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[3] [6]), .O(\Inst_MPU6500_Controller/n4277 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3842.LUTMASK = 16'he1e1;
-    EFX_LUT4 LUT__3843 (.I0(n1634), .I1(\Inst_MPU6500_Controller/raw_data[3] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[3] [6]), .I3(\Inst_MPU6500_Controller/raw_data[3] [7]), 
-            .O(\Inst_MPU6500_Controller/n4282 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe01 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3843.LUTMASK = 16'hfe01;
-    EFX_LUT4 LUT__3844 (.I0(n1634), .I1(\Inst_MPU6500_Controller/raw_data[3] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[3] [6]), .I3(\Inst_MPU6500_Controller/raw_data[3] [7]), 
-            .O(n1635)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__3844.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__3845 (.I0(n1635), .I1(\Inst_MPU6500_Controller/raw_data[2] [0]), 
-            .O(\Inst_MPU6500_Controller/n4287 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3845.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3846 (.I0(\Inst_MPU6500_Controller/raw_data[2] [0]), .I1(n1635), 
-            .I2(\Inst_MPU6500_Controller/raw_data[2] [1]), .O(\Inst_MPU6500_Controller/n4292 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3846.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3847 (.I0(\Inst_MPU6500_Controller/raw_data[2] [0]), .I1(\Inst_MPU6500_Controller/raw_data[2] [1]), 
-            .I2(n1635), .O(n1636)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__3847.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3848 (.I0(n1636), .I1(\Inst_MPU6500_Controller/raw_data[2] [2]), 
-            .O(\Inst_MPU6500_Controller/n4297 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3848.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3849 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(n1636), 
-            .I2(\Inst_MPU6500_Controller/raw_data[2] [3]), .O(\Inst_MPU6500_Controller/n4302 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3849.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3850 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(\Inst_MPU6500_Controller/raw_data[2] [3]), 
-            .I2(n1636), .I3(\Inst_MPU6500_Controller/raw_data[2] [4]), .O(\Inst_MPU6500_Controller/n4307 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3850.LUTMASK = 16'hef10;
-    EFX_LUT4 LUT__3851 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(\Inst_MPU6500_Controller/raw_data[2] [3]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[2] [4]), .I3(n1636), .O(n1637)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
-    defparam LUT__3851.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3852 (.I0(n1637), .I1(\Inst_MPU6500_Controller/raw_data[2] [5]), 
-            .O(\Inst_MPU6500_Controller/n4312 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3852.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3853 (.I0(\Inst_MPU6500_Controller/raw_data[2] [5]), .I1(n1637), 
-            .I2(\Inst_MPU6500_Controller/raw_data[2] [6]), .O(\Inst_MPU6500_Controller/n4317 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3853.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3854 (.I0(\Inst_MPU6500_Controller/raw_data[2] [5]), .I1(\Inst_MPU6500_Controller/raw_data[2] [6]), 
-            .I2(n1637), .I3(\Inst_MPU6500_Controller/raw_data[2] [7]), .O(\Inst_MPU6500_Controller/n4322 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3854.LUTMASK = 16'hef10;
-    EFX_LUT4 LUT__3855 (.I0(\Inst_MPU6500_Controller/raw_data[5] [0]), .I1(\Inst_MPU6500_Controller/raw_data[5] [1]), 
-            .O(\Inst_MPU6500_Controller/n4332 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3855.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3856 (.I0(\Inst_MPU6500_Controller/raw_data[5] [0]), .I1(\Inst_MPU6500_Controller/raw_data[5] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [2]), .O(\Inst_MPU6500_Controller/n4337 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1e1e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3856.LUTMASK = 16'h1e1e;
-    EFX_LUT4 LUT__3857 (.I0(\Inst_MPU6500_Controller/raw_data[5] [0]), .I1(\Inst_MPU6500_Controller/raw_data[5] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [2]), .O(n1638)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__3857.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__3858 (.I0(n1638), .I1(\Inst_MPU6500_Controller/raw_data[5] [3]), 
-            .O(\Inst_MPU6500_Controller/n4342 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3858.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3859 (.I0(n1638), .I1(\Inst_MPU6500_Controller/raw_data[5] [3]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [4]), .O(\Inst_MPU6500_Controller/n4347 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3859.LUTMASK = 16'he1e1;
-    EFX_LUT4 LUT__3860 (.I0(n1638), .I1(\Inst_MPU6500_Controller/raw_data[5] [3]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [4]), .I3(\Inst_MPU6500_Controller/raw_data[5] [5]), 
-            .O(\Inst_MPU6500_Controller/n4352 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h01fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3860.LUTMASK = 16'h01fe;
-    EFX_LUT4 LUT__3861 (.I0(\Inst_MPU6500_Controller/raw_data[5] [4]), .I1(n1638), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [3]), .I3(\Inst_MPU6500_Controller/raw_data[5] [5]), 
-            .O(n1639)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
-    defparam LUT__3861.LUTMASK = 16'hfe00;
-    EFX_LUT4 LUT__3862 (.I0(n1639), .I1(\Inst_MPU6500_Controller/raw_data[5] [6]), 
-            .O(\Inst_MPU6500_Controller/n4357 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3862.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3863 (.I0(n1639), .I1(\Inst_MPU6500_Controller/raw_data[5] [6]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [7]), .O(\Inst_MPU6500_Controller/n4362 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3863.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3864 (.I0(n1639), .I1(\Inst_MPU6500_Controller/raw_data[5] [6]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [7]), .I3(\Inst_MPU6500_Controller/raw_data[4] [0]), 
-            .O(\Inst_MPU6500_Controller/n4367 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3864.LUTMASK = 16'h7f80;
-    EFX_LUT4 LUT__3865 (.I0(n1639), .I1(\Inst_MPU6500_Controller/raw_data[4] [0]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[5] [6]), .I3(\Inst_MPU6500_Controller/raw_data[5] [7]), 
-            .O(n1640)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3865.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3866 (.I0(n1640), .I1(\Inst_MPU6500_Controller/raw_data[4] [1]), 
-            .O(\Inst_MPU6500_Controller/n4372 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3866.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3867 (.I0(n1640), .I1(\Inst_MPU6500_Controller/raw_data[4] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[4] [2]), .O(\Inst_MPU6500_Controller/n4377 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3867.LUTMASK = 16'he1e1;
-    EFX_LUT4 LUT__3868 (.I0(n1640), .I1(\Inst_MPU6500_Controller/raw_data[4] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[4] [2]), .O(n1641)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;
-    defparam LUT__3868.LUTMASK = 16'h0101;
-    EFX_LUT4 LUT__3869 (.I0(n1641), .I1(\Inst_MPU6500_Controller/raw_data[4] [3]), 
-            .O(\Inst_MPU6500_Controller/n4382 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3869.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3870 (.I0(\Inst_MPU6500_Controller/raw_data[4] [3]), .I1(n1641), 
-            .I2(\Inst_MPU6500_Controller/raw_data[4] [4]), .O(\Inst_MPU6500_Controller/n4387 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3870.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3871 (.I0(\Inst_MPU6500_Controller/raw_data[4] [1]), .I1(\Inst_MPU6500_Controller/raw_data[4] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[4] [3]), .I3(\Inst_MPU6500_Controller/raw_data[4] [4]), 
-            .O(n1642)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__3871.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__3872 (.I0(n1640), .I1(n1642), .I2(\Inst_MPU6500_Controller/raw_data[4] [5]), 
-            .O(\Inst_MPU6500_Controller/n4392 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3872.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3873 (.I0(n1640), .I1(\Inst_MPU6500_Controller/raw_data[4] [5]), 
-            .I2(n1642), .O(n1643)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__3873.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3874 (.I0(n1643), .I1(\Inst_MPU6500_Controller/raw_data[4] [6]), 
-            .O(\Inst_MPU6500_Controller/n4397 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3874.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3875 (.I0(\Inst_MPU6500_Controller/raw_data[4] [6]), .I1(n1643), 
-            .I2(\Inst_MPU6500_Controller/raw_data[4] [7]), .O(\Inst_MPU6500_Controller/n4402 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3875.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3876 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
-            .O(\Inst_MPU6500_Controller/n4417 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3876.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3877 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[9] [3]), .O(\Inst_MPU6500_Controller/n4422 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8787 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3877.LUTMASK = 16'h8787;
-    EFX_LUT4 LUT__3878 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[9] [3]), .I3(\Inst_MPU6500_Controller/raw_data[9] [4]), 
-            .O(\Inst_MPU6500_Controller/n4427 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf807 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3878.LUTMASK = 16'hf807;
-    EFX_LUT4 LUT__3879 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[9] [3]), .I3(\Inst_MPU6500_Controller/raw_data[9] [4]), 
-            .O(n1644)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;
-    defparam LUT__3879.LUTMASK = 16'h0007;
-    EFX_LUT4 LUT__3880 (.I0(n1644), .I1(\Inst_MPU6500_Controller/raw_data[9] [5]), 
-            .O(\Inst_MPU6500_Controller/n4432 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3880.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3881 (.I0(\Inst_MPU6500_Controller/raw_data[9] [5]), .I1(n1644), 
-            .I2(\Inst_MPU6500_Controller/raw_data[9] [6]), .O(\Inst_MPU6500_Controller/n4437 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4b4b */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3881.LUTMASK = 16'h4b4b;
-    EFX_LUT4 LUT__3882 (.I0(n1644), .I1(\Inst_MPU6500_Controller/raw_data[9] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[9] [6]), .I3(\Inst_MPU6500_Controller/raw_data[9] [7]), 
-            .O(\Inst_MPU6500_Controller/n4442 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd02f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3882.LUTMASK = 16'hd02f;
-    EFX_LUT4 LUT__3883 (.I0(\Inst_MPU6500_Controller/raw_data[9] [5]), .I1(n1644), 
-            .I2(\Inst_MPU6500_Controller/raw_data[9] [6]), .I3(\Inst_MPU6500_Controller/raw_data[9] [7]), 
-            .O(n1645)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;
-    defparam LUT__3883.LUTMASK = 16'h004f;
-    EFX_LUT4 LUT__3884 (.I0(n1645), .I1(\Inst_MPU6500_Controller/raw_data[8] [0]), 
-            .O(\Inst_MPU6500_Controller/n4447 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3884.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3885 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(n1645), 
-            .I2(\Inst_MPU6500_Controller/raw_data[8] [1]), .O(\Inst_MPU6500_Controller/n4452 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3885.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3886 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(\Inst_MPU6500_Controller/raw_data[8] [1]), 
-            .I2(n1645), .I3(\Inst_MPU6500_Controller/raw_data[8] [2]), .O(\Inst_MPU6500_Controller/n4457 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3886.LUTMASK = 16'hef10;
-    EFX_LUT4 LUT__3887 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(\Inst_MPU6500_Controller/raw_data[8] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[8] [2]), .I3(n1645), .O(n1646)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
-    defparam LUT__3887.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3888 (.I0(n1646), .I1(\Inst_MPU6500_Controller/raw_data[8] [3]), 
-            .O(\Inst_MPU6500_Controller/n4462 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3888.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3889 (.I0(\Inst_MPU6500_Controller/raw_data[8] [3]), .I1(n1646), 
-            .I2(\Inst_MPU6500_Controller/raw_data[8] [4]), .O(\Inst_MPU6500_Controller/n4467 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3889.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3890 (.I0(\Inst_MPU6500_Controller/raw_data[8] [3]), .I1(\Inst_MPU6500_Controller/raw_data[8] [4]), 
-            .I2(n1646), .I3(\Inst_MPU6500_Controller/raw_data[8] [5]), .O(\Inst_MPU6500_Controller/n4472 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3890.LUTMASK = 16'hef10;
-    EFX_LUT4 LUT__3891 (.I0(\Inst_MPU6500_Controller/raw_data[8] [3]), .I1(\Inst_MPU6500_Controller/raw_data[8] [4]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[8] [5]), .I3(n1646), .O(n1647)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
-    defparam LUT__3891.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3892 (.I0(n1647), .I1(\Inst_MPU6500_Controller/raw_data[8] [6]), 
-            .O(\Inst_MPU6500_Controller/n4477 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3892.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3893 (.I0(\Inst_MPU6500_Controller/raw_data[8] [6]), .I1(n1647), 
-            .I2(\Inst_MPU6500_Controller/raw_data[8] [7]), .O(\Inst_MPU6500_Controller/n4482 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3893.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3894 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
-            .O(\Inst_MPU6500_Controller/n4497 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3894.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3895 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[11] [3]), .O(\Inst_MPU6500_Controller/n4502 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8787 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3895.LUTMASK = 16'h8787;
-    EFX_LUT4 LUT__3896 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[11] [3]), .I3(\Inst_MPU6500_Controller/raw_data[11] [4]), 
-            .O(\Inst_MPU6500_Controller/n4507 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h07f8 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3896.LUTMASK = 16'h07f8;
-    EFX_LUT4 LUT__3897 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[11] [3]), .I3(\Inst_MPU6500_Controller/raw_data[11] [4]), 
-            .O(n1648)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
-    defparam LUT__3897.LUTMASK = 16'hf800;
-    EFX_LUT4 LUT__3898 (.I0(n1648), .I1(\Inst_MPU6500_Controller/raw_data[11] [5]), 
-            .O(\Inst_MPU6500_Controller/n4512 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3898.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3899 (.I0(n1648), .I1(\Inst_MPU6500_Controller/raw_data[11] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[11] [6]), .O(\Inst_MPU6500_Controller/n4517 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3899.LUTMASK = 16'he1e1;
-    EFX_LUT4 LUT__3900 (.I0(n1648), .I1(\Inst_MPU6500_Controller/raw_data[11] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[11] [6]), .I3(\Inst_MPU6500_Controller/raw_data[11] [7]), 
-            .O(\Inst_MPU6500_Controller/n4522 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe01 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3900.LUTMASK = 16'hfe01;
-    EFX_LUT4 LUT__3901 (.I0(n1648), .I1(\Inst_MPU6500_Controller/raw_data[11] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[11] [6]), .I3(\Inst_MPU6500_Controller/raw_data[11] [7]), 
-            .O(n1649)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__3901.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__3902 (.I0(n1649), .I1(\Inst_MPU6500_Controller/raw_data[10] [0]), 
-            .O(\Inst_MPU6500_Controller/n4527 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3902.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3903 (.I0(\Inst_MPU6500_Controller/raw_data[10] [0]), .I1(n1649), 
-            .I2(\Inst_MPU6500_Controller/raw_data[10] [1]), .O(\Inst_MPU6500_Controller/n4532 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3903.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3904 (.I0(\Inst_MPU6500_Controller/raw_data[10] [0]), .I1(\Inst_MPU6500_Controller/raw_data[10] [1]), 
-            .I2(n1649), .O(n1650)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__3904.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3905 (.I0(n1650), .I1(\Inst_MPU6500_Controller/raw_data[10] [2]), 
-            .O(\Inst_MPU6500_Controller/n4537 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3905.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3906 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(n1650), 
-            .I2(\Inst_MPU6500_Controller/raw_data[10] [3]), .O(\Inst_MPU6500_Controller/n4542 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3906.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3907 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(\Inst_MPU6500_Controller/raw_data[10] [3]), 
-            .I2(n1650), .I3(\Inst_MPU6500_Controller/raw_data[10] [4]), 
-            .O(\Inst_MPU6500_Controller/n4547 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3907.LUTMASK = 16'hef10;
-    EFX_LUT4 LUT__3908 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(\Inst_MPU6500_Controller/raw_data[10] [3]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[10] [4]), .I3(n1650), 
-            .O(n1651)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
-    defparam LUT__3908.LUTMASK = 16'h0100;
-    EFX_LUT4 LUT__3909 (.I0(n1651), .I1(\Inst_MPU6500_Controller/raw_data[10] [5]), 
-            .O(\Inst_MPU6500_Controller/n4552 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3909.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3910 (.I0(\Inst_MPU6500_Controller/raw_data[10] [5]), .I1(n1651), 
-            .I2(\Inst_MPU6500_Controller/raw_data[10] [6]), .O(\Inst_MPU6500_Controller/n4557 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3910.LUTMASK = 16'hb4b4;
-    EFX_LUT4 LUT__3911 (.I0(\Inst_MPU6500_Controller/raw_data[10] [5]), .I1(\Inst_MPU6500_Controller/raw_data[10] [6]), 
-            .I2(n1651), .I3(\Inst_MPU6500_Controller/raw_data[10] [7]), 
-            .O(\Inst_MPU6500_Controller/n4562 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3911.LUTMASK = 16'hef10;
-    EFX_LUT4 LUT__3912 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
-            .O(\Inst_MPU6500_Controller/n4572 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3912.LUTMASK = 16'h9999;
-    EFX_LUT4 LUT__3913 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[13] [2]), .O(\Inst_MPU6500_Controller/n4577 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3913.LUTMASK = 16'he1e1;
-    EFX_LUT4 LUT__3914 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[13] [2]), .I3(\Inst_MPU6500_Controller/raw_data[13] [3]), 
-            .O(\Inst_MPU6500_Controller/n4582 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h01fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3914.LUTMASK = 16'h01fe;
-    EFX_LUT4 LUT__3915 (.I0(\Inst_MPU6500_Controller/raw_data[13] [2]), .I1(\Inst_MPU6500_Controller/raw_data[13] [0]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[13] [1]), .I3(\Inst_MPU6500_Controller/raw_data[13] [3]), 
-            .O(n1652)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
-    defparam LUT__3915.LUTMASK = 16'hfe00;
-    EFX_LUT4 LUT__3916 (.I0(n1652), .I1(\Inst_MPU6500_Controller/raw_data[13] [4]), 
-            .O(\Inst_MPU6500_Controller/n4587 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3916.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3917 (.I0(n1652), .I1(\Inst_MPU6500_Controller/raw_data[13] [4]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[13] [5]), .O(\Inst_MPU6500_Controller/n4592 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3917.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3918 (.I0(n1652), .I1(\Inst_MPU6500_Controller/raw_data[13] [4]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[13] [5]), .I3(\Inst_MPU6500_Controller/raw_data[13] [6]), 
-            .O(\Inst_MPU6500_Controller/n4597 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3918.LUTMASK = 16'h7f80;
-    EFX_LUT4 LUT__3919 (.I0(n1652), .I1(\Inst_MPU6500_Controller/raw_data[13] [4]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[13] [5]), .I3(\Inst_MPU6500_Controller/raw_data[13] [6]), 
-            .O(n1653)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3919.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3920 (.I0(n1653), .I1(\Inst_MPU6500_Controller/raw_data[13] [7]), 
-            .O(\Inst_MPU6500_Controller/n4602 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3920.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3921 (.I0(n1653), .I1(\Inst_MPU6500_Controller/raw_data[13] [7]), 
-            .O(n1654)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3921.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3922 (.I0(n1654), .I1(\Inst_MPU6500_Controller/raw_data[12] [0]), 
-            .O(\Inst_MPU6500_Controller/n4607 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3922.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3923 (.I0(n1654), .I1(\Inst_MPU6500_Controller/raw_data[12] [0]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [1]), .O(\Inst_MPU6500_Controller/n4612 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3923.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3924 (.I0(n1654), .I1(\Inst_MPU6500_Controller/raw_data[12] [0]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [1]), .O(n1655)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3924.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3925 (.I0(n1655), .I1(\Inst_MPU6500_Controller/raw_data[12] [2]), 
-            .O(\Inst_MPU6500_Controller/n4617 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3925.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3926 (.I0(n1655), .I1(\Inst_MPU6500_Controller/raw_data[12] [2]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [3]), .O(\Inst_MPU6500_Controller/n4622 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3926.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3927 (.I0(\Inst_MPU6500_Controller/raw_data[12] [0]), .I1(\Inst_MPU6500_Controller/raw_data[12] [1]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [2]), .I3(\Inst_MPU6500_Controller/raw_data[12] [3]), 
-            .O(n1656)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__3927.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__3928 (.I0(n1654), .I1(n1656), .O(n1657)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3928.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3929 (.I0(n1657), .I1(\Inst_MPU6500_Controller/raw_data[12] [4]), 
-            .O(\Inst_MPU6500_Controller/n4627 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3929.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3930 (.I0(n1657), .I1(\Inst_MPU6500_Controller/raw_data[12] [4]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [5]), .O(\Inst_MPU6500_Controller/n4632 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3930.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3931 (.I0(n1657), .I1(\Inst_MPU6500_Controller/raw_data[12] [4]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [5]), .I3(\Inst_MPU6500_Controller/raw_data[12] [6]), 
-            .O(\Inst_MPU6500_Controller/n4637 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3931.LUTMASK = 16'h7f80;
-    EFX_LUT4 LUT__3932 (.I0(\Inst_MPU6500_Controller/raw_data[12] [4]), .I1(\Inst_MPU6500_Controller/raw_data[12] [5]), 
-            .I2(\Inst_MPU6500_Controller/raw_data[12] [6]), .O(n1658)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__3932.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__3933 (.I0(n1657), .I1(n1658), .I2(\Inst_MPU6500_Controller/raw_data[12] [7]), 
-            .O(\Inst_MPU6500_Controller/n4642 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(472)
-    defparam LUT__3933.LUTMASK = 16'h7878;
-    EFX_LUT4 LUT__3934 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/config_idx [1]), 
-            .O(n1659)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3934.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3935 (.I0(mpu_to_spi_data[1]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(n1576), .O(n1660)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
-    defparam LUT__3935.LUTMASK = 16'hb0b0;
-    EFX_LUT4 LUT__3936 (.I0(n1659), .I1(n1528), .I2(n1660), .O(\Inst_MPU6500_Controller/n768 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf4f4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3936.LUTMASK = 16'hf4f4;
-    EFX_LUT4 LUT__3937 (.I0(n1659), .I1(\Inst_MPU6500_Controller/config_idx [2]), 
-            .I2(\Inst_MPU6500_Controller/state [3]), .I3(\Inst_MPU6500_Controller/state [2]), 
-            .O(\Inst_MPU6500_Controller/n768 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0c0a */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3937.LUTMASK = 16'h0c0a;
-    EFX_LUT4 LUT__3938 (.I0(n1561), .I1(n1576), .I2(ceg_net421), .O(ceg_net425)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(26)
-    defparam LUT__3938.LUTMASK = 16'hb0b0;
-    EFX_LUT4 LUT__3939 (.I0(n1659), .I1(mpu_to_spi_data[3]), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .O(n1661)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__3939.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__3940 (.I0(n1661), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [3]), 
-            .O(\Inst_MPU6500_Controller/n768 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0bbb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3940.LUTMASK = 16'h0bbb;
-    EFX_LUT4 LUT__3941 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(\Inst_MPU6500_Controller/config_idx [0]), 
-            .I2(\Inst_MPU6500_Controller/config_idx [1]), .I3(\Inst_MPU6500_Controller/state [2]), 
-            .O(\Inst_MPU6500_Controller/n731 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3941.LUTMASK = 16'h1400;
-    EFX_LUT4 LUT__3942 (.I0(\Inst_MPU6500_Controller/config_idx [2]), .I1(\Inst_MPU6500_Controller/config_idx [1]), 
-            .I2(n1528), .I3(\Inst_MPU6500_Controller/n731 [1]), .O(n1662)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h001f */ ;
-    defparam LUT__3942.LUTMASK = 16'h001f;
-    EFX_LUT4 LUT__3943 (.I0(mpu_to_spi_data[4]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(n1576), .I3(n1662), .O(\Inst_MPU6500_Controller/n768 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0ff */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3943.LUTMASK = 16'hb0ff;
-    EFX_LUT4 LUT__3944 (.I0(\Inst_MPU6500_Controller/config_idx [1]), .I1(\Inst_MPU6500_Controller/config_idx [2]), 
-            .I2(n1528), .O(\Inst_MPU6500_Controller/n768 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3944.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3945 (.I0(mpu_to_spi_data[5]), .I1(\Inst_MPU6500_Controller/state [2]), 
-            .I2(n1576), .I3(\Inst_MPU6500_Controller/n768 [6]), .O(\Inst_MPU6500_Controller/n768 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hffb0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3945.LUTMASK = 16'hffb0;
-    EFX_LUT4 LUT__3946 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(n1576), 
-            .O(\Inst_MPU6500_Controller/n768 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3946.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3947 (.I0(n1555), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
-            .I2(n1574), .I3(n1560), .O(\Inst_MPU6500_Controller/n735 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3947.LUTMASK = 16'h1c00;
-    EFX_LUT4 LUT__3948 (.I0(n1574), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
-            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1560), .O(\Inst_MPU6500_Controller/n735 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3948.LUTMASK = 16'h7800;
-    EFX_LUT4 LUT__3949 (.I0(n1574), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+    EFX_LUT4 LUT__3707 (.I0(\Inst_MPU6500_Controller/delay_cntr [4]), .I1(\Inst_MPU6500_Controller/delay_cntr [10]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [12]), .I3(\Inst_MPU6500_Controller/delay_cntr [5]), 
+            .O(n1547)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3707.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3708 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(n1545), 
+            .I2(n1546), .I3(n1547), .O(n1548)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
+    defparam LUT__3708.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__3709 (.I0(n1548), .I1(n1544), .I2(\Inst_MPU6500_Controller/state [1]), 
+            .I3(\Inst_MPU6500_Controller/state [2]), .O(n1549)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7000 */ ;
+    defparam LUT__3709.LUTMASK = 16'h7000;
+    EFX_LUT4 LUT__3710 (.I0(\Inst_MPU6500_Controller/delay_cntr [10]), .I1(\Inst_MPU6500_Controller/delay_cntr [12]), 
+            .O(n1550)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3710.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3711 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(\Inst_MPU6500_Controller/delay_cntr [4]), 
+            .O(n1551)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3711.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3712 (.I0(\Inst_MPU6500_Controller/delay_cntr [5]), .I1(n1546), 
+            .I2(n1550), .I3(n1551), .O(n1552)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
+    defparam LUT__3712.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__3713 (.I0(\Inst_MPU6500_Controller/delay_cntr [14]), .I1(\Inst_MPU6500_Controller/delay_cntr [15]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [17]), .O(n1553)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3713.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3714 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [19]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [20]), .I3(\Inst_MPU6500_Controller/delay_cntr [21]), 
+            .O(n1554)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;
+    defparam LUT__3714.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3715 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [11]), 
+            .O(n1555)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3715.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3716 (.I0(n1545), .I1(n1553), .I2(n1554), .I3(n1555), 
+            .O(n1556)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3716.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3717 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(\Inst_MPU6500_Controller/state [0]), 
+            .O(n1557)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3717.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3718 (.I0(n1556), .I1(n1552), .I2(n1557), .O(n1558)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
+    defparam LUT__3718.LUTMASK = 16'h7070;
+    EFX_LUT4 LUT__3719 (.I0(n1558), .I1(n1549), .I2(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1559)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;
+    defparam LUT__3719.LUTMASK = 16'h0e0e;
+    EFX_LUT4 LUT__3720 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
             .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(\Inst_MPU6500_Controller/byte_cntr [3]), 
-            .O(n1663)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h807f */ ;
-    defparam LUT__3949.LUTMASK = 16'h807f;
-    EFX_LUT4 LUT__3950 (.I0(n1663), .I1(n1560), .O(\Inst_MPU6500_Controller/n735 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3950.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3951 (.I0(n1530), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .O(n1560)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
+    defparam LUT__3720.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__3721 (.I0(spi_data_valid), .I1(n1560), .O(n1561)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3721.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3722 (.I0(n1540), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1562)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3722.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3723 (.I0(n1561), .I1(n1538), .I2(n1562), .O(n1563)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
+    defparam LUT__3723.LUTMASK = 16'h7070;
+    EFX_LUT4 LUT__3724 (.I0(n1559), .I1(n1541), .I2(n1563), .I3(\Inst_MPU6500_Controller/delay_cntr [0]), 
+            .O(\Inst_MPU6500_Controller/n740 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0ee */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3724.LUTMASK = 16'hf0ee;
+    EFX_LUT4 LUT__3725 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(switch_out), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(n1564)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f4 */ ;
+    defparam LUT__3725.LUTMASK = 16'h00f4;
+    EFX_LUT4 LUT__3726 (.I0(spi_data_valid), .I1(\Inst_MPU6500_Controller/state [0]), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(n1565)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hc700 */ ;
+    defparam LUT__3726.LUTMASK = 16'hc700;
+    EFX_LUT4 LUT__3727 (.I0(n1565), .I1(n1564), .I2(\Inst_MPU6500_Controller/state [3]), 
+            .O(ceg_net417)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;
+    defparam LUT__3727.LUTMASK = 16'h0e0e;
+    EFX_LUT4 LUT__3728 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .I2(\Inst_MPU6500_Controller/state [3]), .O(n1566)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
+    defparam LUT__3728.LUTMASK = 16'he0e0;
+    EFX_LUT4 LUT__3729 (.I0(n1560), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
+            .I2(spi_data_valid), .I3(n1566), .O(\Inst_MPU6500_Controller/n735 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbc00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3729.LUTMASK = 16'hbc00;
+    EFX_LUT4 LUT__3730 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .O(n1567)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__3730.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__3731 (.I0(switch_out), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(n1567), .O(ceg_net432)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf23f */ ;
+    defparam LUT__3731.LUTMASK = 16'hf23f;
+    EFX_LUT4 LUT__3732 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(\Inst_MPU6500_Controller/state [0]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(\Inst_MPU6500_Controller/n777 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h010e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3732.LUTMASK = 16'h010e;
+    EFX_LUT4 LUT__3733 (.I0(\Inst_MPU6500_Controller/delay_cntr [6]), .I1(\Inst_MPU6500_Controller/delay_cntr [9]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [16]), .I3(\Inst_MPU6500_Controller/delay_cntr [18]), 
+            .O(n1568)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
+    defparam LUT__3733.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__3734 (.I0(n1544), .I1(n1552), .I2(n1568), .O(n1569)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3734.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3735 (.I0(n1569), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(\Inst_MPU6500_Controller/state [2]), .O(n1570)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__3735.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3736 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(n1549), 
+            .I2(\Inst_MPU6500_Controller/state [2]), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1571)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5333 */ ;
+    defparam LUT__3736.LUTMASK = 16'h5333;
+    EFX_LUT4 LUT__3737 (.I0(spi_data_valid), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(n1557), .O(n1572)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__3737.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3738 (.I0(n1571), .I1(n1570), .I2(n1572), .I3(\Inst_MPU6500_Controller/state [0]), 
+            .O(\Inst_MPU6500_Controller/n763 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfcfa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3738.LUTMASK = 16'hfcfa;
+    EFX_LUT4 LUT__3739 (.I0(spi_data_valid), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .O(n1573)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b0b */ ;
+    defparam LUT__3739.LUTMASK = 16'h0b0b;
+    EFX_LUT4 LUT__3740 (.I0(n1552), .I1(n1556), .I2(\Inst_MPU6500_Controller/state [2]), 
+            .I3(n1573), .O(n1574)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
+    defparam LUT__3740.LUTMASK = 16'hf800;
+    EFX_LUT4 LUT__3741 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(spi_data_valid), 
             .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [0]), 
-            .O(n1664)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4ff0 */ ;
-    defparam LUT__3951.LUTMASK = 16'h4ff0;
-    EFX_LUT4 LUT__3952 (.I0(n1575), .I1(spi_data_valid), .I2(\Inst_MPU6500_Controller/state [1]), 
-            .I3(\Inst_MPU6500_Controller/state [0]), .O(n1665)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab0f */ ;
-    defparam LUT__3952.LUTMASK = 16'hab0f;
-    EFX_LUT4 LUT__3953 (.I0(n1568), .I1(\Inst_MPU6500_Controller/state [1]), 
-            .I2(n1665), .I3(\Inst_MPU6500_Controller/state [2]), .O(n1666)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
-    defparam LUT__3953.LUTMASK = 16'hbbf0;
-    EFX_LUT4 LUT__3954 (.I0(n1666), .I1(n1664), .I2(\Inst_MPU6500_Controller/state [3]), 
-            .O(\Inst_MPU6500_Controller/n763 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5c5c */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3954.LUTMASK = 16'h5c5c;
-    EFX_LUT4 LUT__3955 (.I0(n1568), .I1(n1529), .I2(n1533), .O(n1667)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
-    defparam LUT__3955.LUTMASK = 16'hd0d0;
-    EFX_LUT4 LUT__3956 (.I0(n1667), .I1(n1582), .I2(n1534), .I3(\Inst_MPU6500_Controller/state [2]), 
-            .O(\Inst_MPU6500_Controller/n763 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'habba */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3956.LUTMASK = 16'habba;
-    EFX_LUT4 LUT__3957 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [3]), 
-            .I2(n1551), .O(n1668)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__3957.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__3958 (.I0(ceg_net420), .I1(n1668), .O(ceg_net434)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;
-    defparam LUT__3958.LUTMASK = 16'heeee;
-    EFX_LUT4 LUT__3959 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(n1530), 
-            .I2(n1534), .I3(\Inst_MPU6500_Controller/state [3]), .O(\Inst_MPU6500_Controller/n763 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hff80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3959.LUTMASK = 16'hff80;
-    EFX_LUT4 LUT__3960 (.I0(ceg_net420), .I1(n1668), .I2(n1581), .I3(n1564), 
-            .O(ceg_net435)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfffe */ ;
-    defparam LUT__3960.LUTMASK = 16'hfffe;
-    EFX_LUT4 LUT__3961 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(n1659), 
-            .I2(\Inst_MPU6500_Controller/config_idx [2]), .I3(\Inst_MPU6500_Controller/state [2]), 
-            .O(\Inst_MPU6500_Controller/n731 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
-    defparam LUT__3961.LUTMASK = 16'h1400;
-    EFX_LUT4 LUT__3962 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1669)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3962.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3963 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .O(n1670)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__3963.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__3964 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1670), 
-            .O(n1671)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3964.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3965 (.I0(fifo_rst_busys), .I1(n1669), .I2(n1671), .O(n1672)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3965.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3966 (.I0(n1526), .I1(n1672), .I2(data_valid_out), .O(\Inst_FIFO_CONTROLLER/n4138 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(528)
-    defparam LUT__3966.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3967 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [8]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [8]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1673)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__3967.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__3968 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1674)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__3968.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__3969 (.I0(n1674), .I1(n1673), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1675)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0c05 */ ;
-    defparam LUT__3969.LUTMASK = 16'h0c05;
-    EFX_LUT4 LUT__3970 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1676)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3970.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3971 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [8]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1677)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0a0c */ ;
-    defparam LUT__3971.LUTMASK = 16'h0a0c;
-    EFX_LUT4 LUT__3972 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [0]), .I1(n1676), 
-            .I2(n1677), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1678)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
-    defparam LUT__3972.LUTMASK = 16'hf800;
-    EFX_LUT4 LUT__3973 (.I0(n1520), .I1(n1525), .I2(n1675), .I3(n1678), 
-            .O(n1679)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7770 */ ;
-    defparam LUT__3973.LUTMASK = 16'h7770;
-    EFX_LUT4 LUT__3974 (.I0(n1679), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1680)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b0b */ ;
-    defparam LUT__3974.LUTMASK = 16'h0b0b;
-    EFX_LUT4 LUT__3975 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [8]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1681)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__3975.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__3976 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [8]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1682)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__3976.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__3977 (.I0(n1682), .I1(n1681), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1683)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__3977.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__3978 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [8]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1684)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__3978.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__3979 (.I0(n1684), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1685)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__3979.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__3980 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1686)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__3980.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__3981 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [8]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1686), .O(n1687)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__3981.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__3982 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [8]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [8]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1688)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
-    defparam LUT__3982.LUTMASK = 16'h0305;
-    EFX_LUT4 LUT__3983 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1689)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__3983.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__3984 (.I0(n1689), .I1(n1688), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1690)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__3984.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__3985 (.I0(n1685), .I1(n1683), .I2(n1687), .I3(n1690), 
-            .O(n1691)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h000d */ ;
-    defparam LUT__3985.LUTMASK = 16'h000d;
-    EFX_LUT4 LUT__3986 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .I1(n1691), 
-            .I2(fifo_wr_data_o[0]), .I3(n1526), .O(n1692)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0f77 */ ;
-    defparam LUT__3986.LUTMASK = 16'h0f77;
-    EFX_LUT4 LUT__3987 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [8]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1693)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__3987.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__3988 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1694)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3988.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3989 (.I0(fifo_wr_data_o[0]), .I1(n1693), .I2(n1526), 
-            .I3(n1694), .O(n1695)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'ha300 */ ;
-    defparam LUT__3989.LUTMASK = 16'ha300;
-    EFX_LUT4 LUT__3990 (.I0(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] ), 
-            .I1(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] ), .I2(n1519), 
-            .I3(n1676), .O(n1696)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6000 */ ;
-    defparam LUT__3990.LUTMASK = 16'h6000;
-    EFX_LUT4 LUT__3991 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1697)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__3991.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__3992 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_x [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1698)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef00 */ ;
-    defparam LUT__3992.LUTMASK = 16'hef00;
-    EFX_LUT4 LUT__3993 (.I0(n1697), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [8]), 
-            .I2(n1698), .O(n1699)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__3993.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__3994 (.I0(fifo_wr_data_o[0]), .I1(n1696), .I2(n1525), 
-            .I3(n1699), .O(n1700)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__3994.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__3995 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_y [8]), .I3(n1670), .O(n1701)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__3995.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__3996 (.I0(n1700), .I1(n1701), .O(n1702)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__3996.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__3997 (.I0(n1695), .I1(n1702), .I2(n1680), .I3(n1692), 
-            .O(\Inst_FIFO_CONTROLLER/n955 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0bb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__3997.LUTMASK = 16'hb0bb;
-    EFX_LUT4 LUT__3998 (.I0(n1526), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1703)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd5dc */ ;
-    defparam LUT__3998.LUTMASK = 16'hd5dc;
-    EFX_LUT4 LUT__3999 (.I0(n1703), .I1(n1670), .I2(fifo_rst_busys), .O(ceg_net436)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf4f4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(339)
-    defparam LUT__3999.LUTMASK = 16'hf4f4;
-    EFX_LUT4 LUT__4000 (.I0(n1671), .I1(n1526), .I2(fifo_rst_busys), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(\Inst_FIFO_CONTROLLER/n965 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h040b */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
-    defparam LUT__4000.LUTMASK = 16'h040b;
-    EFX_LUT4 LUT__4001 (.I0(n1669), .I1(fifo_rst_busys), .I2(n1671), .O(n1704)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
-    defparam LUT__4001.LUTMASK = 16'h7070;
-    EFX_LUT4 LUT__4002 (.I0(data_valid_out), .I1(n1669), .I2(n1526), .I3(n1704), 
-            .O(ceg_net437)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf400 */ ;
-    defparam LUT__4002.LUTMASK = 16'hf400;
-    EFX_LUT4 LUT__4003 (.I0(n1671), .I1(n1669), .I2(n1526), .I3(fifo_rst_busys), 
-            .O(\Inst_FIFO_CONTROLLER/n1184 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4003.LUTMASK = 16'h0007;
-    EFX_LUT4 LUT__4004 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1705)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__4004.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4005 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [9]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1705), .O(n1706)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4005.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4006 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1707)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__4006.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4007 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [9]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1707), .O(n1708)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4007.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4008 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [9]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1694), .O(n1709)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4008.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4009 (.I0(n1708), .I1(n1709), .I2(n1706), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .O(n1710)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;
-    defparam LUT__4009.LUTMASK = 16'h00fe;
-    EFX_LUT4 LUT__4010 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1711)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
-    defparam LUT__4010.LUTMASK = 16'h503f;
-    EFX_LUT4 LUT__4011 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [9]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [9]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1711), .O(n1712)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
-    defparam LUT__4011.LUTMASK = 16'hf305;
-    EFX_LUT4 LUT__4012 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [9]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1713)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h05f3 */ ;
-    defparam LUT__4012.LUTMASK = 16'h05f3;
-    EFX_LUT4 LUT__4013 (.I0(n1713), .I1(n1712), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1714)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4013.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4014 (.I0(n1714), .I1(n1710), .I2(n1526), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .O(n1715)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__4014.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__4015 (.I0(n1520), .I1(n1525), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .O(n1716)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
-    defparam LUT__4015.LUTMASK = 16'h0707;
-    EFX_LUT4 LUT__4016 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1717)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4016.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4017 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [9]), 
-            .I2(n1717), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1718)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
-    defparam LUT__4017.LUTMASK = 16'hbbf0;
-    EFX_LUT4 LUT__4018 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1719)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__4018.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__4019 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(n1719), .O(n1720)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4019.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4020 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1721)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__4020.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4021 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [9]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [9]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(n1721), .O(n1722)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4021.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4022 (.I0(n1718), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I2(n1720), .I3(n1722), .O(n1723)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;
-    defparam LUT__4022.LUTMASK = 16'h0007;
-    EFX_LUT4 LUT__4023 (.I0(n1520), .I1(n1525), .I2(fifo_wr_data_o[1]), 
-            .O(n1724)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__4023.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__4024 (.I0(n1723), .I1(n1716), .I2(n1724), .I3(n1670), 
-            .O(n1725)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;
-    defparam LUT__4024.LUTMASK = 16'h0007;
-    EFX_LUT4 LUT__4025 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [9]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1694), .O(n1726)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4025.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4026 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1727)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
-    defparam LUT__4026.LUTMASK = 16'hb0b0;
-    EFX_LUT4 LUT__4027 (.I0(n1697), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [9]), 
-            .I2(n1727), .O(n1728)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__4027.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__4028 (.I0(n1728), .I1(n1694), .I2(fifo_wr_data_o[1]), 
-            .O(n1729)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__4028.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__4029 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_y [9]), .I3(n1670), .O(n1730)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__4029.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__4030 (.I0(n1728), .I1(n1676), .I2(n1730), .O(n1731)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
-    defparam LUT__4030.LUTMASK = 16'hd0d0;
-    EFX_LUT4 LUT__4031 (.I0(n1729), .I1(n1726), .I2(n1526), .I3(n1731), 
-            .O(n1732)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4031.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4032 (.I0(n1725), .I1(n1715), .I2(n1732), .O(\Inst_FIFO_CONTROLLER/n955 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4032.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__4033 (.I0(fifo_wr_data_o[2]), .I1(n1525), .I2(n1520), 
-            .O(n1733)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__4033.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__4034 (.I0(n1733), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1705), .O(n1734)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hc500 */ ;
-    defparam LUT__4034.LUTMASK = 16'hc500;
-    EFX_LUT4 LUT__4035 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [2]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1735)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__4035.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__4036 (.I0(n1520), .I1(n1525), .I2(n1735), .I3(n1694), 
-            .O(n1736)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
-    defparam LUT__4036.LUTMASK = 16'hf800;
-    EFX_LUT4 LUT__4037 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [2]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1707), .O(n1737)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
-    defparam LUT__4037.LUTMASK = 16'hca00;
-    EFX_LUT4 LUT__4038 (.I0(n1733), .I1(n1736), .I2(n1737), .I3(n1670), 
-            .O(n1738)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
-    defparam LUT__4038.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4039 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [10]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1739)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__4039.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__4040 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [2]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [2]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1740)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4040.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4041 (.I0(n1740), .I1(n1739), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1741)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0c05 */ ;
-    defparam LUT__4041.LUTMASK = 16'h0c05;
-    EFX_LUT4 LUT__4042 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [2]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [2]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1742)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
-    defparam LUT__4042.LUTMASK = 16'hf305;
-    EFX_LUT4 LUT__4043 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [10]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(n1742), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1743)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
-    defparam LUT__4043.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4044 (.I0(n1520), .I1(n1525), .I2(n1741), .I3(n1743), 
-            .O(n1744)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7770 */ ;
-    defparam LUT__4044.LUTMASK = 16'h7770;
-    EFX_LUT4 LUT__4045 (.I0(n1744), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1745)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b0b */ ;
-    defparam LUT__4045.LUTMASK = 16'h0b0b;
-    EFX_LUT4 LUT__4046 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [2]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1746)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4046.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4047 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [10]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1747)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4047.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4048 (.I0(n1747), .I1(n1746), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1748)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4048.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4049 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1749)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__4049.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__4050 (.I0(n1749), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1750)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__4050.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__4051 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1686), .O(n1751)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4051.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4052 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .O(n1752)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
-    defparam LUT__4052.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__4053 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1753)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;
-    defparam LUT__4053.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4054 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1754)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__4054.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__4055 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [10]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1755)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;
-    defparam LUT__4055.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4056 (.I0(n1755), .I1(n1754), .I2(n1753), .I3(n1752), 
-            .O(n1756)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0bb */ ;
-    defparam LUT__4056.LUTMASK = 16'hb0bb;
-    EFX_LUT4 LUT__4057 (.I0(n1750), .I1(n1748), .I2(n1751), .I3(n1756), 
-            .O(n1757)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d00 */ ;
-    defparam LUT__4057.LUTMASK = 16'h0d00;
-    EFX_LUT4 LUT__4058 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .I1(n1757), 
-            .I2(fifo_wr_data_o[2]), .I3(n1526), .O(n1758)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0f77 */ ;
-    defparam LUT__4058.LUTMASK = 16'h0f77;
-    EFX_LUT4 LUT__4059 (.I0(n1745), .I1(n1758), .I2(n1734), .I3(n1738), 
-            .O(\Inst_FIFO_CONTROLLER/n955 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0bb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4059.LUTMASK = 16'hb0bb;
-    EFX_LUT4 LUT__4060 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [11]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1759)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4060.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4061 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [3]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1760)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
-    defparam LUT__4061.LUTMASK = 16'h503f;
-    EFX_LUT4 LUT__4062 (.I0(n1759), .I1(n1760), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1761)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcacc */ ;
-    defparam LUT__4062.LUTMASK = 16'hcacc;
-    EFX_LUT4 LUT__4063 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1762)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4063.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4064 (.I0(n1762), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(n1761), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1763)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h000d */ ;
-    defparam LUT__4064.LUTMASK = 16'h000d;
-    EFX_LUT4 LUT__4065 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [11]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1764)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__4065.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__4066 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [11]), 
-            .I2(n1764), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1765)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heef0 */ ;
-    defparam LUT__4066.LUTMASK = 16'heef0;
-    EFX_LUT4 LUT__4067 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [3]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1766)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4067.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4068 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [3]), 
-            .I2(n1766), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1767)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hee0f */ ;
-    defparam LUT__4068.LUTMASK = 16'hee0f;
-    EFX_LUT4 LUT__4069 (.I0(n1767), .I1(n1765), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1768)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4069.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4070 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [11]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1769)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0afc */ ;
-    defparam LUT__4070.LUTMASK = 16'h0afc;
-    EFX_LUT4 LUT__4071 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [3]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .I2(n1769), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1770)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb000 */ ;
-    defparam LUT__4071.LUTMASK = 16'hb000;
-    EFX_LUT4 LUT__4072 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [11]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [11]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(n1721), .O(n1771)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
-    defparam LUT__4072.LUTMASK = 16'hca00;
-    EFX_LUT4 LUT__4073 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [3]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(n1719), .O(n1772)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
-    defparam LUT__4073.LUTMASK = 16'hca00;
-    EFX_LUT4 LUT__4074 (.I0(n1770), .I1(n1771), .I2(n1772), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .O(n1773)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__4074.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__4075 (.I0(n1768), .I1(n1763), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .I3(n1773), .O(n1774)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__4075.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__4076 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [11]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1775)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__4076.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__4077 (.I0(fifo_wr_data_o[3]), .I1(n1775), .I2(n1520), 
-            .I3(n1525), .O(n1776)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
-    defparam LUT__4077.LUTMASK = 16'h5ccc;
-    EFX_LUT4 LUT__4078 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_x [3]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1777)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef00 */ ;
-    defparam LUT__4078.LUTMASK = 16'hef00;
-    EFX_LUT4 LUT__4079 (.I0(n1697), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [11]), 
-            .I2(n1777), .O(n1778)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__4079.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__4080 (.I0(fifo_wr_data_o[3]), .I1(n1696), .I2(n1525), 
-            .I3(n1778), .O(n1779)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__4080.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__4081 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_y [11]), .I3(n1670), .O(n1780)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__4081.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__4082 (.I0(n1776), .I1(n1694), .I2(n1779), .I3(n1780), 
-            .O(n1781)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
-    defparam LUT__4082.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4083 (.I0(n1526), .I1(fifo_wr_data_o[3]), .I2(n1670), 
-            .O(n1782)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
-    defparam LUT__4083.LUTMASK = 16'h0707;
-    EFX_LUT4 LUT__4084 (.I0(n1526), .I1(n1774), .I2(n1782), .I3(n1781), 
-            .O(\Inst_FIFO_CONTROLLER/n955 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4084.LUTMASK = 16'h004f;
-    EFX_LUT4 LUT__4085 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [4]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [4]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1783)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
-    defparam LUT__4085.LUTMASK = 16'h0305;
-    EFX_LUT4 LUT__4086 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [12]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [12]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1784)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4086.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4087 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [4]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [4]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1785)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4087.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4088 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [12]), 
-            .I2(n1785), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1786)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
-    defparam LUT__4088.LUTMASK = 16'hbbf0;
-    EFX_LUT4 LUT__4089 (.I0(n1784), .I1(n1783), .I2(n1786), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1787)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0ee */ ;
-    defparam LUT__4089.LUTMASK = 16'hf0ee;
-    EFX_LUT4 LUT__4090 (.I0(n1526), .I1(n1787), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1788)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__4090.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__4091 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [4]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [4]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1789)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
-    defparam LUT__4091.LUTMASK = 16'h503f;
-    EFX_LUT4 LUT__4092 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [12]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [12]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1789), .O(n1790)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
-    defparam LUT__4092.LUTMASK = 16'hf305;
-    EFX_LUT4 LUT__4093 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [4]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [12]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1705), .O(n1791)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4093.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4094 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1790), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .I3(n1791), .O(n1792)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h000d */ ;
-    defparam LUT__4094.LUTMASK = 16'h000d;
-    EFX_LUT4 LUT__4095 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [4]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [4]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1793)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
-    defparam LUT__4095.LUTMASK = 16'h503f;
-    EFX_LUT4 LUT__4096 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [12]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [12]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1793), .O(n1794)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
-    defparam LUT__4096.LUTMASK = 16'hf305;
-    EFX_LUT4 LUT__4097 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [4]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [12]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1707), .O(n1795)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4097.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4098 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1794), 
-            .I2(n1795), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1796)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__4098.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__4099 (.I0(n1796), .I1(n1526), .I2(n1792), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .O(n1797)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
-    defparam LUT__4099.LUTMASK = 16'hfe00;
-    EFX_LUT4 LUT__4100 (.I0(n1526), .I1(fifo_wr_data_o[4]), .O(n1798)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__4100.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__4101 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [12]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [4]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1694), .O(n1799)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4101.LUTMASK = 16'hac00;
+            .O(n1575)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f00 */ ;
+    defparam LUT__3741.LUTMASK = 16'h1f00;
+    EFX_LUT4 LUT__3742 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(switch_out), 
+            .I2(n1567), .O(n1576)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__3742.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3743 (.I0(n1574), .I1(n1575), .I2(n1576), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(ceg_net419)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f4 */ ;
+    defparam LUT__3743.LUTMASK = 16'h00f4;
+    EFX_LUT4 LUT__3744 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [0]), .I3(n1539), .O(\Inst_MPU6500_Controller/n6172 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3744.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3745 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [1]), .I3(n1539), .O(\Inst_MPU6500_Controller/n6173 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3745.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3746 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+            .O(n1577)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3746.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3747 (.I0(\Inst_MPU6500_Controller/byte_cntr [2]), .I1(n1539), 
+            .I2(n1577), .O(\Inst_MPU6500_Controller/n6174 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3747.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3748 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1539), .O(\Inst_MPU6500_Controller/n6175 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3748.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3749 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [0]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1539), .O(\Inst_MPU6500_Controller/n6176 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3749.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__3750 (.I0(\Inst_MPU6500_Controller/byte_cntr [3]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(spi_data_valid), .I3(n1538), .O(n1578)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3750.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3751 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1578), .O(\Inst_MPU6500_Controller/n6179 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3751.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3752 (.I0(\Inst_MPU6500_Controller/byte_cntr [1]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [0]), .I3(n1578), .O(\Inst_MPU6500_Controller/n6180 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3752.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3753 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [2]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [1]), .I3(n1578), .O(\Inst_MPU6500_Controller/n6181 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3753.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3754 (.I0(\Inst_MPU6500_Controller/byte_cntr [2]), .I1(n1577), 
+            .I2(n1578), .O(\Inst_MPU6500_Controller/n6182 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3754.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3755 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [2]), .I3(n1578), .O(\Inst_MPU6500_Controller/n6183 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3755.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__3756 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(n1538), 
+            .I2(n1561), .O(\Inst_MPU6500_Controller/n6184 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3756.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3757 (.I0(\Inst_MPU6500_Controller/state [1]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1579)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3757.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3758 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/config_idx [2]), 
+            .I2(n1536), .O(n1580)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__3758.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3759 (.I0(mpu_to_spi_data[0]), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(n1579), .I3(n1580), .O(\Inst_MPU6500_Controller/n768 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hffb0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3759.LUTMASK = 16'hffb0;
+    EFX_LUT4 LUT__3760 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .I2(\Inst_MPU6500_Controller/state [0]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(ceg_net420)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(26)
+    defparam LUT__3760.LUTMASK = 16'hab0e;
+    EFX_LUT4 LUT__3761 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(spi_cs_n_o), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1581)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1ff0 */ ;
+    defparam LUT__3761.LUTMASK = 16'h1ff0;
+    EFX_LUT4 LUT__3762 (.I0(n1561), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .I2(spi_cs_n_o), .I3(\Inst_MPU6500_Controller/state [3]), .O(n1582)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0700 */ ;
+    defparam LUT__3762.LUTMASK = 16'h0700;
+    EFX_LUT4 LUT__3763 (.I0(n1581), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(n1582), .O(\Inst_MPU6500_Controller/n730 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3763.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__3764 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(spi_data_valid), 
+            .O(n1583)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3764.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3765 (.I0(n1583), .I1(switch_out), .I2(n1567), .I3(\Inst_MPU6500_Controller/state [1]), 
+            .O(n1584)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0ba */ ;
+    defparam LUT__3765.LUTMASK = 16'hf0ba;
+    EFX_LUT4 LUT__3766 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(n1584), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(n1557), .O(ceg_net421)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f11 */ ;
+    defparam LUT__3766.LUTMASK = 16'h1f11;
+    EFX_LUT4 LUT__3767 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(n1538), 
+            .I2(n1561), .O(n1585)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__3767.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__3768 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(n1540), 
+            .O(n1586)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3768.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3769 (.I0(n1569), .I1(n1585), .I2(\Inst_MPU6500_Controller/delay_cntr [1]), 
+            .I3(n1586), .O(n1587)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfacf */ ;
+    defparam LUT__3769.LUTMASK = 16'hfacf;
+    EFX_LUT4 LUT__3770 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(\Inst_MPU6500_Controller/delay_cntr [1]), 
+            .O(n1588)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;
+    defparam LUT__3770.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3771 (.I0(n1588), .I1(n1559), .I2(n1587), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(\Inst_MPU6500_Controller/n740 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4f44 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3771.LUTMASK = 16'h4f44;
+    EFX_LUT4 LUT__3772 (.I0(n1568), .I1(n1552), .I2(n1544), .I3(n1541), 
+            .O(n1589)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__3772.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__3773 (.I0(n1549), .I1(n1558), .I2(\Inst_MPU6500_Controller/state [3]), 
+            .I3(n1589), .O(n1590)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f1 */ ;
+    defparam LUT__3773.LUTMASK = 16'h00f1;
+    EFX_LUT4 LUT__3774 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(\Inst_MPU6500_Controller/delay_cntr [1]), 
+            .O(n1591)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3774.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3775 (.I0(n1563), .I1(n1590), .I2(n1591), .I3(\Inst_MPU6500_Controller/delay_cntr [2]), 
+            .O(\Inst_MPU6500_Controller/n740 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3775.LUTMASK = 16'hab30;
+    EFX_LUT4 LUT__3776 (.I0(\Inst_MPU6500_Controller/delay_cntr [2]), .I1(n1591), 
+            .O(n1592)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3776.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3777 (.I0(n1549), .I1(n1558), .I2(n1585), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1593)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0fee */ ;
+    defparam LUT__3777.LUTMASK = 16'h0fee;
+    EFX_LUT4 LUT__3778 (.I0(n1562), .I1(n1592), .I2(\Inst_MPU6500_Controller/delay_cntr [3]), 
+            .I3(n1593), .O(\Inst_MPU6500_Controller/n740 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3778.LUTMASK = 16'hb400;
+    EFX_LUT4 LUT__3779 (.I0(\Inst_MPU6500_Controller/delay_cntr [0]), .I1(\Inst_MPU6500_Controller/delay_cntr [1]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [2]), .I3(\Inst_MPU6500_Controller/delay_cntr [3]), 
+            .O(n1594)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3779.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3780 (.I0(n1563), .I1(n1590), .I2(n1594), .I3(\Inst_MPU6500_Controller/delay_cntr [4]), 
+            .O(\Inst_MPU6500_Controller/n740 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3780.LUTMASK = 16'hab30;
+    EFX_LUT4 LUT__3781 (.I0(n1562), .I1(\Inst_MPU6500_Controller/delay_cntr [4]), 
+            .I2(n1594), .I3(\Inst_MPU6500_Controller/delay_cntr [5]), .O(n1595)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h40bf */ ;
+    defparam LUT__3781.LUTMASK = 16'h40bf;
+    EFX_LUT4 LUT__3782 (.I0(n1595), .I1(n1593), .O(\Inst_MPU6500_Controller/n740 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3782.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3783 (.I0(\Inst_MPU6500_Controller/delay_cntr [4]), .I1(\Inst_MPU6500_Controller/delay_cntr [5]), 
+            .I2(n1594), .O(n1596)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3783.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3784 (.I0(n1562), .I1(n1596), .I2(\Inst_MPU6500_Controller/delay_cntr [6]), 
+            .I3(n1593), .O(\Inst_MPU6500_Controller/n740 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3784.LUTMASK = 16'hb400;
+    EFX_LUT4 LUT__3785 (.I0(\Inst_MPU6500_Controller/delay_cntr [4]), .I1(\Inst_MPU6500_Controller/delay_cntr [5]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [6]), .O(n1597)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3785.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3786 (.I0(n1594), .I1(n1597), .O(n1598)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3786.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3787 (.I0(n1540), .I1(n1598), .O(n1599)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3787.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3788 (.I0(n1585), .I1(n1599), .I2(\Inst_MPU6500_Controller/delay_cntr [7]), 
+            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1600)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
+    defparam LUT__3788.LUTMASK = 16'h1c00;
+    EFX_LUT4 LUT__3789 (.I0(n1600), .I1(\Inst_MPU6500_Controller/delay_cntr [7]), 
+            .I2(n1598), .I3(n1559), .O(\Inst_MPU6500_Controller/n740 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3789.LUTMASK = 16'hbeaa;
+    EFX_LUT4 LUT__3790 (.I0(n1562), .I1(\Inst_MPU6500_Controller/delay_cntr [7]), 
+            .I2(n1598), .I3(\Inst_MPU6500_Controller/delay_cntr [8]), .O(n1601)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h40bf */ ;
+    defparam LUT__3790.LUTMASK = 16'h40bf;
+    EFX_LUT4 LUT__3791 (.I0(n1601), .I1(n1593), .O(\Inst_MPU6500_Controller/n740 [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3791.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3792 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [8]), 
+            .I2(n1598), .O(n1602)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3792.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3793 (.I0(n1563), .I1(n1590), .I2(n1602), .I3(\Inst_MPU6500_Controller/delay_cntr [9]), 
+            .O(\Inst_MPU6500_Controller/n740 [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3793.LUTMASK = 16'hab30;
+    EFX_LUT4 LUT__3794 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [8]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [9]), .I3(n1598), .O(n1603)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3794.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3795 (.I0(n1563), .I1(n1590), .I2(n1603), .I3(\Inst_MPU6500_Controller/delay_cntr [10]), 
+            .O(\Inst_MPU6500_Controller/n740 [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3795.LUTMASK = 16'hab30;
+    EFX_LUT4 LUT__3796 (.I0(n1562), .I1(\Inst_MPU6500_Controller/delay_cntr [10]), 
+            .I2(n1603), .I3(\Inst_MPU6500_Controller/delay_cntr [11]), .O(n1604)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h40bf */ ;
+    defparam LUT__3796.LUTMASK = 16'h40bf;
+    EFX_LUT4 LUT__3797 (.I0(n1604), .I1(n1593), .O(\Inst_MPU6500_Controller/n740 [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3797.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3798 (.I0(\Inst_MPU6500_Controller/delay_cntr [10]), .I1(\Inst_MPU6500_Controller/delay_cntr [11]), 
+            .I2(n1603), .O(n1605)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3798.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3799 (.I0(n1563), .I1(n1590), .I2(n1605), .I3(\Inst_MPU6500_Controller/delay_cntr [12]), 
+            .O(\Inst_MPU6500_Controller/n740 [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3799.LUTMASK = 16'hab30;
+    EFX_LUT4 LUT__3800 (.I0(\Inst_MPU6500_Controller/delay_cntr [7]), .I1(\Inst_MPU6500_Controller/delay_cntr [8]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [9]), .I3(\Inst_MPU6500_Controller/delay_cntr [11]), 
+            .O(n1606)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3800.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3801 (.I0(n1550), .I1(n1594), .I2(n1597), .I3(n1606), 
+            .O(n1607)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3801.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3802 (.I0(n1540), .I1(n1607), .O(n1608)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3802.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3803 (.I0(n1585), .I1(n1608), .I2(\Inst_MPU6500_Controller/delay_cntr [13]), 
+            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1609)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
+    defparam LUT__3803.LUTMASK = 16'h1c00;
+    EFX_LUT4 LUT__3804 (.I0(n1609), .I1(\Inst_MPU6500_Controller/delay_cntr [13]), 
+            .I2(n1607), .I3(n1559), .O(\Inst_MPU6500_Controller/n740 [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3804.LUTMASK = 16'hbeaa;
+    EFX_LUT4 LUT__3805 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(n1607), 
+            .O(n1610)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3805.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3806 (.I0(n1562), .I1(n1610), .O(n1611)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3806.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3807 (.I0(\Inst_MPU6500_Controller/delay_cntr [14]), .I1(n1611), 
+            .I2(n1593), .O(\Inst_MPU6500_Controller/n740 [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3807.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__3808 (.I0(\Inst_MPU6500_Controller/delay_cntr [14]), .I1(n1611), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [15]), .I3(n1593), .O(\Inst_MPU6500_Controller/n740 [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3808.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__3809 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [14]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [15]), .O(n1612)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3809.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3810 (.I0(n1607), .I1(n1612), .O(n1613)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3810.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3811 (.I0(n1563), .I1(n1590), .I2(n1613), .I3(\Inst_MPU6500_Controller/delay_cntr [16]), 
+            .O(\Inst_MPU6500_Controller/n740 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hab30 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3811.LUTMASK = 16'hab30;
+    EFX_LUT4 LUT__3812 (.I0(n1562), .I1(\Inst_MPU6500_Controller/delay_cntr [16]), 
+            .O(n1614)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3812.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3813 (.I0(n1613), .I1(n1614), .I2(\Inst_MPU6500_Controller/delay_cntr [17]), 
+            .I3(n1593), .O(\Inst_MPU6500_Controller/n740 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3813.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__3814 (.I0(\Inst_MPU6500_Controller/delay_cntr [13]), .I1(\Inst_MPU6500_Controller/delay_cntr [16]), 
+            .I2(n1553), .I3(n1607), .O(n1615)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3814.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3815 (.I0(n1569), .I1(n1562), .I2(n1615), .I3(\Inst_MPU6500_Controller/delay_cntr [18]), 
+            .O(n1616)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h32cf */ ;
+    defparam LUT__3815.LUTMASK = 16'h32cf;
+    EFX_LUT4 LUT__3816 (.I0(n1549), .I1(n1558), .I2(\Inst_MPU6500_Controller/delay_cntr [18]), 
+            .I3(n1615), .O(n1617)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0ee0 */ ;
+    defparam LUT__3816.LUTMASK = 16'h0ee0;
+    EFX_LUT4 LUT__3817 (.I0(n1585), .I1(n1616), .I2(n1617), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(\Inst_MPU6500_Controller/n740 [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h11f0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3817.LUTMASK = 16'h11f0;
+    EFX_LUT4 LUT__3818 (.I0(\Inst_MPU6500_Controller/delay_cntr [16]), .I1(\Inst_MPU6500_Controller/delay_cntr [17]), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [18]), .O(n1618)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3818.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3819 (.I0(n1540), .I1(n1612), .I2(n1618), .O(n1619)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3819.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3820 (.I0(n1607), .I1(n1619), .O(n1620)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3820.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3821 (.I0(n1585), .I1(n1620), .I2(\Inst_MPU6500_Controller/delay_cntr [19]), 
+            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1621)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
+    defparam LUT__3821.LUTMASK = 16'h1c00;
+    EFX_LUT4 LUT__3822 (.I0(n1607), .I1(n1612), .I2(n1618), .O(n1622)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3822.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3823 (.I0(n1621), .I1(\Inst_MPU6500_Controller/delay_cntr [19]), 
+            .I2(n1622), .I3(n1559), .O(\Inst_MPU6500_Controller/n740 [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbeaa */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3823.LUTMASK = 16'hbeaa;
+    EFX_LUT4 LUT__3824 (.I0(\Inst_MPU6500_Controller/delay_cntr [19]), .I1(n1620), 
+            .I2(n1585), .I3(\Inst_MPU6500_Controller/delay_cntr [20]), .O(n1623)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf877 */ ;
+    defparam LUT__3824.LUTMASK = 16'hf877;
+    EFX_LUT4 LUT__3825 (.I0(\Inst_MPU6500_Controller/delay_cntr [19]), .I1(n1622), 
+            .I2(\Inst_MPU6500_Controller/delay_cntr [20]), .O(n1624)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8787 */ ;
+    defparam LUT__3825.LUTMASK = 16'h8787;
+    EFX_LUT4 LUT__3826 (.I0(n1624), .I1(n1559), .I2(n1623), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(\Inst_MPU6500_Controller/n740 [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4f44 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3826.LUTMASK = 16'h4f44;
+    EFX_LUT4 LUT__3827 (.I0(\Inst_MPU6500_Controller/delay_cntr [19]), .I1(\Inst_MPU6500_Controller/delay_cntr [20]), 
+            .I2(n1622), .I3(\Inst_MPU6500_Controller/delay_cntr [21]), .O(n1625)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h807f */ ;
+    defparam LUT__3827.LUTMASK = 16'h807f;
+    EFX_LUT4 LUT__3828 (.I0(\Inst_MPU6500_Controller/delay_cntr [19]), .I1(\Inst_MPU6500_Controller/delay_cntr [20]), 
+            .I2(n1607), .I3(n1619), .O(n1626)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__3828.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__3829 (.I0(n1585), .I1(n1626), .I2(\Inst_MPU6500_Controller/delay_cntr [21]), 
+            .I3(\Inst_MPU6500_Controller/state [3]), .O(n1627)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;
+    defparam LUT__3829.LUTMASK = 16'h1c00;
+    EFX_LUT4 LUT__3830 (.I0(n1625), .I1(n1559), .I2(n1627), .O(\Inst_MPU6500_Controller/n740 [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf4f4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3830.LUTMASK = 16'hf4f4;
+    EFX_LUT4 LUT__3831 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
+            .O(\Inst_MPU6500_Controller/n4257 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3831.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3832 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[3] [3]), .O(\Inst_MPU6500_Controller/n4262 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3832.LUTMASK = 16'he1e1;
+    EFX_LUT4 LUT__3833 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[3] [3]), .I3(\Inst_MPU6500_Controller/raw_data[3] [4]), 
+            .O(\Inst_MPU6500_Controller/n4267 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h01fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3833.LUTMASK = 16'h01fe;
+    EFX_LUT4 LUT__3834 (.I0(\Inst_MPU6500_Controller/raw_data[3] [1]), .I1(\Inst_MPU6500_Controller/raw_data[3] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[3] [3]), .I3(\Inst_MPU6500_Controller/raw_data[3] [4]), 
+            .O(n1628)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
+    defparam LUT__3834.LUTMASK = 16'hfe00;
+    EFX_LUT4 LUT__3835 (.I0(\Inst_MPU6500_Controller/raw_data[3] [5]), .I1(n1628), 
+            .O(\Inst_MPU6500_Controller/n4272 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3835.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3836 (.I0(\Inst_MPU6500_Controller/raw_data[3] [5]), .I1(n1628), 
+            .I2(\Inst_MPU6500_Controller/raw_data[3] [6]), .O(\Inst_MPU6500_Controller/n4277 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3836.LUTMASK = 16'he1e1;
+    EFX_LUT4 LUT__3837 (.I0(\Inst_MPU6500_Controller/raw_data[3] [5]), .I1(\Inst_MPU6500_Controller/raw_data[3] [6]), 
+            .I2(n1628), .I3(\Inst_MPU6500_Controller/raw_data[3] [7]), .O(\Inst_MPU6500_Controller/n4282 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe01 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3837.LUTMASK = 16'hfe01;
+    EFX_LUT4 LUT__3838 (.I0(\Inst_MPU6500_Controller/raw_data[3] [5]), .I1(\Inst_MPU6500_Controller/raw_data[3] [6]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[3] [7]), .I3(n1628), .O(n1629)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__3838.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__3839 (.I0(\Inst_MPU6500_Controller/raw_data[2] [0]), .I1(n1629), 
+            .O(\Inst_MPU6500_Controller/n4287 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3839.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3840 (.I0(\Inst_MPU6500_Controller/raw_data[2] [0]), .I1(n1629), 
+            .I2(\Inst_MPU6500_Controller/raw_data[2] [1]), .O(\Inst_MPU6500_Controller/n4292 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3840.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3841 (.I0(\Inst_MPU6500_Controller/raw_data[2] [0]), .I1(\Inst_MPU6500_Controller/raw_data[2] [1]), 
+            .I2(n1629), .O(n1630)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__3841.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3842 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(n1630), 
+            .O(\Inst_MPU6500_Controller/n4297 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3842.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3843 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(n1630), 
+            .I2(\Inst_MPU6500_Controller/raw_data[2] [3]), .O(\Inst_MPU6500_Controller/n4302 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3843.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3844 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(\Inst_MPU6500_Controller/raw_data[2] [3]), 
+            .I2(n1630), .I3(\Inst_MPU6500_Controller/raw_data[2] [4]), .O(\Inst_MPU6500_Controller/n4307 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3844.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3845 (.I0(\Inst_MPU6500_Controller/raw_data[2] [2]), .I1(\Inst_MPU6500_Controller/raw_data[2] [3]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[2] [4]), .I3(n1630), .O(n1631)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3845.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3846 (.I0(\Inst_MPU6500_Controller/raw_data[2] [5]), .I1(n1631), 
+            .O(\Inst_MPU6500_Controller/n4312 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3846.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3847 (.I0(\Inst_MPU6500_Controller/raw_data[2] [5]), .I1(n1631), 
+            .I2(\Inst_MPU6500_Controller/raw_data[2] [6]), .O(\Inst_MPU6500_Controller/n4317 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3847.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3848 (.I0(\Inst_MPU6500_Controller/raw_data[2] [5]), .I1(\Inst_MPU6500_Controller/raw_data[2] [6]), 
+            .I2(n1631), .I3(\Inst_MPU6500_Controller/raw_data[2] [7]), .O(\Inst_MPU6500_Controller/n4322 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3848.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3849 (.I0(\Inst_MPU6500_Controller/raw_data[5] [0]), .I1(\Inst_MPU6500_Controller/raw_data[5] [1]), 
+            .O(\Inst_MPU6500_Controller/n4332 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3849.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3850 (.I0(\Inst_MPU6500_Controller/raw_data[5] [0]), .I1(\Inst_MPU6500_Controller/raw_data[5] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[5] [2]), .O(\Inst_MPU6500_Controller/n4337 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1e1e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3850.LUTMASK = 16'h1e1e;
     protected_cell protected_inst (.\clk_i~O (\clk_i~O ), .fifo_rst_busys(fifo_rst_busys), 
             .rst_n_i(rst_n_i));
-    EFX_LUT4 LUT__4103 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I2(fifo_wr_data_o[4]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1801)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd000 */ ;
-    defparam LUT__4103.LUTMASK = 16'hd000;
-    EFX_LUT4 LUT__4104 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [12]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [4]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1802)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__4104.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__4105 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [12]), 
-            .I2(n1705), .I3(n1670), .O(n1803)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
-    defparam LUT__4105.LUTMASK = 16'h7f00;
-    EFX_LUT4 LUT__4106 (.I0(n1707), .I1(n1802), .I2(n1803), .O(n1804)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
-    defparam LUT__4106.LUTMASK = 16'hd0d0;
-    EFX_LUT4 LUT__4107 (.I0(n1801), .I1(n1799), .I2(n1526), .I3(n1804), 
-            .O(n1805)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4107.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4108 (.I0(n1797), .I1(n1788), .I2(n1798), .I3(n1805), 
-            .O(\Inst_FIFO_CONTROLLER/n955 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4108.LUTMASK = 16'h00f1;
-    EFX_LUT4 LUT__4109 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [13]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1705), .O(n1806)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4109.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4110 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [13]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1707), .O(n1807)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4110.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4111 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [13]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1694), .O(n1808)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4111.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4112 (.I0(n1807), .I1(n1808), .I2(n1806), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .O(n1809)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;
-    defparam LUT__4112.LUTMASK = 16'h00fe;
-    EFX_LUT4 LUT__4113 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [5]), 
+    EFX_LUT4 LUT__3852 (.I0(\Inst_MPU6500_Controller/raw_data[5] [3]), .I1(\Inst_MPU6500_Controller/raw_data[5] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[5] [0]), .I3(\Inst_MPU6500_Controller/raw_data[5] [2]), 
+            .O(\Inst_MPU6500_Controller/n4342 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'ha955 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3852.LUTMASK = 16'ha955;
+    EFX_LUT4 LUT__3853 (.I0(\Inst_MPU6500_Controller/raw_data[5] [1]), .I1(\Inst_MPU6500_Controller/raw_data[5] [0]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[5] [2]), .I3(\Inst_MPU6500_Controller/raw_data[5] [3]), 
+            .O(n1633)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h001f */ ;
+    defparam LUT__3853.LUTMASK = 16'h001f;
+    EFX_LUT4 LUT__3854 (.I0(\Inst_MPU6500_Controller/raw_data[5] [4]), .I1(n1633), 
+            .O(\Inst_MPU6500_Controller/n4347 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3854.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3855 (.I0(\Inst_MPU6500_Controller/raw_data[5] [4]), .I1(n1633), 
+            .O(n1634)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3855.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3856 (.I0(\Inst_MPU6500_Controller/raw_data[5] [5]), .I1(n1634), 
+            .O(\Inst_MPU6500_Controller/n4352 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3856.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3857 (.I0(n1634), .I1(\Inst_MPU6500_Controller/raw_data[5] [5]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[5] [6]), .O(\Inst_MPU6500_Controller/n4357 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3857.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3858 (.I0(n1633), .I1(\Inst_MPU6500_Controller/raw_data[5] [4]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[5] [6]), .I3(\Inst_MPU6500_Controller/raw_data[5] [5]), 
+            .O(n1635)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd000 */ ;
+    defparam LUT__3858.LUTMASK = 16'hd000;
+    EFX_LUT4 LUT__3859 (.I0(\Inst_MPU6500_Controller/raw_data[5] [7]), .I1(n1635), 
+            .O(\Inst_MPU6500_Controller/n4362 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3859.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3860 (.I0(\Inst_MPU6500_Controller/raw_data[5] [7]), .I1(n1635), 
+            .I2(\Inst_MPU6500_Controller/raw_data[4] [0]), .O(\Inst_MPU6500_Controller/n4367 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3860.LUTMASK = 16'h7878;
+    EFX_LUT4 LUT__3861 (.I0(\Inst_MPU6500_Controller/raw_data[4] [0]), .I1(\Inst_MPU6500_Controller/raw_data[5] [7]), 
+            .I2(n1635), .I3(\Inst_MPU6500_Controller/raw_data[4] [1]), .O(\Inst_MPU6500_Controller/n4372 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h807f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3861.LUTMASK = 16'h807f;
+    EFX_LUT4 LUT__3862 (.I0(n1635), .I1(\Inst_MPU6500_Controller/raw_data[4] [0]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[5] [7]), .I3(\Inst_MPU6500_Controller/raw_data[4] [1]), 
+            .O(n1636)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h007f */ ;
+    defparam LUT__3862.LUTMASK = 16'h007f;
+    EFX_LUT4 LUT__3863 (.I0(\Inst_MPU6500_Controller/raw_data[4] [2]), .I1(n1636), 
+            .O(\Inst_MPU6500_Controller/n4377 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3863.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3864 (.I0(\Inst_MPU6500_Controller/raw_data[4] [2]), .I1(n1636), 
+            .I2(\Inst_MPU6500_Controller/raw_data[4] [3]), .O(\Inst_MPU6500_Controller/n4382 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3864.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3865 (.I0(\Inst_MPU6500_Controller/raw_data[4] [2]), .I1(\Inst_MPU6500_Controller/raw_data[4] [3]), 
+            .I2(n1636), .I3(\Inst_MPU6500_Controller/raw_data[4] [4]), .O(\Inst_MPU6500_Controller/n4387 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3865.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3866 (.I0(\Inst_MPU6500_Controller/raw_data[4] [2]), .I1(\Inst_MPU6500_Controller/raw_data[4] [3]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[4] [4]), .I3(n1636), .O(n1637)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3866.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3867 (.I0(\Inst_MPU6500_Controller/raw_data[4] [5]), .I1(n1637), 
+            .O(\Inst_MPU6500_Controller/n4392 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3867.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3868 (.I0(\Inst_MPU6500_Controller/raw_data[4] [5]), .I1(n1637), 
+            .I2(\Inst_MPU6500_Controller/raw_data[4] [6]), .O(\Inst_MPU6500_Controller/n4397 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3868.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3869 (.I0(\Inst_MPU6500_Controller/raw_data[4] [5]), .I1(\Inst_MPU6500_Controller/raw_data[4] [6]), 
+            .I2(n1637), .I3(\Inst_MPU6500_Controller/raw_data[4] [7]), .O(\Inst_MPU6500_Controller/n4402 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3869.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3870 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
+            .O(\Inst_MPU6500_Controller/n4417 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3870.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3871 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[9] [3]), .O(\Inst_MPU6500_Controller/n4422 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8787 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3871.LUTMASK = 16'h8787;
+    EFX_LUT4 LUT__3872 (.I0(\Inst_MPU6500_Controller/raw_data[9] [1]), .I1(\Inst_MPU6500_Controller/raw_data[9] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[9] [3]), .I3(\Inst_MPU6500_Controller/raw_data[9] [4]), 
+            .O(\Inst_MPU6500_Controller/n4427 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf807 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3872.LUTMASK = 16'hf807;
+    EFX_LUT4 LUT__3873 (.I0(\Inst_MPU6500_Controller/raw_data[9] [2]), .I1(\Inst_MPU6500_Controller/raw_data[9] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[9] [3]), .I3(\Inst_MPU6500_Controller/raw_data[9] [4]), 
+            .O(n1638)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;
+    defparam LUT__3873.LUTMASK = 16'h0007;
+    EFX_LUT4 LUT__3874 (.I0(\Inst_MPU6500_Controller/raw_data[9] [5]), .I1(n1638), 
+            .O(\Inst_MPU6500_Controller/n4432 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3874.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3875 (.I0(\Inst_MPU6500_Controller/raw_data[9] [5]), .I1(n1638), 
+            .I2(\Inst_MPU6500_Controller/raw_data[9] [6]), .O(\Inst_MPU6500_Controller/n4437 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4b4b */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3875.LUTMASK = 16'h4b4b;
+    EFX_LUT4 LUT__3876 (.I0(\Inst_MPU6500_Controller/raw_data[9] [5]), .I1(n1638), 
+            .I2(\Inst_MPU6500_Controller/raw_data[9] [6]), .I3(\Inst_MPU6500_Controller/raw_data[9] [7]), 
+            .O(\Inst_MPU6500_Controller/n4442 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb04f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3876.LUTMASK = 16'hb04f;
+    EFX_LUT4 LUT__3877 (.I0(\Inst_MPU6500_Controller/raw_data[9] [5]), .I1(n1638), 
+            .I2(\Inst_MPU6500_Controller/raw_data[9] [6]), .I3(\Inst_MPU6500_Controller/raw_data[9] [7]), 
+            .O(n1639)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;
+    defparam LUT__3877.LUTMASK = 16'h004f;
+    EFX_LUT4 LUT__3878 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(n1639), 
+            .O(\Inst_MPU6500_Controller/n4447 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3878.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3879 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(n1639), 
+            .I2(\Inst_MPU6500_Controller/raw_data[8] [1]), .O(\Inst_MPU6500_Controller/n4452 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3879.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3880 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(\Inst_MPU6500_Controller/raw_data[8] [1]), 
+            .I2(n1639), .I3(\Inst_MPU6500_Controller/raw_data[8] [2]), .O(\Inst_MPU6500_Controller/n4457 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3880.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3881 (.I0(\Inst_MPU6500_Controller/raw_data[8] [0]), .I1(\Inst_MPU6500_Controller/raw_data[8] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[8] [2]), .I3(n1639), .O(n1640)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3881.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3882 (.I0(\Inst_MPU6500_Controller/raw_data[8] [3]), .I1(n1640), 
+            .O(\Inst_MPU6500_Controller/n4462 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3882.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3883 (.I0(\Inst_MPU6500_Controller/raw_data[8] [3]), .I1(n1640), 
+            .I2(\Inst_MPU6500_Controller/raw_data[8] [4]), .O(\Inst_MPU6500_Controller/n4467 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3883.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3884 (.I0(\Inst_MPU6500_Controller/raw_data[8] [3]), .I1(\Inst_MPU6500_Controller/raw_data[8] [4]), 
+            .I2(n1640), .O(n1641)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__3884.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3885 (.I0(\Inst_MPU6500_Controller/raw_data[8] [5]), .I1(n1641), 
+            .O(\Inst_MPU6500_Controller/n4472 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3885.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3886 (.I0(\Inst_MPU6500_Controller/raw_data[8] [5]), .I1(n1641), 
+            .I2(\Inst_MPU6500_Controller/raw_data[8] [6]), .O(\Inst_MPU6500_Controller/n4477 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3886.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3887 (.I0(\Inst_MPU6500_Controller/raw_data[8] [5]), .I1(\Inst_MPU6500_Controller/raw_data[8] [6]), 
+            .I2(n1641), .I3(\Inst_MPU6500_Controller/raw_data[8] [7]), .O(\Inst_MPU6500_Controller/n4482 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3887.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3888 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
+            .O(\Inst_MPU6500_Controller/n4497 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3888.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3889 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[11] [3]), .O(\Inst_MPU6500_Controller/n4502 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8787 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3889.LUTMASK = 16'h8787;
+    EFX_LUT4 LUT__3890 (.I0(\Inst_MPU6500_Controller/raw_data[11] [1]), .I1(\Inst_MPU6500_Controller/raw_data[11] [2]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[11] [3]), .I3(\Inst_MPU6500_Controller/raw_data[11] [4]), 
+            .O(\Inst_MPU6500_Controller/n4507 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h07f8 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3890.LUTMASK = 16'h07f8;
+    EFX_LUT4 LUT__3891 (.I0(\Inst_MPU6500_Controller/raw_data[11] [2]), .I1(\Inst_MPU6500_Controller/raw_data[11] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[11] [3]), .I3(\Inst_MPU6500_Controller/raw_data[11] [4]), 
+            .O(n1642)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
+    defparam LUT__3891.LUTMASK = 16'hf800;
+    EFX_LUT4 LUT__3892 (.I0(\Inst_MPU6500_Controller/raw_data[11] [5]), .I1(n1642), 
+            .O(\Inst_MPU6500_Controller/n4512 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3892.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3893 (.I0(\Inst_MPU6500_Controller/raw_data[11] [5]), .I1(n1642), 
+            .I2(\Inst_MPU6500_Controller/raw_data[11] [6]), .O(\Inst_MPU6500_Controller/n4517 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3893.LUTMASK = 16'he1e1;
+    EFX_LUT4 LUT__3894 (.I0(\Inst_MPU6500_Controller/raw_data[11] [5]), .I1(\Inst_MPU6500_Controller/raw_data[11] [6]), 
+            .I2(n1642), .I3(\Inst_MPU6500_Controller/raw_data[11] [7]), 
+            .O(\Inst_MPU6500_Controller/n4522 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe01 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3894.LUTMASK = 16'hfe01;
+    EFX_LUT4 LUT__3895 (.I0(\Inst_MPU6500_Controller/raw_data[11] [5]), .I1(\Inst_MPU6500_Controller/raw_data[11] [6]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[11] [7]), .I3(n1642), 
+            .O(n1643)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__3895.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__3896 (.I0(\Inst_MPU6500_Controller/raw_data[10] [0]), .I1(n1643), 
+            .O(\Inst_MPU6500_Controller/n4527 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3896.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3897 (.I0(\Inst_MPU6500_Controller/raw_data[10] [0]), .I1(n1643), 
+            .I2(\Inst_MPU6500_Controller/raw_data[10] [1]), .O(\Inst_MPU6500_Controller/n4532 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3897.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3898 (.I0(\Inst_MPU6500_Controller/raw_data[10] [0]), .I1(\Inst_MPU6500_Controller/raw_data[10] [1]), 
+            .I2(n1643), .O(n1644)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__3898.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3899 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(n1644), 
+            .O(\Inst_MPU6500_Controller/n4537 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3899.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3900 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(n1644), 
+            .I2(\Inst_MPU6500_Controller/raw_data[10] [3]), .O(\Inst_MPU6500_Controller/n4542 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3900.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3901 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(\Inst_MPU6500_Controller/raw_data[10] [3]), 
+            .I2(n1644), .I3(\Inst_MPU6500_Controller/raw_data[10] [4]), 
+            .O(\Inst_MPU6500_Controller/n4547 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3901.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3902 (.I0(\Inst_MPU6500_Controller/raw_data[10] [2]), .I1(\Inst_MPU6500_Controller/raw_data[10] [3]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[10] [4]), .I3(n1644), 
+            .O(n1645)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
+    defparam LUT__3902.LUTMASK = 16'h0100;
+    EFX_LUT4 LUT__3903 (.I0(\Inst_MPU6500_Controller/raw_data[10] [5]), .I1(n1645), 
+            .O(\Inst_MPU6500_Controller/n4552 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3903.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3904 (.I0(\Inst_MPU6500_Controller/raw_data[10] [5]), .I1(n1645), 
+            .I2(\Inst_MPU6500_Controller/raw_data[10] [6]), .O(\Inst_MPU6500_Controller/n4557 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb4b4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3904.LUTMASK = 16'hb4b4;
+    EFX_LUT4 LUT__3905 (.I0(\Inst_MPU6500_Controller/raw_data[10] [5]), .I1(\Inst_MPU6500_Controller/raw_data[10] [6]), 
+            .I2(n1645), .I3(\Inst_MPU6500_Controller/raw_data[10] [7]), 
+            .O(\Inst_MPU6500_Controller/n4562 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef10 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3905.LUTMASK = 16'hef10;
+    EFX_LUT4 LUT__3906 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
+            .O(\Inst_MPU6500_Controller/n4572 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9999 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3906.LUTMASK = 16'h9999;
+    EFX_LUT4 LUT__3907 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[13] [2]), .O(\Inst_MPU6500_Controller/n4577 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1e1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3907.LUTMASK = 16'he1e1;
+    EFX_LUT4 LUT__3908 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[13] [2]), .I3(\Inst_MPU6500_Controller/raw_data[13] [3]), 
+            .O(\Inst_MPU6500_Controller/n4582 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h01fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3908.LUTMASK = 16'h01fe;
+    EFX_LUT4 LUT__3909 (.I0(\Inst_MPU6500_Controller/raw_data[13] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[13] [2]), .I3(\Inst_MPU6500_Controller/raw_data[13] [3]), 
+            .O(n1646)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
+    defparam LUT__3909.LUTMASK = 16'hfe00;
+    EFX_LUT4 LUT__3910 (.I0(\Inst_MPU6500_Controller/raw_data[13] [4]), .I1(n1646), 
+            .O(\Inst_MPU6500_Controller/n4587 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3910.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3911 (.I0(\Inst_MPU6500_Controller/raw_data[13] [4]), .I1(n1646), 
+            .I2(\Inst_MPU6500_Controller/raw_data[13] [5]), .O(\Inst_MPU6500_Controller/n4592 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3911.LUTMASK = 16'h7878;
+    EFX_LUT4 LUT__3912 (.I0(\Inst_MPU6500_Controller/raw_data[13] [4]), .I1(\Inst_MPU6500_Controller/raw_data[13] [5]), 
+            .I2(n1646), .I3(\Inst_MPU6500_Controller/raw_data[13] [6]), 
+            .O(\Inst_MPU6500_Controller/n4597 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3912.LUTMASK = 16'h7f80;
+    EFX_LUT4 LUT__3913 (.I0(\Inst_MPU6500_Controller/raw_data[13] [4]), .I1(\Inst_MPU6500_Controller/raw_data[13] [5]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[13] [6]), .O(n1647)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3913.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3914 (.I0(n1646), .I1(n1647), .O(n1648)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3914.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3915 (.I0(\Inst_MPU6500_Controller/raw_data[13] [7]), .I1(n1648), 
+            .O(\Inst_MPU6500_Controller/n4602 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3915.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3916 (.I0(\Inst_MPU6500_Controller/raw_data[13] [7]), .I1(n1648), 
+            .I2(\Inst_MPU6500_Controller/raw_data[12] [0]), .O(\Inst_MPU6500_Controller/n4607 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3916.LUTMASK = 16'h7878;
+    EFX_LUT4 LUT__3917 (.I0(\Inst_MPU6500_Controller/raw_data[12] [0]), .I1(\Inst_MPU6500_Controller/raw_data[13] [7]), 
+            .I2(n1648), .I3(\Inst_MPU6500_Controller/raw_data[12] [1]), 
+            .O(\Inst_MPU6500_Controller/n4612 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3917.LUTMASK = 16'h7f80;
+    EFX_LUT4 LUT__3918 (.I0(\Inst_MPU6500_Controller/raw_data[12] [0]), .I1(\Inst_MPU6500_Controller/raw_data[12] [1]), 
+            .I2(\Inst_MPU6500_Controller/raw_data[13] [7]), .O(n1649)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3918.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3919 (.I0(n1646), .I1(n1647), .I2(n1649), .O(n1650)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3919.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3920 (.I0(\Inst_MPU6500_Controller/raw_data[12] [2]), .I1(n1650), 
+            .O(\Inst_MPU6500_Controller/n4617 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3920.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3921 (.I0(\Inst_MPU6500_Controller/raw_data[12] [2]), .I1(n1650), 
+            .I2(\Inst_MPU6500_Controller/raw_data[12] [3]), .O(\Inst_MPU6500_Controller/n4622 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3921.LUTMASK = 16'h7878;
+    EFX_LUT4 LUT__3922 (.I0(\Inst_MPU6500_Controller/raw_data[12] [2]), .I1(\Inst_MPU6500_Controller/raw_data[12] [3]), 
+            .I2(n1650), .O(n1651)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3922.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3923 (.I0(\Inst_MPU6500_Controller/raw_data[12] [4]), .I1(n1651), 
+            .O(\Inst_MPU6500_Controller/n4627 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3923.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3924 (.I0(\Inst_MPU6500_Controller/raw_data[12] [4]), .I1(n1651), 
+            .O(n1652)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3924.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3925 (.I0(\Inst_MPU6500_Controller/raw_data[12] [5]), .I1(n1652), 
+            .O(\Inst_MPU6500_Controller/n4632 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3925.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3926 (.I0(\Inst_MPU6500_Controller/raw_data[12] [5]), .I1(n1652), 
+            .I2(\Inst_MPU6500_Controller/raw_data[12] [6]), .O(\Inst_MPU6500_Controller/n4637 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7878 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3926.LUTMASK = 16'h7878;
+    EFX_LUT4 LUT__3927 (.I0(\Inst_MPU6500_Controller/raw_data[12] [5]), .I1(\Inst_MPU6500_Controller/raw_data[12] [6]), 
+            .I2(n1652), .I3(\Inst_MPU6500_Controller/raw_data[12] [7]), 
+            .O(\Inst_MPU6500_Controller/n4642 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(488)
+    defparam LUT__3927.LUTMASK = 16'h7f80;
+    EFX_LUT4 LUT__3928 (.I0(\Inst_MPU6500_Controller/config_idx [0]), .I1(\Inst_MPU6500_Controller/config_idx [1]), 
+            .O(n1653)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3928.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3929 (.I0(mpu_to_spi_data[1]), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .O(n1654)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3929.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3930 (.I0(n1654), .I1(n1579), .I2(n1653), .I3(n1536), 
+            .O(\Inst_MPU6500_Controller/n768 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4f44 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3930.LUTMASK = 16'h4f44;
+    EFX_LUT4 LUT__3931 (.I0(n1653), .I1(\Inst_MPU6500_Controller/config_idx [2]), 
+            .I2(\Inst_MPU6500_Controller/state [3]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(\Inst_MPU6500_Controller/n768 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0c0a */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3931.LUTMASK = 16'h0c0a;
+    EFX_LUT4 LUT__3932 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .I2(\Inst_MPU6500_Controller/state [3]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(ceg_net424)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hc154 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(26)
+    defparam LUT__3932.LUTMASK = 16'hc154;
+    EFX_LUT4 LUT__3933 (.I0(n1653), .I1(mpu_to_spi_data[3]), .I2(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1655)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__3933.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__3934 (.I0(n1655), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(\Inst_MPU6500_Controller/state [1]), .I3(\Inst_MPU6500_Controller/state [3]), 
+            .O(\Inst_MPU6500_Controller/n768 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0777 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3934.LUTMASK = 16'h0777;
+    EFX_LUT4 LUT__3935 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(mpu_to_spi_data[4]), 
+            .I2(n1579), .O(n1656)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
+    defparam LUT__3935.LUTMASK = 16'hd0d0;
+    EFX_LUT4 LUT__3936 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(\Inst_MPU6500_Controller/config_idx [0]), 
+            .I2(\Inst_MPU6500_Controller/config_idx [1]), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(\Inst_MPU6500_Controller/n731 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3936.LUTMASK = 16'h1400;
+    EFX_LUT4 LUT__3937 (.I0(\Inst_MPU6500_Controller/config_idx [2]), .I1(\Inst_MPU6500_Controller/config_idx [1]), 
+            .I2(n1536), .O(n1657)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
+    defparam LUT__3937.LUTMASK = 16'he0e0;
+    EFX_LUT4 LUT__3938 (.I0(n1656), .I1(\Inst_MPU6500_Controller/n731 [1]), 
+            .I2(n1657), .O(\Inst_MPU6500_Controller/n768 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfefe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3938.LUTMASK = 16'hfefe;
+    EFX_LUT4 LUT__3939 (.I0(\Inst_MPU6500_Controller/config_idx [1]), .I1(\Inst_MPU6500_Controller/config_idx [2]), 
+            .I2(n1536), .O(\Inst_MPU6500_Controller/n768 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3939.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3940 (.I0(mpu_to_spi_data[5]), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(n1579), .I3(\Inst_MPU6500_Controller/n768 [6]), .O(\Inst_MPU6500_Controller/n768 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hffb0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3940.LUTMASK = 16'hffb0;
+    EFX_LUT4 LUT__3941 (.I0(\Inst_MPU6500_Controller/state [2]), .I1(n1579), 
+            .O(\Inst_MPU6500_Controller/n768 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3941.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3942 (.I0(\Inst_MPU6500_Controller/byte_cntr [0]), .I1(spi_data_valid), 
+            .O(n1658)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3942.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3943 (.I0(n1560), .I1(\Inst_MPU6500_Controller/byte_cntr [1]), 
+            .I2(n1658), .I3(n1566), .O(\Inst_MPU6500_Controller/n735 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1c00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3943.LUTMASK = 16'h1c00;
+    EFX_LUT4 LUT__3944 (.I0(spi_data_valid), .I1(n1577), .O(n1659)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3944.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3945 (.I0(\Inst_MPU6500_Controller/byte_cntr [2]), .I1(n1659), 
+            .I2(n1566), .O(\Inst_MPU6500_Controller/n735 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3945.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__3946 (.I0(\Inst_MPU6500_Controller/byte_cntr [2]), .I1(n1659), 
+            .I2(\Inst_MPU6500_Controller/byte_cntr [3]), .I3(n1566), .O(\Inst_MPU6500_Controller/n735 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3946.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__3947 (.I0(n1557), .I1(spi_data_valid), .I2(\Inst_MPU6500_Controller/state [1]), 
+            .O(n1660)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__3947.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__3948 (.I0(n1569), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(n1585), .I3(n1660), .O(n1661)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;
+    defparam LUT__3948.LUTMASK = 16'h0007;
+    EFX_LUT4 LUT__3949 (.I0(n1534), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(\Inst_MPU6500_Controller/state [0]), .I3(\Inst_MPU6500_Controller/state [1]), 
+            .O(n1662)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4ff0 */ ;
+    defparam LUT__3949.LUTMASK = 16'h4ff0;
+    EFX_LUT4 LUT__3950 (.I0(n1662), .I1(n1661), .I2(\Inst_MPU6500_Controller/state [3]), 
+            .O(\Inst_MPU6500_Controller/n763 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3950.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__3951 (.I0(n1561), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .O(n1663)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3951.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3952 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [1]), 
+            .I2(n1569), .I3(\Inst_MPU6500_Controller/state [3]), .O(n1664)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f77 */ ;
+    defparam LUT__3952.LUTMASK = 16'h1f77;
+    EFX_LUT4 LUT__3953 (.I0(n1663), .I1(n1538), .I2(n1664), .I3(\Inst_MPU6500_Controller/state [2]), 
+            .O(\Inst_MPU6500_Controller/n763 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf044 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3953.LUTMASK = 16'hf044;
+    EFX_LUT4 LUT__3954 (.I0(\Inst_MPU6500_Controller/state [0]), .I1(\Inst_MPU6500_Controller/state [3]), 
+            .I2(n1549), .O(n1665)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__3954.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3955 (.I0(ceg_net419), .I1(n1665), .O(ceg_net433)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;
+    defparam LUT__3955.LUTMASK = 16'heeee;
+    EFX_LUT4 LUT__3956 (.I0(n1538), .I1(\Inst_MPU6500_Controller/state [2]), 
+            .I2(n1534), .I3(\Inst_MPU6500_Controller/state [3]), .O(\Inst_MPU6500_Controller/n763 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hff80 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3956.LUTMASK = 16'hff80;
+    EFX_LUT4 LUT__3957 (.I0(n1572), .I1(ceg_net419), .I2(n1589), .I3(n1665), 
+            .O(ceg_net434)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfffe */ ;
+    defparam LUT__3957.LUTMASK = 16'hfffe;
+    EFX_LUT4 LUT__3958 (.I0(\Inst_MPU6500_Controller/state [3]), .I1(\Inst_MPU6500_Controller/config_idx [2]), 
+            .I2(n1653), .I3(\Inst_MPU6500_Controller/state [2]), .O(\Inst_MPU6500_Controller/n731 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(258)
+    defparam LUT__3958.LUTMASK = 16'h1400;
+    EFX_LUT4 LUT__3959 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .O(n1666)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__3959.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__3960 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1666), 
+            .O(n1667)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3960.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3961 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1668)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__3961.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__3962 (.I0(data_valid_out), .I1(n1667), .I2(n1668), .O(n1669)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__3962.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__3963 (.I0(fifo_rst_busys), .I1(n1533), .I2(n1669), .O(\Inst_FIFO_CONTROLLER/n4138 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(544)
+    defparam LUT__3963.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__3964 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [8]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1670)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__3964.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__3965 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [0]), 
             .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1810)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
-    defparam LUT__4113.LUTMASK = 16'h503f;
-    EFX_LUT4 LUT__4114 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [13]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [13]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1810), .O(n1811)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
-    defparam LUT__4114.LUTMASK = 16'hf305;
-    EFX_LUT4 LUT__4115 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [13]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1812)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h05f3 */ ;
-    defparam LUT__4115.LUTMASK = 16'h05f3;
-    EFX_LUT4 LUT__4116 (.I0(n1812), .I1(n1811), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1813)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4116.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4117 (.I0(n1813), .I1(n1809), .I2(n1526), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .O(n1814)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__4117.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__4118 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [13]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [5]), 
+            .O(n1671)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__3965.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__3966 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [8]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [8]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1671), .O(n1672)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__3966.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__3967 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(n1670), 
+            .I2(n1672), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1673)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbb0f */ ;
+    defparam LUT__3967.LUTMASK = 16'hbb0f;
+    EFX_LUT4 LUT__3968 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [8]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1674)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__3968.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__3969 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [0]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [0]), 
             .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1815)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4118.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4119 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [13]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [5]), 
+            .O(n1675)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__3969.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__3970 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [8]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [8]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1675), .O(n1676)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__3970.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__3971 (.I0(n1674), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(n1676), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1677)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0bb */ ;
+    defparam LUT__3971.LUTMASK = 16'hf0bb;
+    EFX_LUT4 LUT__3972 (.I0(n1677), .I1(n1673), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1678)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3a00 */ ;
+    defparam LUT__3972.LUTMASK = 16'h3a00;
+    EFX_LUT4 LUT__3973 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [8]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1679)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__3973.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__3974 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [0]), 
+            .I2(n1679), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1680)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__3974.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__3975 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [8]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [8]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1681)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__3975.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__3976 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1681), .O(n1682)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__3976.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__3977 (.I0(n1682), .I1(n1680), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1683)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__3977.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__3978 (.I0(n1683), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I2(n1533), .O(n1684)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__3978.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__3979 (.I0(n1533), .I1(fifo_wr_data_o[0]), .I2(n1666), 
+            .O(n1685)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__3979.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__3980 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1686)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3980.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3981 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [8]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1687)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__3981.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__3982 (.I0(fifo_wr_data_o[0]), .I1(n1687), .I2(n1528), 
+            .I3(n1532), .O(n1688)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__3982.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__3983 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1689)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3983.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3984 (.I0(fifo_wr_data_o[0]), .I1(n1689), .O(n1690)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3984.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3985 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1691)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__3985.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__3986 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/reg_accel_x [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1692)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef00 */ ;
+    defparam LUT__3986.LUTMASK = 16'hef00;
+    EFX_LUT4 LUT__3987 (.I0(n1691), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [8]), 
+            .I2(n1692), .O(n1693)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__3987.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__3988 (.I0(n1528), .I1(n1532), .I2(n1690), .I3(n1693), 
+            .O(n1694)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__3988.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__3989 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1695)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3989.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3990 (.I0(n1695), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [8]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1666), .O(n1696)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__3990.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__3991 (.I0(n1688), .I1(n1686), .I2(n1694), .I3(n1696), 
+            .O(n1697)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__3991.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__3992 (.I0(n1678), .I1(n1684), .I2(n1685), .I3(n1697), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__3992.LUTMASK = 16'h004f;
+    EFX_LUT4 LUT__3993 (.I0(n1533), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .O(n1698)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd5dc */ ;
+    defparam LUT__3993.LUTMASK = 16'hd5dc;
+    EFX_LUT4 LUT__3994 (.I0(n1698), .I1(n1666), .I2(fifo_rst_busys), .O(ceg_net435)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf4f4 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(355)
+    defparam LUT__3994.LUTMASK = 16'hf4f4;
+    EFX_LUT4 LUT__3995 (.I0(n1667), .I1(n1533), .O(n1699)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3995.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3996 (.I0(fifo_rst_busys), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I2(n1699), .O(\Inst_FIFO_CONTROLLER/n965 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4141 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
+    defparam LUT__3996.LUTMASK = 16'h4141;
+    EFX_LUT4 LUT__3997 (.I0(data_valid_out), .I1(n1668), .O(n1700)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__3997.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__3998 (.I0(n1668), .I1(fifo_rst_busys), .I2(n1667), .O(n1701)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
+    defparam LUT__3998.LUTMASK = 16'h7070;
+    EFX_LUT4 LUT__3999 (.I0(n1700), .I1(n1533), .I2(n1701), .O(ceg_net436)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
+    defparam LUT__3999.LUTMASK = 16'he0e0;
+    EFX_LUT4 LUT__4000 (.I0(n1668), .I1(n1667), .I2(fifo_rst_busys), .I3(n1533), 
+            .O(\Inst_FIFO_CONTROLLER/n1184 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4000.LUTMASK = 16'h0007;
+    EFX_LUT4 LUT__4001 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [9]), 
             .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1816)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0503 */ ;
-    defparam LUT__4119.LUTMASK = 16'h0503;
-    EFX_LUT4 LUT__4120 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [5]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [5]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1817)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4120.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4121 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [13]), 
-            .I2(n1817), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1818)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
-    defparam LUT__4121.LUTMASK = 16'hbbf0;
-    EFX_LUT4 LUT__4122 (.I0(n1816), .I1(n1815), .I2(n1818), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1819)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0ee */ ;
-    defparam LUT__4122.LUTMASK = 16'hf0ee;
-    EFX_LUT4 LUT__4123 (.I0(n1520), .I1(n1525), .I2(fifo_wr_data_o[5]), 
-            .O(n1820)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__4123.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__4124 (.I0(n1716), .I1(n1819), .I2(n1820), .I3(n1670), 
-            .O(n1821)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h000d */ ;
-    defparam LUT__4124.LUTMASK = 16'h000d;
-    EFX_LUT4 LUT__4125 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [13]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [5]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1694), .O(n1822)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hac00 */ ;
-    defparam LUT__4125.LUTMASK = 16'hac00;
-    EFX_LUT4 LUT__4126 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [5]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1823)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
-    defparam LUT__4126.LUTMASK = 16'hb0b0;
-    EFX_LUT4 LUT__4127 (.I0(n1697), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [13]), 
-            .I2(n1823), .O(n1824)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__4127.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__4128 (.I0(n1824), .I1(n1694), .I2(fifo_wr_data_o[5]), 
-            .O(n1825)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__4128.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__4129 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_y [13]), .I3(n1670), .O(n1826)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__4129.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__4130 (.I0(n1824), .I1(n1676), .I2(n1826), .O(n1827)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
-    defparam LUT__4130.LUTMASK = 16'hd0d0;
-    EFX_LUT4 LUT__4131 (.I0(n1825), .I1(n1822), .I2(n1526), .I3(n1827), 
-            .O(n1828)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4131.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4132 (.I0(n1821), .I1(n1814), .I2(n1828), .O(\Inst_FIFO_CONTROLLER/n955 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4132.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__4133 (.I0(fifo_wr_data_o[6]), .I1(n1525), .I2(n1520), 
-            .O(n1829)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
-    defparam LUT__4133.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__4134 (.I0(n1829), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1705), .O(n1830)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hc500 */ ;
-    defparam LUT__4134.LUTMASK = 16'hc500;
-    EFX_LUT4 LUT__4135 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [6]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1831)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__4135.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__4136 (.I0(n1520), .I1(n1525), .I2(n1831), .I3(n1694), 
-            .O(n1832)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
-    defparam LUT__4136.LUTMASK = 16'hf800;
-    EFX_LUT4 LUT__4137 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [6]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1707), .O(n1833)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
-    defparam LUT__4137.LUTMASK = 16'hca00;
-    EFX_LUT4 LUT__4138 (.I0(n1829), .I1(n1832), .I2(n1833), .I3(n1670), 
-            .O(n1834)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
-    defparam LUT__4138.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4139 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [14]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [6]), 
+            .O(n1702)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h05f3 */ ;
+    defparam LUT__4001.LUTMASK = 16'h05f3;
+    EFX_LUT4 LUT__4002 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1703)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4002.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4003 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [9]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [9]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1703), .O(n1704)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4003.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4004 (.I0(n1704), .I1(n1702), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1705)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__4004.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4005 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [9]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1706)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4005.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4006 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [1]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1707)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4006.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4007 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [9]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [9]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1707), .O(n1708)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4007.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4008 (.I0(n1706), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(n1708), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1709)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0bb */ ;
+    defparam LUT__4008.LUTMASK = 16'hf0bb;
+    EFX_LUT4 LUT__4009 (.I0(n1532), .I1(n1528), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .O(n1710)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
+    defparam LUT__4009.LUTMASK = 16'h7070;
+    EFX_LUT4 LUT__4010 (.I0(n1709), .I1(n1705), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .I3(n1710), .O(n1711)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
+    defparam LUT__4010.LUTMASK = 16'h3500;
+    EFX_LUT4 LUT__4011 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [9]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1712)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf53f */ ;
+    defparam LUT__4011.LUTMASK = 16'hf53f;
+    EFX_LUT4 LUT__4012 (.I0(n1668), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [1]), 
+            .I2(n1712), .O(n1713)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
+    defparam LUT__4012.LUTMASK = 16'h7070;
+    EFX_LUT4 LUT__4013 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [9]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [9]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1714)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4013.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4014 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [1]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1714), .O(n1715)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4014.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4015 (.I0(n1715), .I1(n1713), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1716)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__4015.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4016 (.I0(n1716), .I1(n1533), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1717)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h001f */ ;
+    defparam LUT__4016.LUTMASK = 16'h001f;
+    EFX_LUT4 LUT__4017 (.I0(fifo_wr_data_o[1]), .I1(n1526), .I2(n1527), 
+            .O(n1718)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4017.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4018 (.I0(n1532), .I1(n1718), .O(n1719)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4018.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4019 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [1]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [9]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1720)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4019.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4020 (.I0(fifo_wr_data_o[1]), .I1(n1720), .I2(n1528), 
+            .I3(n1532), .O(n1721)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4020.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4021 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [1]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1722)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
+    defparam LUT__4021.LUTMASK = 16'hb0b0;
+    EFX_LUT4 LUT__4022 (.I0(n1691), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [9]), 
+            .I2(n1722), .O(n1723)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__4022.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4023 (.I0(n1532), .I1(n1718), .I2(n1689), .I3(n1723), 
+            .O(n1724)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8f00 */ ;
+    defparam LUT__4023.LUTMASK = 16'h8f00;
+    EFX_LUT4 LUT__4024 (.I0(n1695), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [9]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1666), .O(n1725)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4024.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4025 (.I0(n1721), .I1(n1686), .I2(n1724), .I3(n1725), 
+            .O(n1726)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4025.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4026 (.I0(n1717), .I1(n1719), .I2(n1711), .I3(n1726), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4026.LUTMASK = 16'h00fe;
+    EFX_LUT4 LUT__4027 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [2]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [10]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1727)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4027.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4028 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [2]), 
+            .I2(n1727), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1728)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__4028.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__4029 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [10]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [10]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1729)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4029.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4030 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [2]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [2]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1729), .O(n1730)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4030.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4031 (.I0(n1730), .I1(n1728), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1731)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__4031.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4032 (.I0(n1731), .I1(n1533), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1732)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h001f */ ;
+    defparam LUT__4032.LUTMASK = 16'h001f;
+    EFX_LUT4 LUT__4033 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [10]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [2]), 
             .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1835)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0a0c */ ;
-    defparam LUT__4139.LUTMASK = 16'h0a0c;
-    EFX_LUT4 LUT__4140 (.I0(n1676), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [6]), 
-            .I2(n1835), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1836)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0700 */ ;
-    defparam LUT__4140.LUTMASK = 16'h0700;
-    EFX_LUT4 LUT__4141 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [14]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1837)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__4141.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__4142 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [6]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [6]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1838)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4142.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4143 (.I0(n1838), .I1(n1837), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1839)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h030a */ ;
-    defparam LUT__4143.LUTMASK = 16'h030a;
-    EFX_LUT4 LUT__4144 (.I0(n1520), .I1(n1525), .I2(n1836), .I3(n1839), 
-            .O(n1840)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0007 */ ;
-    defparam LUT__4144.LUTMASK = 16'h0007;
-    EFX_LUT4 LUT__4145 (.I0(n1840), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1841)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b0b */ ;
-    defparam LUT__4145.LUTMASK = 16'h0b0b;
-    EFX_LUT4 LUT__4146 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [6]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1842)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4146.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4147 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [14]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1843)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4147.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4148 (.I0(n1843), .I1(n1842), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1844)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4148.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4149 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1845)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__4149.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__4150 (.I0(n1845), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .O(n1733)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
+    defparam LUT__4033.LUTMASK = 16'h0305;
+    EFX_LUT4 LUT__4034 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [2]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1734)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4034.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4035 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [10]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [10]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1734), .O(n1735)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4035.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4036 (.I0(n1735), .I1(n1733), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .O(n1736)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__4036.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4037 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [10]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [2]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1737)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4037.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4038 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [2]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [2]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1738)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4038.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4039 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [10]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [10]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1738), .O(n1739)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4039.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4040 (.I0(n1737), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(n1739), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1740)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0bb */ ;
+    defparam LUT__4040.LUTMASK = 16'hf0bb;
+    EFX_LUT4 LUT__4041 (.I0(n1740), .I1(n1736), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .I3(n1710), .O(n1741)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
+    defparam LUT__4041.LUTMASK = 16'h3500;
+    EFX_LUT4 LUT__4042 (.I0(fifo_wr_data_o[2]), .I1(n1533), .O(n1742)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4042.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4043 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [2]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [10]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1743)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4043.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4044 (.I0(fifo_wr_data_o[2]), .I1(n1743), .I2(n1528), 
+            .I3(n1532), .O(n1744)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4044.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4045 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(fifo_wr_data_o[2]), 
+            .O(n1745)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__4045.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4046 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [10]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1746)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4046.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4047 (.I0(n1528), .I1(n1532), .I2(n1745), .I3(n1746), 
+            .O(n1747)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4047.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4048 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [2]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [10]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1748)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4048.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4049 (.I0(n1748), .I1(n1695), .I2(n1666), .O(n1749)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
+    defparam LUT__4049.LUTMASK = 16'hb0b0;
+    EFX_LUT4 LUT__4050 (.I0(n1744), .I1(n1686), .I2(n1747), .I3(n1749), 
+            .O(n1750)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4050.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4051 (.I0(n1741), .I1(n1742), .I2(n1732), .I3(n1750), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4051.LUTMASK = 16'h00fe;
+    EFX_LUT4 LUT__4052 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [3]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1751)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4052.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4053 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [3]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [3]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1752)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4053.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4054 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1752), .O(n1753)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4054.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4055 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(n1751), 
+            .I2(n1753), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1754)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbb0f */ ;
+    defparam LUT__4055.LUTMASK = 16'hbb0f;
+    EFX_LUT4 LUT__4056 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [3]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1755)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4056.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4057 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [3]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [3]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1756)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4057.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4058 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [11]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1756), .O(n1757)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4058.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4059 (.I0(n1755), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(n1757), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1758)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0bb */ ;
+    defparam LUT__4059.LUTMASK = 16'hf0bb;
+    EFX_LUT4 LUT__4060 (.I0(n1758), .I1(n1754), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1759)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3a00 */ ;
+    defparam LUT__4060.LUTMASK = 16'h3a00;
+    EFX_LUT4 LUT__4061 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [3]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1760)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfacf */ ;
+    defparam LUT__4061.LUTMASK = 16'hfacf;
+    EFX_LUT4 LUT__4062 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [3]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1761)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcffa */ ;
+    defparam LUT__4062.LUTMASK = 16'hcffa;
+    EFX_LUT4 LUT__4063 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [3]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1762)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4063.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4064 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [3]), 
+            .I2(n1762), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1763)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__4064.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__4065 (.I0(n1761), .I1(n1760), .I2(n1763), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1764)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf077 */ ;
+    defparam LUT__4065.LUTMASK = 16'hf077;
+    EFX_LUT4 LUT__4066 (.I0(n1764), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I2(n1533), .O(n1765)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__4066.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4067 (.I0(n1533), .I1(fifo_wr_data_o[3]), .I2(n1666), 
+            .O(n1766)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__4067.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__4068 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [3]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1767)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4068.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4069 (.I0(fifo_wr_data_o[3]), .I1(n1767), .I2(n1528), 
+            .I3(n1532), .O(n1768)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4069.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4070 (.I0(fifo_wr_data_o[3]), .I1(n1689), .O(n1769)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__4070.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4071 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/reg_accel_x [3]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1770)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef00 */ ;
+    defparam LUT__4071.LUTMASK = 16'hef00;
+    EFX_LUT4 LUT__4072 (.I0(n1691), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [11]), 
+            .I2(n1770), .O(n1771)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__4072.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4073 (.I0(n1528), .I1(n1532), .I2(n1769), .I3(n1771), 
+            .O(n1772)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4073.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4074 (.I0(n1695), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [11]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1666), .O(n1773)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4074.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4075 (.I0(n1768), .I1(n1686), .I2(n1772), .I3(n1773), 
+            .O(n1774)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4075.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4076 (.I0(n1759), .I1(n1765), .I2(n1766), .I3(n1774), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4076.LUTMASK = 16'h004f;
+    EFX_LUT4 LUT__4077 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [12]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [4]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1695), .O(n1775)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
+    defparam LUT__4077.LUTMASK = 16'hca00;
+    EFX_LUT4 LUT__4078 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [4]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [4]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1776)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
+    defparam LUT__4078.LUTMASK = 16'h5353;
+    EFX_LUT4 LUT__4079 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [12]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [12]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1777)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
+    defparam LUT__4079.LUTMASK = 16'h5353;
+    EFX_LUT4 LUT__4080 (.I0(n1777), .I1(n1776), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1778)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
+    defparam LUT__4080.LUTMASK = 16'h0305;
+    EFX_LUT4 LUT__4081 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [12]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [4]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1779)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4081.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4082 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [4]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [4]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1780)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4082.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4083 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [12]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [12]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1780), .O(n1781)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4083.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4084 (.I0(n1779), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(n1781), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1782)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0bb */ ;
+    defparam LUT__4084.LUTMASK = 16'hf0bb;
+    EFX_LUT4 LUT__4085 (.I0(n1778), .I1(n1775), .I2(n1782), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .O(n1783)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hee0f */ ;
+    defparam LUT__4085.LUTMASK = 16'hee0f;
+    EFX_LUT4 LUT__4086 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [4]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [12]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1784)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4086.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4087 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [4]), 
+            .I2(n1784), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1785)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__4087.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__4088 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [12]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [12]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1786)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4088.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4089 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [4]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [4]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1786), .O(n1787)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4089.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4090 (.I0(n1787), .I1(n1785), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1788)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
+    defparam LUT__4090.LUTMASK = 16'h0305;
+    EFX_LUT4 LUT__4091 (.I0(n1788), .I1(fifo_wr_data_o[4]), .I2(n1666), 
+            .I3(n1533), .O(n1789)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
+    defparam LUT__4091.LUTMASK = 16'h0305;
+    EFX_LUT4 LUT__4092 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [4]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [12]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1790)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4092.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4093 (.I0(fifo_wr_data_o[4]), .I1(n1790), .I2(n1528), 
+            .I3(n1532), .O(n1791)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4093.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4094 (.I0(fifo_wr_data_o[4]), .I1(n1526), .I2(n1527), 
+            .O(n1792)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4094.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4095 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [12]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1793)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4095.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4096 (.I0(n1532), .I1(n1792), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I3(n1793), .O(n1794)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;
+    defparam LUT__4096.LUTMASK = 16'hf800;
+    EFX_LUT4 LUT__4097 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [4]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [12]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1795)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4097.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4098 (.I0(n1795), .I1(n1695), .I2(n1666), .O(n1796)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
+    defparam LUT__4098.LUTMASK = 16'hb0b0;
+    EFX_LUT4 LUT__4099 (.I0(n1791), .I1(n1686), .I2(n1794), .I3(n1796), 
+            .O(n1797)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4099.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4100 (.I0(n1783), .I1(n1710), .I2(n1789), .I3(n1797), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h008f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4100.LUTMASK = 16'h008f;
+    EFX_LUT4 LUT__4101 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [13]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1798)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcffa */ ;
+    defparam LUT__4101.LUTMASK = 16'hcffa;
+    EFX_LUT4 LUT__4102 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [13]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1799)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfacf */ ;
+    defparam LUT__4102.LUTMASK = 16'hfacf;
+    EFX_LUT4 LUT__4103 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [13]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .O(n1800)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h05f3 */ ;
+    defparam LUT__4103.LUTMASK = 16'h05f3;
+    EFX_LUT4 LUT__4104 (.I0(n1799), .I1(n1798), .I2(n1800), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1801)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf077 */ ;
+    defparam LUT__4104.LUTMASK = 16'hf077;
+    EFX_LUT4 LUT__4105 (.I0(n1801), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1802)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;
+    defparam LUT__4105.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__4106 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [5]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1803)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
+    defparam LUT__4106.LUTMASK = 16'h5353;
+    EFX_LUT4 LUT__4107 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [13]), 
+            .I2(n1803), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1804)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__4107.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__4108 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [13]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [13]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1805)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4108.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4109 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [5]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1805), .O(n1806)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4109.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4110 (.I0(n1806), .I1(n1804), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1807)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
+    defparam LUT__4110.LUTMASK = 16'h0305;
+    EFX_LUT4 LUT__4111 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [5]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1808)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4111.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4112 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [13]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [13]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1808), .O(n1809)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4112.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4113 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [13]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1810)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
+    defparam LUT__4113.LUTMASK = 16'hca00;
+    EFX_LUT4 LUT__4114 (.I0(n1810), .I1(n1809), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1811)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h030a */ ;
+    defparam LUT__4114.LUTMASK = 16'h030a;
+    EFX_LUT4 LUT__4115 (.I0(n1807), .I1(n1811), .I2(n1802), .I3(n1533), 
+            .O(n1812)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;
+    defparam LUT__4115.LUTMASK = 16'h00fe;
+    EFX_LUT4 LUT__4116 (.I0(fifo_wr_data_o[5]), .I1(n1526), .I2(n1527), 
+            .O(n1813)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4116.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4117 (.I0(n1532), .I1(n1813), .O(n1814)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4117.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4118 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [5]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [13]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1815)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4118.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4119 (.I0(fifo_wr_data_o[5]), .I1(n1815), .I2(n1528), 
+            .I3(n1532), .O(n1816)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4119.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4120 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [5]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1817)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
+    defparam LUT__4120.LUTMASK = 16'hb0b0;
+    EFX_LUT4 LUT__4121 (.I0(n1691), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [13]), 
+            .I2(n1817), .O(n1818)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__4121.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4122 (.I0(n1532), .I1(n1813), .I2(n1689), .I3(n1818), 
+            .O(n1819)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8f00 */ ;
+    defparam LUT__4122.LUTMASK = 16'h8f00;
+    EFX_LUT4 LUT__4123 (.I0(n1695), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [13]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1666), .O(n1820)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4123.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4124 (.I0(n1816), .I1(n1686), .I2(n1819), .I3(n1820), 
+            .O(n1821)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4124.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4125 (.I0(n1812), .I1(n1814), .I2(n1666), .I3(n1821), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4125.LUTMASK = 16'h00fe;
+    EFX_LUT4 LUT__4126 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [14]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [6]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1822)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4126.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4127 (.I0(n1822), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
             .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1846)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__4150.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__4151 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1686), .O(n1847)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4151.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4152 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1848)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;
-    defparam LUT__4152.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4153 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [14]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1849)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;
-    defparam LUT__4153.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4154 (.I0(n1849), .I1(n1754), .I2(n1848), .I3(n1752), 
-            .O(n1850)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0bb */ ;
-    defparam LUT__4154.LUTMASK = 16'hb0bb;
-    EFX_LUT4 LUT__4155 (.I0(n1846), .I1(n1844), .I2(n1847), .I3(n1850), 
-            .O(n1851)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d00 */ ;
-    defparam LUT__4155.LUTMASK = 16'h0d00;
-    EFX_LUT4 LUT__4156 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .I1(n1851), 
-            .I2(fifo_wr_data_o[6]), .I3(n1526), .O(n1852)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0f77 */ ;
-    defparam LUT__4156.LUTMASK = 16'h0f77;
-    EFX_LUT4 LUT__4157 (.I0(n1841), .I1(n1852), .I2(n1830), .I3(n1834), 
-            .O(\Inst_FIFO_CONTROLLER/n955 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0bb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4157.LUTMASK = 16'hb0bb;
-    EFX_LUT4 LUT__4158 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [15]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_y [15]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1853)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
-    defparam LUT__4158.LUTMASK = 16'hcaca;
-    EFX_LUT4 LUT__4159 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [7]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [7]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1854)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4159.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4160 (.I0(n1854), .I1(n1853), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1855)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0c05 */ ;
-    defparam LUT__4160.LUTMASK = 16'h0c05;
-    EFX_LUT4 LUT__4161 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [7]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [7]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1856)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
-    defparam LUT__4161.LUTMASK = 16'hf305;
-    EFX_LUT4 LUT__4162 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_z [15]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(n1856), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1857)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
-    defparam LUT__4162.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4163 (.I0(n1520), .I1(n1525), .I2(n1855), .I3(n1857), 
-            .O(n1858)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7770 */ ;
-    defparam LUT__4163.LUTMASK = 16'h7770;
-    EFX_LUT4 LUT__4164 (.I0(n1858), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1859)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b0b */ ;
-    defparam LUT__4164.LUTMASK = 16'h0b0b;
-    EFX_LUT4 LUT__4165 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [7]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [7]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1860)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4165.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4166 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [15]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [15]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1861)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4166.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4167 (.I0(n1861), .I1(n1860), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1862)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4167.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4168 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [7]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [15]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1863)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__4168.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__4169 (.I0(n1863), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1864)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__4169.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__4170 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [7]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [15]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1686), .O(n1865)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4170.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4171 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [15]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [15]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(n1866)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
-    defparam LUT__4171.LUTMASK = 16'h0305;
-    EFX_LUT4 LUT__4172 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_y [7]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_z [7]), 
+            .O(n1823)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
+    defparam LUT__4127.LUTMASK = 16'h00ef;
+    EFX_LUT4 LUT__4128 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [6]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1824)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
+    defparam LUT__4128.LUTMASK = 16'h5353;
+    EFX_LUT4 LUT__4129 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [14]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [14]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1825)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
+    defparam LUT__4129.LUTMASK = 16'h5353;
+    EFX_LUT4 LUT__4130 (.I0(n1825), .I1(n1824), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1826)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
+    defparam LUT__4130.LUTMASK = 16'h3500;
+    EFX_LUT4 LUT__4131 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [14]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [6]), 
             .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1867)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4172.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4173 (.I0(n1867), .I1(n1866), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1868)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e00 */ ;
-    defparam LUT__4173.LUTMASK = 16'h0e00;
-    EFX_LUT4 LUT__4174 (.I0(n1864), .I1(n1862), .I2(n1865), .I3(n1868), 
-            .O(n1869)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h000d */ ;
-    defparam LUT__4174.LUTMASK = 16'h000d;
-    EFX_LUT4 LUT__4175 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .I1(n1869), 
-            .I2(fifo_wr_data_o[7]), .I3(n1526), .O(n1870)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0f77 */ ;
-    defparam LUT__4175.LUTMASK = 16'h0f77;
-    EFX_LUT4 LUT__4176 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_z [15]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [7]), 
-            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1871)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
-    defparam LUT__4176.LUTMASK = 16'h5353;
-    EFX_LUT4 LUT__4177 (.I0(fifo_wr_data_o[7]), .I1(n1871), .I2(n1526), 
-            .I3(n1694), .O(n1872)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'ha300 */ ;
-    defparam LUT__4177.LUTMASK = 16'ha300;
-    EFX_LUT4 LUT__4178 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1827)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
+    defparam LUT__4131.LUTMASK = 16'h0305;
+    EFX_LUT4 LUT__4132 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [6]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [6]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1828)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4132.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4133 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [14]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [14]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1828), .O(n1829)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4133.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4134 (.I0(n1829), .I1(n1827), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .O(n1830)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hca00 */ ;
+    defparam LUT__4134.LUTMASK = 16'hca00;
+    EFX_LUT4 LUT__4135 (.I0(n1826), .I1(n1823), .I2(n1830), .I3(n1710), 
+            .O(n1831)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4135.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4136 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [6]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [14]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1832)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4136.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4137 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [6]), 
+            .I2(n1832), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1833)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__4137.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__4138 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [14]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [14]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1834)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4138.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4139 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [6]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [6]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1834), .O(n1835)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4139.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4140 (.I0(n1835), .I1(n1833), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1836)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__4140.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4141 (.I0(n1836), .I1(n1533), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1837)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h001f */ ;
+    defparam LUT__4141.LUTMASK = 16'h001f;
+    EFX_LUT4 LUT__4142 (.I0(fifo_wr_data_o[6]), .I1(n1533), .O(n1838)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4142.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4143 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [6]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [14]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1839)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4143.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4144 (.I0(fifo_wr_data_o[6]), .I1(n1839), .I2(n1528), 
+            .I3(n1532), .O(n1840)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4144.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4145 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(fifo_wr_data_o[6]), 
+            .O(n1841)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__4145.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4146 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [14]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1842)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4146.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4147 (.I0(n1528), .I1(n1532), .I2(n1841), .I3(n1842), 
+            .O(n1843)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4147.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4148 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_x [6]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [14]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1844)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4148.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4149 (.I0(n1844), .I1(n1695), .I2(n1666), .O(n1845)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
+    defparam LUT__4149.LUTMASK = 16'hb0b0;
+    EFX_LUT4 LUT__4150 (.I0(n1840), .I1(n1686), .I2(n1843), .I3(n1845), 
+            .O(n1846)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4150.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4151 (.I0(n1837), .I1(n1838), .I2(n1831), .I3(n1846), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00fe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4151.LUTMASK = 16'h00fe;
+    EFX_LUT4 LUT__4152 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [15]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [7]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1847)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4152.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4153 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [7]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [7]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1848)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4153.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4154 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_z [15]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_y [15]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1848), .O(n1849)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4154.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4155 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(n1847), 
+            .I2(n1849), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1850)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbb0f */ ;
+    defparam LUT__4155.LUTMASK = 16'hbb0f;
+    EFX_LUT4 LUT__4156 (.I0(\Inst_FIFO_CONTROLLER/reg_f_accel_x [15]), .I1(\Inst_FIFO_CONTROLLER/reg_f_accel_x [7]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1851)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4156.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4157 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [7]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [7]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1852)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4157.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4158 (.I0(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [15]), .I1(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [15]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1852), .O(n1853)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4158.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4159 (.I0(n1851), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .I2(n1853), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1854)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf0bb */ ;
+    defparam LUT__4159.LUTMASK = 16'hf0bb;
+    EFX_LUT4 LUT__4160 (.I0(n1854), .I1(n1850), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .O(n1855)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3a00 */ ;
+    defparam LUT__4160.LUTMASK = 16'h3a00;
+    EFX_LUT4 LUT__4161 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [7]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [15]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1856)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4161.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4162 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_z [7]), 
+            .I2(n1856), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .O(n1857)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbf0 */ ;
+    defparam LUT__4162.LUTMASK = 16'hbbf0;
+    EFX_LUT4 LUT__4163 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_y [15]), .I1(\Inst_FIFO_CONTROLLER/reg_gyro_x [15]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(n1858)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4163.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4164 (.I0(\Inst_FIFO_CONTROLLER/reg_gyro_x [7]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [7]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1858), .O(n1859)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4164.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4165 (.I0(n1859), .I1(n1857), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1860)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;
+    defparam LUT__4165.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4166 (.I0(n1860), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I2(n1533), .O(n1861)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__4166.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4167 (.I0(n1533), .I1(fifo_wr_data_o[7]), .I2(n1666), 
+            .O(n1862)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__4167.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__4168 (.I0(\Inst_FIFO_CONTROLLER/reg_accel_y [7]), .I1(\Inst_FIFO_CONTROLLER/reg_accel_z [15]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .O(n1863)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
+    defparam LUT__4168.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4169 (.I0(fifo_wr_data_o[7]), .I1(n1863), .I2(n1528), 
+            .I3(n1532), .O(n1864)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5ccc */ ;
+    defparam LUT__4169.LUTMASK = 16'h5ccc;
+    EFX_LUT4 LUT__4170 (.I0(fifo_wr_data_o[7]), .I1(n1689), .O(n1865)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__4170.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4171 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
             .I2(\Inst_FIFO_CONTROLLER/reg_accel_x [7]), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1873)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef00 */ ;
-    defparam LUT__4178.LUTMASK = 16'hef00;
-    EFX_LUT4 LUT__4179 (.I0(n1697), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [15]), 
-            .I2(n1873), .O(n1874)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
-    defparam LUT__4179.LUTMASK = 16'h0d0d;
-    EFX_LUT4 LUT__4180 (.I0(fifo_wr_data_o[7]), .I1(n1696), .I2(n1525), 
-            .I3(n1874), .O(n1875)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__4180.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__4181 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .I2(\Inst_FIFO_CONTROLLER/reg_accel_y [15]), .I3(n1670), .O(n1876)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbf00 */ ;
-    defparam LUT__4181.LUTMASK = 16'hbf00;
-    EFX_LUT4 LUT__4182 (.I0(n1875), .I1(n1876), .O(n1877)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__4182.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4183 (.I0(n1872), .I1(n1877), .I2(n1859), .I3(n1870), 
-            .O(\Inst_FIFO_CONTROLLER/n955 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0bb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
-    defparam LUT__4183.LUTMASK = 16'hb0bb;
-    EFX_LUT4 LUT__4184 (.I0(n1526), .I1(n1671), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
-            .O(n1878)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
-    defparam LUT__4184.LUTMASK = 16'hd0d0;
-    EFX_LUT4 LUT__4185 (.I0(fifo_rst_busys), .I1(n1878), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
-            .O(\Inst_FIFO_CONTROLLER/n965 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1414 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
-    defparam LUT__4185.LUTMASK = 16'h1414;
-    EFX_LUT4 LUT__4186 (.I0(n1670), .I1(n1526), .I2(n1697), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1879)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcfb0 */ ;
-    defparam LUT__4186.LUTMASK = 16'hcfb0;
-    EFX_LUT4 LUT__4187 (.I0(fifo_rst_busys), .I1(n1879), .O(\Inst_FIFO_CONTROLLER/n965 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
-    defparam LUT__4187.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4188 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(fifo_rst_busys), 
-            .I2(n1670), .O(n1880)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__4188.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__4189 (.I0(n1880), .I1(n1526), .I2(ceg_net437), .O(ceg_net438)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf8f8 */ ;
-    defparam LUT__4189.LUTMASK = 16'hf8f8;
-    EFX_LUT4 LUT__4190 (.I0(n1697), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
-            .O(n1881)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__4190.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__4191 (.I0(n1881), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [3]), 
-            .O(n1882)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__4191.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__4192 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .I1(n1526), 
-            .I2(n1881), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1883)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h008f */ ;
-    defparam LUT__4192.LUTMASK = 16'h008f;
-    EFX_LUT4 LUT__4193 (.I0(n1526), .I1(n1882), .I2(n1883), .I3(fifo_rst_busys), 
-            .O(\Inst_FIFO_CONTROLLER/n965 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h000b */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
-    defparam LUT__4193.LUTMASK = 16'h000b;
-    EFX_LUT4 LUT__4194 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [1]), .I1(fifo_rst_busys), 
-            .I2(n1670), .O(n1884)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb0b0 */ ;
-    defparam LUT__4194.LUTMASK = 16'hb0b0;
-    EFX_LUT4 LUT__4195 (.I0(n1884), .I1(n1526), .I2(ceg_net437), .O(ceg_net439)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf8f8 */ ;
-    defparam LUT__4195.LUTMASK = 16'hf8f8;
-    EFX_LUT4 LUT__4196 (.I0(n1526), .I1(n1882), .I2(fifo_rst_busys), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .O(n1866)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hef00 */ ;
+    defparam LUT__4171.LUTMASK = 16'hef00;
+    EFX_LUT4 LUT__4172 (.I0(n1691), .I1(\Inst_FIFO_CONTROLLER/reg_accel_x [15]), 
+            .I2(n1866), .O(n1867)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;
+    defparam LUT__4172.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4173 (.I0(n1528), .I1(n1532), .I2(n1865), .I3(n1867), 
+            .O(n1868)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4173.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4174 (.I0(n1695), .I1(\Inst_FIFO_CONTROLLER/reg_accel_y [15]), 
+            .I2(\Inst_FIFO_CONTROLLER/FIFO_state [0]), .I3(n1666), .O(n1869)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7f00 */ ;
+    defparam LUT__4174.LUTMASK = 16'h7f00;
+    EFX_LUT4 LUT__4175 (.I0(n1864), .I1(n1686), .I2(n1868), .I3(n1869), 
+            .O(n1870)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4175.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4176 (.I0(n1855), .I1(n1861), .I2(n1862), .I3(n1870), 
+            .O(\Inst_FIFO_CONTROLLER/n955 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+    defparam LUT__4176.LUTMASK = 16'h004f;
+    EFX_LUT4 LUT__4177 (.I0(n1699), .I1(\Inst_FIFO_CONTROLLER/FIFO_state [0]), 
+            .I2(fifo_rst_busys), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [1]), 
+            .O(\Inst_FIFO_CONTROLLER/n965 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b04 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
+    defparam LUT__4177.LUTMASK = 16'h0b04;
+    EFX_LUT4 LUT__4178 (.I0(n1666), .I1(n1533), .I2(n1691), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [2]), 
+            .O(n1871)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcfb0 */ ;
+    defparam LUT__4178.LUTMASK = 16'hcfb0;
+    EFX_LUT4 LUT__4179 (.I0(fifo_rst_busys), .I1(n1871), .O(\Inst_FIFO_CONTROLLER/n965 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
+    defparam LUT__4179.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4180 (.I0(n1533), .I1(n1666), .I2(n1695), .I3(ceg_net436), 
+            .O(ceg_net437)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hff80 */ ;
+    defparam LUT__4180.LUTMASK = 16'hff80;
+    EFX_LUT4 LUT__4181 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1691), 
+            .O(n1872)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4181.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4182 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [4]), .I1(n1533), 
+            .I2(n1872), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1873)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcf70 */ ;
+    defparam LUT__4182.LUTMASK = 16'hcf70;
+    EFX_LUT4 LUT__4183 (.I0(fifo_rst_busys), .I1(n1873), .O(\Inst_FIFO_CONTROLLER/n965 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
+    defparam LUT__4183.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4184 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1533), 
+            .I2(n1666), .I3(ceg_net436), .O(ceg_net438)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hff80 */ ;
+    defparam LUT__4184.LUTMASK = 16'hff80;
+    EFX_LUT4 LUT__4185 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .I1(n1872), 
+            .O(n1874)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4185.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4186 (.I0(n1533), .I1(n1874), .I2(fifo_rst_busys), .I3(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
             .O(\Inst_FIFO_CONTROLLER/n965 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b04 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(358)
-    defparam LUT__4196.LUTMASK = 16'h0b04;
-    EFX_LUT4 LUT__4197 (.I0(n1881), .I1(fifo_rst_busys), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
-            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(n1885)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0503 */ ;
-    defparam LUT__4197.LUTMASK = 16'h0503;
-    EFX_LUT4 LUT__4198 (.I0(data_valid_out), .I1(n1672), .I2(n1526), .I3(n1885), 
-            .O(ceg_net440)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf400 */ ;
-    defparam LUT__4198.LUTMASK = 16'hf400;
-    EFX_LUT4 LUT__4199 (.I0(\u_IIR_filtre/IIR_filtre_state [0]), .I1(\u_IIR_filtre/IIR_filtre_state [1]), 
-            .O(\u_IIR_filtre/n1801 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(570)
-    defparam LUT__4199.LUTMASK = 16'heeee;
-    EFX_LUT4 LUT__4200 (.I0(\u_IIR_filtre/n1801 ), .I1(data_valid_out), 
-            .O(ceg_net92)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(245)
-    defparam LUT__4200.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__4201 (.I0(\u_IIR_filtre/IIR_filtre_state [1]), .I1(\u_IIR_filtre/IIR_filtre_state [0]), 
-            .O(\u_IIR_filtre/n465 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(104)
-    defparam LUT__4201.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4202 (.I0(\u_IIR_filtre/n1801 ), .I1(rst_n_i), .I2(data_valid_out), 
-            .O(\u_IIR_filtre/n1916 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(570)
-    defparam LUT__4202.LUTMASK = 16'h4040;
-    EFX_LUT4 LUT__4203 (.I0(n1527), .I1(rd_en_i), .O(\u_FIFO/u_efx_fifo_top/rd_en_int )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1060)
-    defparam LUT__4203.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4204 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
-            .I2(\Inst_Spi_Mode_3/bitcounter [0]), .O(\Inst_Spi_Mode_3/n129 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4204.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__4205 (.I0(\Inst_Spi_Mode_3/bitcounter [0]), .I1(\Inst_Spi_Mode_3/bitcounter [1]), 
-            .I2(\Inst_Spi_Mode_3/bitcounter [2]), .I3(\Inst_Spi_Mode_3/bitcounter [3]), 
-            .O(n1886)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__4205.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__4206 (.I0(n1886), .I1(\Inst_Spi_Mode_3/state [0]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(ceg_net106)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__4206.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__4207 (.I0(spi_start), .I1(n1886), .I2(\Inst_Spi_Mode_3/state [0]), 
-            .I3(\Inst_Spi_Mode_3/state [1]), .O(ceg_net443)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3335 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(262)
-    defparam LUT__4207.LUTMASK = 16'h3335;
-    EFX_LUT4 LUT__4208 (.I0(miso_i), .I1(mpu_to_spi_data[0]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4208.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4209 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/bit_idx [2]), 
-            .I2(n1886), .I3(\Inst_Spi_Mode_3/state [1]), .O(n1887)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;
-    defparam LUT__4209.LUTMASK = 16'h1000;
-    EFX_LUT4 LUT__4210 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
-            .I2(spi_start), .O(n1888)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
-    defparam LUT__4210.LUTMASK = 16'h1010;
-    EFX_LUT4 LUT__4211 (.I0(\Inst_Spi_Mode_3/bit_idx [1]), .I1(\Inst_Spi_Mode_3/bit_idx [0]), 
-            .I2(n1887), .I3(n1888), .O(ceg_net291)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__4211.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__4212 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
+    defparam LUT__4186.LUTMASK = 16'h0b04;
+    EFX_LUT4 LUT__4187 (.I0(n1872), .I1(n1533), .O(n1875)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__4187.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4188 (.I0(\Inst_FIFO_CONTROLLER/FIFO_state [2]), .I1(n1700), 
+            .I2(n1533), .I3(fifo_rst_busys), .O(n1876)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00f4 */ ;
+    defparam LUT__4188.LUTMASK = 16'h00f4;
+    EFX_LUT4 LUT__4189 (.I0(n1876), .I1(n1875), .I2(\Inst_FIFO_CONTROLLER/FIFO_state [4]), 
+            .I3(\Inst_FIFO_CONTROLLER/FIFO_state [3]), .O(ceg_net439)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0c0a */ ;
+    defparam LUT__4189.LUTMASK = 16'h0c0a;
+    EFX_LUT4 LUT__4190 (.I0(\u_IIR_filtre/IIR_filtre_state [0]), .I1(\u_IIR_filtre/IIR_filtre_state [1]), 
+            .O(\u_IIR_filtre/n1801 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(586)
+    defparam LUT__4190.LUTMASK = 16'heeee;
+    EFX_LUT4 LUT__4191 (.I0(data_valid_out), .I1(\u_IIR_filtre/n1801 ), 
+            .O(ceg_net87)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(261)
+    defparam LUT__4191.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4192 (.I0(\u_IIR_filtre/IIR_filtre_state [1]), .I1(\u_IIR_filtre/IIR_filtre_state [0]), 
+            .O(\u_IIR_filtre/n465 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(103)
+    defparam LUT__4192.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4193 (.I0(\u_IIR_filtre/n1801 ), .I1(data_valid_out), 
+            .I2(rst_n_i), .O(\u_IIR_filtre/n1916 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(586)
+    defparam LUT__4193.LUTMASK = 16'h4040;
+    EFX_LUT4 LUT__4194 (.I0(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9] ), 
+            .I1(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9] ), .I2(\u_FIFO/u_efx_fifo_top/raddr [6]), 
+            .I3(\u_FIFO/u_efx_fifo_top/waddr [6]), .O(n1877)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
+    defparam LUT__4194.LUTMASK = 16'h9009;
+    EFX_LUT4 LUT__4195 (.I0(n1529), .I1(n1530), .I2(n1528), .I3(n1877), 
+            .O(n1878)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__4195.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__4196 (.I0(n1878), .I1(rd_en_i), .O(\u_FIFO/u_efx_fifo_top/rd_en_int )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1060)
+    defparam LUT__4196.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4197 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
+            .O(n1879)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__4197.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4198 (.I0(\Inst_Spi_Mode_3/bitcounter [0]), .I1(n1879), 
+            .O(\Inst_Spi_Mode_3/n129 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4198.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4199 (.I0(\Inst_Spi_Mode_3/bitcounter [0]), .I1(\Inst_Spi_Mode_3/bitcounter [1]), 
+            .I2(\Inst_Spi_Mode_3/bitcounter [2]), .O(n1880)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4199.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4200 (.I0(\Inst_Spi_Mode_3/bitcounter [3]), .I1(n1880), 
+            .O(n1881)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4200.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4201 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
+            .I2(n1881), .O(ceg_net101)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4201.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4202 (.I0(spi_start), .I1(n1879), .O(n1882)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4202.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4203 (.I0(n1881), .I1(n1879), .I2(n1882), .O(ceg_net442)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(278)
+    defparam LUT__4203.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__4204 (.I0(mpu_to_spi_data[0]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4204.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4205 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/bit_idx [2]), 
+            .I2(\Inst_Spi_Mode_3/state [1]), .I3(n1881), .O(n1883)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1000 */ ;
+    defparam LUT__4205.LUTMASK = 16'h1000;
+    EFX_LUT4 LUT__4206 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
+            .O(n1884)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__4206.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4207 (.I0(n1884), .I1(n1883), .I2(n1882), .O(ceg_net289)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__4207.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__4208 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
             .O(\Inst_Spi_Mode_3/n124 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7777 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4212.LUTMASK = 16'h7777;
-    EFX_LUT4 LUT__4213 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .I2(\Inst_Spi_Mode_3/bit_idx [2]), .O(n1889)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;
-    defparam LUT__4213.LUTMASK = 16'h0101;
-    EFX_LUT4 LUT__4214 (.I0(n1889), .I1(n1886), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .I3(\Inst_Spi_Mode_3/state [0]), .O(ceg_net292)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hffb0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(54)
-    defparam LUT__4214.LUTMASK = 16'hffb0;
-    EFX_LUT4 LUT__4215 (.I0(\Inst_Spi_Mode_3/state [1]), .I1(\Inst_Spi_Mode_3/state [0]), 
-            .O(\~ceg_net114 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbbb */ ;
-    defparam LUT__4215.LUTMASK = 16'hbbbb;
-    EFX_LUT4 LUT__4216 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
-            .I2(n1886), .O(ceg_net293)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;
-    defparam LUT__4216.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__4217 (.I0(\Inst_Spi_Mode_3/data_buffer [4]), .I1(\Inst_Spi_Mode_3/data_buffer [6]), 
+    defparam LUT__4208.LUTMASK = 16'h7777;
+    EFX_LUT4 LUT__4209 (.I0(\Inst_Spi_Mode_3/bit_idx [2]), .I1(n1884), .O(n1885)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__4209.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4210 (.I0(n1885), .I1(n1881), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .I3(\Inst_Spi_Mode_3/state [0]), .O(ceg_net290)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hffb0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(54)
+    defparam LUT__4210.LUTMASK = 16'hffb0;
+    EFX_LUT4 LUT__4211 (.I0(\Inst_Spi_Mode_3/state [1]), .I1(\Inst_Spi_Mode_3/state [0]), 
+            .O(\~ceg_net109 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbbb */ ;
+    defparam LUT__4211.LUTMASK = 16'hbbbb;
+    EFX_LUT4 LUT__4212 (.I0(n1879), .I1(n1881), .O(ceg_net291)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;
+    defparam LUT__4212.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4213 (.I0(\Inst_Spi_Mode_3/data_buffer [7]), .I1(\Inst_Spi_Mode_3/data_buffer [5]), 
             .I2(\Inst_Spi_Mode_3/bit_idx [0]), .I3(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .O(n1890)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0305 */ ;
-    defparam LUT__4217.LUTMASK = 16'h0305;
-    EFX_LUT4 LUT__4218 (.I0(\Inst_Spi_Mode_3/data_buffer [5]), .I1(\Inst_Spi_Mode_3/data_buffer [7]), 
-            .I2(\Inst_Spi_Mode_3/bit_idx [1]), .I3(\Inst_Spi_Mode_3/bit_idx [0]), 
-            .O(n1891)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3500 */ ;
-    defparam LUT__4218.LUTMASK = 16'h3500;
-    EFX_LUT4 LUT__4219 (.I0(\Inst_Spi_Mode_3/data_buffer [3]), .I1(\Inst_Spi_Mode_3/data_buffer [1]), 
+            .O(n1886)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4213.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4214 (.I0(\Inst_Spi_Mode_3/data_buffer [6]), .I1(\Inst_Spi_Mode_3/data_buffer [4]), 
+            .I2(\Inst_Spi_Mode_3/bit_idx [0]), .I3(n1886), .O(n1887)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4214.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4215 (.I0(\Inst_Spi_Mode_3/data_buffer [3]), .I1(\Inst_Spi_Mode_3/data_buffer [1]), 
             .I2(\Inst_Spi_Mode_3/bit_idx [0]), .I3(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .O(n1892)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'ha0cf */ ;
-    defparam LUT__4219.LUTMASK = 16'ha0cf;
-    EFX_LUT4 LUT__4220 (.I0(\Inst_Spi_Mode_3/data_buffer [2]), .I1(\Inst_Spi_Mode_3/data_buffer [0]), 
-            .I2(\Inst_Spi_Mode_3/bit_idx [0]), .I3(n1892), .O(n1893)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfc0a */ ;
-    defparam LUT__4220.LUTMASK = 16'hfc0a;
-    EFX_LUT4 LUT__4221 (.I0(n1891), .I1(n1890), .I2(n1893), .I3(\Inst_Spi_Mode_3/bit_idx [2]), 
-            .O(\Inst_Spi_Mode_3/n25 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h11f0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(88)
-    defparam LUT__4221.LUTMASK = 16'h11f0;
-    EFX_LUT4 LUT__4222 (.I0(\~ceg_net114 ), .I1(n1886), .O(\Inst_Spi_Mode_3/n466 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbbb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(454)
-    defparam LUT__4222.LUTMASK = 16'hbbbb;
-    EFX_LUT4 LUT__4223 (.I0(miso_i), .I1(mpu_to_spi_data[1]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4223.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4224 (.I0(\Inst_Spi_Mode_3/bit_idx [1]), .I1(n1887), .I2(\Inst_Spi_Mode_3/bit_idx [0]), 
-            .I3(n1888), .O(ceg_net294)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
-    defparam LUT__4224.LUTMASK = 16'h00bf;
-    EFX_LUT4 LUT__4225 (.I0(miso_i), .I1(mpu_to_spi_data[2]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4225.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4226 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .I2(n1887), .I3(n1888), .O(ceg_net295)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
-    defparam LUT__4226.LUTMASK = 16'h00bf;
-    EFX_LUT4 LUT__4227 (.I0(miso_i), .I1(mpu_to_spi_data[3]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4227.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4228 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .I2(n1887), .I3(n1888), .O(ceg_net296)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h007f */ ;
-    defparam LUT__4228.LUTMASK = 16'h007f;
-    EFX_LUT4 LUT__4229 (.I0(miso_i), .I1(mpu_to_spi_data[4]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4229.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4230 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(n1886), .I2(\Inst_Spi_Mode_3/bit_idx [2]), 
-            .I3(\Inst_Spi_Mode_3/state [1]), .O(n1894)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
-    defparam LUT__4230.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__4231 (.I0(\Inst_Spi_Mode_3/bit_idx [1]), .I1(\Inst_Spi_Mode_3/bit_idx [0]), 
-            .I2(n1894), .I3(n1888), .O(ceg_net297)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00ef */ ;
-    defparam LUT__4231.LUTMASK = 16'h00ef;
-    EFX_LUT4 LUT__4232 (.I0(miso_i), .I1(mpu_to_spi_data[5]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4232.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4233 (.I0(\Inst_Spi_Mode_3/bit_idx [1]), .I1(n1894), .I2(\Inst_Spi_Mode_3/bit_idx [0]), 
-            .I3(n1888), .O(ceg_net298)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
-    defparam LUT__4233.LUTMASK = 16'h00bf;
-    EFX_LUT4 LUT__4234 (.I0(miso_i), .I1(mpu_to_spi_data[6]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4234.LUTMASK = 16'hacac;
-    EFX_LUT4 LUT__4235 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .I2(n1894), .I3(n1888), .O(ceg_net299)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
-    defparam LUT__4235.LUTMASK = 16'h00bf;
-    EFX_LUT4 LUT__4236 (.I0(miso_i), .I1(mpu_to_spi_data[7]), .I2(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n135 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hacac */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4236.LUTMASK = 16'hacac;
+            .O(n1888)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4215.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4216 (.I0(\Inst_Spi_Mode_3/data_buffer [2]), .I1(\Inst_Spi_Mode_3/data_buffer [0]), 
+            .I2(\Inst_Spi_Mode_3/bit_idx [0]), .I3(n1888), .O(n1889)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4216.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4217 (.I0(n1889), .I1(n1887), .I2(\Inst_Spi_Mode_3/bit_idx [2]), 
+            .O(\Inst_Spi_Mode_3/n25 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(88)
+    defparam LUT__4217.LUTMASK = 16'h3535;
+    EFX_LUT4 LUT__4218 (.I0(\~ceg_net109 ), .I1(n1881), .O(\Inst_Spi_Mode_3/n466 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbbbb */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(470)
+    defparam LUT__4218.LUTMASK = 16'hbbbb;
+    EFX_LUT4 LUT__4219 (.I0(mpu_to_spi_data[1]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4219.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4220 (.I0(\Inst_Spi_Mode_3/bit_idx [1]), .I1(\Inst_Spi_Mode_3/bit_idx [0]), 
+            .I2(n1883), .I3(n1882), .O(ceg_net292)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
+    defparam LUT__4220.LUTMASK = 16'h00bf;
+    EFX_LUT4 LUT__4221 (.I0(mpu_to_spi_data[2]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4221.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4222 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
+            .I2(n1883), .I3(n1882), .O(ceg_net293)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
+    defparam LUT__4222.LUTMASK = 16'h00bf;
+    EFX_LUT4 LUT__4223 (.I0(mpu_to_spi_data[3]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4223.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4224 (.I0(n1883), .I1(\Inst_Spi_Mode_3/bit_idx [1]), .I2(\Inst_Spi_Mode_3/bit_idx [0]), 
+            .I3(n1882), .O(ceg_net294)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h007f */ ;
+    defparam LUT__4224.LUTMASK = 16'h007f;
+    EFX_LUT4 LUT__4225 (.I0(mpu_to_spi_data[4]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4225.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4226 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/bit_idx [2]), 
+            .I2(\Inst_Spi_Mode_3/state [1]), .I3(n1881), .O(n1890)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
+    defparam LUT__4226.LUTMASK = 16'h4000;
+    EFX_LUT4 LUT__4227 (.I0(n1890), .I1(n1884), .I2(n1882), .O(ceg_net295)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__4227.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__4228 (.I0(mpu_to_spi_data[5]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4228.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4229 (.I0(\Inst_Spi_Mode_3/bit_idx [1]), .I1(\Inst_Spi_Mode_3/bit_idx [0]), 
+            .I2(n1890), .I3(n1882), .O(ceg_net296)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
+    defparam LUT__4229.LUTMASK = 16'h00bf;
+    EFX_LUT4 LUT__4230 (.I0(mpu_to_spi_data[6]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4230.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4231 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
+            .I2(n1890), .I3(n1882), .O(ceg_net297)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
+    defparam LUT__4231.LUTMASK = 16'h00bf;
+    EFX_LUT4 LUT__4232 (.I0(mpu_to_spi_data[7]), .I1(miso_i), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n135 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hcaca */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4232.LUTMASK = 16'hcaca;
+    EFX_LUT4 LUT__4233 (.I0(n1890), .I1(\Inst_Spi_Mode_3/bit_idx [1]), .I2(\Inst_Spi_Mode_3/bit_idx [0]), 
+            .I3(n1882), .O(ceg_net298)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h007f */ ;
+    defparam LUT__4233.LUTMASK = 16'h007f;
+    EFX_LUT4 LUT__4234 (.I0(n1879), .I1(\Inst_Spi_Mode_3/bitcounter [0]), 
+            .I2(\Inst_Spi_Mode_3/bitcounter [1]), .O(\Inst_Spi_Mode_3/n129 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1414 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4234.LUTMASK = 16'h1414;
+    EFX_LUT4 LUT__4235 (.I0(\Inst_Spi_Mode_3/bitcounter [0]), .I1(\Inst_Spi_Mode_3/bitcounter [1]), 
+            .I2(n1879), .I3(\Inst_Spi_Mode_3/bitcounter [2]), .O(\Inst_Spi_Mode_3/n129 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0708 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4235.LUTMASK = 16'h0708;
+    EFX_LUT4 LUT__4236 (.I0(n1879), .I1(\Inst_Spi_Mode_3/bitcounter [3]), 
+            .I2(n1880), .O(\Inst_Spi_Mode_3/n129 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1414 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4236.LUTMASK = 16'h1414;
     EFX_LUT4 LUT__4237 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .I2(n1894), .I3(n1888), .O(ceg_net300)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h007f */ ;
-    defparam LUT__4237.LUTMASK = 16'h007f;
-    EFX_LUT4 LUT__4238 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
-            .I2(\Inst_Spi_Mode_3/bitcounter [1]), .I3(\Inst_Spi_Mode_3/bitcounter [0]), 
-            .O(\Inst_Spi_Mode_3/n129 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0ee0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4238.LUTMASK = 16'h0ee0;
-    EFX_LUT4 LUT__4239 (.I0(\Inst_Spi_Mode_3/bitcounter [0]), .I1(\Inst_Spi_Mode_3/bitcounter [1]), 
-            .I2(\Inst_Spi_Mode_3/bitcounter [2]), .O(n1895)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8787 */ ;
-    defparam LUT__4239.LUTMASK = 16'h8787;
-    EFX_LUT4 LUT__4240 (.I0(\Inst_Spi_Mode_3/state [0]), .I1(\Inst_Spi_Mode_3/state [1]), 
-            .I2(n1895), .O(\Inst_Spi_Mode_3/n129 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4240.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__4241 (.I0(\Inst_Spi_Mode_3/bitcounter [2]), .I1(\Inst_Spi_Mode_3/bitcounter [0]), 
-            .I2(\Inst_Spi_Mode_3/bitcounter [1]), .I3(\Inst_Spi_Mode_3/bitcounter [3]), 
-            .O(n1896)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h007f */ ;
-    defparam LUT__4241.LUTMASK = 16'h007f;
-    EFX_LUT4 LUT__4242 (.I0(n1896), .I1(ceg_net293), .O(\Inst_Spi_Mode_3/n129 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4242.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4243 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
             .I2(\Inst_Spi_Mode_3/state [1]), .O(\Inst_Spi_Mode_3/n124 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9f9f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4243.LUTMASK = 16'h9f9f;
-    EFX_LUT4 LUT__4244 (.I0(\Inst_Spi_Mode_3/bit_idx [0]), .I1(\Inst_Spi_Mode_3/bit_idx [1]), 
-            .I2(\Inst_Spi_Mode_3/bit_idx [2]), .I3(\Inst_Spi_Mode_3/state [1]), 
-            .O(\Inst_Spi_Mode_3/n124 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he1ff */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4244.LUTMASK = 16'he1ff;
-    EFX_LUT4 LUT__4245 (.I0(n1889), .I1(\Inst_Spi_Mode_3/state [0]), .I2(\Inst_Spi_Mode_3/state [1]), 
+    defparam LUT__4237.LUTMASK = 16'h9f9f;
+    EFX_LUT4 LUT__4238 (.I0(\Inst_Spi_Mode_3/bit_idx [2]), .I1(n1884), .I2(\Inst_Spi_Mode_3/state [1]), 
+            .O(\Inst_Spi_Mode_3/n124 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6f6f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
+    defparam LUT__4238.LUTMASK = 16'h6f6f;
+    EFX_LUT4 LUT__4239 (.I0(n1885), .I1(\Inst_Spi_Mode_3/state [0]), .I2(\Inst_Spi_Mode_3/state [1]), 
             .O(\Inst_Spi_Mode_3/n144 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h2c2c */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(119)
-    defparam LUT__4245.LUTMASK = 16'h2c2c;
-    EFX_LUT4 LUT__4246 (.I0(\Inst_pwm_servo_0/counter [2]), .I1(\Inst_pwm_servo_0/counter [1]), 
-            .I2(\Inst_pwm_servo_0/counter [3]), .O(n1897)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__4246.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__4247 (.I0(\Inst_pwm_servo_0/counter [6]), .I1(\Inst_pwm_servo_0/counter [7]), 
-            .I2(\Inst_pwm_servo_0/counter [8]), .I3(\Inst_pwm_servo_0/counter [9]), 
-            .O(n1898)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__4247.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__4248 (.I0(\Inst_pwm_servo_0/counter [4]), .I1(n1897), 
-            .I2(\Inst_pwm_servo_0/counter [5]), .I3(n1898), .O(n1899)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f00 */ ;
-    defparam LUT__4248.LUTMASK = 16'h1f00;
-    EFX_LUT4 LUT__4249 (.I0(n1899), .I1(\Inst_pwm_servo_0/counter [10]), 
-            .I2(\Inst_pwm_servo_0/counter [11]), .I3(\Inst_pwm_servo_0/counter [12]), 
-            .O(n1900)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
-    defparam LUT__4249.LUTMASK = 16'h00bf;
-    EFX_LUT4 LUT__4250 (.I0(\Inst_pwm_servo_0/counter [14]), .I1(\Inst_pwm_servo_0/counter [15]), 
-            .I2(\Inst_pwm_servo_0/counter [16]), .I3(\Inst_pwm_servo_0/counter [18]), 
-            .O(n1901)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__4250.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__4251 (.I0(\Inst_pwm_servo_0/counter [17]), .I1(\Inst_pwm_servo_0/counter [18]), 
-            .I2(\Inst_pwm_servo_0/counter [19]), .O(n1902)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
-    defparam LUT__4251.LUTMASK = 16'he0e0;
-    EFX_LUT4 LUT__4252 (.I0(n1900), .I1(\Inst_pwm_servo_0/counter [13]), 
-            .I2(n1901), .I3(n1902), .O(n1903)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4f00 */ ;
-    defparam LUT__4252.LUTMASK = 16'h4f00;
-    EFX_LUT4 LUT__4253 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [5]), .O(\Inst_pwm_servo_0/n63 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4253.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4254 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [4]), .O(\Inst_pwm_servo_0/n63 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4254.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4255 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [3]), .O(\Inst_pwm_servo_0/n63 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4255.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4256 (.I0(n1903), .I1(\Inst_pwm_servo_0/counter [0]), 
-            .O(\Inst_pwm_servo_0/n63 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4256.LUTMASK = 16'h1111;
-    EFX_LUT4 LUT__4257 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [2]), .O(\Inst_pwm_servo_0/n63 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4257.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4258 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [1]), .O(\Inst_pwm_servo_0/n63 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4258.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4259 (.I0(\Inst_pwm_servo_0/counter [5]), .I1(\Inst_pwm_servo_0/counter [6]), 
-            .I2(\Inst_pwm_servo_0/counter [7]), .O(n1904)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;
-    defparam LUT__4259.LUTMASK = 16'h0101;
-    EFX_LUT4 LUT__4260 (.I0(n1897), .I1(\Inst_pwm_servo_0/counter [4]), 
-            .I2(n1904), .O(n1905)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
-    defparam LUT__4260.LUTMASK = 16'h7070;
-    EFX_LUT4 LUT__4261 (.I0(\Inst_pwm_servo_0/counter [10]), .I1(\Inst_pwm_servo_0/counter [11]), 
-            .I2(\Inst_pwm_servo_0/counter [12]), .I3(\Inst_pwm_servo_0/counter [13]), 
-            .O(n1906)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__4261.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__4262 (.I0(n1905), .I1(\Inst_pwm_servo_0/counter [8]), 
-            .I2(\Inst_pwm_servo_0/counter [9]), .I3(n1906), .O(n1907)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
-    defparam LUT__4262.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4263 (.I0(\Inst_pwm_servo_0/counter [15]), .I1(\Inst_pwm_servo_0/counter [16]), 
-            .I2(\Inst_pwm_servo_0/counter [17]), .I3(\Inst_pwm_servo_0/counter [18]), 
-            .O(n1908)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__4263.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__4264 (.I0(n1907), .I1(\Inst_pwm_servo_0/counter [14]), 
-            .I2(\Inst_pwm_servo_0/counter [19]), .I3(n1908), .O(\Inst_pwm_servo_0/n86 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(49)
-    defparam LUT__4264.LUTMASK = 16'h0b00;
-    EFX_LUT4 LUT__4265 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [6]), .O(\Inst_pwm_servo_0/n63 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4265.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4266 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [7]), .O(\Inst_pwm_servo_0/n63 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4266.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4267 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [8]), .O(\Inst_pwm_servo_0/n63 [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4267.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4268 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [9]), .O(\Inst_pwm_servo_0/n63 [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4268.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4269 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [10]), .O(\Inst_pwm_servo_0/n63 [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4269.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4270 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [11]), .O(\Inst_pwm_servo_0/n63 [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4270.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4271 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [12]), .O(\Inst_pwm_servo_0/n63 [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4271.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4272 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [13]), .O(\Inst_pwm_servo_0/n63 [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4272.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4273 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [14]), .O(\Inst_pwm_servo_0/n63 [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4273.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4274 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [15]), .O(\Inst_pwm_servo_0/n63 [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4274.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4275 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [16]), .O(\Inst_pwm_servo_0/n63 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4275.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4276 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [17]), .O(\Inst_pwm_servo_0/n63 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4276.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4277 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [18]), .O(\Inst_pwm_servo_0/n63 [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4277.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4278 (.I0(n1903), .I1(\Inst_pwm_servo_0/n42 [19]), .O(\Inst_pwm_servo_0/n63 [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
-    defparam LUT__4278.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4279 (.I0(\Inst_uart_tx/state [1]), .I1(tx_start_sig), 
-            .O(\Inst_uart_tx/n118 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
-    defparam LUT__4279.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4280 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/n118 ), 
-            .O(\Inst_uart_tx/n333 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(415)
-    defparam LUT__4280.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4281 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/state [1]), 
-            .I2(\Inst_uart_tx/bitcounter [5]), .O(n1909)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;
-    defparam LUT__4281.LUTMASK = 16'h0e0e;
-    EFX_LUT4 LUT__4282 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(n1909), .O(\Inst_uart_tx/n129 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
-    defparam LUT__4282.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4283 (.I0(tx_start_sig), .I1(\Inst_uart_tx/state [0]), 
-            .I2(\Inst_uart_tx/state [1]), .O(ceg_net137)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(255)
-    defparam LUT__4283.LUTMASK = 16'h0101;
-    EFX_LUT4 LUT__4284 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/bit_idx [1]), 
-            .I2(\Inst_uart_tx/bit_idx [2]), .O(n1910)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
-    defparam LUT__4284.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__4285 (.I0(n1910), .I1(\Inst_uart_tx/state [1]), .O(n1911)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
-    defparam LUT__4285.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__4286 (.I0(n1911), .I1(\Inst_uart_tx/bitcounter [5]), .I2(\Inst_uart_tx/n118 ), 
-            .I3(\Inst_uart_tx/state [0]), .O(ceg_net444)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3307 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(255)
-    defparam LUT__4286.LUTMASK = 16'h3307;
-    EFX_LUT4 LUT__4287 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/state [1]), 
-            .O(\Inst_uart_tx/n136 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
-    defparam LUT__4287.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4288 (.I0(n1910), .I1(\Inst_uart_tx/bitcounter [5]), .I2(tx_start_sig), 
-            .I3(\Inst_uart_tx/state [1]), .O(n1912)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hbb0f */ ;
-    defparam LUT__4288.LUTMASK = 16'hbb0f;
-    EFX_LUT4 LUT__4289 (.I0(n1912), .I1(\Inst_uart_tx/state [0]), .O(ceg_net306)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;
-    defparam LUT__4289.LUTMASK = 16'heeee;
-    EFX_LUT4 LUT__4290 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/state [1]), 
-            .O(\Inst_uart_tx/n115 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
-    defparam LUT__4290.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__4291 (.I0(n1909), .I1(\Inst_uart_tx/n115 [1]), .O(ceg_net303)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(52)
-    defparam LUT__4291.LUTMASK = 16'heeee;
-    EFX_LUT4 LUT__4292 (.I0(tx_start_sig), .I1(\Inst_uart_tx/data_buffer [0]), 
-            .I2(\Inst_uart_tx/state [0]), .O(n1913)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hc5c5 */ ;
-    defparam LUT__4292.LUTMASK = 16'hc5c5;
-    EFX_LUT4 LUT__4293 (.I0(\Inst_uart_tx/data_buffer [3]), .I1(\Inst_uart_tx/data_buffer [1]), 
+    defparam LUT__4239.LUTMASK = 16'h2c2c;
+    EFX_LUT4 LUT__4240 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/state [1]), 
+            .I2(tx_start_sig), .O(ceg_net130)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(271)
+    defparam LUT__4240.LUTMASK = 16'h0101;
+    EFX_LUT4 LUT__4241 (.I0(\Inst_uart_tx/bitcounter [5]), .I1(\Inst_uart_tx/bitcounter [6]), 
+            .I2(\Inst_uart_tx/bitcounter [7]), .I3(\Inst_uart_tx/bitcounter [8]), 
+            .O(n1891)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
+    defparam LUT__4241.LUTMASK = 16'hfe00;
+    EFX_LUT4 LUT__4242 (.I0(\Inst_uart_tx/state [1]), .I1(\Inst_uart_tx/state [0]), 
+            .I2(n1891), .O(n1892)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0e0e */ ;
+    defparam LUT__4242.LUTMASK = 16'h0e0e;
+    EFX_LUT4 LUT__4243 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/bit_idx [1]), 
+            .I2(\Inst_uart_tx/bit_idx [2]), .O(n1893)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4243.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4244 (.I0(\Inst_uart_tx/state [0]), .I1(n1893), .I2(\Inst_uart_tx/state [1]), 
+            .O(n1894)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1010 */ ;
+    defparam LUT__4244.LUTMASK = 16'h1010;
+    EFX_LUT4 LUT__4245 (.I0(ceg_net130), .I1(n1892), .I2(n1894), .O(ceg_net443)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfefe */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(271)
+    defparam LUT__4245.LUTMASK = 16'hfefe;
+    EFX_LUT4 LUT__4246 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(n1892), .O(\Inst_uart_tx/n150 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4246.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4247 (.I0(\Inst_uart_tx/state [1]), .I1(tx_start_sig), 
+            .O(\Inst_uart_tx/n139 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
+    defparam LUT__4247.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4248 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/n139 ), 
+            .O(\Inst_uart_tx/n404 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(431)
+    defparam LUT__4248.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4249 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/state [1]), 
+            .O(\Inst_uart_tx/n160 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
+    defparam LUT__4249.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4250 (.I0(n1894), .I1(n1891), .I2(\Inst_uart_tx/n404 ), 
+            .O(ceg_net304)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0707 */ ;
+    defparam LUT__4250.LUTMASK = 16'h0707;
+    EFX_LUT4 LUT__4251 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/state [1]), 
+            .O(\Inst_uart_tx/n136 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
+    defparam LUT__4251.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__4252 (.I0(n1892), .I1(\Inst_uart_tx/n136 [1]), .O(ceg_net301)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'heeee */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(52)
+    defparam LUT__4252.LUTMASK = 16'heeee;
+    EFX_LUT4 LUT__4253 (.I0(\Inst_uart_tx/data_buffer [7]), .I1(\Inst_uart_tx/data_buffer [5]), 
+            .I2(\Inst_uart_tx/bit_idx [1]), .O(n1895)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5353 */ ;
+    defparam LUT__4253.LUTMASK = 16'h5353;
+    EFX_LUT4 LUT__4254 (.I0(\Inst_uart_tx/data_buffer [6]), .I1(\Inst_uart_tx/bit_idx [1]), 
+            .I2(n1895), .I3(\Inst_uart_tx/bit_idx [0]), .O(n1896)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hee0f */ ;
+    defparam LUT__4254.LUTMASK = 16'hee0f;
+    EFX_LUT4 LUT__4255 (.I0(\Inst_uart_tx/data_buffer [4]), .I1(\Inst_uart_tx/data_buffer [2]), 
             .I2(\Inst_uart_tx/bit_idx [0]), .I3(\Inst_uart_tx/bit_idx [1]), 
-            .O(n1914)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0503 */ ;
-    defparam LUT__4293.LUTMASK = 16'h0503;
-    EFX_LUT4 LUT__4294 (.I0(\Inst_uart_tx/data_buffer [4]), .I1(\Inst_uart_tx/data_buffer [2]), 
-            .I2(\Inst_uart_tx/bit_idx [1]), .I3(\Inst_uart_tx/bit_idx [0]), 
-            .O(n1915)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5300 */ ;
-    defparam LUT__4294.LUTMASK = 16'h5300;
-    EFX_LUT4 LUT__4295 (.I0(\Inst_uart_tx/data_buffer [5]), .I1(\Inst_uart_tx/data_buffer [7]), 
-            .I2(\Inst_uart_tx/bit_idx [1]), .O(n1916)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3535 */ ;
-    defparam LUT__4295.LUTMASK = 16'h3535;
-    EFX_LUT4 LUT__4296 (.I0(\Inst_uart_tx/bit_idx [1]), .I1(\Inst_uart_tx/data_buffer [6]), 
-            .I2(n1916), .I3(\Inst_uart_tx/bit_idx [0]), .O(n1917)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hee0f */ ;
-    defparam LUT__4296.LUTMASK = 16'hee0f;
-    EFX_LUT4 LUT__4297 (.I0(n1915), .I1(n1914), .I2(n1917), .I3(\Inst_uart_tx/bit_idx [2]), 
-            .O(n1918)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0fee */ ;
-    defparam LUT__4297.LUTMASK = 16'h0fee;
-    EFX_LUT4 LUT__4298 (.I0(n1918), .I1(n1913), .I2(\Inst_uart_tx/state [1]), 
-            .O(\Inst_uart_tx/n119 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5c5c */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
-    defparam LUT__4298.LUTMASK = 16'h5c5c;
-    EFX_LUT4 LUT__4299 (.I0(\Inst_uart_tx/state [0]), .I1(\Inst_uart_tx/bitcounter [5]), 
-            .I2(\Inst_uart_tx/state [1]), .O(ceg_net304)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb2b2 */ ;
-    defparam LUT__4299.LUTMASK = 16'hb2b2;
-    EFX_LUT4 LUT__4300 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(\Inst_uart_tx/bitcounter [1]), 
-            .I2(n1909), .O(\Inst_uart_tx/n129 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
-    defparam LUT__4300.LUTMASK = 16'h6060;
-    EFX_LUT4 LUT__4301 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(\Inst_uart_tx/bitcounter [1]), 
-            .I2(\Inst_uart_tx/bitcounter [2]), .I3(n1909), .O(\Inst_uart_tx/n129 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
-    defparam LUT__4301.LUTMASK = 16'h7800;
-    EFX_LUT4 LUT__4302 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(\Inst_uart_tx/bitcounter [1]), 
-            .I2(\Inst_uart_tx/bitcounter [2]), .I3(\Inst_uart_tx/bitcounter [3]), 
-            .O(n1919)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h807f */ ;
-    defparam LUT__4302.LUTMASK = 16'h807f;
-    EFX_LUT4 LUT__4303 (.I0(n1919), .I1(n1909), .O(\Inst_uart_tx/n129 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
-    defparam LUT__4303.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4304 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(\Inst_uart_tx/bitcounter [1]), 
-            .I2(\Inst_uart_tx/bitcounter [2]), .I3(\Inst_uart_tx/bitcounter [3]), 
-            .O(n1920)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__4304.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__4305 (.I0(n1920), .I1(\Inst_uart_tx/bitcounter [4]), .I2(n1909), 
-            .O(\Inst_uart_tx/n129 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
-    defparam LUT__4305.LUTMASK = 16'h6060;
-    EFX_LUT4 LUT__4306 (.I0(n1909), .I1(n1920), .I2(\Inst_uart_tx/bitcounter [4]), 
-            .O(\Inst_uart_tx/n129 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
-    defparam LUT__4306.LUTMASK = 16'h8080;
-    EFX_LUT4 LUT__4307 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/bit_idx [1]), 
-            .I2(\Inst_uart_tx/state [1]), .O(\Inst_uart_tx/n136 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
-    defparam LUT__4307.LUTMASK = 16'h6060;
-    EFX_LUT4 LUT__4308 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/bit_idx [1]), 
+            .O(n1897)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h503f */ ;
+    defparam LUT__4255.LUTMASK = 16'h503f;
+    EFX_LUT4 LUT__4256 (.I0(\Inst_uart_tx/data_buffer [3]), .I1(\Inst_uart_tx/data_buffer [1]), 
+            .I2(\Inst_uart_tx/bit_idx [0]), .I3(n1897), .O(n1898)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf305 */ ;
+    defparam LUT__4256.LUTMASK = 16'hf305;
+    EFX_LUT4 LUT__4257 (.I0(n1898), .I1(n1896), .I2(\Inst_uart_tx/bit_idx [2]), 
+            .O(n1899)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3a3a */ ;
+    defparam LUT__4257.LUTMASK = 16'h3a3a;
+    EFX_LUT4 LUT__4258 (.I0(tx_start_sig), .I1(\Inst_uart_tx/data_buffer [0]), 
+            .I2(\Inst_uart_tx/state [0]), .O(n1900)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hc5c5 */ ;
+    defparam LUT__4258.LUTMASK = 16'hc5c5;
+    EFX_LUT4 LUT__4259 (.I0(n1900), .I1(n1899), .I2(\Inst_uart_tx/state [1]), 
+            .O(\Inst_uart_tx/n140 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h3a3a */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
+    defparam LUT__4259.LUTMASK = 16'h3a3a;
+    EFX_LUT4 LUT__4260 (.I0(\Inst_uart_tx/state [0]), .I1(n1891), .I2(\Inst_uart_tx/state [1]), 
+            .O(ceg_net302)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hb2b2 */ ;
+    defparam LUT__4260.LUTMASK = 16'hb2b2;
+    EFX_LUT4 LUT__4261 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(\Inst_uart_tx/bitcounter [1]), 
+            .I2(n1892), .O(\Inst_uart_tx/n150 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4261.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__4262 (.I0(\Inst_uart_tx/bitcounter [0]), .I1(\Inst_uart_tx/bitcounter [1]), 
+            .O(n1901)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4262.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4263 (.I0(\Inst_uart_tx/bitcounter [2]), .I1(n1901), .I2(n1892), 
+            .O(\Inst_uart_tx/n150 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4263.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__4264 (.I0(\Inst_uart_tx/bitcounter [2]), .I1(n1901), .I2(\Inst_uart_tx/bitcounter [3]), 
+            .I3(n1892), .O(\Inst_uart_tx/n150 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4264.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__4265 (.I0(\Inst_uart_tx/bitcounter [2]), .I1(\Inst_uart_tx/bitcounter [3]), 
+            .I2(n1901), .O(n1902)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4265.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4266 (.I0(\Inst_uart_tx/bitcounter [4]), .I1(n1902), .I2(n1892), 
+            .O(\Inst_uart_tx/n150 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4266.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__4267 (.I0(\Inst_uart_tx/bitcounter [4]), .I1(n1902), .I2(\Inst_uart_tx/bitcounter [5]), 
+            .I3(n1892), .O(\Inst_uart_tx/n150 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4267.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__4268 (.I0(\Inst_uart_tx/bitcounter [4]), .I1(\Inst_uart_tx/bitcounter [5]), 
+            .O(n1903)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
+    defparam LUT__4268.LUTMASK = 16'h8888;
+    EFX_LUT4 LUT__4269 (.I0(n1902), .I1(n1903), .I2(\Inst_uart_tx/bitcounter [6]), 
+            .I3(n1892), .O(\Inst_uart_tx/n150 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4269.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__4270 (.I0(\Inst_uart_tx/bitcounter [6]), .I1(n1902), .I2(n1903), 
+            .O(n1904)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8080 */ ;
+    defparam LUT__4270.LUTMASK = 16'h8080;
+    EFX_LUT4 LUT__4271 (.I0(\Inst_uart_tx/bitcounter [7]), .I1(n1904), .I2(n1892), 
+            .O(\Inst_uart_tx/n150 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4271.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__4272 (.I0(\Inst_uart_tx/bitcounter [7]), .I1(n1904), .I2(\Inst_uart_tx/bitcounter [8]), 
+            .I3(n1892), .O(\Inst_uart_tx/n150 [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hf800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(86)
+    defparam LUT__4272.LUTMASK = 16'hf800;
+    EFX_LUT4 LUT__4273 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/bit_idx [1]), 
+            .I2(\Inst_uart_tx/state [1]), .O(\Inst_uart_tx/n160 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6060 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
+    defparam LUT__4273.LUTMASK = 16'h6060;
+    EFX_LUT4 LUT__4274 (.I0(\Inst_uart_tx/bit_idx [0]), .I1(\Inst_uart_tx/bit_idx [1]), 
             .I2(\Inst_uart_tx/bit_idx [2]), .I3(\Inst_uart_tx/state [1]), 
-            .O(\Inst_uart_tx/n136 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
-    defparam LUT__4308.LUTMASK = 16'h7800;
-    EFX_LUT4 LUT__4309 (.I0(\Inst_debounce/count_reg [8]), .I1(\Inst_debounce/count_reg [6]), 
-            .I2(\Inst_debounce/count_reg [7]), .I3(\Inst_debounce/count_reg [9]), 
-            .O(n1921)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
-    defparam LUT__4309.LUTMASK = 16'hfe00;
-    EFX_LUT4 LUT__4310 (.I0(\Inst_debounce/count_reg [10]), .I1(\Inst_debounce/count_reg [11]), 
+            .O(\Inst_uart_tx/n160 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7800 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(114)
+    defparam LUT__4274.LUTMASK = 16'h7800;
+    EFX_LUT4 LUT__4275 (.I0(\Inst_pwm_servo_0/counter [1]), .I1(\Inst_pwm_servo_0/counter [2]), 
+            .I2(\Inst_pwm_servo_0/counter [3]), .O(n1905)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
+    defparam LUT__4275.LUTMASK = 16'he0e0;
+    EFX_LUT4 LUT__4276 (.I0(\Inst_pwm_servo_0/counter [6]), .I1(\Inst_pwm_servo_0/counter [7]), 
+            .I2(\Inst_pwm_servo_0/counter [8]), .I3(\Inst_pwm_servo_0/counter [9]), 
+            .O(n1906)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__4276.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__4277 (.I0(\Inst_pwm_servo_0/counter [4]), .I1(n1905), 
+            .I2(\Inst_pwm_servo_0/counter [5]), .I3(n1906), .O(n1907)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f00 */ ;
+    defparam LUT__4277.LUTMASK = 16'h1f00;
+    EFX_LUT4 LUT__4278 (.I0(n1907), .I1(\Inst_pwm_servo_0/counter [10]), 
+            .I2(\Inst_pwm_servo_0/counter [11]), .I3(\Inst_pwm_servo_0/counter [12]), 
+            .O(n1908)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h00bf */ ;
+    defparam LUT__4278.LUTMASK = 16'h00bf;
+    EFX_LUT4 LUT__4279 (.I0(\Inst_pwm_servo_0/counter [14]), .I1(\Inst_pwm_servo_0/counter [15]), 
+            .I2(\Inst_pwm_servo_0/counter [16]), .I3(\Inst_pwm_servo_0/counter [18]), 
+            .O(n1909)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__4279.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__4280 (.I0(\Inst_pwm_servo_0/counter [18]), .I1(\Inst_pwm_servo_0/counter [17]), 
+            .I2(\Inst_pwm_servo_0/counter [19]), .O(n1910)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'he0e0 */ ;
+    defparam LUT__4280.LUTMASK = 16'he0e0;
+    EFX_LUT4 LUT__4281 (.I0(n1908), .I1(\Inst_pwm_servo_0/counter [13]), 
+            .I2(n1909), .I3(n1910), .O(n1911)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4f00 */ ;
+    defparam LUT__4281.LUTMASK = 16'h4f00;
+    EFX_LUT4 LUT__4282 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [5]), .O(\Inst_pwm_servo_0/n63 [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4282.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4283 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [4]), .O(\Inst_pwm_servo_0/n63 [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4283.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4284 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [3]), .O(\Inst_pwm_servo_0/n63 [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4284.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4285 (.I0(\Inst_pwm_servo_0/counter [0]), .I1(n1911), 
+            .O(\Inst_pwm_servo_0/n63 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1111 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4285.LUTMASK = 16'h1111;
+    EFX_LUT4 LUT__4286 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [2]), .O(\Inst_pwm_servo_0/n63 [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4286.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4287 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [1]), .O(\Inst_pwm_servo_0/n63 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4287.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4288 (.I0(\Inst_pwm_servo_0/counter [5]), .I1(\Inst_pwm_servo_0/counter [6]), 
+            .I2(\Inst_pwm_servo_0/counter [7]), .O(n1912)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;
+    defparam LUT__4288.LUTMASK = 16'h0101;
+    EFX_LUT4 LUT__4289 (.I0(n1905), .I1(\Inst_pwm_servo_0/counter [4]), 
+            .I2(n1912), .O(n1913)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7070 */ ;
+    defparam LUT__4289.LUTMASK = 16'h7070;
+    EFX_LUT4 LUT__4290 (.I0(\Inst_pwm_servo_0/counter [10]), .I1(\Inst_pwm_servo_0/counter [11]), 
+            .I2(\Inst_pwm_servo_0/counter [12]), .I3(\Inst_pwm_servo_0/counter [13]), 
+            .O(n1914)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__4290.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__4291 (.I0(n1913), .I1(\Inst_pwm_servo_0/counter [8]), 
+            .I2(\Inst_pwm_servo_0/counter [9]), .I3(n1914), .O(n1915)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;
+    defparam LUT__4291.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4292 (.I0(\Inst_pwm_servo_0/counter [15]), .I1(\Inst_pwm_servo_0/counter [16]), 
+            .I2(\Inst_pwm_servo_0/counter [18]), .I3(\Inst_pwm_servo_0/counter [19]), 
+            .O(n1916)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__4292.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__4293 (.I0(n1915), .I1(\Inst_pwm_servo_0/counter [14]), 
+            .I2(\Inst_pwm_servo_0/counter [17]), .I3(n1916), .O(\Inst_pwm_servo_0/n86 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0b00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(49)
+    defparam LUT__4293.LUTMASK = 16'h0b00;
+    EFX_LUT4 LUT__4294 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [6]), .O(\Inst_pwm_servo_0/n63 [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4294.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4295 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [7]), .O(\Inst_pwm_servo_0/n63 [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4295.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4296 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [8]), .O(\Inst_pwm_servo_0/n63 [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4296.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4297 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [9]), .O(\Inst_pwm_servo_0/n63 [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4297.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4298 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [10]), .O(\Inst_pwm_servo_0/n63 [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4298.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4299 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [11]), .O(\Inst_pwm_servo_0/n63 [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4299.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4300 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [12]), .O(\Inst_pwm_servo_0/n63 [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4300.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4301 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [13]), .O(\Inst_pwm_servo_0/n63 [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4301.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4302 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [14]), .O(\Inst_pwm_servo_0/n63 [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4302.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4303 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [15]), .O(\Inst_pwm_servo_0/n63 [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4303.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4304 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [16]), .O(\Inst_pwm_servo_0/n63 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4304.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4305 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [17]), .O(\Inst_pwm_servo_0/n63 [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4305.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4306 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [18]), .O(\Inst_pwm_servo_0/n63 [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4306.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4307 (.I0(n1911), .I1(\Inst_pwm_servo_0/n42 [19]), .O(\Inst_pwm_servo_0/n63 [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(47)
+    defparam LUT__4307.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4308 (.I0(\Inst_debounce/count_reg [6]), .I1(\Inst_debounce/count_reg [7]), 
+            .I2(\Inst_debounce/count_reg [8]), .I3(\Inst_debounce/count_reg [9]), 
+            .O(n1917)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hfe00 */ ;
+    defparam LUT__4308.LUTMASK = 16'hfe00;
+    EFX_LUT4 LUT__4309 (.I0(\Inst_debounce/count_reg [10]), .I1(\Inst_debounce/count_reg [11]), 
             .I2(\Inst_debounce/count_reg [12]), .I3(\Inst_debounce/count_reg [13]), 
-            .O(n1922)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
-    defparam LUT__4310.LUTMASK = 16'h0001;
-    EFX_LUT4 LUT__4311 (.I0(n1921), .I1(n1922), .I2(\Inst_debounce/count_reg [14]), 
-            .I3(\Inst_debounce/count_reg [15]), .O(n1923)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;
-    defparam LUT__4311.LUTMASK = 16'h004f;
-    EFX_LUT4 LUT__4312 (.I0(\Inst_debounce/count_reg [16]), .I1(\Inst_debounce/count_reg [17]), 
+            .O(n1918)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;
+    defparam LUT__4309.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__4310 (.I0(n1917), .I1(n1918), .I2(\Inst_debounce/count_reg [14]), 
+            .I3(\Inst_debounce/count_reg [15]), .O(n1919)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h004f */ ;
+    defparam LUT__4310.LUTMASK = 16'h004f;
+    EFX_LUT4 LUT__4311 (.I0(\Inst_debounce/count_reg [16]), .I1(\Inst_debounce/count_reg [17]), 
             .I2(\Inst_debounce/count_reg [18]), .I3(\Inst_debounce/count_reg [19]), 
-            .O(n1924)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
-    defparam LUT__4312.LUTMASK = 16'h8000;
-    EFX_LUT4 LUT__4313 (.I0(n1923), .I1(n1924), .O(n1925)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
-    defparam LUT__4313.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__4314 (.I0(n1925), .I1(\Inst_debounce/sync_1 ), .I2(switch_out), 
-            .I3(rst_n_i), .O(\Inst_debounce/n151 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(431)
-    defparam LUT__4314.LUTMASK = 16'h1400;
-    EFX_LUT4 LUT__4315 (.I0(\Inst_debounce/sync_1 ), .I1(switch_out), .I2(n1925), 
-            .O(\Inst_debounce/n149 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9f9f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(431)
-    defparam LUT__4315.LUTMASK = 16'h9f9f;
-    EFX_LUT4 LUT__4316 (.I0(uart_read_state[0]), .I1(uart_read_state[1]), 
-            .O(n700[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(1297)
-    defparam LUT__4316.LUTMASK = 16'h6666;
-    EFX_LUT4 LUT__3671 (.I0(\u_FIFO/u_efx_fifo_top/raddr [2]), .I1(\u_FIFO/u_efx_fifo_top/waddr [2]), 
+            .O(n1920)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8000 */ ;
+    defparam LUT__4311.LUTMASK = 16'h8000;
+    EFX_LUT4 LUT__4312 (.I0(n1919), .I1(n1920), .O(n1921)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__4312.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4313 (.I0(n1921), .I1(\Inst_debounce/sync_1 ), .I2(switch_out), 
+            .I3(rst_n_i), .O(\Inst_debounce/n151 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(447)
+    defparam LUT__4313.LUTMASK = 16'h1400;
+    EFX_LUT4 LUT__4314 (.I0(\Inst_debounce/sync_1 ), .I1(switch_out), .I2(n1921), 
+            .O(\Inst_debounce/n149 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9f9f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(447)
+    defparam LUT__4314.LUTMASK = 16'h9f9f;
+    EFX_LUT4 LUT__4315 (.I0(n1878), .I1(tx_busy_sig), .I2(\u_uart_Send/uart_read_state [1]), 
+            .I3(\u_uart_Send/uart_read_state [0]), .O(ceg_net305)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h300e */ ;
+    defparam LUT__4315.LUTMASK = 16'h300e;
+    EFX_LUT4 LUT__4316 (.I0(\u_uart_Send/uart_read_state [0]), .I1(\u_uart_Send/uart_read_state [1]), 
+            .O(\~u_uart_Send/n101 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
+    defparam LUT__4316.LUTMASK = 16'h4444;
+    EFX_LUT4 LUT__4317 (.I0(tx_busy_sig), .I1(\u_uart_Send/uart_read_state [0]), 
+            .I2(\u_uart_Send/uart_read_state [1]), .I3(n1878), .O(\u_uart_Send/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0001 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(72)
+    defparam LUT__4317.LUTMASK = 16'h0001;
+    EFX_LUT4 LUT__4318 (.I0(\u_uart_Send/uart_read_state [0]), .I1(\u_uart_Send/uart_read_state [1]), 
+            .O(\u_uart_Send/n17 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h6666 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(72)
+    defparam LUT__4318.LUTMASK = 16'h6666;
+    EFX_LUT4 LUT__3681 (.I0(\u_FIFO/u_efx_fifo_top/raddr [2]), .I1(\u_FIFO/u_efx_fifo_top/waddr [2]), 
             .I2(\u_FIFO/u_efx_fifo_top/waddr [3]), .I3(\u_FIFO/u_efx_fifo_top/raddr [3]), 
-            .O(n1519)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
-    defparam LUT__3671.LUTMASK = 16'h9009;
+            .O(n1526)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
+    defparam LUT__3681.LUTMASK = 16'h9009;
     EFX_GBUFCE CLKBUF__0 (.CE(1'b1), .I(clk_i), .O(\clk_i~O )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_GBUFCE, CE_POLARITY=1'b1 */ ;
     defparam CLKBUF__0.CE_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i16__AUX_ADD_CO  (.I0(1'b0), .I1(1'b0), 
-            .CI(n1931), .O(\u_IIR_filtre/n153 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
+            .CI(n1927), .O(\u_IIR_filtre/n153 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
     defparam \u_IIR_filtre/add_88/i16__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i16__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_89/i16__AUX_ADD_CO  (.I0(1'b0), .I1(1'b0), 
-            .CI(n1930), .O(\u_IIR_filtre/n195 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
+            .CI(n1926), .O(\u_IIR_filtre/n195 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(93)
     defparam \u_IIR_filtre/add_89/i16__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_89/i16__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_90/i16__AUX_ADD_CO  (.I0(1'b0), .I1(1'b0), 
-            .CI(n1929), .O(\u_IIR_filtre/n237 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
+            .CI(n1925), .O(\u_IIR_filtre/n237 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_90/i16__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_90/i16__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_91/i16__AUX_ADD_CO  (.I0(1'b0), .I1(1'b0), 
-            .CI(n1928), .O(\u_IIR_filtre/n279 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
+            .CI(n1924), .O(\u_IIR_filtre/n279 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(96)
     defparam \u_IIR_filtre/add_91/i16__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_91/i16__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i16__AUX_ADD_CO  (.I0(1'b0), .I1(1'b0), 
-            .CI(n1927), .O(\u_IIR_filtre/n321 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
+            .CI(n1923), .O(\u_IIR_filtre/n321 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(97)
     defparam \u_IIR_filtre/add_92/i16__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i16__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_87/i16__AUX_ADD_CO  (.I0(1'b0), .I1(1'b0), 
-            .CI(n1926), .O(\u_IIR_filtre/n111 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(92)
+            .CI(n1922), .O(\u_IIR_filtre/n111 [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(91)
     defparam \u_IIR_filtre/add_87/i16__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_87/i16__AUX_ADD_CO .I1_POLARITY = 1'b1;
     
 endmodule
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_0
+// Verific Verilog Description of module EFX_LUT4_56e88528_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_0
+// Verific Verilog Description of module EFX_FF_56e88528_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_1
+// Verific Verilog Description of module EFX_FF_56e88528_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_2
+// Verific Verilog Description of module EFX_FF_56e88528_2
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_3
+// Verific Verilog Description of module EFX_FF_56e88528_3
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_4
+// Verific Verilog Description of module EFX_FF_56e88528_4
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_5
+// Verific Verilog Description of module EFX_FF_56e88528_5
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_6
+// Verific Verilog Description of module EFX_FF_56e88528_6
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_8
+// Verific Verilog Description of module EFX_FF_56e88528_8
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_9
+// Verific Verilog Description of module EFX_FF_56e88528_9
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_10
+// Verific Verilog Description of module EFX_FF_56e88528_10
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_11
+// Verific Verilog Description of module EFX_FF_56e88528_11
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_ADD_1ef9c1fe_0
+// Verific Verilog Description of module EFX_ADD_56e88528_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_RAM_5K_1ef9c1fe__8_8_0
+// Verific Verilog Description of module EFX_RAM_5K_56e88528__8_8_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_1
+// Verific Verilog Description of module EFX_LUT4_56e88528_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_2
+// Verific Verilog Description of module EFX_LUT4_56e88528_2
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_3
+// Verific Verilog Description of module EFX_LUT4_56e88528_3
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_4
+// Verific Verilog Description of module EFX_LUT4_56e88528_4
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_5
+// Verific Verilog Description of module EFX_LUT4_56e88528_5
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_6
+// Verific Verilog Description of module EFX_LUT4_56e88528_6
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_7
+// Verific Verilog Description of module EFX_LUT4_56e88528_7
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_8
+// Verific Verilog Description of module EFX_LUT4_56e88528_8
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_9
+// Verific Verilog Description of module EFX_LUT4_56e88528_9
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_10
+// Verific Verilog Description of module EFX_LUT4_56e88528_10
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_11
+// Verific Verilog Description of module EFX_LUT4_56e88528_11
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_12
+// Verific Verilog Description of module EFX_LUT4_56e88528_12
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_13
+// Verific Verilog Description of module EFX_LUT4_56e88528_13
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_14
+// Verific Verilog Description of module EFX_LUT4_56e88528_14
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_15
+// Verific Verilog Description of module EFX_LUT4_56e88528_15
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_16
+// Verific Verilog Description of module EFX_LUT4_56e88528_16
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_17
+// Verific Verilog Description of module EFX_LUT4_56e88528_17
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_18
+// Verific Verilog Description of module EFX_LUT4_56e88528_18
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_19
+// Verific Verilog Description of module EFX_LUT4_56e88528_19
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_20
+// Verific Verilog Description of module EFX_LUT4_56e88528_20
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_21
+// Verific Verilog Description of module EFX_LUT4_56e88528_21
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_22
+// Verific Verilog Description of module EFX_LUT4_56e88528_22
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_23
+// Verific Verilog Description of module EFX_LUT4_56e88528_23
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_24
+// Verific Verilog Description of module EFX_LUT4_56e88528_24
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_25
+// Verific Verilog Description of module EFX_LUT4_56e88528_25
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_26
+// Verific Verilog Description of module EFX_LUT4_56e88528_26
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_27
+// Verific Verilog Description of module EFX_LUT4_56e88528_27
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_28
+// Verific Verilog Description of module EFX_LUT4_56e88528_28
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_29
+// Verific Verilog Description of module EFX_LUT4_56e88528_29
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_30
+// Verific Verilog Description of module EFX_LUT4_56e88528_30
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_31
+// Verific Verilog Description of module EFX_LUT4_56e88528_31
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_32
+// Verific Verilog Description of module EFX_LUT4_56e88528_32
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_33
+// Verific Verilog Description of module EFX_LUT4_56e88528_33
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_34
+// Verific Verilog Description of module EFX_LUT4_56e88528_34
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_35
+// Verific Verilog Description of module EFX_LUT4_56e88528_35
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_36
+// Verific Verilog Description of module EFX_LUT4_56e88528_36
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_37
+// Verific Verilog Description of module EFX_LUT4_56e88528_37
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_38
+// Verific Verilog Description of module EFX_LUT4_56e88528_38
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_39
+// Verific Verilog Description of module EFX_LUT4_56e88528_39
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_40
+// Verific Verilog Description of module EFX_LUT4_56e88528_40
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_41
+// Verific Verilog Description of module EFX_LUT4_56e88528_41
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_42
+// Verific Verilog Description of module EFX_LUT4_56e88528_42
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_43
+// Verific Verilog Description of module EFX_LUT4_56e88528_43
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_44
+// Verific Verilog Description of module EFX_LUT4_56e88528_44
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_45
+// Verific Verilog Description of module EFX_LUT4_56e88528_45
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_46
+// Verific Verilog Description of module EFX_LUT4_56e88528_46
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_47
+// Verific Verilog Description of module EFX_LUT4_56e88528_47
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_48
+// Verific Verilog Description of module EFX_LUT4_56e88528_48
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_49
+// Verific Verilog Description of module EFX_LUT4_56e88528_49
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_50
+// Verific Verilog Description of module EFX_LUT4_56e88528_50
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_51
+// Verific Verilog Description of module EFX_LUT4_56e88528_51
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_52
+// Verific Verilog Description of module EFX_LUT4_56e88528_52
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_53
+// Verific Verilog Description of module EFX_LUT4_56e88528_53
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_54
+// Verific Verilog Description of module EFX_LUT4_56e88528_54
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_55
+// Verific Verilog Description of module EFX_LUT4_56e88528_55
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_56
+// Verific Verilog Description of module EFX_LUT4_56e88528_56
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_57
+// Verific Verilog Description of module EFX_LUT4_56e88528_57
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_58
+// Verific Verilog Description of module EFX_LUT4_56e88528_58
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_59
+// Verific Verilog Description of module EFX_LUT4_56e88528_59
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_60
+// Verific Verilog Description of module EFX_LUT4_56e88528_60
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_61
+// Verific Verilog Description of module EFX_LUT4_56e88528_61
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_62
+// Verific Verilog Description of module EFX_LUT4_56e88528_62
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_63
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_64
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_65
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_66
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_67
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_68
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_69
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_70
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_71
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_72
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_73
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_74
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_75
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_76
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_77
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_78
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_79
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_80
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_81
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_82
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_83
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_84
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_85
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_86
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_87
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_88
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_89
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_90
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_91
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_92
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_93
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_94
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_95
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_96
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_97
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_98
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_99
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_100
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_101
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_102
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_103
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_104
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_105
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_106
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_107
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_108
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_109
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_110
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_111
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_112
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_113
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_114
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_115
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_116
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_117
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_118
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_119
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_120
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_121
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_122
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_123
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_124
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_125
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_126
-// module not written out since it is a black box. 
-//
-
-
-//
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_127
+// Verific Verilog Description of module EFX_LUT4_56e88528_63
 // module not written out since it is a black box. 
 //
 
@@ -11585,157 +11198,427 @@ YP1+ZuX7hVSFq1Ddz6s/cgEFI3qmqs8I0YzvsxSK8XVNJ9Yin9wocfkdowljlqUX
 `pragma protect end_protected
 
 //
-// Verific Verilog Description of module EFX_FF_1ef9c1fe_7
+// Verific Verilog Description of module EFX_FF_56e88528_7
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_128
+// Verific Verilog Description of module EFX_LUT4_56e88528_64
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_129
+// Verific Verilog Description of module EFX_LUT4_56e88528_65
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_130
+// Verific Verilog Description of module EFX_LUT4_56e88528_66
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_131
+// Verific Verilog Description of module EFX_LUT4_56e88528_67
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_132
+// Verific Verilog Description of module EFX_LUT4_56e88528_68
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_133
+// Verific Verilog Description of module EFX_LUT4_56e88528_69
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_134
+// Verific Verilog Description of module EFX_LUT4_56e88528_70
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_135
+// Verific Verilog Description of module EFX_LUT4_56e88528_71
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_136
+// Verific Verilog Description of module EFX_LUT4_56e88528_72
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_137
+// Verific Verilog Description of module EFX_LUT4_56e88528_73
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_138
+// Verific Verilog Description of module EFX_LUT4_56e88528_74
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_139
+// Verific Verilog Description of module EFX_LUT4_56e88528_75
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_140
+// Verific Verilog Description of module EFX_LUT4_56e88528_76
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_141
+// Verific Verilog Description of module EFX_LUT4_56e88528_77
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_142
+// Verific Verilog Description of module EFX_LUT4_56e88528_78
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_143
+// Verific Verilog Description of module EFX_LUT4_56e88528_79
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_144
+// Verific Verilog Description of module EFX_LUT4_56e88528_80
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_145
+// Verific Verilog Description of module EFX_LUT4_56e88528_81
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_146
+// Verific Verilog Description of module EFX_LUT4_56e88528_82
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_147
+// Verific Verilog Description of module EFX_LUT4_56e88528_83
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_148
+// Verific Verilog Description of module EFX_LUT4_56e88528_84
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_149
+// Verific Verilog Description of module EFX_LUT4_56e88528_85
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_150
+// Verific Verilog Description of module EFX_LUT4_56e88528_86
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_1ef9c1fe_151
+// Verific Verilog Description of module EFX_LUT4_56e88528_87
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_GBUFCE_1ef9c1fe_0
+// Verific Verilog Description of module EFX_LUT4_56e88528_88
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_89
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_90
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_91
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_92
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_93
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_94
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_95
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_96
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_97
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_98
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_99
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_100
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_101
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_102
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_103
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_104
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_105
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_106
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_107
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_108
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_109
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_110
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_111
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_112
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_113
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_114
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_115
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_116
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_117
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_118
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_119
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_120
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_121
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_122
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_123
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_124
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_125
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_126
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_127
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_128
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_129
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_130
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_131
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_56e88528_132
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_GBUFCE_56e88528_0
 // module not written out since it is a black box. 
 //
 

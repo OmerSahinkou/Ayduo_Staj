@@ -1,7 +1,7 @@
 
 # Efinity Interface Configuration
 # Version: 2025.2.288.2.10
-# Date: 2026-08-03 11:52
+# Date: 2026-08-03 15:04
 
 # Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -10,7 +10,7 @@ input, 0, 102, 1, __bypass__, clk_i
 input, 78, 142, 1, __bypass__, miso_i
 output, 78, 137, 0, __bypass__, mosi_o
 output, 78, 70, 0, __bypass__, pwm_out_0
-output, 78, 67, 0, __bypass__, pwm_out_1
+output, 78, 62, 0, __bypass__, pwm_out_1
 output, 78, 65, 0, __bypass__, pwm_out_2
 input, 78, 102, 1, __bypass__, rst_n_i
 input, 0, 57, 1, __bypass__, rx

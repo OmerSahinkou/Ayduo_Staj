@@ -19,7 +19,7 @@ entity top is
     Generic (
         SQRT_DATA : integer := 34;
         CLK_FREQ  : integer := 33_333_333; 
-        BAUD_RATE : integer := 1_000_000
+        BAUD_RATE : integer := 115_200
     );
     Port (
         clk_i       : in  STD_LOGIC;
@@ -238,6 +238,22 @@ architecture Behavioral of top is
         f_gyro_z        : out STD_LOGIC_VECTOR(15 downto 0)
     );
     end component IIR_filtre;
+
+    component uart_Send is
+    port (
+        clk_i   : in std_logic;
+        rst_n_i : in std_logic;
+
+        --UART
+        tx_busy_sig  : in STD_LOGIC;
+        tx_start_sig : out STD_LOGIC                    ;
+        tx_data_sig  : out STD_LOGIC_VECTOR(7 downto 0) ;
+        --FIFO 
+        rd_en_i      : out STD_LOGIC                    ;
+        rdata        : in STD_LOGIC_VECTOR(7 downto 0) ;
+        empty_o      : in STD_LOGIC                    
+    );
+    end component uart_Send;
     -- =========================================================
     -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
     -- =========================================================
@@ -588,6 +604,18 @@ begin
                 f_gyro_x        => f_gxi_i          ,
                 f_gyro_y        => f_gyi_i          ,
                 f_gyro_z        => f_gzi_i  
+            );
+
+    u_uart_Send : uart_Send
+            port map (
+                clk_i       => clk_i        ,
+                rst_n_i     => rst_n_i      ,
+                tx_busy_sig => tx_busy_sig  ,
+                tx_start_sig=> tx_start_sig ,
+                tx_data_sig => tx_data_sig  ,
+                rd_en_i     => rd_en_i      ,
+                rdata       => rdata        ,
+                empty_o     => empty_o      
             );
     --=========================================================
     --ROOT Hesaplama
@@ -1266,35 +1294,35 @@ begin
 --     end if;
 -- end process PID_Filtered_Process;
 
-fifo_test : process (rst_n_i , clk_i)
-begin
-    if rst_n_i = '0' then 
-        tx_start_sig    <= '0';
-        tx_data_sig     <= (others => '0'); 
-        uart_read_state <= ST_CHECK_FIFO;
-    elsif rising_edge(clk_i) then 
+-- fifo_test : process (rst_n_i , clk_i)
+-- begin
+--     if rst_n_i = '0' then 
+--         tx_start_sig    <= '0';
+--         tx_data_sig     <= (others => '0'); 
+--         uart_read_state <= ST_CHECK_FIFO;
+--     elsif rising_edge(clk_i) then 
 
-        tx_start_sig    <= '0';
-        rd_en_i         <= '0';
-        case uart_read_state is
-            when ST_CHECK_FIFO  => 
-                if(tx_busy_sig ='0' and empty_o = '0') then 
-                    rd_en_i  <= '1';
-                    uart_read_state <= ST_WAIT_FIFO;
-                end if;
-            when ST_WAIT_FIFO   =>
-                uart_read_state <= ST_START_UART ;
-            when ST_START_UART  =>
-                tx_start_sig <= '1';
-                tx_data_sig  <= rdata ;
-                uart_read_state <= ST_WAIT_UART;
-            when ST_WAIT_UART   =>
-                if(tx_busy_sig = '1') then 
-                    uart_read_state <= ST_CHECK_FIFO ;
-                end if;
-            when others => uart_read_state <= ST_CHECK_FIFO;
-                null;
-        end case;
-    end if;
-end process fifo_test;
+--         tx_start_sig    <= '0';
+--         rd_en_i         <= '0';
+--         case uart_read_state is
+--             when ST_CHECK_FIFO  => 
+--                 if(tx_busy_sig ='0' and empty_o = '0') then 
+--                     rd_en_i  <= '1';
+--                     uart_read_state <= ST_WAIT_FIFO;
+--                 end if;
+--             when ST_WAIT_FIFO   =>
+--                 uart_read_state <= ST_START_UART ;
+--             when ST_START_UART  =>
+--                 tx_start_sig <= '1';
+--                 tx_data_sig  <= rdata ;
+--                 uart_read_state <= ST_WAIT_UART;
+--             when ST_WAIT_UART   =>
+--                 if(tx_busy_sig = '1') then 
+--                     uart_read_state <= ST_CHECK_FIFO ;
+--                 end if;
+--             when others => uart_read_state <= ST_CHECK_FIFO;
+--                 null;
+--         end case;
+--     end if;
+-- end process fifo_test;
 end Behavioral;

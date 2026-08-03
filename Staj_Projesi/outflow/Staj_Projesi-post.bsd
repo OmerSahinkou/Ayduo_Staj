@@ -90,9 +90,9 @@ port (
 	GPIOR_18_CLK7                 : linkage bit;
 	GPIOR_19_CLK6                 : linkage bit;
 	GPIOR_20_CLK5                 : out bit;
-	GPIOR_21_CLK4_CBSEL1          : out bit;
+	GPIOR_21_CLK4_CBSEL1          : linkage bit;
 	GPIOR_22_CTRL5                : out bit;
-	GPIOR_23_CTRL4                : linkage bit;
+	GPIOR_23_CTRL4                : out bit;
 	GPIOR_24                      : linkage bit;
 	GPIOR_25                      : linkage bit;
 	GPIOR_26_CBSEL0               : linkage bit;
@@ -346,16 +346,16 @@ attribute BOUNDARY_REGISTER of T8F81 : entity is
 	"47 (BC_1, *, internal, X)," &
 
 	"48 (BC_1, *, internal, X)," &
-	"49 (BC_1, *, internal, 1)," &
-	"50 (BC_1, *, internal, X)," &
+	"49 (BC_1, *, control, 1)," &
+	"50 (BC_1, GPIOR_23_CTRL4, output3, X, 49, 1, Z)," &
 
 	"51 (BC_1, *, internal, X)," &
 	"52 (BC_1, *, control, 1)," &
 	"53 (BC_1, GPIOR_22_CTRL5, output3, X, 52, 1, Z)," &
 
 	"54 (BC_1, *, internal, X)," &
-	"55 (BC_1, *, control, 1)," &
-	"56 (BC_1, GPIOR_21_CLK4_CBSEL1, output3, X, 55, 1, Z)," &
+	"55 (BC_1, *, internal, 1)," &
+	"56 (BC_1, *, internal, X)," &
 
 	"57 (BC_1, *, internal, X)," &
 	"58 (BC_1, *, control, 1)," &
