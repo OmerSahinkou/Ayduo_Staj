@@ -3103,3 +3103,136 @@
 // Aug 03, 2026 15:04:02
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:15:41
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:21:40
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:23:47
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:26:48
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:30:48
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:47:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:48:33
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:51:09
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:52:14
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:53:11
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:53:34
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:54:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:56:36
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 15:58:31
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'angle_from_accel_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1108)
+[EFX-0010 VERI-ERROR] 'angle_from_accel_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1109)
+[EFX-0010 VERI-ERROR] 'angle_from_accel_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1110)
+[EFX-0010 VERI-ERROR] 'final_angle_from_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1114)
+[EFX-0010 VERI-ERROR] 'final_angle_from_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1119)
+[EFX-0010 VERI-ERROR] 'final_angle_from_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1124)
+[EFX-0010 VERI-ERROR] 'angle_from_gyro_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1137)
+[EFX-0010 VERI-ERROR] 'angle_from_gyro_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1138)
+[EFX-0010 VERI-ERROR] 'angle_from_gyro_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1139)
+[EFX-0010 VERI-ERROR] 'error_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1141)
+[EFX-0010 VERI-ERROR] 'error_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1142)
+[EFX-0010 VERI-ERROR] 'error_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1143)
+[EFX-0010 VERI-ERROR] 'integral_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1145)
+[EFX-0010 VERI-ERROR] 'integral_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1146)
+[EFX-0010 VERI-ERROR] 'integral_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1147)
+[EFX-0010 VERI-ERROR] 'pid_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1149)
+[EFX-0010 VERI-ERROR] 'pid_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1150)
+[EFX-0010 VERI-ERROR] 'pid_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1151)
+[EFX-0010 VERI-ERROR] 'angle_from_gyro_z' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1156)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 16:01:25
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'f_axi_i[15]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:586)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:959)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 16:01:39
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'f_axi_i[15]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:586)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:959)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 16:02:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 03, 2026 16:05:36
+///////////////////////////////////
+

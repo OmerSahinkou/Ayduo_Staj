@@ -274,7 +274,7 @@ class MainWindow(QMainWindow):
         right_layout.addWidget(self.sim_z, 1, 2)
 
         # Seri Port veya Simülasyon Başlatma
-        self.serial_thread = SerialReader(port="/dev/ttyUSB2", baudrate=1000000)
+        self.serial_thread = SerialReader(port="/dev/ttyUSB2", baudrate=115200)
         self.serial_thread.data_received.connect(self.update_data)
         self.serial_thread.start()
 

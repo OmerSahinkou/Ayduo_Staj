@@ -1,7 +1,7 @@
 
 Efinix Static Timing Analysis Report
 Version: 2025.2.288.2.10
-Date: Mon Aug  3 15:04:13 2026
+Date: Mon Aug  3 16:05:49 2026
 
 Copyright (C) 2013 - 2025 Efinix, Inc. All rights reserved.
 
@@ -32,9 +32,9 @@ User target constrained clocks
 
 Maximum possible analyzed clocks frequency
  Clock Name  Period (ns)  Frequency (MHz)     Edge
-   clk_i        24.038        41.601         (R-R)
+   clk_i        23.816        41.989         (R-R)
 
-Geomean max period: 24.038
+Geomean max period: 23.816
 
 ---------- Clock Frequency Summary (end) ---------------
 
@@ -42,11 +42,11 @@ Geomean max period: 24.038
 
 Setup (Max) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-     clk_i            clk_i            30.303           6.265            (R-R)
+     clk_i            clk_i            30.303           6.487            (R-R)
 
 Hold (Min) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-     clk_i            clk_i            0.000            0.360            (R-R)
+     clk_i            clk_i            0.000            0.643            (R-R)
 
 NOTE: Values are in nanoseconds.
 
@@ -61,653 +61,21 @@ Path Detail Report (clk_i vs clk_i)
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Path Begin    : u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK     
-Path End      : Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CE
-Launch Clock  : clk_i (RISE)                              
-Capture Clock : clk_i (RISE)                              
-Slack         : 6.265 (required time - arrival time)      
-Delay         : 22.755                                    
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.898
----------------------------------------
-End-of-path arrival time       : 30.904
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    ff           0.000             7.006             769        (41,153)
-
-Data Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|Q            ff          0.650             0.650               4        (41,153)
-u_FIFO/u_efx_fifo_top/raddr[3]                 net         2.990             3.640               4        (41,153)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[0]                                lut         0.000             3.640               4        (42,152)
-LUT__3681|out                                  lut         0.000             3.640               5        (42,152)
-n1526                                          net         4.708             8.348               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                                lut         0.000             8.348               5        (38,159)
-LUT__3683|out                                  lut         0.000             8.348              17        (38,159)
-n1528                                          net         3.621            11.969              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                                lut         0.000            11.969              17        (32,154)
-LUT__3688|out                                  lut         0.000            11.969              27        (32,154)
-n1533                                          net         4.134            16.103              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                                lut         0.000            16.103              27        (25,150)
-LUT__3963|out                                  lut         0.000            16.103             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                     net         7.302            23.405             193        (25,150)
-   Routing elements:
-      Manhattan distance of X:30, Y:5
-Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CE     ff          0.493            23.898             193        (55,145)
-
-Capture Clock Path
-                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-=====================================================================================================================
-clk_i                                          inpad        0.000             0.000               0        (0,102) 
-clk_i                                          inpad        0.420             0.420               2        (0,102) 
-clk_i                                          net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                    gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                        net          0.000             7.006             769        (1,78)  
-Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CLK    ff           0.000             7.006             769        (55,145)
-
-++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK     
-Path End      : Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CE
-Launch Clock  : clk_i (RISE)                              
-Capture Clock : clk_i (RISE)                              
-Slack         : 6.340 (required time - arrival time)      
-Delay         : 22.680                                    
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.823
----------------------------------------
-End-of-path arrival time       : 30.829
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK    ff           0.000             7.006             769        (43,151)
-
-Data Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|Q            ff          0.650             0.650               4        (43,151)
-u_FIFO/u_efx_fifo_top/waddr[2]                 net         2.915             3.565               4        (43,151)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[1]                                lut         0.000             3.565               4        (42,152)
-LUT__3681|out                                  lut         0.000             3.565               5        (42,152)
-n1526                                          net         4.708             8.273               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                                lut         0.000             8.273               5        (38,159)
-LUT__3683|out                                  lut         0.000             8.273              17        (38,159)
-n1528                                          net         3.621            11.894              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                                lut         0.000            11.894              17        (32,154)
-LUT__3688|out                                  lut         0.000            11.894              27        (32,154)
-n1533                                          net         4.134            16.028              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                                lut         0.000            16.028              27        (25,150)
-LUT__3963|out                                  lut         0.000            16.028             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                     net         7.302            23.330             193        (25,150)
-   Routing elements:
-      Manhattan distance of X:30, Y:5
-Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CE     ff          0.493            23.823             193        (55,145)
-
-Capture Clock Path
-                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-=====================================================================================================================
-clk_i                                          inpad        0.000             0.000               0        (0,102) 
-clk_i                                          inpad        0.420             0.420               2        (0,102) 
-clk_i                                          net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                    gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                        net          0.000             7.006             769        (1,78)  
-Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CLK    ff           0.000             7.006             769        (55,145)
-
-++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK                  
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9]~FF|CE
-Launch Clock  : clk_i (RISE)                                           
-Capture Clock : clk_i (RISE)                                           
-Slack         : 6.609 (required time - arrival time)                   
-Delay         : 22.411                                                 
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.554
----------------------------------------
-End-of-path arrival time       : 30.560
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    ff           0.000             7.006             769        (41,153)
-
-Data Path
-                         name                            model name   delay (ns)  cumulative delay (ns) pins on net    location
-=================================================================================================================================
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|Q                         ff          0.650             0.650               4        (41,153)
-u_FIFO/u_efx_fifo_top/raddr[3]                              net         2.990             3.640               4        (41,153)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[0]                                             lut         0.000             3.640               4        (42,152)
-LUT__3681|out                                               lut         0.000             3.640               5        (42,152)
-n1526                                                       net         4.708             8.348               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                                             lut         0.000             8.348               5        (38,159)
-LUT__3683|out                                               lut         0.000             8.348              17        (38,159)
-n1528                                                       net         3.621            11.969              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                                             lut         0.000            11.969              17        (32,154)
-LUT__3688|out                                               lut         0.000            11.969              27        (32,154)
-n1533                                                       net         4.723            16.692              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:3, Y:1
-LUT__3689|in[2]                                             lut         0.000            16.692              27        (35,153)
-LUT__3689|out                                               lut         0.000            16.692              12        (35,153)
-u_FIFO/u_efx_fifo_top/wr_en_int                             net         6.369            23.061              12        (35,153)
-   Routing elements:
-      Manhattan distance of X:8, Y:5
-u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9]~FF|CE     ff          0.493            23.554              12        (43,158)
-
-Capture Clock Path
-                          name                            model name   delay (ns)  cumulative delay (ns) pins on net    location
-==================================================================================================================================
-clk_i                                                       inpad        0.000             0.000               0        (0,102) 
-clk_i                                                       inpad        0.420             0.420               2        (0,102) 
-clk_i                                                       net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                                 gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                                 gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                                     net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9]~FF|CLK    ff           0.000             7.006             769        (43,158)
-
-++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[3]~FF|CLK     
-Path End      : Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CE
-Launch Clock  : clk_i (RISE)                              
-Capture Clock : clk_i (RISE)                              
-Slack         : 6.667 (required time - arrival time)      
-Delay         : 22.353                                    
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.496
----------------------------------------
-End-of-path arrival time       : 30.502
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[3]~FF|CLK    ff           0.000             7.006             769        (43,152)
-
-Data Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[3]~FF|Q            ff          0.650             0.650               4        (43,152)
-u_FIFO/u_efx_fifo_top/waddr[3]                 net         2.588             3.238               4        (43,152)
-   Routing elements:
-      Manhattan distance of X:1, Y:0
-LUT__3681|in[3]                                lut         0.000             3.238               4        (42,152)
-LUT__3681|out                                  lut         0.000             3.238               5        (42,152)
-n1526                                          net         4.708             7.946               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                                lut         0.000             7.946               5        (38,159)
-LUT__3683|out                                  lut         0.000             7.946              17        (38,159)
-n1528                                          net         3.621            11.567              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                                lut         0.000            11.567              17        (32,154)
-LUT__3688|out                                  lut         0.000            11.567              27        (32,154)
-n1533                                          net         4.134            15.701              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                                lut         0.000            15.701              27        (25,150)
-LUT__3963|out                                  lut         0.000            15.701             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                     net         7.302            23.003             193        (25,150)
-   Routing elements:
-      Manhattan distance of X:30, Y:5
-Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CE     ff          0.493            23.496             193        (55,145)
-
-Capture Clock Path
-                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-=====================================================================================================================
-clk_i                                          inpad        0.000             0.000               0        (0,102) 
-clk_i                                          inpad        0.420             0.420               2        (0,102) 
-clk_i                                          net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                    gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                        net          0.000             7.006             769        (1,78)  
-Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF|CLK    ff           0.000             7.006             769        (55,145)
-
-++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK                  
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9]~FF|CE
-Launch Clock  : clk_i (RISE)                                           
-Capture Clock : clk_i (RISE)                                           
-Slack         : 6.684 (required time - arrival time)                   
-Delay         : 22.336                                                 
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.479
----------------------------------------
-End-of-path arrival time       : 30.485
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK    ff           0.000             7.006             769        (43,151)
-
-Data Path
-                         name                            model name   delay (ns)  cumulative delay (ns) pins on net    location
-=================================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|Q                         ff          0.650             0.650               4        (43,151)
-u_FIFO/u_efx_fifo_top/waddr[2]                              net         2.915             3.565               4        (43,151)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[1]                                             lut         0.000             3.565               4        (42,152)
-LUT__3681|out                                               lut         0.000             3.565               5        (42,152)
-n1526                                                       net         4.708             8.273               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                                             lut         0.000             8.273               5        (38,159)
-LUT__3683|out                                               lut         0.000             8.273              17        (38,159)
-n1528                                                       net         3.621            11.894              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                                             lut         0.000            11.894              17        (32,154)
-LUT__3688|out                                               lut         0.000            11.894              27        (32,154)
-n1533                                                       net         4.723            16.617              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:3, Y:1
-LUT__3689|in[2]                                             lut         0.000            16.617              27        (35,153)
-LUT__3689|out                                               lut         0.000            16.617              12        (35,153)
-u_FIFO/u_efx_fifo_top/wr_en_int                             net         6.369            22.986              12        (35,153)
-   Routing elements:
-      Manhattan distance of X:8, Y:5
-u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9]~FF|CE     ff          0.493            23.479              12        (43,158)
-
-Capture Clock Path
-                          name                            model name   delay (ns)  cumulative delay (ns) pins on net    location
-==================================================================================================================================
-clk_i                                                       inpad        0.000             0.000               0        (0,102) 
-clk_i                                                       inpad        0.420             0.420               2        (0,102) 
-clk_i                                                       net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                                 gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                                 gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                                     net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/waddr_cntr[9]~FF|CLK    ff           0.000             7.006             769        (43,158)
-
-++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    
-Path End      : Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF|CE
-Launch Clock  : clk_i (RISE)                             
-Capture Clock : clk_i (RISE)                             
-Slack         : 6.692 (required time - arrival time)     
-Delay         : 22.328                                   
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.471
----------------------------------------
-End-of-path arrival time       : 30.477
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    ff           0.000             7.006             769        (41,153)
-
-Data Path
-                  name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-===================================================================================================================
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|Q           ff          0.650             0.650               4        (41,153)
-u_FIFO/u_efx_fifo_top/raddr[3]                net         2.990             3.640               4        (41,153)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[0]                               lut         0.000             3.640               4        (42,152)
-LUT__3681|out                                 lut         0.000             3.640               5        (42,152)
-n1526                                         net         4.708             8.348               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                               lut         0.000             8.348               5        (38,159)
-LUT__3683|out                                 lut         0.000             8.348              17        (38,159)
-n1528                                         net         3.621            11.969              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                               lut         0.000            11.969              17        (32,154)
-LUT__3688|out                                 lut         0.000            11.969              27        (32,154)
-n1533                                         net         4.134            16.103              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                               lut         0.000            16.103              27        (25,150)
-LUT__3963|out                                 lut         0.000            16.103             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                    net         6.875            22.978             193        (25,150)
-   Routing elements: feedthru(1)
-      Manhattan distance of X:24, Y:30
-Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF|CE     ff          0.493            23.471             193        (49,120)
-
-Capture Clock Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-clk_i                                         inpad        0.000             0.000               0        (0,102) 
-clk_i                                         inpad        0.420             0.420               2        (0,102) 
-clk_i                                         net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                   gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                   gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                       net          0.000             7.006             769        (1,78)  
-Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF|CLK    ff           0.000             7.006             769        (49,120)
-
-++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK    
-Path End      : Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF|CE
-Launch Clock  : clk_i (RISE)                             
-Capture Clock : clk_i (RISE)                             
-Slack         : 6.767 (required time - arrival time)     
-Delay         : 22.253                                   
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.396
----------------------------------------
-End-of-path arrival time       : 30.402
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK    ff           0.000             7.006             769        (43,151)
-
-Data Path
-                  name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-===================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|Q           ff          0.650             0.650               4        (43,151)
-u_FIFO/u_efx_fifo_top/waddr[2]                net         2.915             3.565               4        (43,151)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[1]                               lut         0.000             3.565               4        (42,152)
-LUT__3681|out                                 lut         0.000             3.565               5        (42,152)
-n1526                                         net         4.708             8.273               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                               lut         0.000             8.273               5        (38,159)
-LUT__3683|out                                 lut         0.000             8.273              17        (38,159)
-n1528                                         net         3.621            11.894              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                               lut         0.000            11.894              17        (32,154)
-LUT__3688|out                                 lut         0.000            11.894              27        (32,154)
-n1533                                         net         4.134            16.028              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                               lut         0.000            16.028              27        (25,150)
-LUT__3963|out                                 lut         0.000            16.028             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                    net         6.875            22.903             193        (25,150)
-   Routing elements: feedthru(1)
-      Manhattan distance of X:24, Y:30
-Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF|CE     ff          0.493            23.396             193        (49,120)
-
-Capture Clock Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-clk_i                                         inpad        0.000             0.000               0        (0,102) 
-clk_i                                         inpad        0.420             0.420               2        (0,102) 
-clk_i                                         net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                   gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                   gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                       net          0.000             7.006             769        (1,78)  
-Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF|CLK    ff           0.000             7.006             769        (49,120)
-
-++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    
-Path End      : Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF|CE
-Launch Clock  : clk_i (RISE)                             
-Capture Clock : clk_i (RISE)                             
-Slack         : 6.790 (required time - arrival time)     
-Delay         : 22.230                                   
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.373
----------------------------------------
-End-of-path arrival time       : 30.379
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    ff           0.000             7.006             769        (41,153)
-
-Data Path
-                  name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-===================================================================================================================
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|Q           ff          0.650             0.650               4        (41,153)
-u_FIFO/u_efx_fifo_top/raddr[3]                net         2.990             3.640               4        (41,153)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[0]                               lut         0.000             3.640               4        (42,152)
-LUT__3681|out                                 lut         0.000             3.640               5        (42,152)
-n1526                                         net         4.708             8.348               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                               lut         0.000             8.348               5        (38,159)
-LUT__3683|out                                 lut         0.000             8.348              17        (38,159)
-n1528                                         net         3.621            11.969              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                               lut         0.000            11.969              17        (32,154)
-LUT__3688|out                                 lut         0.000            11.969              27        (32,154)
-n1533                                         net         4.134            16.103              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                               lut         0.000            16.103              27        (25,150)
-LUT__3963|out                                 lut         0.000            16.103             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                    net         6.777            22.880             193        (25,150)
-   Routing elements:
-      Manhattan distance of X:22, Y:54
-Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF|CE     ff          0.493            23.373             193        (47,96) 
-
-Capture Clock Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-clk_i                                         inpad        0.000             0.000               0        (0,102)
-clk_i                                         inpad        0.420             0.420               2        (0,102)
-clk_i                                         net          3.268             3.688               2        (0,102)
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                   gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                                   gbuf         0.000             7.006             769        (1,78) 
-clk_i~O                                       net          0.000             7.006             769        (1,78) 
-Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF|CLK    ff           0.000             7.006             769        (47,96)
-
-++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK   
-Path End      : Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF|CE
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK   
+Path End      : Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF|CE
 Launch Clock  : clk_i (RISE)                            
 Capture Clock : clk_i (RISE)                            
-Slack         : 6.838 (required time - arrival time)    
-Delay         : 22.182                                  
+Slack         : 6.487 (required time - arrival time)    
+Delay         : 22.533                                  
 
 Logic Level             : 4
 Non-global nets on path : 5
 Global nets on path     : 0
 
 Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.325
++ Clock To Q + Data Path Delay : 23.676
 ---------------------------------------
-End-of-path arrival time       : 30.331
+End-of-path arrival time       : 30.682
 
 Constraint                     : 30.303
 + Capture Clock Path Delay     :  7.006
@@ -724,117 +92,38 @@ clk_i                                    net          3.268             3.688   
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    ff           0.000             7.006             769        (41,153)
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
 
 Data Path
                   name                    model name   delay (ns)  cumulative delay (ns) pins on net    location
 ==================================================================================================================
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|Q          ff          0.650             0.650               4        (41,153)
-u_FIFO/u_efx_fifo_top/raddr[3]               net         2.990             3.640               4        (41,153)
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q          ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]               net         4.137             4.787               4        (19,145)
    Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[0]                              lut         0.000             3.640               4        (42,152)
-LUT__3681|out                                lut         0.000             3.640               5        (42,152)
-n1526                                        net         4.708             8.348               5        (42,152)
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                              lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                lut         0.000             4.787               2        (18,149)
+n2508                                        net         2.907             7.694               2        (18,149)
    Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                              lut         0.000             8.348               5        (38,159)
-LUT__3683|out                                lut         0.000             8.348              17        (38,159)
-n1528                                        net         3.621            11.969              17        (38,159)
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                              lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                lut         0.000             7.694              15        (18,148)
+n2509                                        net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                              lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                lut         0.000            10.819              30        (13,139)
+n2512                                        net         3.617            14.436              30        (13,139)
    Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                              lut         0.000            11.969              17        (32,154)
-LUT__3688|out                                lut         0.000            11.969              27        (32,154)
-n1533                                        net         4.134            16.103              27        (32,154)
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                              lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                   net         8.747            23.183             193        (5,138) 
    Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                              lut         0.000            16.103              27        (25,150)
-LUT__3963|out                                lut         0.000            16.103             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                   net         6.729            22.832             193        (25,150)
-   Routing elements:
-      Manhattan distance of X:34, Y:43
-Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF|CE     ff          0.493            23.325             193        (59,107)
-
-Capture Clock Path
-                  name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-===================================================================================================================
-clk_i                                        inpad        0.000             0.000               0        (0,102) 
-clk_i                                        inpad        0.420             0.420               2        (0,102) 
-clk_i                                        net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                                  gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                      net          0.000             7.006             769        (1,78)  
-Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF|CLK    ff           0.000             7.006             769        (59,107)
-
-++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK   
-Path End      : Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF|CE
-Launch Clock  : clk_i (RISE)                            
-Capture Clock : clk_i (RISE)                            
-Slack         : 6.858 (required time - arrival time)    
-Delay         : 22.162                                  
-
-Logic Level             : 4
-Non-global nets on path : 5
-Global nets on path     : 0
-
-Launch Clock Path Delay        :  7.006
-+ Clock To Q + Data Path Delay : 23.305
----------------------------------------
-End-of-path arrival time       : 30.311
-
-Constraint                     : 30.303
-+ Capture Clock Path Delay     :  7.006
-- Clock Uncertainty            :  0.140
----------------------------------------
-End-of-path required time      : 37.169
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.420             0.420               2        (0,102) 
-clk_i                                    net          3.268             3.688               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             7.006             769        (1,78)  
-clk_i~O                                  net          0.000             7.006             769        (1,78)  
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|CLK    ff           0.000             7.006             769        (41,153)
-
-Data Path
-                  name                    model name   delay (ns)  cumulative delay (ns) pins on net    location
-==================================================================================================================
-u_FIFO/u_efx_fifo_top/raddr[3]~FF|Q          ff          0.650             0.650               4        (41,153)
-u_FIFO/u_efx_fifo_top/raddr[3]               net         2.990             3.640               4        (41,153)
-   Routing elements:
-      Manhattan distance of X:1, Y:1
-LUT__3681|in[0]                              lut         0.000             3.640               4        (42,152)
-LUT__3681|out                                lut         0.000             3.640               5        (42,152)
-n1526                                        net         4.708             8.348               5        (42,152)
-   Routing elements:
-      Manhattan distance of X:4, Y:7
-LUT__3683|in[1]                              lut         0.000             8.348               5        (38,159)
-LUT__3683|out                                lut         0.000             8.348              17        (38,159)
-n1528                                        net         3.621            11.969              17        (38,159)
-   Routing elements:
-      Manhattan distance of X:6, Y:5
-LUT__3688|in[0]                              lut         0.000            11.969              17        (32,154)
-LUT__3688|out                                lut         0.000            11.969              27        (32,154)
-n1533                                        net         4.134            16.103              27        (32,154)
-   Routing elements:
-      Manhattan distance of X:7, Y:4
-LUT__3963|in[2]                              lut         0.000            16.103              27        (25,150)
-LUT__3963|out                                lut         0.000            16.103             193        (25,150)
-Inst_FIFO_CONTROLLER/n4138                   net         6.709            22.812             193        (25,150)
-   Routing elements:
-      Manhattan distance of X:26, Y:68
-Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF|CE     ff          0.493            23.305             193        (51,82) 
+      Manhattan distance of X:54, Y:78
+Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF|CE     ff          0.493            23.676             193        (59,60) 
 
 Capture Clock Path
                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
@@ -845,9 +134,717 @@ clk_i                                        net          3.268             3.68
    Routing elements:
       Manhattan distance of X:1, Y:24
 CLKBUF__0|I                                  gbuf         3.318             7.006               2        (1,78) 
-CLKBUF__0|O                                  gbuf         0.000             7.006             769        (1,78) 
-clk_i~O                                      net          0.000             7.006             769        (1,78) 
-Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF|CLK    ff           0.000             7.006             769        (51,82)
+CLKBUF__0|O                                  gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                      net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF|CLK    ff           0.000             7.006             959        (59,60)
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : gyro_y[4]~FF|CLK                    
+Path End      : angle_pool_y[0]~FF|D                
+Launch Clock  : clk_i (RISE)                        
+Capture Clock : clk_i (RISE)                        
+Slack         : 6.639 (required time - arrival time)
+Delay         : 22.490                              
+
+Logic Level             : 4
+Non-global nets on path : 4
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.524
+---------------------------------------
+End-of-path arrival time       : 30.530
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+      name        model name   delay (ns)  cumulative delay (ns) pins on net    location
+==========================================================================================
+clk_i               inpad        0.000             0.000               0        (0,102)
+clk_i               inpad        0.420             0.420               2        (0,102)
+clk_i               net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I         gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O         gbuf         0.000             7.006             959        (1,78) 
+clk_i~O             net          0.000             7.006             959        (1,78) 
+gyro_y[4]~FF|CLK    ff           0.000             7.006             959        (29,96)
+
+Data Path
+        name          model name   delay (ns)  cumulative delay (ns) pins on net    location
+==============================================================================================
+gyro_y[4]~FF|Q           ff          0.650             0.650               6        (29,96) 
+gyro_y[4]                net         5.528             6.178               6        (29,96) 
+   Routing elements:
+      Manhattan distance of X:7, Y:5
+LUT__5921|in[1]          lut         0.000             6.178               6        (36,101)
+LUT__5921|out            lut         0.000             6.178               2        (36,101)
+n2491                    net         2.907             9.085               2        (36,101)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5923|in[1]          lut         0.000             9.085               2        (36,100)
+LUT__5923|out            lut         0.000             9.085               2        (36,100)
+n2493                    net         5.752            14.837               2        (36,100)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:8, Y:24
+LUT__5926|in[1]          lut         0.000            14.837               2        (28,124)
+LUT__5926|out            lut         0.000            14.837              33        (28,124)
+n2496                    net         8.303            23.140              33        (28,124)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:13, Y:10
+LUT__5935|in[0]          lut         0.000            23.140              33        (41,134)
+LUT__5935|out            lut         0.000            23.140               2        (41,134)
+angle_pool_y[0]~FF|D     ff          0.384            23.524               2        (41,134)
+
+Capture Clock Path
+         name           model name   delay (ns)  cumulative delay (ns) pins on net    location
+================================================================================================
+clk_i                     inpad        0.000             0.000               0        (0,102) 
+clk_i                     inpad        0.420             0.420               2        (0,102) 
+clk_i                     net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I               gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O               gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                   net          0.000             7.006             959        (1,78)  
+angle_pool_y[0]~FF|CLK    ff           0.000             7.006             959        (41,134)
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK   
+Path End      : Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF|CE
+Launch Clock  : clk_i (RISE)                            
+Capture Clock : clk_i (RISE)                            
+Slack         : 6.661 (required time - arrival time)    
+Delay         : 22.359                                  
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.502
+---------------------------------------
+End-of-path arrival time       : 30.508
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                  name                    model name   delay (ns)  cumulative delay (ns) pins on net    location
+==================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q          ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]               net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                              lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                lut         0.000             4.787               2        (18,149)
+n2508                                        net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                              lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                lut         0.000             7.694              15        (18,148)
+n2509                                        net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                              lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                lut         0.000            10.819              30        (13,139)
+n2512                                        net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                              lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                   net         8.573            23.009             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:48, Y:84
+Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF|CE     ff          0.493            23.502             193        (53,54) 
+
+Capture Clock Path
+                  name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+===================================================================================================================
+clk_i                                        inpad        0.000             0.000               0        (0,102)
+clk_i                                        inpad        0.420             0.420               2        (0,102)
+clk_i                                        net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                  gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                  gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                      net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF|CLK    ff           0.000             7.006             959        (53,54)
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/waddr[7]~FF|CLK   
+Path End      : Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF|CE
+Launch Clock  : clk_i (RISE)                            
+Capture Clock : clk_i (RISE)                            
+Slack         : 6.894 (required time - arrival time)    
+Delay         : 22.126                                  
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.269
+---------------------------------------
+End-of-path arrival time       : 30.275
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/waddr[7]~FF|CLK    ff           0.000             7.006             959        (13,155)
+
+Data Path
+                  name                    model name   delay (ns)  cumulative delay (ns) pins on net    location
+==================================================================================================================
+u_FIFO/u_efx_fifo_top/waddr[7]~FF|Q          ff          0.650             0.650               4        (13,155)
+u_FIFO/u_efx_fifo_top/waddr[7]               net         5.211             5.861               4        (13,155)
+   Routing elements:
+      Manhattan distance of X:7, Y:7
+LUT__5937|in[0]                              lut         0.000             5.861               4        (20,148)
+LUT__5937|out                                lut         0.000             5.861               2        (20,148)
+n2506                                        net         1.426             7.287               2        (20,148)
+   Routing elements:
+      Manhattan distance of X:2, Y:0
+LUT__5940|in[2]                              lut         0.000             7.287               2        (18,148)
+LUT__5940|out                                lut         0.000             7.287              15        (18,148)
+n2509                                        net         3.125            10.412              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                              lut         0.000            10.412              15        (13,139)
+LUT__5943|out                                lut         0.000            10.412              30        (13,139)
+n2512                                        net         3.617            14.029              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                              lut         0.000            14.029              30        (5,138) 
+LUT__6249|out                                lut         0.000            14.029             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                   net         8.747            22.776             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:54, Y:78
+Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF|CE     ff          0.493            23.269             193        (59,60) 
+
+Capture Clock Path
+                  name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+===================================================================================================================
+clk_i                                        inpad        0.000             0.000               0        (0,102)
+clk_i                                        inpad        0.420             0.420               2        (0,102)
+clk_i                                        net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                  gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                  gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                      net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF|CLK    ff           0.000             7.006             959        (59,60)
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK     
+Path End      : Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF|CE
+Launch Clock  : clk_i (RISE)                              
+Capture Clock : clk_i (RISE)                              
+Slack         : 6.981 (required time - arrival time)      
+Delay         : 22.039                                    
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.182
+---------------------------------------
+End-of-path arrival time       : 30.188
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q            ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]                 net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                                lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                  lut         0.000             4.787               2        (18,149)
+n2508                                          net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                                lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                  lut         0.000             7.694              15        (18,148)
+n2509                                          net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                                lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                  lut         0.000            10.819              30        (13,139)
+n2512                                          net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                                lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                  lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                     net         8.253            22.689             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:34, Y:58
+Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF|CE     ff          0.493            23.182             193        (39,80) 
+
+Capture Clock Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+clk_i                                          inpad        0.000             0.000               0        (0,102)
+clk_i                                          inpad        0.420             0.420               2        (0,102)
+clk_i                                          net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                    gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                        net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF|CLK    ff           0.000             7.006             959        (39,80)
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK     
+Path End      : Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF|CE
+Launch Clock  : clk_i (RISE)                              
+Capture Clock : clk_i (RISE)                              
+Slack         : 6.995 (required time - arrival time)      
+Delay         : 22.025                                    
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.168
+---------------------------------------
+End-of-path arrival time       : 30.174
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q            ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]                 net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                                lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                  lut         0.000             4.787               2        (18,149)
+n2508                                          net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                                lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                  lut         0.000             7.694              15        (18,148)
+n2509                                          net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                                lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                  lut         0.000            10.819              30        (13,139)
+n2512                                          net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                                lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                  lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                     net         8.239            22.675             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:44, Y:59
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF|CE     ff          0.493            23.168             193        (49,79) 
+
+Capture Clock Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+clk_i                                          inpad        0.000             0.000               0        (0,102)
+clk_i                                          inpad        0.420             0.420               2        (0,102)
+clk_i                                          net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                    gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                        net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF|CLK    ff           0.000             7.006             959        (49,79)
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK     
+Path End      : Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF|CE
+Launch Clock  : clk_i (RISE)                              
+Capture Clock : clk_i (RISE)                              
+Slack         : 6.995 (required time - arrival time)      
+Delay         : 22.025                                    
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.168
+---------------------------------------
+End-of-path arrival time       : 30.174
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q            ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]                 net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                                lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                  lut         0.000             4.787               2        (18,149)
+n2508                                          net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                                lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                  lut         0.000             7.694              15        (18,148)
+n2509                                          net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                                lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                  lut         0.000            10.819              30        (13,139)
+n2512                                          net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                                lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                  lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                     net         8.239            22.675             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:44, Y:58
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF|CE     ff          0.493            23.168             193        (49,80) 
+
+Capture Clock Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+clk_i                                          inpad        0.000             0.000               0        (0,102)
+clk_i                                          inpad        0.420             0.420               2        (0,102)
+clk_i                                          net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                    gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                        net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF|CLK    ff           0.000             7.006             959        (49,80)
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK     
+Path End      : Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF|CE
+Launch Clock  : clk_i (RISE)                              
+Capture Clock : clk_i (RISE)                              
+Slack         : 6.995 (required time - arrival time)      
+Delay         : 22.025                                    
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.168
+---------------------------------------
+End-of-path arrival time       : 30.174
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q            ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]                 net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                                lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                  lut         0.000             4.787               2        (18,149)
+n2508                                          net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                                lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                  lut         0.000             7.694              15        (18,148)
+n2509                                          net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                                lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                  lut         0.000            10.819              30        (13,139)
+n2512                                          net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                                lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                  lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                     net         8.239            22.675             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:44, Y:62
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF|CE     ff          0.493            23.168             193        (49,76) 
+
+Capture Clock Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+clk_i                                          inpad        0.000             0.000               0        (0,102)
+clk_i                                          inpad        0.420             0.420               2        (0,102)
+clk_i                                          net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                    gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                        net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF|CLK    ff           0.000             7.006             959        (49,76)
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK     
+Path End      : Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF|CE
+Launch Clock  : clk_i (RISE)                              
+Capture Clock : clk_i (RISE)                              
+Slack         : 6.995 (required time - arrival time)      
+Delay         : 22.025                                    
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.168
+---------------------------------------
+End-of-path arrival time       : 30.174
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q            ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]                 net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                                lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                  lut         0.000             4.787               2        (18,149)
+n2508                                          net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                                lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                  lut         0.000             7.694              15        (18,148)
+n2509                                          net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                                lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                  lut         0.000            10.819              30        (13,139)
+n2512                                          net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                                lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                  lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                     net         8.239            22.675             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:44, Y:53
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF|CE     ff          0.493            23.168             193        (49,85) 
+
+Capture Clock Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+clk_i                                          inpad        0.000             0.000               0        (0,102)
+clk_i                                          inpad        0.420             0.420               2        (0,102)
+clk_i                                          net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                    gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                        net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF|CLK    ff           0.000             7.006             959        (49,85)
+
+++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK     
+Path End      : Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF|CE
+Launch Clock  : clk_i (RISE)                              
+Capture Clock : clk_i (RISE)                              
+Slack         : 6.995 (required time - arrival time)      
+Delay         : 22.025                                    
+
+Logic Level             : 4
+Non-global nets on path : 5
+Global nets on path     : 0
+
+Launch Clock Path Delay        :  7.006
++ Clock To Q + Data Path Delay : 23.168
+---------------------------------------
+End-of-path arrival time       : 30.174
+
+Constraint                     : 30.303
++ Capture Clock Path Delay     :  7.006
+- Clock Uncertainty            :  0.140
+---------------------------------------
+End-of-path required time      : 37.169
+
+Launch Clock Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+clk_i                                    inpad        0.000             0.000               0        (0,102) 
+clk_i                                    inpad        0.420             0.420               2        (0,102) 
+clk_i                                    net          3.268             3.688               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                              gbuf         3.318             7.006               2        (1,78)  
+CLKBUF__0|O                              gbuf         0.000             7.006             959        (1,78)  
+clk_i~O                                  net          0.000             7.006             959        (1,78)  
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|CLK    ff           0.000             7.006             959        (19,145)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+u_FIFO/u_efx_fifo_top/raddr[1]~FF|Q            ff          0.650             0.650               4        (19,145)
+u_FIFO/u_efx_fifo_top/raddr[1]                 net         4.137             4.787               4        (19,145)
+   Routing elements:
+      Manhattan distance of X:1, Y:4
+LUT__5939|in[3]                                lut         0.000             4.787               4        (18,149)
+LUT__5939|out                                  lut         0.000             4.787               2        (18,149)
+n2508                                          net         2.907             7.694               2        (18,149)
+   Routing elements:
+      Manhattan distance of X:0, Y:1
+LUT__5940|in[1]                                lut         0.000             7.694               2        (18,148)
+LUT__5940|out                                  lut         0.000             7.694              15        (18,148)
+n2509                                          net         3.125            10.819              15        (18,148)
+   Routing elements: feedthru(1)
+      Manhattan distance of X:5, Y:9
+LUT__5943|in[3]                                lut         0.000            10.819              15        (13,139)
+LUT__5943|out                                  lut         0.000            10.819              30        (13,139)
+n2512                                          net         3.617            14.436              30        (13,139)
+   Routing elements:
+      Manhattan distance of X:8, Y:1
+LUT__6249|in[0]                                lut         0.000            14.436              30        (5,138) 
+LUT__6249|out                                  lut         0.000            14.436             193        (5,138) 
+Inst_FIFO_CONTROLLER/n4138                     net         8.239            22.675             193        (5,138) 
+   Routing elements:
+      Manhattan distance of X:44, Y:49
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF|CE     ff          0.493            23.168             193        (49,89) 
+
+Capture Clock Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+clk_i                                          inpad        0.000             0.000               0        (0,102)
+clk_i                                          inpad        0.420             0.420               2        (0,102)
+clk_i                                          net          3.268             3.688               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                    gbuf         3.318             7.006               2        (1,78) 
+CLKBUF__0|O                                    gbuf         0.000             7.006             959        (1,78) 
+clk_i~O                                        net          0.000             7.006             959        (1,78) 
+Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF|CLK    ff           0.000             7.006             959        (49,89)
 
 ---------- Path Details for Max Critical Paths (end) ---------------
 
@@ -859,537 +856,6 @@ Path Detail Report (clk_i vs clk_i)
 
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[1]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|CLK    ff           0.000             2.502             769        (43,151)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[2]~FF|Q              ff               0.232            0.232              4         (43,151)
-u_FIFO/u_efx_fifo_top/waddr[2]                   net              0.386            0.618              4         (43,151)
-   Routing elements:
-      Manhattan distance of X:2, Y:9
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[1] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[5]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[4]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[5]~FF|CLK    ff           0.000             2.502             769        (43,154)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[5]~FF|Q              ff               0.232            0.232              4         (43,154)
-u_FIFO/u_efx_fifo_top/waddr[5]                   net              0.386            0.618              4         (43,154)
-   Routing elements:
-      Manhattan distance of X:2, Y:12
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[4] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[1]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[0]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[1]~FF|CLK    ff           0.000             2.502             769        (43,150)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[1]~FF|Q              ff               0.232            0.232              4         (43,150)
-u_FIFO/u_efx_fifo_top/waddr[1]                   net              0.386            0.618              4         (43,150)
-   Routing elements:
-      Manhattan distance of X:2, Y:8
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[0] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[8]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[7]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[8]~FF|CLK    ff           0.000             2.502             769        (43,157)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[8]~FF|Q              ff               0.232            0.232              4         (43,157)
-u_FIFO/u_efx_fifo_top/waddr[8]                   net              0.386            0.618              4         (43,157)
-   Routing elements:
-      Manhattan distance of X:2, Y:15
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[7] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[6]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[5]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[6]~FF|CLK    ff           0.000             2.502             769        (43,155)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[6]~FF|Q              ff               0.232            0.232              5         (43,155)
-u_FIFO/u_efx_fifo_top/waddr[6]                   net              0.386            0.618              5         (43,155)
-   Routing elements:
-      Manhattan distance of X:2, Y:13
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[5] ram_4096x20     -0.208            0.410              5         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[4]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[3]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[4]~FF|CLK    ff           0.000             2.502             769        (43,153)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[4]~FF|Q              ff               0.232            0.232              4         (43,153)
-u_FIFO/u_efx_fifo_top/waddr[4]                   net              0.386            0.618              4         (43,153)
-   Routing elements:
-      Manhattan distance of X:2, Y:11
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[3] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[7]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[6]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[7]~FF|CLK    ff           0.000             2.502             769        (43,156)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[7]~FF|Q              ff               0.232            0.232              4         (43,156)
-u_FIFO/u_efx_fifo_top/waddr[7]                   net              0.386            0.618              4         (43,156)
-   Routing elements:
-      Manhattan distance of X:2, Y:14
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[6] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : u_FIFO/u_efx_fifo_top/waddr[3]~FF|CLK           
-Path End      : u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[2]
-Launch Clock  : clk_i (RISE)                                    
-Capture Clock : clk_i (RISE)                                    
-Slack         : 0.360 (arrival time - required time)            
-Delay         : 0.386                                           
-
-Logic Level             : 0
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.410
---------------------------------------
-End-of-path arrival time       : 2.912
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
-===============================================================================================================
-clk_i                                    inpad        0.000             0.000               0        (0,102) 
-clk_i                                    inpad        0.150             0.150               2        (0,102) 
-clk_i                                    net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                              gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                              gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                  net          0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/waddr[3]~FF|CLK    ff           0.000             2.502             769        (43,152)
-
-Data Path
-                      name                        model name   delay (ns)  cumulative delay (ns) pins on net    location
-==========================================================================================================================
-u_FIFO/u_efx_fifo_top/waddr[3]~FF|Q              ff               0.232            0.232              4         (43,152)
-u_FIFO/u_efx_fifo_top/waddr[3]                   net              0.386            0.618              4         (43,152)
-   Routing elements:
-      Manhattan distance of X:2, Y:10
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WADDR[2] ram_4096x20     -0.208            0.410              4         (45,142)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                        inpad           0.000             0.000               0        (0,102) 
-clk_i                                        inpad           0.150             0.150               2        (0,102) 
-clk_i                                        net             1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                  gbuf            1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                  gbuf            0.000             2.502             769        (1,78)  
-clk_i~O                                      net             0.000             2.502             769        (1,78)  
-u_FIFO/u_efx_fifo_top/xefx_fifo_ram/ram|WCLK ram_4096x20     0.000             2.502             769        (45,142)
-
-++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-Path Begin    : Inst_MPU6500_Controller/delay_cntr[0]~FF|CLK
-Path End      : Inst_MPU6500_Controller/delay_cntr[0]~FF|D  
-Launch Clock  : clk_i (RISE)                                
-Capture Clock : clk_i (RISE)                                
-Slack         : 0.643 (arrival time - required time)        
-Delay         : 0.461                                       
-
-Logic Level             : 1
-Non-global nets on path : 1
-Global nets on path     : 0
-
-Launch Clock Path Delay        : 2.502
-+ Clock To Q + Data Path Delay : 0.693
---------------------------------------
-End-of-path arrival time       : 3.195
-
-Constraint                     : 0.000
-+ Capture Clock Path Delay     : 2.502
-+ Clock Uncertainty            : 0.050
---------------------------------------
-End-of-path required time      : 2.552
-
-Launch Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                           inpad        0.000             0.000               0        (0,102) 
-clk_i                                           inpad        0.150             0.150               2        (0,102) 
-clk_i                                           net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                     gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                         net          0.000             2.502             769        (1,78)  
-Inst_MPU6500_Controller/delay_cntr[0]~FF|CLK    ff           0.000             2.502             769        (73,134)
-
-Data Path
-                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
-====================================================================================================================
-Inst_MPU6500_Controller/delay_cntr[0]~FF|Q     ff          0.232             0.232              8         (73,134)
-Inst_MPU6500_Controller/delay_cntr[0]          net         0.461             0.693              8         (73,134)
-LUT__3724|in[3]                                lut         0.000             0.693              8         (73,134)
-LUT__3724|out                                  lut         0.000             0.693              2         (73,134)
-Inst_MPU6500_Controller/delay_cntr[0]~FF|D     ff          0.000             0.693              2         (73,134)
-
-Capture Clock Path
-                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
-======================================================================================================================
-clk_i                                           inpad        0.000             0.000               0        (0,102) 
-clk_i                                           inpad        0.150             0.150               2        (0,102) 
-clk_i                                           net          1.167             1.317               2        (0,102) 
-   Routing elements:
-      Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
-CLKBUF__0|O                                     gbuf         0.000             2.502             769        (1,78)  
-clk_i~O                                         net          0.000             2.502             769        (1,78)  
-Inst_MPU6500_Controller/delay_cntr[0]~FF|CLK    ff           0.000             2.502             769        (73,134)
-
-++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Path Begin    : Inst_MPU6500_Controller/config_idx[0]~FF|CLK
 Path End      : Inst_MPU6500_Controller/config_idx[0]~FF|D  
@@ -1416,37 +882,568 @@ End-of-path required time      : 2.552
 Launch Clock Path
                     name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
 ======================================================================================================================
-clk_i                                           inpad        0.000             0.000               0        (0,102)
-clk_i                                           inpad        0.150             0.150               2        (0,102)
-clk_i                                           net          1.167             1.317               2        (0,102)
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                                     gbuf         0.000             2.502             769        (1,78) 
-clk_i~O                                         net          0.000             2.502             769        (1,78) 
-Inst_MPU6500_Controller/config_idx[0]~FF|CLK    ff           0.000             2.502             769        (67,91)
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/config_idx[0]~FF|CLK    ff           0.000             2.502             959        (71,105)
 
 Data Path
                    name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
 ====================================================================================================================
-Inst_MPU6500_Controller/config_idx[0]~FF|Q     ff          0.232             0.232              6         (67,91)
-Inst_MPU6500_Controller/config_idx[0]          net         0.461             0.693              6         (67,91)
-LUT__3690|in[3]                                lut         0.000             0.693              6         (67,91)
-LUT__3690|out                                  lut         0.000             0.693              2         (67,91)
-Inst_MPU6500_Controller/config_idx[0]~FF|D     ff          0.000             0.693              2         (67,91)
+Inst_MPU6500_Controller/config_idx[0]~FF|Q     ff          0.232             0.232              6         (71,105)
+Inst_MPU6500_Controller/config_idx[0]          net         0.461             0.693              6         (71,105)
+LUT__5988|in[3]                                lut         0.000             0.693              6         (71,105)
+LUT__5988|out                                  lut         0.000             0.693              2         (71,105)
+Inst_MPU6500_Controller/config_idx[0]~FF|D     ff          0.000             0.693              2         (71,105)
 
 Capture Clock Path
                     name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
 ======================================================================================================================
-clk_i                                           inpad        0.000             0.000               0        (0,102)
-clk_i                                           inpad        0.150             0.150               2        (0,102)
-clk_i                                           net          1.167             1.317               2        (0,102)
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
    Routing elements:
       Manhattan distance of X:1, Y:24
-CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78) 
-CLKBUF__0|O                                     gbuf         0.000             2.502             769        (1,78) 
-clk_i~O                                         net          0.000             2.502             769        (1,78) 
-Inst_MPU6500_Controller/config_idx[0]~FF|CLK    ff           0.000             2.502             769        (67,91)
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/config_idx[0]~FF|CLK    ff           0.000             2.502             959        (71,105)
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : mpu_to_spi_data[0]~FF|CLK           
+Path End      : mpu_to_spi_data[0]~FF|D             
+Launch Clock  : clk_i (RISE)                        
+Capture Clock : clk_i (RISE)                        
+Slack         : 0.643 (arrival time - required time)
+Delay         : 0.461                               
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+          name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+===================================================================================================
+clk_i                        inpad        0.000             0.000               0        (0,102) 
+clk_i                        inpad        0.150             0.150               2        (0,102) 
+clk_i                        net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                  gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                  gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                      net          0.000             2.502             959        (1,78)  
+mpu_to_spi_data[0]~FF|CLK    ff           0.000             2.502             959        (75,105)
+
+Data Path
+         name            model name   delay (ns)  cumulative delay (ns) pins on net    location
+=================================================================================================
+mpu_to_spi_data[0]~FF|Q     ff          0.232             0.232              3         (75,105)
+mpu_to_spi_data[0]          net         0.461             0.693              3         (75,105)
+LUT__6059|in[3]             lut         0.000             0.693              3         (75,105)
+LUT__6059|out               lut         0.000             0.693              2         (75,105)
+mpu_to_spi_data[0]~FF|D     ff          0.000             0.693              2         (75,105)
+
+Capture Clock Path
+          name             model name   delay (ns)  cumulative delay (ns) pins on net    location
+===================================================================================================
+clk_i                        inpad        0.000             0.000               0        (0,102) 
+clk_i                        inpad        0.150             0.150               2        (0,102) 
+clk_i                        net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                  gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                  gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                      net          0.000             2.502             959        (1,78)  
+mpu_to_spi_data[0]~FF|CLK    ff           0.000             2.502             959        (75,105)
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/delay_cntr[5]~FF|CLK
+Path End      : Inst_MPU6500_Controller/delay_cntr[5]~FF|D  
+Launch Clock  : clk_i (RISE)                                
+Capture Clock : clk_i (RISE)                                
+Slack         : 0.643 (arrival time - required time)        
+Delay         : 0.461                                       
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[5]~FF|CLK    ff           0.000             2.502             959        (71,134)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+Inst_MPU6500_Controller/delay_cntr[5]~FF|Q     ff          0.232             0.232              6         (71,134)
+Inst_MPU6500_Controller/delay_cntr[5]          net         0.461             0.693              6         (71,134)
+LUT__6082|in[3]                                lut         0.000             0.693              6         (71,134)
+LUT__6082|out                                  lut         0.000             0.693              2         (71,134)
+Inst_MPU6500_Controller/delay_cntr[5]~FF|D     ff          0.000             0.693              2         (71,134)
+
+Capture Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[5]~FF|CLK    ff           0.000             2.502             959        (71,134)
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/state[0]~FF|CLK
+Path End      : Inst_MPU6500_Controller/state[0]~FF|D  
+Launch Clock  : clk_i (RISE)                           
+Capture Clock : clk_i (RISE)                           
+Slack         : 0.643 (arrival time - required time)   
+Delay         : 0.461                                  
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                 name                    model name   delay (ns)  cumulative delay (ns) pins on net    location
+=================================================================================================================
+clk_i                                      inpad        0.000             0.000               0        (0,102) 
+clk_i                                      inpad        0.150             0.150               2        (0,102) 
+clk_i                                      net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                    net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/state[0]~FF|CLK    ff           0.000             2.502             959        (73,117)
+
+Data Path
+                name                   model name   delay (ns)  cumulative delay (ns) pins on net    location
+===============================================================================================================
+Inst_MPU6500_Controller/state[0]~FF|Q     ff          0.232             0.232              25        (73,117)
+Inst_MPU6500_Controller/state[0]          net         0.461             0.693              25        (73,117)
+LUT__6038|in[3]                           lut         0.000             0.693              25        (73,117)
+LUT__6038|out                             lut         0.000             0.693               2        (73,117)
+Inst_MPU6500_Controller/state[0]~FF|D     ff          0.000             0.693               2        (73,117)
+
+Capture Clock Path
+                 name                    model name   delay (ns)  cumulative delay (ns) pins on net    location
+=================================================================================================================
+clk_i                                      inpad        0.000             0.000               0        (0,102) 
+clk_i                                      inpad        0.150             0.150               2        (0,102) 
+clk_i                                      net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                    net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/state[0]~FF|CLK    ff           0.000             2.502             959        (73,117)
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/delay_cntr[6]~FF|CLK
+Path End      : Inst_MPU6500_Controller/delay_cntr[6]~FF|D  
+Launch Clock  : clk_i (RISE)                                
+Capture Clock : clk_i (RISE)                                
+Slack         : 0.643 (arrival time - required time)        
+Delay         : 0.461                                       
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[6]~FF|CLK    ff           0.000             2.502             959        (73,134)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+Inst_MPU6500_Controller/delay_cntr[6]~FF|Q     ff          0.232             0.232              5         (73,134)
+Inst_MPU6500_Controller/delay_cntr[6]          net         0.461             0.693              5         (73,134)
+LUT__6083|in[3]                                lut         0.000             0.693              5         (73,134)
+LUT__6083|out                                  lut         0.000             0.693              2         (73,134)
+Inst_MPU6500_Controller/delay_cntr[6]~FF|D     ff          0.000             0.693              2         (73,134)
+
+Capture Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[6]~FF|CLK    ff           0.000             2.502             959        (73,134)
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/delay_cntr[3]~FF|CLK
+Path End      : Inst_MPU6500_Controller/delay_cntr[3]~FF|D  
+Launch Clock  : clk_i (RISE)                                
+Capture Clock : clk_i (RISE)                                
+Slack         : 0.643 (arrival time - required time)        
+Delay         : 0.461                                       
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[3]~FF|CLK    ff           0.000             2.502             959        (75,135)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+Inst_MPU6500_Controller/delay_cntr[3]~FF|Q     ff          0.232             0.232              5         (75,135)
+Inst_MPU6500_Controller/delay_cntr[3]          net         0.461             0.693              5         (75,135)
+LUT__6078|in[3]                                lut         0.000             0.693              5         (75,135)
+LUT__6078|out                                  lut         0.000             0.693              2         (75,135)
+Inst_MPU6500_Controller/delay_cntr[3]~FF|D     ff          0.000             0.693              2         (75,135)
+
+Capture Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[3]~FF|CLK    ff           0.000             2.502             959        (75,135)
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/delay_cntr[10]~FF|CLK
+Path End      : Inst_MPU6500_Controller/delay_cntr[10]~FF|D  
+Launch Clock  : clk_i (RISE)                                 
+Capture Clock : clk_i (RISE)                                 
+Slack         : 0.643 (arrival time - required time)         
+Delay         : 0.461                                        
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                    name                       model name   delay (ns)  cumulative delay (ns) pins on net    location
+=======================================================================================================================
+clk_i                                            inpad        0.000             0.000               0        (0,102) 
+clk_i                                            inpad        0.150             0.150               2        (0,102) 
+clk_i                                            net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                      gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                      gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                          net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[10]~FF|CLK    ff           0.000             2.502             959        (69,129)
+
+Data Path
+                   name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+=====================================================================================================================
+Inst_MPU6500_Controller/delay_cntr[10]~FF|Q     ff          0.232             0.232              5         (69,129)
+Inst_MPU6500_Controller/delay_cntr[10]          net         0.461             0.693              5         (69,129)
+LUT__6096|in[3]                                 lut         0.000             0.693              5         (69,129)
+LUT__6096|out                                   lut         0.000             0.693              2         (69,129)
+Inst_MPU6500_Controller/delay_cntr[10]~FF|D     ff          0.000             0.693              2         (69,129)
+
+Capture Clock Path
+                    name                       model name   delay (ns)  cumulative delay (ns) pins on net    location
+=======================================================================================================================
+clk_i                                            inpad        0.000             0.000               0        (0,102) 
+clk_i                                            inpad        0.150             0.150               2        (0,102) 
+clk_i                                            net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                      gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                      gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                          net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[10]~FF|CLK    ff           0.000             2.502             959        (69,129)
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/delay_cntr[7]~FF|CLK
+Path End      : Inst_MPU6500_Controller/delay_cntr[7]~FF|D  
+Launch Clock  : clk_i (RISE)                                
+Capture Clock : clk_i (RISE)                                
+Slack         : 0.643 (arrival time - required time)        
+Delay         : 0.461                                       
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[7]~FF|CLK    ff           0.000             2.502             959        (67,129)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+Inst_MPU6500_Controller/delay_cntr[7]~FF|Q     ff          0.232             0.232              8         (67,129)
+Inst_MPU6500_Controller/delay_cntr[7]          net         0.461             0.693              8         (67,129)
+LUT__6086|in[3]                                lut         0.000             0.693              8         (67,129)
+LUT__6086|out                                  lut         0.000             0.693              2         (67,129)
+Inst_MPU6500_Controller/delay_cntr[7]~FF|D     ff          0.000             0.693              2         (67,129)
+
+Capture Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[7]~FF|CLK    ff           0.000             2.502             959        (67,129)
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/delay_cntr[4]~FF|CLK
+Path End      : Inst_MPU6500_Controller/delay_cntr[4]~FF|D  
+Launch Clock  : clk_i (RISE)                                
+Capture Clock : clk_i (RISE)                                
+Slack         : 0.643 (arrival time - required time)        
+Delay         : 0.461                                       
+
+Logic Level             : 1
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[4]~FF|CLK    ff           0.000             2.502             959        (73,135)
+
+Data Path
+                   name                     model name   delay (ns)  cumulative delay (ns) pins on net    location
+====================================================================================================================
+Inst_MPU6500_Controller/delay_cntr[4]~FF|Q     ff          0.232             0.232              6         (73,135)
+Inst_MPU6500_Controller/delay_cntr[4]          net         0.461             0.693              6         (73,135)
+LUT__6080|in[3]                                lut         0.000             0.693              6         (73,135)
+LUT__6080|out                                  lut         0.000             0.693              2         (73,135)
+Inst_MPU6500_Controller/delay_cntr[4]~FF|D     ff          0.000             0.693              2         (73,135)
+
+Capture Clock Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+clk_i                                           inpad        0.000             0.000               0        (0,102) 
+clk_i                                           inpad        0.150             0.150               2        (0,102) 
+clk_i                                           net          1.167             1.317               2        (0,102) 
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                     gbuf         1.185             2.502               2        (1,78)  
+CLKBUF__0|O                                     gbuf         0.000             2.502             959        (1,78)  
+clk_i~O                                         net          0.000             2.502             959        (1,78)  
+Inst_MPU6500_Controller/delay_cntr[4]~FF|CLK    ff           0.000             2.502             959        (73,135)
+
+++++ Path 10 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Path Begin    : Inst_MPU6500_Controller/raw_data[11][0]~FF|CLK
+Path End      : gyro_y[0]~FF|D                                
+Launch Clock  : clk_i (RISE)                                  
+Capture Clock : clk_i (RISE)                                  
+Slack         : 0.643 (arrival time - required time)          
+Delay         : 0.461                                         
+
+Logic Level             : 0
+Non-global nets on path : 1
+Global nets on path     : 0
+
+Launch Clock Path Delay        : 2.502
++ Clock To Q + Data Path Delay : 0.693
+--------------------------------------
+End-of-path arrival time       : 3.195
+
+Constraint                     : 0.000
++ Capture Clock Path Delay     : 2.502
++ Clock Uncertainty            : 0.050
+--------------------------------------
+End-of-path required time      : 2.552
+
+Launch Clock Path
+                     name                       model name   delay (ns)  cumulative delay (ns) pins on net    location
+========================================================================================================================
+clk_i                                             inpad        0.000             0.000               0        (0,102)
+clk_i                                             inpad        0.150             0.150               2        (0,102)
+clk_i                                             net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I                                       gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O                                       gbuf         0.000             2.502             959        (1,78) 
+clk_i~O                                           net          0.000             2.502             959        (1,78) 
+Inst_MPU6500_Controller/raw_data[11][0]~FF|CLK    ff           0.000             2.502             959        (29,94)
+
+Data Path
+                    name                      model name   delay (ns)  cumulative delay (ns) pins on net    location
+======================================================================================================================
+Inst_MPU6500_Controller/raw_data[11][0]~FF|Q     ff          0.232             0.232              2         (29,94)
+Inst_MPU6500_Controller/raw_data[11][0]          net         0.461             0.693              2         (29,94)
+   Routing elements:
+      Manhattan distance of X:2, Y:0
+gyro_y[0]~FF|D                                   ff          0.000             0.693              2         (31,94)
+
+Capture Clock Path
+      name        model name   delay (ns)  cumulative delay (ns) pins on net    location
+==========================================================================================
+clk_i               inpad        0.000             0.000               0        (0,102)
+clk_i               inpad        0.150             0.150               2        (0,102)
+clk_i               net          1.167             1.317               2        (0,102)
+   Routing elements:
+      Manhattan distance of X:1, Y:24
+CLKBUF__0|I         gbuf         1.185             2.502               2        (1,78) 
+CLKBUF__0|O         gbuf         0.000             2.502             959        (1,78) 
+clk_i~O             net          0.000             2.502             959        (1,78) 
+gyro_y[0]~FF|CLK    ff           0.000             2.502             959        (31,94)
 
 ---------- Path Details for Min Critical Paths (end) ---------------
 

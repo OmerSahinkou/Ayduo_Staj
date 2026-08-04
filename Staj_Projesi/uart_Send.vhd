@@ -42,24 +42,22 @@ begin
             uart_read_state <= ST_CHECK_FIFO;
         elsif rising_edge(clk_i) then
 
-            -- Dünkü çalışan kodundaki gibi varsayılan değerler her clock başı '0' yapılır
             tx_start_sig <= '0';
             rd_en_i      <= '0';
 
             case uart_read_state is
                 when ST_CHECK_FIFO => 
                     if(tx_busy_sig = '0' and empty_o = '0') then 
-                        rd_en_i         <= '1'; -- 1 clock'luk okuma pulse'ı
+                        rd_en_i         <= '1'; 
                         uart_read_state <= ST_WAIT_FIFO;
                     end if;
 
                 when ST_WAIT_FIFO =>
-                    -- Dünkü gibi sadece 1 clock FIFO'nun veriyi hazırlamasını bekliyoruz
                     uart_read_state <= ST_START_UART;
 
                 when ST_START_UART =>
                     tx_start_sig    <= '1';
-                    tx_data_sig     <= rdata; -- Ara register YOK, direkt hazır rdata alınıyor!
+                    tx_data_sig     <= rdata; 
                     uart_read_state <= ST_WAIT_UART;
 
                 when ST_WAIT_UART =>

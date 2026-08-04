@@ -864,104 +864,95 @@ begin
     -- PD Test STATE MACHINE (TAMAMLAYICI FİLTRE VE CLAMP EKLENMİŞ HALİ)
     -- =========================================================
 
---     accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(f_axi_i), 32), 2);
---     accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(f_ayi_i), 32), 2);
+    accel_target_x <= to_signed(32512, 32) + shift_left(resize(signed(f_axi_i), 32), 2);
+    accel_target_y <= to_signed(32512, 32) + shift_left(resize(signed(f_ayi_i), 32), 2);
 
---     hesap_temp_x <= resize(shift_right(angle_pool_x, 8), 16);
---     hesap_temp_y <= resize(shift_right(angle_pool_y, 8), 16);
---     hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 12), 16); 
+    hesap_temp_x <= resize(shift_right(angle_pool_x, 8), 16);
+    hesap_temp_y <= resize(shift_right(angle_pool_y, 8), 16);
+    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 12), 16); 
 
---     -- 3. ADIM: Güvenli Process Bloğu
---     PD_Test : process (clk_i, rst_n_i)
---     begin
---         if rst_n_i = '0' then 
---             angle_pool_x <= to_signed(32512, 32); 
---             angle_pool_y <= to_signed(32512, 32);
---             angle_pool   <= (others => '0');
---             angle_raw_x  <= to_unsigned(127, 8);
---             angle_raw_y  <= to_unsigned(127, 8);
---             angle_raw_z  <= to_unsigned(127, 8);
---         elsif rising_edge(clk_i) then
+    -- 3. ADIM: Güvenli Process Bloğu
+    PD_Test : process (clk_i, rst_n_i)
+    begin
+        if rst_n_i = '0' then 
+            angle_pool_x <= to_signed(32512, 32); 
+            angle_pool_y <= to_signed(32512, 32);
+            angle_pool   <= (others => '0');
+            angle_raw_x  <= to_unsigned(127, 8);
+            angle_raw_y  <= to_unsigned(127, 8);
+            angle_raw_z  <= to_unsigned(127, 8);
+        elsif rising_edge(clk_i) then
 
---             if data_valid_out = '1' then 
+            if data_valid_out = '1' then 
                 
---                 -- ================= Z EKSENİ =================
---                 if to_integer(abs(signed(gyro_z))) > 15 then 
---                     angle_pool <= angle_pool + signed(f_gzi_i); 
---                 end if;
---                 -- Z Clamp (Alt ve Üst Sınır)
---                 if angle_pool < to_signed(-524288, 32) then
---                     angle_pool <= to_signed(-524288, 32);
---                 elsif angle_pool > to_signed(520192, 32) then
---                     angle_pool <= to_signed(520192, 32);
---                 end if;
+                -- ================= Z EKSENİ =================
+                if to_integer(abs(signed(gyro_z))) > 15 then 
+                    angle_pool <= angle_pool + signed(f_gzi_i); 
+                end if;
+                -- Z Clamp (Alt ve Üst Sınır)
+                if angle_pool < to_signed(-524288, 32) then
+                    angle_pool <= to_signed(-524288, 32);
+                elsif angle_pool > to_signed(520192, 32) then
+                    angle_pool <= to_signed(520192, 32);
+                end if;
 
---                 -- ================= X EKSENİ =================
---                 if to_integer(abs(signed(gyro_x))) > 5 then 
---                     angle_pool_x <= angle_pool_x + shift_right(signed(f_gxi_i), 2) + shift_right(accel_target_x - angle_pool_x, 3);
---                 else
---                     angle_pool_x <= angle_pool_x + shift_right(accel_target_x - angle_pool_x, 3);
---                 end if;
---                 if angle_pool_x < 0 then
---                     angle_pool_x <= (others => '0');
---                 elsif angle_pool_x > 65280 then 
---                     angle_pool_x <= to_signed(65280, 32);
---                 end if;
+                -- ================= X EKSENİ =================
+                if to_integer(abs(signed(gyro_x))) > 5 then 
+                    angle_pool_x <= angle_pool_x + shift_right(signed(f_gxi_i), 2) + shift_right(accel_target_x - angle_pool_x, 3);
+                else
+                    angle_pool_x <= angle_pool_x + shift_right(accel_target_x - angle_pool_x, 3);
+                end if;
+                if angle_pool_x < 0 then
+                    angle_pool_x <= (others => '0');
+                elsif angle_pool_x > 65280 then 
+                    angle_pool_x <= to_signed(65280, 32);
+                end if;
 
---                 -- ================= Y EKSENİ =================
---                 if to_integer(abs(signed(gyro_y))) > 15 then 
---                     angle_pool_y <= angle_pool_y + shift_right(signed(f_gyi_i), 4) + shift_right(accel_target_y - angle_pool_y, 5);
---                 else
---                     angle_pool_y <= angle_pool_y + shift_right(accel_target_y - angle_pool_y, 5);
---                 end if;
---                 if angle_pool_y < 0 then
---                     angle_pool_y <= (others => '0');
---                 elsif angle_pool_y > 65280 then
---                     angle_pool_y <= to_signed(65280, 32);
---                 end if;
+                -- ================= Y EKSENİ =================
+                if to_integer(abs(signed(gyro_y))) > 15 then 
+                    angle_pool_y <= angle_pool_y + shift_right(signed(f_gyi_i), 4) + shift_right(accel_target_y - angle_pool_y, 5);
+                else
+                    angle_pool_y <= angle_pool_y + shift_right(accel_target_y - angle_pool_y, 5);
+                end if;
+                if angle_pool_y < 0 then
+                    angle_pool_y <= (others => '0');
+                elsif angle_pool_y > 65280 then
+                    angle_pool_y <= to_signed(65280, 32);
+                end if;
 
---             end if;
+            end if;
 
---             -- ================= SERVO 0-255 KORUMASI =================
---             if hesap_temp_x > 255 then
---                 angle_raw_x <= to_unsigned(255, 8);
---             elsif hesap_temp_x < 0 then
---                 angle_raw_x <= to_unsigned(0, 8);
---             else
---                 angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
---             end if;
+            -- ================= SERVO 0-255 KORUMASI =================
+            if hesap_temp_x > 255 then
+                angle_raw_x <= to_unsigned(255, 8);
+            elsif hesap_temp_x < 0 then
+                angle_raw_x <= to_unsigned(0, 8);
+            else
+                angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
+            end if;
 
---             if hesap_temp_y > 255 then
---                 angle_raw_y <= to_unsigned(255, 8);
---             elsif hesap_temp_y < 0 then
---                 angle_raw_y <= to_unsigned(0, 8);
---             else
---                 angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
---             end if;
+            if hesap_temp_y > 255 then
+                angle_raw_y <= to_unsigned(255, 8);
+            elsif hesap_temp_y < 0 then
+                angle_raw_y <= to_unsigned(0, 8);
+            else
+                angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
+            end if;
 
---             if hesap_temp_z > 255 then
---                 angle_raw_z <= to_unsigned(255, 8);
---             elsif hesap_temp_z < 0 then 
---                 angle_raw_z <= to_unsigned(0, 8);  
---             else 
---                 angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
---             end if;
+            if hesap_temp_z > 255 then
+                angle_raw_z <= to_unsigned(255, 8);
+            elsif hesap_temp_z < 0 then 
+                angle_raw_z <= to_unsigned(0, 8);  
+            else 
+                angle_raw_z <= unsigned(hesap_temp_z(7 downto 0));
+            end if;
 
---             if(data_valid_out = '1') then
---                 f_axi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_axi_i) * 3, 18) + resize(signed(accel_x), 18), 2), 16));
---                 f_ayi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_ayi_i) * 3, 18) + resize(signed(accel_y), 18), 2), 16));
---                 f_azi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_azi_i) * 3, 18) + resize(signed(accel_z), 18), 2), 16));
+        end if;
+    end process;
 
---                 f_gxi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gxi_i) * 3, 18) + resize(signed(gyro_x), 18), 2), 16));
---                 f_gyi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gyi_i) * 3, 18) + resize(signed(gyro_y), 18), 2), 16));
---                 f_gzi_i <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(f_gzi_i) * 3, 18) + resize(signed(gyro_z), 18), 2), 16));
---             end if;
---         end if;
---     end process;
-
---     angle_reg_0 <= angle_raw_x;
---     angle_reg_1 <= angle_raw_y;
---     angle_reg_2 <= angle_raw_z;
+    angle_reg_0 <= angle_raw_x;
+    angle_reg_1 <= angle_raw_y;
+    angle_reg_2 <= angle_raw_z;
 
 -- -- -- =========================================================
 -- -- -- FIFO   Test STATE MACHINE
@@ -1210,90 +1201,6 @@ begin
     --     end if;
     -- end process PID;
 
-
-
-
-    --PID kontrolcü
-    -- =========================================================
--- FİLTRELENMİŞ VERİLERLE ÇALIŞAN BAĞIMSIZ PID KONTROLCÜSÜ
--- =========================================================
--- PID_Filtered_Process : process(clk_i, rst_n_i)
---     variable error_x, error_y, error_z          : integer;
---     variable deriv_x, deriv_y, deriv_z          : integer;
---     variable integral_x, integral_y, integral_z : integer;
---     variable pid_x, pid_y, pid_z                : integer;
---     variable target_x, target_y, target_z       : integer;
-
---     -- Katsayılar (İhtiyaca göre ayarlanabilir)
---     constant KP      : integer := 3;
---     constant KI      : integer := 1;
---     constant KD      : integer := 1;
---     constant I_SCALE : integer := 64; 
---     constant I_CLAMP : integer := 2048;
---     constant CENTER  : integer := 127;
--- begin
---     if rst_n_i = '0' then
---         angle_reg_0 <= to_unsigned(127, 8);
---         angle_reg_1 <= to_unsigned(127, 8);
---         angle_reg_2 <= to_unsigned(127, 8);
---         integral_x := 0;
---         integral_y := 0;
---         integral_z := 0;
---     elsif rising_edge(clk_i) then
---         if data_valid_out = '1' then
-
---             error_x := to_integer(signed(f_axi_i(15 downto 8)));
---             deriv_x := to_integer(signed(f_gxi_i(15 downto 8)));
-
---             integral_x := integral_x + error_x;
---             if integral_x > I_CLAMP then integral_x := I_CLAMP;
---             elsif integral_x < -I_CLAMP then integral_x := -I_CLAMP;
---             end if;
-
---             pid_x := (KP * error_x) + (KD * deriv_x) + ((KI * integral_x) / I_SCALE);
---             target_x := CENTER + pid_x;
-
---             if target_x > 255 then angle_reg_0 <= to_unsigned(255, 8);
---             elsif target_x < 0 then angle_reg_0 <= to_unsigned(0, 8);
---             else angle_reg_0 <= to_unsigned(target_x, 8);
---             end if;
-
---             error_y := to_integer(signed(f_ayi_i(15 downto 8)));
---             deriv_y := to_integer(signed(f_gyi_i(15 downto 8)));
-
---             integral_y := integral_y + error_y;
---             if integral_y > I_CLAMP then integral_y := I_CLAMP;
---             elsif integral_y < -I_CLAMP then integral_y := -I_CLAMP;
---             end if;
-
---             pid_y := (KP * error_y) + (KD * deriv_y) + ((KI * integral_y) / I_SCALE);
---             target_y := CENTER + pid_y;
-
---             if target_y > 255 then angle_reg_1 <= to_unsigned(255, 8);
---             elsif target_y < 0 then angle_reg_1 <= to_unsigned(0, 8);
---             else angle_reg_1 <= to_unsigned(target_y, 8);
---             end if;
-
---             error_z := to_integer(signed(f_azi_i(15 downto 8)));
---             deriv_z := to_integer(signed(f_gzi_i(15 downto 8)));
-
---             integral_z := integral_z + error_z;
---             if integral_z > I_CLAMP then integral_z := I_CLAMP;
---             elsif integral_z < -I_CLAMP then integral_z := -I_CLAMP;
---             end if;
-
---             pid_z := (KP * error_z) + (KD * deriv_z) + ((KI * integral_z) / I_SCALE);
---             target_z := CENTER + pid_z;
-
---             if target_z > 255 then angle_reg_2 <= to_unsigned(255, 8);
---             elsif target_z < 0 then angle_reg_2 <= to_unsigned(0, 8);
---             else angle_reg_2 <= to_unsigned(target_z, 8);
---             end if;
-
---         end if;
---     end if;
--- end process PID_Filtered_Process;
-
 -- fifo_test : process (rst_n_i , clk_i)
 -- begin
 --     if rst_n_i = '0' then 
@@ -1325,4 +1232,153 @@ begin
 --         end case;
 --     end if;
 -- end process fifo_test;
+
+-- PID_Filtered_Process : process(clk_i, rst_n_i)
+--     -- Stage 1 Registerları (Okuma ve Gyro Integrasyon)
+--     variable gx_reg, gy_reg, gz_reg             : integer;
+--     variable ax_reg, ay_reg, az_reg             : integer;
+--     variable angle_x, angle_y, angle_z          : integer;
+    
+--     -- Stage 2 Registerları (Filtre ve Hata)
+--     variable error_x, error_y, error_z          : integer;
+--     variable integral_x, integral_y, integral_z : integer;
+--     variable gx_delay, gy_delay, gz_delay       : integer; -- PID'ye D terimi aktarmak için
+    
+--     -- Stage 3 Registerları (PID Çıkışı)
+--     variable pid_x, pid_y, pid_z                : integer;
+--     variable out_x, out_y, out_z                : integer;
+    
+--     -- Pipeline Senkronizasyon Bayrakları
+--     variable s1_valid, s2_valid : std_logic;
+
+--     -- Sabitler
+--     constant GY_THR   : integer := 15;    
+--     constant I_CLAMP  : integer := 32767;
+--     constant I_THR    : integer := 100;   
+--     constant Z_OFFSET : integer := 64;
+--     constant CENTER   : integer := 128;
+
+-- begin
+--     if rst_n_i = '0' then
+--         angle_x := 0; angle_y := 0; angle_z := 0;
+--         integral_x := 0; integral_y := 0; integral_z := 0;
+--         angle_reg_0 <= to_unsigned(128, 8);
+--         angle_reg_1 <= to_unsigned(128, 8);
+--         angle_reg_2 <= to_unsigned(128, 8);
+--         s1_valid := '0'; s2_valid := '0';
+
+--     elsif rising_edge(clk_i) then
+
+--         -- =========================================================================
+--         -- STAGE 3: PID ÇIKIŞI VE SERVO HESAPLAMA (Stage 2'den gelen verileri okur)
+--         -- =========================================================================
+--         if s2_valid = '1' then
+--             -- pid = (error * 16) + (integral / 1024) - (gyro / 64)
+--             -- BÖLME YOK! Sentezleyici doğrudan kabloları kaydırır (0 LUT gecikmesi)
+--             pid_x := to_integer(shift_left(to_signed(error_x, 32), 4)) +
+--                      to_integer(shift_right(to_signed(integral_x, 32), 10)) -
+--                      to_integer(shift_right(to_signed(gx_delay, 32), 6));
+                     
+--             pid_y := to_integer(shift_left(to_signed(error_y, 32), 4)) +
+--                      to_integer(shift_right(to_signed(integral_y, 32), 10)) -
+--                      to_integer(shift_right(to_signed(gy_delay, 32), 6));
+                     
+--             pid_z := to_integer(shift_left(to_signed(error_z, 32), 4)) +
+--                      to_integer(shift_right(to_signed(integral_z, 32), 10)) -
+--                      to_integer(shift_right(to_signed(gz_delay, 32), 6));
+
+--             -- Servo Sınırlandırma (Clamp)
+--             out_x := CENTER + pid_x;
+--             if out_x > 255 then angle_reg_0 <= to_unsigned(255, 8);
+--             elsif out_x < 0 then angle_reg_0 <= to_unsigned(0, 8);
+--             else angle_reg_0 <= to_unsigned(out_x, 8); end if;
+
+--             out_y := CENTER + pid_y;
+--             if out_y > 255 then angle_reg_1 <= to_unsigned(255, 8);
+--             elsif out_y < 0 then angle_reg_1 <= to_unsigned(0, 8);
+--             else angle_reg_1 <= to_unsigned(out_y, 8); end if;
+
+--             out_z := CENTER + pid_z;
+--             if out_z > 255 then angle_reg_2 <= to_unsigned(255, 8);
+--             elsif out_z < 0 then angle_reg_2 <= to_unsigned(0, 8);
+--             else angle_reg_2 <= to_unsigned(out_z, 8); end if;
+--         end if;
+
+--         -- =========================================================================
+--         -- STAGE 2: COMPLEMENTARY FILTER VE INTEGRAL (Stage 1'den gelen verileri okur)
+--         -- =========================================================================
+--         if s1_valid = '1' then
+--             -- fused = angle - (angle / 32) + (accel / 32)
+--             -- BÖLME YOK! Sadece bit kaydırma
+--             error_x := -(angle_x - to_integer(shift_right(to_signed(angle_x, 32), 5)) + 
+--                                    to_integer(shift_right(to_signed(ax_reg, 32), 5)));
+                                   
+--             error_y := -(angle_y - to_integer(shift_right(to_signed(angle_y, 32), 5)) + 
+--                                    to_integer(shift_right(to_signed(ay_reg, 32), 5)));
+                                   
+--             error_z := -(angle_z - to_integer(shift_right(to_signed(angle_z, 32), 5)) + 
+--                                    to_integer(shift_right(to_signed(az_reg, 32), 5)));
+
+--             -- İntegral Hesaplama
+--             if abs(error_x) < I_THR then
+--                 integral_x := integral_x + error_x;
+--                 if integral_x > I_CLAMP then integral_x := I_CLAMP;
+--                 elsif integral_x < -I_CLAMP then integral_x := -I_CLAMP; end if;
+--             end if;
+            
+--             if abs(error_y) < I_THR then
+--                 integral_y := integral_y + error_y;
+--                 if integral_y > I_CLAMP then integral_y := I_CLAMP;
+--                 elsif integral_y < -I_CLAMP then integral_y := -I_CLAMP; end if;
+--             end if;
+            
+--             if abs(error_z) < I_THR then
+--                 integral_z := integral_z + error_z;
+--                 if integral_z > I_CLAMP then integral_z := I_CLAMP;
+--                 elsif integral_z < -I_CLAMP then integral_z := -I_CLAMP; end if;
+--             end if;
+
+--             -- Stage 3'e D terimi için Gyro'yu aktar (Gecikme Dengeleme)
+--             gx_delay := gx_reg;
+--             gy_delay := gy_reg;
+--             gz_delay := gz_reg;
+            
+--             s2_valid := '1';
+--         else
+--             s2_valid := '0';
+--         end if;
+
+--         -- =========================================================================
+--         -- STAGE 1: VERİ OKUMA VE GYRO INTEGRASYONU
+--         -- =========================================================================
+--         if data_valid_out = '1' then
+--             gx_reg := to_integer(signed(f_gxi_i(15 downto 8)));
+--             gy_reg := to_integer(signed(f_gyi_i(15 downto 8)));
+--             gz_reg := to_integer(signed(f_gzi_i(15 downto 8)));
+            
+--             ax_reg := to_integer(signed(f_axi_i(15 downto 8)));
+--             ay_reg := to_integer(signed(f_ayi_i(15 downto 8)));
+--             az_reg := to_integer(signed(f_azi_i(15 downto 8))) - Z_OFFSET;
+
+--             -- angle = angle + (gyro / 4)
+--             -- BÖLME YOK! Sadece 2 bit kaydırma
+--             if abs(gx_reg) > GY_THR then 
+--                 angle_x := angle_x + to_integer(shift_right(to_signed(gx_reg, 32), 2)); 
+--             end if;
+            
+--             if abs(gy_reg) > GY_THR then 
+--                 angle_y := angle_y + to_integer(shift_right(to_signed(gy_reg, 32), 2)); 
+--             end if;
+            
+--             if abs(gz_reg) > GY_THR then 
+--                 angle_z := angle_z + to_integer(shift_right(to_signed(gz_reg, 32), 2)); 
+--             end if;
+
+--             s1_valid := '1';
+--         else
+--             s1_valid := '0';
+--         end if;
+
+--     end if;
+-- end process PID_Filtered_Process;
 end Behavioral;
