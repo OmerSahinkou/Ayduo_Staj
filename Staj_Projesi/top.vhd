@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------
--- Company: Ayduo Electronic
+-- Company: 
 -- Engineer: Ömer Şahin
 -- 
 -- Create Date: 07/17/2026 12:37:36 AM
@@ -17,7 +17,7 @@ entity top is
     Generic (
         SQRT_DATA : integer := 34;
         CLK_FREQ  : integer := 33_333_333; 
-        BAUD_RATE : integer := 115_200
+        BAUD_RATE : integer := 1_000_000
     );
     Port (
         clk_i       : in  STD_LOGIC;
@@ -281,7 +281,9 @@ architecture Behavioral of top is
             angle_y : out STD_LOGIC_VECTOR(7 downto 0)               ;
             angle_z : out STD_LOGIC_VECTOR(7 downto 0)               ;
 
-            pwm_valid: in STD_LOGIC                                  
+            pwm_valid_x: in STD_LOGIC                               ;            
+            pwm_valid_y: in STD_LOGIC                               ;            
+            pwm_valid_z: in STD_LOGIC                                    
         );
     end component;
     -- =========================================================
@@ -290,9 +292,9 @@ architecture Behavioral of top is
     
     signal data_valid_out  : STD_LOGIC := '0' ;
     -- Servo Sinyalleri
-    signal angle_reg_0     : unsigned(7 downto 0) := (others => '0');
-    signal angle_reg_1     : unsigned(7 downto 0) := (others => '0');
-    signal angle_reg_2     : unsigned(7 downto 0) := (others => '0');
+    signal angle_reg_0     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal angle_reg_1     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal angle_reg_2     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     
     signal pwm_valid_x     :  STD_LOGIC := '0' ;
     signal pwm_valid_y     :  STD_LOGIC := '0' ;
@@ -345,7 +347,7 @@ begin
         port map (
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
-            servo_angle => std_logic_vector(angle_reg_0),
+            servo_angle => angle_reg_0,
             pwm_out     => pwm_out_0,
             pwm_valid   => pwm_valid_x
         );
@@ -355,7 +357,7 @@ begin
         port map (
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
-            servo_angle => std_logic_vector(angle_reg_1),
+            servo_angle => angle_reg_1,
             pwm_out     => pwm_out_1,
             pwm_valid   => pwm_valid_y
         );
@@ -365,7 +367,7 @@ begin
         port map (
             clk_i       => clk_i,
             rst_n_i     => rst_n_i,
-            servo_angle => std_logic_vector(angle_reg_2),
+            servo_angle => angle_reg_2,
             pwm_out     => pwm_out_2,
             pwm_valid   => pwm_valid_z
 
@@ -446,17 +448,7 @@ begin
             gy_o            => gyro_y,
             gz_o            => gyro_z
         );
-
-    -- Inst_SquareRoot: SquareRoot
-    --     generic map (
-    --         N               =>34
-    --     )
-    --     port map(
-    --         clk             => clk_i,
-    --         data_in         => data_in,
-    --         data_out        => data_out
-    --     );
-
+        
     Inst_FIFO_CONTROLLER: FIFO_CONTROLLER
             port map (
                 clk_i           => clk_i,
@@ -538,4 +530,29 @@ begin
             );
 
     
+    u_Motor_Control : Motor_Control 
+                generic map (
+                    DATA_WIDTH =>   16
+                )
+                port map (
+                    clk_i               => clk_i            ,
+                    rst_n_i             => rst_n_i          ,
+
+                    mpu_data_valid_in   => data_valid_out   ,
+
+                    f_axi_i             => f_axi_i          ,
+                    f_ayi_i             => f_ayi_i          ,
+                    f_azi_i             => f_azi_i          ,
+                    f_gxi_i             => f_gxi_i          ,
+                    f_gyi_i             => f_gyi_i          ,
+                    f_gzi_i             => f_gzi_i          ,
+
+                    angle_x             => angle_reg_0      ,
+                    angle_y             => angle_reg_1      ,
+                    angle_z             => angle_reg_2      ,
+                    pwm_valid_x         => pwm_valid_x      ,
+                    pwm_valid_y         => pwm_valid_y      ,
+                    pwm_valid_z         => pwm_valid_z      
+
+                );
 end Behavioral;

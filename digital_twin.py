@@ -6,7 +6,7 @@ from vpython import *
 # =========================================================
 # AYARLAR 
 # =========================================================
-SERIAL_PORT = '/dev/ttyUSB2'   
+SERIAL_PORT = '/dev/ttyUSB3'   
 BAUD_RATE = 115200     
 
 try:

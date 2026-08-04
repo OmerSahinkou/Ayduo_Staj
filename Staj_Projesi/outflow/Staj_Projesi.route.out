@@ -16,23 +16,23 @@ INFO     : Running Placement and Routing for Family "Trion", Device "T8F81" ...
 INFO     : Read ipin pattern from /home/omer-ahin/Downloads/efinity/2025.2/arch/./routing/ipin_oph.xml
 INFO     : Finished parsing ipin pattern file '/home/omer-ahin/Downloads/efinity/2025.2/arch/./routing/ipin_oph.xdb'.
 INFO     : Finished parsing switch_block file '/home/omer-ahin/Downloads/efinity/2025.2/arch/./routing/sb_connectivity_subset.xdb'.
-INFO     : BuildGraph process took 0.474788381 seconds [FlowMsg::StageDuration]
-INFO     :     BuildGraph process took 0.44 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : BuildGraph process virtual memory usage: begin = 289.788 MB, end = 301.66 MB, delta = 11.872 MB [FlowMsg::VMUsage]
-INFO     : BuildGraph process resident set memory usage: begin = 151.116 MB, end = 187.6 MB, delta = 36.484 MB [FlowMsg::RSSUsage]
-INFO     :     BuildGraph process peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
-INFO     : check rr_graph process took 0.030282171 seconds [FlowMsg::StageDuration]
+INFO     : BuildGraph process took 0.476235207 seconds [FlowMsg::StageDuration]
+INFO     :     BuildGraph process took 0.47 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : BuildGraph process virtual memory usage: begin = 289.788 MB, end = 311.948 MB, delta = 22.16 MB [FlowMsg::VMUsage]
+INFO     : BuildGraph process resident set memory usage: begin = 164.728 MB, end = 198.052 MB, delta = 33.324 MB [FlowMsg::RSSUsage]
+INFO     :     BuildGraph process peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : check rr_graph process took 0.030960223 seconds [FlowMsg::StageDuration]
 INFO     :     check rr_graph process took 0.03 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : check rr_graph process virtual memory usage: begin = 301.66 MB, end = 303.22 MB, delta = 1.56 MB [FlowMsg::VMUsage]
-INFO     : check rr_graph process resident set memory usage: begin = 187.6 MB, end = 189.444 MB, delta = 1.844 MB [FlowMsg::RSSUsage]
-INFO     :     check rr_graph process peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
-INFO     : Generated 397955 RR nodes and 1461443 RR edges [DBMsg::DatabaseRoutingGraphStats]
+INFO     : check rr_graph process virtual memory usage: begin = 311.948 MB, end = 313.508 MB, delta = 1.56 MB [FlowMsg::VMUsage]
+INFO     : check rr_graph process resident set memory usage: begin = 198.052 MB, end = 200.152 MB, delta = 2.1 MB [FlowMsg::RSSUsage]
+INFO     :     check rr_graph process peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Generated 398929 RR nodes and 1461764 RR edges [DBMsg::DatabaseRoutingGraphStats]
 INFO     : This design has 0 global control net(s). See /home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.route.rpt for details.
-INFO     : Routing graph took 0.522706142 seconds [FlowMsg::StageDuration]
-INFO     :     Routing graph took 0.49 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing graph virtual memory usage: begin = 289.788 MB, end = 303.22 MB, delta = 13.432 MB [FlowMsg::VMUsage]
-INFO     : Routing graph resident set memory usage: begin = 150.5 MB, end = 189.632 MB, delta = 39.132 MB [FlowMsg::RSSUsage]
-INFO     :     Routing graph peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Routing graph took 0.524783465 seconds [FlowMsg::StageDuration]
+INFO     :     Routing graph took 0.51 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing graph virtual memory usage: begin = 289.788 MB, end = 313.508 MB, delta = 23.72 MB [FlowMsg::VMUsage]
+INFO     : Routing graph resident set memory usage: begin = 164.112 MB, end = 200.34 MB, delta = 36.228 MB [FlowMsg::RSSUsage]
+INFO     :     Routing graph peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage Routing graph generation *****
            
            ***** Beginning stage routing ... *****
@@ -41,25 +41,28 @@ INFO     : Process the SDC file '/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.
 INFO     :  ---------      -------     --------------      -------------
 INFO     :  Iteration      Overuse     Crit Path (ns)      Calc Time (s)
 INFO     :  ---------      -------     --------------      -------------
-INFO     :          1         3055              22.95              0.418
-INFO     :          2          416              23.95              0.289
-INFO     :          3           97              24.29               0.23
-INFO     :          4            3               23.9             0.0948
-INFO     :          5            0               23.9             0.0301
+INFO     :          1         6514              25.24              0.731
+INFO     :          2         1124              25.28               0.55
+INFO     :          3          402              25.89              0.452
+INFO     :          4          103              25.46              0.609
+INFO     :          5           33              25.96              0.082
+INFO     :          6            8               25.9             0.0599
+INFO     :          7            4              26.19             0.0482
+INFO     :          8            0              26.19             0.0446
            
-INFO     : Successfully routed netlist after 5 routing iterations and 7161903 heapops
+INFO     : Successfully routed netlist after 8 routing iterations and 15563289 heapops
 INFO     : Completed net delay value cross check successfully.
            ***** Beginning stage routing check ... *****
            ***** Ending stage routing check *****
            
-INFO     : Serial number (magic cookie) for the routing is: 1389414054
+INFO     : Serial number (magic cookie) for the routing is: 930863806
 INFO     : Netlist fully routed.
 INFO     : Successfully created FPGA route file '/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.route'
-INFO     : Routing took 1.208801651 seconds [FlowMsg::StageDuration]
-INFO     :     Routing took 1.26 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Routing virtual memory usage: begin = 303.22 MB, end = 315.66 MB, delta = 12.44 MB [FlowMsg::VMUsage]
-INFO     : Routing resident set memory usage: begin = 189.632 MB, end = 200.848 MB, delta = 11.216 MB [FlowMsg::RSSUsage]
-INFO     :     Routing peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Routing took 2.806409188 seconds [FlowMsg::StageDuration]
+INFO     :     Routing took 2.93 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Routing virtual memory usage: begin = 313.508 MB, end = 341.572 MB, delta = 28.064 MB [FlowMsg::VMUsage]
+INFO     : Routing resident set memory usage: begin = 200.34 MB, end = 228.604 MB, delta = 28.264 MB [FlowMsg::RSSUsage]
+INFO     :     Routing peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage routing *****
            
            ***** Beginning stage final timing analysis ... *****
@@ -67,37 +70,37 @@ INFO     : Process the SDC file '/home/omer-ahin/STAJ/Staj_Projesi/custom.sdc' .
 INFO     : Process the SDC file '/home/omer-ahin/STAJ/Staj_Projesi/Staj_Projesi.pt.sdc' ...
 Maximum possible analyzed clocks frequency
  Clock Name  Period (ns)  Frequency (MHz)     Edge
-   clk_i        24.038        41.601         (R-R)
+   clk_i        26.334        37.974         (R-R)
 
-Geomean max period: 24.038
+Geomean max period: 26.334
 
 Setup (Max) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
-     clk_i            clk_i            30.303           6.265            (R-R)
+     clk_i            clk_i            30.303           3.969            (R-R)
 
 Hold (Min) Clock Relationship
   Launch Clock    Capture Clock   Constraint (ns)     Slack (ns)          Edge
      clk_i            clk_i            0.000            0.360            (R-R)
 
 INFO     : Write Timing Report to "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.timing.rpt" ...
-INFO     : final timing analysis took 0.079971766 seconds [FlowMsg::StageDuration]
-INFO     :     final timing analysis took 0.09 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : final timing analysis virtual memory usage: begin = 315.66 MB, end = 315.66 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : final timing analysis resident set memory usage: begin = 200.848 MB, end = 201.28 MB, delta = 0.432 MB [FlowMsg::RSSUsage]
-INFO     :     final timing analysis peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : final timing analysis took 0.119793552 seconds [FlowMsg::StageDuration]
+INFO     :     final timing analysis took 0.13 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : final timing analysis virtual memory usage: begin = 341.572 MB, end = 341.572 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : final timing analysis resident set memory usage: begin = 228.764 MB, end = 229.124 MB, delta = 0.36 MB [FlowMsg::RSSUsage]
+INFO     :     final timing analysis peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]
            ***** Ending stage final timing analysis *****
            
            ***** Beginning stage bitstream generation ... *****
 INFO     : Reading core interface constraints file "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.interface.csv" [DBMsg::CoreInterfaceConstraintsFileReading]
 INFO     : Successfully read core interface constraints file "/home/omer-ahin/STAJ/Staj_Projesi/outflow/Staj_Projesi.interface.csv" [DBMsg::CoreInterfaceConstraintsFileLoadSuccess]
 INFO     : Finished writing bitstream file /home/omer-ahin/STAJ/Staj_Projesi/work_pnr/Staj_Projesi.lbf.
-INFO     : Bitstream generation took 0.112299995 seconds [FlowMsg::StageDuration]
-INFO     :     Bitstream generation took 0.11 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : Bitstream generation virtual memory usage: begin = 315.66 MB, end = 315.66 MB, delta = 0 MB [FlowMsg::VMUsage]
-INFO     : Bitstream generation resident set memory usage: begin = 201.28 MB, end = 203.18 MB, delta = 1.9 MB [FlowMsg::RSSUsage]
-INFO     :     Bitstream generation peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
-INFO     : The entire flow of EFX_PNR took 4.933463111 seconds [FlowMsg::StageDuration]
-INFO     :     The entire flow of EFX_PNR took 6.63 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
-INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 127.78 MB, end = 315.66 MB, delta = 187.88 MB [FlowMsg::VMUsage]
-INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 40.212 MB, end = 203.18 MB, delta = 162.968 MB [FlowMsg::RSSUsage]
-INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 294.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : Bitstream generation took 0.115802287 seconds [FlowMsg::StageDuration]
+INFO     :     Bitstream generation took 0.12 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : Bitstream generation virtual memory usage: begin = 341.572 MB, end = 341.572 MB, delta = 0 MB [FlowMsg::VMUsage]
+INFO     : Bitstream generation resident set memory usage: begin = 229.124 MB, end = 229.916 MB, delta = 0.792 MB [FlowMsg::RSSUsage]
+INFO     :     Bitstream generation peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]
+INFO     : The entire flow of EFX_PNR took 8.365672031 seconds [FlowMsg::StageDuration]
+INFO     :     The entire flow of EFX_PNR took 12.04 seconds (approximately) in total CPU time [FlowMsg::StageDuration::CPUTime]
+INFO     : The entire flow of EFX_PNR virtual memory usage: begin = 127.78 MB, end = 341.572 MB, delta = 213.792 MB [FlowMsg::VMUsage]
+INFO     : The entire flow of EFX_PNR resident set memory usage: begin = 40.432 MB, end = 229.916 MB, delta = 189.484 MB [FlowMsg::RSSUsage]
+INFO     :     The entire flow of EFX_PNR peak resident set memory usage = 388.78 MB [FlowMsg::RSSUsage::Peak]

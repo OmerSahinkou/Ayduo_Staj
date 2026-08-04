@@ -3335,3 +3335,160 @@
 // Aug 04, 2026 14:24:18
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 14:36:44
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] binding entity 'motor_control' does not have port 'pwm_valid_x' (VHDL-1324) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:284)
+[EFX-0010 VERI-ERROR] binding entity 'motor_control' does not have port 'pwm_valid_y' (VHDL-1324) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:285)
+[EFX-0010 VERI-ERROR] binding entity 'motor_control' does not have port 'pwm_valid_z' (VHDL-1324) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:286)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 14:36:59
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 14:37:57
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 14:49:23
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'accel_target_x[1]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd:183)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd:68)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd:69)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 14:50:34
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'hesap_temp_x[15]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd:71)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd:180)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 14:51:06
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:35:02
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 16 elements; expected 32 (VHDL-1077) (/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd:144)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:35:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:47:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:53:35
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:54:50
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:55:40
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:57:32
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 15:58:18
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 16:04:42
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 16:24:04
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 16:45:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 16:53:40
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 16:57:13
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 17:06:59
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 17:20:01
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 17:22:49
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 17:25:53
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 17:26:57
+///////////////////////////////////
+
