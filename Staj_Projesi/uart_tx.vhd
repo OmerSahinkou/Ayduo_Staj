@@ -3,19 +3,8 @@
 -- Engineer: Ömer Şahin
 -- 
 -- Create Date: 07/14/2026 11:37:36 AM
--- Design Name: 
--- Module Name: uart_tx - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Module Name: uart_tx - rtl
+-- First Version
 ----------------------------------------------------------------------------------
 
 library IEEE;

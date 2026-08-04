@@ -1,21 +1,10 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Ayduo Electronic
+-- Engineer: Ömer Şahin
 -- 
--- Create Date: 07/14/2026 11:37:36 AM
--- Design Name: 
+-- Create Date: 07/20/2026 13:37:36 AM
 -- Module Name: Spi_Mode_3 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- First Version
 ----------------------------------------------------------------------------------
 
 

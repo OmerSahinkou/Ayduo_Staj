@@ -3,20 +3,11 @@
 -- Engineer: Ömer Şahin
 -- 
 -- Create Date: 07/14/2026 11:37:36 AM
--- Design Name: 
--- Module Name: uart_rx - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Module Name: uart_rx - rtl
+-- First Version
 ----------------------------------------------------------------------------------
+
+
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -70,15 +61,14 @@ begin
                     when IDLE =>
                         rx_valid <= '0';
                         bitcounter <= (others => '0');
-                        if rx_sync2 = '0' then  -- ✅ Senkronize sinyal
+                        if rx_sync2 = '0' then  
                             state <= START_BIT;
                         end if;
                         
                     when START_BIT =>
-                        -- Sinyalin ortasına hizalanmak için YARIM periyot bekle
                         if bitcounter = (BIT_PERIOD / 2) - 1 then 
                             bitcounter <= (others => '0');
-                            if rx_sync2 = '0' then  -- Hala '0' ise gerçek bir start bitidir (gürültü değildir)
+                            if rx_sync2 = '0' then  
                                 state <= DATA_BITS;
                                 bit_idx <= (others => '0');
                             else

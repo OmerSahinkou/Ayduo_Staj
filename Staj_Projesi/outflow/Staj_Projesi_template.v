@@ -1,7 +1,7 @@
 
 // Efinity Top-level template
 // Version: 2025.2.288.2.10
-// Date: 2026-08-03 16:05
+// Date: 2026-08-04 11:54
 
 // Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -24,6 +24,7 @@ module Staj_Projesi
   (* syn_peri_port = 0 *) input rst_n_i,
   (* syn_peri_port = 0 *) input rx,
   (* syn_peri_port = 0 *) input switch_in,
+  (* syn_peri_port = 0 *) output [3:0] LED,
   (* syn_peri_port = 0 *) output mosi_o,
   (* syn_peri_port = 0 *) output pwm_out_0,
   (* syn_peri_port = 0 *) output pwm_out_1,

@@ -2,7 +2,9 @@
 -- Company: Ayduo Electronic
 -- Engineer: Ömer Şahin
 -- 
+-- Create Date: 08/03/2026 10:37:36 AM
 -- Module Name: uart_Send - rtl
+-- First Version
 ----------------------------------------------------------------------------------
 
 library IEEE;

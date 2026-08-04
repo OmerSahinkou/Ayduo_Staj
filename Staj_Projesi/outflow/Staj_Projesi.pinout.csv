@@ -1,7 +1,7 @@
 
 # Efinity Pinout Report
 # Version: 2025.2.288.2.10
-# Date: 2026-08-03 16:05
+# Date: 2026-08-04 11:54
 
 # Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -22,7 +22,7 @@ A8,GPIOR_08,,Input,2A,3.3 V,,weak pullup,User IO
 A9,GPIOR_10,,Input,2A,3.3 V,,weak pullup,User IO
 B1,GNDA_PLL,,Power,,,,,PLL Ground
 B2,VCCIO1B,,Power,1B,3.3 V,,,VCCIO Power
-B3,GPIOL_21_NSTATUS,,Input,1B,3.3 V,,weak pullup,User IO/Configuration
+B3,GPIOL_21_NSTATUS,LED[0],Output,1B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/Configuration
 B4,TMS,,Input,1B,3.3 V,,,Configuration
 B5,GPIOR_01,spi_cs_n_o,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
 B6,GPIOR_05,mosi_o,Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO
@@ -44,8 +44,8 @@ D3,GPIOL_19_CTRL3,,Input,1B,3.3 V,,weak pullup,User IO/GCTRL
 D4,VCC,,Power,,,,,1.1 V VCC Power
 D5,GND,,Power,,,,,Ground
 D6,GPIOR_13,,Input,2A,3.3 V,,weak pullup,User IO
-D7,GPIOR_16_CTRL7_CBUS1,,Input,2A,3.3 V,,weak pullup,User IO/GCTRL/Configuration
-D8,GPIOR_17_CTRL6_CBUS2,,Input,2A,3.3 V,,weak pullup,User IO/GCTRL/Configuration
+D7,GPIOR_16_CTRL7_CBUS1,LED[2],Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCTRL/Configuration
+D8,GPIOR_17_CTRL6_CBUS2,LED[3],Output,2A,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/GCTRL/Configuration
 D9,GPIOR_18_CLK7,,Input,2A,3.3 V,,weak pullup,User IO/GCLK
 E1,GPIOL_15_CLK1,,Input,1A,3.3 V,,weak pullup,User IO/GCLK
 E2,GPIOL_14_CLK0,,Input,1A,3.3 V,,weak pullup,User IO/GCLK
@@ -88,7 +88,7 @@ J2,GPIOL_09_CDI2,,Input,1A,3.3 V,,weak pullup,User IO
 J3,GPIOL_05_CDI5,,Input,1A,3.3 V,,weak pullup,User IO
 J4,GPIOL_01_SS_N,,Input,1A,3.3 V,,weak pullup,User IO/Configuration
 J5,CRESET_N,,Input,1A,3.3 V,,,Configuration
-J6,GPIOR_37_TEST_N,,Input,2B,3.3 V,,weak pullup,User IO/Configuration
+J6,GPIOR_37_TEST_N,LED[1],Output,2B,3.3 V,3.3 V LVTTL / LVCMOS,,User IO/Configuration
 J7,GPIOR_34_CSI,,Input,2B,3.3 V,,weak pullup,User IO/Configuration
 J8,GPIOR_30,,Input,2B,3.3 V,,weak pullup,User IO
 J9,GPIOR_28,,Input,2B,3.3 V,,weak pullup,User IO

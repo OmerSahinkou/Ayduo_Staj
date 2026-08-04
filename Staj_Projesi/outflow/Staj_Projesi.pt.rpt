@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Report
 Version: 2025.2.288.2.10
-Date: 2026-08-03 16:05
+Date: 2026-08-04 11:54
 
 Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -26,7 +26,7 @@ Configuration Mode: active (x1)
 ---------- Table of Contents (end) ------------
 
 ---------- 1. Periphery Usage Summary (begin) ----------
-gpio: 12 / 55 (21.82%)
+gpio: 16 / 55 (29.09%)
 jtag: 0 / 2 (0.0%)
 osc: 0 / 1 (0.0%)
 pll: 0 / 1 (0.0%)
@@ -80,6 +80,10 @@ No global connection was found in project.
 +---------------+----------+
 | Instance Name | Function |
 +---------------+----------+
+|     LED[0]    | NSTATUS  |
+|     LED[1]    |  TEST_N  |
+|     LED[2]    |  CBUS1   |
+|     LED[3]    |  CBUS2   |
 |    rst_n_i    |  CBUS0   |
 |       rx      |   CDI7   |
 |       tx      |   CDI3   |
@@ -95,6 +99,10 @@ Global Unused Setting: input with weak pullup
 | Instance Name | Resource |  Mode  | Register | Clock Region | I/O Bank |     I/O Standard     |        Pad Name       | Package Pin |
 +---------------+----------+--------+----------+--------------+----------+----------------------+-----------------------+-------------+
 |     clk_i     | GPIOL_20 | input  |          |              |    1B    | 3.3 V LVTTL / LVCMOS |     GPIOL_20_PLLIN    |      C3     |
+|     LED[0]    | GPIOL_21 | output |          |              |    1B    | 3.3 V LVTTL / LVCMOS |    GPIOL_21_NSTATUS   |      B3     |
+|     LED[1]    | GPIOR_37 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |    GPIOR_37_TEST_N    |      J6     |
+|     LED[2]    | GPIOR_16 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |  GPIOR_16_CTRL7_CBUS1 |      D7     |
+|     LED[3]    | GPIOR_17 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |  GPIOR_17_CTRL6_CBUS2 |      D8     |
 |     miso_i    | GPIOR_03 | input  |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_03       |      A6     |
 |     mosi_o    | GPIOR_05 | output |          |              |    2A    | 3.3 V LVTTL / LVCMOS |        GPIOR_05       |      B6     |
 |   pwm_out_0   | GPIOR_20 | output |          |              |    2B    | 3.3 V LVTTL / LVCMOS |     GPIOR_20_CLK5     |      F8     |
@@ -128,6 +136,10 @@ Output GPIO Configuration:
 +---------------+------------+------------------+----------------+-----------+
 | Instance Name | Output Pin | Output Clock Pin | Drive Strength | Slew Rate |
 +---------------+------------+------------------+----------------+-----------+
+|     LED[0]    |   LED[0]   |                  |       1        |  Disable  |
+|     LED[1]    |   LED[1]   |                  |       1        |  Disable  |
+|     LED[2]    |   LED[2]   |                  |       1        |  Disable  |
+|     LED[3]    |   LED[3]   |                  |       1        |  Disable  |
 |     mosi_o    |   mosi_o   |                  |       1        |  Disable  |
 |   pwm_out_0   | pwm_out_0  |                  |       1        |  Disable  |
 |   pwm_out_1   | pwm_out_1  |                  |       1        |  Disable  |

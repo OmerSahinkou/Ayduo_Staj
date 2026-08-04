@@ -1,7 +1,7 @@
 
 Efinity Interface Designer Timing Report
 Version: 2025.2.288.2.10
-Date: 2026-08-03 16:05
+Date: 2026-08-04 11:54
 
 Copyright (C) 2013 - 2025 Efinix Inc. All rights reserved.
 
@@ -22,6 +22,10 @@ Non-registered GPIO Configuration:
 |    rst_n_i    |  rst_n_i   |  GPIO_IN  |  1.954   |  0.698   |
 |       rx      |     rx     |  GPIO_IN  |  1.954   |  0.698   |
 |   switch_in   | switch_in  |  GPIO_IN  |  1.954   |  0.698   |
+|     LED[0]    |   LED[0]   |  GPIO_OUT |  5.361   |  1.915   |
+|     LED[1]    |   LED[1]   |  GPIO_OUT |  5.361   |  1.915   |
+|     LED[2]    |   LED[2]   |  GPIO_OUT |  5.361   |  1.915   |
+|     LED[3]    |   LED[3]   |  GPIO_OUT |  5.361   |  1.915   |
 |     mosi_o    |   mosi_o   |  GPIO_OUT |  5.361   |  1.915   |
 |   pwm_out_0   | pwm_out_0  |  GPIO_OUT |  5.361   |  1.915   |
 |   pwm_out_1   | pwm_out_1  |  GPIO_OUT |  5.361   |  1.915   |

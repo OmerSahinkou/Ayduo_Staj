@@ -3236,3 +3236,96 @@
 // Aug 03, 2026 16:05:36
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 10:14:58
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 10:42:24
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:21:23
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:24:30
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:29:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:30:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:31:55
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:35:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:35:42
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:38:59
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:44:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:47:47
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:53:07
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'integral_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1556)
+[EFX-0010 VERI-ERROR] 'integral_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1557)
+[EFX-0010 VERI-ERROR] 'integral_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1584)
+[EFX-0010 VERI-ERROR] 'integral_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1589)
+[EFX-0010 VERI-ERROR] 'integral_x' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1591)
+[EFX-0010 VERI-ERROR] 'integral_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1604)
+[EFX-0010 VERI-ERROR] 'integral_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1608)
+[EFX-0010 VERI-ERROR] 'integral_y' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1610)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:1656)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 04, 2026 11:54:32
+///////////////////////////////////
+

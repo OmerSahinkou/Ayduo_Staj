@@ -2,7 +2,7 @@
 -- Company: Ayduo Electronic
 -- Engineer: Ömer Şahin
 -- 
--- Create Date: 07/17/2026 11:37:36 AM
+-- Create Date: 07/23/2026 11:37:36 AM
 -- Module Name: MPU6500 - Behavioral
 -- FIXED VERSION FOR MODE 3 SPI
 ----------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ begin
             
         elsif rising_edge(clk_i) then
             data_valid_out   <= '0';
-            start_transfer_o <= '0';  -- Pulse komutu
+            start_transfer_o <= '0';  
             
             case state is 
             

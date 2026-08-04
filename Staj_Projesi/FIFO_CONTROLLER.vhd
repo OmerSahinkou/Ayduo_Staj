@@ -50,9 +50,7 @@ entity FIFO_CONTROLLER is
 end entity FIFO_CONTROLLER;
 
 architecture rtl of FIFO_CONTROLLER is
-
-
-
+    
     signal reg_accel_x  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
     signal reg_accel_y  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
     signal reg_accel_z  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
@@ -60,12 +58,12 @@ architecture rtl of FIFO_CONTROLLER is
     signal reg_gyro_y   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
     signal reg_gyro_z   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
 
-    signal reg_f_accel_x  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_accel_y  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_accel_z  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_gyro_x   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_gyro_y   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_gyro_z   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_accel_x: STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_accel_y: STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_accel_z: STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_gyro_x : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_gyro_y : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_gyro_z : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
 
     signal reg_angle_x  : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0') ;
     signal reg_angle_y  : STD_LOGIC_VECTOR(7 downto 0)  := (others => '0') ;

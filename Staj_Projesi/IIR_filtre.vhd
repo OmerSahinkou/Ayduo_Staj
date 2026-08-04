@@ -14,51 +14,54 @@ use IEEE.FIXED_PKG.ALL;
 
 
 entity IIR_filtre is
+    generic (
+        DATA_WIDTH : INTEGER := 16 
+    );
     port (
         clk_i           : in std_logic                      ;
         rst_n_i         : in std_logic                      ;
 
 
         --accel girişler
-        accel_x         : in STD_LOGIC_VECTOR(15 downto 0)  ;
-        accel_y         : in STD_LOGIC_VECTOR(15 downto 0)  ;
-        accel_z         : in STD_LOGIC_VECTOR(15 downto 0)  ;
+        accel_x         : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
+        accel_y         : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
+        accel_z         : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
 
         --gyrpo çıkışlar
-        gyro_x          : in STD_LOGIC_VECTOR(15 downto 0)  ;
-        gyro_y          : in STD_LOGIC_VECTOR(15 downto 0)  ;
-        gyro_z          : in STD_LOGIC_VECTOR(15 downto 0)  ;
+        gyro_x          : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
+        gyro_y          : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
+        gyro_z          : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
 
         --data valid  ok
         data_valid_out  : in STD_LOGIC                      ;
 
         --filtre çıkış accel
-        f_accel_x       : out STD_LOGIC_VECTOR(15 downto 0) ;
-        f_accel_y       : out STD_LOGIC_VECTOR(15 downto 0) ;
-        f_accel_z       : out STD_LOGIC_VECTOR(15 downto 0) ;
+        f_accel_x       : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) ;
+        f_accel_y       : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) ;
+        f_accel_z       : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) ;
 
         --filtre çıkış gyro
-        f_gyro_x        : out STD_LOGIC_VECTOR(15 downto 0) ;
-        f_gyro_y        : out STD_LOGIC_VECTOR(15 downto 0) ;
-        f_gyro_z        : out STD_LOGIC_VECTOR(15 downto 0)
+        f_gyro_x        : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) ;
+        f_gyro_y        : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) ;
+        f_gyro_z        : out STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)
     );
 end entity;
 
 
 architecture rtl of IIR_filtre is
-    signal reg_accel_x  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_accel_y  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_accel_z  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_gyro_x   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_gyro_y   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_gyro_z   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_accel_x  : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_accel_y  : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_accel_z  : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_gyro_x   : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_gyro_y   : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_gyro_z   : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
 
-    signal reg_f_accel_x  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_accel_y  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_accel_z  : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_gyro_x   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_gyro_y   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
-    signal reg_f_gyro_z   : STD_LOGIC_VECTOR(15 downto 0) := (others => '0') ;
+    signal reg_f_accel_x  : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_f_accel_y  : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_f_accel_z  : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_f_gyro_x   : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_f_gyro_y   : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
+    signal reg_f_gyro_z   : STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0) := (others => '0') ;
 
         type IIR_filtre_t is (IDLE,filtre,done);
     signal IIR_filtre_state : IIR_filtre_t := IDLE;
@@ -88,13 +91,13 @@ begin
                     IIR_filtre_state  <= filtre ;
                 end if;
             when filtre         =>
-                reg_f_accel_x       <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_accel_x) * TO_SIGNED(3,3), 18) + resize(signed(reg_accel_x), 18), 2), 16));
-                reg_f_accel_y       <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_accel_y) * TO_SIGNED(3,3), 18) + resize(signed(reg_accel_y), 18), 2), 16));
-                reg_f_accel_z       <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_accel_z) * TO_SIGNED(3,3), 18) + resize(signed(reg_accel_z), 18), 2), 16));
+                reg_f_accel_x       <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_accel_x) * TO_SIGNED(3,3), DATA_WIDTH + 2) + resize(signed(reg_accel_x), DATA_WIDTH + 2), 2), DATA_WIDTH));
+                reg_f_accel_y       <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_accel_y) * TO_SIGNED(3,3), DATA_WIDTH + 2) + resize(signed(reg_accel_y), DATA_WIDTH + 2), 2), DATA_WIDTH));
+                reg_f_accel_z       <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_accel_z) * TO_SIGNED(3,3), DATA_WIDTH + 2) + resize(signed(reg_accel_z), DATA_WIDTH + 2), 2), DATA_WIDTH));
 
-                reg_f_gyro_x        <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_gyro_x)  * TO_SIGNED(3,3), 18) + resize(signed(reg_gyro_x), 18), 2), 16));
-                reg_f_gyro_y        <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_gyro_y)  * TO_SIGNED(3,3), 18) + resize(signed(reg_gyro_y), 18), 2), 16));
-                reg_f_gyro_z        <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_gyro_z)  * TO_SIGNED(3,3), 18) + resize(signed(reg_gyro_z), 18), 2), 16));
+                reg_f_gyro_x        <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_gyro_x)  * TO_SIGNED(3,3), DATA_WIDTH + 2) + resize(signed(reg_gyro_x), DATA_WIDTH + 2), 2), DATA_WIDTH));
+                reg_f_gyro_y        <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_gyro_y)  * TO_SIGNED(3,3), DATA_WIDTH + 2) + resize(signed(reg_gyro_y), DATA_WIDTH + 2), 2), DATA_WIDTH));
+                reg_f_gyro_z        <= STD_LOGIC_VECTOR(resize(shift_right(resize(signed(reg_f_gyro_z)  * TO_SIGNED(3,3), DATA_WIDTH + 2) + resize(signed(reg_gyro_z), DATA_WIDTH + 2), 2), DATA_WIDTH));
                 IIR_filtre_state    <= done;
             when done           =>
                 IIR_filtre_state    <= IDLE;

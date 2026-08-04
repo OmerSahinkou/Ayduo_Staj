@@ -1,3 +1,13 @@
+----------------------------------------------------------------------------------
+-- Company: Ayduo Electronic
+-- Engineer: Ömer Şahin
+-- 
+-- Create Date: 07/17/2026 16:37:36 AM
+-- Module Name: pwm_servo - Behavioral
+-- First Version
+----------------------------------------------------------------------------------
+
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
