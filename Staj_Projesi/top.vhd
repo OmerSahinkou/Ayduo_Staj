@@ -121,6 +121,9 @@ architecture Behavioral of top is
             switch_out       : in STD_LOGIC;
             data_valid_i     : in STD_LOGIC;
             rx_data_i        : in STD_LOGIC_VECTOR(7 downto 0);
+            g_value          : in STD_LOGIC_VECTOR(7 downto 0);
+            dps_value        : in STD_LOGIC_VECTOR(7 downto 0);
+            Conf_sig         : in STD_LOGIC;
             start_transfer_o : out STD_LOGIC;
             mosi_data_o      : out STD_LOGIC_VECTOR(7 downto 0);
             spi_cs_n_o       : out STD_LOGIC;
@@ -295,63 +298,72 @@ architecture Behavioral of top is
             rx_data     : in  STD_LOGIC_VECTOR(7 downto 0);
             rx_valid    : in  STD_LOGIC;
             g_value     : out STD_LOGIC_VECTOR(7 downto 0); 
-            dps_value   : out STD_LOGIC_VECTOR(7 downto 0)  
+            dps_value   : out STD_LOGIC_VECTOR(7 downto 0);
+            rst_conf    : out std_logic                   
         );
     end component;
     -- =========================================================
     -- SİNYAL TANIMLAMALARI 
     -- =========================================================
     
-    signal data_valid_out  : STD_LOGIC := '0' ;
+    signal data_valid_out   : STD_LOGIC := '0' ;
     -- Servo Sinyalleri
-    signal angle_reg_0     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    signal angle_reg_1     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    signal angle_reg_2     : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal angle_reg_0      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal angle_reg_1      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal angle_reg_2      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     
-    signal pwm_valid_x     :  STD_LOGIC := '0' ;
-    signal pwm_valid_y     :  STD_LOGIC := '0' ;
-    signal pwm_valid_z     :  STD_LOGIC := '0' ;
+    signal pwm_valid_x      :  STD_LOGIC := '0' ;
+    signal pwm_valid_y      :  STD_LOGIC := '0' ;
+    signal pwm_valid_z      :  STD_LOGIC := '0' ;
     -- UART Sinyalleri
-    signal tx_start_sig    : std_logic := '0';
-    signal tx_data_sig     : std_logic_vector(7 downto 0) := (others => '0');
-    signal tx_busy_sig     : std_logic;
-    signal rx_data_sig     : std_logic_vector(7 downto 0) := (others => '0');
-    signal rx_valid        : std_logic;
+    signal tx_start_sig     : std_logic := '0';
+    signal tx_data_sig      : std_logic_vector(7 downto 0) := (others => '0');
+    signal tx_busy_sig      : std_logic;
+    signal rx_data_sig      : std_logic_vector(7 downto 0) := (others => '0');
+    signal rx_valid         : std_logic;
     
     -- SPI İç Haberleşme Sinyalleri
-    signal spi_start       : std_logic := '0';
-    signal spi_data_valid  : std_logic := '0';
-    signal mpu_to_spi_data : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
-    signal spi_to_mpu_data : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal spi_start        : std_logic := '0';
+    signal spi_data_valid   : std_logic := '0';
+    signal mpu_to_spi_data  : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    signal spi_to_mpu_data  : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     
     -- Sensör Çıkış Sinyalleri (16-bit)
-    signal accel_x, accel_y, accel_z : std_logic_vector(15 downto 0);
-    signal gyro_x, gyro_y, gyro_z    : std_logic_vector(15 downto 0);
+    signal accel_x          : std_logic_vector(15 downto 0);
+    signal accel_y          : std_logic_vector(15 downto 0);
+    signal accel_z          : std_logic_vector(15 downto 0);
+    signal gyro_x           : std_logic_vector(15 downto 0);
+    signal gyro_y           : std_logic_vector(15 downto 0);
+    signal gyro_z           : std_logic_vector(15 downto 0);
 
-    signal f_axi_i : STD_LOGIC_VECTOR(15 downto 0);
-    signal f_ayi_i : STD_LOGIC_VECTOR(15 downto 0);
-    signal f_azi_i : STD_LOGIC_VECTOR(15 downto 0);
-    signal f_gxi_i : STD_LOGIC_VECTOR(15 downto 0);
-    signal f_gyi_i : STD_LOGIC_VECTOR(15 downto 0);
-    signal f_gzi_i : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_axi_i          : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_ayi_i          : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_azi_i          : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_gxi_i          : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_gyi_i          : STD_LOGIC_VECTOR(15 downto 0);
+    signal f_gzi_i          : STD_LOGIC_VECTOR(15 downto 0);
 
-    signal switch_out      : STD_LOGIC := '1';
+    signal switch_out       : STD_LOGIC := '0';
 
 
     --FIFO controller
-    signal fifo_full_i  : STD_LOGIC := '0';
-    signal fifo_rst_busys  : STD_LOGIC := '0';
-    signal fifo_wr_en_o  : STD_LOGIC := '0';
-    signal fifo_wr_data_o  : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
+    signal fifo_full_i      : STD_LOGIC := '0';
+    signal fifo_rst_busys   : STD_LOGIC := '0';
+    signal fifo_wr_en_o     : STD_LOGIC := '0';
+    signal fifo_wr_data_o   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
 
-    signal empty_o  : STD_LOGIC := '0';
-    signal rd_en_i  : STD_LOGIC := '0';
-    signal rdata    : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
+    signal empty_o          : STD_LOGIC := '0';
+    signal rd_en_i          : STD_LOGIC := '0';
+    signal rdata            : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
 
+    signal g_value_sig      : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
+    signal dps_value_sig    : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
+
+    signal rst_conf_sig     : STD_LOGIC := '0';
 begin
 
     -- =========================================================
-    -- COMPONENT BAĞLANTILARI (Kabloları Takıyoruz)
+    -- COMPONENT BAĞLANTILARI 
     -- =========================================================
 
     Inst_pwm_servo_0: pwm_servo
@@ -448,7 +460,10 @@ begin
             rst_i           => rst_n_i,
             switch_out      => switch_out,
             data_valid_i    => spi_data_valid,
+            g_value         => g_value_sig,
+            dps_value       => dps_value_sig,
             rx_data_i       => spi_to_mpu_data,
+            Conf_sig        => rst_conf_sig,
             start_transfer_o=> spi_start,
             mosi_data_o     => mpu_to_spi_data, 
             spi_cs_n_o      => spi_cs_n_o,
@@ -566,5 +581,16 @@ begin
                     pwm_valid_y         => pwm_valid_y      ,
                     pwm_valid_z         => pwm_valid_z      
 
+                );
+
+    u_uart_rx_controller : uart_rx_controller 
+                port map (
+                    clk_i               => clk_i            ,
+                    rst_n_i             => rst_n_i          ,
+                    rx_data             => rx_data_sig      ,
+                    rx_valid            => rx_valid         ,
+                    g_value             => g_value_sig      ,
+                    dps_value           => dps_value_sig    ,
+                    rst_conf            => rst_conf_sig  
                 );
 end Behavioral;

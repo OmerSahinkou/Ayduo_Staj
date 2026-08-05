@@ -24,6 +24,8 @@ entity MPU6500_Controller is
         g_value          : in STD_LOGIC_VECTOR(7 downto 0);
         dps_value        : in STD_LOGIC_VECTOR(7 downto 0);
 
+        Conf_sig         : in STD_LOGIC                      ;
+
         start_transfer_o : out STD_LOGIC;
         mosi_data_o      : out STD_LOGIC_VECTOR(7 downto 0);
         
@@ -57,7 +59,7 @@ architecture Behavioral of MPU6500_Controller is
         ADDR_CONFIG
     );
     
-    constant MPU_CONFIG_DATA : config_array_t := (
+    signal MPU_CONFIG_DATA : config_array_t := (
         x"00",  -- PWR_MGMT_1: Clk seç (PLL with X axis gyroscope)
         x"10",  -- USER_CTRL: I2C_MST_EN = 0, SPI_EN = 1
         x"10",  -- GYRO_CONFIG: ±1000 dps
@@ -105,6 +107,11 @@ architecture Behavioral of MPU6500_Controller is
 
 begin
 
+
+    MPU_CONFIG_DATA(2) <= dps_value;  -- GYRO_CONFIG (Dışarıdan gelen dps ayarı)
+    MPU_CONFIG_DATA(3) <= g_value;    -- ACCEL_CONFIG (Dışarıdan gelen g ayarı)
+
+    
     -- SPI Mode 3'te WRITE komutu bit 7 = 1
     spi_write_addr <= "0" & MPU_CONFIG_ADDR(config_idx)(6 downto 0);
     
@@ -255,7 +262,9 @@ begin
                     state <= IDLE;
                     
             end case;
+            if Conf_sig = '1' then 
+                state <=  IDLE ;
+            end  if;
         end if;
     end process;
-    
 end architecture Behavioral;

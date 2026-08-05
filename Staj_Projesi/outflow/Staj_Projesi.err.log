@@ -3524,3 +3524,67 @@
 // Aug 05, 2026 10:39:17
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 11:33:09
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal port 'g_value' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:24)
+[EFX-0010 VERI-ERROR] formal port 'dps_value' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:25)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 11:33:37
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:02:08
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal port 'conf_sig' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:27)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:02:54
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal port 'conf_sig' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:27)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:03:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:13:07
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal port 'g_value' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:24)
+[EFX-0010 VERI-ERROR] formal port 'dps_value' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:25)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:15:07
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:18:56
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 12:42:25
+///////////////////////////////////
+
