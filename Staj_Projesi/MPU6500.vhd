@@ -19,6 +19,11 @@ entity MPU6500_Controller is
         switch_out       : in STD_LOGIC;
         data_valid_i     : in STD_LOGIC;
         rx_data_i        : in STD_LOGIC_VECTOR(7 downto 0);
+
+
+        g_value          : in STD_LOGIC_VECTOR(7 downto 0);
+        dps_value        : in STD_LOGIC_VECTOR(7 downto 0);
+
         start_transfer_o : out STD_LOGIC;
         mosi_data_o      : out STD_LOGIC_VECTOR(7 downto 0);
         
@@ -36,9 +41,6 @@ end entity MPU6500_Controller;
 
 architecture Behavioral of MPU6500_Controller is
 
-    -- =========================================================
-    -- REGISTER ADDRESLERI (MPU-6500 Datasheet)
-    -- =========================================================
     constant ADDR_PWR_MGMT_1    : std_logic_vector(7 downto 0) := x"6B";
     constant ADDR_USER_CTRL     : std_logic_vector(7 downto 0) := x"6A";
     constant ADDR_GYRO_CONFIG   : std_logic_vector(7 downto 0) := x"1B";
@@ -46,9 +48,6 @@ architecture Behavioral of MPU6500_Controller is
     constant ADDR_CONFIG        : std_logic_vector(7 downto 0) := x"1A";
     constant ADDR_ACCEL_XOUT_H  : std_logic_vector(7 downto 0) := x"3B";
     
-    -- =========================================================
-    -- KONFIGÜRASYON DEĞERLERİ
-    -- =========================================================
     type config_array_t is array (0 to 4) of std_logic_vector(7 downto 0);
     constant MPU_CONFIG_ADDR : config_array_t := (
         ADDR_PWR_MGMT_1,

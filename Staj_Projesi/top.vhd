@@ -151,7 +151,7 @@ architecture Behavioral of top is
 
     component SquareRoot is
         Generic (
-            N : integer := 16  -- Giriş veri genişliği (Daima çift sayı olmalıdır, örn: 8, 16, 32)
+            N : integer := 16 
         );
         Port (
             clk      : in  std_logic;
@@ -177,6 +177,7 @@ architecture Behavioral of top is
             overflow_o : out std_logic
         );
     end component FIFO;
+
 
     component FIFO_CONTROLLER is
         port (
@@ -286,8 +287,19 @@ architecture Behavioral of top is
             pwm_valid_z: in STD_LOGIC                                    
         );
     end component;
+
+    component uart_rx_controller is
+        port (
+            clk_i       : in  std_logic;
+            rst_n_i     : in  std_logic;
+            rx_data     : in  STD_LOGIC_VECTOR(7 downto 0);
+            rx_valid    : in  STD_LOGIC;
+            g_value     : out STD_LOGIC_VECTOR(7 downto 0); 
+            dps_value   : out STD_LOGIC_VECTOR(7 downto 0)  
+        );
+    end component;
     -- =========================================================
-    -- SİNYAL TANIMLAMALARI (Jumper Kablolarımız)
+    -- SİNYAL TANIMLAMALARI 
     -- =========================================================
     
     signal data_valid_out  : STD_LOGIC := '0' ;

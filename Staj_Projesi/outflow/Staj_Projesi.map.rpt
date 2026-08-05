@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Aug 04, 2026 17:26:57
+Generated at: Aug 05, 2026 10:39:17
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top
@@ -44,15 +44,15 @@ File List:
 /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/spi_test.vhd
 /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd
+/home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd
 
 ### ### Report Section Start ### ###
 
 "MEM|SYN-0677" : ... Memory 'ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:661)
 
 ### ### EFX_FF CE enables (begin) ### ### ###
-Total number of enable signals: 58
-Total number of FFs with enable signals: 974
-CE signal <data_valid_out>, number of controlling flip flops: 188
+Total number of enable signals: 57
+Total number of FFs with enable signals: 751
 CE signal <u_FIFO/u_efx_fifo_top/wr_en_int>, number of controlling flip flops: 10
 CE signal <ceg_net377>, number of controlling flip flops: 3
 CE signal <~Inst_MPU6500_Controller/n5061>, number of controlling flip flops: 96
@@ -77,8 +77,6 @@ CE signal <ceg_net421>, number of controlling flip flops: 1
 CE signal <ceg_net424>, number of controlling flip flops: 3
 CE signal <ceg_net433>, number of controlling flip flops: 1
 CE signal <ceg_net434>, number of controlling flip flops: 1
-CE signal <u_Motor_Control/n2523>, number of controlling flip flops: 43
-CE signal <pwm_valid_x>, number of controlling flip flops: 24
 CE signal <Inst_FIFO_CONTROLLER/n4138>, number of controlling flip flops: 192
 CE signal <ceg_net435>, number of controlling flip flops: 8
 CE signal <ceg_net436>, number of controlling flip flops: 2
@@ -86,8 +84,10 @@ CE signal <ceg_net437>, number of controlling flip flops: 1
 CE signal <ceg_net438>, number of controlling flip flops: 1
 CE signal <ceg_net439>, number of controlling flip flops: 1
 CE signal <ceg_net87>, number of controlling flip flops: 2
-CE signal <u_IIR_filtre/n2296>, number of controlling flip flops: 111
+CE signal <u_IIR_filtre/n2304>, number of controlling flip flops: 96
 CE signal <u_IIR_filtre/n1912>, number of controlling flip flops: 96
+CE signal <data_valid_out>, number of controlling flip flops: 23
+CE signal <pwm_valid_x>, number of controlling flip flops: 24
 CE signal <ceg_net101>, number of controlling flip flops: 12
 CE signal <ceg_net442>, number of controlling flip flops: 2
 CE signal <ceg_net289>, number of controlling flip flops: 1
@@ -114,118 +114,40 @@ CE signal <~u_uart_Send/n101>, number of controlling flip flops: 8
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 Total number of set/reset signals: 3
-Total number of FFs with set/reset signals: 907
-SR signal <rst_n_i>, number of controlling flip flops: 867
+Total number of FFs with set/reset signals: 708
 SR signal <fifo_rst_busys>, number of controlling flip flops: 20
+SR signal <rst_n_i>, number of controlling flip flops: 668
 SR signal <Inst_debounce/n151>, number of controlling flip flops: 20
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
 ### ### Sequential Elements Trimming Report (begin) ### ### ### 
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/dff_130/i30
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/est_angle_y[29]~FF_frt_77
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[24]~FF_frt_82
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i25
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i25
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[23]~FF_frt_83
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i26
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[22]~FF_frt_84
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i23
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i27
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[21]~FF_frt_85
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i22
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i28
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[18]~FF_frt_88
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i19
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i29
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[30]~FF_frt_76
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i31
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i30
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[25]~FF_frt_81
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i26
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i31
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[20]~FF_frt_86
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i21
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[26]~FF_frt_80
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i27
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[19]~FF_frt_87
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i20
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[28]~FF_frt_78
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i29
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[27]~FF_frt_79
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i28
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[31]~FF_frt_75
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i32
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[17]~FF_frt_89
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i18
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[16]~FF_frt_90
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i17
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[15]~FF_frt_91
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i16
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[14]~FF_frt_92
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i15
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[13]~FF_frt_93
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i14
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[12]~FF_frt_94
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i13
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[11]~FF_frt_95
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i12
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[10]~FF_frt_96
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i11
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[9]~FF_frt_97
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i10
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[8]~FF_frt_98
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i9
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[7]~FF_frt_99
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i8
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[6]~FF_frt_100
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i7
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[5]~FF_frt_101
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i6
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[4]~FF_frt_102
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i5
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[3]~FF_frt_103
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i4
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[2]~FF_frt_104
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i3
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[1]~FF_frt_105
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i2
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/est_angle_y[0]~FF_frt_106
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_130/i1
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/dff_133/i30
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_133/i29
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/dff_133/i31
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_133/i29
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" removed instance : u_Motor_Control/dff_133/i32
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (193)" representative instance : u_Motor_Control/dff_133/i29
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" removed instance : u_Motor_Control/dff_58/i32
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (124)" representative instance : u_Motor_Control/dff_58/i23
 FF Output: Inst_pwm_servo_0/pulse_width[0](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[17](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[18](=0)
@@ -261,26 +183,26 @@ FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 
 **Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
-Module                                                              FFs      ADDs       LUTs      RAMs DSP/MULTs
-------------------------------------------------------------        ---      ----       ----      ---- ---------
-top:top                                                         1117(0)    748(0)    1080(0)      1(0)      3(0)
- +Inst_pwm_servo_0:pwm_servo                                     37(37)    33(33)     44(44)      0(0)      1(1)
- +Inst_pwm_servo_1:pwm_servo                                     34(34)    15(15)     48(48)      0(0)      1(1)
- +Inst_pwm_servo_2:pwm_servo                                     34(34)    15(15)     38(38)      0(0)      1(1)
- +Inst_uart_tx:uart_tx(baud_rate=1000000)                        21(21)      0(0)     29(29)      0(0)      0(0)
- +Inst_debounce:debounce(debounce_limit=1000000)                 23(23)    19(19)       7(7)      0(0)      0(0)
- +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...     28(28)      0(0)     42(42)      0(0)      0(0)
- +Inst_MPU6500_Controller:MPU6500_Controller                   236(236)      0(0)   271(271)      0(0)      0(0)
- +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                         206(206)      0(0)   226(226)      0(0)      0(0)
- +u_FIFO:FIFO                                                     22(0)     19(0)       2(0)      1(0)      0(0)
-  +u_efx_fifo_top:efx_fifo_top_312a81e5ee264b53bcc6aeade6...      22(0)     19(0)       2(0)      1(0)      0(0)
-   +genblk2.efx_resetsync_a_rst:efx_resetsync_312a81e5ee2...       2(0)      0(0)       0(0)      0(0)      0(0)
-    +active_high.efx_resetsync_active_high:efx_asyncreg_3...       2(2)      0(0)       0(0)      0(0)      0(0)
-   +xefx_fifo_ram:efx_fifo_ram_312a81e5ee264b53bcc6aeade6...       0(0)      0(0)       0(0)      1(1)      0(0)
-   +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6...     20(20)    19(19)       2(2)      0(0)      0(0)
- +u_IIR_filtre:IIR_filtre                                      209(209)  204(204)       9(9)      0(0)      0(0)
- +u_uart_Send:uart_Send                                          12(12)      0(0)     11(11)      0(0)      0(0)
- +u_Motor_Control:Motor_Control                                255(255)  443(443)   353(353)      0(0)      0(0)
+Module                                                             FFs      ADDs      LUTs      RAMs DSP/MULTs
+------------------------------------------------------------       ---      ----      ----      ---- ---------
+top:top                                                         918(0)    387(0)    842(0)      1(0)      3(0)
+ +Inst_pwm_servo_0:pwm_servo                                    37(37)    33(33)    51(51)      0(0)      1(1)
+ +Inst_pwm_servo_1:pwm_servo                                    34(34)    15(15)    42(42)      0(0)      1(1)
+ +Inst_pwm_servo_2:pwm_servo                                    34(34)    15(15)    42(42)      0(0)      1(1)
+ +Inst_uart_tx:uart_tx(baud_rate=1000000)                       21(21)      0(0)    30(30)      0(0)      0(0)
+ +Inst_debounce:debounce(debounce_limit=1000000)                23(23)    19(19)      7(7)      0(0)      0(0)
+ +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...    28(28)      0(0)    42(42)      0(0)      0(0)
+ +Inst_MPU6500_Controller:MPU6500_Controller                  236(236)      0(0)  259(259)      0(0)      0(0)
+ +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                        206(206)      0(0)  245(245)      0(0)      0(0)
+ +u_FIFO:FIFO                                                    22(0)     19(0)      2(0)      1(0)      0(0)
+  +u_efx_fifo_top:efx_fifo_top_312a81e5ee264b53bcc6aeade6...     22(0)     19(0)      2(0)      1(0)      0(0)
+   +genblk2.efx_resetsync_a_rst:efx_resetsync_312a81e5ee2...      2(0)      0(0)      0(0)      0(0)      0(0)
+    +active_high.efx_resetsync_active_high:efx_asyncreg_3...      2(2)      0(0)      0(0)      0(0)      0(0)
+   +xefx_fifo_ram:efx_fifo_ram_312a81e5ee264b53bcc6aeade6...      0(0)      0(0)      0(0)      1(1)      0(0)
+   +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6...    20(20)    19(19)      2(2)      0(0)      0(0)
+ +u_IIR_filtre:IIR_filtre                                     194(194)  204(204)      4(4)      0(0)      0(0)
+ +u_uart_Send:uart_Send                                         12(12)      0(0)      5(5)      0(0)      0(0)
+ +u_Motor_Control:Motor_Control                                 71(71)    82(82)  113(113)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -289,7 +211,7 @@ top:top                                                         1117(0)    748(0
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i            1117               2               0
+ clk_i             918               2               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -297,16 +219,16 @@ top:top                                                         1117(0)    748(0
 INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	7
 
-EFX_ADD         : 	748
-EFX_LUT4        : 	1080
-   1-2  Inputs  : 	196
-   3    Inputs  : 	246
-   4    Inputs  : 	638
+EFX_ADD         : 	387
+EFX_LUT4        : 	842
+   1-2  Inputs  : 	202
+   3    Inputs  : 	181
+   4    Inputs  : 	459
 EFX_MULT        : 	3
-EFX_FF          : 	1117
+EFX_FF          : 	918
 EFX_RAM_5K      : 	1
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 5s
-Elapsed synthesis time : 5s
+Plain synthesis (without verilog dump and post-map checks) time : 3s
+Elapsed synthesis time : 3s

@@ -35,6 +35,7 @@ architecture rtl of uart_rx is
     
     type state_t is (IDLE, START_BIT, DATA_BITS, STOP_BIT);
     signal state : state_t := IDLE;
+    
     signal bitcounter  : unsigned(BIT_COUNTER_WIDTH - 1 downto 0) := (others => '0');
     signal bit_idx     : unsigned(3 downto 0) := (others => '0');
     signal data_buffer : std_logic_vector(DATA_WIDTH - 1 downto 0) := (others => '0');
