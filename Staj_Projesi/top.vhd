@@ -266,27 +266,29 @@ architecture Behavioral of top is
             DATA_WIDTH : INTEGER := 16
         );
         port (
-            clk_i   : in std_logic                                  ;
-            rst_n_i : in std_logic                                  ;
+            clk_i   : in std_logic                                      ;
+            rst_n_i : in std_logic                                      ;
 
             --veri hazır
-            mpu_data_valid_in : in STD_LOGIC                        ;
+            mpu_data_valid_in : in STD_LOGIC                            ;
 
+            g_value : in std_logic_vector(7 downto 0)                   ;
+            dps_value : in std_logic_vector(7 downto 0)                 ;
             --filtreli giriş verileri
-            f_axi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
-            f_ayi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
-            f_azi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
-            f_gxi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
-            f_gyi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
-            f_gzi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)  ;
+            f_axi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)      ;
+            f_ayi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)      ;
+            f_azi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)      ;
+            f_gxi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)      ;
+            f_gyi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)      ;
+            f_gzi_i : in STD_LOGIC_VECTOR(DATA_WIDTH - 1 downto 0)      ;
 
             --Kontorl Sonrası Çıkışlar
-            angle_x : out STD_LOGIC_VECTOR(7 downto 0)               ;
-            angle_y : out STD_LOGIC_VECTOR(7 downto 0)               ;
-            angle_z : out STD_LOGIC_VECTOR(7 downto 0)               ;
+            angle_x : out STD_LOGIC_VECTOR(7 downto 0)                  ;
+            angle_y : out STD_LOGIC_VECTOR(7 downto 0)                  ;
+            angle_z : out STD_LOGIC_VECTOR(7 downto 0)                  ;
 
-            pwm_valid_x: in STD_LOGIC                               ;            
-            pwm_valid_y: in STD_LOGIC                               ;            
+            pwm_valid_x: in STD_LOGIC                                   ;            
+            pwm_valid_y: in STD_LOGIC                                   ;            
             pwm_valid_z: in STD_LOGIC                                    
         );
     end component;
@@ -302,6 +304,7 @@ architecture Behavioral of top is
             rst_conf    : out std_logic                   
         );
     end component;
+
     -- =========================================================
     -- SİNYAL TANIMLAMALARI 
     -- =========================================================
@@ -566,7 +569,8 @@ begin
                     rst_n_i             => rst_n_i          ,
 
                     mpu_data_valid_in   => data_valid_out   ,
-
+                    g_value             => g_value_sig      ,
+                    dps_value           => dps_value_sig    ,
                     f_axi_i             => f_axi_i          ,
                     f_ayi_i             => f_ayi_i          ,
                     f_azi_i             => f_azi_i          ,

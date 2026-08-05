@@ -6,8 +6,8 @@ from vpython import *
 # =========================================================
 # AYARLAR 
 # =========================================================
-SERIAL_PORT = '/dev/ttyUSB3'   
-BAUD_RATE = 115200     
+SERIAL_PORT = '/dev/ttyUSB2'   
+BAUD_RATE = 1000000     
 
 try:
     ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=0.1)
@@ -48,7 +48,7 @@ def create_drone(position, c_body, c_arms):
 
 # SOL DRON: Sensörden Okunan Fiziksel Eğim
 drone_sensor = create_drone(vector(-8, 0, 0), color.orange, color.white)
-lbl_sensor = label(pos=vector(-8, 5, 0), text='1. FİZİKSEL EĞİM\n(Pitch & Roll)', height=16, color=color.orange, box=False)
+lbl_sensor = label(pos=vector(-8, 5, 0), text='1. FİZİKSEL EĞİM\n(Pitch, Roll & Yaw)', height=16, color=color.orange, box=False)
 
 # SAĞ DRON: PID'nin Ürettiği Servo Düzeltme Hareketi
 drone_servo = create_drone(vector(8, 0, 0), color.cyan, color.white)
@@ -70,6 +70,13 @@ PACKET_SIZE = 31
 STRUCT_FORMAT = '>hhhhhhBBBhhhhhh'
 
 buffer = bytearray()
+
+# --- YAW HESAPLAMASI İÇİN YENİ DEĞİŞKENLER ---
+yaw_sensor_rad = 0.0
+# rate(50) kullanıldığı için yaklaşık döngü süresi 0.02 saniyedir.
+dt = 0.02 
+# Jiroskop ham verisini derece/saniyeye çevirmek için bir çarpan (sensörüne göre ayarlamalısın, örn: MPU6050 için 131.0)
+GYRO_SCALE = 131.0 
 
 # =========================================================
 # ANA DÖNGÜ
@@ -95,14 +102,21 @@ while True:
                 # 1. SOL DRON (FİZİKSEL EĞİM) 
                 if f_az == 0: f_az = 1 
                 
+                # İvmeölçer ile Pitch ve Roll hesaplaması
                 pitch_sensor_rad = math.atan2(f_ay, f_az)
                 roll_sensor_rad  = math.atan2(-f_ax, f_az)
                 
+                # Jiroskop Z ekseni (f_gz) ile Yaw hesaplaması (İntegral alarak)
+                gyro_z_dps = f_gz / GYRO_SCALE # Derece/saniye cinsinden
+                yaw_sensor_rad += math.radians(gyro_z_dps) * dt # Radyana çevir ve zamanla çarp
+                
                 drone_sensor.up = vector(0, 1, 0)
                 drone_sensor.axis = vector(1, 0, 0)
+                
+                # YAW (Z Ekseni VPython'da Y yukarı baktığı için Y ekseni etrafında döndürülür)
+                drone_sensor.rotate(angle=yaw_sensor_rad, axis=vector(0, 1, 0)) 
                 drone_sensor.rotate(angle=pitch_sensor_rad, axis=vector(1, 0, 0)) 
                 drone_sensor.rotate(angle=-roll_sensor_rad, axis=vector(0, 0, 1))
-                # Z ekseninde (Yaw) ivmeölçer verisi olmadığı için dönüş yapmıyoruz.
                 
                 # -------------------------------------------------------------
                 # 2. SAĞ DRON (PID SERVO TEPKİSİ) 
@@ -114,8 +128,6 @@ while True:
                 drone_servo.up = vector(0, 1, 0)
                 drone_servo.axis = vector(1, 0, 0)
                 
-                # 3 Eksenli Rotasyon (Pitch, Roll ve YAW eklenmiş hali)
-                # VPython'da Y ekseni yukarı baktığı için Yaw dönüşü Y ekseni (0,1,0) etrafında yapılır
                 drone_servo.rotate(angle=yaw_servo_rad, axis=vector(0, 1, 0))   # YAW (Z Ekseni)
                 drone_servo.rotate(angle=pitch_servo_rad, axis=vector(1, 0, 0)) # PITCH (Y Ekseni)
                 drone_servo.rotate(angle=-roll_servo_rad, axis=vector(0, 0, 1)) # ROLL (X Ekseni)
@@ -137,7 +149,7 @@ while True:
                         <td><b>SERVO X (Roll) :</b> {servo_x:3d} <i>(Tahmini {-math.degrees(roll_servo_rad):+6.1f}°)</i></td>
                     </tr>
                     <tr>
-                        <td><b>YAW (Z):</b> İvmeölçerden Hesaplanamaz</td>
+                        <td><b>YAW (Z):</b> {math.degrees(yaw_sensor_rad):+6.1f}° (Jiroskop)</td>
                         <td><b>SERVO Z (Yaw)  :</b> {servo_z:3d} <i>(Tahmini {math.degrees(yaw_servo_rad):+6.1f}°)</i></td>
                     </tr>
                 </table>

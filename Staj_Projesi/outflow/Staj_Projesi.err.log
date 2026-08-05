@@ -3588,3 +3588,78 @@
 // Aug 05, 2026 12:42:25
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 14:57:37
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'clk_out' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:143)
+[EFX-0010 VERI-ERROR] unit 'behavioral' is ignored due to previous errors (VHDL-1284) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:270)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 14:59:53
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] spi_cs_n_o depends on two different clock edges (VHDL-1751) (/home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd:149)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 15:00:39
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 15:05:54
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 15:16:54
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] expression has 8 elements; formal 'g_value' expects 16 (VHDL-1549) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:572)
+[EFX-0010 VERI-ERROR] formal port 'g_value' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:275)
+[EFX-0010 VERI-ERROR] expression has 8 elements; formal 'dps_value' expects 16 (VHDL-1549) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:573)
+[EFX-0010 VERI-ERROR] formal port 'dps_value' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:276)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 15:17:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 16:33:46
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 16:37:38
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 16:48:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 16:56:52
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 05, 2026 17:01:21
+///////////////////////////////////
+

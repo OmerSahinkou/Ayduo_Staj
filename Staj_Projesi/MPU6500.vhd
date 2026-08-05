@@ -20,7 +20,6 @@ entity MPU6500_Controller is
         data_valid_i     : in STD_LOGIC;
         rx_data_i        : in STD_LOGIC_VECTOR(7 downto 0);
 
-
         g_value          : in STD_LOGIC_VECTOR(7 downto 0);
         dps_value        : in STD_LOGIC_VECTOR(7 downto 0);
 
@@ -111,7 +110,7 @@ begin
     MPU_CONFIG_DATA(2) <= dps_value;  -- GYRO_CONFIG (Dışarıdan gelen dps ayarı)
     MPU_CONFIG_DATA(3) <= g_value;    -- ACCEL_CONFIG (Dışarıdan gelen g ayarı)
 
-    
+
     -- SPI Mode 3'te WRITE komutu bit 7 = 1
     spi_write_addr <= "0" & MPU_CONFIG_ADDR(config_idx)(6 downto 0);
     

@@ -4,7 +4,7 @@ import struct
 # Seri port ayarları (Kendi port adını ve baudrate değerini yaz)
 # Windows için: 'COM3', Linux/Mac için: '/dev/ttyUSB0'
 SERIAL_PORT = '/dev/ttyUSB2' 
-BAUDRATE = 1000
+BAUDRATE = 1000000
 
 def parse_imu_data():
     try:

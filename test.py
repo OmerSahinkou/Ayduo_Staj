@@ -4,7 +4,7 @@ import csv
 import time
 
 # --- Ayarlar ---
-PORT = '/dev/ttyUSB3'
+PORT = '/dev/ttyUSB2'
 BAUD = 1000000
 CSV_FILENAME = 'imu_motor_verileri.csv'
 KAYIT_SURESI_SN = 20
