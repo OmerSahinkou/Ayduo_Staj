@@ -1,11 +1,11 @@
 sep=\t
 Module Resource Usage Distribution Estimates
-Generated at: Aug 06, 2026 15:23:20
+Generated at: Aug 06, 2026 15:47:12
 
 Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
 Module	        FFs	      ADDs	       LUTs	      RAMs	 DSP/MULTs
-top:top                                                     	  1032(34)	   418(5)	  1096(56)	     1(0)	     3(0)	
+top:top                                                     	  1032(34)	   418(5)	  1097(56)	     1(0)	     3(0)	
  +Inst_pwm_servo_0:pwm_servo                                	    37(37)	   33(33)	    49(49)	     0(0)	     1(1)	
  +Inst_pwm_servo_1:pwm_servo                                	    34(34)	   15(15)	    41(41)	     0(0)	     1(1)	
  +Inst_pwm_servo_2:pwm_servo                                	    34(34)	   15(15)	    41(41)	     0(0)	     1(1)	
@@ -21,7 +21,7 @@ top:top                                                     	  1032(34)	   418(5
     +active_high.efx_resetsync_active_high:efx_asyncreg_312a81e5ee264b53bcc6aeade6aa5df8(WIDTH=1,ACTIVE_LOW=0,RST_VALUE=1)	      2(2)	     0(0)	      0(0)	     0(0)	     0(0)	
    +xefx_fifo_ram:efx_fifo_ram_312a81e5ee264b53bcc6aeade6aa5df8(OUTPUT_REG=0,RAM_MUX_RATIO=1)	      0(0)	     0(0)	      0(0)	     1(1)	     0(0)	
    +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6aa5df8(PIPELINE_REG=0,ALMOST_FLAG=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,HANDSHAKE_FLAG=0,OVERFLOW_PROTECT=1,UNDERFLOW_PROTECT=1)	    20(20)	   19(19)	      9(9)	     0(0)	     0(0)	
- +u_IIR_filtre:IIR_filtre                                   	  194(194)	 204(204)	      4(4)	     0(0)	     0(0)	
+ +u_IIR_filtre:IIR_filtre                                   	  194(194)	 204(204)	      5(5)	     0(0)	     0(0)	
  +u_uart_Send:uart_Send                                     	    12(12)	     0(0)	      5(5)	     0(0)	     0(0)	
  +u_Motor_Control:Motor_Control                             	    78(78)	 108(108)	  222(222)	     0(0)	     0(0)	
  +u_uart_rx_controller:uart_rx_controller                   	    42(42)	     0(0)	    53(53)	     0(0)	     0(0)	

@@ -58,7 +58,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [15:0]gyro_x;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(341)
     wire [15:0]gyro_y;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(342)
     wire [15:0]gyro_z;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(343)
-    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[5]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
+    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[4]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_accel_x ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(54)
     wire [7:0]fifo_wr_data_o;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(359)
     wire [4:0]\Inst_FIFO_CONTROLLER/FIFO_state ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(90)
@@ -76,7 +76,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_f_gyro_y ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(65)
     wire [15:0]\Inst_FIFO_CONTROLLER/reg_f_gyro_z ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(66)
     
-    wire \add_162/n2 , \add_162/n4 , \add_162/n6 , \add_162/n8 , \u_IIR_filtre/add_15/n2 ;
+    wire \add_161/n2 , \add_161/n4 , \add_161/n6 , \add_161/n8 , \u_IIR_filtre/add_15/n2 ;
     wire [18:0]\u_IIR_filtre/n195 ;
     
     wire \u_IIR_filtre/add_89/n4 , \u_IIR_filtre/add_19/n2 ;
@@ -260,14 +260,14 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         \u_IIR_filtre/add_92/n28 ;
     wire [3:0]\Inst_Spi_Mode_3/bitcounter ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(38)
     
-    wire \u_IIR_filtre/add_92/n26 , \u_IIR_filtre/add_88/n8 , \u_IIR_filtre/add_92/n24 , 
-        \u_IIR_filtre/add_92/n22 , \u_IIR_filtre/add_88/n10 , \u_IIR_filtre/add_88/n12 , 
+    wire \u_IIR_filtre/add_92/n26 , \u_IIR_filtre/add_92/n24 , \u_IIR_filtre/add_92/n22 , 
+        \u_IIR_filtre/add_88/n8 , \u_IIR_filtre/add_88/n10 , \u_IIR_filtre/add_88/n12 , 
         \u_IIR_filtre/add_88/n14 , \u_IIR_filtre/add_88/n16 , \u_IIR_filtre/add_88/n18 , 
         \u_IIR_filtre/add_88/n20 , \u_IIR_filtre/add_88/n22 , \u_IIR_filtre/add_88/n24 , 
-        \u_IIR_filtre/add_88/n26 , \u_IIR_filtre/add_88/n28 , \u_IIR_filtre/add_92/n20 , 
-        \u_IIR_filtre/add_92/n18 , \u_IIR_filtre/add_92/n16 , \u_IIR_filtre/add_88/n30 , 
-        \u_IIR_filtre/add_92/n14 , \u_IIR_filtre/add_92/n12 , \u_IIR_filtre/add_92/n10 , 
-        \u_IIR_filtre/add_92/n8 , \u_IIR_filtre/add_92/n6 ;
+        \u_IIR_filtre/add_88/n26 , \u_IIR_filtre/add_92/n20 , \u_IIR_filtre/add_92/n18 , 
+        \u_IIR_filtre/add_92/n16 , \u_IIR_filtre/add_88/n28 , \u_IIR_filtre/add_92/n14 , 
+        \u_IIR_filtre/add_92/n12 , \u_IIR_filtre/add_92/n10 , \u_IIR_filtre/add_92/n8 , 
+        \u_IIR_filtre/add_92/n6 ;
     wire [17:0]\u_IIR_filtre/n260 ;
     
     wire \u_IIR_filtre/add_27/n34 ;
@@ -276,9 +276,9 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [7:0]spi_to_mpu_data;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(335)
     wire [3:0]\Inst_Spi_Mode_3/bit_idx ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(39)
     
-    wire spi_data_valid;
+    wire \u_IIR_filtre/add_88/n30 , spi_data_valid;
+    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[2]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[3]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
-    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[4]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     
     wire \u_IIR_filtre/add_15/n4 ;
     wire [17:0]\u_IIR_filtre/n134 ;
@@ -321,6 +321,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         \Inst_pwm_servo_1/add_6/n8 , \Inst_pwm_servo_1/add_6/n6 ;
     wire [19:0]\Inst_pwm_servo_1/counter ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(32)
     wire [19:0]\Inst_pwm_servo_1/n42 ;
+    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[7]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     
     wire \u_IIR_filtre/add_23/n16 ;
     wire [19:0]\Inst_pwm_servo_1/pulse_width ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(33)
@@ -330,7 +331,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         \Inst_pwm_servo_2/add_6/n8 , \Inst_pwm_servo_2/add_6/n6 ;
     wire [19:0]\Inst_pwm_servo_2/counter ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(32)
     wire [19:0]\Inst_pwm_servo_2/n42 ;
-    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[7]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
+    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[6]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     
     wire \u_IIR_filtre/add_23/n14 ;
     wire [19:0]\Inst_pwm_servo_2/pulse_width ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(33)
@@ -351,7 +352,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     wire [2:0]\Inst_uart_tx/bit_idx ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(37)
     
     wire tx_busy_sig, \u_IIR_filtre/add_90/n24 ;
-    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[6]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
+    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[5]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     
     wire \u_IIR_filtre/add_90/n22 , \u_IIR_filtre/add_90/n20 , \u_IIR_filtre/add_90/n18 , 
         \u_IIR_filtre/add_90/n16 , \u_IIR_filtre/add_90/n14 , \u_IIR_filtre/add_90/n12 , 
@@ -379,7 +380,6 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         \u_IIR_filtre/add_15/n30 , \u_IIR_filtre/add_15/n28 , \u_IIR_filtre/add_15/n26 , 
         \u_IIR_filtre/add_15/n24 , \u_IIR_filtre/add_15/n22 , \u_IIR_filtre/add_15/n20 , 
         \u_IIR_filtre/add_15/n18 , \u_IIR_filtre/add_15/n16 ;
-    wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[2]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[1]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[12]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
     wire [15:0]\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[0]_q ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(51)
@@ -620,7 +620,6 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
         n2981, n2982, n2983, n2984, n2985, n2986, n2987, n2988, 
         n2989, n2990, n2991, n2992, n2993;
     
-    assign LED[3] = rst_n_i /* verific EFX_ATTRIBUTE_PORT__IS_PRIMARY_INPUT=TRUE, EFX_ATTRIBUTE_PORT__IS_VHDL_PORT_NAME=TRUE */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(24)
     EFX_FF \u_FIFO/u_efx_fifo_top/waddr[7]~FF  (.D(\u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/n96 [7]), 
            .CE(\u_FIFO/u_efx_fifo_top/wr_en_int ), .CLK(\clk_i~O ), .SR(fifo_rst_busys), 
            .Q(\u_FIFO/u_efx_fifo_top/waddr [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv(1250)
@@ -641,7 +640,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \valid_sayici[0]~FF .SR_VALUE = 1'b0;
     defparam \valid_sayici[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \start_signal_conf[0]~FF  (.D(ceg_net5), .CE(ceg_net510), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(start_signal_conf[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(start_signal_conf[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \start_signal_conf[0]~FF .CLK_POLARITY = 1'b1;
     defparam \start_signal_conf[0]~FF .CE_POLARITY = 1'b0;
     defparam \start_signal_conf[0]~FF .SR_POLARITY = 1'b0;
@@ -650,7 +649,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \start_signal_conf[0]~FF .SR_VALUE = 1'b0;
     defparam \start_signal_conf[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[0]~FF  (.D(n941_2[0]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[0]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[0]~FF .SR_POLARITY = 1'b0;
@@ -658,7 +657,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[0]~FF .SR_SYNC = 1'b0;
     defparam \led_counter[0]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \LED[0]~FF  (.D(fifo_full_i), .CE(LED[3]), .CLK(\clk_i~O ), 
+    EFX_FF \LED[0]~FF  (.D(fifo_full_i), .CE(rst_n_i), .CLK(\clk_i~O ), 
            .SR(1'b0), .Q(LED[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \LED[0]~FF .CLK_POLARITY = 1'b1;
     defparam \LED[0]~FF .CE_POLARITY = 1'b1;
@@ -678,7 +677,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \accel_x[0]~FF .SR_VALUE = 1'b0;
     defparam \accel_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][0]~FF .CE_POLARITY = 1'b1;
@@ -688,7 +687,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[0]~FF  (.D(\Inst_MPU6500_Controller/n765 [0]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .SR_POLARITY = 1'b0;
@@ -697,7 +696,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[0]~FF  (.D(\Inst_MPU6500_Controller/n760 [0]), 
-           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/byte_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .SR_POLARITY = 1'b0;
@@ -706,7 +705,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/config_idx[0]~FF  (.D(\Inst_MPU6500_Controller/n756 [0]), 
-           .CE(ceg_net533), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/config_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net533), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .SR_POLARITY = 1'b0;
@@ -715,7 +714,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_start~FF  (.D(\Inst_MPU6500_Controller/n802 ), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(spi_start)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(spi_start)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \spi_start~FF .CLK_POLARITY = 1'b1;
     defparam \spi_start~FF .CE_POLARITY = 1'b1;
     defparam \spi_start~FF .SR_POLARITY = 1'b0;
@@ -724,7 +723,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_start~FF .SR_VALUE = 1'b0;
     defparam \spi_start~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[0]~FF  (.D(\Inst_MPU6500_Controller/n1049 [0]), 
-           .CE(ceg_net578), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net578), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[0]~FF .SR_POLARITY = 1'b0;
@@ -733,7 +732,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][0]~FF .CE_POLARITY = 1'b1;
@@ -743,7 +742,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][0]~FF .CE_POLARITY = 1'b1;
@@ -753,7 +752,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][0]~FF .CE_POLARITY = 1'b1;
@@ -763,7 +762,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][0]~FF .CE_POLARITY = 1'b1;
@@ -773,7 +772,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][0]~FF .CE_POLARITY = 1'b1;
@@ -783,7 +782,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][0]~FF .CE_POLARITY = 1'b1;
@@ -793,7 +792,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][0]~FF .CE_POLARITY = 1'b1;
@@ -803,7 +802,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][0]~FF .CE_POLARITY = 1'b1;
@@ -813,7 +812,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][0]~FF .CE_POLARITY = 1'b1;
@@ -823,7 +822,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][0]~FF .CE_POLARITY = 1'b1;
@@ -833,7 +832,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][0]~FF  (.D(spi_to_mpu_data[0]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][0]~FF .CE_POLARITY = 1'b1;
@@ -851,7 +850,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[0]~FF .SR_SYNC = 1'b1;
     defparam \mpu_to_spi_data[0]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[0]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \data_valid_out~FF  (.D(\~Inst_MPU6500_Controller/n5118 ), .CE(LED[3]), 
+    EFX_FF \data_valid_out~FF  (.D(\~Inst_MPU6500_Controller/n5118 ), .CE(rst_n_i), 
            .CLK(\clk_i~O ), .SR(1'b0), .Q(data_valid_out)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \data_valid_out~FF .CLK_POLARITY = 1'b1;
     defparam \data_valid_out~FF .CE_POLARITY = 1'b1;
@@ -860,7 +859,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \data_valid_out~FF .SR_SYNC = 1'b1;
     defparam \data_valid_out~FF .SR_VALUE = 1'b0;
     defparam \data_valid_out~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \Inst_MPU6500_Controller/switch_out_prev~FF  (.D(switch_out), .CE(LED[3]), 
+    EFX_FF \Inst_MPU6500_Controller/switch_out_prev~FF  (.D(switch_out), .CE(rst_n_i), 
            .CLK(\clk_i~O ), .SR(1'b0), .Q(\Inst_MPU6500_Controller/switch_out_prev )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/switch_out_prev~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/switch_out_prev~FF .CE_POLARITY = 1'b1;
@@ -919,7 +918,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \gyro_z[0]~FF .SR_VALUE = 1'b0;
     defparam \gyro_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_cs_n_o~FF  (.D(\Inst_MPU6500_Controller/n755 ), .CE(ceg_net581), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(spi_cs_n_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(spi_cs_n_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \spi_cs_n_o~FF .CLK_POLARITY = 1'b1;
     defparam \spi_cs_n_o~FF .CE_POLARITY = 1'b0;
     defparam \spi_cs_n_o~FF .SR_POLARITY = 1'b0;
@@ -928,7 +927,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_cs_n_o~FF .SR_VALUE = 1'b1;
     defparam \spi_cs_n_o~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[1]~FF  (.D(\Inst_MPU6500_Controller/n765 [1]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .SR_POLARITY = 1'b0;
@@ -937,7 +936,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[2]~FF  (.D(\Inst_MPU6500_Controller/n765 [2]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .SR_POLARITY = 1'b0;
@@ -946,7 +945,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[3]~FF  (.D(\Inst_MPU6500_Controller/n765 [3]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .SR_POLARITY = 1'b0;
@@ -955,7 +954,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[4]~FF  (.D(\Inst_MPU6500_Controller/n765 [4]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .SR_POLARITY = 1'b0;
@@ -964,7 +963,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[5]~FF  (.D(\Inst_MPU6500_Controller/n765 [5]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .SR_POLARITY = 1'b0;
@@ -973,7 +972,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[6]~FF  (.D(\Inst_MPU6500_Controller/n765 [6]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .SR_POLARITY = 1'b0;
@@ -982,7 +981,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[7]~FF  (.D(\Inst_MPU6500_Controller/n765 [7]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .SR_POLARITY = 1'b0;
@@ -991,7 +990,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[8]~FF  (.D(\Inst_MPU6500_Controller/n765 [8]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .SR_POLARITY = 1'b0;
@@ -1000,7 +999,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[9]~FF  (.D(\Inst_MPU6500_Controller/n765 [9]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .SR_POLARITY = 1'b0;
@@ -1009,7 +1008,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[10]~FF  (.D(\Inst_MPU6500_Controller/n765 [10]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .SR_POLARITY = 1'b0;
@@ -1018,7 +1017,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[11]~FF  (.D(\Inst_MPU6500_Controller/n765 [11]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .SR_POLARITY = 1'b0;
@@ -1027,7 +1026,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[12]~FF  (.D(\Inst_MPU6500_Controller/n765 [12]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .SR_POLARITY = 1'b0;
@@ -1036,7 +1035,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[13]~FF  (.D(\Inst_MPU6500_Controller/n765 [13]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .SR_POLARITY = 1'b0;
@@ -1045,7 +1044,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[14]~FF  (.D(\Inst_MPU6500_Controller/n765 [14]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .SR_POLARITY = 1'b0;
@@ -1054,7 +1053,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[15]~FF  (.D(\Inst_MPU6500_Controller/n765 [15]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .SR_POLARITY = 1'b0;
@@ -1063,7 +1062,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[16]~FF  (.D(\Inst_MPU6500_Controller/n765 [16]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .SR_POLARITY = 1'b0;
@@ -1072,7 +1071,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[17]~FF  (.D(\Inst_MPU6500_Controller/n765 [17]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .SR_POLARITY = 1'b0;
@@ -1081,7 +1080,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[17]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[18]~FF  (.D(\Inst_MPU6500_Controller/n765 [18]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .SR_POLARITY = 1'b0;
@@ -1090,7 +1089,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[18]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[19]~FF  (.D(\Inst_MPU6500_Controller/n765 [19]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .SR_POLARITY = 1'b0;
@@ -1099,7 +1098,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[20]~FF  (.D(\Inst_MPU6500_Controller/n765 [20]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .SR_POLARITY = 1'b0;
@@ -1108,7 +1107,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[20]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/delay_cntr[21]~FF  (.D(\Inst_MPU6500_Controller/n765 [21]), 
-           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/delay_cntr [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net576), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/delay_cntr [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/delay_cntr[21]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/delay_cntr[21]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/delay_cntr[21]~FF .SR_POLARITY = 1'b0;
@@ -1944,7 +1943,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \gyro_z[15]~FF .SR_VALUE = 1'b0;
     defparam \gyro_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][1]~FF .CE_POLARITY = 1'b1;
@@ -1954,7 +1953,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][2]~FF .CE_POLARITY = 1'b1;
@@ -1964,7 +1963,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][3]~FF .CE_POLARITY = 1'b1;
@@ -1974,7 +1973,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][4]~FF .CE_POLARITY = 1'b1;
@@ -1984,7 +1983,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][5]~FF .CE_POLARITY = 1'b1;
@@ -1994,7 +1993,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][6]~FF .CE_POLARITY = 1'b1;
@@ -2004,7 +2003,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[0][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6223 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[0] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[0][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[0][7]~FF .CE_POLARITY = 1'b1;
@@ -2014,7 +2013,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[0][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[0][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][1]~FF .CE_POLARITY = 1'b1;
@@ -2024,7 +2023,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][2]~FF .CE_POLARITY = 1'b1;
@@ -2034,7 +2033,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][3]~FF .CE_POLARITY = 1'b1;
@@ -2044,7 +2043,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][4]~FF .CE_POLARITY = 1'b1;
@@ -2054,7 +2053,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][5]~FF .CE_POLARITY = 1'b1;
@@ -2064,7 +2063,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][6]~FF .CE_POLARITY = 1'b1;
@@ -2074,7 +2073,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[1][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6224 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[1] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[1][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[1][7]~FF .CE_POLARITY = 1'b1;
@@ -2084,7 +2083,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[1][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[1][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][1]~FF .CE_POLARITY = 1'b1;
@@ -2094,7 +2093,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][2]~FF .CE_POLARITY = 1'b1;
@@ -2104,7 +2103,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][3]~FF .CE_POLARITY = 1'b1;
@@ -2114,7 +2113,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][4]~FF .CE_POLARITY = 1'b1;
@@ -2124,7 +2123,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][5]~FF .CE_POLARITY = 1'b1;
@@ -2134,7 +2133,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][6]~FF .CE_POLARITY = 1'b1;
@@ -2144,7 +2143,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[2][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6225 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[2] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[2][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[2][7]~FF .CE_POLARITY = 1'b1;
@@ -2154,7 +2153,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[2][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[2][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][1]~FF .CE_POLARITY = 1'b1;
@@ -2164,7 +2163,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][2]~FF .CE_POLARITY = 1'b1;
@@ -2174,7 +2173,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][3]~FF .CE_POLARITY = 1'b1;
@@ -2184,7 +2183,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][4]~FF .CE_POLARITY = 1'b1;
@@ -2194,7 +2193,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][5]~FF .CE_POLARITY = 1'b1;
@@ -2204,7 +2203,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][6]~FF .CE_POLARITY = 1'b1;
@@ -2214,7 +2213,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[3][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6226 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[3] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[3][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[3][7]~FF .CE_POLARITY = 1'b1;
@@ -2224,7 +2223,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[3][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[3][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][1]~FF .CE_POLARITY = 1'b1;
@@ -2234,7 +2233,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][2]~FF .CE_POLARITY = 1'b1;
@@ -2244,7 +2243,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][3]~FF .CE_POLARITY = 1'b1;
@@ -2254,7 +2253,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][4]~FF .CE_POLARITY = 1'b1;
@@ -2264,7 +2263,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][5]~FF .CE_POLARITY = 1'b1;
@@ -2274,7 +2273,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][6]~FF .CE_POLARITY = 1'b1;
@@ -2284,7 +2283,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[4][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6227 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[4] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[4][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[4][7]~FF .CE_POLARITY = 1'b1;
@@ -2294,7 +2293,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[4][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[4][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][1]~FF .CE_POLARITY = 1'b1;
@@ -2304,7 +2303,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][2]~FF .CE_POLARITY = 1'b1;
@@ -2314,7 +2313,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][3]~FF .CE_POLARITY = 1'b1;
@@ -2324,7 +2323,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][4]~FF .CE_POLARITY = 1'b1;
@@ -2334,7 +2333,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][5]~FF .CE_POLARITY = 1'b1;
@@ -2344,7 +2343,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][6]~FF .CE_POLARITY = 1'b1;
@@ -2354,7 +2353,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[5][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6228 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[5] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[5][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[5][7]~FF .CE_POLARITY = 1'b1;
@@ -2364,7 +2363,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[5][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[5][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][1]~FF .CE_POLARITY = 1'b1;
@@ -2374,7 +2373,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][2]~FF .CE_POLARITY = 1'b1;
@@ -2384,7 +2383,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][3]~FF .CE_POLARITY = 1'b1;
@@ -2394,7 +2393,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][4]~FF .CE_POLARITY = 1'b1;
@@ -2404,7 +2403,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][5]~FF .CE_POLARITY = 1'b1;
@@ -2414,7 +2413,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][6]~FF .CE_POLARITY = 1'b1;
@@ -2424,7 +2423,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[8][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6231 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[8] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[8][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[8][7]~FF .CE_POLARITY = 1'b1;
@@ -2434,7 +2433,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[8][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[8][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][1]~FF .CE_POLARITY = 1'b1;
@@ -2444,7 +2443,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][2]~FF .CE_POLARITY = 1'b1;
@@ -2454,7 +2453,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][3]~FF .CE_POLARITY = 1'b1;
@@ -2464,7 +2463,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][4]~FF .CE_POLARITY = 1'b1;
@@ -2474,7 +2473,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][5]~FF .CE_POLARITY = 1'b1;
@@ -2484,7 +2483,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][6]~FF .CE_POLARITY = 1'b1;
@@ -2494,7 +2493,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[9][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6232 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[9] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[9][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[9][7]~FF .CE_POLARITY = 1'b1;
@@ -2504,7 +2503,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[9][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[9][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][1]~FF .CE_POLARITY = 1'b1;
@@ -2514,7 +2513,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][2]~FF .CE_POLARITY = 1'b1;
@@ -2524,7 +2523,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][3]~FF .CE_POLARITY = 1'b1;
@@ -2534,7 +2533,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][4]~FF .CE_POLARITY = 1'b1;
@@ -2544,7 +2543,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][5]~FF .CE_POLARITY = 1'b1;
@@ -2554,7 +2553,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][6]~FF .CE_POLARITY = 1'b1;
@@ -2564,7 +2563,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[10][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6233 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[10] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[10][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[10][7]~FF .CE_POLARITY = 1'b1;
@@ -2574,7 +2573,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[10][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[10][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][1]~FF .CE_POLARITY = 1'b1;
@@ -2584,7 +2583,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][2]~FF .CE_POLARITY = 1'b1;
@@ -2594,7 +2593,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][3]~FF .CE_POLARITY = 1'b1;
@@ -2604,7 +2603,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][4]~FF .CE_POLARITY = 1'b1;
@@ -2614,7 +2613,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][5]~FF .CE_POLARITY = 1'b1;
@@ -2624,7 +2623,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][6]~FF .CE_POLARITY = 1'b1;
@@ -2634,7 +2633,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[11][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6234 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[11] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[11][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[11][7]~FF .CE_POLARITY = 1'b1;
@@ -2644,7 +2643,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[11][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[11][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][1]~FF .CE_POLARITY = 1'b1;
@@ -2654,7 +2653,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][2]~FF .CE_POLARITY = 1'b1;
@@ -2664,7 +2663,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][3]~FF .CE_POLARITY = 1'b1;
@@ -2674,7 +2673,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][4]~FF .CE_POLARITY = 1'b1;
@@ -2684,7 +2683,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][5]~FF .CE_POLARITY = 1'b1;
@@ -2694,7 +2693,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][6]~FF .CE_POLARITY = 1'b1;
@@ -2704,7 +2703,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[12][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6235 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[12] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[12][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[12][7]~FF .CE_POLARITY = 1'b1;
@@ -2714,7 +2713,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[12][7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[12][7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][1]~FF  (.D(spi_to_mpu_data[1]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][1]~FF .CE_POLARITY = 1'b1;
@@ -2724,7 +2723,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][2]~FF  (.D(spi_to_mpu_data[2]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][2]~FF .CE_POLARITY = 1'b1;
@@ -2734,7 +2733,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][3]~FF  (.D(spi_to_mpu_data[3]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][3]~FF .CE_POLARITY = 1'b1;
@@ -2744,7 +2743,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][4]~FF  (.D(spi_to_mpu_data[4]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][4]~FF .CE_POLARITY = 1'b1;
@@ -2754,7 +2753,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][5]~FF  (.D(spi_to_mpu_data[5]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][5]~FF .CE_POLARITY = 1'b1;
@@ -2764,7 +2763,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][6]~FF  (.D(spi_to_mpu_data[6]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][6]~FF .CE_POLARITY = 1'b1;
@@ -2774,7 +2773,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/raw_data[13][6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/raw_data[13][6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/raw_data[13][7]~FF  (.D(spi_to_mpu_data[7]), 
-           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\Inst_MPU6500_Controller/n6236 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\Inst_MPU6500_Controller/raw_data[13] [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/raw_data[13][7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/raw_data[13][7]~FF .CE_POLARITY = 1'b1;
@@ -2847,7 +2846,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mpu_to_spi_data[7]~FF .SR_VALUE = 1'b0;
     defparam \mpu_to_spi_data[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[1]~FF  (.D(\Inst_MPU6500_Controller/n760 [1]), 
-           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/byte_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .SR_POLARITY = 1'b0;
@@ -2856,7 +2855,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[2]~FF  (.D(\Inst_MPU6500_Controller/n760 [2]), 
-           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/byte_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .SR_POLARITY = 1'b0;
@@ -2865,7 +2864,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/byte_cntr[3]~FF  (.D(\Inst_MPU6500_Controller/n760 [3]), 
-           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/byte_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net592), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/byte_cntr [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .SR_POLARITY = 1'b0;
@@ -2874,7 +2873,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/byte_cntr[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[1]~FF  (.D(\Inst_MPU6500_Controller/n1049 [1]), 
-           .CE(ceg_net578), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net578), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[1]~FF .SR_POLARITY = 1'b0;
@@ -2883,7 +2882,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[2]~FF  (.D(\Inst_MPU6500_Controller/n1049 [2]), 
-           .CE(ceg_net593), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net593), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/state[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[2]~FF .SR_POLARITY = 1'b0;
@@ -2892,7 +2891,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/state[3]~FF  (.D(\Inst_MPU6500_Controller/n1049 [3]), 
-           .CE(ceg_net594), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net594), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/state[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/state[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/state[3]~FF .SR_POLARITY = 1'b0;
@@ -2901,7 +2900,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/state[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/state[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/config_idx[1]~FF  (.D(\Inst_MPU6500_Controller/n756 [1]), 
-           .CE(ceg_net533), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/config_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net533), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .SR_POLARITY = 1'b0;
@@ -2910,7 +2909,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_MPU6500_Controller/config_idx[2]~FF  (.D(\Inst_MPU6500_Controller/n756 [2]), 
-           .CE(ceg_net533), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_MPU6500_Controller/config_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
+           .CE(ceg_net533), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_MPU6500_Controller/config_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/MPU6500.vhd(269)
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .SR_POLARITY = 1'b0;
@@ -2919,7 +2918,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_MPU6500_Controller/config_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF  (.D(accel_x[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .SR_POLARITY = 1'b0;
@@ -2928,7 +2927,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[0]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [0]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[0]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[0]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[0]~FF .SR_POLARITY = 1'b0;
@@ -2937,7 +2936,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[0]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [0]), 
-           .CE(ceg_net596), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CE(ceg_net596), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .SR_POLARITY = 1'b0;
@@ -2946,7 +2945,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_en_o~FF  (.D(\Inst_FIFO_CONTROLLER/n1184 ), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_en_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_en_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_en_o~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_en_o~FF .CE_POLARITY = 1'b1;
     defparam \fifo_wr_en_o~FF .SR_POLARITY = 1'b0;
@@ -2955,7 +2954,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_en_o~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_en_o~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF  (.D(accel_y[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF .SR_POLARITY = 1'b0;
@@ -2964,7 +2963,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[0]~FF  (.D(accel_z[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[0]~FF .SR_POLARITY = 1'b0;
@@ -2973,7 +2972,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[0]~FF  (.D(gyro_x[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[0]~FF .SR_POLARITY = 1'b0;
@@ -2982,7 +2981,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[0]~FF  (.D(gyro_y[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[0]~FF .SR_POLARITY = 1'b0;
@@ -2991,7 +2990,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[0]~FF  (.D(gyro_z[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[0]~FF .SR_POLARITY = 1'b0;
@@ -3000,7 +2999,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[0]~FF  (.D(f_axi_i[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[0]~FF .SR_POLARITY = 1'b0;
@@ -3009,7 +3008,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[0]~FF  (.D(f_ayi_i[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[0]~FF .SR_POLARITY = 1'b0;
@@ -3018,7 +3017,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[0]~FF  (.D(f_azi_i[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[0]~FF .SR_POLARITY = 1'b0;
@@ -3027,7 +3026,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[0]~FF  (.D(f_gxi_i[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[0]~FF .SR_POLARITY = 1'b0;
@@ -3036,7 +3035,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[0]~FF  (.D(f_gyi_i[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[0]~FF .SR_POLARITY = 1'b0;
@@ -3045,7 +3044,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[0]~FF  (.D(f_gzi_i[0]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[0]~FF .SR_POLARITY = 1'b0;
@@ -3054,7 +3053,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[1]~FF  (.D(accel_x[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[1]~FF .SR_POLARITY = 1'b0;
@@ -3063,7 +3062,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[2]~FF  (.D(accel_x[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[2]~FF .SR_POLARITY = 1'b0;
@@ -3072,7 +3071,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[3]~FF  (.D(accel_x[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[3]~FF .SR_POLARITY = 1'b0;
@@ -3081,7 +3080,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[4]~FF  (.D(accel_x[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[4]~FF .SR_POLARITY = 1'b0;
@@ -3090,7 +3089,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[5]~FF  (.D(accel_x[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[5]~FF .SR_POLARITY = 1'b0;
@@ -3099,7 +3098,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[6]~FF  (.D(accel_x[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[6]~FF .SR_POLARITY = 1'b0;
@@ -3108,7 +3107,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[7]~FF  (.D(accel_x[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[7]~FF .SR_POLARITY = 1'b0;
@@ -3117,7 +3116,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[8]~FF  (.D(accel_x[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[8]~FF .SR_POLARITY = 1'b0;
@@ -3126,7 +3125,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[9]~FF  (.D(accel_x[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[9]~FF .SR_POLARITY = 1'b0;
@@ -3135,7 +3134,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[10]~FF  (.D(accel_x[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[10]~FF .SR_POLARITY = 1'b0;
@@ -3144,7 +3143,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[11]~FF  (.D(accel_x[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[11]~FF .SR_POLARITY = 1'b0;
@@ -3153,7 +3152,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[12]~FF  (.D(accel_x[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[12]~FF .SR_POLARITY = 1'b0;
@@ -3162,7 +3161,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[13]~FF  (.D(accel_x[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[13]~FF .SR_POLARITY = 1'b0;
@@ -3171,7 +3170,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[14]~FF  (.D(accel_x[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[14]~FF .SR_POLARITY = 1'b0;
@@ -3180,7 +3179,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_x[15]~FF  (.D(accel_x[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[15]~FF .SR_POLARITY = 1'b0;
@@ -3189,7 +3188,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_x[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[1]~FF  (.D(accel_y[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[1]~FF .SR_POLARITY = 1'b0;
@@ -3198,7 +3197,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[2]~FF  (.D(accel_y[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[2]~FF .SR_POLARITY = 1'b0;
@@ -3207,7 +3206,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[3]~FF  (.D(accel_y[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[3]~FF .SR_POLARITY = 1'b0;
@@ -3216,7 +3215,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[4]~FF  (.D(accel_y[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[4]~FF .SR_POLARITY = 1'b0;
@@ -3225,7 +3224,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[5]~FF  (.D(accel_y[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[5]~FF .SR_POLARITY = 1'b0;
@@ -3234,7 +3233,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[6]~FF  (.D(accel_y[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[6]~FF .SR_POLARITY = 1'b0;
@@ -3243,7 +3242,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[7]~FF  (.D(accel_y[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[7]~FF .SR_POLARITY = 1'b0;
@@ -3252,7 +3251,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[8]~FF  (.D(accel_y[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[8]~FF .SR_POLARITY = 1'b0;
@@ -3261,7 +3260,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[9]~FF  (.D(accel_y[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[9]~FF .SR_POLARITY = 1'b0;
@@ -3270,7 +3269,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[10]~FF  (.D(accel_y[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[10]~FF .SR_POLARITY = 1'b0;
@@ -3279,7 +3278,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[11]~FF  (.D(accel_y[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[11]~FF .SR_POLARITY = 1'b0;
@@ -3288,7 +3287,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[12]~FF  (.D(accel_y[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[12]~FF .SR_POLARITY = 1'b0;
@@ -3297,7 +3296,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[13]~FF  (.D(accel_y[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[13]~FF .SR_POLARITY = 1'b0;
@@ -3306,7 +3305,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[14]~FF  (.D(accel_y[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[14]~FF .SR_POLARITY = 1'b0;
@@ -3315,7 +3314,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_y[15]~FF  (.D(accel_y[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[15]~FF .SR_POLARITY = 1'b0;
@@ -3324,7 +3323,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_y[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[1]~FF  (.D(accel_z[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[1]~FF .SR_POLARITY = 1'b0;
@@ -3333,7 +3332,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[2]~FF  (.D(accel_z[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[2]~FF .SR_POLARITY = 1'b0;
@@ -3342,7 +3341,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[3]~FF  (.D(accel_z[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[3]~FF .SR_POLARITY = 1'b0;
@@ -3351,7 +3350,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[4]~FF  (.D(accel_z[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[4]~FF .SR_POLARITY = 1'b0;
@@ -3360,7 +3359,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[5]~FF  (.D(accel_z[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[5]~FF .SR_POLARITY = 1'b0;
@@ -3369,7 +3368,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[6]~FF  (.D(accel_z[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[6]~FF .SR_POLARITY = 1'b0;
@@ -3378,7 +3377,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[7]~FF  (.D(accel_z[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[7]~FF .SR_POLARITY = 1'b0;
@@ -3387,7 +3386,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[8]~FF  (.D(accel_z[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[8]~FF .SR_POLARITY = 1'b0;
@@ -3396,7 +3395,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[9]~FF  (.D(accel_z[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[9]~FF .SR_POLARITY = 1'b0;
@@ -3405,7 +3404,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[10]~FF  (.D(accel_z[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[10]~FF .SR_POLARITY = 1'b0;
@@ -3414,7 +3413,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[11]~FF  (.D(accel_z[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[11]~FF .SR_POLARITY = 1'b0;
@@ -3423,7 +3422,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF  (.D(accel_z[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF .SR_POLARITY = 1'b0;
@@ -3432,7 +3431,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[13]~FF  (.D(accel_z[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[13]~FF .SR_POLARITY = 1'b0;
@@ -3441,7 +3440,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[14]~FF  (.D(accel_z[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[14]~FF .SR_POLARITY = 1'b0;
@@ -3450,7 +3449,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_accel_z[15]~FF  (.D(accel_z[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_accel_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[15]~FF .SR_POLARITY = 1'b0;
@@ -3459,7 +3458,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_accel_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[1]~FF  (.D(gyro_x[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[1]~FF .SR_POLARITY = 1'b0;
@@ -3468,7 +3467,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[2]~FF  (.D(gyro_x[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[2]~FF .SR_POLARITY = 1'b0;
@@ -3477,7 +3476,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[3]~FF  (.D(gyro_x[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[3]~FF .SR_POLARITY = 1'b0;
@@ -3486,7 +3485,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[4]~FF  (.D(gyro_x[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[4]~FF .SR_POLARITY = 1'b0;
@@ -3495,7 +3494,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[5]~FF  (.D(gyro_x[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[5]~FF .SR_POLARITY = 1'b0;
@@ -3504,7 +3503,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[6]~FF  (.D(gyro_x[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[6]~FF .SR_POLARITY = 1'b0;
@@ -3513,7 +3512,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[7]~FF  (.D(gyro_x[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[7]~FF .SR_POLARITY = 1'b0;
@@ -3522,7 +3521,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[8]~FF  (.D(gyro_x[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[8]~FF .SR_POLARITY = 1'b0;
@@ -3531,7 +3530,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF  (.D(gyro_x[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF .SR_POLARITY = 1'b0;
@@ -3540,7 +3539,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[10]~FF  (.D(gyro_x[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[10]~FF .SR_POLARITY = 1'b0;
@@ -3549,7 +3548,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[11]~FF  (.D(gyro_x[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[11]~FF .SR_POLARITY = 1'b0;
@@ -3558,7 +3557,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[12]~FF  (.D(gyro_x[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[12]~FF .SR_POLARITY = 1'b0;
@@ -3567,7 +3566,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[13]~FF  (.D(gyro_x[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[13]~FF .SR_POLARITY = 1'b0;
@@ -3576,7 +3575,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[14]~FF  (.D(gyro_x[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[14]~FF .SR_POLARITY = 1'b0;
@@ -3585,7 +3584,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_x[15]~FF  (.D(gyro_x[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[15]~FF .SR_POLARITY = 1'b0;
@@ -3594,7 +3593,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_x[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[1]~FF  (.D(gyro_y[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[1]~FF .SR_POLARITY = 1'b0;
@@ -3603,7 +3602,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[2]~FF  (.D(gyro_y[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[2]~FF .SR_POLARITY = 1'b0;
@@ -3612,7 +3611,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[3]~FF  (.D(gyro_y[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[3]~FF .SR_POLARITY = 1'b0;
@@ -3621,7 +3620,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[4]~FF  (.D(gyro_y[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[4]~FF .SR_POLARITY = 1'b0;
@@ -3630,7 +3629,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[5]~FF  (.D(gyro_y[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[5]~FF .SR_POLARITY = 1'b0;
@@ -3639,7 +3638,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[6]~FF  (.D(gyro_y[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[6]~FF .SR_POLARITY = 1'b0;
@@ -3648,7 +3647,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[7]~FF  (.D(gyro_y[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[7]~FF .SR_POLARITY = 1'b0;
@@ -3657,7 +3656,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[8]~FF  (.D(gyro_y[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[8]~FF .SR_POLARITY = 1'b0;
@@ -3666,7 +3665,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[9]~FF  (.D(gyro_y[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[9]~FF .SR_POLARITY = 1'b0;
@@ -3675,7 +3674,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[10]~FF  (.D(gyro_y[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[10]~FF .SR_POLARITY = 1'b0;
@@ -3684,7 +3683,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[11]~FF  (.D(gyro_y[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[11]~FF .SR_POLARITY = 1'b0;
@@ -3693,7 +3692,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[12]~FF  (.D(gyro_y[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[12]~FF .SR_POLARITY = 1'b0;
@@ -3702,7 +3701,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[13]~FF  (.D(gyro_y[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[13]~FF .SR_POLARITY = 1'b0;
@@ -3711,7 +3710,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[14]~FF  (.D(gyro_y[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[14]~FF .SR_POLARITY = 1'b0;
@@ -3720,7 +3719,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_y[15]~FF  (.D(gyro_y[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[15]~FF .SR_POLARITY = 1'b0;
@@ -3729,7 +3728,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_y[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[1]~FF  (.D(gyro_z[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[1]~FF .SR_POLARITY = 1'b0;
@@ -3738,7 +3737,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[2]~FF  (.D(gyro_z[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[2]~FF .SR_POLARITY = 1'b0;
@@ -3747,7 +3746,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[3]~FF  (.D(gyro_z[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[3]~FF .SR_POLARITY = 1'b0;
@@ -3756,7 +3755,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[4]~FF  (.D(gyro_z[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[4]~FF .SR_POLARITY = 1'b0;
@@ -3765,7 +3764,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF  (.D(gyro_z[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF .SR_POLARITY = 1'b0;
@@ -3774,7 +3773,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF  (.D(gyro_z[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF .SR_POLARITY = 1'b0;
@@ -3783,7 +3782,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[7]~FF  (.D(gyro_z[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[7]~FF .SR_POLARITY = 1'b0;
@@ -3792,7 +3791,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[8]~FF  (.D(gyro_z[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[8]~FF .SR_POLARITY = 1'b0;
@@ -3801,7 +3800,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF  (.D(gyro_z[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF .SR_POLARITY = 1'b0;
@@ -3810,7 +3809,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[10]~FF  (.D(gyro_z[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[10]~FF .SR_POLARITY = 1'b0;
@@ -3819,7 +3818,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF  (.D(gyro_z[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF .SR_POLARITY = 1'b0;
@@ -3828,7 +3827,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[12]~FF  (.D(gyro_z[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[12]~FF .SR_POLARITY = 1'b0;
@@ -3837,7 +3836,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[13]~FF  (.D(gyro_z[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[13]~FF .SR_POLARITY = 1'b0;
@@ -3846,7 +3845,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[14]~FF  (.D(gyro_z[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[14]~FF .SR_POLARITY = 1'b0;
@@ -3855,7 +3854,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_gyro_z[15]~FF  (.D(gyro_z[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_gyro_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[15]~FF .SR_POLARITY = 1'b0;
@@ -3864,7 +3863,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_gyro_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[1]~FF  (.D(f_axi_i[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[1]~FF .SR_POLARITY = 1'b0;
@@ -3873,7 +3872,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[2]~FF  (.D(f_axi_i[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[2]~FF .SR_POLARITY = 1'b0;
@@ -3882,7 +3881,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[3]~FF  (.D(f_axi_i[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[3]~FF .SR_POLARITY = 1'b0;
@@ -3891,7 +3890,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[4]~FF  (.D(f_axi_i[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[4]~FF .SR_POLARITY = 1'b0;
@@ -3900,7 +3899,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[5]~FF  (.D(f_axi_i[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[5]~FF .SR_POLARITY = 1'b0;
@@ -3909,7 +3908,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[6]~FF  (.D(f_axi_i[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[6]~FF .SR_POLARITY = 1'b0;
@@ -3918,7 +3917,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[7]~FF  (.D(f_axi_i[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[7]~FF .SR_POLARITY = 1'b0;
@@ -3927,7 +3926,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[8]~FF  (.D(f_axi_i[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[8]~FF .SR_POLARITY = 1'b0;
@@ -3936,7 +3935,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[9]~FF  (.D(f_axi_i[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[9]~FF .SR_POLARITY = 1'b0;
@@ -3945,7 +3944,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[10]~FF  (.D(f_axi_i[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[10]~FF .SR_POLARITY = 1'b0;
@@ -3954,7 +3953,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[11]~FF  (.D(f_axi_i[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[11]~FF .SR_POLARITY = 1'b0;
@@ -3963,7 +3962,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[12]~FF  (.D(f_axi_i[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[12]~FF .SR_POLARITY = 1'b0;
@@ -3972,7 +3971,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[13]~FF  (.D(f_axi_i[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[13]~FF .SR_POLARITY = 1'b0;
@@ -3981,7 +3980,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[14]~FF  (.D(f_axi_i[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[14]~FF .SR_POLARITY = 1'b0;
@@ -3990,7 +3989,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_x[15]~FF  (.D(f_axi_i[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[15]~FF .SR_POLARITY = 1'b0;
@@ -3999,7 +3998,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_x[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[1]~FF  (.D(f_ayi_i[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[1]~FF .SR_POLARITY = 1'b0;
@@ -4008,7 +4007,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[2]~FF  (.D(f_ayi_i[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[2]~FF .SR_POLARITY = 1'b0;
@@ -4017,7 +4016,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[3]~FF  (.D(f_ayi_i[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[3]~FF .SR_POLARITY = 1'b0;
@@ -4026,7 +4025,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[4]~FF  (.D(f_ayi_i[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[4]~FF .SR_POLARITY = 1'b0;
@@ -4035,7 +4034,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[5]~FF  (.D(f_ayi_i[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[5]~FF .SR_POLARITY = 1'b0;
@@ -4044,7 +4043,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[6]~FF  (.D(f_ayi_i[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[6]~FF .SR_POLARITY = 1'b0;
@@ -4053,7 +4052,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[7]~FF  (.D(f_ayi_i[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[7]~FF .SR_POLARITY = 1'b0;
@@ -4062,7 +4061,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[8]~FF  (.D(f_ayi_i[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[8]~FF .SR_POLARITY = 1'b0;
@@ -4071,7 +4070,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[9]~FF  (.D(f_ayi_i[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[9]~FF .SR_POLARITY = 1'b0;
@@ -4080,7 +4079,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[10]~FF  (.D(f_ayi_i[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[10]~FF .SR_POLARITY = 1'b0;
@@ -4089,7 +4088,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[11]~FF  (.D(f_ayi_i[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[11]~FF .SR_POLARITY = 1'b0;
@@ -4098,7 +4097,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[12]~FF  (.D(f_ayi_i[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[12]~FF .SR_POLARITY = 1'b0;
@@ -4107,7 +4106,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[13]~FF  (.D(f_ayi_i[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[13]~FF .SR_POLARITY = 1'b0;
@@ -4116,7 +4115,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[14]~FF  (.D(f_ayi_i[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[14]~FF .SR_POLARITY = 1'b0;
@@ -4125,7 +4124,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_y[15]~FF  (.D(f_ayi_i[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[15]~FF .SR_POLARITY = 1'b0;
@@ -4134,7 +4133,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_y[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[1]~FF  (.D(f_azi_i[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[1]~FF .SR_POLARITY = 1'b0;
@@ -4143,7 +4142,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[2]~FF  (.D(f_azi_i[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[2]~FF .SR_POLARITY = 1'b0;
@@ -4152,7 +4151,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[3]~FF  (.D(f_azi_i[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[3]~FF .SR_POLARITY = 1'b0;
@@ -4161,7 +4160,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[4]~FF  (.D(f_azi_i[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[4]~FF .SR_POLARITY = 1'b0;
@@ -4170,7 +4169,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[5]~FF  (.D(f_azi_i[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[5]~FF .SR_POLARITY = 1'b0;
@@ -4179,7 +4178,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[6]~FF  (.D(f_azi_i[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[6]~FF .SR_POLARITY = 1'b0;
@@ -4188,7 +4187,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[7]~FF  (.D(f_azi_i[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[7]~FF .SR_POLARITY = 1'b0;
@@ -4197,7 +4196,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[8]~FF  (.D(f_azi_i[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[8]~FF .SR_POLARITY = 1'b0;
@@ -4206,7 +4205,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[9]~FF  (.D(f_azi_i[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[9]~FF .SR_POLARITY = 1'b0;
@@ -4215,7 +4214,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[10]~FF  (.D(f_azi_i[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[10]~FF .SR_POLARITY = 1'b0;
@@ -4224,7 +4223,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[11]~FF  (.D(f_azi_i[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[11]~FF .SR_POLARITY = 1'b0;
@@ -4233,7 +4232,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[12]~FF  (.D(f_azi_i[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[12]~FF .SR_POLARITY = 1'b0;
@@ -4242,7 +4241,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[13]~FF  (.D(f_azi_i[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[13]~FF .SR_POLARITY = 1'b0;
@@ -4251,7 +4250,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[14]~FF  (.D(f_azi_i[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[14]~FF .SR_POLARITY = 1'b0;
@@ -4260,7 +4259,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_accel_z[15]~FF  (.D(f_azi_i[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_accel_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[15]~FF .SR_POLARITY = 1'b0;
@@ -4269,7 +4268,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_accel_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[1]~FF  (.D(f_gxi_i[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[1]~FF .SR_POLARITY = 1'b0;
@@ -4278,7 +4277,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF  (.D(f_gxi_i[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF .SR_POLARITY = 1'b0;
@@ -4287,7 +4286,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[3]~FF  (.D(f_gxi_i[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[3]~FF .SR_POLARITY = 1'b0;
@@ -4296,7 +4295,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[4]~FF  (.D(f_gxi_i[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[4]~FF .SR_POLARITY = 1'b0;
@@ -4305,7 +4304,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[5]~FF  (.D(f_gxi_i[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[5]~FF .SR_POLARITY = 1'b0;
@@ -4314,7 +4313,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF  (.D(f_gxi_i[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF .SR_POLARITY = 1'b0;
@@ -4323,7 +4322,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF  (.D(f_gxi_i[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF .SR_POLARITY = 1'b0;
@@ -4332,7 +4331,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF  (.D(f_gxi_i[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF .SR_POLARITY = 1'b0;
@@ -4341,7 +4340,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF  (.D(f_gxi_i[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF .SR_POLARITY = 1'b0;
@@ -4350,7 +4349,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[10]~FF  (.D(f_gxi_i[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[10]~FF .SR_POLARITY = 1'b0;
@@ -4359,7 +4358,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[11]~FF  (.D(f_gxi_i[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[11]~FF .SR_POLARITY = 1'b0;
@@ -4368,7 +4367,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[12]~FF  (.D(f_gxi_i[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[12]~FF .SR_POLARITY = 1'b0;
@@ -4377,7 +4376,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[13]~FF  (.D(f_gxi_i[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[13]~FF .SR_POLARITY = 1'b0;
@@ -4386,7 +4385,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[14]~FF  (.D(f_gxi_i[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[14]~FF .SR_POLARITY = 1'b0;
@@ -4395,7 +4394,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_x[15]~FF  (.D(f_gxi_i[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_x [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[15]~FF .SR_POLARITY = 1'b0;
@@ -4404,7 +4403,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_x[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[1]~FF  (.D(f_gyi_i[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[1]~FF .SR_POLARITY = 1'b0;
@@ -4413,7 +4412,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[2]~FF  (.D(f_gyi_i[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[2]~FF .SR_POLARITY = 1'b0;
@@ -4422,7 +4421,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[3]~FF  (.D(f_gyi_i[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[3]~FF .SR_POLARITY = 1'b0;
@@ -4431,7 +4430,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[4]~FF  (.D(f_gyi_i[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[4]~FF .SR_POLARITY = 1'b0;
@@ -4440,7 +4439,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[5]~FF  (.D(f_gyi_i[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[5]~FF .SR_POLARITY = 1'b0;
@@ -4449,7 +4448,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[6]~FF  (.D(f_gyi_i[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[6]~FF .SR_POLARITY = 1'b0;
@@ -4458,7 +4457,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[7]~FF  (.D(f_gyi_i[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[7]~FF .SR_POLARITY = 1'b0;
@@ -4467,7 +4466,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF  (.D(f_gyi_i[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF .SR_POLARITY = 1'b0;
@@ -4476,7 +4475,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[9]~FF  (.D(f_gyi_i[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[9]~FF .SR_POLARITY = 1'b0;
@@ -4485,7 +4484,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[10]~FF  (.D(f_gyi_i[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[10]~FF .SR_POLARITY = 1'b0;
@@ -4494,7 +4493,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[11]~FF  (.D(f_gyi_i[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[11]~FF .SR_POLARITY = 1'b0;
@@ -4503,7 +4502,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[12]~FF  (.D(f_gyi_i[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[12]~FF .SR_POLARITY = 1'b0;
@@ -4512,7 +4511,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[13]~FF  (.D(f_gyi_i[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[13]~FF .SR_POLARITY = 1'b0;
@@ -4521,7 +4520,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[14]~FF  (.D(f_gyi_i[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[14]~FF .SR_POLARITY = 1'b0;
@@ -4530,7 +4529,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_y[15]~FF  (.D(f_gyi_i[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_y [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[15]~FF .SR_POLARITY = 1'b0;
@@ -4539,7 +4538,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_y[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[1]~FF  (.D(f_gzi_i[1]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[1]~FF .SR_POLARITY = 1'b0;
@@ -4548,7 +4547,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[2]~FF  (.D(f_gzi_i[2]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[2]~FF .SR_POLARITY = 1'b0;
@@ -4557,7 +4556,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[3]~FF  (.D(f_gzi_i[3]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[3]~FF .SR_POLARITY = 1'b0;
@@ -4566,7 +4565,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[4]~FF  (.D(f_gzi_i[4]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[4]~FF .SR_POLARITY = 1'b0;
@@ -4575,7 +4574,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[5]~FF  (.D(f_gzi_i[5]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[5]~FF .SR_POLARITY = 1'b0;
@@ -4584,7 +4583,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[6]~FF  (.D(f_gzi_i[6]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[6]~FF .SR_POLARITY = 1'b0;
@@ -4593,7 +4592,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[7]~FF  (.D(f_gzi_i[7]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[7]~FF .SR_POLARITY = 1'b0;
@@ -4602,7 +4601,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[8]~FF  (.D(f_gzi_i[8]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[8]~FF .SR_POLARITY = 1'b0;
@@ -4611,7 +4610,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[9]~FF  (.D(f_gzi_i[9]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[9]~FF .SR_POLARITY = 1'b0;
@@ -4620,7 +4619,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[10]~FF  (.D(f_gzi_i[10]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[10]~FF .SR_POLARITY = 1'b0;
@@ -4629,7 +4628,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[11]~FF  (.D(f_gzi_i[11]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[11]~FF .SR_POLARITY = 1'b0;
@@ -4638,7 +4637,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[12]~FF  (.D(f_gzi_i[12]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[12]~FF .SR_POLARITY = 1'b0;
@@ -4647,7 +4646,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[13]~FF  (.D(f_gzi_i[13]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[13]~FF .SR_POLARITY = 1'b0;
@@ -4656,7 +4655,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[14]~FF  (.D(f_gzi_i[14]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[14]~FF .SR_POLARITY = 1'b0;
@@ -4665,7 +4664,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF  (.D(f_gzi_i[15]), .CE(\Inst_FIFO_CONTROLLER/n4136 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/reg_f_gyro_z [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .SR_POLARITY = 1'b0;
@@ -4674,7 +4673,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/reg_f_gyro_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[1]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [1]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[1]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[1]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[1]~FF .SR_POLARITY = 1'b0;
@@ -4683,7 +4682,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[1]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[2]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [2]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[2]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[2]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[2]~FF .SR_POLARITY = 1'b0;
@@ -4692,7 +4691,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[2]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[3]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [3]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[3]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[3]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[3]~FF .SR_POLARITY = 1'b0;
@@ -4701,7 +4700,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[3]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[4]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [4]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[4]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[4]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[4]~FF .SR_POLARITY = 1'b0;
@@ -4710,7 +4709,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[4]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[5]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [5]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[5]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[5]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[5]~FF .SR_POLARITY = 1'b0;
@@ -4719,7 +4718,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[5]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[6]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [6]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[6]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[6]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[6]~FF .SR_POLARITY = 1'b0;
@@ -4728,7 +4727,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[6]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \fifo_wr_data_o[7]~FF  (.D(\Inst_FIFO_CONTROLLER/n955 [7]), .CE(ceg_net595), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(fifo_wr_data_o[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(fifo_wr_data_o[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \fifo_wr_data_o[7]~FF .CLK_POLARITY = 1'b1;
     defparam \fifo_wr_data_o[7]~FF .CE_POLARITY = 1'b0;
     defparam \fifo_wr_data_o[7]~FF .SR_POLARITY = 1'b0;
@@ -4737,7 +4736,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \fifo_wr_data_o[7]~FF .SR_VALUE = 1'b0;
     defparam \fifo_wr_data_o[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [1]), 
-           .CE(ceg_net596), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CE(ceg_net596), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .SR_POLARITY = 1'b0;
@@ -4746,7 +4745,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [2]), 
-           .CE(ceg_net597), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CE(ceg_net597), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .SR_POLARITY = 1'b0;
@@ -4755,7 +4754,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [3]), 
-           .CE(ceg_net598), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CE(ceg_net598), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .SR_POLARITY = 1'b0;
@@ -4764,7 +4763,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF  (.D(\Inst_FIFO_CONTROLLER/n965 [4]), 
-           .CE(ceg_net599), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
+           .CE(ceg_net599), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_FIFO_CONTROLLER/FIFO_state [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/FIFO_CONTROLLER.vhd(357)
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .SR_POLARITY = 1'b0;
@@ -4773,7 +4772,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_FIFO_CONTROLLER/FIFO_state[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/IIR_filtre_state[0]~FF  (.D(\u_IIR_filtre/n1801 ), 
-           .CE(ceg_net97), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_IIR_filtre/IIR_filtre_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CE(ceg_net97), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_IIR_filtre/IIR_filtre_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .CE_POLARITY = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .SR_POLARITY = 1'b0;
@@ -4782,7 +4781,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[0]~FF  (.D(\u_IIR_filtre/n134 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4791,7 +4790,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[0]~FF  (.D(\u_IIR_filtre/n176 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4800,7 +4799,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[0]~FF  (.D(\u_IIR_filtre/n218 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4809,7 +4808,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[0]~FF  (.D(\u_IIR_filtre/n260 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4818,7 +4817,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[0]~FF  (.D(\u_IIR_filtre/n302 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4827,7 +4826,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[0]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[0]~FF  (.D(\u_IIR_filtre/n344 [2]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[0]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[0]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[0]~FF .SR_POLARITY = 1'b0;
@@ -4890,7 +4889,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[1]~FF  (.D(\u_IIR_filtre/n134 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -4899,7 +4898,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[2]~FF  (.D(\u_IIR_filtre/n134 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -4908,7 +4907,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[3]~FF  (.D(\u_IIR_filtre/n134 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -4917,7 +4916,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[4]~FF  (.D(\u_IIR_filtre/n134 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -4926,7 +4925,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[5]~FF  (.D(\u_IIR_filtre/n134 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -4935,7 +4934,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[6]~FF  (.D(\u_IIR_filtre/n134 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -4944,7 +4943,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[7]~FF  (.D(\u_IIR_filtre/n134 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -4953,7 +4952,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[8]~FF  (.D(\u_IIR_filtre/n134 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -4962,7 +4961,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[9]~FF  (.D(\u_IIR_filtre/n134 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -4971,7 +4970,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[10]~FF  (.D(\u_IIR_filtre/n134 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -4980,7 +4979,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[11]~FF  (.D(\u_IIR_filtre/n134 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -4989,7 +4988,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[12]~FF  (.D(\u_IIR_filtre/n134 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -4998,7 +4997,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[13]~FF  (.D(\u_IIR_filtre/n134 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5007,7 +5006,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[14]~FF  (.D(\u_IIR_filtre/n134 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5016,7 +5015,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_axi_i[15]~FF  (.D(\u_IIR_filtre/n134 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_axi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_axi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_axi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_axi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_axi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5025,7 +5024,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_axi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_axi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[1]~FF  (.D(\u_IIR_filtre/n176 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5034,7 +5033,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[2]~FF  (.D(\u_IIR_filtre/n176 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5043,7 +5042,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[3]~FF  (.D(\u_IIR_filtre/n176 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5052,7 +5051,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[4]~FF  (.D(\u_IIR_filtre/n176 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5061,7 +5060,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[5]~FF  (.D(\u_IIR_filtre/n176 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5070,7 +5069,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[6]~FF  (.D(\u_IIR_filtre/n176 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5079,7 +5078,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[7]~FF  (.D(\u_IIR_filtre/n176 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5088,7 +5087,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[8]~FF  (.D(\u_IIR_filtre/n176 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5097,7 +5096,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[9]~FF  (.D(\u_IIR_filtre/n176 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5106,7 +5105,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[10]~FF  (.D(\u_IIR_filtre/n176 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5115,7 +5114,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[11]~FF  (.D(\u_IIR_filtre/n176 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5124,7 +5123,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[12]~FF  (.D(\u_IIR_filtre/n176 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5133,7 +5132,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[13]~FF  (.D(\u_IIR_filtre/n176 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5142,7 +5141,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[14]~FF  (.D(\u_IIR_filtre/n176 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5151,7 +5150,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_ayi_i[15]~FF  (.D(\u_IIR_filtre/n176 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_ayi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_ayi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_ayi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_ayi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_ayi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5160,7 +5159,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_ayi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_ayi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[1]~FF  (.D(\u_IIR_filtre/n218 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5169,7 +5168,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[2]~FF  (.D(\u_IIR_filtre/n218 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5178,7 +5177,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[3]~FF  (.D(\u_IIR_filtre/n218 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5187,7 +5186,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[4]~FF  (.D(\u_IIR_filtre/n218 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5196,7 +5195,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[5]~FF  (.D(\u_IIR_filtre/n218 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5205,7 +5204,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[6]~FF  (.D(\u_IIR_filtre/n218 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5214,7 +5213,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[7]~FF  (.D(\u_IIR_filtre/n218 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5223,7 +5222,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[8]~FF  (.D(\u_IIR_filtre/n218 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5232,7 +5231,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[9]~FF  (.D(\u_IIR_filtre/n218 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5241,7 +5240,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[10]~FF  (.D(\u_IIR_filtre/n218 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5250,7 +5249,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[11]~FF  (.D(\u_IIR_filtre/n218 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5259,7 +5258,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[12]~FF  (.D(\u_IIR_filtre/n218 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5268,7 +5267,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[13]~FF  (.D(\u_IIR_filtre/n218 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5277,7 +5276,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[14]~FF  (.D(\u_IIR_filtre/n218 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5286,7 +5285,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_azi_i[15]~FF  (.D(\u_IIR_filtre/n218 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_azi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_azi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_azi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_azi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_azi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5295,7 +5294,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_azi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_azi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[1]~FF  (.D(\u_IIR_filtre/n260 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5304,7 +5303,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[2]~FF  (.D(\u_IIR_filtre/n260 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5313,7 +5312,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[3]~FF  (.D(\u_IIR_filtre/n260 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5322,7 +5321,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[4]~FF  (.D(\u_IIR_filtre/n260 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5331,7 +5330,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[5]~FF  (.D(\u_IIR_filtre/n260 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5340,7 +5339,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[6]~FF  (.D(\u_IIR_filtre/n260 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5349,7 +5348,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[7]~FF  (.D(\u_IIR_filtre/n260 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5358,7 +5357,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[8]~FF  (.D(\u_IIR_filtre/n260 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5367,7 +5366,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[9]~FF  (.D(\u_IIR_filtre/n260 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5376,7 +5375,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[10]~FF  (.D(\u_IIR_filtre/n260 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5385,7 +5384,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[11]~FF  (.D(\u_IIR_filtre/n260 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5394,7 +5393,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[12]~FF  (.D(\u_IIR_filtre/n260 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5403,7 +5402,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[13]~FF  (.D(\u_IIR_filtre/n260 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5412,7 +5411,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[14]~FF  (.D(\u_IIR_filtre/n260 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5421,7 +5420,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gxi_i[15]~FF  (.D(\u_IIR_filtre/n260 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gxi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gxi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gxi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gxi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_gxi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5430,7 +5429,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gxi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_gxi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[1]~FF  (.D(\u_IIR_filtre/n302 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5439,7 +5438,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[2]~FF  (.D(\u_IIR_filtre/n302 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5448,7 +5447,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[3]~FF  (.D(\u_IIR_filtre/n302 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5457,7 +5456,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[4]~FF  (.D(\u_IIR_filtre/n302 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5466,7 +5465,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[5]~FF  (.D(\u_IIR_filtre/n302 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5475,7 +5474,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[6]~FF  (.D(\u_IIR_filtre/n302 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5484,7 +5483,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[7]~FF  (.D(\u_IIR_filtre/n302 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5493,7 +5492,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[8]~FF  (.D(\u_IIR_filtre/n302 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5502,7 +5501,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[9]~FF  (.D(\u_IIR_filtre/n302 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5511,7 +5510,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[10]~FF  (.D(\u_IIR_filtre/n302 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5520,7 +5519,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[11]~FF  (.D(\u_IIR_filtre/n302 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5529,7 +5528,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[12]~FF  (.D(\u_IIR_filtre/n302 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5538,7 +5537,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[13]~FF  (.D(\u_IIR_filtre/n302 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5547,7 +5546,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[14]~FF  (.D(\u_IIR_filtre/n302 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5556,7 +5555,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gyi_i[15]~FF  (.D(\u_IIR_filtre/n302 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gyi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gyi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gyi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gyi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_gyi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -5565,7 +5564,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gyi_i[15]~FF .SR_VALUE = 1'b0;
     defparam \f_gyi_i[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[1]~FF  (.D(\u_IIR_filtre/n344 [3]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[1]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[1]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[1]~FF .SR_POLARITY = 1'b0;
@@ -5574,7 +5573,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[1]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[2]~FF  (.D(\u_IIR_filtre/n344 [4]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[2]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[2]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[2]~FF .SR_POLARITY = 1'b0;
@@ -5583,7 +5582,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[2]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[3]~FF  (.D(\u_IIR_filtre/n344 [5]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[3]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[3]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[3]~FF .SR_POLARITY = 1'b0;
@@ -5592,7 +5591,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[3]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[4]~FF  (.D(\u_IIR_filtre/n344 [6]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[4]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[4]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[4]~FF .SR_POLARITY = 1'b0;
@@ -5601,7 +5600,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[4]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[5]~FF  (.D(\u_IIR_filtre/n344 [7]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[5]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[5]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[5]~FF .SR_POLARITY = 1'b0;
@@ -5610,7 +5609,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[5]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[6]~FF  (.D(\u_IIR_filtre/n344 [8]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[6]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[6]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[6]~FF .SR_POLARITY = 1'b0;
@@ -5619,7 +5618,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[6]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[7]~FF  (.D(\u_IIR_filtre/n344 [9]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[7]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[7]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[7]~FF .SR_POLARITY = 1'b0;
@@ -5628,7 +5627,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[7]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[8]~FF  (.D(\u_IIR_filtre/n344 [10]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[8]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[8]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[8]~FF .SR_POLARITY = 1'b0;
@@ -5637,7 +5636,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[8]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[9]~FF  (.D(\u_IIR_filtre/n344 [11]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[9]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[9]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[9]~FF .SR_POLARITY = 1'b0;
@@ -5646,7 +5645,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[9]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[10]~FF  (.D(\u_IIR_filtre/n344 [12]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[10]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[10]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[10]~FF .SR_POLARITY = 1'b0;
@@ -5655,7 +5654,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[10]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[11]~FF  (.D(\u_IIR_filtre/n344 [13]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[11]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[11]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[11]~FF .SR_POLARITY = 1'b0;
@@ -5664,7 +5663,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[11]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[12]~FF  (.D(\u_IIR_filtre/n344 [14]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[12]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[12]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[12]~FF .SR_POLARITY = 1'b0;
@@ -5673,7 +5672,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[12]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[13]~FF  (.D(\u_IIR_filtre/n344 [15]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[13]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[13]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[13]~FF .SR_POLARITY = 1'b0;
@@ -5682,7 +5681,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[13]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[14]~FF  (.D(\u_IIR_filtre/n344 [16]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[14]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[14]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[14]~FF .SR_POLARITY = 1'b0;
@@ -5691,7 +5690,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \f_gzi_i[14]~FF .SR_VALUE = 1'b0;
     defparam \f_gzi_i[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \f_gzi_i[15]~FF  (.D(\u_IIR_filtre/n344 [17]), .CE(\u_IIR_filtre/n465 [1]), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(f_gzi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(f_gzi_i[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \f_gzi_i[15]~FF .CLK_POLARITY = 1'b1;
     defparam \f_gzi_i[15]~FF .CE_POLARITY = 1'b1;
     defparam \f_gzi_i[15]~FF .SR_POLARITY = 1'b0;
@@ -6510,7 +6509,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/reg_gyro_z[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_IIR_filtre/IIR_filtre_state[1]~FF  (.D(\u_IIR_filtre/n465 [1]), 
-           .CE(ceg_net97), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_IIR_filtre/IIR_filtre_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
+           .CE(ceg_net97), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_IIR_filtre/IIR_filtre_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(107)
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .CE_POLARITY = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .SR_POLARITY = 1'b0;
@@ -6519,7 +6518,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .SR_VALUE = 1'b0;
     defparam \u_IIR_filtre/IIR_filtre_state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[8]~FF  (.D(\u_Motor_Control/n417 [8]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[8]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[8]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[8]~FF .SR_POLARITY = 1'b0;
@@ -6528,7 +6527,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[8]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[7]~FF  (.D(\u_Motor_Control/n417 [7]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[7]~FF .SR_POLARITY = 1'b0;
@@ -6537,7 +6536,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[7]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[2]~FF  (.D(\u_Motor_Control/n417 [2]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[2]~FF .SR_POLARITY = 1'b0;
@@ -6546,7 +6545,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[2]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[0]~FF  (.D(\u_Motor_Control/n417 [0]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[0]~FF .SR_POLARITY = 1'b0;
@@ -6555,7 +6554,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[0]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[6]~FF  (.D(\u_Motor_Control/n417 [6]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[6]~FF .SR_POLARITY = 1'b0;
@@ -6564,7 +6563,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[6]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[5]~FF  (.D(\u_Motor_Control/n417 [5]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[5]~FF .SR_POLARITY = 1'b0;
@@ -6573,7 +6572,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[5]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[4]~FF  (.D(\u_Motor_Control/n417 [4]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[4]~FF .SR_POLARITY = 1'b0;
@@ -6582,7 +6581,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[4]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[3]~FF  (.D(\u_Motor_Control/n417 [3]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[3]~FF .SR_POLARITY = 1'b0;
@@ -6591,7 +6590,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[3]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[0]~FF  (.D(\u_Motor_Control/n534 [0]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[0] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[0] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[0]~FF .SR_POLARITY = 1'b0;
@@ -6600,7 +6599,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[0]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[0]~FF  (.D(\u_Motor_Control/n494 [0]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[0]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[0]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[0]~FF .SR_POLARITY = 1'b0;
@@ -6609,7 +6608,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[0]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[0]~FF  (.D(\u_Motor_Control/n514 [0]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[0]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[0]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[0]~FF .SR_POLARITY = 1'b0;
@@ -6618,7 +6617,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[0]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[0]~FF  (.D(\u_Motor_Control/angle_raw_z[0] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[0]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[0]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[0]~FF .SR_POLARITY = 1'b0;
@@ -6627,7 +6626,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[0]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[9]~FF  (.D(\u_Motor_Control/n417 [9]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[9]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[9]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[9]~FF .SR_POLARITY = 1'b0;
@@ -6636,7 +6635,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[9]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[1]~FF  (.D(\u_Motor_Control/n417 [1]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[1]~FF .SR_POLARITY = 1'b0;
@@ -6645,7 +6644,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[1]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[10]~FF  (.D(\u_Motor_Control/n417 [10]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[10]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[10]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[10]~FF .SR_POLARITY = 1'b0;
@@ -6654,7 +6653,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[10]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[11]~FF  (.D(\u_Motor_Control/n417 [11]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[11]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[11]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[11]~FF .SR_POLARITY = 1'b0;
@@ -6663,7 +6662,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[11]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[12]~FF  (.D(\u_Motor_Control/n417 [12]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[12]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[12]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[12]~FF .SR_POLARITY = 1'b0;
@@ -6672,7 +6671,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[12]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[13]~FF  (.D(\u_Motor_Control/n417 [13]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[13]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[13]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[13]~FF .SR_POLARITY = 1'b0;
@@ -6681,7 +6680,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[13]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[14]~FF  (.D(\u_Motor_Control/n417 [14]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[14]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[14]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[14]~FF .SR_POLARITY = 1'b0;
@@ -6690,7 +6689,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[14]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[15]~FF  (.D(\u_Motor_Control/n417 [15]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[15]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[15]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[15]~FF .SR_POLARITY = 1'b0;
@@ -6699,7 +6698,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[15]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[16]~FF  (.D(\u_Motor_Control/n417 [16]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[16]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[16]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[16]~FF .SR_POLARITY = 1'b0;
@@ -6708,7 +6707,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[16]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[17]~FF  (.D(\u_Motor_Control/n417 [17]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[17]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[17]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[17]~FF .SR_POLARITY = 1'b0;
@@ -6717,7 +6716,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[17]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[17]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[18]~FF  (.D(\u_Motor_Control/n417 [18]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[18]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[18]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[18]~FF .SR_POLARITY = 1'b0;
@@ -6726,7 +6725,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[18]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[18]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[19]~FF  (.D(\u_Motor_Control/n417 [19]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[19]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[19]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[19]~FF .SR_POLARITY = 1'b0;
@@ -6735,7 +6734,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[19]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[20]~FF  (.D(\u_Motor_Control/n417 [20]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[20]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[20]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[20]~FF .SR_POLARITY = 1'b0;
@@ -6744,7 +6743,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[20]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[20]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[21]~FF  (.D(\u_Motor_Control/n417 [21]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[21]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[21]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[21]~FF .SR_POLARITY = 1'b0;
@@ -6753,7 +6752,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[21]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[21]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[22]~FF  (.D(\u_Motor_Control/n417 [22]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [22])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [22])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[22]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[22]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[22]~FF .SR_POLARITY = 1'b0;
@@ -6762,7 +6761,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_pool[22]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_pool[22]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_pool[23]~FF  (.D(\u_Motor_Control/n417 [23]), 
-           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_pool [23])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(data_valid_out), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_pool [23])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_pool[23]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[23]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_pool[23]~FF .SR_POLARITY = 1'b0;
@@ -6801,7 +6800,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/add_26/i31__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \u_Motor_Control/add_26/i31__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[1]~FF  (.D(\u_Motor_Control/n534 [1]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[1] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[1] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[1]~FF .SR_POLARITY = 1'b0;
@@ -6810,7 +6809,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[1]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[2]~FF  (.D(\u_Motor_Control/n534 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[2] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[2] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[2]~FF .SR_POLARITY = 1'b0;
@@ -6819,7 +6818,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[2]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[3]~FF  (.D(\u_Motor_Control/n534 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[3]~FF .SR_POLARITY = 1'b0;
@@ -6828,7 +6827,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[3]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[4]~FF  (.D(\u_Motor_Control/n534 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[4]~FF .SR_POLARITY = 1'b0;
@@ -6837,7 +6836,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[4]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[5]~FF  (.D(\u_Motor_Control/n534 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[5] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[5] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[5]~FF .SR_POLARITY = 1'b0;
@@ -6846,7 +6845,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[5]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[6]~FF  (.D(\u_Motor_Control/n534 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z[6] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z[6] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[6]~FF .SR_POLARITY = 1'b0;
@@ -6855,7 +6854,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[6]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_z[7]~FF  (.D(\u_Motor_Control/n534 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/angle_raw_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/angle_raw_z [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_z[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_z[7]~FF .SR_POLARITY = 1'b0;
@@ -6864,7 +6863,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_z[7]~FF .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_z[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[1]~FF  (.D(\u_Motor_Control/n494 [1]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[1]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[1]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[1]~FF .SR_POLARITY = 1'b0;
@@ -6873,7 +6872,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[1]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[2]~FF  (.D(\u_Motor_Control/n494 [2]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[2]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[2]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[2]~FF .SR_POLARITY = 1'b0;
@@ -6882,7 +6881,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[2]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[3]~FF  (.D(\u_Motor_Control/n494 [3]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[3]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[3]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[3]~FF .SR_POLARITY = 1'b0;
@@ -6891,7 +6890,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[3]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[4]~FF  (.D(\u_Motor_Control/n494 [4]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[4]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[4]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[4]~FF .SR_POLARITY = 1'b0;
@@ -6900,7 +6899,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[4]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[5]~FF  (.D(\u_Motor_Control/n494 [5]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[5]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[5]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[5]~FF .SR_POLARITY = 1'b0;
@@ -6909,7 +6908,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[5]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[6]~FF  (.D(\u_Motor_Control/n494 [6]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[6]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[6]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[6]~FF .SR_POLARITY = 1'b0;
@@ -6918,7 +6917,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[6]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_0[7]~FF  (.D(\u_Motor_Control/n494 [7]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_0[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_0[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_0[7]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_0[7]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_0[7]~FF .SR_POLARITY = 1'b0;
@@ -6927,7 +6926,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_0[7]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_0[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[1]~FF  (.D(\u_Motor_Control/n514 [1]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[1]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[1]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[1]~FF .SR_POLARITY = 1'b0;
@@ -6936,7 +6935,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[1]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[2]~FF  (.D(\u_Motor_Control/n514 [2]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[2]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[2]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[2]~FF .SR_POLARITY = 1'b0;
@@ -6945,7 +6944,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[2]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[3]~FF  (.D(\u_Motor_Control/n514 [3]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[3]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[3]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[3]~FF .SR_POLARITY = 1'b0;
@@ -6954,7 +6953,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[3]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[4]~FF  (.D(\u_Motor_Control/n514 [4]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[4]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[4]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[4]~FF .SR_POLARITY = 1'b0;
@@ -6963,7 +6962,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[4]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[5]~FF  (.D(\u_Motor_Control/n514 [5]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[5]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[5]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[5]~FF .SR_POLARITY = 1'b0;
@@ -6972,7 +6971,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[5]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[6]~FF  (.D(\u_Motor_Control/n514 [6]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[6]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[6]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[6]~FF .SR_POLARITY = 1'b0;
@@ -6981,7 +6980,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[6]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_1[7]~FF  (.D(\u_Motor_Control/n514 [7]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_1[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_1[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_1[7]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_1[7]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_1[7]~FF .SR_POLARITY = 1'b0;
@@ -6990,7 +6989,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_1[7]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_1[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[1]~FF  (.D(\u_Motor_Control/angle_raw_z[1] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[1]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[1]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[1]~FF .SR_POLARITY = 1'b0;
@@ -6999,7 +6998,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[1]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[2]~FF  (.D(\u_Motor_Control/angle_raw_z[2] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[2]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[2]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[2]~FF .SR_POLARITY = 1'b0;
@@ -7008,7 +7007,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[2]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[3]~FF  (.D(\u_Motor_Control/angle_raw_z[3] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[3]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[3]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[3]~FF .SR_POLARITY = 1'b0;
@@ -7017,7 +7016,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[3]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[4]~FF  (.D(\u_Motor_Control/angle_raw_z[4] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[4]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[4]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[4]~FF .SR_POLARITY = 1'b0;
@@ -7026,7 +7025,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[4]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[5]~FF  (.D(\u_Motor_Control/angle_raw_z[5] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[5]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[5]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[5]~FF .SR_POLARITY = 1'b0;
@@ -7035,7 +7034,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[5]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[6]~FF  (.D(\u_Motor_Control/angle_raw_z[6] ), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[6]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[6]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[6]~FF .SR_POLARITY = 1'b0;
@@ -7044,7 +7043,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \angle_reg_2[6]~FF .SR_VALUE = 1'b0;
     defparam \angle_reg_2[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \angle_reg_2[7]~FF  (.D(\u_Motor_Control/angle_raw_z [7]), .CE(pwm_valid_x), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(angle_reg_2[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(angle_reg_2[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \angle_reg_2[7]~FF .CLK_POLARITY = 1'b1;
     defparam \angle_reg_2[7]~FF .CE_POLARITY = 1'b1;
     defparam \angle_reg_2[7]~FF .SR_POLARITY = 1'b0;
@@ -7081,7 +7080,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/add_6/i15__AUX_ADD_CO .I0_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/add_6/i15__AUX_ADD_CO .I1_POLARITY = 1'b1;
     EFX_FF \u_uart_rx_controller/state[0]~FF  (.D(\u_uart_rx_controller/n74 [0]), 
-           .CE(ceg_net227), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net227), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/state[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/state[0]~FF .SR_POLARITY = 1'b0;
@@ -7090,7 +7089,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/state[0]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[0]~FF  (.D(\u_uart_rx_controller/n54 [0]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[0]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[0]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[0]~FF .SR_POLARITY = 1'b0;
@@ -7099,7 +7098,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[0]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[0]~FF  (.D(\u_uart_rx_controller/n63 [0]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[0]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[0]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[0]~FF .SR_POLARITY = 1'b0;
@@ -7108,7 +7107,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[0]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[0]~FF  (.D(\u_uart_rx_controller/n78 [0]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[0]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[0]~FF .SR_POLARITY = 1'b0;
@@ -7117,7 +7116,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[0]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[0]~FF  (.D(rx_data_sig[0]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[0]~FF .CE_POLARITY = 1'b1;
@@ -7127,7 +7126,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[0]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/packet_valid_reg~FF  (.D(\u_uart_rx_controller/state [2]), 
-           .CE(ceg_net413), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/packet_valid_reg )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net413), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/packet_valid_reg )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/packet_valid_reg~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/packet_valid_reg~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/packet_valid_reg~FF .SR_POLARITY = 1'b0;
@@ -7136,7 +7135,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/packet_valid_reg~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/packet_valid_reg~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rst_conf_sig~FF  (.D(\u_uart_rx_controller/n114 ), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rst_conf_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rst_conf_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \rst_conf_sig~FF .CLK_POLARITY = 1'b1;
     defparam \rst_conf_sig~FF .CE_POLARITY = 1'b1;
     defparam \rst_conf_sig~FF .SR_POLARITY = 1'b0;
@@ -7145,7 +7144,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rst_conf_sig~FF .SR_VALUE = 1'b0;
     defparam \rst_conf_sig~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[1]~FF  (.D(\u_uart_rx_controller/n54 [1]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[1]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[1]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[1]~FF .SR_POLARITY = 1'b0;
@@ -7154,7 +7153,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[1]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[2]~FF  (.D(\u_uart_rx_controller/n54 [2]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[2]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[2]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[2]~FF .SR_POLARITY = 1'b0;
@@ -7163,7 +7162,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[2]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[3]~FF  (.D(\u_uart_rx_controller/n54 [3]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[3]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[3]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[3]~FF .SR_POLARITY = 1'b0;
@@ -7172,7 +7171,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[3]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[4]~FF  (.D(\u_uart_rx_controller/n54 [4]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[4]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[4]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[4]~FF .SR_POLARITY = 1'b0;
@@ -7181,7 +7180,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[4]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[5]~FF  (.D(\u_uart_rx_controller/n54 [5]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[5]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[5]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[5]~FF .SR_POLARITY = 1'b0;
@@ -7190,7 +7189,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[5]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[6]~FF  (.D(\u_uart_rx_controller/n54 [6]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[6]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[6]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[6]~FF .SR_POLARITY = 1'b0;
@@ -7199,7 +7198,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[6]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[7]~FF  (.D(\u_uart_rx_controller/n54 [7]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(g_value_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(g_value_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[7]~FF .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[7]~FF .CE_POLARITY = 1'b1;
     defparam \g_value_sig[7]~FF .SR_POLARITY = 1'b0;
@@ -7208,7 +7207,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[7]~FF .SR_VALUE = 1'b0;
     defparam \g_value_sig[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[1]~FF  (.D(\u_uart_rx_controller/n63 [1]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[1]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[1]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[1]~FF .SR_POLARITY = 1'b0;
@@ -7217,7 +7216,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[1]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[2]~FF  (.D(\u_uart_rx_controller/n63 [2]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[2]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[2]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[2]~FF .SR_POLARITY = 1'b0;
@@ -7226,7 +7225,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[2]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[3]~FF  (.D(\u_uart_rx_controller/n63 [3]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[3]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[3]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[3]~FF .SR_POLARITY = 1'b0;
@@ -7235,7 +7234,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[3]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[4]~FF  (.D(\u_uart_rx_controller/n63 [4]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[4]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[4]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[4]~FF .SR_POLARITY = 1'b0;
@@ -7244,7 +7243,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[4]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[5]~FF  (.D(\u_uart_rx_controller/n63 [5]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[5]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[5]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[5]~FF .SR_POLARITY = 1'b0;
@@ -7253,7 +7252,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[5]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[6]~FF  (.D(\u_uart_rx_controller/n63 [6]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[6]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[6]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[6]~FF .SR_POLARITY = 1'b0;
@@ -7262,7 +7261,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[6]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[7]~FF  (.D(\u_uart_rx_controller/n63 [7]), .CE(ceg_net427), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(dps_value_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(dps_value_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[7]~FF .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[7]~FF .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[7]~FF .SR_POLARITY = 1'b0;
@@ -7271,7 +7270,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[7]~FF .SR_VALUE = 1'b0;
     defparam \dps_value_sig[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[1]~FF  (.D(\u_uart_rx_controller/n78 [1]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[1]~FF .SR_POLARITY = 1'b0;
@@ -7280,7 +7279,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[1]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[2]~FF  (.D(\u_uart_rx_controller/n78 [2]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[2]~FF .SR_POLARITY = 1'b0;
@@ -7289,7 +7288,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[2]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[3]~FF  (.D(\u_uart_rx_controller/n78 [3]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[3]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[3]~FF .SR_POLARITY = 1'b0;
@@ -7298,7 +7297,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[3]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[4]~FF  (.D(\u_uart_rx_controller/n78 [4]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[4]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[4]~FF .SR_POLARITY = 1'b0;
@@ -7307,7 +7306,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[4]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[5]~FF  (.D(\u_uart_rx_controller/n78 [5]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[5]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[5]~FF .SR_POLARITY = 1'b0;
@@ -7316,7 +7315,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[5]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[6]~FF  (.D(\u_uart_rx_controller/n78 [6]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[6]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[6]~FF .SR_POLARITY = 1'b0;
@@ -7325,7 +7324,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[6]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/g_value_temp[7]~FF  (.D(\u_uart_rx_controller/n78 [7]), 
-           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/g_value_temp [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net411), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/g_value_temp [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/g_value_temp[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[7]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/g_value_temp[7]~FF .SR_POLARITY = 1'b0;
@@ -7334,7 +7333,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/g_value_temp[7]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/g_value_temp[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[1]~FF  (.D(rx_data_sig[1]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[1]~FF .CE_POLARITY = 1'b1;
@@ -7344,7 +7343,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[1]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[2]~FF  (.D(rx_data_sig[2]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[2]~FF .CE_POLARITY = 1'b1;
@@ -7354,7 +7353,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[2]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[3]~FF  (.D(rx_data_sig[3]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[3]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[3]~FF .CE_POLARITY = 1'b1;
@@ -7364,7 +7363,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[3]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[4]~FF  (.D(rx_data_sig[4]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[4]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[4]~FF .CE_POLARITY = 1'b1;
@@ -7374,7 +7373,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[4]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[5]~FF  (.D(rx_data_sig[5]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[5]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[5]~FF .CE_POLARITY = 1'b1;
@@ -7384,7 +7383,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[5]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[6]~FF  (.D(rx_data_sig[6]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[6]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[6]~FF .CE_POLARITY = 1'b1;
@@ -7394,7 +7393,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[6]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/dps_value_temp[7]~FF  (.D(rx_data_sig[7]), 
-           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(LED[3]), 
+           .CE(\u_uart_rx_controller/n595 ), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(\u_uart_rx_controller/dps_value_temp [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/dps_value_temp[7]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/dps_value_temp[7]~FF .CE_POLARITY = 1'b1;
@@ -7404,7 +7403,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/dps_value_temp[7]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/dps_value_temp[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/state[1]~FF  (.D(\u_uart_rx_controller/n74 [1]), 
-           .CE(ceg_net227), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net227), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/state[1]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/state[1]~FF .SR_POLARITY = 1'b0;
@@ -7413,7 +7412,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/state[1]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_rx_controller/state[2]~FF  (.D(\u_uart_rx_controller/n74 [2]), 
-           .CE(ceg_net227), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_rx_controller/state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .CE(ceg_net227), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_rx_controller/state [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \u_uart_rx_controller/state[2]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/state[2]~FF .CE_POLARITY = 1'b1;
     defparam \u_uart_rx_controller/state[2]~FF .SR_POLARITY = 1'b0;
@@ -7422,7 +7421,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_rx_controller/state[2]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_rx_controller/state[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/state[0]~FF  (.D(\Inst_uart_rx/state [0]), .CE(ceg_net601), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_rx/state[0]~FF .SR_POLARITY = 1'b0;
@@ -7431,7 +7430,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/state[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[0]~FF  (.D(\Inst_uart_rx/data_buffer [0]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[0]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[0]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[0]~FF .SR_POLARITY = 1'b0;
@@ -7440,7 +7439,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[0]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bit_idx[0]~FF  (.D(\Inst_uart_rx/n148 [0]), .CE(ceg_net438), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bit_idx[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bit_idx[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_rx/bit_idx[0]~FF .SR_POLARITY = 1'b0;
@@ -7449,7 +7448,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bit_idx[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bit_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bitcounter[0]~FF  (.D(\Inst_uart_rx/n138 [0]), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bitcounter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[0]~FF .SR_POLARITY = 1'b0;
@@ -7458,7 +7457,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bitcounter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bitcounter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_valid~FF  (.D(\Inst_uart_rx/state [1]), .CE(ceg_net440), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_valid)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_valid)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_valid~FF .CLK_POLARITY = 1'b1;
     defparam \rx_valid~FF .CE_POLARITY = 1'b0;
     defparam \rx_valid~FF .SR_POLARITY = 1'b0;
@@ -7467,7 +7466,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_valid~FF .SR_VALUE = 1'b0;
     defparam \rx_valid~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[0]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n464 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n464 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[0]~FF .SR_POLARITY = 1'b0;
@@ -7476,7 +7475,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/rx_sync1~FF  (.D(rx), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(\Inst_uart_rx/rx_sync1 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .SR(rst_n_i), .Q(\Inst_uart_rx/rx_sync1 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/rx_sync1~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/rx_sync1~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/rx_sync1~FF .SR_POLARITY = 1'b0;
@@ -7485,7 +7484,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/rx_sync1~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/rx_sync1~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/rx_sync2~FF  (.D(\Inst_uart_rx/rx_sync1 ), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/rx_sync2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/rx_sync2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/rx_sync2~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/rx_sync2~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/rx_sync2~FF .SR_POLARITY = 1'b0;
@@ -7494,7 +7493,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/rx_sync2~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/rx_sync2~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[1]~FF  (.D(\Inst_uart_rx/data_buffer [1]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[1]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[1]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[1]~FF .SR_POLARITY = 1'b0;
@@ -7503,7 +7502,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[1]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[2]~FF  (.D(\Inst_uart_rx/data_buffer [2]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[2]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[2]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[2]~FF .SR_POLARITY = 1'b0;
@@ -7512,7 +7511,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[2]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[3]~FF  (.D(\Inst_uart_rx/data_buffer [3]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[3]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[3]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[3]~FF .SR_POLARITY = 1'b0;
@@ -7521,7 +7520,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[3]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[4]~FF  (.D(\Inst_uart_rx/data_buffer [4]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[4]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[4]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[4]~FF .SR_POLARITY = 1'b0;
@@ -7530,7 +7529,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[4]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[5]~FF  (.D(\Inst_uart_rx/data_buffer [5]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[5]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[5]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[5]~FF .SR_POLARITY = 1'b0;
@@ -7539,7 +7538,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[5]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[6]~FF  (.D(\Inst_uart_rx/data_buffer [6]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[6]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[6]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[6]~FF .SR_POLARITY = 1'b0;
@@ -7548,7 +7547,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[6]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rx_data_sig[7]~FF  (.D(\Inst_uart_rx/data_buffer [7]), .CE(\Inst_uart_rx/n439 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(rx_data_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(rx_data_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \rx_data_sig[7]~FF .CLK_POLARITY = 1'b1;
     defparam \rx_data_sig[7]~FF .CE_POLARITY = 1'b1;
     defparam \rx_data_sig[7]~FF .SR_POLARITY = 1'b0;
@@ -7557,7 +7556,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rx_data_sig[7]~FF .SR_VALUE = 1'b0;
     defparam \rx_data_sig[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[1]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n486 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n486 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[1]~FF .SR_POLARITY = 1'b0;
@@ -7566,7 +7565,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[2]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n485 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n485 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[2]~FF .SR_POLARITY = 1'b0;
@@ -7575,7 +7574,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[3]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n458 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n458 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[3]~FF .SR_POLARITY = 1'b0;
@@ -7584,7 +7583,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[4]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n456 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n456 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[4]~FF .SR_POLARITY = 1'b0;
@@ -7593,7 +7592,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[5]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n454 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n454 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[5]~FF .SR_POLARITY = 1'b0;
@@ -7602,7 +7601,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[6]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n481 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n481 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[6]~FF .SR_POLARITY = 1'b0;
@@ -7611,7 +7610,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/data_buffer[7]~FF  (.D(\Inst_uart_rx/rx_sync2 ), 
-           .CE(\Inst_uart_rx/n480 ), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CE(\Inst_uart_rx/n480 ), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/data_buffer[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/data_buffer[7]~FF .SR_POLARITY = 1'b0;
@@ -7620,7 +7619,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/data_buffer[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/data_buffer[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bitcounter[1]~FF  (.D(\Inst_uart_rx/n138 [1]), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bitcounter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[1]~FF .SR_POLARITY = 1'b0;
@@ -7629,7 +7628,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bitcounter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bitcounter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bitcounter[2]~FF  (.D(\Inst_uart_rx/n138 [2]), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bitcounter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[2]~FF .SR_POLARITY = 1'b0;
@@ -7638,7 +7637,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bitcounter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bitcounter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bitcounter[3]~FF  (.D(\Inst_uart_rx/n138 [3]), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bitcounter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[3]~FF .SR_POLARITY = 1'b0;
@@ -7647,7 +7646,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bitcounter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bitcounter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bitcounter[4]~FF  (.D(\Inst_uart_rx/n138 [4]), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bitcounter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bitcounter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bitcounter[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[4]~FF .SR_POLARITY = 1'b0;
@@ -7656,7 +7655,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bitcounter[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bitcounter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bitcounter[5]~FF  (.D(\Inst_uart_rx/n138 [5]), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bitcounter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bitcounter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bitcounter[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bitcounter[5]~FF .SR_POLARITY = 1'b0;
@@ -7665,7 +7664,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bitcounter[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bitcounter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bit_idx[1]~FF  (.D(\Inst_uart_rx/n148 [1]), .CE(ceg_net438), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bit_idx[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bit_idx[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_rx/bit_idx[1]~FF .SR_POLARITY = 1'b0;
@@ -7674,7 +7673,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bit_idx[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bit_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/bit_idx[2]~FF  (.D(\Inst_uart_rx/n148 [2]), .CE(ceg_net438), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/bit_idx[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/bit_idx[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_rx/bit_idx[2]~FF .SR_POLARITY = 1'b0;
@@ -7683,7 +7682,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/bit_idx[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/bit_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_rx/state[1]~FF  (.D(\Inst_uart_rx/n145 [1]), .CE(ceg_net601), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_rx/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_rx/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(110)
     defparam \Inst_uart_rx/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_rx/state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_rx/state[1]~FF .SR_POLARITY = 1'b0;
@@ -7692,7 +7691,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_rx/state[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_rx/state[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[0]~FF  (.D(\Inst_Spi_Mode_3/n129 [0]), 
-           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .SR_POLARITY = 1'b0;
@@ -7701,7 +7700,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/state[0]~FF  (.D(\Inst_Spi_Mode_3/state [0]), 
-           .CE(ceg_net602), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net602), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/state[0]~FF .SR_POLARITY = 1'b0;
@@ -7710,7 +7709,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/state[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[0]~FF  (.D(\Inst_Spi_Mode_3/n135 [0]), 
-           .CE(ceg_net442), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net442), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[0]~FF .SR_POLARITY = 1'b0;
@@ -7728,7 +7727,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[0]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bit_idx[0]~FF  (.D(\Inst_Spi_Mode_3/n124 [0]), 
-           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_POLARITY = 1'b0;
@@ -7737,7 +7736,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_VALUE = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \spi_data_valid~FF  (.D(ceg_net163), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(spi_data_valid)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .SR(rst_n_i), .Q(spi_data_valid)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \spi_data_valid~FF .CLK_POLARITY = 1'b1;
     defparam \spi_data_valid~FF .CE_POLARITY = 1'b1;
     defparam \spi_data_valid~FF .SR_POLARITY = 1'b0;
@@ -7746,7 +7745,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_data_valid~FF .SR_VALUE = 1'b0;
     defparam \spi_data_valid~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \sclk_o~FF  (.D(\~ceg_net171 ), .CE(ceg_net444), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(sclk_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .SR(rst_n_i), .Q(sclk_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \sclk_o~FF .CLK_POLARITY = 1'b1;
     defparam \sclk_o~FF .CE_POLARITY = 1'b0;
     defparam \sclk_o~FF .SR_POLARITY = 1'b0;
@@ -7755,7 +7754,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \sclk_o~FF .SR_VALUE = 1'b1;
     defparam \sclk_o~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \mosi_o~FF  (.D(\Inst_Spi_Mode_3/n25 ), .CE(\Inst_Spi_Mode_3/n466 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(mosi_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(mosi_o)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \mosi_o~FF .CLK_POLARITY = 1'b1;
     defparam \mosi_o~FF .CE_POLARITY = 1'b0;
     defparam \mosi_o~FF .SR_POLARITY = 1'b0;
@@ -7764,7 +7763,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \mosi_o~FF .SR_VALUE = 1'b0;
     defparam \mosi_o~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[1]~FF  (.D(\Inst_Spi_Mode_3/n135 [1]), 
-           .CE(ceg_net445), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net445), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .SR_POLARITY = 1'b0;
@@ -7773,7 +7772,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[2]~FF  (.D(\Inst_Spi_Mode_3/n135 [2]), 
-           .CE(ceg_net446), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net446), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .SR_POLARITY = 1'b0;
@@ -7782,7 +7781,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[3]~FF  (.D(\Inst_Spi_Mode_3/n135 [3]), 
-           .CE(ceg_net447), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net447), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .SR_POLARITY = 1'b0;
@@ -7791,7 +7790,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[4]~FF  (.D(\Inst_Spi_Mode_3/n135 [4]), 
-           .CE(ceg_net448), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net448), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .SR_POLARITY = 1'b0;
@@ -7800,7 +7799,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[5]~FF  (.D(\Inst_Spi_Mode_3/n135 [5]), 
-           .CE(ceg_net449), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net449), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .SR_POLARITY = 1'b0;
@@ -7809,7 +7808,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[6]~FF  (.D(\Inst_Spi_Mode_3/n135 [6]), 
-           .CE(ceg_net450), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net450), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .SR_POLARITY = 1'b0;
@@ -7818,7 +7817,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/data_buffer[7]~FF  (.D(\Inst_Spi_Mode_3/n135 [7]), 
-           .CE(ceg_net451), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net451), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/data_buffer[7]~FF .SR_POLARITY = 1'b0;
@@ -7890,7 +7889,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \spi_to_mpu_data[7]~FF .SR_VALUE = 1'b0;
     defparam \spi_to_mpu_data[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[1]~FF  (.D(\Inst_Spi_Mode_3/n129 [1]), 
-           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .SR_POLARITY = 1'b0;
@@ -7899,7 +7898,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[2]~FF  (.D(\Inst_Spi_Mode_3/n129 [2]), 
-           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .SR_POLARITY = 1'b0;
@@ -7908,7 +7907,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bitcounter[3]~FF  (.D(\Inst_Spi_Mode_3/n129 [3]), 
-           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net163), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .SR_POLARITY = 1'b0;
@@ -7917,7 +7916,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_Spi_Mode_3/bitcounter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bit_idx[1]~FF  (.D(\Inst_Spi_Mode_3/n124 [1]), 
-           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .SR_POLARITY = 1'b0;
@@ -7926,7 +7925,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .SR_VALUE = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/bit_idx[2]~FF  (.D(\Inst_Spi_Mode_3/n124 [2]), 
-           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CE(ceg_net443), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_POLARITY = 1'b0;
@@ -7935,7 +7934,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_VALUE = 1'b1;
     defparam \Inst_Spi_Mode_3/bit_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_Spi_Mode_3/state[1]~FF  (.D(\Inst_Spi_Mode_3/n144 [1]), .CE(ceg_net602), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_Spi_Mode_3/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_Spi_Mode_3/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Spi_Mode_3.vhd(109)
     defparam \Inst_Spi_Mode_3/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_Spi_Mode_3/state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_Spi_Mode_3/state[1]~FF .SR_POLARITY = 1'b0;
@@ -8124,7 +8123,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9]~FF .SR_VALUE = 1'b0;
     defparam \u_FIFO/u_efx_fifo_top/xefx_fifo_ctl/raddr_cntr[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[5]~FF  (.D(\Inst_pwm_servo_0/n63 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[5]~FF .SR_POLARITY = 1'b0;
@@ -8133,7 +8132,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[4]~FF  (.D(\Inst_pwm_servo_0/n63 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[4]~FF .SR_POLARITY = 1'b0;
@@ -8142,7 +8141,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[3]~FF  (.D(\Inst_pwm_servo_0/n63 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[3]~FF .SR_POLARITY = 1'b0;
@@ -8151,7 +8150,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[0]~FF  (.D(\Inst_pwm_servo_0/n63 [0]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[0]~FF .SR_POLARITY = 1'b0;
@@ -8160,7 +8159,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[2]~FF  (.D(\Inst_pwm_servo_0/n63 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[2]~FF .SR_POLARITY = 1'b0;
@@ -8169,7 +8168,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[1]~FF  (.D(\Inst_pwm_servo_0/n63 [1]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[1]~FF .SR_POLARITY = 1'b0;
@@ -8178,7 +8177,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \pwm_out_0~FF  (.D(\Inst_pwm_servo_0/n86 ), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(pwm_out_0)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .SR(rst_n_i), .Q(pwm_out_0)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \pwm_out_0~FF .CLK_POLARITY = 1'b1;
     defparam \pwm_out_0~FF .CE_POLARITY = 1'b1;
     defparam \pwm_out_0~FF .SR_POLARITY = 1'b0;
@@ -8186,7 +8185,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \pwm_out_0~FF .SR_SYNC = 1'b0;
     defparam \pwm_out_0~FF .SR_VALUE = 1'b0;
     defparam \pwm_out_0~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \pwm_valid_x~FF  (.D(\Inst_pwm_servo_0/n40 ), .CE(LED[3]), .CLK(\clk_i~O ), 
+    EFX_FF \pwm_valid_x~FF  (.D(\Inst_pwm_servo_0/n40 ), .CE(rst_n_i), .CLK(\clk_i~O ), 
            .SR(1'b0), .Q(pwm_valid_x)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \pwm_valid_x~FF .CLK_POLARITY = 1'b1;
     defparam \pwm_valid_x~FF .CE_POLARITY = 1'b1;
@@ -8196,7 +8195,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \pwm_valid_x~FF .SR_VALUE = 1'b0;
     defparam \pwm_valid_x~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[6]~FF  (.D(\Inst_pwm_servo_0/n63 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[6]~FF .SR_POLARITY = 1'b0;
@@ -8205,7 +8204,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[7]~FF  (.D(\Inst_pwm_servo_0/n63 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[7]~FF .SR_POLARITY = 1'b0;
@@ -8214,7 +8213,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[8]~FF  (.D(\Inst_pwm_servo_0/n63 [8]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[8]~FF .SR_POLARITY = 1'b0;
@@ -8223,7 +8222,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[9]~FF  (.D(\Inst_pwm_servo_0/n63 [9]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[9]~FF .SR_POLARITY = 1'b0;
@@ -8232,7 +8231,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[10]~FF  (.D(\Inst_pwm_servo_0/n63 [10]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[10]~FF .SR_POLARITY = 1'b0;
@@ -8241,7 +8240,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[11]~FF  (.D(\Inst_pwm_servo_0/n63 [11]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[11]~FF .SR_POLARITY = 1'b0;
@@ -8250,7 +8249,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[12]~FF  (.D(\Inst_pwm_servo_0/n63 [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[12]~FF .SR_POLARITY = 1'b0;
@@ -8259,7 +8258,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[13]~FF  (.D(\Inst_pwm_servo_0/n63 [13]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[13]~FF .SR_POLARITY = 1'b0;
@@ -8268,7 +8267,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[14]~FF  (.D(\Inst_pwm_servo_0/n63 [14]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[14]~FF .SR_POLARITY = 1'b0;
@@ -8277,7 +8276,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[15]~FF  (.D(\Inst_pwm_servo_0/n63 [15]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[15]~FF .SR_POLARITY = 1'b0;
@@ -8286,7 +8285,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[16]~FF  (.D(\Inst_pwm_servo_0/n63 [16]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[16]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[16]~FF .SR_POLARITY = 1'b0;
@@ -8295,7 +8294,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[17]~FF  (.D(\Inst_pwm_servo_0/n63 [17]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[17]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[17]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[17]~FF .SR_POLARITY = 1'b0;
@@ -8304,7 +8303,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[17]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[17]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[18]~FF  (.D(\Inst_pwm_servo_0/n63 [18]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[18]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[18]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[18]~FF .SR_POLARITY = 1'b0;
@@ -8313,7 +8312,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[18]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[18]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/counter[19]~FF  (.D(\Inst_pwm_servo_0/n63 [19]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/counter [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/counter [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/counter[19]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[19]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/counter[19]~FF .SR_POLARITY = 1'b0;
@@ -8322,7 +8321,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/counter[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/counter[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[2]~FF  (.D(\Inst_pwm_servo_0/n6 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[2]~FF .SR_POLARITY = 1'b0;
@@ -8331,7 +8330,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[3]~FF  (.D(\Inst_pwm_servo_0/n6 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[3]~FF .SR_POLARITY = 1'b0;
@@ -8340,7 +8339,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[4]~FF  (.D(\Inst_pwm_servo_0/n24 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[4]~FF .SR_POLARITY = 1'b0;
@@ -8349,7 +8348,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[5]~FF  (.D(\Inst_pwm_servo_0/n24 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[5]~FF .SR_POLARITY = 1'b0;
@@ -8358,7 +8357,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[6]~FF  (.D(\Inst_pwm_servo_0/n24 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[6]~FF .SR_POLARITY = 1'b0;
@@ -8367,7 +8366,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[7]~FF  (.D(\Inst_pwm_servo_0/n24 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[7]~FF .SR_POLARITY = 1'b0;
@@ -8376,7 +8375,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[8]~FF  (.D(\Inst_pwm_servo_0/n24 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width[8] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width[8] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[8]~FF .SR_POLARITY = 1'b0;
@@ -8385,7 +8384,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[9]~FF  (.D(\Inst_pwm_servo_0/n24 [8]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[9]~FF .SR_POLARITY = 1'b0;
@@ -8394,7 +8393,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[10]~FF  (.D(\Inst_pwm_servo_0/n24 [9]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[10]~FF .SR_POLARITY = 1'b0;
@@ -8403,7 +8402,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[11]~FF  (.D(\Inst_pwm_servo_0/n24 [10]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[11]~FF .SR_POLARITY = 1'b0;
@@ -8412,7 +8411,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[12]~FF  (.D(\Inst_pwm_servo_0/n24 [11]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[12]~FF .SR_POLARITY = 1'b0;
@@ -8421,7 +8420,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[13]~FF  (.D(\Inst_pwm_servo_0/n24 [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[13]~FF .SR_POLARITY = 1'b0;
@@ -8430,7 +8429,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[14]~FF  (.D(\Inst_pwm_servo_0/n24 [13]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width[14] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width[14] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[14]~FF .SR_POLARITY = 1'b0;
@@ -8439,7 +8438,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[15]~FF  (.D(\Inst_pwm_servo_0/n24 [14]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[15]~FF .SR_POLARITY = 1'b0;
@@ -8448,7 +8447,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_0/pulse_width[16]~FF  (.D(\Inst_pwm_servo_0/n23 ), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_0/pulse_width [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_0/pulse_width [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_0/pulse_width[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[16]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/pulse_width[16]~FF .SR_POLARITY = 1'b0;
@@ -8457,7 +8456,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_0/pulse_width[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_0/pulse_width[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[5]~FF  (.D(\Inst_pwm_servo_1/n63 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[5]~FF .SR_POLARITY = 1'b0;
@@ -8466,7 +8465,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[4]~FF  (.D(\Inst_pwm_servo_1/n63 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[4]~FF .SR_POLARITY = 1'b0;
@@ -8475,7 +8474,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[3]~FF  (.D(\Inst_pwm_servo_1/n63 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[3]~FF .SR_POLARITY = 1'b0;
@@ -8484,7 +8483,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[0]~FF  (.D(\Inst_pwm_servo_1/n63 [0]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[0]~FF .SR_POLARITY = 1'b0;
@@ -8493,7 +8492,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[2]~FF  (.D(\Inst_pwm_servo_1/n63 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[2]~FF .SR_POLARITY = 1'b0;
@@ -8502,7 +8501,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[1]~FF  (.D(\Inst_pwm_servo_1/n63 [1]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[1]~FF .SR_POLARITY = 1'b0;
@@ -8511,7 +8510,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \pwm_out_1~FF  (.D(\Inst_pwm_servo_1/n86 ), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(pwm_out_1)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .SR(rst_n_i), .Q(pwm_out_1)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \pwm_out_1~FF .CLK_POLARITY = 1'b1;
     defparam \pwm_out_1~FF .CE_POLARITY = 1'b1;
     defparam \pwm_out_1~FF .SR_POLARITY = 1'b0;
@@ -8520,7 +8519,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \pwm_out_1~FF .SR_VALUE = 1'b0;
     defparam \pwm_out_1~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[6]~FF  (.D(\Inst_pwm_servo_1/n63 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[6]~FF .SR_POLARITY = 1'b0;
@@ -8529,7 +8528,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[7]~FF  (.D(\Inst_pwm_servo_1/n63 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[7]~FF .SR_POLARITY = 1'b0;
@@ -8538,7 +8537,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[8]~FF  (.D(\Inst_pwm_servo_1/n63 [8]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[8]~FF .SR_POLARITY = 1'b0;
@@ -8547,7 +8546,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[9]~FF  (.D(\Inst_pwm_servo_1/n63 [9]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[9]~FF .SR_POLARITY = 1'b0;
@@ -8556,7 +8555,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[10]~FF  (.D(\Inst_pwm_servo_1/n63 [10]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[10]~FF .SR_POLARITY = 1'b0;
@@ -8565,7 +8564,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[11]~FF  (.D(\Inst_pwm_servo_1/n63 [11]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[11]~FF .SR_POLARITY = 1'b0;
@@ -8574,7 +8573,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[12]~FF  (.D(\Inst_pwm_servo_1/n63 [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[12]~FF .SR_POLARITY = 1'b0;
@@ -8583,7 +8582,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[13]~FF  (.D(\Inst_pwm_servo_1/n63 [13]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[13]~FF .SR_POLARITY = 1'b0;
@@ -8592,7 +8591,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[14]~FF  (.D(\Inst_pwm_servo_1/n63 [14]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[14]~FF .SR_POLARITY = 1'b0;
@@ -8601,7 +8600,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[15]~FF  (.D(\Inst_pwm_servo_1/n63 [15]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[15]~FF .SR_POLARITY = 1'b0;
@@ -8610,7 +8609,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[16]~FF  (.D(\Inst_pwm_servo_1/n63 [16]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[16]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[16]~FF .SR_POLARITY = 1'b0;
@@ -8619,7 +8618,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/counter[19]~FF  (.D(\Inst_pwm_servo_1/n63 [19]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/counter [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/counter [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/counter[19]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[19]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/counter[19]~FF .SR_POLARITY = 1'b0;
@@ -8628,7 +8627,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/counter[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/counter[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[2]~FF  (.D(\Inst_pwm_servo_1/n6 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[2]~FF .SR_POLARITY = 1'b0;
@@ -8637,7 +8636,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[3]~FF  (.D(\Inst_pwm_servo_1/n6 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[3]~FF .SR_POLARITY = 1'b0;
@@ -8646,7 +8645,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[4]~FF  (.D(\Inst_pwm_servo_1/n24 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[4]~FF .SR_POLARITY = 1'b0;
@@ -8655,7 +8654,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[5]~FF  (.D(\Inst_pwm_servo_1/n24 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[5]~FF .SR_POLARITY = 1'b0;
@@ -8664,7 +8663,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[6]~FF  (.D(\Inst_pwm_servo_1/n24 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[6]~FF .SR_POLARITY = 1'b0;
@@ -8673,7 +8672,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[7]~FF  (.D(\Inst_pwm_servo_1/n24 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[7]~FF .SR_POLARITY = 1'b0;
@@ -8682,7 +8681,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[8]~FF  (.D(\Inst_pwm_servo_1/n24 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width[8] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width[8] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[8]~FF .SR_POLARITY = 1'b0;
@@ -8691,7 +8690,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[9]~FF  (.D(\Inst_pwm_servo_1/n24 [8]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[9]~FF .SR_POLARITY = 1'b0;
@@ -8700,7 +8699,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[10]~FF  (.D(\Inst_pwm_servo_1/n24 [9]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[10]~FF .SR_POLARITY = 1'b0;
@@ -8709,7 +8708,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[11]~FF  (.D(\Inst_pwm_servo_1/n24 [10]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[11]~FF .SR_POLARITY = 1'b0;
@@ -8718,7 +8717,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[12]~FF  (.D(\Inst_pwm_servo_1/n24 [11]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[12]~FF .SR_POLARITY = 1'b0;
@@ -8727,7 +8726,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[13]~FF  (.D(\Inst_pwm_servo_1/n24 [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[13]~FF .SR_POLARITY = 1'b0;
@@ -8736,7 +8735,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[14]~FF  (.D(\Inst_pwm_servo_1/n24 [13]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width[14] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width[14] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[14]~FF .SR_POLARITY = 1'b0;
@@ -8745,7 +8744,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[15]~FF  (.D(\Inst_pwm_servo_1/n24 [14]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[15]~FF .SR_POLARITY = 1'b0;
@@ -8754,7 +8753,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_1/pulse_width[16]~FF  (.D(\Inst_pwm_servo_1/n23 ), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_1/pulse_width [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_1/pulse_width [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_1/pulse_width[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[16]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_1/pulse_width[16]~FF .SR_POLARITY = 1'b0;
@@ -8763,7 +8762,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_1/pulse_width[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_1/pulse_width[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[5]~FF  (.D(\Inst_pwm_servo_2/n63 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[5]~FF .SR_POLARITY = 1'b0;
@@ -8772,7 +8771,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[4]~FF  (.D(\Inst_pwm_servo_2/n63 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[4]~FF .SR_POLARITY = 1'b0;
@@ -8781,7 +8780,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[3]~FF  (.D(\Inst_pwm_servo_2/n63 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[3]~FF .SR_POLARITY = 1'b0;
@@ -8790,7 +8789,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[0]~FF  (.D(\Inst_pwm_servo_2/n63 [0]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[0]~FF .SR_POLARITY = 1'b0;
@@ -8799,7 +8798,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[2]~FF  (.D(\Inst_pwm_servo_2/n63 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[2]~FF .SR_POLARITY = 1'b0;
@@ -8808,7 +8807,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[1]~FF  (.D(\Inst_pwm_servo_2/n63 [1]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[1]~FF .SR_POLARITY = 1'b0;
@@ -8817,7 +8816,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \pwm_out_2~FF  (.D(\Inst_pwm_servo_2/n86 ), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(pwm_out_2)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .SR(rst_n_i), .Q(pwm_out_2)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \pwm_out_2~FF .CLK_POLARITY = 1'b1;
     defparam \pwm_out_2~FF .CE_POLARITY = 1'b1;
     defparam \pwm_out_2~FF .SR_POLARITY = 1'b0;
@@ -8826,7 +8825,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \pwm_out_2~FF .SR_VALUE = 1'b0;
     defparam \pwm_out_2~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[6]~FF  (.D(\Inst_pwm_servo_2/n63 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[6]~FF .SR_POLARITY = 1'b0;
@@ -8835,7 +8834,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[7]~FF  (.D(\Inst_pwm_servo_2/n63 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[7]~FF .SR_POLARITY = 1'b0;
@@ -8844,7 +8843,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[8]~FF  (.D(\Inst_pwm_servo_2/n63 [8]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[8]~FF .SR_POLARITY = 1'b0;
@@ -8853,7 +8852,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[9]~FF  (.D(\Inst_pwm_servo_2/n63 [9]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[9]~FF .SR_POLARITY = 1'b0;
@@ -8862,7 +8861,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[10]~FF  (.D(\Inst_pwm_servo_2/n63 [10]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[10]~FF .SR_POLARITY = 1'b0;
@@ -8871,7 +8870,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[11]~FF  (.D(\Inst_pwm_servo_2/n63 [11]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[11]~FF .SR_POLARITY = 1'b0;
@@ -8880,7 +8879,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[12]~FF  (.D(\Inst_pwm_servo_2/n63 [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[12]~FF .SR_POLARITY = 1'b0;
@@ -8889,7 +8888,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[13]~FF  (.D(\Inst_pwm_servo_2/n63 [13]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[13]~FF .SR_POLARITY = 1'b0;
@@ -8898,7 +8897,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[14]~FF  (.D(\Inst_pwm_servo_2/n63 [14]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[14]~FF .SR_POLARITY = 1'b0;
@@ -8907,7 +8906,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[15]~FF  (.D(\Inst_pwm_servo_2/n63 [15]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[15]~FF .SR_POLARITY = 1'b0;
@@ -8916,7 +8915,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[16]~FF  (.D(\Inst_pwm_servo_2/n63 [16]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[16]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[16]~FF .SR_POLARITY = 1'b0;
@@ -8925,7 +8924,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/counter[19]~FF  (.D(\Inst_pwm_servo_2/n63 [19]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/counter [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/counter [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/counter[19]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[19]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/counter[19]~FF .SR_POLARITY = 1'b0;
@@ -8934,7 +8933,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/counter[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/counter[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[2]~FF  (.D(\Inst_pwm_servo_2/n6 [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[2]~FF .SR_POLARITY = 1'b0;
@@ -8943,7 +8942,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[3]~FF  (.D(\Inst_pwm_servo_2/n6 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width[3] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[3]~FF .SR_POLARITY = 1'b0;
@@ -8952,7 +8951,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[4]~FF  (.D(\Inst_pwm_servo_2/n24 [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width[4] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[4]~FF .SR_POLARITY = 1'b0;
@@ -8961,7 +8960,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[5]~FF  (.D(\Inst_pwm_servo_2/n24 [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[5]~FF .SR_POLARITY = 1'b0;
@@ -8970,7 +8969,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[6]~FF  (.D(\Inst_pwm_servo_2/n24 [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[6]~FF .SR_POLARITY = 1'b0;
@@ -8979,7 +8978,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[7]~FF  (.D(\Inst_pwm_servo_2/n24 [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[7]~FF .SR_POLARITY = 1'b0;
@@ -8988,7 +8987,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[8]~FF  (.D(\Inst_pwm_servo_2/n24 [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width[8] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width[8] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[8]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[8]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[8]~FF .SR_POLARITY = 1'b0;
@@ -8997,7 +8996,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[8]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[9]~FF  (.D(\Inst_pwm_servo_2/n24 [8]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[9]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[9]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[9]~FF .SR_POLARITY = 1'b0;
@@ -9006,7 +9005,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[9]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[10]~FF  (.D(\Inst_pwm_servo_2/n24 [9]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[10]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[10]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[10]~FF .SR_POLARITY = 1'b0;
@@ -9015,7 +9014,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[10]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[11]~FF  (.D(\Inst_pwm_servo_2/n24 [10]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[11]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[11]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[11]~FF .SR_POLARITY = 1'b0;
@@ -9024,7 +9023,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[11]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[12]~FF  (.D(\Inst_pwm_servo_2/n24 [11]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[12]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[12]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[12]~FF .SR_POLARITY = 1'b0;
@@ -9033,7 +9032,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[12]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[13]~FF  (.D(\Inst_pwm_servo_2/n24 [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[13]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[13]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[13]~FF .SR_POLARITY = 1'b0;
@@ -9042,7 +9041,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[13]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[14]~FF  (.D(\Inst_pwm_servo_2/n24 [13]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width[14] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width[14] )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[14]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[14]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[14]~FF .SR_POLARITY = 1'b0;
@@ -9051,7 +9050,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[14]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[15]~FF  (.D(\Inst_pwm_servo_2/n24 [14]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[15]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[15]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[15]~FF .SR_POLARITY = 1'b0;
@@ -9060,7 +9059,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[15]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_pwm_servo_2/pulse_width[16]~FF  (.D(\Inst_pwm_servo_2/n23 ), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_pwm_servo_2/pulse_width [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_pwm_servo_2/pulse_width [16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/pwm_servo.vhdl(65)
     defparam \Inst_pwm_servo_2/pulse_width[16]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[16]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_2/pulse_width[16]~FF .SR_POLARITY = 1'b0;
@@ -9069,7 +9068,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_pwm_servo_2/pulse_width[16]~FF .SR_VALUE = 1'b0;
     defparam \Inst_pwm_servo_2/pulse_width[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[4]~FF  (.D(tx_data_sig[4]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[4]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[4]~FF .SR_POLARITY = 1'b0;
@@ -9078,7 +9077,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[3]~FF  (.D(tx_data_sig[3]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[3]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[3]~FF .SR_POLARITY = 1'b0;
@@ -9087,7 +9086,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[2]~FF  (.D(tx_data_sig[2]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[2]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[2]~FF .SR_POLARITY = 1'b0;
@@ -9096,7 +9095,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bitcounter[0]~FF  (.D(\Inst_uart_tx/n129 [0]), .CE(ceg_net194), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bitcounter[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bitcounter[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bitcounter[0]~FF .SR_POLARITY = 1'b0;
@@ -9105,7 +9104,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bitcounter[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bitcounter[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[1]~FF  (.D(tx_data_sig[1]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[1]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[1]~FF .SR_POLARITY = 1'b0;
@@ -9114,7 +9113,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/state[0]~FF  (.D(\Inst_uart_tx/state [0]), .CE(ceg_net603), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/state[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/state[0]~FF .SR_POLARITY = 1'b0;
@@ -9123,7 +9122,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/state[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[0]~FF  (.D(tx_data_sig[0]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[0]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[0]~FF .SR_POLARITY = 1'b0;
@@ -9132,7 +9131,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bit_idx[0]~FF  (.D(\Inst_uart_tx/n136 [0]), .CE(ceg_net457), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bit_idx[0]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bit_idx[0]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bit_idx[0]~FF .SR_POLARITY = 1'b0;
@@ -9141,7 +9140,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bit_idx[0]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bit_idx[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_busy_sig~FF  (.D(\Inst_uart_tx/n118 ), .CE(ceg_net454), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(tx_busy_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .SR(rst_n_i), .Q(tx_busy_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \tx_busy_sig~FF .CLK_POLARITY = 1'b1;
     defparam \tx_busy_sig~FF .CE_POLARITY = 1'b0;
     defparam \tx_busy_sig~FF .SR_POLARITY = 1'b0;
@@ -9150,7 +9149,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_busy_sig~FF .SR_VALUE = 1'b0;
     defparam \tx_busy_sig~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[5]~FF  (.D(tx_data_sig[5]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[5]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[5]~FF .SR_POLARITY = 1'b0;
@@ -9159,7 +9158,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx~FF  (.D(\Inst_uart_tx/n119 ), .CE(ceg_net455), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(tx)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .SR(rst_n_i), .Q(tx)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b1, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \tx~FF .CLK_POLARITY = 1'b1;
     defparam \tx~FF .CE_POLARITY = 1'b0;
     defparam \tx~FF .SR_POLARITY = 1'b0;
@@ -9168,7 +9167,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx~FF .SR_VALUE = 1'b1;
     defparam \tx~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[6]~FF  (.D(tx_data_sig[6]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[6]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[6]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[6]~FF .SR_POLARITY = 1'b0;
@@ -9177,7 +9176,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[6]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/data_buffer[7]~FF  (.D(tx_data_sig[7]), .CE(\Inst_uart_tx/n333 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/data_buffer [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/data_buffer[7]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[7]~FF .CE_POLARITY = 1'b1;
     defparam \Inst_uart_tx/data_buffer[7]~FF .SR_POLARITY = 1'b0;
@@ -9186,7 +9185,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/data_buffer[7]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/data_buffer[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bitcounter[1]~FF  (.D(\Inst_uart_tx/n129 [1]), .CE(ceg_net194), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bitcounter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bitcounter[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bitcounter[1]~FF .SR_POLARITY = 1'b0;
@@ -9195,7 +9194,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bitcounter[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bitcounter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bitcounter[2]~FF  (.D(\Inst_uart_tx/n129 [2]), .CE(ceg_net194), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bitcounter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bitcounter[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bitcounter[2]~FF .SR_POLARITY = 1'b0;
@@ -9204,7 +9203,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bitcounter[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bitcounter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bitcounter[3]~FF  (.D(\Inst_uart_tx/n129 [3]), .CE(ceg_net194), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bitcounter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bitcounter[3]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bitcounter[3]~FF .SR_POLARITY = 1'b0;
@@ -9213,7 +9212,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bitcounter[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bitcounter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bitcounter[4]~FF  (.D(\Inst_uart_tx/n129 [4]), .CE(ceg_net194), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bitcounter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bitcounter[4]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bitcounter[4]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bitcounter[4]~FF .SR_POLARITY = 1'b0;
@@ -9222,7 +9221,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bitcounter[4]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bitcounter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bitcounter[5]~FF  (.D(\Inst_uart_tx/n129 [5]), .CE(ceg_net194), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bitcounter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bitcounter [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bitcounter[5]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bitcounter[5]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bitcounter[5]~FF .SR_POLARITY = 1'b0;
@@ -9231,7 +9230,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bitcounter[5]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bitcounter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bit_idx[1]~FF  (.D(\Inst_uart_tx/n136 [1]), .CE(ceg_net457), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bit_idx[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bit_idx[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bit_idx[1]~FF .SR_POLARITY = 1'b0;
@@ -9240,7 +9239,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bit_idx[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bit_idx[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/bit_idx[2]~FF  (.D(\Inst_uart_tx/n136 [2]), .CE(ceg_net457), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/bit_idx [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/bit_idx[2]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/bit_idx[2]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/bit_idx[2]~FF .SR_POLARITY = 1'b0;
@@ -9249,7 +9248,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_uart_tx/bit_idx[2]~FF .SR_VALUE = 1'b0;
     defparam \Inst_uart_tx/bit_idx[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_uart_tx/state[1]~FF  (.D(\Inst_uart_tx/n115 [1]), .CE(ceg_net603), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_uart_tx/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_uart_tx/state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_tx.vhd(104)
     defparam \Inst_uart_tx/state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_uart_tx/state[1]~FF .CE_POLARITY = 1'b0;
     defparam \Inst_uart_tx/state[1]~FF .SR_POLARITY = 1'b0;
@@ -9285,7 +9284,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_debounce/count_reg[1]~FF .SR_VALUE = 1'b0;
     defparam \Inst_debounce/count_reg[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_debounce/sync_1~FF  (.D(\Inst_debounce/sync_0 ), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(\Inst_debounce/sync_1 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\Inst_debounce/sync_1 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
     defparam \Inst_debounce/sync_1~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_debounce/sync_1~FF .CE_POLARITY = 1'b1;
     defparam \Inst_debounce/sync_1~FF .SR_POLARITY = 1'b0;
@@ -9294,7 +9293,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_debounce/sync_1~FF .SR_VALUE = 1'b0;
     defparam \Inst_debounce/sync_1~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \switch_out~FF  (.D(\Inst_debounce/sync_1 ), .CE(\Inst_debounce/n149 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(switch_out)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(switch_out)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
     defparam \switch_out~FF .CLK_POLARITY = 1'b1;
     defparam \switch_out~FF .CE_POLARITY = 1'b0;
     defparam \switch_out~FF .SR_POLARITY = 1'b0;
@@ -9312,7 +9311,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_debounce/count_reg[3]~FF .SR_VALUE = 1'b0;
     defparam \Inst_debounce/count_reg[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \Inst_debounce/sync_0~FF  (.D(switch_in), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(\Inst_debounce/sync_0 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
+           .SR(rst_n_i), .Q(\Inst_debounce/sync_0 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b1, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Debounce.vhd(62)
     defparam \Inst_debounce/sync_0~FF .CLK_POLARITY = 1'b1;
     defparam \Inst_debounce/sync_0~FF .CE_POLARITY = 1'b1;
     defparam \Inst_debounce/sync_0~FF .SR_POLARITY = 1'b0;
@@ -9465,7 +9464,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \Inst_debounce/count_reg[19]~FF .SR_VALUE = 1'b0;
     defparam \Inst_debounce/count_reg[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[1]~FF  (.D(n941[1]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[1]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[1]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[1]~FF .SR_POLARITY = 1'b0;
@@ -9474,7 +9473,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[1]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[2]~FF  (.D(n941[2]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[2]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[2]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[2]~FF .SR_POLARITY = 1'b0;
@@ -9483,7 +9482,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[2]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[3]~FF  (.D(n941[3]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[3]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[3]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[3]~FF .SR_POLARITY = 1'b0;
@@ -9492,7 +9491,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[3]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[4]~FF  (.D(n941[4]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[4]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[4]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[4]~FF .SR_POLARITY = 1'b0;
@@ -9501,7 +9500,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[4]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[5]~FF  (.D(n941[5]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[5]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[5]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[5]~FF .SR_POLARITY = 1'b0;
@@ -9510,7 +9509,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[5]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[6]~FF  (.D(n941[6]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[6]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[6]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[6]~FF .SR_POLARITY = 1'b0;
@@ -9519,7 +9518,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[6]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[7]~FF  (.D(n941[7]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[7]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[7]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[7]~FF .SR_POLARITY = 1'b0;
@@ -9528,7 +9527,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[7]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[8]~FF  (.D(n941[8]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[8])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[8]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[8]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[8]~FF .SR_POLARITY = 1'b0;
@@ -9537,7 +9536,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[8]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[8]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[9]~FF  (.D(n941[9]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[9])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[9]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[9]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[9]~FF .SR_POLARITY = 1'b0;
@@ -9546,7 +9545,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[9]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[9]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[10]~FF  (.D(n941[10]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[10])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[10]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[10]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[10]~FF .SR_POLARITY = 1'b0;
@@ -9555,7 +9554,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[10]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[10]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[11]~FF  (.D(n941[11]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[11])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[11]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[11]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[11]~FF .SR_POLARITY = 1'b0;
@@ -9564,7 +9563,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[11]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[11]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[12]~FF  (.D(n941[12]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[12]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[12]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[12]~FF .SR_POLARITY = 1'b0;
@@ -9573,7 +9572,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[12]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[12]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[13]~FF  (.D(n941[13]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[13])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[13]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[13]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[13]~FF .SR_POLARITY = 1'b0;
@@ -9582,7 +9581,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[13]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[13]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[14]~FF  (.D(n941[14]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[14])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[14]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[14]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[14]~FF .SR_POLARITY = 1'b0;
@@ -9591,7 +9590,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[14]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[14]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[15]~FF  (.D(n941[15]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[15])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[15]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[15]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[15]~FF .SR_POLARITY = 1'b0;
@@ -9600,7 +9599,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[15]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[15]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[16]~FF  (.D(n941[16]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[16])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[16]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[16]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[16]~FF .SR_POLARITY = 1'b0;
@@ -9609,7 +9608,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[16]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[16]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[17]~FF  (.D(n941[17]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[17])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[17]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[17]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[17]~FF .SR_POLARITY = 1'b0;
@@ -9618,7 +9617,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[17]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[17]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[18]~FF  (.D(n941[18]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[18])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[18]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[18]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[18]~FF .SR_POLARITY = 1'b0;
@@ -9627,7 +9626,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[18]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[18]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[19]~FF  (.D(n941[19]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[19]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[19]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[19]~FF .SR_POLARITY = 1'b0;
@@ -9636,7 +9635,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[19]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[19]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[20]~FF  (.D(n941[20]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[20])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[20]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[20]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[20]~FF .SR_POLARITY = 1'b0;
@@ -9645,7 +9644,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[20]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[20]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[21]~FF  (.D(n941[21]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[21])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[21]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[21]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[21]~FF .SR_POLARITY = 1'b0;
@@ -9654,7 +9653,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[21]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[21]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[22]~FF  (.D(n941[22]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[22])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[22])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[22]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[22]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[22]~FF .SR_POLARITY = 1'b0;
@@ -9663,7 +9662,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[22]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[22]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \led_counter[23]~FF  (.D(n941[23]), .CE(ceg_net5), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(led_counter[23])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(led_counter[23])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \led_counter[23]~FF .CLK_POLARITY = 1'b1;
     defparam \led_counter[23]~FF .CE_POLARITY = 1'b0;
     defparam \led_counter[23]~FF .SR_POLARITY = 1'b0;
@@ -9672,7 +9671,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \led_counter[23]~FF .SR_VALUE = 1'b0;
     defparam \led_counter[23]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_Send/uart_read_state[0]~FF  (.D(\u_uart_Send/uart_read_state [0]), 
-           .CE(ceg_net458), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_Send/uart_read_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CE(ceg_net458), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_Send/uart_read_state [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \u_uart_Send/uart_read_state[0]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_Send/uart_read_state[0]~FF .CE_POLARITY = 1'b0;
     defparam \u_uart_Send/uart_read_state[0]~FF .SR_POLARITY = 1'b0;
@@ -9681,7 +9680,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_uart_Send/uart_read_state[0]~FF .SR_VALUE = 1'b0;
     defparam \u_uart_Send/uart_read_state[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[0]~FF  (.D(rdata[0]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[0]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[0]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[0]~FF .SR_POLARITY = 1'b0;
@@ -9690,7 +9689,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[0]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[0]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \rd_en_i~FF  (.D(\u_uart_Send/n16 ), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(rd_en_i)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .SR(rst_n_i), .Q(rd_en_i)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \rd_en_i~FF .CLK_POLARITY = 1'b1;
     defparam \rd_en_i~FF .CE_POLARITY = 1'b1;
     defparam \rd_en_i~FF .SR_POLARITY = 1'b0;
@@ -9699,7 +9698,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \rd_en_i~FF .SR_VALUE = 1'b0;
     defparam \rd_en_i~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_start_sig~FF  (.D(\~u_uart_Send/n101 ), .CE(1'b1), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(tx_start_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .SR(rst_n_i), .Q(tx_start_sig)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_start_sig~FF .CLK_POLARITY = 1'b1;
     defparam \tx_start_sig~FF .CE_POLARITY = 1'b1;
     defparam \tx_start_sig~FF .SR_POLARITY = 1'b0;
@@ -9708,7 +9707,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_start_sig~FF .SR_VALUE = 1'b0;
     defparam \tx_start_sig~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[1]~FF  (.D(rdata[1]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[1]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[1]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[1]~FF .SR_POLARITY = 1'b0;
@@ -9717,7 +9716,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[1]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[2]~FF  (.D(rdata[2]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[2]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[2]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[2]~FF .SR_POLARITY = 1'b0;
@@ -9726,7 +9725,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[2]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[2]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[3]~FF  (.D(rdata[3]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[3]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[3]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[3]~FF .SR_POLARITY = 1'b0;
@@ -9735,7 +9734,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[3]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[3]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[4]~FF  (.D(rdata[4]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[4]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[4]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[4]~FF .SR_POLARITY = 1'b0;
@@ -9744,7 +9743,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[4]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[4]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[5]~FF  (.D(rdata[5]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[5]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[5]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[5]~FF .SR_POLARITY = 1'b0;
@@ -9753,7 +9752,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[5]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[5]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[6]~FF  (.D(rdata[6]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[6]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[6]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[6]~FF .SR_POLARITY = 1'b0;
@@ -9762,7 +9761,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[6]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[6]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \tx_data_sig[7]~FF  (.D(rdata[7]), .CE(\~u_uart_Send/n101 ), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(tx_data_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(tx_data_sig[7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \tx_data_sig[7]~FF .CLK_POLARITY = 1'b1;
     defparam \tx_data_sig[7]~FF .CE_POLARITY = 1'b1;
     defparam \tx_data_sig[7]~FF .SR_POLARITY = 1'b0;
@@ -9771,7 +9770,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \tx_data_sig[7]~FF .SR_VALUE = 1'b0;
     defparam \tx_data_sig[7]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_uart_Send/uart_read_state[1]~FF  (.D(\u_uart_Send/n17 [1]), 
-           .CE(ceg_net458), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_uart_Send/uart_read_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
+           .CE(ceg_net458), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_uart_Send/uart_read_state [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd(73)
     defparam \u_uart_Send/uart_read_state[1]~FF .CLK_POLARITY = 1'b1;
     defparam \u_uart_Send/uart_read_state[1]~FF .CE_POLARITY = 1'b0;
     defparam \u_uart_Send/uart_read_state[1]~FF .SR_POLARITY = 1'b0;
@@ -9825,7 +9824,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \LED[1]~FF .SR_VALUE = 1'b0;
     defparam \LED[1]~FF .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \start_signal_conf[1]~FF  (.D(n937_2[1]), .CE(ceg_net510), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(start_signal_conf[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
+           .SR(rst_n_i), .Q(start_signal_conf[1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \start_signal_conf[1]~FF .CLK_POLARITY = 1'b1;
     defparam \start_signal_conf[1]~FF .CE_POLARITY = 1'b0;
     defparam \start_signal_conf[1]~FF .SR_POLARITY = 1'b0;
@@ -9833,7 +9832,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \start_signal_conf[1]~FF .SR_SYNC = 1'b0;
     defparam \start_signal_conf[1]~FF .SR_VALUE = 1'b0;
     defparam \start_signal_conf[1]~FF .SR_SYNC_PRIORITY = 1'b1;
-    EFX_FF \LED[2]~FF  (.D(n940), .CE(ceg_net5), .CLK(\clk_i~O ), .SR(LED[3]), 
+    EFX_FF \LED[2]~FF  (.D(n940), .CE(ceg_net5), .CLK(\clk_i~O ), .SR(rst_n_i), 
            .Q(LED[2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b0, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(642)
     defparam \LED[2]~FF .CLK_POLARITY = 1'b1;
     defparam \LED[2]~FF .CE_POLARITY = 1'b0;
@@ -9846,22 +9845,22 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CI(1'b0), .O(\u_IIR_filtre/n153 [1]), .CO(\u_IIR_filtre/add_88/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_88/i2 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i2 .I1_POLARITY = 1'b1;
-    EFX_ADD \add_162/i1  (.I0(valid_sayici[1]), .I1(valid_sayici[0]), .CI(1'b0), 
-            .O(n1001[1]), .CO(\add_162/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
-    defparam \add_162/i1 .I0_POLARITY = 1'b1;
-    defparam \add_162/i1 .I1_POLARITY = 1'b1;
-    EFX_ADD \add_162/i2  (.I0(valid_sayici[2]), .I1(1'b0), .CI(\add_162/n2 ), 
-            .O(n1001[2]), .CO(\add_162/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
-    defparam \add_162/i2 .I0_POLARITY = 1'b1;
-    defparam \add_162/i2 .I1_POLARITY = 1'b1;
-    EFX_ADD \add_162/i3  (.I0(valid_sayici[3]), .I1(1'b0), .CI(\add_162/n4 ), 
-            .O(n1001[3]), .CO(\add_162/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
-    defparam \add_162/i3 .I0_POLARITY = 1'b1;
-    defparam \add_162/i3 .I1_POLARITY = 1'b1;
-    EFX_ADD \add_162/i4  (.I0(valid_sayici[4]), .I1(1'b0), .CI(\add_162/n6 ), 
-            .O(n1001[4]), .CO(\add_162/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
-    defparam \add_162/i4 .I0_POLARITY = 1'b1;
-    defparam \add_162/i4 .I1_POLARITY = 1'b1;
+    EFX_ADD \add_161/i1  (.I0(valid_sayici[1]), .I1(valid_sayici[0]), .CI(1'b0), 
+            .O(n1001[1]), .CO(\add_161/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
+    defparam \add_161/i1 .I0_POLARITY = 1'b1;
+    defparam \add_161/i1 .I1_POLARITY = 1'b1;
+    EFX_ADD \add_161/i2  (.I0(valid_sayici[2]), .I1(1'b0), .CI(\add_161/n2 ), 
+            .O(n1001[2]), .CO(\add_161/n4 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
+    defparam \add_161/i2 .I0_POLARITY = 1'b1;
+    defparam \add_161/i2 .I1_POLARITY = 1'b1;
+    EFX_ADD \add_161/i3  (.I0(valid_sayici[3]), .I1(1'b0), .CI(\add_161/n4 ), 
+            .O(n1001[3]), .CO(\add_161/n6 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
+    defparam \add_161/i3 .I0_POLARITY = 1'b1;
+    defparam \add_161/i3 .I1_POLARITY = 1'b1;
+    EFX_ADD \add_161/i4  (.I0(valid_sayici[4]), .I1(1'b0), .CI(\add_161/n6 ), 
+            .O(n1001[4]), .CO(\add_161/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
+    defparam \add_161/i4 .I0_POLARITY = 1'b1;
+    defparam \add_161/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_15/i1  (.I0(f_axi_i[0]), .I1(\u_IIR_filtre/reg_accel_x [0]), 
             .CI(1'b0), .CO(\u_IIR_filtre/add_15/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(94)
     defparam \u_IIR_filtre/add_15/i1 .I0_POLARITY = 1'b1;
@@ -10108,9 +10107,9 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .I1(1'b0), .CI(\Inst_pwm_servo_0/add_24/n36 ), .O(\Inst_pwm_servo_0/n42 [19])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
     defparam \Inst_pwm_servo_0/add_24/i19 .I0_POLARITY = 1'b1;
     defparam \Inst_pwm_servo_0/add_24/i19 .I1_POLARITY = 1'b1;
-    EFX_ADD \add_162/i5  (.I0(LED[1]), .I1(1'b0), .CI(\add_162/n8 ), .O(n1001[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
-    defparam \add_162/i5 .I0_POLARITY = 1'b1;
-    defparam \add_162/i5 .I1_POLARITY = 1'b1;
+    EFX_ADD \add_161/i5  (.I0(LED[1]), .I1(1'b0), .CI(\add_161/n8 ), .O(n1001[5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // ../vhdl_packages/vhdl_2008/src/numeric_std-body.vhdl(482)
+    defparam \add_161/i5 .I0_POLARITY = 1'b1;
+    defparam \add_161/i5 .I1_POLARITY = 1'b1;
     EFX_ADD \u_Motor_Control/add_52/i1  (.I0(\u_Motor_Control/angle_pool [0]), 
             .I1(f_gzi_i[0]), .CI(1'b0), .O(\u_Motor_Control/n282 [0]), 
             .CO(\u_Motor_Control/add_52/n2 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(123)
@@ -11094,10 +11093,6 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CO(\u_IIR_filtre/add_92/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(100)
     defparam \u_IIR_filtre/add_92/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i13 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_88/i4  (.I0(f_ayi_i[3]), .I1(f_ayi_i[2]), 
-            .CI(\u_IIR_filtre/add_88/n6 ), .O(\u_IIR_filtre/n153 [3]), .CO(\u_IIR_filtre/add_88/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
-    defparam \u_IIR_filtre/add_88/i4 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_88/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i12  (.I0(f_gzi_i[11]), .I1(f_gzi_i[10]), 
             .CI(\u_IIR_filtre/add_92/n22 ), .O(\u_IIR_filtre/n321 [11]), 
             .CO(\u_IIR_filtre/add_92/n24 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(100)
@@ -11108,6 +11103,10 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CO(\u_IIR_filtre/add_92/n22 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(100)
     defparam \u_IIR_filtre/add_92/i11 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i11 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_88/i4  (.I0(f_ayi_i[3]), .I1(f_ayi_i[2]), 
+            .CI(\u_IIR_filtre/add_88/n6 ), .O(\u_IIR_filtre/n153 [3]), .CO(\u_IIR_filtre/add_88/n8 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_88/i4 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_88/i4 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i5  (.I0(f_ayi_i[4]), .I1(f_ayi_i[3]), 
             .CI(\u_IIR_filtre/add_88/n8 ), .O(\u_IIR_filtre/n153 [4]), .CO(\u_IIR_filtre/add_88/n10 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_88/i5 .I0_POLARITY = 1'b1;
@@ -11152,11 +11151,6 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CO(\u_IIR_filtre/add_88/n26 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
     defparam \u_IIR_filtre/add_88/i13 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_88/i13 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_88/i14  (.I0(f_ayi_i[13]), .I1(f_ayi_i[12]), 
-            .CI(\u_IIR_filtre/add_88/n26 ), .O(\u_IIR_filtre/n153 [13]), 
-            .CO(\u_IIR_filtre/add_88/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
-    defparam \u_IIR_filtre/add_88/i14 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_88/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i10  (.I0(f_gzi_i[9]), .I1(f_gzi_i[8]), 
             .CI(\u_IIR_filtre/add_92/n18 ), .O(\u_IIR_filtre/n321 [9]), 
             .CO(\u_IIR_filtre/add_92/n20 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(100)
@@ -11172,11 +11166,11 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CO(\u_IIR_filtre/add_92/n16 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(100)
     defparam \u_IIR_filtre/add_92/i8 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_92/i8 .I1_POLARITY = 1'b1;
-    EFX_ADD \u_IIR_filtre/add_88/i15  (.I0(f_ayi_i[14]), .I1(f_ayi_i[13]), 
-            .CI(\u_IIR_filtre/add_88/n28 ), .O(\u_IIR_filtre/n153 [14]), 
-            .CO(\u_IIR_filtre/add_88/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
-    defparam \u_IIR_filtre/add_88/i15 .I0_POLARITY = 1'b1;
-    defparam \u_IIR_filtre/add_88/i15 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_88/i14  (.I0(f_ayi_i[13]), .I1(f_ayi_i[12]), 
+            .CI(\u_IIR_filtre/add_88/n26 ), .O(\u_IIR_filtre/n153 [13]), 
+            .CO(\u_IIR_filtre/add_88/n28 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_88/i14 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_88/i14 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_92/i7  (.I0(f_gzi_i[6]), .I1(f_gzi_i[5]), 
             .CI(\u_IIR_filtre/add_92/n12 ), .O(\u_IIR_filtre/n321 [6]), 
             .CO(\u_IIR_filtre/add_92/n14 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(100)
@@ -11208,6 +11202,11 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .CO(\u_IIR_filtre/add_27/n34 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(98)
     defparam \u_IIR_filtre/add_27/i17 .I0_POLARITY = 1'b1;
     defparam \u_IIR_filtre/add_27/i17 .I1_POLARITY = 1'b1;
+    EFX_ADD \u_IIR_filtre/add_88/i15  (.I0(f_ayi_i[14]), .I1(f_ayi_i[13]), 
+            .CI(\u_IIR_filtre/add_88/n28 ), .O(\u_IIR_filtre/n153 [14]), 
+            .CO(\u_IIR_filtre/add_88/n30 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
+    defparam \u_IIR_filtre/add_88/i15 .I0_POLARITY = 1'b1;
+    defparam \u_IIR_filtre/add_88/i15 .I1_POLARITY = 1'b1;
     EFX_ADD \u_IIR_filtre/add_88/i16  (.I0(f_ayi_i[15]), .I1(f_ayi_i[14]), 
             .CI(\u_IIR_filtre/add_88/n30 ), .O(\u_IIR_filtre/n153 [15]), 
             .CO(n3004)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_ADD, I0_POLARITY=1'b1, I1_POLARITY=1'b1 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(95)
@@ -13534,7 +13533,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     EFX_LUT4 LUT__5936 (.I0(\u_IIR_filtre/IIR_filtre_state [1]), .I1(\u_IIR_filtre/IIR_filtre_state [0]), 
             .O(\u_IIR_filtre/n465 [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(106)
     defparam LUT__5936.LUTMASK = 16'h4444;
-    EFX_LUT4 LUT__5937 (.I0(\u_IIR_filtre/n1801 ), .I1(LED[3]), .I2(data_valid_out), 
+    EFX_LUT4 LUT__5937 (.I0(\u_IIR_filtre/n1801 ), .I1(rst_n_i), .I2(data_valid_out), 
             .O(\u_IIR_filtre/n1912 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4040 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(534)
     defparam LUT__5937.LUTMASK = 16'h4040;
     EFX_LUT4 LUT__5938 (.I0(f_gzi_i[8]), .I1(f_gzi_i[9]), .I2(f_gzi_i[10]), 
@@ -13594,7 +13593,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .I2(\u_Motor_Control/angle_pool [17]), .I3(n2721), .O(n2722)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0100 */ ;
     defparam LUT__5954.LUTMASK = 16'h0100;
     protected_cell protected_inst (.\clk_i~O (\clk_i~O ), .fifo_rst_busys(fifo_rst_busys), 
-            .\LED[3] (LED[3]));
+            .rst_n_i(rst_n_i));
     EFX_LUT4 LUT__5413 (.I0(\u_FIFO/u_efx_fifo_top/waddr [7]), .I1(\u_FIFO/u_efx_fifo_top/raddr [7]), 
             .I2(\u_FIFO/u_efx_fifo_top/raddr [0]), .I3(\u_FIFO/u_efx_fifo_top/waddr [0]), 
             .O(n2347)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9009 */ ;
@@ -14361,7 +14360,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam LUT__6220.LUTMASK = 16'h1010;
     EFX_LUT4 LUT__6221 (.I0(n2865), .I1(\Inst_uart_rx/state [1]), .O(n2866)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h8888 */ ;
     defparam LUT__6221.LUTMASK = 16'h8888;
-    EFX_LUT4 LUT__6222 (.I0(n2866), .I1(n2863), .I2(LED[3]), .O(n2867)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
+    EFX_LUT4 LUT__6222 (.I0(n2866), .I1(n2863), .I2(rst_n_i), .O(n2867)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'hd0d0 */ ;
     defparam LUT__6222.LUTMASK = 16'hd0d0;
     EFX_LUT4 LUT__6223 (.I0(\Inst_uart_rx/rx_sync2 ), .I1(\Inst_uart_rx/state [0]), 
             .I2(n2862), .I3(n2867), .O(ceg_net601)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1f00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(42)
@@ -14374,14 +14373,14 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     EFX_LUT4 LUT__6226 (.I0(\Inst_uart_rx/state [1]), .I1(\Inst_uart_rx/state [0]), 
             .I2(\Inst_uart_rx/rx_sync2 ), .I3(n2861), .O(n2868)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4000 */ ;
     defparam LUT__6226.LUTMASK = 16'h4000;
-    EFX_LUT4 LUT__6227 (.I0(n2866), .I1(n2863), .I2(n2868), .I3(LED[3]), 
+    EFX_LUT4 LUT__6227 (.I0(n2866), .I1(n2863), .I2(n2868), .I3(rst_n_i), 
             .O(ceg_net438)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0700 */ ;
     defparam LUT__6227.LUTMASK = 16'h0700;
     EFX_LUT4 LUT__6228 (.I0(n2862), .I1(n2866), .I2(\Inst_uart_rx/bitcounter [0]), 
             .O(\Inst_uart_rx/n138 [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0101 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(108)
     defparam LUT__6228.LUTMASK = 16'h0101;
     EFX_LUT4 LUT__6229 (.I0(n2865), .I1(\Inst_uart_rx/state [0]), .I2(\Inst_uart_rx/state [1]), 
-            .I3(LED[3]), .O(ceg_net440)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7c00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(37)
+            .I3(rst_n_i), .O(ceg_net440)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h7c00 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx.vhdl(37)
     defparam LUT__6229.LUTMASK = 16'h7c00;
     EFX_LUT4 LUT__6230 (.I0(\Inst_uart_rx/bit_idx [2]), .I1(n2865), .O(n2869)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
     defparam LUT__6230.LUTMASK = 16'h4444;
@@ -15077,7 +15076,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     EFX_LUT4 LUT__6461 (.I0(n2972), .I1(n2973), .O(n2974)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h4444 */ ;
     defparam LUT__6461.LUTMASK = 16'h4444;
     EFX_LUT4 LUT__6462 (.I0(n2974), .I1(\Inst_debounce/sync_1 ), .I2(switch_out), 
-            .I3(LED[3]), .O(\Inst_debounce/n151 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(429)
+            .I3(rst_n_i), .O(\Inst_debounce/n151 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h1400 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(429)
     defparam LUT__6462.LUTMASK = 16'h1400;
     EFX_LUT4 LUT__6463 (.I0(\Inst_debounce/sync_1 ), .I1(switch_out), .I2(n2974), 
             .O(\Inst_debounce/n149 )) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9f9f */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(429)
@@ -15212,8 +15211,10 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     EFX_LUT4 LUT__6511 (.I0(n2361), .I1(LED[2]), .I2(start_signal_conf[1]), 
             .O(n940)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h0d0d */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/top.vhd(640)
     defparam LUT__6511.LUTMASK = 16'h0d0d;
+    EFX_LUT4 LUT__6514 (.I0(rst_n_i), .O(LED[3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h5555, EFX_ATTRIBUTE_INSTANCE__IS_LUT_SOP_INF_INV=TRUE */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/IIR_filtre.vhd(73)
+    defparam LUT__6514.LUTMASK = 16'h5555;
     EFX_FF \u_Motor_Control/angle_raw_y[7]~FF_brt_29  (.D(\u_Motor_Control/hesap_temp_y [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[7]_q [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[7]_q [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_29 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_29 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_29 .SR_POLARITY = 1'b0;
@@ -15222,7 +15223,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_29 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_29 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[6]~FF_brt_28  (.D(\u_Motor_Control/hesap_temp_y [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[6]_q [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[6]_q [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[6]~FF_brt_28 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[6]~FF_brt_28 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[6]~FF_brt_28 .SR_POLARITY = 1'b0;
@@ -15231,7 +15232,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[6]~FF_brt_28 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[6]~FF_brt_28 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[5]~FF_brt_27  (.D(\u_Motor_Control/hesap_temp_y [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[5]_q [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[5]_q [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_27 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_27 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_27 .SR_POLARITY = 1'b0;
@@ -15240,7 +15241,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_27 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_27 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[4]~FF_brt_26  (.D(\u_Motor_Control/hesap_temp_y [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[4]_q [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[4]_q [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[4]~FF_brt_26 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[4]~FF_brt_26 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[4]~FF_brt_26 .SR_POLARITY = 1'b0;
@@ -15249,7 +15250,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[4]~FF_brt_26 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[4]~FF_brt_26 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[3]~FF_brt_25  (.D(\u_Motor_Control/hesap_temp_y [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[3]_q [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[3]_q [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[3]~FF_brt_25 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[3]~FF_brt_25 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[3]~FF_brt_25 .SR_POLARITY = 1'b0;
@@ -15258,7 +15259,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[3]~FF_brt_25 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[3]~FF_brt_25 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[2]~FF_brt_24  (.D(\u_Motor_Control/hesap_temp_y [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[2]_q [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[2]_q [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[2]~FF_brt_24 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[2]~FF_brt_24 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[2]~FF_brt_24 .SR_POLARITY = 1'b0;
@@ -15267,7 +15268,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[2]~FF_brt_24 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[2]~FF_brt_24 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[1]~FF_brt_23  (.D(\u_Motor_Control/hesap_temp_y [1]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[1]_q [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[1]_q [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_23 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_23 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_23 .SR_POLARITY = 1'b0;
@@ -15276,7 +15277,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_23 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_23 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[1]~FF_brt_22  (.D(\u_Motor_Control/hesap_temp_y [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[12]_q [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[12]_q [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_22 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_22 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_22 .SR_POLARITY = 1'b0;
@@ -15285,7 +15286,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_22 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[1]~FF_brt_22 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[0]~FF_brt_21  (.D(\u_Motor_Control/hesap_temp_y [0]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[0]_q [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_yu_Motor_Control/hesap_temp_y[0]_q [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[0]~FF_brt_21 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[0]~FF_brt_21 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[0]~FF_brt_21 .SR_POLARITY = 1'b0;
@@ -15294,7 +15295,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[0]~FF_brt_21 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[0]~FF_brt_21 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[7]~FF_brt_20  (.D(\u_Motor_Control/hesap_temp_x [7]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[7]_q [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[7]_q [7])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_20 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_20 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_20 .SR_POLARITY = 1'b0;
@@ -15303,7 +15304,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_20 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_20 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[6]~FF_brt_19  (.D(\u_Motor_Control/hesap_temp_x [6]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[6]_q [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[6]_q [6])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[6]~FF_brt_19 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[6]~FF_brt_19 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[6]~FF_brt_19 .SR_POLARITY = 1'b0;
@@ -15312,7 +15313,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[6]~FF_brt_19 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[6]~FF_brt_19 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[5]~FF_brt_18  (.D(\u_Motor_Control/hesap_temp_x [5]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[5]_q [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[5]_q [5])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[5]~FF_brt_18 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[5]~FF_brt_18 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[5]~FF_brt_18 .SR_POLARITY = 1'b0;
@@ -15321,7 +15322,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[5]~FF_brt_18 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[5]~FF_brt_18 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[4]~FF_brt_17  (.D(\u_Motor_Control/hesap_temp_x [4]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[4]_q [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[4]_q [4])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[4]~FF_brt_17 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[4]~FF_brt_17 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[4]~FF_brt_17 .SR_POLARITY = 1'b0;
@@ -15330,7 +15331,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[4]~FF_brt_17 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[4]~FF_brt_17 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[3]~FF_brt_16  (.D(\u_Motor_Control/hesap_temp_x [3]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[3]_q [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[3]_q [3])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[3]~FF_brt_16 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[3]~FF_brt_16 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[3]~FF_brt_16 .SR_POLARITY = 1'b0;
@@ -15339,7 +15340,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[3]~FF_brt_16 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[3]~FF_brt_16 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[2]~FF_brt_15  (.D(\u_Motor_Control/hesap_temp_x [2]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[2]_q [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[2]_q [2])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_15 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_15 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_15 .SR_POLARITY = 1'b0;
@@ -15348,7 +15349,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_15 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_15 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[1]~FF_brt_14  (.D(\u_Motor_Control/hesap_temp_x [1]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[1]_q [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[1]_q [1])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[1]~FF_brt_14 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[1]~FF_brt_14 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[1]~FF_brt_14 .SR_POLARITY = 1'b0;
@@ -15357,7 +15358,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[1]~FF_brt_14 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[1]~FF_brt_14 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[2]~FF_brt_13  (.D(\u_Motor_Control/hesap_temp_x [12]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[12]_q [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[12]_q [12])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_13 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_13 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_13 .SR_POLARITY = 1'b0;
@@ -15366,7 +15367,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_13 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[2]~FF_brt_13 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[0]~FF_brt_12  (.D(\u_Motor_Control/hesap_temp_x [0]), 
-           .CE(1'b1), .CLK(\clk_i~O ), .SR(LED[3]), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[0]_q [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CE(1'b1), .CLK(\clk_i~O ), .SR(rst_n_i), .Q(\u_Motor_Control/hesap_temp_xu_Motor_Control/hesap_temp_x[0]_q [0])) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_12 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_12 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_12 .SR_POLARITY = 1'b0;
@@ -15375,7 +15376,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_12 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_12 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_y[5]~FF_brt_11  (.D(n2757), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(n2757_q_5)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(n2757_q_5)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_11 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_11 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[5]~FF_brt_11 .SR_POLARITY = 1'b0;
@@ -15387,7 +15388,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
             .I2(n2347), .O(n2348)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_LUT4, LUTMASK=16'h9090 */ ;
     defparam LUT__5414.LUTMASK = 16'h9090;
     EFX_FF \u_Motor_Control/angle_raw_y[7]~FF_brt_8  (.D(n2757), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(n2757_q_2)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(n2757_q_2)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_8 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_8 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_8 .SR_POLARITY = 1'b0;
@@ -15396,7 +15397,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_8 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_y[7]~FF_brt_8 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[7]~FF_brt_6  (.D(n2749), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(n2749_q_2)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(n2749_q_2)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_6 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_6 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_6 .SR_POLARITY = 1'b0;
@@ -15405,7 +15406,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_6 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[7]~FF_brt_6 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \u_Motor_Control/angle_raw_x[0]~FF_brt_5  (.D(n2749), .CE(1'b1), 
-           .CLK(\clk_i~O ), .SR(LED[3]), .Q(n2749_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
+           .CLK(\clk_i~O ), .SR(rst_n_i), .Q(n2749_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd(164)
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_5 .CLK_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_5 .CE_POLARITY = 1'b1;
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_5 .SR_POLARITY = 1'b0;
@@ -15414,7 +15415,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_5 .SR_VALUE = 1'b0;
     defparam \u_Motor_Control/angle_raw_x[0]~FF_brt_5 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \dps_value_sig[2]~FF_frt_4  (.D(n2735), .CE(ceg_net427), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(n2735_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .SR(rst_n_i), .Q(n2735_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \dps_value_sig[2]~FF_frt_4 .CLK_POLARITY = 1'b1;
     defparam \dps_value_sig[2]~FF_frt_4 .CE_POLARITY = 1'b1;
     defparam \dps_value_sig[2]~FF_frt_4 .SR_POLARITY = 1'b0;
@@ -15423,7 +15424,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \dps_value_sig[2]~FF_frt_4 .SR_VALUE = 1'b0;
     defparam \dps_value_sig[2]~FF_frt_4 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[1]~FF_frt_3  (.D(n2781), .CE(ceg_net427), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(n2781_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .SR(rst_n_i), .Q(n2781_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[1]~FF_frt_3 .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[1]~FF_frt_3 .CE_POLARITY = 1'b1;
     defparam \g_value_sig[1]~FF_frt_3 .SR_POLARITY = 1'b0;
@@ -15432,7 +15433,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[1]~FF_frt_3 .SR_VALUE = 1'b0;
     defparam \g_value_sig[1]~FF_frt_3 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[3]~FF_frt_2  (.D(n2728), .CE(ceg_net427), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(n2728_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .SR(rst_n_i), .Q(n2728_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[3]~FF_frt_2 .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[3]~FF_frt_2 .CE_POLARITY = 1'b1;
     defparam \g_value_sig[3]~FF_frt_2 .SR_POLARITY = 1'b0;
@@ -15441,7 +15442,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[3]~FF_frt_2 .SR_VALUE = 1'b0;
     defparam \g_value_sig[3]~FF_frt_2 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[0]~FF_frt_1  (.D(n2730), .CE(ceg_net427), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(n2730_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .SR(rst_n_i), .Q(n2730_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b0, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[0]~FF_frt_1 .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[0]~FF_frt_1 .CE_POLARITY = 1'b1;
     defparam \g_value_sig[0]~FF_frt_1 .SR_POLARITY = 1'b0;
@@ -15450,7 +15451,7 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
     defparam \g_value_sig[0]~FF_frt_1 .SR_VALUE = 1'b0;
     defparam \g_value_sig[0]~FF_frt_1 .SR_SYNC_PRIORITY = 1'b1;
     EFX_FF \g_value_sig[5]~FF_frt_0  (.D(n2731), .CE(ceg_net427), .CLK(\clk_i~O ), 
-           .SR(LED[3]), .Q(n2731_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
+           .SR(rst_n_i), .Q(n2731_q)) /* verific EFX_ATTRIBUTE_CELL_NAME=EFX_FF, CLK_POLARITY=1'b1, D_POLARITY=1'b1, CE_POLARITY=1'b1, SR_SYNC=1'b0, SR_SYNC_PRIORITY=1'b1, SR_VALUE=1'b0, SR_POLARITY=1'b0, INIT_VALUE=1'b0 */ ;   // /home/omer-ahin/STAJ/Staj_Projesi/uart_rx_controller.vhd(94)
     defparam \g_value_sig[5]~FF_frt_0 .CLK_POLARITY = 1'b1;
     defparam \g_value_sig[5]~FF_frt_0 .CE_POLARITY = 1'b1;
     defparam \g_value_sig[5]~FF_frt_0 .SR_POLARITY = 1'b0;
@@ -15462,1063 +15463,1063 @@ module top (clk_i, rst_n_i, switch_in, pwm_out_0, pwm_out_1, pwm_out_2,
 endmodule
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_0
+// Verific Verilog Description of module EFX_FF_3c0d508a_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_1
+// Verific Verilog Description of module EFX_FF_3c0d508a_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_2
+// Verific Verilog Description of module EFX_FF_3c0d508a_2
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_3
+// Verific Verilog Description of module EFX_FF_3c0d508a_3
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_4
+// Verific Verilog Description of module EFX_FF_3c0d508a_4
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_5
+// Verific Verilog Description of module EFX_FF_3c0d508a_5
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_6
+// Verific Verilog Description of module EFX_FF_3c0d508a_6
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_7
+// Verific Verilog Description of module EFX_FF_3c0d508a_7
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_GBUFCE_09718c19_0
+// Verific Verilog Description of module EFX_GBUFCE_3c0d508a_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_ADD_09718c19_0
+// Verific Verilog Description of module EFX_ADD_3c0d508a_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_8
+// Verific Verilog Description of module EFX_FF_3c0d508a_8
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_9
+// Verific Verilog Description of module EFX_FF_3c0d508a_9
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_10
+// Verific Verilog Description of module EFX_FF_3c0d508a_10
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_11
+// Verific Verilog Description of module EFX_FF_3c0d508a_11
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_13
+// Verific Verilog Description of module EFX_FF_3c0d508a_13
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_ADD_09718c19_1
+// Verific Verilog Description of module EFX_ADD_3c0d508a_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_RAM_5K_09718c19__8_8_0
+// Verific Verilog Description of module EFX_RAM_5K_3c0d508a__8_8_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_MULT_09718c19_0
+// Verific Verilog Description of module EFX_MULT_3c0d508a_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_0
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_0
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_1
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_1
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_2
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_2
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_3
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_3
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_4
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_4
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_5
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_5
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_6
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_6
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_7
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_7
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_8
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_8
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_9
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_9
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_10
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_10
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_11
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_11
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_12
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_12
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_13
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_13
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_14
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_14
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_15
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_15
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_16
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_16
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_17
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_17
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_18
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_18
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_19
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_19
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_20
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_20
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_21
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_21
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_22
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_22
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_23
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_23
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_24
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_24
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_25
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_25
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_26
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_26
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_27
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_27
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_28
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_28
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_29
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_29
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_30
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_30
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_31
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_31
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_32
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_32
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_33
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_33
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_34
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_34
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_35
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_35
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_36
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_36
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_37
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_37
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_38
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_38
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_39
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_39
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_40
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_40
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_41
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_41
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_42
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_42
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_43
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_43
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_44
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_44
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_45
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_45
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_46
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_46
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_47
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_47
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_48
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_48
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_49
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_49
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_50
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_50
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_51
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_51
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_52
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_52
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_53
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_53
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_54
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_54
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_55
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_55
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_56
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_56
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_57
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_57
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_58
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_58
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_59
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_59
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_60
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_60
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_61
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_61
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_62
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_62
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_63
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_63
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_64
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_64
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_65
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_65
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_66
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_66
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_67
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_67
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_68
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_68
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_69
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_69
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_70
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_70
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_71
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_71
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_72
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_72
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_73
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_73
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_74
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_74
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_75
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_75
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_76
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_76
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_77
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_77
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_78
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_78
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_79
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_79
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_80
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_80
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_81
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_81
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_82
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_82
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_83
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_83
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_84
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_84
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_85
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_85
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_86
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_86
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_87
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_87
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_88
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_88
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_89
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_89
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_90
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_90
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_91
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_91
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_92
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_92
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_93
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_93
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_94
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_94
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_95
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_95
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_96
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_96
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_97
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_97
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_98
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_98
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_99
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_99
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_100
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_100
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_101
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_101
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_102
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_102
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_103
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_103
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_104
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_104
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_105
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_105
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_106
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_106
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_107
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_107
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_108
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_108
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_109
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_109
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_110
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_110
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_111
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_111
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_112
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_112
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_113
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_113
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_114
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_114
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_115
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_115
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_116
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_116
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_117
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_117
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_118
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_118
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_119
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_119
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_120
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_120
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_121
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_121
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_122
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_122
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_123
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_123
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_124
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_124
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_125
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_125
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_126
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_126
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_127
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_127
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_128
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_128
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_129
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_129
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_130
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_130
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_131
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_131
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_132
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_132
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_133
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_133
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_134
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_134
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_135
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_135
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_136
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_136
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_137
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_137
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_138
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_138
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_139
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_139
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_140
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_140
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_141
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_141
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_142
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_142
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_143
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_143
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_144
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_144
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_145
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_145
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_146
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_146
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_147
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_147
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_148
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_148
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_149
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_149
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_150
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_150
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_151
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_151
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_152
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_152
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_153
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_153
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_154
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_154
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_155
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_155
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_156
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_156
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_157
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_157
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_158
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_158
 // module not written out since it is a black box. 
 //
 
@@ -16598,328 +16599,334 @@ ZoPzFCMjGk5ZmMyIlytNCw==
 `pragma protect data_block
 Iewft/389z9m9iJQkBcxBQJDPXkM1ig2dHAxXkLJT/I3Yzesz3LSMyHC3dhcr4wH
 rMuug/zolOumMIfKMRDXVTbwE8KlruZv0bjyDGdUndeUoCJIBntHFUSybd1RP47b
-IvO7sTc0i/9zPTP2R/lIHTZfGZiRM/2LIxFhHYZ9hPLEyTOx9OCqdQx8AIr3jO01
-sGbuVj3BzzOvgJnKp88ZFmxb/kLebR4xVQbmK1/OYWD/4Lb+vaq8KBo3fbGpRrId
-CYG68OP3WnY0Rz22iNKQow0L0IN4kxTgophgv2JCd++4iUtMSPov9HjH0r+iPsNy
-m/DpopqZp0jTxGNLucHzIm8bpYhWbCCYLBSzO/Yb9b0O9NZvoZRtIvgz70KBrbYW
-SdLh2bjts4+l3cqMuakFsWHoer3/lZHdfDjlbI13+IivlueJyicZZG8fX5SK3F27
-VamR4/A3LS3lfyvRjYV8WxrRtHhO06GDNRKcLAFrNXm34fMF6QF95pQY3O36tsLb
-MERIT3iD+iYbwqEvXXq2A8oPgA4W1YfuUWZtcFnMIcXIlVSxdprLDZEsxe8GmHZj
-VSD7w/M7kZzmMNUODcx58nzwl/Z/FUZC+vmLrDHCK3Vv+PfOvSG5stSHZW+1QReG
-H85dKxCNUKFWyU8tb7m0zXHpzIb4LvIWvxifhy9Rhb63qC/iH6gIrpfgA7gbfZPY
-SjAyHY4cHtTEtv0lp6jd0vocbc6lZzdJiZu3SbiqElwYHsZ7cENFjj+2eerWS6fH
-IRpWutQJ9kz7I/t0zOjKG0tRDjo3wyG90ONee+07RBtMMeqFr1BX4tNFnph2viSK
-Hu7I9IhR0kgeUfX6+88UnBwKT6+qry0xSHFopX+QeHHso7fvqslLKsHQL/pL8Je+
-1dmoTIQpORzGMLumf0Mij5csNAHsXPc49caL3+tD+Ngf7LTMH3d8H6cSWdQ0CjTw
-oi0cDEtknpBusx9/+vDago9xUc5FPNC2N6IwS3b12tmHzQcBlJ5TaR3POsgT9eUZ
-M5IZeq2cfNPqB8JwE+dtBlZT4o0lKr7em/uVCIJhDhjC+A1M7/4nq7MHmu3oD6tt
-4FXTS0NxCkhHKZc8ca+t83zo7Qknj1ivvKxAqI4CR2aGuV5UlsljuzgN7vOGSx+d
-AucD38zDzUMP2z0VtqWcGys6piT2uYcMdZBFVlllf//vTRo/eYhuX4Ayxq/avcDa
-jAv5bNn6wJ+88+WJU6/rFfk0o3VxDJ3R6BySz7/qotMxPLWZl1oDcWUZ07T4SB2h
-aR+FeoEGoXsv+0uy0tZlMuUK9B7U2v6IyBHHoz/ye68PbJskLHFkzFSN//IoMvU6
-wHepJ/DGc1XjpBMD29Gz6wNOKJ2cV05kNdn4v1ARPnp6+XN9nePmmPaNuBfGZv+Q
-oWWSafK+VubatwggSRQZjFH1fIua1eqivOt1BJQhHMJDM/kTgwk0eIcBkw5vHTiJ
-n1fzPtfgXayRiPrquItNb7ym3lkPE9Jamq5ApG/IM6VdSA/mxBaK+nRf1AiYSvN/
-YCRnRTr7N45F7JzBj00th5YWBheNRR0RpAf7WqBXcpK8a2yct1AwYLZkgpzrLJoS
-ya3K3E0q4BIGdSVfXUsQyj3sz7gGC0XZ2bGFUqrynxf7hKk70V3Zu+gCX4+A8sjC
-cJR/U1usmisxwaAlTyaB7kuBSF1nWpvTTMs45UuAADfwdxxNSYoe/sUHL4wDqcte
-8ReelXU5Igg3QT96Mh6/t5Y/SZDRy3AwLoRBXfFCEtYlVOnytTHhXF6TFlIO85Rl
-HI7ucIN9l2SeVgUTAzkmgmyIpUSZ6FscEuuUbRPPNIXqHbL7+lSOCRZRn1T+q6nB
-zDGTzzlo/OGBIIH3sIurqaRgpG7yvDKgvLJ+VcY6SYtEGBUwkhsil9/rB4WoEglu
-nZINN6mxBWkbNoHtk9AHVEBxCJTFRbR0TDL7Kua2CmA5zEcWhhGyW4IIbIuKHaNP
-OQsWNgjitIUbIfXBIcVaCeIEGRMd1z0MNfKt/nAVo44PiaLk6xRg86S5tVmBUXkw
-33kOYod7rtRGBFSSGc12mWiSYoI96xrcrUtpfjqqbMi5DFEz6vlKXO2OgQMoWC83
-qWYw/vmw+lV/DdJVIAwLwZlpkeM7q5hvqK9bRMol5vG4Hzpo8Z7XxppOIeA0LK1L
-k1k1hPuqbbV1OFfODUBr55klExmb8W8aY6hlvM6kg5jjoHMGdtmv2L5GtP6stSBA
-71lJ8s0lBRPrmzjeeHfLyt1f0uGrXl2lJKwPoSCLnQ75K6f74fBGOcGyYhIHkoQ7
-SHoA89hE+T1E10rv+N4bFFNvpXp1VDZcP43MPrYms/oSIFf6UIY+BB0O6o9H5FMW
-FweqJiGwMyqWu2rAnMXKtOdU9BRZdDZrR7mjEQ9CmtKV/jhXQD6FRTt5Z1RrVcjI
-GQYb6ukhYtkfZC9cqHX3v5NfAxNMtmHsiOiO7bhZ1rjCAxaQAk6/Zk5n1YKsHtnD
-0o2MB+lgFEM6j44mNd02R6PxdKcaV/Svy3PlQ5FdHau7eHE8X8e+3pdwg+TnjywD
-zn02HRx0xl9LyBjVaJ2Agymm8CcwItiFLJXHybewo8eV+eRWXjPyNeHA6OF4TTHw
-Rg5pbgtFGS/kytN3E5/ZPZz5CIAgObcKbro/m7S6l6nhQY9ek6ZPHXCSsuDD3FsT
-33f82r380ArDtwZo3n6lpGFhu0kWdCaOwZvOlKX5tq4macuEcoj7SuljDjP/KM21
-GW+YZRNH1o6x9Ow54pEHzbBylSWBcZkASXx735+lVgFcTnziCOxBINzNbjed9jpz
-8dRoBSESMsjP5OxZb5vtl6PZ5wJqN4i4o9Dkr+0OBrLxXV79g/S+zHCziT2kAx9E
-4bZfw/186Tkq/r0DKjNhnhzUYolMtA/7C7R8nIStpLls6Tnjapvqnl5q3TIWoOZS
-0WOZV+wBbAKHX52dExxXRHkUP6cIydIhrGgRFD2/R815+RO6wQQ1LXKODEB43tGh
-MQVSlPyc6exP3sM1yUm8qUHVZ4j1s+2c066OSJ6+fPTvpg42/pwZnoGOQ81vzfuA
-JixIxz9JW2s9Uww/W7g43RIzScgGTbj1I9xpzt6he3n21QZb9beA8mk/Xen8QCQJ
-8klKRCqS1mENkuijZDubN3zCExvIkaZtBPtWeoGCZxJoJRizMsVVKfJ6ZSJKWZnl
-sG4ZEyJ+KCd0dhZ6jvPvtai4c7qMKd4C5TCPO+/Y21bibHuS0/7iV9vrGJ/I1wuW
-WHfjYfcLzU5GEHnWOFvXHoQk3MkpV4PF3KkxqVPjSS0UOBLro51MS/fxAdJi0gSD
-qLIS9jSnqEANxp3ZCZFJtSLUQomLE5SaZXPH6DLDncUWfsKQeyPwnxSIp7xQKyXv
-h5uX7jX7rEZh8qRovmfeeOYJi/1/90oHA0CxPE1/rzmJsBHgm7ziCQBxWqj/M2aR
-DrwxOLWmaJiLRGgzVJ/G+ZqwcuTE3Gjp2GcefeVUHRlw4rsbFVwqa+/SKmKbpvqS
-ypF4iHnC0ZNSfHGQHR+AzsvjOjtusEY2GjUSX12cudXNplnxbd26VrnpSR5IYuZL
-+MsW798GYM2w+yAmtjdByWzlt3wSfkC3r/HDAnofnuTuWasWKHf7p7TvEeU8nUan
-bI8LqjWISuVlXSKu4ci8ZfpTLTj/Wm3l/d1bntog/4PTDrSLMjaMsjMuxhvMdzMA
-QHM3vMGNDnzXgX4eiX1yNm36jYGOaKeR1p8Cw1Po1T7H4XV5KSODJSD1z8DSN/Gr
-ApTU+WH7jnVZ+ViF9xCEOqG+1bktjY10U1jFAezZ7kqz1eyt7M14llG5l+VlpM59
-AgWgj8WC2oURWlxyyGTkFN8x0nTENat9xGHsscSpX/E=
+IvO7sTc0i/9zPTP2R/lIHTZfGZiRM/2LIxFhHYZ9hPKhzp/Y+95BGeFjtXblWoFT
+0sAeOIgcQPNnMZWMqcQjjRr7dTr+wg06VqQdC6ACD7de9IUrbMf9CeRZuJArdglw
+yVnLw1hYk+Dryp82KrpByNFd7ZGmNDHmXT8zhgGOAIjgyGd1eaWgCh5l3ePu0hgG
+ZkaF/sm1ClIyeGTknioNqpJsDVEzGtXfaTFF9M4KFfUB23LI3atat2Ek9BwWTqsb
+wIHJCIZSe0KEzc7G6igXuTy+Ufs+shz03jDyLh/mANzbqEZ2GBaYoan9AOqnUBbw
+oCaX8wvleu6ISQcKAD0WM0hMYQodusn/UrjXkW6+VUgsGt/ehiTyTv/kWENHLGj3
+QOSOBgdOiBmfo1pKu15ETQOX4VAOIdJzBO3u7FLc7tMjac3zSRMlFQmggnuZG7xa
+qC8cQWWlOWfRspEp7Q5VBa9If12Adj16fVWnRL37AvWEq95dGFRfiGOyjsiC8pnj
+o/wtYgarmZkrngaGBj1CynAKFX036QTo2aUW/YSkenls2oawaFLCXOpySfuCzn2A
+4OuIMY82K7N4h1SxQqK1UYbrelmV3+MCQBOWAU/sI49v05yG2mQd22frciPfShkk
+vWCl2zB8weW3KrIntsyiaUWQFO5PL7k/OVs0dS1yGRyg1vTat11qRiLm7XzSU0je
+LhYGZksv+lq3lVSecvIGt0xVpJfOL9WRv95v+M7Ze64I/IYGTPaY7mzzRQnaGyEP
+00Qys4wenvtcE/OPws245hv80HyksWaaklZk44orJ3cqpeOI0I34CVZb0WhWM2ti
+lssipxrX31ovV2Xq6sh8HUbdWX8jKMIv8WG9knlVVTugpTWkQHc/MgS1VepL9oVs
+0IeTkqXr/OIc/d56WbI16RsBWuh1qC6yZSbjssQbf3s8H2UmjWY9YxHbLb5xwLX/
+IL2W0y/moiZfdqHEoTwGiILw1p+pHPF2lI+BOaZX6fhSN+CkLDUtTjnYdMWq/gg5
+3ug5iwKTHJ0Qe/p4xnvrQqjKleXgl3Md093YQwGIYJUu2gyzDkR7gdamU/BYNC1p
+AOJefdjXFxJbCljUlXgL4uUuVh+pxpNHe1Pnm3o4dqyvSD6MJrknCwVcCiVlS6jv
+2vTmbOMsyyATZ0IPVJ8RQoB5FwdVH9S/h/AUkCRTtyRweKEKSH9YFT8jDj7zwqBe
+GpIX0khoFTHci3ecYoBrndFFPtZ8vPO2P5X3BcgNd9PjrRJQ4Ft+SdIti9iesD7o
+wvjxTKZYaf3Ev69bXkCOkjVqdtzSSjrv97UXvT1GfAxcBv9iwBKpv7LcMAFE0oA9
+421TwLsp0a1RLqXZMQ6U2DaSxgDbj1gUK686i8+x49FfsnXZy9BDesrRroAGQTtE
+9ZKoVZqI5MOKD17mOAbG4IEutWoY4LwqIPU5yPK9qgA07hLK/U9QDlLJWcfbzd7B
+5S0SwkWxZjldVT17hzn06B8IR98LcWYPdaSaw+jF7O1hG8vi+hHBbJEtgy1zMykE
+X2gLPjo07CwtO83WOpMYQvy6amcCfXrcFPrBvsd1K3SJZljTUozaWzdhaP0797q/
+5W3Snwdafcmy0EYGP6jl7G4veGpon9g7yVEzauXTR7N0x9pcwQVRJRejnriZShqe
+9Bcxd/0qU33CqNehHciUwWk01bk43jMEfUvLJO0BHorifozVHztTwYjp49aR6MjR
+O1HSiUMhFhorcnmEEwwn0Nu6vWrlxUq3Bzz88Kf4lZCaME1zr0Bg7bWngmB/5E9O
+k+EA93AnLaOHxN+ZNZwoJVJmJErgAXkZX2GqD+fKw7zBY09v5Gx2Q62nCdY35amD
+fftwVYNhKomPC5PRAIrp5wvuUzfa1Rgg32mO19WrC5K0kI8VN3deHuI1qmOG6W/P
+1XN+d2jJi4AZb5WkoTplbG7QkhlQQyhW77EK8R9Bbrqe9/PgqVlnhsmmJeGOWnIg
+1BOvuwpw3+j0EojgQja3jDTd2Z+8JwgWX+cOp8K2W78nHCf7jHwNGC1f1JLkp6T4
+sa9N0AWwJIwcKMRqsAJbBHV9AIdaj3n7K/qZEhmQ9AdtTUlUz47p3ZGhSeLRhVJs
+4QshlNpiLjiL6uxDLAljqq3dr4vpaX04HtU128XlZjHq9pjpQvcrO0pkdECMtjin
+aFYL8PTWo01oZm9TLGdrckotIT9K6LgrmbcBHbCdFj1y7v7chB1KSF7/2Y57rVMV
+TynKgZtOauFAPVhyrslUediJM3eVh1X4zbkLLFCPQgsoYRB16GbxeKNCnnbhSi7H
+C9jtMedmAvtG1u/P6K7BzrgwbojSnOHzBKzQuiwkb4WVgxZDpDUmXi09NXw3useo
+ag9X2VDMHfQsIpBVykGu01/nNk2K9GpxONl9VB/zavXPsbGvVoIvemP+DLCxOtlD
+h5MmHNxTXThsF1ZMOX+0XfH+Ym7b9YskE7ziQG0/aGCpnLyk43U5H99FCjPEKaJs
+hsdKSrMN/J5BfEKgPIhUY222h/QR6rO893wLfoI+HFRzTJouw9y+uElp3TnDANbm
+4ryMz95DyJykcnKyVaJ+8kJ4zR6qjoPgcaOs4IRIHxYCCDIqP5/Qc6zw/1kPiCO1
+xUB1jQEAlGftfpm4+pAZbhUXxzbqZXb+VtM8oopucfdMzSaIl3BlscQyAe2CtyOO
+pU04Uxy4JNiNsMAdPiAn67NdzrsMUjgtSfScyk/Gaf2NWuivfMZdn+WmaO1ZmC9y
+cuqviLTixBEG05yyeVrVz3TJY4xaKpLVL4LnomhSkcfdPR6ugh/tBRUk23OeCPC6
+2/1I7rUkNqU1loAriph+8uch7k9jD5C7Yu9o7aa3jDpGYvPD5S1HL/z7y8bKQubH
++3XoHJhFlZBSVMPmeG25MphxD0jbRb950xk4YXfu2Ek6XSqGmO53GyNhLruvfIZI
+fiFgcaVoHqY92bV8cgqdiSCCm43Cymj23nnZfXesDGCv1Cx449q+4rBwB9i9eQvf
+gZhqneNfMxKCy2zYvTBKnbB/AKSjhbP2glSuQLT+suI/hG6lh2GV7DflYA4kQ9GR
+g0p69kR3r7qz9H3Dy3BMO6QVIo3xdA4EIZyDEyeXm0psbcKI/54ErHLCv9dOPD+R
+d6Rf0nGFG/odKbJXBugvEbQLbRGijqDE3oCeZ0jMWS0r6tUsCobQTDqDG8jbzlbM
+AETrPK8m6YdlbkUXrJ3urKmWtMgUVV0gIIK1fF9uVYJ/0G8OWGVZNdMR+REEQujU
+mDLPPW8pEaJIUbns8dZYHnkXNepqwBqbnJ0ZtXs6Y8WrQ2rNkrRPjsvi0iaYwXLU
+TYUAgQgZ9D1SOdxCT2Cd9ambbDBfQAN82X+T4MwIzRqPFa91O7zkt+PVwECn192c
+E9vSVzG+fDaMlSxKJZ4yHwEGhqxvwi1HaNyHgPj1/j+pQcCoJbMzf+6UdxncO+PF
+w7Tyh2EmDFTgSNoBqhKWx8vkXwxR0SwekEQyCXZypjZIZm73oO6VIVpBJKX2C2kH
+eO6g1YqsJoRbBhExgZ3QrUhS/rV5PxdCOUQMHEKO7ZIQUsBjqPSaMUgldZyulTgY
+JtraG4toy3dAOIcfrF1CixeOoAGnp5q4x1jHO7lf1OlFCR7Z2TLoMVSgn5tP+Bs2
+YP1+ZuX7hVSFq1Ddz6s/cgEFI3qmqs8I0YzvsxSK8XVNJ9Yin9wocfkdowljlqUX
+80CLecmdgmwoYynJo2t7ZgVP0v6Y3DPvLjhugwe91eY=
 
 `pragma protect end_protected
 
 //
-// Verific Verilog Description of module EFX_FF_09718c19_12
+// Verific Verilog Description of module EFX_FF_3c0d508a_12
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_159
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_159
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_160
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_160
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_161
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_161
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_162
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_162
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_163
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_163
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_164
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_164
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_165
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_165
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_166
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_166
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_167
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_167
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_168
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_168
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_169
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_169
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_170
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_170
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_171
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_171
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_172
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_172
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_173
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_173
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_174
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_174
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_175
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_175
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_176
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_176
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_177
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_177
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_178
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_178
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_179
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_179
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_180
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_180
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_181
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_181
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_182
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_182
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_183
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_183
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_184
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_184
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_185
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_185
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_186
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_186
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_187
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_187
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_188
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_188
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_189
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_189
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_190
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_190
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_191
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_191
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_192
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_192
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_193
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_193
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_194
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_194
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_195
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_195
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_196
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_196
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_197
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_197
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_198
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_198
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_199
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_199
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_200
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_200
 // module not written out since it is a black box. 
 //
 
 
 //
-// Verific Verilog Description of module EFX_LUT4_09718c19_201
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_201
+// module not written out since it is a black box. 
+//
+
+
+//
+// Verific Verilog Description of module EFX_LUT4_3c0d508a_202
 // module not written out since it is a black box. 
 //
 

@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Aug 06, 2026 15:23:20
+Generated at: Aug 06, 2026 15:47:12
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top
@@ -57,7 +57,7 @@ CE signal <u_FIFO/u_efx_fifo_top/wr_en_int>, number of controlling flip flops: 1
 CE signal <data_valid_out>, number of controlling flip flops: 30
 CE signal <ceg_net510>, number of controlling flip flops: 2
 CE signal <ceg_net5>, number of controlling flip flops: 25
-CE signal <LED[3]>, number of controlling flip flops: 4
+CE signal <rst_n_i>, number of controlling flip flops: 4
 CE signal <~Inst_MPU6500_Controller/n5118>, number of controlling flip flops: 96
 CE signal <Inst_MPU6500_Controller/n6223>, number of controlling flip flops: 8
 CE signal <ceg_net576>, number of controlling flip flops: 22
@@ -135,7 +135,7 @@ CE signal <~u_uart_Send/n101>, number of controlling flip flops: 8
 Total number of set/reset signals: 3
 Total number of FFs with set/reset signals: 814
 SR signal <fifo_rst_busys>, number of controlling flip flops: 20
-SR signal <LED[3]>, number of controlling flip flops: 774
+SR signal <rst_n_i>, number of controlling flip flops: 774
 SR signal <Inst_debounce/n151>, number of controlling flip flops: 20
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
@@ -196,7 +196,7 @@ FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 
 Module                                                              FFs      ADDs       LUTs      RAMs DSP/MULTs
 ------------------------------------------------------------        ---      ----       ----      ---- ---------
-top:top                                                        1032(34)    418(5)   1096(56)      1(0)      3(0)
+top:top                                                        1032(34)    418(5)   1097(56)      1(0)      3(0)
  +Inst_pwm_servo_0:pwm_servo                                     37(37)    33(33)     49(49)      0(0)      1(1)
  +Inst_pwm_servo_1:pwm_servo                                     34(34)    15(15)     41(41)      0(0)      1(1)
  +Inst_pwm_servo_2:pwm_servo                                     34(34)    15(15)     41(41)      0(0)      1(1)
@@ -212,7 +212,7 @@ top:top                                                        1032(34)    418(5
     +active_high.efx_resetsync_active_high:efx_asyncreg_3...       2(2)      0(0)       0(0)      0(0)      0(0)
    +xefx_fifo_ram:efx_fifo_ram_312a81e5ee264b53bcc6aeade6...       0(0)      0(0)       0(0)      1(1)      0(0)
    +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6...     20(20)    19(19)       9(9)      0(0)      0(0)
- +u_IIR_filtre:IIR_filtre                                      194(194)  204(204)       4(4)      0(0)      0(0)
+ +u_IIR_filtre:IIR_filtre                                      194(194)  204(204)       5(5)      0(0)      0(0)
  +u_uart_Send:uart_Send                                          12(12)      0(0)       5(5)      0(0)      0(0)
  +u_Motor_Control:Motor_Control                                  78(78)  108(108)   222(222)      0(0)      0(0)
  +u_uart_rx_controller:uart_rx_controller                        42(42)      0(0)     53(53)      0(0)      0(0)
@@ -233,8 +233,8 @@ INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	11
 
 EFX_ADD         : 	418
-EFX_LUT4        : 	1096
-   1-2  Inputs  : 	229
+EFX_LUT4        : 	1097
+   1-2  Inputs  : 	230
    3    Inputs  : 	328
    4    Inputs  : 	539
 EFX_MULT        : 	3

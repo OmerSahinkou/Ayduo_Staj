@@ -623,7 +623,7 @@ begin
                         start_signal_conf <= LIGTH;
                     end if;
                 when LIGTH  =>
-                    if (led_counter >= STD_LOGIC_VECTOR(shift_right(to_unsigned(33333333, 25), 1))) then 
+                    if (led_counter >= STD_LOGIC_VECTOR(shift_right(to_unsigned(CLK_FREQ, 25), 1))) then 
                         start_signal_conf <= OFF;
                     else  
                         LED(2) <= '1';
@@ -653,5 +653,5 @@ begin
     end process;
 
     LED(1) <= valid_sayici(5);
-    LED(3) <= rst_n_i;
+    LED(3) <= not rst_n_i;
 end Behavioral;
