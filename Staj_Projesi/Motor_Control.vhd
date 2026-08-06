@@ -8,6 +8,7 @@
 -- 
 -- REVİZYON: MPU6500 konfigürasyon register değerlerine göre 
 -- dinamik G ve DPS kaydırma (shift) çözücüsü eklendi.
+-- Z ekseni merkez kayması (drift) azaltıldı ve 12.4 bit kaydırma hilesi uygulandı.
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -59,6 +60,10 @@ architecture rtl of Motor_Control is
     signal shift_accel  : natural range 0 to 15 := 6;
     signal shift_gyro   : natural range 0 to 15 := 8;
 
+    constant Z_SHIFT : natural := 13;
+
+    constant ANGLE_POOL_CLAMP : signed(31 downto 0) := to_signed(4_161_536, 32);
+
 begin
 
     -- =====================================================================
@@ -66,7 +71,6 @@ begin
     -- =====================================================================
     process(g_value, dps_value)
     begin
-
         case g_value is
             when x"00" => shift_accel <= 7; 
             when x"08" => shift_accel <= 6; 
@@ -87,7 +91,13 @@ begin
     -- Sabit sayılar yerine otomatik ayarlanan shift_accel ve shift_gyro sinyalleri
     hesap_temp_x <= to_signed(127, 16) + shift_right(signed(f_axi_i), shift_accel) - shift_right(signed(f_gxi_i), shift_gyro);
     hesap_temp_y <= to_signed(127, 16) + shift_right(signed(f_ayi_i), shift_accel) - shift_right(signed(f_gyi_i), shift_gyro);
-    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool, 13), 16) - shift_right(signed(f_gzi_i), shift_gyro);
+
+    -- =====================================================================
+    -- Z EKSENİ SIFIR ÇARPICI (ZERO MULTIPLIER) KESİRLİ KAYDIRMA HİLESİ
+    -- =====================================================================
+    -- Önce açının 1.5 katını al (angle_pool + angle_pool/2), sonra 13 bit kaydır.
+    -- Bu işlem donanımda ~12.4 bitlik bir bölme etkisi yaratır.
+    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool + shift_right(angle_pool, 1), Z_SHIFT), 16);
 
     PD_Test : process (clk_i, rst_n_i)
     begin
@@ -109,17 +119,17 @@ begin
 
             if mpu_data_valid_in = '1' then 
                 
-                -- ================= Z EKSENİ ENTEGRASYONU VE DÜZELTMESİ =================
                 if to_integer(abs(signed(f_gzi_i))) > 15 then 
                     angle_pool <= angle_pool + signed(f_gzi_i);
                 else
-                    angle_pool <= angle_pool - shift_right(angle_pool, 10);
+                    -- Merkez kaymasını (drift) yavaşlatmak için sızıntı böleni 18'den 20'ye çıkarıldı.
+                    angle_pool <= angle_pool - shift_right(angle_pool, 20);
                 end if;
 
-                if angle_pool > to_signed(2000000, 32) then
-                    angle_pool <= to_signed(2000000, 32);
-                elsif angle_pool < to_signed(-2000000, 32) then
-                    angle_pool <= to_signed(-2000000, 32);
+                if angle_pool > ANGLE_POOL_CLAMP then
+                    angle_pool <= ANGLE_POOL_CLAMP;
+                elsif angle_pool < -ANGLE_POOL_CLAMP then
+                    angle_pool <= -ANGLE_POOL_CLAMP;
                 end if;
                 
             end if;
