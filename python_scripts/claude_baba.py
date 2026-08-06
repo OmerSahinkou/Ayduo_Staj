@@ -79,7 +79,7 @@ def run_pyqt_dashboard(shared_array, command_queue):
             self.resize(1600, 900)
             self.apply_professional_theme()
             
-            self.last_packet_id = -1 # Arayüzün gördüğü son paketin kimliği
+            self.last_packet_id = -1 
 
             main_widget = QWidget()
             self.setCentralWidget(main_widget)
@@ -120,7 +120,6 @@ def run_pyqt_dashboard(shared_array, command_queue):
 
             self.timer = QTimer()
             self.timer.timeout.connect(self.update_from_shared_memory)
-            # UART okuma hızı 50Hz (20ms) olduğu için, paketi kaçırmamak adına GUI Timer'ı 15ms'ye düşürüldü
             self.timer.start(15) 
 
         def apply_professional_theme(self):
@@ -305,20 +304,16 @@ def run_pyqt_dashboard(shared_array, command_queue):
             ax, ay, az, gx, gy, gz, angx, angy, angz, f_ax, f_ay, f_az, f_gx, f_gy, f_gz = vals[0:15]
             hz = vals[15]
             blink = vals[16]
-            packet_id = vals[17] # Arayüze gelen yeni paketin kimliği
+            packet_id = vals[17]
             
-            # --- YENİ EKLENEN KONTROL (TETİKLEME/TRIGGER YAKLAŞIMI) ---
-            # Eğer son çizilen paket ile şu anki paket aynıysa veri akışı yoktur, grafiği ÇİZME ve ÇIK!
             if packet_id == self.last_packet_id:
                 if hz == 0:
                     self.rx_label.setText("🔴 BAĞLANTI KOPTU VEYA BEKLENİYOR...")
                     self.rx_label.setStyleSheet("color: #e06c75; font-weight: bold; font-size: 16px; padding: 10px; background: #21252b; border-radius: 5px;")
                 return
             
-            # Eğer paket kimliği değiştiyse (yeni veri geldiyse), son ID'yi güncelle ve grafiği çizmeye devam et
             self.last_packet_id = packet_id
 
-            # Arayüzdeki RX bildirimini güncelle
             blink_color = "#98c379" if blink else "#21252b"
             self.rx_label.setText(f"🟢 FIFO RX AKTİF | Örnekleme Hızı: {hz:.1f} Hz")
             self.rx_label.setStyleSheet(f"color: #98c379; font-weight: bold; font-size: 16px; padding: 10px; background: #21252b; border-left: 10px solid {blink_color}; border-radius: 5px;")
@@ -327,7 +322,6 @@ def run_pyqt_dashboard(shared_array, command_queue):
             angy_180 = self.map_to_180(angy)
             angz_180 = self.map_to_180(angz)
 
-            # Osiloskop verilerini sola kaydır (sadece YENİ veri geldiğinde burası çalışır)
             for key in self.data.keys():
                 self.data[key][:-1] = self.data[key][1:]
             
@@ -342,7 +336,6 @@ def run_pyqt_dashboard(shared_array, command_queue):
 
             current_page = self.pages.currentIndex()
             
-            # Sadece aktif sekmedeki grafikleri güncelle
             if current_page == 0:
                 self.curve_angx.setData(self.data['angx'])
                 self.curve_fpga_x.setData(self.data['fpga_x'])
@@ -423,29 +416,38 @@ def run_vpython_and_serial(shared_array, command_queue):
     PACKET_SIZE = 31 
     STRUCT_FORMAT = '>hhhhhhBBBhhhhhh' 
     buffer = bytearray()
+    
     yaw_sensor_rad = 0.0
-    dt = 0.02 
-
     last_hz_time = time.time()
     packet_counter = 0
     current_hz = 0.0
     blink_toggle = False
-    
-    global_packet_id = 0 # Her gelen geçerli Header/Footer pakedinde artacak sayaç
+    global_packet_id = 0
+    last_packet_time = time.time()  # SAF SENSÖR: gerçek dt ölçümü için
+
+    # MPU6500 GYRO_CONFIG -> LSB/dps hassasiyet tablosu (datasheet'e göre)
+    GYRO_SENSITIVITY = {
+        0x00: 131.0,   # ± 250 dps
+        0x08: 65.5,    # ± 500 dps
+        0x10: 32.8,    # ± 1000 dps
+        0x18: 16.4,    # ± 2000 dps
+    }
+    current_gyro_sens = GYRO_SENSITIVITY[0x00]  # varsayılan ± 250 dps
 
     while True:
         rate(50) 
         
         while not command_queue.empty():
             g_val, dps_val = command_queue.get()
+            # SAF SENSÖR: seçilen DPS aralığına göre gerçek zamanlı hassasiyeti güncelle
+            current_gyro_sens = GYRO_SENSITIVITY.get(dps_val, 131.0)
             try:
                 packet_data = bytes([0xDE, 0xEF, g_val, dps_val, 0xCE, 0xFA, 0xEA])
                 ser.write(packet_data)
                 time.sleep(0.01)
                 ser.write(bytes([0x01]))
-                print(f"[UART TX] G: 0x{g_val:02X}, DPS: 0x{dps_val:02X} değerleri FPGA'ye gönderildi.")
             except Exception as e:
-                print(f"[HATA] UART Veri gönderimi başarısız: {e}")
+                pass
 
         while ser.in_waiting: buffer.extend(ser.read(ser.in_waiting))
             
@@ -454,44 +456,96 @@ def run_vpython_and_serial(shared_array, command_queue):
                 unpacked_data = struct.unpack(STRUCT_FORMAT, buffer[2:PACKET_SIZE-2])
                 
                 packet_counter += 1
-                global_packet_id += 1 # Osiloskop trigger kimliğini artır
+                global_packet_id += 1 
                 blink_toggle = not blink_toggle
                 
                 now = time.time()
+                dt = now - last_packet_time  # SAF SENSÖR: gerçek paket aralığı
+                last_packet_time = now
+                if dt <= 0 or dt > 0.5:  # ilk paket veya kopukluk sonrası anormal sıçramayı engelle
+                    dt = 0.02
+
                 if now - last_hz_time >= 1.0: 
                     current_hz = packet_counter / (now - last_hz_time)
                     packet_counter = 0
                     last_hz_time = now
                 
-                # Verileri GUI'ye ilet
                 shared_array[0:15] = unpacked_data
                 shared_array[15] = current_hz
                 shared_array[16] = 1.0 if blink_toggle else 0.0
-                shared_array[17] = global_packet_id # Yeni ID'yi paylaşılan belleğe yaz
+                shared_array[17] = global_packet_id 
                 
                 _, _, _, _, _, _, servo_x, servo_y, servo_z, f_ax, f_ay, f_az, f_gx, f_gy, f_gz = unpacked_data
                 
-                if f_az == 0: f_az = 1 
+                # =========================================================================
+                # SAF DRONE MATEMATİĞİ (Gimbal Lock veya Sınırlandırma YOK)
+                # İvmeölçer uzayda nereyi gösteriyorsa, Cross Product ile tek hamlede oraya dön!
+                # =========================================================================
                 
-                pitch_sensor_rad = math.atan2(f_ay, f_az)
-                roll_sensor_rad  = math.atan2(-f_ax, f_az)
-                yaw_sensor_rad += math.radians(f_gz / 131.0) * dt 
+                # Sadece ekrandaki metin (HUD) için atan2 kullanıyoruz (modele etki etmez)
+                hud_pitch = math.atan2(f_ay, f_az) if f_az != 0 else 0
+                hud_roll  = math.atan2(-f_ax, f_az) if f_az != 0 else 0
+                yaw_sensor_rad += math.radians(f_gz / current_gyro_sens) * dt
+                # SAF SENSÖR: 360° normalizasyon (0 ~ 2π aralığında tut)
+                yaw_sensor_rad = yaw_sensor_rad % (2 * math.pi) 
                 
-                drone_sensor.up = vector(0, 1, 0)
-                drone_sensor.axis = vector(1, 0, 0)
-                drone_sensor.rotate(angle=yaw_sensor_rad, axis=vector(0, 1, 0)) 
-                drone_sensor.rotate(angle=pitch_sensor_rad, axis=vector(1, 0, 0)) 
-                drone_sensor.rotate(angle=-roll_sensor_rad, axis=vector(0, 0, 1))
+                # İvmeölçerin ham 3D vektörünü VPython uzayına (x, z, y) uyarlıyoruz
+                hedef_yukari = vector(f_ax, f_az, f_ay)
                 
+                if hedef_yukari.mag > 0:
+                    hedef_yukari = hedef_yukari.norm()
+                    baslangic_yukari = vector(0, 1, 0)
+                    
+                    # 1. Drone'u her döngüde sıfırla (Böylece önceki dönüşler birbirine karışmaz)
+                    drone_sensor.up = vector(0, 1, 0)
+                    drone_sensor.axis = vector(1, 0, 0)
+                    
+                    # 2. Başlangıç (0,1,0) noktasından ivmeölçerin (hedef_yukari) noktasına dönüş rotası çiz
+                    rot_axis = baslangic_yukari.cross(hedef_yukari)
+                    
+                    if rot_axis.mag == 0:
+                        # Eğer sensör tam 180 derece tepe taklak duruyorsa (Cross product sıfır olur)
+                        if hedef_yukari.y < 0: 
+                            drone_sensor.rotate(angle=math.pi, axis=vector(1,0,0))
+                    else:
+                        # Normal dönüş açısını Dot product (İç çarpım) ile bul ve tek hamlede dön
+                        rot_angle = math.acos(baslangic_yukari.dot(hedef_yukari))
+                        drone_sensor.rotate(angle=rot_angle, axis=rot_axis)
+                    
+                    # 3. Son olarak Jiroskop (Yaw) verisini bu "YENİ" yukarı ekseni etrafında uygula
+                    drone_sensor.rotate(angle=yaw_sensor_rad, axis=hedef_yukari)
+
+
+                # Servo çıkışı (Euler açıları) da aynı vektörel Cross Product mantığıyla kusursuzlaştırıldı
                 pitch_servo_rad = math.radians((servo_y - 128.0) * (90.0 / 128.0))
                 roll_servo_rad  = math.radians((servo_x - 128.0) * (90.0 / 128.0))
                 yaw_servo_rad   = math.radians((servo_z - 128.0) * (90.0 / 128.0))
                 
-                drone_servo.up = vector(0, 1, 0)
-                drone_servo.axis = vector(1, 0, 0)
-                drone_servo.rotate(angle=yaw_servo_rad, axis=vector(0, 1, 0))   
-                drone_servo.rotate(angle=pitch_servo_rad, axis=vector(1, 0, 0)) 
-                drone_servo.rotate(angle=-roll_servo_rad, axis=vector(0, 0, 1)) 
+                # Euler açılarını vektöre çeviriyoruz (Yapay yerçekimi vektörü)
+                sy = math.sin(roll_servo_rad)
+                cy = math.cos(roll_servo_rad)
+                sp = math.sin(pitch_servo_rad)
+                cp = math.cos(pitch_servo_rad)
+                
+                hedef_yukari_servo = vector(-sy*cp, cy*cp, sp)
+                
+                if hedef_yukari_servo.mag > 0:
+                    hedef_yukari_servo = hedef_yukari_servo.norm()
+                    baslangic_yukari = vector(0, 1, 0)
+                    
+                    drone_servo.up = vector(0, 1, 0)
+                    drone_servo.axis = vector(1, 0, 0)
+                    
+                    rot_axis_servo = baslangic_yukari.cross(hedef_yukari_servo)
+                    
+                    if rot_axis_servo.mag == 0:
+                        if hedef_yukari_servo.y < 0:
+                            drone_servo.rotate(angle=math.pi, axis=vector(1,0,0))
+                    else:
+                        rot_angle_servo = math.acos(baslangic_yukari.dot(hedef_yukari_servo))
+                        drone_servo.rotate(angle=rot_angle_servo, axis=rot_axis_servo)
+                        
+                    drone_servo.rotate(angle=yaw_servo_rad, axis=hedef_yukari_servo)
 
                 rx_color = "#50fa7b" if blink_toggle else "#1e2227" 
 
@@ -504,8 +558,8 @@ def run_vpython_and_serial(shared_array, command_queue):
                     
                     <div style='float:left;'>
                         <h3 style='color:#61afef; margin-top:0; margin-bottom:5px;'>Uçuş Telemetrisi</h3>
-                        <b>ROLL:</b> {math.degrees(roll_sensor_rad):+06.1f}° | FPGA PWM: {servo_x}<br>
-                        <b>PITCH:</b> {math.degrees(pitch_sensor_rad):+06.1f}° | FPGA PWM: {servo_y}<br>
+                        <b>ROLL:</b> {math.degrees(hud_roll):+06.1f}° | FPGA PWM: {servo_x}<br>
+                        <b>PITCH:</b> {math.degrees(hud_pitch):+06.1f}° | FPGA PWM: {servo_y}<br>
                         <b>YAW:</b> {math.degrees(yaw_sensor_rad):+06.1f}° | FPGA PWM: {servo_z}
                     </div>
                     <div style='clear:both;'></div>
@@ -522,7 +576,6 @@ if __name__ == '__main__':
     try: mp.set_start_method('spawn', force=True)
     except RuntimeError: pass
 
-    # --- DİKKAT: Paylaşılan bellek dizisi 18 elemana çıkarıldı (packet_id eklendi) ---
     shared_array = mp.Array('d', 18)
     
     command_queue = mp.Queue()
