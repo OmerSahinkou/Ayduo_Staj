@@ -24,7 +24,7 @@ entity uart_Send is
         -- FIFO 
         rd_en_i      : out STD_LOGIC;
         rdata        : in STD_LOGIC_VECTOR(7 downto 0);
-        empty_o      : in STD_LOGIC                    
+        empty_o      : in STD_LOGIC                   
     );
 end entity;
 
@@ -46,30 +46,30 @@ begin
 
             tx_start_sig <= '0';
             rd_en_i      <= '0';
+            
+                case uart_read_state is
+                    when ST_CHECK_FIFO => 
+                        if(tx_busy_sig = '0' and empty_o = '0') then 
+                            rd_en_i         <= '1'; 
+                            uart_read_state <= ST_WAIT_FIFO;
+                        end if;
 
-            case uart_read_state is
-                when ST_CHECK_FIFO => 
-                    if(tx_busy_sig = '0' and empty_o = '0') then 
-                        rd_en_i         <= '1'; 
-                        uart_read_state <= ST_WAIT_FIFO;
-                    end if;
+                    when ST_WAIT_FIFO =>
+                        uart_read_state <= ST_START_UART;
 
-                when ST_WAIT_FIFO =>
-                    uart_read_state <= ST_START_UART;
+                    when ST_START_UART =>
+                        tx_start_sig    <= '1';
+                        tx_data_sig     <= rdata; 
+                        uart_read_state <= ST_WAIT_UART;
 
-                when ST_START_UART =>
-                    tx_start_sig    <= '1';
-                    tx_data_sig     <= rdata; 
-                    uart_read_state <= ST_WAIT_UART;
+                    when ST_WAIT_UART =>
+                        if(tx_busy_sig = '1') then 
+                            uart_read_state <= ST_CHECK_FIFO;
+                        end if;
 
-                when ST_WAIT_UART =>
-                    if(tx_busy_sig = '1') then 
+                    when others => 
                         uart_read_state <= ST_CHECK_FIFO;
-                    end if;
-
-                when others => 
-                    uart_read_state <= ST_CHECK_FIFO;
-            end case;
+                end case;
         end if;
     end process uart_send_fifo;
 

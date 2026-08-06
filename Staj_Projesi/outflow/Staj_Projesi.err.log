@@ -3663,3 +3663,154 @@
 // Aug 05, 2026 17:01:21
 ///////////////////////////////////
 
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:06:14
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'LED[1]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:616)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:645)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:06:41
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:08:51
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:12:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:14:04
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:16:21
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:20:28
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'LED[1]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:644)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:659)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:20:48
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'LED[1]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:643)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:657)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:21:35
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:23:02
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] net 'LED[0]' is constantly driven from multiple places (VDB-1000) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:642)
+[EFX-0010 VERI-ERROR] found another driver here (VDB-1001) (/home/omer-ahin/STAJ/Staj_Projesi/top.vhd:656)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:23:15
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 10:52:13
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:14:27
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:18:45
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:20:24
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] 'mpu_data_valid_in' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:31)
+[EFX-0010 VERI-ERROR] syntax error near ':' (VHDL-1261) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:31)
+[EFX-0010 VERI-ERROR] entity 'uart_send' is not yet compiled (VHDL-1059) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:35)
+[EFX-0010 VERI-ERROR] 'tx_start_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:45)
+[EFX-0010 VERI-ERROR] 'tx_data_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:46)
+[EFX-0010 VERI-ERROR] 'rd_en_i' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:47)
+[EFX-0010 VERI-ERROR] 'tx_start_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:51)
+[EFX-0010 VERI-ERROR] 'rd_en_i' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:52)
+[EFX-0010 VERI-ERROR] 'rd_en_i' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:58)
+[EFX-0010 VERI-ERROR] 'tx_busy_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:57)
+[EFX-0010 VERI-ERROR] 'tx_start_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:66)
+[EFX-0010 VERI-ERROR] 'tx_data_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:67)
+[EFX-0010 VERI-ERROR] 'tx_busy_sig' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:71)
+[EFX-0010 VERI-ERROR] 'mpu_data_valid_in' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:54)
+[EFX-0010 VERI-ERROR] 'clk_i' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:49)
+[EFX-0010 VERI-ERROR] 'rst_n_i' is not declared (VHDL-1241) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:44)
+[EFX-0010 VERI-ERROR] sensitivity list can only have static signal names (VHDL-1445) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:42)
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:21:10
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:46:20
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:48:28
+///////////////////////////////////
+
+[EFX-0010 VERI-ERROR] formal port 'mpu_data_valid_in' has no actual or default value (VHDL-1768) (/home/omer-ahin/STAJ/Staj_Projesi/uart_Send.vhd:31)
+[EFX-0021 ERROR] Elaboration of module 'top' failed. Please check previous error messages.
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 11:48:46
+///////////////////////////////////
+
+
+///////////////////////////////////
+// Efinity Synthesis Started 
+// Aug 06, 2026 12:18:17
+///////////////////////////////////
+

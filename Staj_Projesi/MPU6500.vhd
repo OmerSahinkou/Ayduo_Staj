@@ -81,6 +81,8 @@ architecture Behavioral of MPU6500_Controller is
     signal prod_sum_x_g : signed(31 downto 0);
     signal prod_sum_y_g : signed(31 downto 0);
     signal prod_sum_z_g : signed(31 downto 0);
+
+    signal switch_out_prev : STD_LOGIC := '0';
     -- =========================================================
     -- STATE MACHINE
     -- =========================================================
@@ -132,14 +134,14 @@ begin
         elsif rising_edge(clk_i) then
             data_valid_out   <= '0';
             start_transfer_o <= '0';  
-            
+            switch_out_prev <= switch_out   ;
             case state is 
             
                 -- =============================================
                 -- IDLE STATE - Başlangıç durumu
                 -- =============================================
                 when IDLE =>
-                    if(switch_out = '0') then 
+                    if(switch_out = '0' and switch_out_prev = '1') then 
                         spi_cs_n_o <= '1';
                         config_idx <= 0;
                         byte_cntr  <= 0;

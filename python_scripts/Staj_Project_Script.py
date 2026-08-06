@@ -11,11 +11,11 @@ def run_pyqt_dashboard(shared_array, command_queue):
     import math
     import numpy as np
     
-    os.environ["QT_QPA_PLATFORM"] = "xcb" # Ubuntu 24.04 Wayland Fix
+    os.environ["QT_QPA_PLATFORM"] = "xcb" 
     
     import pyqtgraph as pg
     from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QWidget, 
-                                 QGridLayout, QHBoxLayout, QPushButton, QLabel, QSpinBox, 
+                                 QGridLayout, QHBoxLayout, QPushButton, QLabel, QComboBox, 
                                  QListWidget, QListWidgetItem, QStackedWidget,
                                  QGroupBox, QFormLayout)
     from PyQt5.QtCore import QTimer, Qt, QSize
@@ -145,10 +145,12 @@ def run_pyqt_dashboard(shared_array, command_queue):
                 QPushButton:hover { background-color: #7cb668; }
                 QPushButton:pressed { background-color: #5c874d; }
                 QLabel { color: #abb2bf; font-size: 14px; font-family: 'Segoe UI'; }
-                QSpinBox { 
+                QComboBox { 
                     background-color: #1e2227; color: #abb2bf; border: 1px solid #3e4451; 
                     padding: 8px; border-radius: 4px; font-size: 14px;
                 }
+                QComboBox::drop-down { border: none; }
+                QComboBox QAbstractItemView { background-color: #282c34; color: #abb2bf; selection-background-color: #2c313a; }
             """)
 
         def change_page(self, index):
@@ -159,9 +161,10 @@ def run_pyqt_dashboard(shared_array, command_queue):
             layout = QVBoxLayout(page)
             layout.setContentsMargins(20, 20, 20, 20)
             
-            info_label = QLabel("ℹ️ 3D Dijital İkiz (Fiziksel Eğim ve Servo Tepkisi) tarayıcı penceresinde çalışmaktadır.")
-            info_label.setStyleSheet("color: #61afef; font-weight: bold; font-size: 16px; padding: 10px; background: #21252b; border-radius: 5px;")
-            layout.addWidget(info_label)
+            # --- EKLENEN KISIM: Sol Üst GUI Veri Örnekleme Bildirimi ---
+            self.rx_label = QLabel("🔴 PORT BEKLENİYOR... | Örnekleme: 0.0 Hz")
+            self.rx_label.setStyleSheet("color: #e06c75; font-weight: bold; font-size: 16px; padding: 10px; background: #21252b; border-radius: 5px;")
+            layout.addWidget(self.rx_label)
 
             group_dials = QGroupBox("FPGA Çıkışı: Gerçek Zamanlı Servo PWM Açıları")
             dials_layout = QVBoxLayout()
@@ -250,22 +253,22 @@ def run_pyqt_dashboard(shared_array, command_queue):
             form_mpu = QFormLayout()
             form_mpu.setSpacing(20)
             
-            self.spin_g = QSpinBox()
-            self.spin_g.setDisplayIntegerBase(16)
-            self.spin_g.setRange(0, 255)
-            self.spin_g.setValue(8) # Varsayılan 0x08
-            self.spin_g.setPrefix("0x")
-            self.spin_g.setFixedWidth(200)
+            self.combo_g = QComboBox()
+            self.combo_g.addItem("± 2g (Varsayılan)", 0x00)
+            self.combo_g.addItem("± 4g", 0x08)
+            self.combo_g.addItem("± 8g", 0x10)
+            self.combo_g.addItem("± 16g", 0x18)
+            self.combo_g.setFixedWidth(250)
             
-            self.spin_dps = QSpinBox()
-            self.spin_dps.setDisplayIntegerBase(16)
-            self.spin_dps.setRange(0, 255)
-            self.spin_dps.setValue(16) # Varsayılan 0x10
-            self.spin_dps.setPrefix("0x")
-            self.spin_dps.setFixedWidth(200)
+            self.combo_dps = QComboBox()
+            self.combo_dps.addItem("± 250 dps (Varsayılan)", 0x00)
+            self.combo_dps.addItem("± 500 dps", 0x08)
+            self.combo_dps.addItem("± 1000 dps", 0x10)
+            self.combo_dps.addItem("± 2000 dps", 0x18)
+            self.combo_dps.setFixedWidth(250)
 
-            form_mpu.addRow("İvmeölçer Çözünürlüğü (ACCEL_CONFIG):", self.spin_g)
-            form_mpu.addRow("Jiroskop Çözünürlüğü (GYRO_CONFIG):", self.spin_dps)
+            form_mpu.addRow("İvmeölçer Çözünürlüğü (ACCEL_CONFIG):", self.combo_g)
+            form_mpu.addRow("Jiroskop Çözünürlüğü (GYRO_CONFIG):", self.combo_dps)
             
             self.btn_send = QPushButton("YENİ KONFİGÜRASYONU FPGA'YE GÖNDER")
             self.btn_send.setFixedWidth(400)
@@ -283,10 +286,9 @@ def run_pyqt_dashboard(shared_array, command_queue):
             self.pages.addWidget(page)
 
         def on_send_clicked(self):
-            g_val = self.spin_g.value()
-            dps_val = self.spin_dps.value()
+            g_val = self.combo_g.currentData()
+            dps_val = self.combo_dps.currentData()
             
-            # G ve DPS verilerini VPython çekirdeğine göndermek üzere kuyruğa ekle
             self.cmd_queue.put((g_val, dps_val))
             
             self.status_lbl.setText(f"[ BAŞARILI ] Konfigürasyon paketi (G: 0x{g_val:02X}, DPS: 0x{dps_val:02X}) iletildi!")
@@ -297,7 +299,20 @@ def run_pyqt_dashboard(shared_array, command_queue):
 
         def update_from_shared_memory(self):
             vals = self.shared_mem[:]
-            ax, ay, az, gx, gy, gz, angx, angy, angz, f_ax, f_ay, f_az, f_gx, f_gy, f_gz = vals
+            
+            # --- EKLENEN KISIM: 15 eleman sensör verisi, +2 eleman Hz ve Blink verisi ---
+            ax, ay, az, gx, gy, gz, angx, angy, angz, f_ax, f_ay, f_az, f_gx, f_gy, f_gz = vals[0:15]
+            hz = vals[15]
+            blink = vals[16]
+
+            # Arayüzdeki RX bildirimini güncelle (Paket geldikçe border yanıp söner)
+            if hz > 0:
+                blink_color = "#98c379" if blink else "#21252b"
+                self.rx_label.setText(f"🟢 FIFO RX AKTİF | Örnekleme Hızı: {hz:.1f} Hz (Donanım Okunuyor)")
+                self.rx_label.setStyleSheet(f"color: #98c379; font-weight: bold; font-size: 16px; padding: 10px; background: #21252b; border-left: 10px solid {blink_color}; border-radius: 5px;")
+            else:
+                self.rx_label.setText("🔴 BAĞLANTI KOPTU VEYA BEKLENİYOR...")
+                self.rx_label.setStyleSheet("color: #e06c75; font-weight: bold; font-size: 16px; padding: 10px; background: #21252b; border-radius: 5px;")
 
             angx_180 = self.map_to_180(angx)
             angy_180 = self.map_to_180(angy)
@@ -400,32 +415,48 @@ def run_vpython_and_serial(shared_array, command_queue):
     yaw_sensor_rad = 0.0
     dt = 0.02 
 
+    # --- EKLENEN KISIM: Örnekleme (Sampling) Hesaplama Değişkenleri ---
+    last_hz_time = time.time()
+    packet_counter = 0
+    current_hz = 0.0
+    blink_toggle = False
+
     while True:
         rate(50) 
         
-        # ---------------------------------------------------------
-        # KUYRUK KONTROLÜ (GUI'den Gelen Konfigürasyon Paketini Oku)
-        # ---------------------------------------------------------
         while not command_queue.empty():
             g_val, dps_val = command_queue.get()
             try:
-                packet_data = bytes([0xDE, 0xEF, g_val, dps_val, 0xCE, 0xFA, 0xEA])[cite: 11]
-                ser.write(packet_data)[cite: 11]
-                time.sleep(0.01)[cite: 11]
-                ser.write(bytes([0x01]))[cite: 11]
+                packet_data = bytes([0xDE, 0xEF, g_val, dps_val, 0xCE, 0xFA, 0xEA])
+                ser.write(packet_data)
+                time.sleep(0.01)
+                ser.write(bytes([0x01]))
                 print(f"[UART TX] G: 0x{g_val:02X}, DPS: 0x{dps_val:02X} değerleri FPGA'ye gönderildi.")
             except Exception as e:
                 print(f"[HATA] UART Veri gönderimi başarısız: {e}")
 
-        # Gelen Sensör Verilerini Oku
         while ser.in_waiting: buffer.extend(ser.read(ser.in_waiting))
             
         while len(buffer) >= PACKET_SIZE:
             if buffer[0:2] == HEADER and buffer[PACKET_SIZE-2:PACKET_SIZE] == FOOTER:
                 unpacked_data = struct.unpack(STRUCT_FORMAT, buffer[2:PACKET_SIZE-2])
                 
-                raw_ax, raw_ay, raw_az, raw_gx, raw_gy, raw_gz, servo_x, servo_y, servo_z, f_ax, f_ay, f_az, f_gx, f_gy, f_gz = unpacked_data
-                shared_array[:] = unpacked_data
+                # --- EKLENEN KISIM: Her geçerli pakette sayacı artır ve Hz hesapla ---
+                packet_counter += 1
+                blink_toggle = not blink_toggle
+                
+                now = time.time()
+                if now - last_hz_time >= 1.0: # Her 1 saniyede bir Hz değerini yenile
+                    current_hz = packet_counter / (now - last_hz_time)
+                    packet_counter = 0
+                    last_hz_time = now
+                
+                # Verileri PyQt'ye iletmek üzere Shared Memory'ye aktar (0-14 arası veri, 15 Hz, 16 Blink)
+                shared_array[0:15] = unpacked_data
+                shared_array[15] = current_hz
+                shared_array[16] = 1.0 if blink_toggle else 0.0
+                
+                _, _, _, _, _, _, servo_x, servo_y, servo_z, f_ax, f_ay, f_az, f_gx, f_gy, f_gz = unpacked_data
                 
                 if f_az == 0: f_az = 1 
                 
@@ -449,12 +480,23 @@ def run_vpython_and_serial(shared_array, command_queue):
                 drone_servo.rotate(angle=pitch_servo_rad, axis=vector(1, 0, 0)) 
                 drone_servo.rotate(angle=-roll_servo_rad, axis=vector(0, 0, 1)) 
 
+                # --- EKLENEN KISIM: VPython Tarayıcı Sol Üst Köşesinde Yanıp Sönen Örnekleme Bildirimi ---
+                rx_color = "#50fa7b" if blink_toggle else "#1e2227" 
+
                 telemetry_hud.text = f"""
                 <div style='background-color:#282c34; padding:15px; color:#abb2bf; font-family:sans-serif;'>
-                    <h3 style='color:#61afef; margin-top:0;'>Uçuş Telemetrisi</h3>
-                    <b>ROLL:</b> {math.degrees(roll_sensor_rad):+06.1f}° | FPGA PWM: {servo_x}<br>
-                    <b>PITCH:</b> {math.degrees(pitch_sensor_rad):+06.1f}° | FPGA PWM: {servo_y}<br>
-                    <b>YAW:</b> {math.degrees(yaw_sensor_rad):+06.1f}° | FPGA PWM: {servo_z}
+                    <div style='float:left; border-right: 2px solid #3e4451; padding-right: 15px; margin-right: 15px;'>
+                        <span style='color:{rx_color}; font-size:18px;'>●</span> <b style='color:#e5c07b;'>FIFO RX</b><br>
+                        <span style='font-size:14px;'>Hız: <b style='color:#61afef;'>{current_hz:.1f} Hz</b></span>
+                    </div>
+                    
+                    <div style='float:left;'>
+                        <h3 style='color:#61afef; margin-top:0; margin-bottom:5px;'>Uçuş Telemetrisi</h3>
+                        <b>ROLL:</b> {math.degrees(roll_sensor_rad):+06.1f}° | FPGA PWM: {servo_x}<br>
+                        <b>PITCH:</b> {math.degrees(pitch_sensor_rad):+06.1f}° | FPGA PWM: {servo_y}<br>
+                        <b>YAW:</b> {math.degrees(yaw_sensor_rad):+06.1f}° | FPGA PWM: {servo_z}
+                    </div>
+                    <div style='clear:both;'></div>
                 </div>
                 """
                 buffer = buffer[PACKET_SIZE:]
@@ -468,10 +510,9 @@ if __name__ == '__main__':
     try: mp.set_start_method('spawn', force=True)
     except RuntimeError: pass
 
-    # Paylaşılan Veri Belleği (Sensör ve Servo değerleri için)
-    shared_array = mp.Array('d', 15)
+    # --- DİKKAT: Veri boyutu 15'ten 17'ye çıkarıldı (Hz ve Blink için) ---
+    shared_array = mp.Array('d', 17)
     
-    # Paylaşılan Komut Kuyruğu (GUI'den UART'a veri göndermek için)
     command_queue = mp.Queue()
 
     gui_process = mp.Process(target=run_pyqt_dashboard, args=(shared_array, command_queue))

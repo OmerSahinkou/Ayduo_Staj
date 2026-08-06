@@ -2,6 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
+--g_value değerleri 2g , 4g, 8g , 16g =>    0x00    ,   0x04    ,   0x10    ,   0x18
 entity uart_rx_controller is
     port (
         clk_i     : in  std_logic;
@@ -18,7 +19,6 @@ architecture rtl of uart_rx_controller is
     signal g_value_temp   : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     signal dps_value_temp : STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
     
-    -- Paket doğruluğunu tutan bayrak (flag)
     signal packet_valid_reg : std_logic := '0';
     
     type state_t is (IDLE, Wait_Header_2, Get_G_Value, Get_DPS_Value, 

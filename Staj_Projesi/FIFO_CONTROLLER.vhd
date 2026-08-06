@@ -117,9 +117,9 @@ begin
             reg_f_gyro_z  <= (others => '0');
             
             -- angle tampon
-            reg_angle_x <= angle_x ;
-            reg_angle_y <= angle_y ;
-            reg_angle_z <= angle_z ;
+            reg_angle_x <= (others => '0')  ;
+            reg_angle_y <= (others => '0')  ;
+            reg_angle_z <= (others => '0')  ;
 
         elsif rising_edge(clk_i)then 
             fifo_wr_en_o   <= '0'   ;

@@ -34,7 +34,10 @@ entity top is
         spi_cs_n_o  : out STD_LOGIC;
         mosi_o      : out STD_LOGIC;
         miso_i      : in  STD_LOGIC;
-        sclk_o      : out STD_LOGIC
+        sclk_o      : out STD_LOGIC;
+
+        --FSM Leds
+        LED         : out STD_LOGIC_VECTOR(3 downto 0)
     );
 end top;
 
@@ -255,8 +258,8 @@ architecture Behavioral of top is
         tx_data_sig  : out STD_LOGIC_VECTOR(7 downto 0) ;
         --FIFO 
         rd_en_i      : out STD_LOGIC                    ;
-        rdata        : in STD_LOGIC_VECTOR(7 downto 0) ;
-        empty_o      : in STD_LOGIC                    
+        rdata        : in STD_LOGIC_VECTOR(7 downto 0)  ;
+        empty_o      : in STD_LOGIC                     
     );
     end component uart_Send;
 
@@ -363,6 +366,13 @@ architecture Behavioral of top is
     signal dps_value_sig    : STD_LOGIC_VECTOR(7 downto 0) := (others => '0') ;
 
     signal rst_conf_sig     : STD_LOGIC := '0';
+
+
+    signal led_counter      : STD_LOGIC_VECTOR(24 downto 0) := (others => '0') ;
+    signal valid_sayici     : unsigned(5 downto 0) := (others => '0');
+
+    type state_t is (IDLE, LIGTH, OFF);
+    signal start_signal_conf : state_t := IDLE;
 begin
 
     -- =========================================================
@@ -597,4 +607,51 @@ begin
                     dps_value           => dps_value_sig    ,
                     rst_conf            => rst_conf_sig  
                 );
+
+    led_fsm : process (clk_i)
+    begin
+        if rst_n_i = '0' then 
+            LED(2)              <= '0';
+            led_counter         <= (others => '0');
+            start_signal_conf   <= IDLE;
+        elsif rising_edge(clk_i) then
+
+            --CONFİG Led
+            case start_signal_conf is
+                when IDLE   =>
+                    if rst_conf_sig = '1' then 
+                        start_signal_conf <= LIGTH;
+                    end if;
+                when LIGTH  =>
+                    if (led_counter >= STD_LOGIC_VECTOR(shift_right(to_unsigned(33333333, 25), 1))) then 
+                        start_signal_conf <= OFF;
+                    else  
+                        LED(2) <= '1';
+                        led_counter <= STD_LOGIC_VECTOR(signed(led_counter) + 1) ;
+                    end if;
+                WHEN OFF    =>
+                    led_counter <= (others => '0'); 
+                    LED(2) <= '0';
+                    if rst_conf_sig = '0' then 
+                        start_signal_conf <= IDLE;
+                    end if;
+                when others =>
+                    start_signal_conf <= IDLE;
+            end case;
+            LED(0) <= fifo_full_i;
+        end if;
+    end process led_fsm;
+
+
+    Heartbeat_LED: process(clk_i)
+    begin
+        if rising_edge(clk_i) then
+            if data_valid_out = '1' then
+                valid_sayici <= valid_sayici + 1;
+            end if;
+        end if;
+    end process;
+
+    LED(1) <= valid_sayici(5);
+    LED(3) <= rst_n_i;
 end Behavioral;
