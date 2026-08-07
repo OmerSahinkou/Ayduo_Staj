@@ -1,6 +1,6 @@
 Efinity Synthesis report for project Staj_Projesi
 Version: 2025.2.288.2.10
-Generated at: Aug 06, 2026 15:47:12
+Generated at: Aug 07, 2026 17:04:28
 Copyright (C) 2013 - 2025  All rights reserved.
 
 Top-level Entity Name : top
@@ -51,54 +51,55 @@ File List:
 "MEM|SYN-0677" : ... Memory 'ram' is not initialized, assuming empty initial contents. (/home/omer-ahin/STAJ/Staj_Projesi/ip/FIFO/FIFO.sv:661)
 
 ### ### EFX_FF CE enables (begin) ### ### ###
-Total number of enable signals: 76
-Total number of FFs with enable signals: 850
+Total number of enable signals: 77
+Total number of FFs with enable signals: 844
 CE signal <u_FIFO/u_efx_fifo_top/wr_en_int>, number of controlling flip flops: 10
-CE signal <data_valid_out>, number of controlling flip flops: 30
-CE signal <ceg_net510>, number of controlling flip flops: 2
+CE signal <data_valid_out>, number of controlling flip flops: 6
+CE signal <ceg_net522>, number of controlling flip flops: 2
 CE signal <ceg_net5>, number of controlling flip flops: 25
 CE signal <rst_n_i>, number of controlling flip flops: 4
-CE signal <~Inst_MPU6500_Controller/n5118>, number of controlling flip flops: 96
-CE signal <Inst_MPU6500_Controller/n6223>, number of controlling flip flops: 8
-CE signal <ceg_net576>, number of controlling flip flops: 22
-CE signal <ceg_net592>, number of controlling flip flops: 4
-CE signal <ceg_net533>, number of controlling flip flops: 3
-CE signal <ceg_net578>, number of controlling flip flops: 2
-CE signal <Inst_MPU6500_Controller/n6224>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6225>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6226>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6227>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6228>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6231>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6232>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6233>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6234>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6235>, number of controlling flip flops: 8
-CE signal <Inst_MPU6500_Controller/n6236>, number of controlling flip flops: 8
-CE signal <ceg_net580>, number of controlling flip flops: 6
-CE signal <ceg_net581>, number of controlling flip flops: 1
-CE signal <ceg_net584>, number of controlling flip flops: 2
+CE signal <~Inst_MPU6500_Controller/n5053>, number of controlling flip flops: 96
+CE signal <Inst_MPU6500_Controller/n6283>, number of controlling flip flops: 8
+CE signal <ceg_net588>, number of controlling flip flops: 22
+CE signal <ceg_net604>, number of controlling flip flops: 4
+CE signal <ceg_net545>, number of controlling flip flops: 3
+CE signal <ceg_net590>, number of controlling flip flops: 2
+CE signal <Inst_MPU6500_Controller/n6284>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6285>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6286>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6287>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6288>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6291>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6292>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6293>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6294>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6295>, number of controlling flip flops: 8
+CE signal <Inst_MPU6500_Controller/n6296>, number of controlling flip flops: 8
+CE signal <ceg_net592>, number of controlling flip flops: 6
 CE signal <ceg_net593>, number of controlling flip flops: 1
-CE signal <ceg_net594>, number of controlling flip flops: 1
-CE signal <Inst_FIFO_CONTROLLER/n4136>, number of controlling flip flops: 192
-CE signal <ceg_net595>, number of controlling flip flops: 8
 CE signal <ceg_net596>, number of controlling flip flops: 2
-CE signal <ceg_net597>, number of controlling flip flops: 1
-CE signal <ceg_net598>, number of controlling flip flops: 1
-CE signal <ceg_net599>, number of controlling flip flops: 1
+CE signal <ceg_net605>, number of controlling flip flops: 1
+CE signal <ceg_net606>, number of controlling flip flops: 1
+CE signal <Inst_FIFO_CONTROLLER/n4136>, number of controlling flip flops: 192
+CE signal <ceg_net607>, number of controlling flip flops: 8
+CE signal <ceg_net608>, number of controlling flip flops: 2
+CE signal <ceg_net609>, number of controlling flip flops: 1
+CE signal <ceg_net610>, number of controlling flip flops: 1
+CE signal <ceg_net611>, number of controlling flip flops: 1
 CE signal <ceg_net97>, number of controlling flip flops: 2
-CE signal <u_IIR_filtre/n2332>, number of controlling flip flops: 96
-CE signal <u_IIR_filtre/n1912>, number of controlling flip flops: 96
+CE signal <u_IIR_filtre/n2152>, number of controlling flip flops: 96
+CE signal <u_IIR_filtre/n1902>, number of controlling flip flops: 96
+CE signal <ceg_net235>, number of controlling flip flops: 23
 CE signal <pwm_valid_x>, number of controlling flip flops: 24
-CE signal <ceg_net227>, number of controlling flip flops: 3
-CE signal <ceg_net427>, number of controlling flip flops: 21
-CE signal <ceg_net411>, number of controlling flip flops: 8
-CE signal <u_uart_rx_controller/n595>, number of controlling flip flops: 8
-CE signal <ceg_net413>, number of controlling flip flops: 1
-CE signal <ceg_net601>, number of controlling flip flops: 2
+CE signal <ceg_net239>, number of controlling flip flops: 3
+CE signal <ceg_net421>, number of controlling flip flops: 16
+CE signal <ceg_net423>, number of controlling flip flops: 8
+CE signal <u_uart_rx_controller/n588>, number of controlling flip flops: 8
+CE signal <ceg_net425>, number of controlling flip flops: 1
+CE signal <ceg_net613>, number of controlling flip flops: 2
 CE signal <Inst_uart_rx/n439>, number of controlling flip flops: 8
-CE signal <ceg_net438>, number of controlling flip flops: 3
-CE signal <ceg_net440>, number of controlling flip flops: 1
+CE signal <ceg_net450>, number of controlling flip flops: 3
+CE signal <ceg_net452>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n464>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n486>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n485>, number of controlling flip flops: 1
@@ -107,72 +108,66 @@ CE signal <Inst_uart_rx/n456>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n454>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n481>, number of controlling flip flops: 1
 CE signal <Inst_uart_rx/n480>, number of controlling flip flops: 1
-CE signal <ceg_net163>, number of controlling flip flops: 12
-CE signal <ceg_net602>, number of controlling flip flops: 2
-CE signal <ceg_net442>, number of controlling flip flops: 1
-CE signal <ceg_net443>, number of controlling flip flops: 3
-CE signal <ceg_net444>, number of controlling flip flops: 1
-CE signal <Inst_Spi_Mode_3/n466>, number of controlling flip flops: 1
-CE signal <ceg_net445>, number of controlling flip flops: 1
-CE signal <ceg_net446>, number of controlling flip flops: 1
-CE signal <ceg_net447>, number of controlling flip flops: 1
-CE signal <ceg_net448>, number of controlling flip flops: 1
-CE signal <ceg_net449>, number of controlling flip flops: 1
-CE signal <ceg_net450>, number of controlling flip flops: 1
-CE signal <ceg_net451>, number of controlling flip flops: 1
-CE signal <Inst_uart_tx/n333>, number of controlling flip flops: 8
-CE signal <ceg_net194>, number of controlling flip flops: 6
-CE signal <ceg_net603>, number of controlling flip flops: 2
-CE signal <ceg_net457>, number of controlling flip flops: 3
+CE signal <ceg_net171>, number of controlling flip flops: 12
+CE signal <ceg_net614>, number of controlling flip flops: 2
 CE signal <ceg_net454>, number of controlling flip flops: 1
-CE signal <ceg_net455>, number of controlling flip flops: 1
+CE signal <ceg_net455>, number of controlling flip flops: 3
+CE signal <ceg_net456>, number of controlling flip flops: 1
+CE signal <Inst_Spi_Mode_3/n466>, number of controlling flip flops: 1
+CE signal <ceg_net457>, number of controlling flip flops: 1
+CE signal <ceg_net458>, number of controlling flip flops: 1
+CE signal <ceg_net459>, number of controlling flip flops: 1
+CE signal <ceg_net460>, number of controlling flip flops: 1
+CE signal <ceg_net461>, number of controlling flip flops: 1
+CE signal <ceg_net462>, number of controlling flip flops: 1
+CE signal <ceg_net463>, number of controlling flip flops: 1
+CE signal <Inst_uart_tx/n333>, number of controlling flip flops: 8
+CE signal <ceg_net202>, number of controlling flip flops: 6
+CE signal <ceg_net615>, number of controlling flip flops: 2
+CE signal <ceg_net469>, number of controlling flip flops: 3
+CE signal <ceg_net466>, number of controlling flip flops: 1
+CE signal <ceg_net467>, number of controlling flip flops: 1
 CE signal <Inst_debounce/n149>, number of controlling flip flops: 1
-CE signal <ceg_net458>, number of controlling flip flops: 2
+CE signal <ceg_net470>, number of controlling flip flops: 2
 CE signal <~u_uart_Send/n101>, number of controlling flip flops: 8
 ### ### EFX_FF CE enables (end) ### ### ###
 
 ### ### EFX_FF SR set/reset (begin) ### ### ###
 Total number of set/reset signals: 3
-Total number of FFs with set/reset signals: 814
+Total number of FFs with set/reset signals: 802
 SR signal <fifo_rst_busys>, number of controlling flip flops: 20
-SR signal <rst_n_i>, number of controlling flip flops: 774
+SR signal <rst_n_i>, number of controlling flip flops: 762
 SR signal <Inst_debounce/n151>, number of controlling flip flops: 20
 ### ### EFX_FF SR set/reset (end) ### ### ###
 
 ### ### Sequential Elements Trimming Report (begin) ### ### ### 
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i25
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i26
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i25
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i27
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i26
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i28
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i27
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i29
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i28
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i30
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i29
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i31
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i30
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/dff_75/i32
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/dff_75/i24
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i31
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/angle_raw_y[4]~FF_brt_10
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/angle_raw_y[5]~FF_brt_11
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/angle_raw_y[6]~FF_brt_9
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/angle_raw_y[5]~FF_brt_11
-FF|OPT : Flip-flop optimization by equivalence checking
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" removed instance : u_Motor_Control/angle_raw_y[1]~FF_brt_7
-@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (164)" representative instance : u_Motor_Control/angle_raw_y[5]~FF_brt_11
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" removed instance : u_Motor_Control/dff_84/i32
+@ "/home/omer-ahin/STAJ/Staj_Projesi/Motor_Control.vhd (169)" representative instance : u_Motor_Control/dff_84/i23
 FF Output: Inst_pwm_servo_0/pulse_width[0](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[17](=0)
 FF Output: Inst_pwm_servo_0/pulse_width[18](=0)
@@ -196,16 +191,16 @@ FF Output: Inst_pwm_servo_2/pulse_width[1](=0)
 
 Module                                                              FFs      ADDs       LUTs      RAMs DSP/MULTs
 ------------------------------------------------------------        ---      ----       ----      ---- ---------
-top:top                                                        1032(34)    418(5)   1097(56)      1(0)      3(0)
- +Inst_pwm_servo_0:pwm_servo                                     37(37)    33(33)     49(49)      0(0)      1(1)
- +Inst_pwm_servo_1:pwm_servo                                     34(34)    15(15)     41(41)      0(0)      1(1)
- +Inst_pwm_servo_2:pwm_servo                                     34(34)    15(15)     41(41)      0(0)      1(1)
- +Inst_uart_tx:uart_tx(baud_rate=1000000)                        21(21)      0(0)     30(30)      0(0)      0(0)
+top:top                                                        1020(34)    356(5)   1089(56)      1(0)      3(0)
+ +Inst_pwm_servo_0:pwm_servo                                     37(37)    33(33)     43(43)      0(0)      1(1)
+ +Inst_pwm_servo_1:pwm_servo                                     34(34)    15(15)     47(47)      0(0)      1(1)
+ +Inst_pwm_servo_2:pwm_servo                                     34(34)    15(15)     39(39)      0(0)      1(1)
+ +Inst_uart_tx:uart_tx(baud_rate=1000000)                        21(21)      0(0)     29(29)      0(0)      0(0)
  +Inst_debounce:debounce(debounce_limit=1000000)                 23(23)    19(19)       7(7)      0(0)      0(0)
- +Inst_uart_rx:uart_rx(baud_rate=1000000)                        30(30)      0(0)     37(37)      0(0)      0(0)
+ +Inst_uart_rx:uart_rx(baud_rate=1000000)                        30(30)      0(0)     38(38)      0(0)      0(0)
  +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1...     28(28)      0(0)     42(42)      0(0)      0(0)
- +Inst_MPU6500_Controller:MPU6500_Controller                   237(237)      0(0)   277(277)      0(0)      0(0)
- +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                         206(206)      0(0)   223(223)      0(0)      0(0)
+ +Inst_MPU6500_Controller:MPU6500_Controller                   237(237)      0(0)   284(284)      0(0)      0(0)
+ +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                         206(206)      0(0)   221(221)      0(0)      0(0)
  +u_FIFO:FIFO                                                     22(0)     19(0)       9(0)      1(0)      0(0)
   +u_efx_fifo_top:efx_fifo_top_312a81e5ee264b53bcc6aeade6...      22(0)     19(0)       9(0)      1(0)      0(0)
    +genblk2.efx_resetsync_a_rst:efx_resetsync_312a81e5ee2...       2(0)      0(0)       0(0)      0(0)      0(0)
@@ -214,8 +209,8 @@ top:top                                                        1032(34)    418(5
    +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6...     20(20)    19(19)       9(9)      0(0)      0(0)
  +u_IIR_filtre:IIR_filtre                                      194(194)  204(204)       5(5)      0(0)      0(0)
  +u_uart_Send:uart_Send                                          12(12)      0(0)       5(5)      0(0)      0(0)
- +u_Motor_Control:Motor_Control                                  78(78)  108(108)   222(222)      0(0)      0(0)
- +u_uart_rx_controller:uart_rx_controller                        42(42)      0(0)     53(53)      0(0)      0(0)
+ +u_Motor_Control:Motor_Control                                  71(71)    46(46)   215(215)      0(0)      0(0)
+ +u_uart_rx_controller:uart_rx_controller                        37(37)      0(0)     49(49)      0(0)      0(0)
 
 ### ### Module Resource Usage Distribution Estimates (end) ### ###
 
@@ -224,7 +219,7 @@ top:top                                                        1032(34)    418(5
 
  Clock      Flip-Flops    Memory PortsMultipliers/DSPs
  -----      ----------    ----------------------------
- clk_i            1032               2               0
+ clk_i            1020               2               0
 
 ### ### Clock Load Distribution Report (end) ### ###
 
@@ -232,16 +227,16 @@ top:top                                                        1032(34)    418(5
 INPUT  PORTS    : 	5
 OUTPUT PORTS    : 	11
 
-EFX_ADD         : 	418
-EFX_LUT4        : 	1097
-   1-2  Inputs  : 	230
-   3    Inputs  : 	328
-   4    Inputs  : 	539
+EFX_ADD         : 	356
+EFX_LUT4        : 	1089
+   1-2  Inputs  : 	208
+   3    Inputs  : 	283
+   4    Inputs  : 	598
 EFX_MULT        : 	3
-EFX_FF          : 	1032
+EFX_FF          : 	1020
 EFX_RAM_5K      : 	1
 EFX_GBUFCE      : 	1
 ### ### Resource Summary (end) ### ### ###
 
-Plain synthesis (without verilog dump and post-map checks) time : 5s
-Elapsed synthesis time : 5s
+Plain synthesis (without verilog dump and post-map checks) time : 4s
+Elapsed synthesis time : 4s

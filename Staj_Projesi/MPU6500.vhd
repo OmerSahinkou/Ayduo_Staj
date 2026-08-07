@@ -108,9 +108,12 @@ architecture Behavioral of MPU6500_Controller is
 
 begin
 
-
+    -- Eksik atanan dizinin (array) tamamı tanımlanıp hata giderildi
+    MPU_CONFIG_DATA(0) <= x"00";
+    MPU_CONFIG_DATA(1) <= x"10";
     MPU_CONFIG_DATA(2) <= dps_value;  -- GYRO_CONFIG (Dışarıdan gelen dps ayarı)
     MPU_CONFIG_DATA(3) <= g_value;    -- ACCEL_CONFIG (Dışarıdan gelen g ayarı)
+    MPU_CONFIG_DATA(4) <= x"04";
 
 
     -- SPI Mode 3'te WRITE komutu bit 7 = 1

@@ -2,13 +2,10 @@
 -- Company: 
 -- Engineer: Ömer Şahin
 -- 
--- Description: Saf PD Kontrolcüsü (Direct Follower / Stabilizer)
--- İç filtreleme kaldırıldı (Dışarıdaki IIR filtre kullanılıyor).
--- Sıfır Multiplier, tek saat çevriminde kusursuz tepki.
--- 
--- REVİZYON: MPU6500 konfigürasyon register değerlerine göre 
--- dinamik G ve DPS kaydırma (shift) çözücüsü eklendi.
--- Z ekseni merkez kayması (drift) azaltıldı ve 12.4 bit kaydırma hilesi uygulandı.
+-- Description: Saf Gimbal (Breadboard Fiziksel İkizi)
+-- X (Uzun Kenar)  : Doğrudan f_axi_i (İvmeölçer)
+-- Y (Kısa Kenar)  : Doğrudan f_ayi_i (İvmeölçer)
+-- Z (Yere Paralel): Doğrudan f_gzi_i İntegrali (Jiroskop)
 ----------------------------------------------------------------------------------
 
 library IEEE;
@@ -60,14 +57,13 @@ architecture rtl of Motor_Control is
     signal shift_accel  : natural range 0 to 15 := 6;
     signal shift_gyro   : natural range 0 to 15 := 8;
 
-    constant Z_SHIFT : natural := 13;
-
-    constant ANGLE_POOL_CLAMP : signed(31 downto 0) := to_signed(4_161_536, 32);
+    -- Z ekseninin sapıtıp uçlara kilitlenmesini engelleyen sınır
+    constant ANGLE_POOL_CLAMP : signed(31 downto 0) := to_signed(1_200_000, 32);
 
 begin
 
     -- =====================================================================
-    -- MPU6500 Register Değerlerine Göre Otomatik Shift (Hassasiyet) Çözücü
+    -- MPU6500 Shift (Hassasiyet) Ayarları
     -- =====================================================================
     process(g_value, dps_value)
     begin
@@ -88,17 +84,20 @@ begin
         end case;
     end process;
 
-    -- Sabit sayılar yerine otomatik ayarlanan shift_accel ve shift_gyro sinyalleri
-    hesap_temp_x <= to_signed(127, 16) + shift_right(signed(f_axi_i), shift_accel) - shift_right(signed(f_gxi_i), shift_gyro);
-    hesap_temp_y <= to_signed(127, 16) + shift_right(signed(f_ayi_i), shift_accel) - shift_right(signed(f_gyi_i), shift_gyro);
+    -- =====================================================================
+    -- SAF VE BİREBİR HESAPLAMA
+    -- =====================================================================
+    
+    -- Uzun ve Kısa Kenar: IIR filtreden gelen ivmeölçer verisini direkt servoya veriyoruz.
+    hesap_temp_x <= to_signed(127, 16) + shift_right(signed(f_axi_i), shift_accel);
+    hesap_temp_y <= to_signed(127, 16) + shift_right(signed(f_ayi_i), shift_accel);
+    
+    -- Yere Paralel (Z): Loglarından hesapladığımız o ideal oran (shift_gyro + 5)
+    hesap_temp_z <= to_signed(127, 16) + resize(shift_right(angle_pool, shift_gyro + 5), 16);
 
     -- =====================================================================
-    -- Z EKSENİ SIFIR ÇARPICI (ZERO MULTIPLIER) KESİRLİ KAYDIRMA HİLESİ
+    -- DURUM MAKİNESİ (Sınırlandırma ve Z İntegrali)
     -- =====================================================================
-    -- Önce açının 1.5 katını al (angle_pool + angle_pool/2), sonra 13 bit kaydır.
-    -- Bu işlem donanımda ~12.4 bitlik bir bölme etkisi yaratır.
-    hesap_temp_z <= to_signed(127, 16) - resize(shift_right(angle_pool + shift_right(angle_pool, 1), Z_SHIFT), 16);
-
     PD_Test : process (clk_i, rst_n_i)
     begin
         if rst_n_i = '0' then 
@@ -120,12 +119,18 @@ begin
             if mpu_data_valid_in = '1' then 
                 
                 if to_integer(abs(signed(f_gzi_i))) > 15 then 
-                    angle_pool <= angle_pool + signed(f_gzi_i);
+                    -- Jiroskop Z integre et (Motor sınırındaysa boşa şişmesin diye koruma eklendi)
+                    if (signed(f_gzi_i) > 0 and hesap_temp_z < to_signed(255, 16)) then
+                        angle_pool <= angle_pool + resize(signed(f_gzi_i), 32);
+                    elsif (signed(f_gzi_i) < 0 and hesap_temp_z > to_signed(0, 16)) then
+                        angle_pool <= angle_pool + resize(signed(f_gzi_i), 32);
+                    end if;
                 else
-                    -- Merkez kaymasını (drift) yavaşlatmak için sızıntı böleni 18'den 20'ye çıkarıldı.
-                    angle_pool <= angle_pool - shift_right(angle_pool, 20);
+                    -- Hareketsizken Z eksenindeki ufak kaçakları sıfıra doğru erit
+                    angle_pool <= angle_pool - shift_right(angle_pool, 16);
                 end if;
 
+                -- Z ekseni havuz kilitlenmesini engelleyen son güvenlik
                 if angle_pool > ANGLE_POOL_CLAMP then
                     angle_pool <= ANGLE_POOL_CLAMP;
                 elsif angle_pool < -ANGLE_POOL_CLAMP then
@@ -134,7 +139,7 @@ begin
                 
             end if;
 
-            -- X Ekseni Sınırlandırma
+            -- X Ekseni (0 - 255 Sınırlandırma)
             if hesap_temp_x > 255 then
                 angle_raw_x <= to_unsigned(255, 8);
             elsif hesap_temp_x < 0 then
@@ -143,7 +148,7 @@ begin
                 angle_raw_x <= unsigned(hesap_temp_x(7 downto 0));
             end if;
 
-            -- Y Ekseni Sınırlandırma
+            -- Y Ekseni (0 - 255 Sınırlandırma)
             if hesap_temp_y > 255 then
                 angle_raw_y <= to_unsigned(255, 8);
             elsif hesap_temp_y < 0 then
@@ -152,7 +157,7 @@ begin
                 angle_raw_y <= unsigned(hesap_temp_y(7 downto 0));
             end if;
 
-            -- Z Ekseni Sınırlandırma
+            -- Z Ekseni (0 - 255 Sınırlandırma)
             if hesap_temp_z > 255 then
                 angle_raw_z <= to_unsigned(255, 8);
             elsif hesap_temp_z < 0 then 

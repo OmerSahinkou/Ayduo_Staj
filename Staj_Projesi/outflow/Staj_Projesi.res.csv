@@ -1,20 +1,20 @@
 sep=\t
 Module Resource Usage Distribution Estimates
-Generated at: Aug 06, 2026 15:47:12
+Generated at: Aug 07, 2026 17:04:28
 
 Note: some resources maybe grouped under different hierarchy due to optimization and LUT mapping
 
 Module	        FFs	      ADDs	       LUTs	      RAMs	 DSP/MULTs
-top:top                                                     	  1032(34)	   418(5)	  1097(56)	     1(0)	     3(0)	
- +Inst_pwm_servo_0:pwm_servo                                	    37(37)	   33(33)	    49(49)	     0(0)	     1(1)	
- +Inst_pwm_servo_1:pwm_servo                                	    34(34)	   15(15)	    41(41)	     0(0)	     1(1)	
- +Inst_pwm_servo_2:pwm_servo                                	    34(34)	   15(15)	    41(41)	     0(0)	     1(1)	
- +Inst_uart_tx:uart_tx(baud_rate=1000000)                   	    21(21)	     0(0)	    30(30)	     0(0)	     0(0)	
+top:top                                                     	  1020(34)	   356(5)	  1089(56)	     1(0)	     3(0)	
+ +Inst_pwm_servo_0:pwm_servo                                	    37(37)	   33(33)	    43(43)	     0(0)	     1(1)	
+ +Inst_pwm_servo_1:pwm_servo                                	    34(34)	   15(15)	    47(47)	     0(0)	     1(1)	
+ +Inst_pwm_servo_2:pwm_servo                                	    34(34)	   15(15)	    39(39)	     0(0)	     1(1)	
+ +Inst_uart_tx:uart_tx(baud_rate=1000000)                   	    21(21)	     0(0)	    29(29)	     0(0)	     0(0)	
  +Inst_debounce:debounce(debounce_limit=1000000)            	    23(23)	   19(19)	      7(7)	     0(0)	     0(0)	
- +Inst_uart_rx:uart_rx(baud_rate=1000000)                   	    30(30)	     0(0)	    37(37)	     0(0)	     0(0)	
+ +Inst_uart_rx:uart_rx(baud_rate=1000000)                   	    30(30)	     0(0)	    38(38)	     0(0)	     0(0)	
  +Inst_Spi_Mode_3:Spi_Mode_3(clk_freq=33333333,spi_freq=1000000)	    28(28)	     0(0)	    42(42)	     0(0)	     0(0)	
- +Inst_MPU6500_Controller:MPU6500_Controller                	  237(237)	     0(0)	  277(277)	     0(0)	     0(0)	
- +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                      	  206(206)	     0(0)	  223(223)	     0(0)	     0(0)	
+ +Inst_MPU6500_Controller:MPU6500_Controller                	  237(237)	     0(0)	  284(284)	     0(0)	     0(0)	
+ +Inst_FIFO_CONTROLLER:FIFO_CONTROLLER                      	  206(206)	     0(0)	  221(221)	     0(0)	     0(0)	
  +u_FIFO:FIFO                                               	     22(0)	    19(0)	      9(0)	     1(0)	     0(0)	
   +u_efx_fifo_top:efx_fifo_top_312a81e5ee264b53bcc6aeade6aa5df8(SYNC_CLK=1,DATA_WIDTH=8,PIPELINE_REG=0,OPTIONAL_FLAGS=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,PROGRAMMABLE_EMPTY="NONE",PROG_EMPTY_ASSERT=0,PROG_EMPTY_NEGATE=0)	     22(0)	    19(0)	      9(0)	     1(0)	     0(0)	
    +genblk2.efx_resetsync_a_rst:efx_resetsync_312a81e5ee264b53bcc6aeade6aa5df8(ACTIVE_LOW=0)	      2(0)	     0(0)	      0(0)	     0(0)	     0(0)	
@@ -23,5 +23,5 @@ top:top                                                     	  1032(34)	   418(5
    +xefx_fifo_ctl:efx_fifo_ctl_312a81e5ee264b53bcc6aeade6aa5df8(PIPELINE_REG=0,ALMOST_FLAG=0,PROGRAMMABLE_FULL="STATIC_SINGLE",PROG_FULL_ASSERT=510,PROG_FULL_NEGATE=510,HANDSHAKE_FLAG=0,OVERFLOW_PROTECT=1,UNDERFLOW_PROTECT=1)	    20(20)	   19(19)	      9(9)	     0(0)	     0(0)	
  +u_IIR_filtre:IIR_filtre                                   	  194(194)	 204(204)	      5(5)	     0(0)	     0(0)	
  +u_uart_Send:uart_Send                                     	    12(12)	     0(0)	      5(5)	     0(0)	     0(0)	
- +u_Motor_Control:Motor_Control                             	    78(78)	 108(108)	  222(222)	     0(0)	     0(0)	
- +u_uart_rx_controller:uart_rx_controller                   	    42(42)	     0(0)	    53(53)	     0(0)	     0(0)	
+ +u_Motor_Control:Motor_Control                             	    71(71)	   46(46)	  215(215)	     0(0)	     0(0)	
+ +u_uart_rx_controller:uart_rx_controller                   	    37(37)	     0(0)	    49(49)	     0(0)	     0(0)	

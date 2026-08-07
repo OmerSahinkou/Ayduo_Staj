@@ -1,0 +1,33 @@
+### ### ClockLoad  Distribution Report	### ###
+
+### ###     Resource SUmmary(begin)	### ### 
+clk_i	Flip-FLop => 1032
+
+INPUT PORTS	:	5
+OUTPUT PORTS	:	11
+
+EFX_ADD		:	481
+EFX_LUT4	:	1097
+	1-2 Inputs:	230
+	3   Inputs:	328
+	4   Inputs:	539
+EFX_MULT	:	3
+EFX_FF		:	1032
+EFX_RAM_5K	:	1
+EFX_GBUFCE	:	1	
+
+
+### ###     Resource SUmmary(end)     	### ### 
+
+### ### 	Place_Report(begin)	### ### 
+
+INPUTS		: 5/96		(5.21%)
+OUTPUTS		: 11/223	(4.93%)
+CLOCKS		: 1/16		(6.25%)
+LOGİC ELEMENTS	: 2007/7384	(20.54%)
+	LE: LUTs/aDDERS	: 1517/7384 (20.54%)
+	LE: Registers	: 1032/5280 (19.55%)
+Memory Block	: 1/24		(4.17%)
+Multipliers	: 3/8		(37.5%)
+
+### ###         Place_Report(end)	 ### ### 
