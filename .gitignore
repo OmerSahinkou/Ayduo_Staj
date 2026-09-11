@@ -1,1 +1,22 @@
-env/
+# Vivado ve EDA geçici dosyaları
+*.jou
+*.log
+*.str
+*.xpr.bak
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+
+# Python derleme ve sanal ortam dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env/
+
+# İşletim sistemi kalıntıları
+.DS_Store
+Thumbs.dbenv/
